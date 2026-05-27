@@ -46,7 +46,7 @@ body {
   background: var(--bg2);
   border-bottom: 1px solid var(--border);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding: env(safe-area-inset-top, 0px) 16px 0;
   gap: 12px;
   z-index: 100;
@@ -445,6 +445,135 @@ body {
 }
 
 
+/* ── View mode bar (Museums tab) ────────────────────────────────────────── */
+.view-mode-bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--border);
+}
+.view-mode-bar::-webkit-scrollbar { display: none; }
+
+.vmode-btn {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+  font-size: .8rem;
+  padding: 6px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color .2s, color .2s, background .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.vmode-btn.active { border-color: var(--gold-dim); color: var(--gold); background: var(--bg4); }
+
+/* ── City grouping (Museums → City view) ────────────────────────────────── */
+.loc-section { padding: 0 12px; margin-bottom: 20px; }
+.loc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 6px;
+}
+.loc-name { font-size: .95rem; font-weight: 600; color: var(--text); }
+.loc-stat { font-size: .8rem; color: var(--text-dim); }
+
+/* ── City sub-header (inside Country view) ──────────────────────────────── */
+.loc-city-section { margin-bottom: 10px; }
+.loc-city-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 12px 6px;
+}
+.loc-city-name {
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* ── Country grouping (Museums → Country view) ──────────────────────────── */
+.loc-group { border-bottom: 1px solid var(--border); }
+.loc-group-header {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.loc-group-name { flex: 1; font-size: .95rem; font-weight: 600; color: var(--text); }
+.loc-group-stat { font-size: .8rem; color: var(--text-dim); margin-right: 8px; }
+.loc-chevron {
+  width: 18px; height: 18px;
+  color: var(--text-faint);
+  transition: transform .2s;
+  flex-shrink: 0;
+}
+.loc-group-header.open .loc-chevron { transform: rotate(180deg); }
+.loc-group-body { padding: 8px 12px 12px; }
+
+/* ── Museum sort grouping in Top 100 ────────────────────────────────────── */
+.list-museum-groups { padding-bottom: 12px; }
+.list-museum-group { margin-bottom: 8px; }
+.list-museum-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px 8px;
+  border-bottom: 1px solid var(--border);
+}
+.list-museum-name { font-size: .9rem; font-weight: 600; color: var(--text); }
+.list-museum-stat { font-size: .8rem; color: var(--text-dim); }
+
+/* ── Collection view ─────────────────────────────────────────────────────── */
+.collection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px 10px;
+}
+.collection-count { font-size: .85rem; color: var(--text-dim); }
+
+/* ── Gallery (framed) view ───────────────────────────────────────────────── */
+.gallery-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 8px 20px 32px;
+}
+.gallery-frame-wrap {
+  width: 100%;
+  cursor: pointer;
+}
+.gallery-frame {
+  background: #3b2a14;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow:
+    inset 0 0 0 1px #6b4c22,
+    inset 0 0 0 2px #2a1c0a,
+    0 8px 40px rgba(0,0,0,.75),
+    0 2px 8px rgba(0,0,0,.5);
+}
+.gallery-mat {
+  background: #f0ead8;
+  padding: 14px;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,.2);
+}
+.gallery-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ── Modal / Lightbox ───────────────────────────────────────────────────── */
 .modal-overlay {
   position: fixed;
@@ -684,11 +813,19 @@ body {
 .card-seen-badge {
   position: absolute;
   top: 6px; right: 6px;
-  width: 24px; height: 24px;
-  background: var(--gold);
-  color: var(--bg);
+  width: 26px; height: 26px;
+  background: rgba(15,14,13,.55);
+  border: 1.5px solid rgba(255,255,255,.25);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .15s, border-color .15s;
+}
+.card-seen-badge.checked {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #1a1209;
 }
 .card-seen-badge svg { width: 13px; height: 13px; }
 

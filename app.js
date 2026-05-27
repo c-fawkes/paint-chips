@@ -5,6 +5,8 @@ const S = {
   userPaintings: [],
   view: 'list',
   listMode: 'grid',
+  collectionMode: 'grid',
+  museumsMode: 'alpha',
   sort: 'rank',
   search: '',
   filter: { continent: null, country: null, city: null, museum: null },
@@ -18,7 +20,7 @@ function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
       checked: S.checked, photos: S.photos, userPaintings: S.userPaintings,
-      view: S.view, listMode: S.listMode, sort: S.sort, filter: S.filter,
+      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter,
     }));
   } catch (_) {}
 }
@@ -63,6 +65,10 @@ function filteredSorted() {
     if (S.sort === 'artist') return a.artist.localeCompare(b.artist);
     if (S.sort === 'year')   return parseInt(a.year) - parseInt(b.year);
     if (S.sort === 'title')  return a.title.localeCompare(b.title);
+    if (S.sort === 'museum') {
+      const cmp = a.location.museum.localeCompare(b.location.museum);
+      return cmp !== 0 ? cmp : (a.rank || 9999) - (b.rank || 9999);
+    }
     return 0;
   });
   return list;
@@ -79,8 +85,10 @@ const ICONS = {
   stats:   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
   plus:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
   sort:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="9" y1="18" x2="15" y2="18"/></svg>`,
-  grid:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>`,
-  rows:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`,
+  grid:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>`,
+  rows:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`,
+  bookmark: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
+  frame:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="1"/><rect x="5" y="5" width="14" height="14" rx="1"/></svg>`,
   back:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>`,
   pin:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
 };
@@ -105,7 +113,10 @@ function renderPaintingCard(p) {
     <div class="card-img-wrap">
       ${imgHtml}
       ${p.rank <= 100 ? `<div class="card-rank-badge">#${p.rank}</div>` : ''}
-      ${isChecked ? `<div class="card-seen-badge">${ICONS.check}</div>` : ''}
+      <div class="card-seen-badge${isChecked ? ' checked' : ''}"
+           onclick="rowToggleCheck(event,'${key}')" title="Mark as seen">
+        ${isChecked ? ICONS.check : ''}
+      </div>
       ${hasPhotos ? `<div class="card-photo-badge">📷</div>` : ''}
     </div>
     <div class="card-body">
@@ -145,14 +156,34 @@ function renderPaintingRow(p) {
 function renderListView() {
   const paintings = filteredSorted();
   const filterChips = buildFilterChips();
-  const sortLabels = { rank: 'Rank', artist: 'Artist', year: 'Year', title: 'Title' };
-
+  const sortLabels = { rank: 'Rank', artist: 'Artist', year: 'Year', title: 'Title', museum: 'Museum' };
   const isGrid = S.listMode !== 'compact';
-  const paintingsHtml = paintings.length === 0
-    ? `<div class="empty-state"><div class="empty-icon">🖼</div><p>No paintings match your search.</p></div>`
-    : isGrid
+
+  let paintingsHtml;
+  if (paintings.length === 0) {
+    paintingsHtml = `<div class="empty-state"><div class="empty-icon">🖼</div><p>No paintings match your search.</p></div>`;
+  } else if (S.sort === 'museum') {
+    const museumOrder = [...new Set(paintings.map(p => p.location.museum))];
+    const groups = {};
+    paintings.forEach(p => { const m = p.location.museum; if (!groups[m]) groups[m] = []; groups[m].push(p); });
+    paintingsHtml = `<div class="list-museum-groups">${museumOrder.map(museum => {
+      const mps = groups[museum];
+      const mc  = checkedCount(mps.map(p => p.id));
+      return `<div class="list-museum-group">
+        <div class="list-museum-header">
+          <span class="list-museum-name">${esc(museum)}</span>
+          <span class="list-museum-stat">${mc}/${mps.length} seen</span>
+        </div>
+        ${isGrid
+          ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
+          : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
+      </div>`;
+    }).join('')}</div>`;
+  } else {
+    paintingsHtml = isGrid
       ? `<div class="paintings-grid">${paintings.map(p => renderPaintingCard(p)).join('')}</div>`
       : `<div class="paintings-compact">${paintings.map(p => renderPaintingRow(p)).join('')}</div>`;
+  }
 
   return `
     <div id="toolbar">
@@ -181,41 +212,71 @@ function buildFilterChips() {
 }
 
 /* ── Museums View ───────────────────────────────────────────────────────── */
+function renderMuseumsModeBar() {
+  const modes = [
+    { key: 'alpha', label: 'Museums' },
+    { key: 'city', label: 'City' },
+    { key: 'country', label: 'Country' },
+    { key: 'continent', label: 'Continent' },
+  ];
+  return `<div class="view-mode-bar">${modes.map(m =>
+    `<button class="vmode-btn${S.museumsMode === m.key ? ' active' : ''}"
+      onclick="setMuseumsMode('${m.key}')">${m.label}</button>`).join('')}</div>`;
+}
+
 function renderMuseumsView() {
+  const bar = renderMuseumsModeBar();
+  if (S.museumsMode === 'city')      return bar + renderMuseumsCity();
+  if (S.museumsMode === 'country')   return bar + renderMuseumsCountry();
+  if (S.museumsMode === 'continent') return bar + renderMuseumsContinent();
+  return bar + renderMuseumsAlpha();
+}
+
+function renderMuseumBlock(name, paintings) {
+  const isOpen = S.expandedMuseums.has(name);
+  const mc  = checkedCount(paintings.map(p => p.id));
+  const mt  = paintings.length;
+  const pct = mt ? Math.round(mc / mt * 100) : 0;
+  const body = isOpen ? `<div class="museum-body">
+    <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
+    ${paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
+    <div class="add-painting-row">
+      <button class="add-painting-btn" onclick="openAddPainting('${esc(name)}')">${ICONS.plus} Add painting</button>
+    </div>
+  </div>` : '';
+  return `<div class="museum-section" style="margin:0 0 6px">
+    <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${esc(name)}')" style="padding:8px 12px">
+      <div class="museum-info"><div class="museum-name" style="font-size:.85rem">${esc(name)}</div></div>
+      <div class="museum-counter"><div class="mc-nums">${mc}/${mt}</div><div class="mc-label">seen</div></div>
+      <div class="museum-chevron">${ICONS.chevron}</div>
+    </div>
+    ${body}
+  </div>`;
+}
+
+function renderMuseumsAlpha() {
   const museums = {};
   allPaintings().forEach(p => {
     const key = p.location.museum;
     if (!museums[key]) museums[key] = { ...p.location, paintings: [] };
     museums[key].paintings.push(p);
   });
-
-  const sorted = Object.entries(museums).sort(([, a], [, b]) => {
-    const pa = checkedCount(a.paintings.map(x => x.id)) / a.paintings.length;
-    const pb = checkedCount(b.paintings.map(x => x.id)) / b.paintings.length;
-    return pb !== pa ? pb - pa : a.name < b.name ? -1 : 1;
-  });
-
   const flagFor = { France:'🗼', Italy:'🏛️', USA:'🗽', Netherlands:'🌷', Spain:'🌹',
     'United Kingdom':'💂', Russia:'🪆', Norway:'🏔️', Austria:'🎼', Germany:'🏰',
     'Vatican City':'✝️', Mexico:'🌮' };
-
-  return sorted.map(([name, m]) => {
+  return Object.entries(museums).sort(([a], [b]) => a.localeCompare(b)).map(([name, m]) => {
     const checked = checkedCount(m.paintings.map(x => x.id));
     const total   = m.paintings.length;
     const pct     = total ? Math.round(checked / total * 100) : 0;
     const isOpen  = S.expandedMuseums.has(name);
     const icon    = flagFor[m.country] || '🖼️';
-
     const body = isOpen ? `<div class="museum-body">
       <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
       ${m.paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
       <div class="add-painting-row">
-        <button class="add-painting-btn" onclick="openAddPainting('${esc(name)}')">
-          ${ICONS.plus} Add painting to ${esc(name)}
-        </button>
+        <button class="add-painting-btn" onclick="openAddPainting('${esc(name)}')">${ICONS.plus} Add painting to ${esc(name)}</button>
       </div>
     </div>` : '';
-
     return `<div class="museum-section">
       <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${esc(name)}')">
         <div class="museum-icon">${icon}</div>
@@ -223,10 +284,7 @@ function renderMuseumsView() {
           <div class="museum-name">${esc(name)}</div>
           <div class="museum-location">${esc(m.city)}, ${esc(m.country)}</div>
         </div>
-        <div class="museum-counter">
-          <div class="mc-nums">${checked}/${total}</div>
-          <div class="mc-label">seen</div>
-        </div>
+        <div class="museum-counter"><div class="mc-nums">${checked}/${total}</div><div class="mc-label">seen</div></div>
         <div class="museum-chevron">${ICONS.chevron}</div>
       </div>
       ${body}
@@ -234,8 +292,66 @@ function renderMuseumsView() {
   }).join('');
 }
 
-/* ── Locations View ─────────────────────────────────────────────────────── */
-function renderLocationsView() {
+function renderMuseumsCity() {
+  const cities = {};
+  allPaintings().forEach(p => {
+    const { city, museum } = p.location;
+    if (!cities[city]) cities[city] = {};
+    if (!cities[city][museum]) cities[city][museum] = [];
+    cities[city][museum].push(p);
+  });
+  return Object.keys(cities).sort().map(city => {
+    const allPs   = Object.values(cities[city]).flat();
+    const checked = checkedCount(allPs.map(p => p.id));
+    const total   = allPs.length;
+    return `<div class="loc-section">
+      <div class="loc-header">
+        <span class="loc-name">${esc(city)}</span>
+        <span class="loc-stat">${checked}/${total} seen</span>
+      </div>
+      ${Object.keys(cities[city]).sort().map(m => renderMuseumBlock(m, cities[city][m])).join('')}
+    </div>`;
+  }).join('');
+}
+
+function renderMuseumsCountry() {
+  const countries = {};
+  allPaintings().forEach(p => {
+    const { country, city, museum } = p.location;
+    if (!countries[country]) countries[country] = {};
+    if (!countries[country][city]) countries[country][city] = {};
+    if (!countries[country][city][museum]) countries[country][city][museum] = [];
+    countries[country][city][museum].push(p);
+  });
+  return Object.keys(countries).sort().map(country => {
+    const allPs   = Object.values(countries[country]).flatMap(c => Object.values(c).flat());
+    const checked = checkedCount(allPs.map(p => p.id));
+    const total   = allPs.length;
+    const isOpen  = S.expandedContinents.has(country);
+    const citiesHtml = Object.keys(countries[country]).sort().map(city => {
+      const cityPs = Object.values(countries[country][city]).flat();
+      const cc = checkedCount(cityPs.map(p => p.id));
+      const ct = cityPs.length;
+      return `<div class="loc-city-section">
+        <div class="loc-city-header">
+          <span class="loc-city-name">${esc(city)}</span>
+          <span class="loc-stat">${cc}/${ct}</span>
+        </div>
+        ${Object.keys(countries[country][city]).sort().map(m => renderMuseumBlock(m, countries[country][city][m])).join('')}
+      </div>`;
+    }).join('');
+    return `<div class="loc-group">
+      <div class="loc-group-header${isOpen ? ' open' : ''}" onclick="toggleContinent('${esc(country)}')">
+        <span class="loc-group-name">${esc(country)}</span>
+        <span class="loc-group-stat">${checked}/${total} seen</span>
+        <span class="loc-chevron">${ICONS.chevron}</span>
+      </div>
+      ${isOpen ? `<div class="loc-group-body">${citiesHtml}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+function renderMuseumsContinent() {
   const tree = {};
   allPaintings().forEach(p => {
     const { continent, country, city, museum } = p.location;
@@ -245,49 +361,23 @@ function renderLocationsView() {
     if (!tree[continent][country][city][museum]) tree[continent][country][city][museum] = [];
     tree[continent][country][city][museum].push(p);
   });
-
   const flags = { Europe:'🌍', 'North America':'🌎', 'South America':'🌎', Asia:'🌏', Africa:'🌍', Oceania:'🌏' };
   const all = allPaintings();
-
   return Object.keys(tree).sort().map(continent => {
     const cOpen = S.expandedContinents.has(continent);
     const cPs   = all.filter(p => p.location.continent === continent);
     const cC    = checkedCount(cPs.map(p => p.id));
-
     const countriesHtml = Object.keys(tree[continent]).sort().map(country => {
-      const ck  = `${continent}||${country}`;
+      const ck     = `${continent}||${country}`;
       const koOpen = S.expandedCountries.has(ck);
-      const kPs = cPs.filter(p => p.location.country === country);
-      const kC  = checkedCount(kPs.map(p => p.id));
-
-      const citiesHtml = Object.keys(tree[continent][country]).sort().map(city => {
-        return `<div class="city-section">
+      const kPs    = cPs.filter(p => p.location.country === country);
+      const kC     = checkedCount(kPs.map(p => p.id));
+      const citiesHtml = Object.keys(tree[continent][country]).sort().map(city =>
+        `<div class="city-section">
           <div class="city-label">${esc(city)}</div>
-          ${Object.keys(tree[continent][country][city]).sort().map(museum => {
-            const mps    = tree[continent][country][city][museum];
-            const isOpen = S.expandedMuseums.has(museum);
-            const mc     = checkedCount(mps.map(p => p.id));
-            const mt     = mps.length;
-            const pct    = mt ? Math.round(mc/mt*100) : 0;
-            const body   = isOpen ? `<div class="museum-body">
-              <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
-              ${mps.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
-              <div class="add-painting-row">
-                <button class="add-painting-btn" onclick="openAddPainting('${esc(museum)}')">${ICONS.plus} Add painting</button>
-              </div>
-            </div>` : '';
-            return `<div class="museum-section" style="margin:0 0 6px">
-              <div class="museum-header${isOpen?' open':''}" onclick="toggleMuseum('${esc(museum)}')" style="padding:8px 12px">
-                <div class="museum-info"><div class="museum-name" style="font-size:.85rem">${esc(museum)}</div></div>
-                <div class="museum-counter"><div class="mc-nums">${mc}/${mt}</div><div class="mc-label">seen</div></div>
-                <div class="museum-chevron">${ICONS.chevron}</div>
-              </div>
-              ${body}
-            </div>`;
-          }).join('')}
-        </div>`;
-      }).join('');
-
+          ${Object.keys(tree[continent][country][city]).sort().map(museum =>
+            renderMuseumBlock(museum, tree[continent][country][city][museum])).join('')}
+        </div>`).join('');
       return `<div class="country-section">
         <div class="country-header${koOpen?' open':''}" onclick="toggleCountry('${esc(continent)}','${esc(country)}')">
           <div class="country-name">${esc(country)}</div>
@@ -297,7 +387,6 @@ function renderLocationsView() {
         ${koOpen ? `<div class="continent-body" style="margin:0 0 0 12px">${citiesHtml}</div>` : ''}
       </div>`;
     }).join('');
-
     return `<div class="location-continent">
       <div class="continent-header${cOpen?' open':''}" onclick="toggleContinent('${esc(continent)}')">
         <span class="continent-flag">${flags[continent]||'🌐'}</span>
@@ -360,6 +449,55 @@ function renderStatsView() {
   `;
 }
 
+/* ── Collection View ────────────────────────────────────────────────────── */
+function renderCollectionView() {
+  const seen = allPaintings().filter(p => S.checked[String(p.id)]);
+  if (seen.length === 0) {
+    return `<div class="empty-state">
+      <div class="empty-icon">🖼️</div>
+      <p>No paintings seen yet.</p>
+      <p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">Mark paintings as seen in the Top 100 tab.</p>
+    </div>`;
+  }
+  seen.sort((a, b) => (a.rank || 9999) - (b.rank || 9999));
+  const mode = S.collectionMode;
+
+  const toggleBtns = `
+    <button class="toolbar-btn${mode === 'grid'    ? ' active' : ''}" onclick="setCollectionMode('grid')"    title="Grid">${ICONS.grid}</button>
+    <button class="toolbar-btn${mode === 'compact' ? ' active' : ''}" onclick="setCollectionMode('compact')" title="List">${ICONS.rows}</button>
+    <button class="toolbar-btn${mode === 'gallery' ? ' active' : ''}" onclick="setCollectionMode('gallery')" title="Gallery">${ICONS.frame}</button>`;
+
+  const header = `<div class="collection-header">
+    <span class="collection-count">${seen.length} of ${allPaintings().length} paintings seen</span>
+    <div style="display:flex;gap:6px">${toggleBtns}</div>
+  </div>`;
+
+  if (mode === 'gallery') {
+    return header + `<div class="gallery-view">${seen.map(p => {
+      const key = String(p.id);
+      if (!p.imageUrl) return '';
+      return `<div class="gallery-frame-wrap" onclick="openDetail('${key}')">
+        <div class="gallery-frame">
+          <div class="gallery-mat">
+            <img class="gallery-img" src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
+                 onerror="this.closest('.gallery-frame-wrap').style.display='none'">
+          </div>
+        </div>
+      </div>`;
+    }).join('')}</div>`;
+  }
+
+  return header + (mode === 'compact'
+    ? `<div class="paintings-compact">${seen.map(p => renderPaintingRow(p)).join('')}</div>`
+    : `<div class="paintings-grid">${seen.map(p => renderPaintingCard(p)).join('')}</div>`);
+}
+
+function setCollectionMode(mode) {
+  S.collectionMode = mode;
+  save();
+  render();
+}
+
 /* ── Main Render ────────────────────────────────────────────────────────── */
 function render() {
   try {
@@ -375,10 +513,10 @@ function render() {
     document.querySelectorAll('.nav-btn').forEach(b => {
       b.classList.toggle('active', b.dataset.view === S.view);
     });
-    if (S.view === 'list')           main.innerHTML = renderListView();
-    else if (S.view === 'museums')   main.innerHTML = renderMuseumsView();
-    else if (S.view === 'locations') main.innerHTML = renderLocationsView();
-    else if (S.view === 'stats')     main.innerHTML = renderStatsView();
+    if (S.view === 'list')            main.innerHTML = renderListView();
+    else if (S.view === 'museums')    main.innerHTML = renderMuseumsView();
+    else if (S.view === 'collection') main.innerHTML = renderCollectionView();
+    else if (S.view === 'stats')      main.innerHTML = renderStatsView();
   } catch (err) {
     console.error('Paint Chips render error:', err);
     const main = document.getElementById('main');
@@ -568,8 +706,14 @@ function toggleListMode() {
   render();
 }
 
+function setMuseumsMode(mode) {
+  S.museumsMode = mode;
+  save();
+  render();
+}
+
 function cycleSortMenu() {
-  const opts = ['rank', 'artist', 'year', 'title'];
+  const opts = ['rank', 'artist', 'year', 'title', 'museum'];
   S.sort = opts[(opts.indexOf(S.sort) + 1) % opts.length];
   save();
   render();
@@ -694,10 +838,10 @@ function init() {
 
     const nav = document.getElementById('bottom-nav');
     const navItems = [
-      { view: 'list',      icon: ICONS.list,   label: 'Top 100' },
-      { view: 'museums',   icon: ICONS.museum, label: 'Museums' },
-      { view: 'locations', icon: ICONS.globe,  label: 'Map' },
-      { view: 'stats',     icon: ICONS.stats,  label: 'Stats' },
+      { view: 'list',       icon: ICONS.list,     label: 'Top 100' },
+      { view: 'museums',    icon: ICONS.museum,   label: 'Museums' },
+      { view: 'collection', icon: ICONS.bookmark, label: 'Collection' },
+      { view: 'stats',      icon: ICONS.stats,    label: 'Stats' },
     ];
     nav.innerHTML = navItems.map(n =>
       `<button class="nav-btn${S.view === n.view ? ' active' : ''}" data-view="${n.view}"
