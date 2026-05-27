@@ -567,6 +567,10 @@ function openDetail(id) {
     <div class="detail-sheet" id="detail-sheet">
       <div class="detail-nav">
         <button class="detail-back-btn" onclick="closeDetail()">${ICONS.back} Back</button>
+        <button class="detail-collection-btn${isChecked ? ' visible' : ''}" id="detail-collection-btn"
+                onclick="showInCollection()">
+          ${ICONS.bookmark}<span>Collection</span>
+        </button>
         <button class="detail-seen-btn${isChecked ? ' checked' : ''}" id="detail-seen-btn"
                 onclick="detailToggleCheck('${key}')">
           ${isChecked ? ICONS.check + '<span>Seen</span>' : '<span>Mark Seen</span>'}
@@ -632,14 +636,21 @@ function detailToggleCheck(id) {
   save();
   render();
 
+  const isChecked = !!S.checked[key];
   const btn = document.getElementById('detail-seen-btn');
   if (btn) {
-    const isChecked = !!S.checked[key];
     btn.className = 'detail-seen-btn' + (isChecked ? ' checked' : '');
     btn.innerHTML = isChecked
       ? ICONS.check + '<span>Seen</span>'
       : '<span>Mark Seen</span>';
   }
+  const colBtn = document.getElementById('detail-collection-btn');
+  if (colBtn) colBtn.className = 'detail-collection-btn' + (isChecked ? ' visible' : '');
+}
+
+function showInCollection() {
+  closeDetail();
+  setView('collection');
 }
 
 /* ── Inline check toggle (from list row, doesn't open modal) ─────────────── */

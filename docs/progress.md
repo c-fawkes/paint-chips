@@ -166,6 +166,11 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 **Commits:** *(this commit)*
 
+### Detail sheet improvements
+- Added "Collection" button to the detail nav (between Back and Seen); hidden when unseen, auto-appears with a fade-in when "Mark Seen" is toggled on
+- Clicking "Collection" closes the detail sheet and navigates directly to the Collection tab
+- iOS input zoom fix: bumped `#search-input` and `.modal input/textarea/select` font-size from `.9rem`/`.88rem` to `1rem` (16px) so Safari doesn't auto-zoom on focus
+
 ### Add Painting UX overhaul
 - "Add painting" button in museum accordions now matches painting row dimensions (52×64 thumbnail placeholder + same padding/height as `.painting-row`) instead of a narrow dashed-border box
 - Add Painting modal now has a live search field at the top: type a title or artist, get a dropdown of matches from all 200+ paintings; results badge "this museum" when the painting is already catalogued there
