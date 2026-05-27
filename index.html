@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f0e0d">
+  <meta name="description" content="Track the 100 most famous paintings on Earth with photos, museum info, and progress counters.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Paint Chips">
+  <link rel="manifest" href="manifest.json">
+  <title>Paint Chips — Famous Paintings</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Inline SVG icons for PWA icons -->
+  <style>
+    /* Minimal inline for before stylesheet loads */
+    body { background: #0f0e0d; margin: 0; }
+    #splash {
+      position: fixed; inset: 0;
+      background: #0f0e0d;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 12px; z-index: 999;
+      transition: opacity .3s;
+    }
+    #splash h1 { color: #c9a84c; font-family: Georgia, serif; font-size: 1.5rem; font-weight: normal; }
+    #splash p { color: #5a5248; font-family: sans-serif; font-size: .85rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Splash screen -->
+  <div id="splash">
+    <div style="font-size:3rem">🎨</div>
+    <h1>Paint Chips</h1>
+    <p>Loading the world's greatest paintings…</p>
+  </div>
+
+  <!-- Fixed Header -->
+  <header id="app-header">
+    <h1>🎨 Paint Chips</h1>
+    <div id="global-counter">
+      <span id="counter-checked" class="count">0</span>
+      <span class="total">/ 100</span>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div id="global-progress">
+    <div id="global-progress-bar" style="width:0%"></div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main" role="main" aria-label="Paintings list"></main>
+
+  <!-- Bottom Navigation -->
+  <nav id="bottom-nav" role="navigation" aria-label="Main navigation"></nav>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Hide splash once app renders
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const s = document.getElementById('splash');
+        if (s) { s.style.opacity = '0'; setTimeout(() => s.remove(), 300); }
+      }, 400);
+    });
+  </script>
+</body>
+</html>
