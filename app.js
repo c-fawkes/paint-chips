@@ -15,6 +15,10 @@ const S = {
   expandedCountries: new Set(),
 };
 
+/* ── Add-painting modal state ────────────────────────────────────────────── */
+let _apMuseum = '';
+let _apAutofillMuseum = null;
+
 /* ── Persistence ────────────────────────────────────────────────────────── */
 function save() {
   try {
@@ -240,7 +244,10 @@ function renderMuseumBlock(name, paintings) {
     <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
     ${paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
     <div class="add-painting-row">
-      <button class="add-painting-btn" onclick="openAddPainting('${esc(name)}')">${ICONS.plus} Add painting</button>
+      <button class="add-painting-btn" onclick="openAddPainting('${esc(name)}')">
+        <div class="add-painting-thumb">${ICONS.plus}</div>
+        <span>Add painting</span>
+      </button>
     </div>
   </div>` : '';
   return `<div class="museum-section" style="margin:0 0 6px">
@@ -273,7 +280,10 @@ function renderMuseumsAlpha() {
       <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
       ${m.paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
       <div class="add-painting-row">
-        <button class="add-painting-btn" onclick="openAddPainting('${esc(name)}')">${ICONS.plus} Add painting to ${esc(name)}</button>
+        <button class="add-painting-btn" onclick="openAddPainting('${esc(name)}')">
+          <div class="add-painting-thumb">${ICONS.plus}</div>
+          <span>Add painting</span>
+        </button>
       </div>
     </div>` : '';
     return `<div class="museum-section">
@@ -809,9 +819,21 @@ function toggleCountry(continent, country) {
 
 /* ── Add Painting Modal ──────────────────────────────────────────────────── */
 function openAddPainting(museumName) {
+  _apMuseum = museumName || '';
+  _apAutofillMuseum = null;
   const museum = MUSEUMS[museumName] || {};
+  const continents = ['Europe','North America','South America','Asia','Africa','Oceania'];
+  const contOpts = continents.map(c =>
+    `<option value="${c}"${museum.continent===c?' selected':''}>${c}</option>`
+  ).join('');
   showModal(`
     <h2>Add Painting</h2>
+    <div class="ap-search-wrap">
+      <label>Search to autofill</label>
+      <input id="ap-search" type="text" placeholder="Search by title or artist…"
+             oninput="apSearch(this.value)" autocomplete="off">
+      <div id="ap-results" class="ap-results"></div>
+    </div>
     <label>Title *</label>
     <input id="ap-title" type="text" placeholder="Painting title" required>
     <label>Artist *</label>
@@ -827,14 +849,7 @@ function openAddPainting(museumName) {
     <label>Country</label>
     <input id="ap-country" type="text" value="${esc(museum.country || '')}" placeholder="Country">
     <label>Continent</label>
-    <select id="ap-continent">
-      <option value="Europe"${museum.continent==='Europe'?' selected':''}>Europe</option>
-      <option value="North America"${museum.continent==='North America'?' selected':''}>North America</option>
-      <option value="South America">South America</option>
-      <option value="Asia">Asia</option>
-      <option value="Africa">Africa</option>
-      <option value="Oceania">Oceania</option>
-    </select>
+    <select id="ap-continent">${contOpts}</select>
     <label>Image URL (optional)</label>
     <input id="ap-img" type="url" placeholder="https://…">
     <div class="modal-actions">
@@ -844,10 +859,63 @@ function openAddPainting(museumName) {
   `);
 }
 
+function apSearch(val) {
+  const el = document.getElementById('ap-results');
+  if (!el) return;
+  const q = val.trim().toLowerCase();
+  if (!q) { el.innerHTML = ''; return; }
+
+  const all = [...PAINTINGS, ...S.userPaintings];
+  const matches = all.filter(p =>
+    p.title.toLowerCase().includes(q) ||
+    p.artist.toLowerCase().includes(q) ||
+    (p.year && String(p.year).includes(q))
+  ).slice(0, 8);
+
+  if (!matches.length) {
+    el.innerHTML = '<div class="ap-no-results">No matches found</div>';
+    return;
+  }
+  el.innerHTML = matches.map(p => {
+    const atThisMuseum = _apMuseum && p.location.museum === _apMuseum;
+    const badge = atThisMuseum ? '<span class="ap-museum-badge">this museum</span>' : '';
+    return `<div class="ap-result" onclick="apAutofill(${JSON.stringify(p.id)})">
+      <div class="ap-result-title">${esc(p.title)}${badge}</div>
+      <div class="ap-result-sub">${esc(p.artist)} · ${esc(p.year || '')} · ${esc(p.location.museum)}</div>
+    </div>`;
+  }).join('');
+}
+
+function apAutofill(id) {
+  const all = [...PAINTINGS, ...S.userPaintings];
+  const p = all.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('ap-search').value = p.title;
+  document.getElementById('ap-results').innerHTML = '';
+  document.getElementById('ap-title').value  = p.title;
+  document.getElementById('ap-artist').value = p.artist;
+  document.getElementById('ap-year').value   = p.year || '';
+  document.getElementById('ap-desc').value   = p.description || '';
+  document.getElementById('ap-img').value    = p.imageUrl || '';
+  document.getElementById('ap-museum').value  = p.location.museum;
+  document.getElementById('ap-city').value    = p.location.city;
+  document.getElementById('ap-country').value = p.location.country;
+  document.getElementById('ap-continent').value = p.location.continent;
+  _apAutofillMuseum = p.location.museum;
+}
+
 function submitAddPainting() {
   const title  = document.getElementById('ap-title').value.trim();
   const artist = document.getElementById('ap-artist').value.trim();
   if (!title || !artist) { alert('Title and Artist are required.'); return; }
+  const museum = document.getElementById('ap-museum').value.trim() || 'Unknown';
+
+  if (_apAutofillMuseum && _apAutofillMuseum !== museum) {
+    if (!confirm(`The autofilled painting is from "${_apAutofillMuseum}", but the museum field now says "${museum}". Save anyway?`)) return;
+  } else if (_apMuseum && museum !== _apMuseum) {
+    if (!confirm(`This painting will be added to "${museum}", not "${_apMuseum}" where you opened this form. Continue?`)) return;
+  }
+
   const newId = 'u_' + Date.now();
   const p = {
     id: newId, rank: 9999, title, artist,
@@ -855,7 +923,7 @@ function submitAddPainting() {
     description: document.getElementById('ap-desc').value.trim(),
     imageUrl: document.getElementById('ap-img').value.trim() || null,
     location: {
-      museum:    document.getElementById('ap-museum').value.trim()   || 'Unknown',
+      museum,
       city:      document.getElementById('ap-city').value.trim()     || 'Unknown',
       country:   document.getElementById('ap-country').value.trim()  || 'Unknown',
       continent: document.getElementById('ap-continent').value,

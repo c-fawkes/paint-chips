@@ -166,6 +166,12 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 **Commits:** *(this commit)*
 
+### Add Painting UX overhaul
+- "Add painting" button in museum accordions now matches painting row dimensions (52×64 thumbnail placeholder + same padding/height as `.painting-row`) instead of a narrow dashed-border box
+- Add Painting modal now has a live search field at the top: type a title or artist, get a dropdown of matches from all 200+ paintings; results badge "this museum" when the painting is already catalogued there
+- Selecting a search result autofills all form fields (title, artist, year, description, image URL, museum, city, country, continent)
+- On save, warns if the autofilled painting's real museum differs from the form's museum field, or if the museum field doesn't match the accordion the form was opened from
+
 ### Museum painting images
 - Added Wikimedia Commons image URLs for 23 museum-only paintings (IDs 121, 137–138, 149–150, 152–157, 161, 166, 168–169, 172, 174, 180, 187–189, 200, 203)
 - Applied via `apply-images.py` patching script reading from `/tmp/paint-image-urls.json`
