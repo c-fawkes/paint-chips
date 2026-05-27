@@ -166,6 +166,14 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 **Commits:** *(this commit)*
 
+### Art Movements feature
+- Categorized all 214 paintings into 18 art movements (Italian Renaissance through Mannerism) via `patch_data.py`
+- Added `const MOVEMENTS` to `data.js` with 18 entries, each containing era, detailed essay-style summary, 5 key traits, and key artists
+- Detail sheet now shows "Movement" row in the specs grid as a gold tappable pill — opens the movement popup
+- Movement popup is a bottom-sheet with the full movement essay, bullet traits, artist chips, and a 3-column grid of all paintings in that movement in the collection; tapping a painting jumps to its detail
+- `?` info icon added to the fixed header; tapping opens a small dropdown with "Art Movements" → navigates to the movements page
+- Movements page lists all 18 movements with era, truncated summary, and 3 thumbnail previews; tapping any row opens the movement popup
+
 ### Detail sheet improvements
 - Added "Collection" button to the detail nav (between Back and Seen); hidden when unseen, auto-appears with a fade-in when "Mark Seen" is toggled on
 - Clicking "Collection" closes the detail sheet and navigates directly to the Collection tab

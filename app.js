@@ -95,6 +95,8 @@ const ICONS = {
   frame:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="1"/><rect x="5" y="5" width="14" height="14" rx="1"/></svg>`,
   back:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>`,
   pin:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  palette: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="9" r="1.5" fill="currentColor"/><circle cx="15.5" cy="9" r="1.5" fill="currentColor"/><circle cx="12" cy="15" r="1.5" fill="currentColor"/><circle cx="8.5" cy="15" r="1.5" fill="currentColor"/><circle cx="15.5" cy="15" r="1.5" fill="currentColor"/></svg>`,
+  info:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
 };
 
 /* ── Escape helper ──────────────────────────────────────────────────────── */
@@ -526,6 +528,7 @@ function render() {
     else if (S.view === 'museums')    main.innerHTML = renderMuseumsView();
     else if (S.view === 'collection') main.innerHTML = renderCollectionView();
     else if (S.view === 'stats')      main.innerHTML = renderStatsView();
+    else if (S.view === 'movements')  main.innerHTML = renderMovementsView();
   } catch (err) {
     console.error('Paint Chips render error:', err);
     const main = document.getElementById('main');
@@ -596,9 +599,10 @@ function openDetail(id) {
           </div>
         </div>
 
-        ${(p.medium || p.dimensions) ? `<div class="detail-specs">
+        ${(p.medium || p.dimensions || p.movement) ? `<div class="detail-specs">
           ${p.medium     ? `<div class="detail-spec-item"><span>Medium</span><span>${esc(p.medium)}</span></div>` : ''}
           ${p.dimensions ? `<div class="detail-spec-item"><span>Size</span><span>${esc(p.dimensions)}</span></div>` : ''}
+          ${p.movement   ? `<div class="detail-spec-item"><span>Movement</span><button class="movement-tag" onclick="openMovementPopup(${JSON.stringify(p.movement)})">${esc(p.movement)} ${ICONS.info}</button></div>` : ''}
         </div>` : ''}
 
         ${p.description ? `<p class="detail-description">${esc(p.description)}</p>` : ''}
@@ -966,6 +970,111 @@ function closeModal() {
   if (m) m.remove();
 }
 
+/* ── Movements page ──────────────────────────────────────────────────────── */
+function renderMovementsView() {
+  if (typeof MOVEMENTS === 'undefined') {
+    return `<div class="empty-state"><div class="empty-icon">🎨</div><p>Movements data not loaded.</p></div>`;
+  }
+  const paintings = allPaintings();
+  const rows = Object.entries(MOVEMENTS).map(([key, m]) => {
+    const mps = paintings.filter(p => p.movement === key);
+    const examples = mps.slice(0, 3).map(p =>
+      p.imageUrl
+        ? `<img class="mv-thumb" src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
+               onerror="this.style.display='none'" onclick="event.stopPropagation();openDetail('${String(p.id)}')">`
+        : ''
+    ).join('');
+    return `<div class="mv-row" onclick="openMovementPopup(${JSON.stringify(key)})">
+      <div class="mv-row-header">
+        <div class="mv-row-name">${esc(key)}</div>
+        <div class="mv-row-era">${esc(m.era)}</div>
+        <div class="mv-row-count">${mps.length} painting${mps.length !== 1 ? 's' : ''}</div>
+      </div>
+      <div class="mv-row-summary">${esc(m.summary.substring(0, 140))}…</div>
+      ${examples ? `<div class="mv-thumbs">${examples}</div>` : ''}
+    </div>`;
+  }).join('');
+  return `<div class="movements-page">
+    <div class="movements-header">
+      <button class="back-to-nav" onclick="setView('list')">${ICONS.back} Back</button>
+      <h2>Art Movements</h2>
+    </div>
+    <div class="movements-list">${rows}</div>
+  </div>`;
+}
+
+function openMovementPopup(movementKey) {
+  if (typeof MOVEMENTS === 'undefined' || !MOVEMENTS[movementKey]) return;
+  const m = MOVEMENTS[movementKey];
+  const paintings = allPaintings().filter(p => p.movement === movementKey);
+
+  const thumbs = paintings.map(p => {
+    const img = p.imageUrl
+      ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
+             onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
+      : `<div class="row-thumb-placeholder">🎨</div>`;
+    return `<div class="mv-popup-painting" onclick="closeMovementPopup();openDetail('${String(p.id)}')">
+      <div class="mv-popup-thumb">${img}</div>
+      <div class="mv-popup-title">${esc(p.title)}</div>
+      <div class="mv-popup-artist">${esc(p.artist)}</div>
+    </div>`;
+  }).join('');
+
+  const traits = m.traits.map(t => `<li>${esc(t)}</li>`).join('');
+  const artists = m.artists.map(a => `<span class="mv-artist-chip">${esc(a)}</span>`).join('');
+
+  const overlay = document.createElement('div');
+  overlay.className = 'detail-overlay';
+  overlay.id        = 'movement-overlay';
+  overlay.innerHTML = `
+    <div class="detail-sheet movement-sheet" id="movement-sheet">
+      <div class="detail-nav">
+        <button class="detail-back-btn" onclick="closeMovementPopup()">${ICONS.back} Back</button>
+      </div>
+      <div class="mv-popup-body">
+        <div class="mv-popup-era">${esc(m.era)}</div>
+        <h2 class="mv-popup-name">${esc(movementKey)}</h2>
+        <p class="mv-popup-summary">${esc(m.summary)}</p>
+        <div class="mv-section-label">Key characteristics</div>
+        <ul class="mv-traits">${traits}</ul>
+        <div class="mv-section-label">Key artists</div>
+        <div class="mv-artists">${artists}</div>
+        ${paintings.length ? `<div class="mv-section-label">In this collection (${paintings.length})</div>
+        <div class="mv-popup-paintings">${thumbs}</div>` : ''}
+      </div>
+    </div>
+  `;
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeMovementPopup(); });
+  document.body.appendChild(overlay);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMovementPopup() {
+  const el = document.getElementById('movement-overlay');
+  if (el) el.remove();
+  document.body.style.overflow = '';
+}
+
+/* ── Info (?) header dropdown ────────────────────────────────────────────── */
+function openInfoDropdown(e, btn) {
+  e.stopPropagation();
+  const wasOpen = !!document.getElementById('toolbar-drop');
+  closeDrop();
+  if (wasOpen) return;
+  const rect = btn.getBoundingClientRect();
+  const drop = document.createElement('div');
+  drop.className = 'toolbar-drop';
+  drop.id = 'toolbar-drop';
+  drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
+  drop.innerHTML = `
+    <button class="drop-item" onclick="closeDrop();setView('movements')">
+      ${ICONS.palette}<span>Art Movements</span>
+    </button>
+  `;
+  document.body.appendChild(drop);
+  document.addEventListener('click', closeDrop, { once: true });
+}
+
 /* ── Init ────────────────────────────────────────────────────────────────── */
 function init() {
   try {
@@ -974,6 +1083,9 @@ function init() {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
+
+    const infoBtn = document.getElementById('info-btn');
+    if (infoBtn) infoBtn.innerHTML = ICONS.info;
 
     const nav = document.getElementById('bottom-nav');
     const navItems = [
