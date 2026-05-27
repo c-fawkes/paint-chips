@@ -162,9 +162,20 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 ---
 
-## Session 4 — 2026-05-27
+## Session 5 — 2026-05-27
 
 **Commits:** *(this commit)*
+
+### Museum painting images
+- Added Wikimedia Commons image URLs for 23 museum-only paintings (IDs 121, 137–138, 149–150, 152–157, 161, 166, 168–169, 172, 174, 180, 187–189, 200, 203)
+- Applied via `apply-images.py` patching script reading from `/tmp/paint-image-urls.json`
+- Remaining null imageUrls are copyrighted modern works (Pollock, Magritte, Matisse, Rothko, etc.) that cannot use Wikimedia images
+
+---
+
+## Session 4 — 2026-05-27
+
+**Commits:** *(prior commit)*
 
 ### Museum collection paintings
 - Added 114 museum-only paintings (IDs 101–214) to bring 12 major museums to 10 paintings each, and top up smaller museums with 2–5 notable works each

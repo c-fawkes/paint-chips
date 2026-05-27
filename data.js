@@ -1410,7 +1410,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "76 × 122 cm",
     description: "Two fishermen haul a net on a heaving gray sea, their small dory dwarfed by waves. Homer painted this after two years in a Northumberland fishing village, which transformed his work from illustrator of American genre scenes to painter of elemental struggles between humans and nature. The faceless, anonymous men convey universal labor.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Winslow_Homer_-_The_Herring_Net_-_Google_Art_Project.jpg/330px-Winslow_Homer_-_The_Herring_Net_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
 
@@ -1592,7 +1592,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "92 × 73 cm",
     description: "A Tahitian woman reaches for tropical fruit in a lush, flattened landscape of bold colors. Painted during Gauguin's first Tahitian stay, it embodies his rejection of European civilization in favor of what he imagined as a primal paradise. The Hermitage holds one of the world's finest Gauguin collections from Shchukin's systematic patronage.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Paul_Gauguin_-_D%27ou_venons-nous.jpg/330px-Paul_Gauguin_-_D%27ou_venons-nous.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
   {
@@ -1603,7 +1603,7 @@ const PAINTINGS = [
     medium: "Tempera on panel",
     dimensions: "61 × 40 cm",
     description: "A young Florentine woman in three-quarter profile looks out with serene self-possession. The elaborate hairstyle with pearls and the precise rendering of her dress are characteristic of Botticelli's portrait commissions for the Medici circle. Her identity has been debated — proposals include Simonetta Vespucci, the unattainable beauty whom Botticelli reportedly loved.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Sandro_Botticelli_-_Idealized_Portrait_of_a_Lady_%28Portrait_of_Simonetta_Vespucci_as_Nymph%29_-_Google_Art_Project.jpg/330px-Sandro_Botticelli_-_Idealized_Portrait_of_a_Lady_%28Portrait_of_Simonetta_Vespucci_as_Nymph%29_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
 
@@ -1728,7 +1728,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "128 × 180 cm",
     description: "The goddess Diana rests with her nymphs after the hunt, surrounded by game and dogs. Rubens, who had just returned from Italy, synthesizes Titian's voluptuous nudes with his own Flemish energy. The cool, silvery light on the flesh tones contrasts with the warm, ruddy dogs and game. The freshness of open-air setting is remarkable.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Peter_Paul_Rubens_-_Diana_and_Callisto_-_WGA20326.jpg/330px-Peter_Paul_Rubens_-_Diana_and_Callisto_-_WGA20326.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
   {
@@ -1739,7 +1739,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "74 × 59 cm",
     description: "An extravagant floral bouquet spilling insects, dewdrops, and decaying petals — flowers from all seasons assembled in a single impossible arrangement. De Heem was the supreme master of Dutch flower painting, spending years in Antwerp to access the finest and rarest specimens. The perfection and decay coexisting in one image make it a meditation on time.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Vase_of_Flowers_painting_by_Jan_Davidsz._de_Heem_Mauritshuis_1099.jpg/330px-Vase_of_Flowers_painting_by_Jan_Davidsz._de_Heem_Mauritshuis_1099.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
 
@@ -1763,7 +1763,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "48 × 75 cm",
     description: "Sailboats on the Seine at Argenteuil dissolve in shimmering reflections, their hulls and the sky above them almost indistinguishable in the broken water. Monet moved to Argenteuil in 1871 and spent seven years painting the river's changing light. This early work already shows the full Impressionist vocabulary: broken brushwork, pure color, no outlining.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Claude_Monet_042.jpg/330px-Claude_Monet_042.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Marmottan Monet Museum" }
   },
   {
@@ -1774,7 +1774,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "73 × 92 cm",
     description: "London's railway bridge dissolves in orange-violet fog, barely distinguishable from the sky and river. Monet made three extended visits to London and produced nearly 100 canvases of the Thames, working on dozens simultaneously to capture different light conditions. 'Without fog, London would not be beautiful,' he said.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Monet_-_Charing_Cross_Bridge_Fog_on_the_Thames%2C_1903.jpg/330px-Monet_-_Charing_Cross_Bridge_Fog_on_the_Thames%2C_1903.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Marmottan Monet Museum" }
   },
 
@@ -1787,7 +1787,7 @@ const PAINTINGS = [
     medium: "Oil on cardboard",
     dimensions: "105 × 75 cm",
     description: "Paul Guillaume, the art dealer who championed Modigliani, Soutine, and the École de Paris, is depicted with his characteristic elongated features — almond eyes without pupils, swanlike neck. The inscription 'Novo Pilota' (New Pilot) reflects his role as champion of a new artistic generation. The Orangerie's Paul Guillaume collection is among the finest in France.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Amedeo_Modigliani_%28Livorno_1884_-_Parigi_1920%29_-_Ritratto_di_Paul_Guillaume_%281916%29_Olio_su_tela_81%C3%9754_cm_-_Museo_del_Novecento%2C_Milano.jpg/330px-Amedeo_Modigliani_%28Livorno_1884_-_Parigi_1920%29_-_Ritratto_di_Paul_Guillaume_%281916%29_Olio_su_tela_81%C3%9754_cm_-_Museo_del_Novecento%2C_Milano.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
   },
   {
@@ -1798,7 +1798,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "46 × 55 cm",
     description: "A modest arrangement of apples and a plate of biscuits on a draped surface — yet from such ordinary subjects Cézanne constructed a revolution. The apples are not painted to deceive but to analyze: the viewer sees multiple angles simultaneously, the spatial logic is deliberately skewed, and no apple is the same as another. The Orangerie holds a significant Cézanne group from Paul Guillaume's bequest.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Nature_morte_aux_pommes_et_aux_oranges%2C_par_Paul_C%C3%A9zanne.jpg/330px-Nature_morte_aux_pommes_et_aux_oranges%2C_par_Paul_C%C3%A9zanne.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
   },
 
@@ -1811,7 +1811,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "50 × 61 cm",
     description: "A woman bathes in a Parisian studio whose walls are hung with a poster of Toulouse-Lautrec's 'May Milton.' Painted in the early weeks of Picasso's Blue Period, it synthesizes his affection for the Post-Impressionists with an emerging bleaker palette. The Phillips Collection acquired it in 1927 for $9,000 — one of its most prescient early purchases.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/75/Picasso%27s_Blue_Room_1901.jpg/330px-Picasso%27s_Blue_Room_1901.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
   },
   {
@@ -1822,7 +1822,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "113 × 93 cm",
     description: "Mary Magdalen sits alone with a candle, its flame casting the only light in the composition, her hand resting on a skull — meditating on mortality and redemption. La Tour's nocturnal candlelight scenes are among the most meditative in Western art. He was largely forgotten after his death and only rediscovered in the 20th century.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Georges_de_La_Tour_-_Magdalen_of_Night_Light_-_WGA12337.jpg/330px-Georges_de_La_Tour_-_Magdalen_of_Night_Light_-_WGA12337.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
   },
   {
@@ -1870,7 +1870,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "81 × 65 cm",
     description: "A young couple strolls in a dappled woodland, the woman in a brilliant white dress, the man in dark clothes. Painted the year before the Franco-Prussian War, it captures the ease and leisure of Second Empire Paris. The bold contrasts of sunlight filtering through foliage — flecks of light on the dress — point toward the full Impressionist style Renoir would achieve in the 1870s.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/La_Promenade%2C_by_Pierre-Auguste_Renoir.jpg/330px-La_Promenade%2C_by_Pierre-Auguste_Renoir.jpg",
     location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
   },
   {
@@ -1927,7 +1927,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "244 × 198 cm",
     description: "The eminent surgeon Samuel Gross pauses a thigh operation to address his students, his bloody scalpel in hand, while a distraught woman — the patient's relative — covers her face in the background. Rejected from the Philadelphia Centennial Exhibition as too bloody and controversial, it is now considered the greatest American painting of the 19th century.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Thomas_Eakins%2C_American_-_Portrait_of_Dr._Samuel_D._Gross_%28The_Gross_Clinic%29_-_Google_Art_Project.jpg/330px-Thomas_Eakins%2C_American_-_Portrait_of_Dr._Samuel_D._Gross_%28The_Gross_Clinic%29_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
   },
 
@@ -1951,7 +1951,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "73 × 92 cm",
     description: "One of Cézanne's final views of the mountain that dominated his Provençal landscape, painted from his studio on the Lauves hill. The mountain dissolves into crystalline planes of green, blue, and ochre that no longer describe but analyze. Cézanne painted this subject over 60 times. The Barnes holds multiple Cézannes, forming one of the finest collections anywhere.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Paul_C%C3%A9zanne_-_Montagne_Saint-victoire_-_Google_Art_Project.jpg/330px-Paul_C%C3%A9zanne_-_Montagne_Saint-victoire_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
   },
   {
@@ -1962,7 +1962,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "200 × 250 cm",
     description: "Three nude models pose in Seurat's studio — seen from front, side, and back — with his own large painting 'A Sunday on La Grande Jatte' visible on the wall behind them. The contrast between the clothed Parisians in the background work and the unclothed models in the studio is pointed. A smaller version is at the Barnes; the Merion version is the largest.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Georges_Seurat_-_Models_%28Poseuses%29_-_BF811_-_Barnes_Foundation.jpg/330px-Georges_Seurat_-_Models_%28Poseuses%29_-_BF811_-_Barnes_Foundation.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
   },
   {
@@ -1997,7 +1997,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "75 × 59 cm",
     description: "One of Corot's late figure paintings — a genre he returned to after decades of landscape — showing a young Italian woman in regional dress in a meditative pose. The soft, silvery atmosphere of his forest scenes carries over into portraiture: the figure seems to breathe. The Yale gallery holds a distinguished collection of European and American paintings.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Camille_Corot_-_Woman_with_a_Pearl.jpg/330px-Camille_Corot_-_Woman_with_a_Pearl.jpg",
     location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
   },
 
@@ -2021,7 +2021,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "47 × 80 cm",
     description: "A sweeping view down the Grand Canal from the Rialto toward the Salute, crowded with gondolas and river traffic. Canaletto's vedute (view paintings) of Venice were the essential tourist souvenir for English Grand Tour travelers, and his greatest patron was the British consul Joseph Smith. The Huntington holds an important collection of British art from this period.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Canaletto_-_B%C3%BChrle_foundation_csm_Canal_S_Maria_cf2fa1ba03.jpg/330px-Canaletto_-_B%C3%BChrle_foundation_csm_Canal_S_Maria_cf2fa1ba03.jpg",
     location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
   },
 
@@ -2091,7 +2091,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "116 × 73 cm",
     description: "A Cubist portrait of Josette, who lived with Juan Gris for 15 years, rendered in the geometric planes and muted palette of his Synthetic Cubist style. Where Picasso's Cubism is aggressive and fragmentary, Gris's is orderly and almost lyrical. He died at 40, and the Reina Sofía holds the largest collection of his work in the world.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Juan_Gris_-_Portrait_de_Madame_Josette_Gris_-_Google_Art_Project.jpg/330px-Juan_Gris_-_Portrait_de_Madame_Josette_Gris_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
   {
@@ -2172,7 +2172,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "175 × 189 cm",
     description: "One of Titian's celebrated 'poesie' (narrative paintings) for Philip II of Spain, showing Perseus descending from the sky to rescue the chained Andromeda from a sea monster. Titian painted the flesh with the loose, layered technique of his late period — surfaces that seem to breathe. Rubens copied it and declared Titian the supreme colorist in history.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Perseo_y_Andr%C3%B3meda%2C_por_Tiziano.jpg/330px-Perseo_y_Andr%C3%B3meda%2C_por_Tiziano.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
   },
   {
@@ -2183,7 +2183,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "83 × 104 cm",
     description: "Four allegorical figures — Poverty, Labor, Wealth, and Pleasure — dance in a ring while Father Time plays his lyre and two putti blow bubbles. The circular dance suggests the inevitability of fortune's wheel. Anthony Powell used it as the title and controlling metaphor for his 12-novel sequence. It is the Wallace Collection's most beloved painting.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/The_dance_to_the_music_of_time_c._1640.jpg/330px-The_dance_to_the_music_of_time_c._1640.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
   },
   {
@@ -2194,7 +2194,7 @@ const PAINTINGS = [
     medium: "Oil on panel",
     dimensions: "94 × 123 cm",
     description: "A panoramic view of Rubens's own estate at Het Steen in Flanders after a summer storm, a rainbow arching over the fertile lowland. Painted in the final years of his life for his own pleasure, it is one of the first landscapes in Western art made entirely for private enjoyment. The breadth of sky and earth shows a new relationship between humans and nature.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Peter_Paul_Rubens_-_Landscape_with_a_Rainbow_-_WGA20411.jpg/330px-Peter_Paul_Rubens_-_Landscape_with_a_Rainbow_-_WGA20411.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
   },
 
@@ -2321,7 +2321,7 @@ const PAINTINGS = [
     medium: "Oil on canvas",
     dimensions: "136 × 125 cm",
     description: "Three girls in white summer dresses lean over a wooden railing at Åsgårdstrand, gazing into dark water while a crescent moon hangs above the fjord. The composition — viewed from behind, no faces shown — creates a dreamlike distance. Munch painted this scene over 20 times across four decades. The National Museum holds the most exhibited version.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Munch_Girls_on_the_pier.jpg/330px-Munch_Girls_on_the_pier.jpg",
     location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
   },
 
@@ -2356,7 +2356,7 @@ const PAINTINGS = [
     medium: "Fresco",
     dimensions: "280 × 570 cm",
     description: "Painted in the first campaign of the Sistine ceiling, this panel shows the desperate scramble of humanity as the floodwaters rise — figures clinging to high ground, swimming, loading a boat. It is the most narratively complex panel on the ceiling, with dozens of figures in anguished motion. Michelangelo's figures here are smaller and more crowded than his later, more confident panels.",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/The_Deluge_after_restoration.jpg/330px-The_Deluge_after_restoration.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
   },
 
