@@ -156,7 +156,6 @@ function renderPaintingRow(p) {
 function renderListView() {
   const paintings = filteredSorted();
   const filterChips = buildFilterChips();
-  const sortLabels = { rank: 'Rank', artist: 'Artist', year: 'Year', title: 'Title', museum: 'Museum' };
   const isGrid = S.listMode !== 'compact';
 
   let paintingsHtml;
@@ -189,11 +188,11 @@ function renderListView() {
     <div id="toolbar">
       <input id="search-input" type="search" placeholder="Search paintings, artists…"
              value="${esc(S.search)}" oninput="handleSearch(this.value)">
-      <button class="toolbar-btn${S.sort !== 'rank' ? ' active' : ''}" onclick="cycleSortMenu()">
-        ${ICONS.sort} ${sortLabels[S.sort]}
+      <button class="toolbar-btn icon-only${S.sort !== 'rank' ? ' active' : ''}" onclick="openSortDropdown(event,this)" title="Sort">
+        ${ICONS.sort}
       </button>
-      <button class="toolbar-btn${!isGrid ? ' active' : ''}" onclick="toggleListMode()" title="Toggle view">
-        ${isGrid ? ICONS.rows : ICONS.grid}
+      <button class="toolbar-btn icon-only" onclick="openViewDropdown(event,this)" title="View">
+        ${isGrid ? ICONS.grid : ICONS.rows}
       </button>
     </div>
     ${filterChips}
@@ -700,8 +699,14 @@ function handleSearch(val) {
   render();
 }
 
-function toggleListMode() {
-  S.listMode = S.listMode === 'compact' ? 'grid' : 'compact';
+function setListMode(key) {
+  S.listMode = key;
+  save();
+  render();
+}
+
+function setSort(key) {
+  S.sort = key;
   save();
   render();
 }
@@ -712,11 +717,61 @@ function setMuseumsMode(mode) {
   render();
 }
 
-function cycleSortMenu() {
-  const opts = ['rank', 'artist', 'year', 'title', 'museum'];
-  S.sort = opts[(opts.indexOf(S.sort) + 1) % opts.length];
-  save();
-  render();
+/* ── Toolbar dropdowns ───────────────────────────────────────────────────── */
+function openSortDropdown(e, btn) {
+  e.stopPropagation();
+  const wasOpen = !!document.getElementById('toolbar-drop');
+  closeDrop();
+  if (wasOpen) return;
+  const opts = [
+    { key: 'rank',   label: 'Rank' },
+    { key: 'artist', label: 'Artist' },
+    { key: 'year',   label: 'Year' },
+    { key: 'title',  label: 'Title' },
+    { key: 'museum', label: 'Museum' },
+  ];
+  const rect = btn.getBoundingClientRect();
+  const drop = document.createElement('div');
+  drop.className = 'toolbar-drop';
+  drop.id = 'toolbar-drop';
+  drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
+  drop.innerHTML = opts.map(o =>
+    `<button class="drop-item${S.sort === o.key ? ' active' : ''}"
+             onclick="setSort('${o.key}');closeDrop()">
+       ${S.sort === o.key ? ICONS.check : '<span class="drop-spacer"></span>'} ${o.label}
+     </button>`
+  ).join('');
+  document.body.appendChild(drop);
+  document.addEventListener('click', closeDrop, { once: true });
+}
+
+function openViewDropdown(e, btn) {
+  e.stopPropagation();
+  const wasOpen = !!document.getElementById('toolbar-drop');
+  closeDrop();
+  if (wasOpen) return;
+  const opts = [
+    { key: 'grid',    label: 'Grid',    icon: ICONS.grid },
+    { key: 'compact', label: 'List',    icon: ICONS.rows },
+  ];
+  const rect = btn.getBoundingClientRect();
+  const drop = document.createElement('div');
+  drop.className = 'toolbar-drop';
+  drop.id = 'toolbar-drop';
+  drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
+  drop.innerHTML = opts.map(o =>
+    `<button class="drop-item${S.listMode === o.key ? ' active' : ''}"
+             onclick="setListMode('${o.key}');closeDrop()">
+       ${o.icon} ${o.label}
+     </button>`
+  ).join('');
+  document.body.appendChild(drop);
+  document.addEventListener('click', closeDrop, { once: true });
+}
+
+function closeDrop() {
+  const d = document.getElementById('toolbar-drop');
+  if (d) d.remove();
 }
 
 function clearFilter(level) {
