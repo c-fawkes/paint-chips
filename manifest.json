@@ -2,7 +2,7 @@
   "name": "Paint Chips — Famous Paintings Checklist",
   "short_name": "Paint Chips",
   "description": "Track the 100 most famous paintings on Earth",
-  "start_url": "/",
+  "start_url": "/paint-chips/",
   "display": "standalone",
   "background_color": "#0f0e0d",
   "theme_color": "#c9a84c",
