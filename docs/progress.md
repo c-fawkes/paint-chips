@@ -162,6 +162,22 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 ---
 
+## Session 4 — 2026-05-27
+
+**Commits:** *(this commit)*
+
+### Museum collection paintings
+- Added 114 museum-only paintings (IDs 101–214) to bring 12 major museums to 10 paintings each, and top up smaller museums with 2–5 notable works each
+- Museum-only paintings carry `museumOnly: true` and `rank: null` — they are hidden from the Top 100 tab but visible in Museums, Collection, and Stats tabs
+- Fixed `null <= 100` JavaScript coercion bug: rank badge checks updated to `p.rank != null && p.rank <= 100` throughout `app.js`
+- Fixed one-character search input bug: `handleSearch` now refocuses and restores cursor position after `render()` replaces the DOM
+
+### Toolbar UX
+- Sort and view buttons in the Top 100 toolbar replaced with icon-only buttons that open positioned dropdown menus (sort: Rank/Artist/Year/Title/Museum with checkmark on active; view: Grid/List with icons)
+- Dropdowns dismiss on outside click or re-clicking the same button
+
+---
+
 ## Session 1 — 2026-05-26
 
 **Commits:** `ede51b3`

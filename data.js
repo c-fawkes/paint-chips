@@ -1165,6 +1165,1328 @@ const PAINTINGS = [
     description: "The Virgin Mary steps from a parted cloud holding the Christ child, flanked by Saint Sixtus and Saint Barbara. The two cherubs (putti) at the bottom, resting their chins on their hands and looking upward, have become the most reproduced detail in art history — appearing on countless mugs, calendars, and gifts worldwide. Raphael painted this for the monks of Piacenza.",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/RAFAEL_-_Madonna_Sixtina_%28Gem%C3%A4ldegalerie_Alter_Meister%2C_Dresden%2C_1513-14._%C3%93leo_sobre_lienzo%2C_265_x_196_cm%29.jpg/330px-RAFAEL_-_Madonna_Sixtina_%28Gem%C3%A4ldegalerie_Alter_Meister%2C_Dresden%2C_1513-14._%C3%93leo_sobre_lienzo%2C_265_x_196_cm%29.jpg",
     location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // MUSEUM COLLECTION PAINTINGS — not in the Top 100 ranking
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // ── MUSEUM OF MODERN ART (MoMA) ───────────────────────────────────────────
+  {
+    id: 101, rank: null, museumOnly: true,
+    title: "Number 31",
+    artist: "Jackson Pollock",
+    year: "1950",
+    medium: "Enamel on canvas",
+    dimensions: "270 × 531 cm",
+    description: "One of Pollock's largest and most celebrated drip paintings, created at the height of his Action Painting period. Working on canvas laid on the floor, Pollock poured and flung enamel in dense, layered webs of black, white, and gray. It is one of the defining works of Abstract Expressionism.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
+  },
+  {
+    id: 102, rank: null, museumOnly: true,
+    title: "The False Mirror",
+    artist: "René Magritte",
+    year: "1929",
+    medium: "Oil on canvas",
+    dimensions: "54 × 81 cm",
+    description: "A large human eye whose iris has been replaced by a cloudy blue sky. The pupil at center becomes a void or eclipse. Magritte questioned the reliability of vision — the eye that appears to see is itself a window onto an imagined world, making it a 'false mirror.' MoMA acquired it in 1936.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
+  },
+
+  // ── MUSEO DEL PRADO ───────────────────────────────────────────────────────
+  {
+    id: 103, rank: null, museumOnly: true,
+    title: "The Naked Maja",
+    artist: "Francisco Goya",
+    year: "c. 1797–1800",
+    medium: "Oil on canvas",
+    dimensions: "97 × 190 cm",
+    description: "One of the first Western paintings to depict a nude woman with pubic hair, displayed without mythological pretext. Goya painted a clothed version (La Maja Vestida) as a cover to hide it. It caused a scandal and led to Goya's summons by the Spanish Inquisition. The sitter's identity remains unknown.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Maja_desnuda.jpg/330px-Maja_desnuda.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 104, rank: null, museumOnly: true,
+    title: "Las Hilanderas (The Spinners)",
+    artist: "Diego Velázquez",
+    year: "c. 1655–1660",
+    medium: "Oil on canvas",
+    dimensions: "220 × 289 cm",
+    description: "Once thought to be a simple genre scene of a royal tapestry workshop, scholars now read it as a complex allegory of the myth of Arachne. The foreground spinners are the Fates; the brightly lit background tableau enacts Athena's punishment of Arachne. It is Velázquez's most intellectually layered late work.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Las_Hilanderas_o_La_f%C3%A1bula_de_Aracne%2C_by_Diego_Vel%C3%A1zquez.jpg/330px-Las_Hilanderas_o_La_f%C3%A1bula_de_Aracne%2C_by_Diego_Vel%C3%A1zquez.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+
+  // ── METROPOLITAN MUSEUM OF ART ────────────────────────────────────────────
+  {
+    id: 105, rank: null, museumOnly: true,
+    title: "Portrait of Madame X",
+    artist: "John Singer Sargent",
+    year: "1883–1884",
+    medium: "Oil on canvas",
+    dimensions: "235 × 110 cm",
+    description: "A society portrait of Virginie Amélie Avegno Gautreau, an American expatriate known for her beauty, rendered in a stark black dress with an insolently turned face and pale, luminous skin. When exhibited in Paris in 1884 the original low-cut strap scandalized the Salon. Sargent repainted it but the damage to his career sent him to London.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Madame_X_%28Madame_Pierre_Gautreau%29%2C_John_Singer_Sargent%2C_1884_%28unfree_frame_crop%29.jpg/330px-Madame_X_%28Madame_Pierre_Gautreau%29%2C_John_Singer_Sargent%2C_1884_%28unfree_frame_crop%29.jpg",
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
+  },
+  {
+    id: 106, rank: null, museumOnly: true,
+    title: "Portrait of Gertrude Stein",
+    artist: "Pablo Picasso",
+    year: "1905–1906",
+    medium: "Oil on canvas",
+    dimensions: "100 × 81 cm",
+    description: "Picasso made Gertrude Stein sit for over 80 sessions, then repainted the face after encountering Iberian masks. The masklike, flattened face prefigures Cubism by a year. When critics said the portrait looked nothing like her, Picasso replied: 'It will.' Stein bequeathed it to the Met on her death in 1946.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Gertrude_Stein_by_Pablo_Picasso.jpg/330px-Gertrude_Stein_by_Pablo_Picasso.jpg",
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
+  },
+  {
+    id: 107, rank: null, museumOnly: true,
+    title: "The Harvesters",
+    artist: "Pieter Bruegel the Elder",
+    year: "1565",
+    medium: "Oil on wood panel",
+    dimensions: "119 × 162 cm",
+    description: "Part of Bruegel's series on the Months, this panoramic summer scene shows peasants resting under a pear tree while others work the wheat-covered hillside. It is one of the earliest pure landscape paintings without a biblical or mythological subject, and one of five surviving panels from the series.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Pieter_Bruegel_the_Elder-_The_Harvesters_-_Google_Art_Project.jpg/330px-Pieter_Bruegel_the_Elder-_The_Harvesters_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
+  },
+  {
+    id: 108, rank: null, museumOnly: true,
+    title: "Self-Portrait with Straw Hat",
+    artist: "Vincent van Gogh",
+    year: "1887",
+    medium: "Oil on cardboard",
+    dimensions: "40 × 32 cm",
+    description: "One of Van Gogh's finest self-portraits, painted in Paris during his immersion in Impressionism. The broken brushwork and vivid complementary colors — orange beard against blue-green background — show his rapid absorption of the new movement. He completed over 35 self-portraits between 1886 and 1889.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vincent_van_Gogh_-_Self-Portrait_with_Straw_Hat_-_Metropolitan_Museum_of_Art.jpg/330px-Vincent_van_Gogh_-_Self-Portrait_with_Straw_Hat_-_Metropolitan_Museum_of_Art.jpg",
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
+  },
+
+  // ── UFFIZI GALLERY ────────────────────────────────────────────────────────
+  {
+    id: 109, rank: null, museumOnly: true,
+    title: "Venus of Urbino",
+    artist: "Titian",
+    year: "1538",
+    medium: "Oil on canvas",
+    dimensions: "119 × 165 cm",
+    description: "A reclining nude of extraordinary sensuality, this Venus gazes directly at the viewer with unsettling confidence. She holds roses and a myrtle sprig — symbols of love and fidelity — while servants arrange a dowry chest in the background. Manet's Olympia (1863) is a direct response to this painting's provocative directness.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg/330px-Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
+  },
+  {
+    id: 110, rank: null, museumOnly: true,
+    title: "Adoration of the Magi",
+    artist: "Leonardo da Vinci",
+    year: "1481 (unfinished)",
+    medium: "Oil and tempera on panel",
+    dimensions: "243 × 246 cm",
+    description: "Leonardo abandoned this monumental commission before completing it when he left Florence for Milan. The swirling crowd of figures around the Virgin and Child — including what may be Leonardo's own portrait at far right — anticipates the dynamic compositions of the High Renaissance. It remains one of the most studied unfinished works in art history.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Leonardo_da_Vinci_-_Adorazione_dei_Magi_-_Google_Art_Project.jpg/330px-Leonardo_da_Vinci_-_Adorazione_dei_Magi_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
+  },
+  {
+    id: 111, rank: null, museumOnly: true,
+    title: "Bacchus",
+    artist: "Caravaggio",
+    year: "c. 1596",
+    medium: "Oil on canvas",
+    dimensions: "98 × 85 cm",
+    description: "A sensual adolescent Bacchus, god of wine, reclines and offers a glass to the viewer. The carafe reflects Caravaggio's studio and a tiny self-portrait. The fruit shows signs of rot — a Dutch-style memento mori. X-ray analysis revealed a self-portrait of Caravaggio in the upper-left corner, painted over.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Michelangelo_Merisi_da_Caravaggio_-_Bacchus_-_Google_Art_Project.jpg/330px-Michelangelo_Merisi_da_Caravaggio_-_Bacchus_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
+  },
+  {
+    id: 112, rank: null, museumOnly: true,
+    title: "Diptych of the Duke and Duchess of Urbino",
+    artist: "Piero della Francesca",
+    year: "c. 1472–1474",
+    medium: "Tempera on panel",
+    dimensions: "47 × 66 cm (both panels)",
+    description: "Federico da Montefeltro and his wife Battista Sforza are shown in profile against a luminous landscape — an innovation imported from Flemish portraiture. Federico's nose was once straight; it was broken in a tournament and his right eye lost. Piero always painted him from the left. Battista had died before the painting's completion.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Piero_della_Francesca_042_detail.jpg/330px-Piero_della_Francesca_042_detail.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
+  },
+
+  // ── RIJKSMUSEUM ───────────────────────────────────────────────────────────
+  {
+    id: 113, rank: null, museumOnly: true,
+    title: "The Love Letter",
+    artist: "Johannes Vermeer",
+    year: "c. 1669–1670",
+    medium: "Oil on canvas",
+    dimensions: "44 × 39 cm",
+    description: "A maid delivers a letter to her mistress, who pauses from playing a cittern to receive it. We view the scene through a darkened doorway — Vermeer's signature device of spatial mystery. The seascape painting on the wall and the cittern signal themes of love and communication, and the maid's expression reveals that such letters are nothing new.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Jan_Vermeer_van_Delft_-_The_Love_Letter_-_WGA24674.jpg/330px-Jan_Vermeer_van_Delft_-_The_Love_Letter_-_WGA24674.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
+  },
+  {
+    id: 114, rank: null, museumOnly: true,
+    title: "The Little Street",
+    artist: "Johannes Vermeer",
+    year: "c. 1657–1658",
+    medium: "Oil on canvas",
+    dimensions: "54 × 44 cm",
+    description: "One of only two surviving Vermeer cityscapes, this intimate view of a Delft alley captures ordinary life with extraordinary stillness — a woman sewing in a doorway, children playing, another woman scrubbing in the passage. Recent research identified the building as a real almshouse on Vlamingstraat, demolished in 1661.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Jan_Vermeer_van_Delft_022.jpg/330px-Jan_Vermeer_van_Delft_022.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
+  },
+  {
+    id: 115, rank: null, museumOnly: true,
+    title: "The Merry Family",
+    artist: "Jan Steen",
+    year: "1668",
+    medium: "Oil on canvas",
+    dimensions: "111 × 141 cm",
+    description: "Three generations of a Dutch family eat, drink, smoke, and make music in boisterous disorder. The banner reads 'As the old sing, so twitter the young' — a Dutch proverb warning that children learn bad habits from parents. Steen, who ran a brewery and tavern, depicted moral chaos with gleeful irony.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Jan_Steen_-_The_Merry_Family_-_Google_Art_Project.jpg/330px-Jan_Steen_-_The_Merry_Family_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
+  },
+  {
+    id: 116, rank: null, museumOnly: true,
+    title: "The Syndics (De Staalmeesters)",
+    artist: "Rembrandt van Rijn",
+    year: "1662",
+    medium: "Oil on canvas",
+    dimensions: "191 × 279 cm",
+    description: "Five sampling officials of the Amsterdam drapers' guild pause as if interrupted by the viewer's arrival — a stroke of compositional genius that creates an illusion of live interaction. Rembrandt was 56 and at the height of his powers. The man standing at center-left was added at a late stage, making the grouping asymmetrical and more dynamic.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rembrandt_-_De_Staalmeesters-_het_college_van_staalmeesters_%28waardijns%29_van_het_Amsterdamse_lakengilde-_Google_Art_Project.jpg/330px-Rembrandt_-_De_Staalmeesters-_het_college_van_staalmeesters_%28waardijns%29_van_het_Amsterdamse_lakengilde-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
+  },
+
+  // ── ART INSTITUTE OF CHICAGO ──────────────────────────────────────────────
+  {
+    id: 117, rank: null, museumOnly: true,
+    title: "The Old Guitarist",
+    artist: "Pablo Picasso",
+    year: "1903–1904",
+    medium: "Oil on panel",
+    dimensions: "122 × 83 cm",
+    description: "A gaunt, blind old man bends over his guitar on a street in Barcelona, painted during Picasso's Blue Period following the suicide of his close friend Carlos Casagemas. The monochromatic blue conveys extreme melancholy. X-ray examination revealed a woman and child beneath the guitarist — a memory of a different composition.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
+  },
+  {
+    id: 118, rank: null, museumOnly: true,
+    title: "The Child's Bath",
+    artist: "Mary Cassatt",
+    year: "1893",
+    medium: "Oil on canvas",
+    dimensions: "100 × 66 cm",
+    description: "A woman tenderly washes a child's feet in a basin, depicted from a radical high vantage point that flattens perspective in the manner of Japanese woodblock prints. Cassatt, the only American in the French Impressionist circle, focused her career on domestic scenes of women and children. This is considered her masterpiece.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg/330px-Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
+  },
+  {
+    id: 119, rank: null, museumOnly: true,
+    title: "Stacks of Wheat (End of Summer)",
+    artist: "Claude Monet",
+    year: "1890–1891",
+    medium: "Oil on canvas",
+    dimensions: "60 × 100 cm",
+    description: "One of Monet's most celebrated series, in which he painted the same haystacks in his Giverny fields under different light conditions — dawn, midday, foggy, twilight, snowy. The AIC holds the finest group of the 25 surviving canvases. Critics who had dismissed Monet's series method reversed their view after seeing these together in 1891.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Claude_Monet_-_Stacks_of_Wheat_%28End_of_Summer%29_-_Google_Art_Project.jpg/330px-Claude_Monet_-_Stacks_of_Wheat_%28End_of_Summer%29_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
+  },
+  {
+    id: 120, rank: null, museumOnly: true,
+    title: "Bathers by a River",
+    artist: "Henri Matisse",
+    year: "1909–1916",
+    medium: "Oil on canvas",
+    dimensions: "260 × 392 cm",
+    description: "Matisse reworked this large canvas over seven years, transforming it from a pastoral Arcadian scene into one of the most severe and geometric paintings of his career. The influence of Cubism (which he resisted but could not ignore) pushed the four bathers toward abstraction. It is one of his most important transitional works.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
+  },
+  {
+    id: 121, rank: null, museumOnly: true,
+    title: "The Herring Net",
+    artist: "Winslow Homer",
+    year: "1885",
+    medium: "Oil on canvas",
+    dimensions: "76 × 122 cm",
+    description: "Two fishermen haul a net on a heaving gray sea, their small dory dwarfed by waves. Homer painted this after two years in a Northumberland fishing village, which transformed his work from illustrator of American genre scenes to painter of elemental struggles between humans and nature. The faceless, anonymous men convey universal labor.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
+  },
+
+  // ── NATIONAL GALLERY (LONDON) ─────────────────────────────────────────────
+  {
+    id: 122, rank: null, museumOnly: true,
+    title: "The Fighting Temeraire",
+    artist: "J.M.W. Turner",
+    year: "1839",
+    medium: "Oil on canvas",
+    dimensions: "91 × 122 cm",
+    description: "A ghostly white warship that fought at Trafalgar is towed by a small, fire-bellied steam tugboat toward its final berth to be broken up. Turner paints the old ship luminous and enormous, the tug dark and squat — a meditation on heroism, obsolescence, and death. In 2005, it was voted the Greatest Painting in Britain.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg/330px-The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
+  },
+  {
+    id: 123, rank: null, museumOnly: true,
+    title: "Mr and Mrs Andrews",
+    artist: "Thomas Gainsborough",
+    year: "c. 1750",
+    medium: "Oil on canvas",
+    dimensions: "70 × 119 cm",
+    description: "A newly married Suffolk couple pose in their estate: Robert Andrews stands casually, gun under arm and dog at his feet; Frances sits on a bench. The vast agricultural landscape behind them, stretching to a luminous sky, is as much a statement of land ownership as a wedding portrait. Frances's lap curiously holds an unfinished area — possibly meant for a baby.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Gainsborough_mrsmrAndrews.jpg/330px-Gainsborough_mrsmrAndrews.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
+  },
+  {
+    id: 124, rank: null, museumOnly: true,
+    title: "Venus and Mars",
+    artist: "Sandro Botticelli",
+    year: "c. 1485",
+    medium: "Tempera and oil on panel",
+    dimensions: "69 × 174 cm",
+    description: "Mars, god of war, sleeps in a deep post-coital slumber while Venus, goddess of love, watches alert and composed. Infant satyrs play with his armor — his power disarmed. The panel's extreme horizontal format suggests it decorated a chest or headboard for a Medici wedding. Wasps in the upper corner may encode the Vespucci family crest.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Sandro_Botticelli_-_Venus_and_Mars_-_National_Gallery%2C_London.jpg/330px-Sandro_Botticelli_-_Venus_and_Mars_-_National_Gallery%2C_London.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
+  },
+  {
+    id: 125, rank: null, museumOnly: true,
+    title: "The Supper at Emmaus",
+    artist: "Caravaggio",
+    year: "1601",
+    medium: "Oil and tempera on canvas",
+    dimensions: "141 × 196 cm",
+    description: "The risen Christ, depicted beardless and youthful, blesses bread at an inn, triggering sudden recognition in two disciples. Their arms thrust outward in astonishment — one reaching toward us, breaking the picture plane. The still life on the table, painted with stunning detail, includes a fruit basket overhanging the edge, casting a real shadow.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Michelangelo_Caravaggio_062.jpg/330px-Michelangelo_Caravaggio_062.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
+  },
+  {
+    id: 126, rank: null, museumOnly: true,
+    title: "Self-Portrait at the Age of 34",
+    artist: "Rembrandt van Rijn",
+    year: "1640",
+    medium: "Oil on canvas",
+    dimensions: "93 × 80 cm",
+    description: "Rembrandt presents himself in elegant Renaissance dress, his arm resting on a ledge — a pose borrowed directly from Raphael's portrait of Baldassare Castiglione (which Rembrandt had sketched at auction that year). It is an act of deliberate self-elevation, claiming kinship with the Old Masters, painted at the peak of his commercial success.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Rembrandt_van_Rijn_-_Self-Portrait_at_the_Age_of_34.jpg/330px-Rembrandt_van_Rijn_-_Self-Portrait_at_the_Age_of_34.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
+  },
+
+  // ── VAN GOGH MUSEUM ───────────────────────────────────────────────────────
+  {
+    id: 127, rank: null, museumOnly: true,
+    title: "Sunflowers",
+    artist: "Vincent van Gogh",
+    year: "1889",
+    medium: "Oil on canvas",
+    dimensions: "95 × 73 cm",
+    description: "The fourth and final version of Van Gogh's sunflower series, with a turquoise background unique among the series. He painted sunflowers to decorate Gauguin's room at the Yellow House in Arles, viewing them as symbols of gratitude and devotion. This version was made as a copy after the two artists' catastrophic falling out.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Vincent_van_Gogh_-_Sunflowers_-_VGM_F458.jpg/330px-Vincent_van_Gogh_-_Sunflowers_-_VGM_F458.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
+  },
+  {
+    id: 128, rank: null, museumOnly: true,
+    title: "The Sower",
+    artist: "Vincent van Gogh",
+    year: "1888",
+    medium: "Oil on canvas",
+    dimensions: "64 × 80 cm",
+    description: "A peasant sower strides across a plowed field at sunset, the enormous yellow sun behind him dividing the composition diagonally. Inspired by Millet's sower engravings, Van Gogh transformed the subject into a radiant icon of labor and spiritual renewal. He made over 30 drawings and paintings of sowers throughout his career.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Van_Gogh_-_Der_S%C3%A4mann_-_1888.jpeg/330px-Van_Gogh_-_Der_S%C3%A4mann_-_1888.jpeg",
+    location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
+  },
+  {
+    id: 129, rank: null, museumOnly: true,
+    title: "Self-Portrait with Grey Felt Hat",
+    artist: "Vincent van Gogh",
+    year: "1887",
+    medium: "Oil on cardboard",
+    dimensions: "44 × 38 cm",
+    description: "The most celebrated of Van Gogh's Paris self-portraits, showing him in a grey hat against a swirling blue background of short, comma-like brushstrokes. He is experimenting with the Pointillist technique he had just encountered through Seurat and Signac. The intense blue eyes stare with unsettling directness.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Van_Gogh_self-portrait_with_grey_felt_hat_1886-87.jpg/330px-Van_Gogh_self-portrait_with_grey_felt_hat_1886-87.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
+  },
+  {
+    id: 130, rank: null, museumOnly: true,
+    title: "The Yellow House (The Street)",
+    artist: "Vincent van Gogh",
+    year: "1888",
+    medium: "Oil on canvas",
+    dimensions: "72 × 92 cm",
+    description: "Van Gogh's depiction of his rented home in Arles — the right wing of the yellow building — on a blazing Provençal afternoon. He moved here dreaming of founding an artists' community, the Studio of the South. The painting documents the actual house where he invited Gauguin, where their friendship unraveled, and where he severed his own ear.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg/330px-Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
+  },
+  {
+    id: 131, rank: null, museumOnly: true,
+    title: "Skull of a Skeleton with Burning Cigarette",
+    artist: "Vincent van Gogh",
+    year: "1886",
+    medium: "Oil on canvas",
+    dimensions: "33 × 24 cm",
+    description: "A skeleton smokes a cigarette in this sardonic student exercise painted while Van Gogh studied anatomy at the Antwerp Academy. It parodies both the memento mori tradition and the self-satisfied bourgeois smokers of Dutch genre painting. One of his earliest oil paintings on canvas and a rare work of dark humor from an artist better known for pathos.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Vincent_van_Gogh_-_Head_of_a_skeleton_with_a_burning_cigarette_-_Google_Art_Project.jpg/330px-Vincent_van_Gogh_-_Head_of_a_skeleton_with_a_burning_cigarette_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
+  },
+  {
+    id: 132, rank: null, museumOnly: true,
+    title: "Fishing Boats on the Beach at Saintes-Maries",
+    artist: "Vincent van Gogh",
+    year: "1888",
+    medium: "Oil on canvas",
+    dimensions: "65 × 82 cm",
+    description: "During a three-day trip to the Mediterranean coast, Van Gogh worked in a frenzy, making drawings and this radiant oil of colorful boats on the beach. The flat water, intense blue sky, and bold complementary colors anticipate the expressionist phase to come. He wrote to Theo: 'The Mediterranean has the colors of mackerel — changeable, I mean.'",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Vincent_van_Gogh_-_Fishing_Boats_on_the_Beach_at_Saintes-Maries-de-la-Mer.jpg/330px-Vincent_van_Gogh_-_Fishing_Boats_on_the_Beach_at_Saintes-Maries-de-la-Mer.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
+  },
+
+  // ── STATE HERMITAGE MUSEUM ────────────────────────────────────────────────
+  {
+    id: 133, rank: null, museumOnly: true,
+    title: "Music",
+    artist: "Henri Matisse",
+    year: "1910",
+    medium: "Oil on canvas",
+    dimensions: "260 × 389 cm",
+    description: "Commissioned alongside The Dance by Russian collector Sergei Shchukin, this massive canvas shows five flat, crimson figures against green and blue bands representing earth and sky — one playing violin, one double-pipe, three sitting. Where The Dance pulses with movement, Music is profoundly still, a contrast Matisse described as active vs. contemplative.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/La_musique%2C_by_Henri_Matisse%2C_1910._Oil_on_canvas._The_State_Hermitage_Museum%2C_St._Petersburg.jpg/330px-La_musique%2C_by_Henri_Matisse%2C_1910._Oil_on_canvas._The_State_Hermitage_Museum%2C_St._Petersburg.jpg",
+    location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
+  },
+  {
+    id: 134, rank: null, museumOnly: true,
+    title: "The Red Room (Harmony in Red)",
+    artist: "Henri Matisse",
+    year: "1908",
+    medium: "Oil on canvas",
+    dimensions: "181 × 221 cm",
+    description: "A tablecloth and wallpaper with swirling blue-and-white vine patterns merge seamlessly, collapsing the distinction between surface and space. The entire room glows with saturated red. Also commissioned by Shchukin, it was originally painted in blue (then green) before Matisse demanded to repaint it red. A radical assertion that color creates its own reality.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Matiss._Red_room.jpg/330px-Matiss._Red_room.jpg",
+    location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
+  },
+  {
+    id: 135, rank: null, museumOnly: true,
+    title: "The Benois Madonna",
+    artist: "Leonardo da Vinci",
+    year: "c. 1478–1480",
+    medium: "Oil on panel (transferred to canvas)",
+    dimensions: "48 × 31 cm",
+    description: "One of Leonardo's earliest surviving paintings, showing the young Virgin playing with the Christ child over a flower. The warm, pyramidal composition and the natural, almost playful interaction between mother and child depart radically from the stiff Byzantine and early Renaissance conventions Leonardo had been trained in. The Hermitage acquired it in 1914.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Leonardo_da_Vinci_-_Madonna_%28Benois_Madonna%29_-_Google_Art_Project.jpg/330px-Leonardo_da_Vinci_-_Madonna_%28Benois_Madonna%29_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
+  },
+  {
+    id: 136, rank: null, museumOnly: true,
+    title: "Portrait of an Old Man in Red",
+    artist: "Rembrandt van Rijn",
+    year: "c. 1652–1654",
+    medium: "Oil on canvas",
+    dimensions: "108 × 86 cm",
+    description: "An elderly man in a red robe sits in quiet contemplation, his age and dignity rendered with Rembrandt's signature loose, luminous handling of paint. The identity of the sitter is unknown, but the psychological depth — the sense of a whole life behind those eyes — exemplifies why Rembrandt's late portraits are considered the apex of Western portraiture.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Rembrandt_van_Rijn_-_Old_Man_in_Red.jpg/330px-Rembrandt_van_Rijn_-_Old_Man_in_Red.jpg",
+    location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
+  },
+  {
+    id: 137, rank: null, museumOnly: true,
+    title: "Woman Picking Fruit",
+    artist: "Paul Gauguin",
+    year: "1893",
+    medium: "Oil on canvas",
+    dimensions: "92 × 73 cm",
+    description: "A Tahitian woman reaches for tropical fruit in a lush, flattened landscape of bold colors. Painted during Gauguin's first Tahitian stay, it embodies his rejection of European civilization in favor of what he imagined as a primal paradise. The Hermitage holds one of the world's finest Gauguin collections from Shchukin's systematic patronage.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
+  },
+  {
+    id: 138, rank: null, museumOnly: true,
+    title: "Portrait of a Young Woman",
+    artist: "Sandro Botticelli",
+    year: "c. 1480",
+    medium: "Tempera on panel",
+    dimensions: "61 × 40 cm",
+    description: "A young Florentine woman in three-quarter profile looks out with serene self-possession. The elaborate hairstyle with pearls and the precise rendering of her dress are characteristic of Botticelli's portrait commissions for the Medici circle. Her identity has been debated — proposals include Simonetta Vespucci, the unattainable beauty whom Botticelli reportedly loved.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
+  },
+
+  // ── NATIONAL GALLERY OF ART (Washington DC) ───────────────────────────────
+  {
+    id: 139, rank: null, museumOnly: true,
+    title: "Portrait of Ginevra de' Benci",
+    artist: "Leonardo da Vinci",
+    year: "c. 1474–1478",
+    medium: "Oil and tempera on panel",
+    dimensions: "38 × 37 cm",
+    description: "The only Leonardo painting in the Americas. The sixteen-year-old Ginevra de' Benci stares with cool, unsmiling directness — a departure from the feminine idealization of the time. The juniper bush (ginepro) behind her head is a visual pun on her name. The reverse of the panel bears a Latin motto: 'Beauty Adorns Virtue.'",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Leonardo_da_Vinci_-_Ginevra_de%27_Benci_-_Google_Art_Project.jpg/330px-Leonardo_da_Vinci_-_Ginevra_de%27_Benci_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
+  },
+  {
+    id: 140, rank: null, museumOnly: true,
+    title: "A Lady Writing",
+    artist: "Johannes Vermeer",
+    year: "c. 1665",
+    medium: "Oil on canvas",
+    dimensions: "45 × 40 cm",
+    description: "A young woman in a yellow jacket trimmed with white fur pauses from writing to look up at the viewer. The interrupted letter and her relaxed, open expression suggest a love letter. The composition is one of Vermeer's most direct — no crowded props, no window shown — just intimate psychological contact across a simple desk.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Jan_Vermeer_-_Lady_Writing_a_Letter_-_National_Gallery_of_Art.jpg/330px-Jan_Vermeer_-_Lady_Writing_a_Letter_-_National_Gallery_of_Art.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
+  },
+  {
+    id: 141, rank: null, museumOnly: true,
+    title: "Woman Holding a Balance",
+    artist: "Johannes Vermeer",
+    year: "c. 1664",
+    medium: "Oil on canvas",
+    dimensions: "40 × 36 cm",
+    description: "A young woman holds a balance scale with empty pans while a painting of the Last Judgment hangs directly behind her — a moralizing juxtaposition linking earthly measurement to divine judgment. The balance appears to hold nothing, suggesting spiritual equilibrium rather than material weighing. X-ray analysis reveals Vermeer added the Last Judgment deliberately.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Jan_Vermeer_-_Woman_Holding_a_Balance_-_Google_Art_Project.jpg/330px-Jan_Vermeer_-_Woman_Holding_a_Balance_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
+  },
+  {
+    id: 142, rank: null, museumOnly: true,
+    title: "Watson and the Shark",
+    artist: "John Singleton Copley",
+    year: "1778",
+    medium: "Oil on canvas",
+    dimensions: "182 × 230 cm",
+    description: "A group of sailors in a small boat frantically attempt to rescue a naked young man from the jaws of a shark in Havana harbor. The scene is based on a real 1749 incident: Brook Watson, a 14-year-old orphan, lost his leg to a shark and survived. Watson commissioned this painting as an adult and left it to Christ's Hospital school on his death.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Watson_and_the_Shark_by_John_Singleton_Copley%2C_1778.jpg/330px-Watson_and_the_Shark_by_John_Singleton_Copley%2C_1778.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
+  },
+  {
+    id: 143, rank: null, museumOnly: true,
+    title: "Adoration of the Magi",
+    artist: "Fra Angelico and Fra Filippo Lippi",
+    year: "c. 1440–1460",
+    medium: "Tempera on panel",
+    dimensions: "137 cm diameter",
+    description: "A tondo (round painting) of exceptional richness, teeming with figures, horses, and processions wrapping around the circular frame. Begun by Fra Angelico in the convent of San Marco, it was completed by Fra Filippo Lippi after Angelico's death. The NGA has identified over 200 individual figures. It was in the Medici collection for a century.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Filippino_Lippi_and_Fra_Angelico_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg/330px-Filippino_Lippi_and_Fra_Angelico_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
+  },
+  {
+    id: 144, rank: null, museumOnly: true,
+    title: "Feast of the Gods",
+    artist: "Giovanni Bellini and Titian",
+    year: "1514–1529",
+    medium: "Oil on canvas",
+    dimensions: "170 × 188 cm",
+    description: "Painted for Alfonso d'Este's private camerino in Ferrara, this shows the gods feasting from ancient bowls while nymphs and satyrs mingle. Bellini painted it at 84, his last major work. After Bellini's death, Titian repainted the landscape background three times to harmonize with canvases he was adding to the same room.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Giovanni_Bellini_and_Titian_-_The_Feast_of_the_Gods_-_Google_Art_Project.jpg/330px-Giovanni_Bellini_and_Titian_-_The_Feast_of_the_Gods_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
+  },
+  {
+    id: 145, rank: null, museumOnly: true,
+    title: "Daniel in the Lions' Den",
+    artist: "Peter Paul Rubens",
+    year: "c. 1614–1616",
+    medium: "Oil on canvas",
+    dimensions: "224 × 330 cm",
+    description: "Daniel stands calm among seven lions in a dark pit, hands clasped in prayer, while an angel above reassures him. Rubens painted the lions from life at the menagerie of Archduke Albert in Brussels. The animals are rendered with zoological accuracy — their power palpable — making Daniel's serenity all the more remarkable.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Peter_Paul_Rubens_-_Daniel_in_the_Lions%27_Den_-_Google_Art_Project_%28cropped%29.jpg/330px-Peter_Paul_Rubens_-_Daniel_in_the_Lions%27_Den_-_Google_Art_Project_%28cropped%29.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
+  },
+
+  // ── MAURITSHUIS ───────────────────────────────────────────────────────────
+  {
+    id: 146, rank: null, museumOnly: true,
+    title: "The Goldfinch",
+    artist: "Carel Fabritius",
+    year: "1654",
+    medium: "Oil on panel",
+    dimensions: "33 × 23 cm",
+    description: "A tiny goldfinch is chained by its foot to a perch against a white-grey wall, rendered with trompe l'oeil precision. Fabritius, Rembrandt's most gifted pupil, died in the Delft gunpowder explosion the year this was painted. The small scale and intimate intensity suggest it was designed to be hung low and viewed closely. Donna Tartt's 2013 Pulitzer-winning novel took it as its title.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Carel_Fabritius_-_The_Goldfinch_-_WGA7721.jpg/330px-Carel_Fabritius_-_The_Goldfinch_-_WGA7721.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
+  },
+  {
+    id: 147, rank: null, museumOnly: true,
+    title: "The Bull",
+    artist: "Paulus Potter",
+    year: "1647",
+    medium: "Oil on canvas",
+    dimensions: "236 × 339 cm",
+    description: "A monumental life-size bull stands in a meadow, staring at the viewer with forthright frankness. It was the most talked-about painting in 17th-century Europe — celebrated for its unprecedented realism and extraordinary size. Potter was only 22 when he painted it. Napoleon had it transported to Paris as war booty; it required its own custom wagon.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Paulus_Potter_-_The_Bull_-_Google_Art_Project.jpg/330px-Paulus_Potter_-_The_Bull_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
+  },
+  {
+    id: 148, rank: null, museumOnly: true,
+    title: "Saul and David",
+    artist: "Rembrandt van Rijn",
+    year: "c. 1651–1655",
+    medium: "Oil on canvas",
+    dimensions: "130 × 164 cm",
+    description: "Saul, tormented by an evil spirit, listens as young David plays the harp to soothe him. Rembrandt shows Saul raising a curtain to his face — half obscuring himself — in a gesture of ambivalent tenderness and encroaching madness. The spear in his left hand betrays his murderous jealousy. The psychological complexity is extraordinary.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Rembrandt_-_Saul_and_David_-_Mauritshuis_621.jpg/330px-Rembrandt_-_Saul_and_David_-_Mauritshuis_621.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
+  },
+  {
+    id: 149, rank: null, museumOnly: true,
+    title: "Diana and Her Nymphs",
+    artist: "Peter Paul Rubens",
+    year: "c. 1615",
+    medium: "Oil on canvas",
+    dimensions: "128 × 180 cm",
+    description: "The goddess Diana rests with her nymphs after the hunt, surrounded by game and dogs. Rubens, who had just returned from Italy, synthesizes Titian's voluptuous nudes with his own Flemish energy. The cool, silvery light on the flesh tones contrasts with the warm, ruddy dogs and game. The freshness of open-air setting is remarkable.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
+  },
+  {
+    id: 150, rank: null, museumOnly: true,
+    title: "Vase with Flowers",
+    artist: "Jan Davidsz. de Heem",
+    year: "c. 1660",
+    medium: "Oil on canvas",
+    dimensions: "74 × 59 cm",
+    description: "An extravagant floral bouquet spilling insects, dewdrops, and decaying petals — flowers from all seasons assembled in a single impossible arrangement. De Heem was the supreme master of Dutch flower painting, spending years in Antwerp to access the finest and rarest specimens. The perfection and decay coexisting in one image make it a meditation on time.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
+  },
+
+  // ── MARMOTTAN MONET MUSEUM ────────────────────────────────────────────────
+  {
+    id: 151, rank: null, museumOnly: true,
+    title: "The Japanese Bridge",
+    artist: "Claude Monet",
+    year: "c. 1920–1922",
+    medium: "Oil on canvas",
+    dimensions: "89 × 93 cm",
+    description: "In his final years, nearly blind with cataracts, Monet painted his Japanese bridge at Giverny in increasingly abstract, turbulent strokes. Where earlier versions (at the Met and other museums) show a serene arched bridge in gentle greens, these late canvases are explosive — the bridge barely legible under dense impasto. They anticipated Abstract Expressionism by decades.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Claude_Monet_-_The_Japanese_Footbridge_-_Google_Art_Project.jpg/330px-Claude_Monet_-_The_Japanese_Footbridge_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Marmottan Monet Museum" }
+  },
+  {
+    id: 152, rank: null, museumOnly: true,
+    title: "Regatta at Argenteuil",
+    artist: "Claude Monet",
+    year: "1872",
+    medium: "Oil on canvas",
+    dimensions: "48 × 75 cm",
+    description: "Sailboats on the Seine at Argenteuil dissolve in shimmering reflections, their hulls and the sky above them almost indistinguishable in the broken water. Monet moved to Argenteuil in 1871 and spent seven years painting the river's changing light. This early work already shows the full Impressionist vocabulary: broken brushwork, pure color, no outlining.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Marmottan Monet Museum" }
+  },
+  {
+    id: 153, rank: null, museumOnly: true,
+    title: "Charing Cross Bridge, Fog",
+    artist: "Claude Monet",
+    year: "1903",
+    medium: "Oil on canvas",
+    dimensions: "73 × 92 cm",
+    description: "London's railway bridge dissolves in orange-violet fog, barely distinguishable from the sky and river. Monet made three extended visits to London and produced nearly 100 canvases of the Thames, working on dozens simultaneously to capture different light conditions. 'Without fog, London would not be beautiful,' he said.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Marmottan Monet Museum" }
+  },
+
+  // ── MUSÉE DE L'ORANGERIE ──────────────────────────────────────────────────
+  {
+    id: 154, rank: null, museumOnly: true,
+    title: "Portrait of Paul Guillaume, Novo Pilota",
+    artist: "Amedeo Modigliani",
+    year: "1915",
+    medium: "Oil on cardboard",
+    dimensions: "105 × 75 cm",
+    description: "Paul Guillaume, the art dealer who championed Modigliani, Soutine, and the École de Paris, is depicted with his characteristic elongated features — almond eyes without pupils, swanlike neck. The inscription 'Novo Pilota' (New Pilot) reflects his role as champion of a new artistic generation. The Orangerie's Paul Guillaume collection is among the finest in France.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
+  },
+  {
+    id: 155, rank: null, museumOnly: true,
+    title: "Apples and Biscuits",
+    artist: "Paul Cézanne",
+    year: "c. 1879–1882",
+    medium: "Oil on canvas",
+    dimensions: "46 × 55 cm",
+    description: "A modest arrangement of apples and a plate of biscuits on a draped surface — yet from such ordinary subjects Cézanne constructed a revolution. The apples are not painted to deceive but to analyze: the viewer sees multiple angles simultaneously, the spatial logic is deliberately skewed, and no apple is the same as another. The Orangerie holds a significant Cézanne group from Paul Guillaume's bequest.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
+  },
+
+  // ── PHILLIPS COLLECTION ───────────────────────────────────────────────────
+  {
+    id: 156, rank: null, museumOnly: true,
+    title: "The Blue Room",
+    artist: "Pablo Picasso",
+    year: "1901",
+    medium: "Oil on canvas",
+    dimensions: "50 × 61 cm",
+    description: "A woman bathes in a Parisian studio whose walls are hung with a poster of Toulouse-Lautrec's 'May Milton.' Painted in the early weeks of Picasso's Blue Period, it synthesizes his affection for the Post-Impressionists with an emerging bleaker palette. The Phillips Collection acquired it in 1927 for $9,000 — one of its most prescient early purchases.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
+  },
+  {
+    id: 157, rank: null, museumOnly: true,
+    title: "The Repentant Magdalen",
+    artist: "Georges de La Tour",
+    year: "c. 1640",
+    medium: "Oil on canvas",
+    dimensions: "113 × 93 cm",
+    description: "Mary Magdalen sits alone with a candle, its flame casting the only light in the composition, her hand resting on a skull — meditating on mortality and redemption. La Tour's nocturnal candlelight scenes are among the most meditative in Western art. He was largely forgotten after his death and only rediscovered in the 20th century.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
+  },
+  {
+    id: 158, rank: null, museumOnly: true,
+    title: "Migration Series, Panel No. 49",
+    artist: "Jacob Lawrence",
+    year: "1940–1941",
+    medium: "Casein tempera on hardboard",
+    dimensions: "46 × 31 cm",
+    description: "One of 60 panels documenting the Great Migration of African Americans from the rural South to the urban North. Lawrence used flat, simplified shapes and bold colors to tell a collective story of hardship and hope. The series was split between MoMA and the Phillips Collection after Fortune magazine published it in 1941. It is one of the most important American narrative art works.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
+  },
+
+  // ── NEUE GALERIE NEW YORK ─────────────────────────────────────────────────
+  {
+    id: 159, rank: null, museumOnly: true,
+    title: "Portrait of Adele Bloch-Bauer II",
+    artist: "Gustav Klimt",
+    year: "1912",
+    medium: "Oil on canvas",
+    dimensions: "190 × 120 cm",
+    description: "Klimt's second portrait of Adele Bloch-Bauer depicts her in a simpler, more elegant manner than the gilded first version — a flowing floral dress, a more direct gaze. This painting remained in Nazi possession after the Bloch-Bauer family fled Austria; it was restituted to the family heirs in 2006 and sold at Christies for $87.9 million.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
+  },
+  {
+    id: 160, rank: null, museumOnly: true,
+    title: "Houses in Krumau",
+    artist: "Egon Schiele",
+    year: "1915–1916",
+    medium: "Oil on canvas",
+    dimensions: "110 × 140 cm",
+    description: "Schiele painted the medieval Bohemian town of Krumau (his mother's birthplace) repeatedly from above, abstracting the tightly packed houses into angular, encrusted forms that seem to press against each other in anxiety. The palette of ochres, greens, and browns creates a landscape of psychological unease. The Neue Galerie holds the premier collection of Vienna 1900 art outside Europe.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
+  },
+
+  // ── J. PAUL GETTY MUSEUM ──────────────────────────────────────────────────
+  {
+    id: 161, rank: null, museumOnly: true,
+    title: "La Promenade",
+    artist: "Pierre-Auguste Renoir",
+    year: "1870",
+    medium: "Oil on canvas",
+    dimensions: "81 × 65 cm",
+    description: "A young couple strolls in a dappled woodland, the woman in a brilliant white dress, the man in dark clothes. Painted the year before the Franco-Prussian War, it captures the ease and leisure of Second Empire Paris. The bold contrasts of sunlight filtering through foliage — flecks of light on the dress — point toward the full Impressionist style Renoir would achieve in the 1870s.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
+  },
+  {
+    id: 162, rank: null, museumOnly: true,
+    title: "The Abduction of Europa",
+    artist: "Rembrandt van Rijn",
+    year: "1632",
+    medium: "Oil on panel",
+    dimensions: "62 × 77 cm",
+    description: "Zeus, disguised as a white bull, carries the Phoenician princess Europa into the sea as her companions reach out in horror from the shore. The water froths around the bull's legs; Europa clutches his horns. At only 26, Rembrandt's command of dramatic narrative, light, and expression was already complete. The Getty acquired it in 1995.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Rembrandt_-_The_Abduction_of_Europa_-_Google_Art_Project.jpg/330px-Rembrandt_-_The_Abduction_of_Europa_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
+  },
+  {
+    id: 163, rank: null, museumOnly: true,
+    title: "The Holy Family with the Infant Saint John the Baptist",
+    artist: "Nicolas Poussin",
+    year: "1655",
+    medium: "Oil on canvas",
+    dimensions: "97 × 133 cm",
+    description: "Poussin's late masterpiece depicts the Holy Family in a serene architectural setting with classical columns. The geometrically ordered composition, cool palette, and philosophical calm define French classical painting. Poussin spent most of his career in Rome and never returned to France, but his influence shaped three centuries of French art and the founding of the Académie.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
+  },
+
+  // ── PHILADELPHIA MUSEUM OF ART ────────────────────────────────────────────
+  {
+    id: 164, rank: null, museumOnly: true,
+    title: "Nude Descending a Staircase, No. 2",
+    artist: "Marcel Duchamp",
+    year: "1912",
+    medium: "Oil on canvas",
+    dimensions: "147 × 89 cm",
+    description: "A figure descends a staircase rendered in successive overlapping positions — a Cubist analysis of movement in time influenced by chronophotography. When shown at the 1913 Armory Show in New York, it caused a national scandal and made Duchamp famous. Theodore Roosevelt declared it looked like 'an explosion in a shingle factory.'",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
+  },
+  {
+    id: 165, rank: null, museumOnly: true,
+    title: "Three Musicians",
+    artist: "Pablo Picasso",
+    year: "1921",
+    medium: "Oil on canvas",
+    dimensions: "201 × 223 cm",
+    description: "Three masked Commedia dell'Arte figures — Pierrot, Harlequin, and a friar — play clarinet, guitar, and accordion in a shallow, stage-like space of interlocking flat planes. One of Picasso's largest and most celebrated Synthetic Cubist paintings, it was a farewell to Cubism as he moved toward Neoclassicism. A second nearly identical version is at MoMA.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
+  },
+  {
+    id: 166, rank: null, museumOnly: true,
+    title: "The Gross Clinic",
+    artist: "Thomas Eakins",
+    year: "1875",
+    medium: "Oil on canvas",
+    dimensions: "244 × 198 cm",
+    description: "The eminent surgeon Samuel Gross pauses a thigh operation to address his students, his bloody scalpel in hand, while a distraught woman — the patient's relative — covers her face in the background. Rejected from the Philadelphia Centennial Exhibition as too bloody and controversial, it is now considered the greatest American painting of the 19th century.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
+  },
+
+  // ── BARNES FOUNDATION ─────────────────────────────────────────────────────
+  {
+    id: 167, rank: null, museumOnly: true,
+    title: "The Joy of Life (Bonheur de Vivre)",
+    artist: "Henri Matisse",
+    year: "1905–1906",
+    medium: "Oil on canvas",
+    dimensions: "176 × 240 cm",
+    description: "Matisse's programmatic manifesto of color and hedonism: nude figures lounge, dance, and embrace in an Arcadian landscape of impossibly saturated pinks, greens, and oranges. Scale is irrational — the distant dancers are larger than the foreground figures. Picasso, upon seeing it, immediately began Les Demoiselles d'Avignon. The Barnes Foundation has owned it since 1922.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/La_Joie_de_vivre_-_Henri_Matisse.jpg/330px-La_Joie_de_vivre_-_Henri_Matisse.jpg",
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
+  },
+  {
+    id: 168, rank: null, museumOnly: true,
+    title: "Mont Sainte-Victoire",
+    artist: "Paul Cézanne",
+    year: "c. 1902–1904",
+    medium: "Oil on canvas",
+    dimensions: "73 × 92 cm",
+    description: "One of Cézanne's final views of the mountain that dominated his Provençal landscape, painted from his studio on the Lauves hill. The mountain dissolves into crystalline planes of green, blue, and ochre that no longer describe but analyze. Cézanne painted this subject over 60 times. The Barnes holds multiple Cézannes, forming one of the finest collections anywhere.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
+  },
+  {
+    id: 169, rank: null, museumOnly: true,
+    title: "Les Poseuses (The Models)",
+    artist: "Georges Seurat",
+    year: "1886–1888",
+    medium: "Oil on canvas",
+    dimensions: "200 × 250 cm",
+    description: "Three nude models pose in Seurat's studio — seen from front, side, and back — with his own large painting 'A Sunday on La Grande Jatte' visible on the wall behind them. The contrast between the clothed Parisians in the background work and the unclothed models in the studio is pointed. A smaller version is at the Barnes; the Merion version is the largest.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
+  },
+  {
+    id: 170, rank: null, museumOnly: true,
+    title: "Girl with Braids",
+    artist: "Amedeo Modigliani",
+    year: "1918",
+    medium: "Oil on canvas",
+    dimensions: "61 × 46 cm",
+    description: "A young girl with tight braids gazes past the viewer with Modigliani's signature elongated neck, masklike face, and blank almond eyes. Modigliani spent his career in poverty, working in a single recognizable style he never varied. He died of tubercular meningitis at 35; this late portrait shows his full stylistic maturity.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
+  },
+
+  // ── YALE UNIVERSITY ART GALLERY ───────────────────────────────────────────
+  {
+    id: 171, rank: null, museumOnly: true,
+    title: "The Declaration of Independence",
+    artist: "John Trumbull",
+    year: "1786–1820",
+    medium: "Oil on canvas",
+    dimensions: "53 × 79 cm",
+    description: "The original study for Trumbull's famous mural in the Capitol Rotunda, this smaller version was the first to be completed and includes portraits painted from life of figures including Jefferson, Adams, and Franklin. Trumbull donated it and his entire collection to Yale in 1831, founding the first college art museum in America.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg/330px-Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg",
+    location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
+  },
+  {
+    id: 172, rank: null, museumOnly: true,
+    title: "Italian Woman (La Romaine)",
+    artist: "Camille Corot",
+    year: "1870–1872",
+    medium: "Oil on canvas",
+    dimensions: "75 × 59 cm",
+    description: "One of Corot's late figure paintings — a genre he returned to after decades of landscape — showing a young Italian woman in regional dress in a meditative pose. The soft, silvery atmosphere of his forest scenes carries over into portraiture: the figure seems to breathe. The Yale gallery holds a distinguished collection of European and American paintings.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
+  },
+
+  // ── HUNTINGTON LIBRARY ────────────────────────────────────────────────────
+  {
+    id: 173, rank: null, museumOnly: true,
+    title: "Pinkie",
+    artist: "Thomas Lawrence",
+    year: "1794",
+    medium: "Oil on canvas",
+    dimensions: "148 × 102 cm",
+    description: "Sarah Barrett Moulton, age 11, stands against a wind-swept sky in a pink muslin dress, sash billowing. Painted the year before her death at 13, it was commissioned by her grandmother. The Huntington paired it with Gainsborough's 'The Blue Boy' in 1921. Together the two paintings became the most visited pair in American art museum history for decades.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Thomas_Lawrence_-_Pinkie%2C_1794_-_Huntington_Library.jpg/330px-Thomas_Lawrence_-_Pinkie%2C_1794_-_Huntington_Library.jpg",
+    location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
+  },
+  {
+    id: 174, rank: null, museumOnly: true,
+    title: "The Grand Canal, Venice",
+    artist: "Canaletto",
+    year: "c. 1740",
+    medium: "Oil on canvas",
+    dimensions: "47 × 80 cm",
+    description: "A sweeping view down the Grand Canal from the Rialto toward the Salute, crowded with gondolas and river traffic. Canaletto's vedute (view paintings) of Venice were the essential tourist souvenir for English Grand Tour travelers, and his greatest patron was the British consul Joseph Smith. The Huntington holds an important collection of British art from this period.",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
+  },
+
+  // ── MUSEO DE ARTE MODERNO (Mexico City) ───────────────────────────────────
+  {
+    id: 175, rank: null, museumOnly: true,
+    title: "The Wounded Deer",
+    artist: "Frida Kahlo",
+    year: "1946",
+    medium: "Oil on masonite",
+    dimensions: "22 × 30 cm",
+    description: "Kahlo's face on a deer's body, pierced by nine arrows, runs through a dying forest. Painted after a failed spinal operation she had hoped would end her chronic pain, it is one of her most direct self-portraits of suffering. The deer appears young and vital yet is already mortally wounded — the gap between appearance and inner reality that defined her art.",
+    imageUrl: null,
+    location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
+  },
+  {
+    id: 176, rank: null, museumOnly: true,
+    title: "Naturaleza Viva",
+    artist: "Rufino Tamayo",
+    year: "1952",
+    medium: "Oil on canvas",
+    dimensions: "76 × 61 cm",
+    description: "A still life of tropical fruits glows against a dark ground, painted in Tamayo's characteristic earthy palette of ochre, rust, and muted violet. Tamayo rejected the political muralism of Rivera, Siqueiros, and Orozco in favor of a universal poetic idiom rooted in pre-Columbian color and form. The MAM holds the most significant collection of his easel paintings.",
+    imageUrl: null,
+    location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
+  },
+  {
+    id: 177, rank: null, museumOnly: true,
+    title: "Portrait of Elena Flores",
+    artist: "María Izquierdo",
+    year: "1944",
+    medium: "Oil on canvas",
+    dimensions: "55 × 45 cm",
+    description: "A composed young woman in traditional Mexican dress gazes from the canvas with quiet dignity. Izquierdo, the first Mexican woman to exhibit in the United States (1930), developed a personal vocabulary drawing on popular Mexican imagery, altarpieces, and fairs. She was a close colleague of Tamayo and a significant voice of Mexican modernism.",
+    imageUrl: null,
+    location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
+  },
+
+  // ── MUSEO NACIONAL CENTRO DE ARTE REINA SOFÍA ────────────────────────────
+  {
+    id: 178, rank: null, museumOnly: true,
+    title: "The Great Masturbator",
+    artist: "Salvador Dalí",
+    year: "1929",
+    medium: "Oil on canvas",
+    dimensions: "110 × 150 cm",
+    description: "A monumental melting head — a self-portrait of Dalí's own face — dominates the lower center, its closed eyes suggesting dream and shame. From it emerge figures of erotic fantasy and anxiety: a woman pressing her face to a man's thigh, a locust (Dalí's phobia), a grasshopper. Painted the year he met Gala, it lays bare the obsessions that would define Surrealism.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 179, rank: null, museumOnly: true,
+    title: "Woman in Blue",
+    artist: "Pablo Picasso",
+    year: "1901",
+    medium: "Oil on canvas",
+    dimensions: "133 × 101 cm",
+    description: "A large, frontal portrait of a woman in an elaborate blue dress and hat, painted in a single day in Madrid in the manner of Velázquez. Its bold brushwork, flattened form, and psychological directness show the 19-year-old Picasso absorbing Spanish tradition as he moved toward his mature style. The Reina Sofía holds the most comprehensive collection of Picasso and Dalí in Spain.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 180, rank: null, museumOnly: true,
+    title: "Portrait of Josette",
+    artist: "Juan Gris",
+    year: "1916",
+    medium: "Oil on canvas",
+    dimensions: "116 × 73 cm",
+    description: "A Cubist portrait of Josette, who lived with Juan Gris for 15 years, rendered in the geometric planes and muted palette of his Synthetic Cubist style. Where Picasso's Cubism is aggressive and fragmentary, Gris's is orderly and almost lyrical. He died at 40, and the Reina Sofía holds the largest collection of his work in the world.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 181, rank: null, museumOnly: true,
+    title: "The Harlequin",
+    artist: "Joan Miró",
+    year: "1924–1925",
+    medium: "Oil on canvas",
+    dimensions: "66 × 93 cm",
+    description: "An interior dense with floating biomorphic forms, figures, and signs — ladder, eye, moustache, dice, guitar — hovering in a shallow amber space. Miró developed this 'dream imagery' while suffering from hunger-induced hallucinations in Paris. It launched his mature Surrealist style and made his international reputation. The Reina Sofía holds a major Miró collection.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+
+  // ── TATE MODERN ──────────────────────────────────────────────────────────
+  {
+    id: 182, rank: null, museumOnly: true,
+    title: "Whaam!",
+    artist: "Roy Lichtenstein",
+    year: "1963",
+    medium: "Acrylic and oil on canvas",
+    dimensions: "172 × 406 cm",
+    description: "A two-panel painting based on a panel from a 1962 DC war comic, showing a jet firing a rocket at an enemy plane which explodes in a burst of orange flame and the onomatopoeic 'WHAAM!' Lichtenstein replicated the printing dots (Ben-Day dots), bold outlines, and primary colors of cheap comic reproduction, elevating them to monumental fine art.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
+  },
+  {
+    id: 183, rank: null, museumOnly: true,
+    title: "Three Studies for Figures at the Base of a Crucifixion",
+    artist: "Francis Bacon",
+    year: "c. 1944",
+    medium: "Oil and pastel on board",
+    dimensions: "94 × 74 cm (each panel)",
+    description: "Three screaming, writhing figures on an orange ground — identified as the Eumenides (Greek Furies) — form a triptych of visceral horror. When shown in 1945, it shocked a London emerging from war. Bacon cited Grünewald's Isenheim Altarpiece and Picasso's Guernica as inspirations. It established his career and remains the most important British painting of the 20th century.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
+  },
+  {
+    id: 184, rank: null, museumOnly: true,
+    title: "The Snail",
+    artist: "Henri Matisse",
+    year: "1953",
+    medium: "Gouache on paper, cut and pasted",
+    dimensions: "287 × 288 cm",
+    description: "In his late eighties and confined to a wheelchair, Matisse created his greatest works with scissors and painted paper — a process he called 'drawing with scissors.' The Snail is a near-abstract spiral of colored rectangles. Matisse described it as his most complete rendering of color relationships, and declared the cutouts his best work.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/The_snail_henri_matisse.jpg/330px-The_snail_henri_matisse.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
+  },
+  {
+    id: 185, rank: null, museumOnly: true,
+    title: "Metamorphosis of Narcissus",
+    artist: "Salvador Dalí",
+    year: "1937",
+    medium: "Oil on canvas",
+    dimensions: "51 × 78 cm",
+    description: "On the left, Narcissus kneels gazing at his reflection; on the right, a stone hand holds an egg from which a narcissus flower blooms — the same pose transformed. Dalí based the composition on his own 'paranoiac-critical method,' using double images to render the myth of obsessive self-love and death. He brought the painting when he visited Freud in London.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
+  },
+
+  // ── WALLACE COLLECTION ────────────────────────────────────────────────────
+  {
+    id: 186, rank: null, museumOnly: true,
+    title: "The Swing",
+    artist: "Jean-Honoré Fragonard",
+    year: "1767",
+    medium: "Oil on canvas",
+    dimensions: "81 × 65 cm",
+    description: "A young woman on a swing kicks her shoe toward a hidden admirer below while her oblivious husband (or chaperone) pulls the rope from behind. It is the defining image of Rococo frivolity — all pink, powder blue, and garden lushness. The Baron de Saint-Julien commissioned it to show his mistress. The shoe flying toward the young man below leaves nothing to interpretation.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Fragonard%2C_The_Swing.jpg/330px-Fragonard%2C_The_Swing.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
+  },
+  {
+    id: 187, rank: null, museumOnly: true,
+    title: "Perseus and Andromeda",
+    artist: "Titian",
+    year: "c. 1554–1556",
+    medium: "Oil on canvas",
+    dimensions: "175 × 189 cm",
+    description: "One of Titian's celebrated 'poesie' (narrative paintings) for Philip II of Spain, showing Perseus descending from the sky to rescue the chained Andromeda from a sea monster. Titian painted the flesh with the loose, layered technique of his late period — surfaces that seem to breathe. Rubens copied it and declared Titian the supreme colorist in history.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
+  },
+  {
+    id: 188, rank: null, museumOnly: true,
+    title: "A Dance to the Music of Time",
+    artist: "Nicolas Poussin",
+    year: "c. 1634–1636",
+    medium: "Oil on canvas",
+    dimensions: "83 × 104 cm",
+    description: "Four allegorical figures — Poverty, Labor, Wealth, and Pleasure — dance in a ring while Father Time plays his lyre and two putti blow bubbles. The circular dance suggests the inevitability of fortune's wheel. Anthony Powell used it as the title and controlling metaphor for his 12-novel sequence. It is the Wallace Collection's most beloved painting.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
+  },
+  {
+    id: 189, rank: null, museumOnly: true,
+    title: "The Rainbow Landscape",
+    artist: "Peter Paul Rubens",
+    year: "c. 1636",
+    medium: "Oil on panel",
+    dimensions: "94 × 123 cm",
+    description: "A panoramic view of Rubens's own estate at Het Steen in Flanders after a summer storm, a rainbow arching over the fertile lowland. Painted in the final years of his life for his own pleasure, it is one of the first landscapes in Western art made entirely for private enjoyment. The breadth of sky and earth shows a new relationship between humans and nature.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
+  },
+
+  // ── ÖSTERREICHISCHE GALERIE BELVEDERE ─────────────────────────────────────
+  {
+    id: 190, rank: null, museumOnly: true,
+    title: "Judith and the Head of Holofernes (Judith I)",
+    artist: "Gustav Klimt",
+    year: "1901",
+    medium: "Oil on canvas with gold leaf",
+    dimensions: "84 × 42 cm",
+    description: "Klimt's Judith is not a Jewish heroine but a femme fatale: languid, half-naked, her fingers resting on Holofernes's severed head with proprietary satisfaction. The gold frame integrates with the composition, making the painting itself a precious object. The identity as Judith rather than Salome was so confusing that the frame was labeled 'Salome' for years.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Judith_klimt.jpg/330px-Judith_klimt.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
+  },
+  {
+    id: 191, rank: null, museumOnly: true,
+    title: "Death and Life",
+    artist: "Gustav Klimt",
+    year: "1908–1915",
+    medium: "Oil on canvas",
+    dimensions: "178 × 198 cm",
+    description: "A figure of Death — dark, patterned with crosses and skulls — confronts a mass of naked, intertwined human forms representing Life — sensuous, decorated with flowers. The two halves do not interact but are locked in eternal opposition. Klimt reworked it significantly after 1911, adding the golden background and modifying the life figures.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Gustav_Klimt_-_Death_and_Life_-_Google_Art_Project.jpg/330px-Gustav_Klimt_-_Death_and_Life_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
+  },
+  {
+    id: 192, rank: null, museumOnly: true,
+    title: "The Family",
+    artist: "Egon Schiele",
+    year: "1918",
+    medium: "Oil on canvas",
+    dimensions: "153 × 161 cm",
+    description: "Schiele's last great painting, left incomplete at his death at 28 — a seated father (himself), mother (Edith), and infant, painted after Edith's death in the Spanish flu epidemic of October 1918. He died three days after her. The tenderness of the image — so unlike his contorted nudes — marks a new phase of maturity that would never develop.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Egon_Schiele_-_The_Family_-_Google_Art_Project.jpg/330px-Egon_Schiele_-_The_Family_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
+  },
+  {
+    id: 193, rank: null, museumOnly: true,
+    title: "Napoleon at the Saint-Bernard Pass",
+    artist: "Jacques-Louis David",
+    year: "1801",
+    medium: "Oil on canvas",
+    dimensions: "271 × 232 cm",
+    description: "Napoleon on a rearing horse points the way across the Alps, his cloak billowing dramatically — a propaganda masterpiece ordered after the actual crossing, which Napoleon made on a mule. David made five versions; this first, painted for Spain, is considered the finest. The names 'Hannibal' and 'Charlemagne' are carved in the rocks — Bonaparte's chosen predecessors.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg/330px-David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
+  },
+
+  // ── KUNSTHISTORISCHES MUSEUM ──────────────────────────────────────────────
+  {
+    id: 194, rank: null, museumOnly: true,
+    title: "Hunters in the Snow (Winter)",
+    artist: "Pieter Bruegel the Elder",
+    year: "1565",
+    medium: "Oil on panel",
+    dimensions: "117 × 162 cm",
+    description: "Part of Bruegel's Months series alongside The Harvesters, this January scene shows huntsmen returning across a snowy hillside, their dogs at their heels, as skaters glide on frozen ponds below. The panoramic space and the way tiny figures animate a vast landscape were revolutionary. Andrei Tarkovsky used it in Solaris (1972) to evoke Earth's irreplaceable beauty.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_%28Winter%29_-_Google_Art_Project.jpg/330px-Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_%28Winter%29_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
+  },
+  {
+    id: 195, rank: null, museumOnly: true,
+    title: "The Peasant Wedding",
+    artist: "Pieter Bruegel the Elder",
+    year: "c. 1567",
+    medium: "Oil on panel",
+    dimensions: "114 × 164 cm",
+    description: "A crowded barn wedding feast in which the bride sits blissful and passive while guests eat, servers carry dishes on a barn door used as a tray, and a bagpiper watches hungrily. Bruegel's paintings of peasant life are not condescending genre scenes but profound observations of communal existence — the energy, appetite, and joy of ordinary people.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_%282%29.jpg/330px-Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_%282%29.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
+  },
+  {
+    id: 196, rank: null, museumOnly: true,
+    title: "Summer",
+    artist: "Giuseppe Arcimboldo",
+    year: "1563",
+    medium: "Oil on panel",
+    dimensions: "67 × 51 cm",
+    description: "A human face composed entirely of ripe summer fruits, vegetables, and grain — each item painted with botanical precision. Arcimboldo's composite heads for Emperor Maximilian II were first taken as humorous court diversions but have since been recognized as sophisticated visual puzzles engaging Renaissance theories of Nature and the grotesque. Dalí and the Surrealists claimed him as a forefather.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Arcimboldo_Summer_1563.jpg/330px-Arcimboldo_Summer_1563.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
+  },
+  {
+    id: 197, rank: null, museumOnly: true,
+    title: "The Three Philosophers",
+    artist: "Giorgione",
+    year: "1508–1509",
+    medium: "Oil on canvas",
+    dimensions: "123 × 144 cm",
+    description: "Three men — one old with a white beard, one middle-aged in Eastern dress, one young — stand before a rocky landscape. Their identities have never been agreed upon: they may be the Three Magi, the three ages of man, Aristotle and his successors, or astrologers observing a cave. The ambiguity is deliberate — Giorgione pioneered paintings without clear narratives.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Giorgione_-_The_Three_Philosophers_-_Google_Art_Project.jpg/330px-Giorgione_-_The_Three_Philosophers_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
+  },
+
+  // ── NATIONAL MUSEUM OF NORWAY ─────────────────────────────────────────────
+  {
+    id: 198, rank: null, museumOnly: true,
+    title: "The Sick Child",
+    artist: "Edvard Munch",
+    year: "1885–1886",
+    medium: "Oil on canvas",
+    dimensions: "120 × 119 cm",
+    description: "A dying girl turns her face toward a window while a grief-bowed woman sits beside her, unable to look. Munch's sister Sophie died of tuberculosis when he was 14; he returned to this subject six times across his career. The first version, shown here, was attacked by critics for its unfinished, scraped surface — which is precisely what makes it so raw.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Edvard_Munch_-_The_Sick_Child_-_Google_Art_Project.jpg/330px-Edvard_Munch_-_The_Sick_Child_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
+  },
+  {
+    id: 199, rank: null, museumOnly: true,
+    title: "Puberty",
+    artist: "Edvard Munch",
+    year: "1894–1895",
+    medium: "Oil on canvas",
+    dimensions: "151 × 110 cm",
+    description: "A naked adolescent girl sits upright on a bed, arms crossed over her groin in a gesture of vulnerable self-protection. An enormous dark shadow looms behind her on the wall — the shadow of anxiety, sexuality, and adulthood. Munch destroyed an earlier version; this is a reconstruction made from memory. It is one of the most psychologically uncomfortable paintings in Western art.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Edvard_Munch_-_Puberty_-_Google_Art_Project.jpg/330px-Edvard_Munch_-_Puberty_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
+  },
+  {
+    id: 200, rank: null, museumOnly: true,
+    title: "Girls on the Pier",
+    artist: "Edvard Munch",
+    year: "1901–1903",
+    medium: "Oil on canvas",
+    dimensions: "136 × 125 cm",
+    description: "Three girls in white summer dresses lean over a wooden railing at Åsgårdstrand, gazing into dark water while a crescent moon hangs above the fjord. The composition — viewed from behind, no faces shown — creates a dreamlike distance. Munch painted this scene over 20 times across four decades. The National Museum holds the most exhibited version.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
+  },
+
+  // ── VATICAN MUSEUMS (SISTINE CHAPEL) ──────────────────────────────────────
+  {
+    id: 201, rank: null, museumOnly: true,
+    title: "The Last Judgment",
+    artist: "Michelangelo",
+    year: "1536–1541",
+    medium: "Fresco",
+    dimensions: "1370 × 1220 cm",
+    description: "The entire altar wall of the Sistine Chapel is covered by this massive fresco of the Second Coming — Christ at center, the saved ascending on the left, the damned dragged to hell on the right. Michelangelo included his own face in the flayed skin held by Saint Bartholomew. When unveiled, the nudity caused scandal; Pope Paul IV had loincloths painted over the figures.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Last_Judgement_%28Michelangelo%29.jpg/330px-Last_Judgement_%28Michelangelo%29.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
+  },
+  {
+    id: 202, rank: null, museumOnly: true,
+    title: "The Temptation and Expulsion",
+    artist: "Michelangelo",
+    year: "c. 1509–1510",
+    medium: "Fresco",
+    dimensions: "280 × 570 cm",
+    description: "A single panel of the Sistine ceiling shows two scenes divided by the Tree of Knowledge: on the left, a serpent with a woman's torso offers the fruit to Adam and Eve; on the right, an angel drives the fallen couple from Paradise. The contrast between the lush garden and the barren landscape outside Eden is stark and haunting.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Michelangelo_-_Expulsion_from_paradise.jpg/330px-Michelangelo_-_Expulsion_from_paradise.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
+  },
+  {
+    id: 203, rank: null, museumOnly: true,
+    title: "The Flood",
+    artist: "Michelangelo",
+    year: "c. 1508–1509",
+    medium: "Fresco",
+    dimensions: "280 × 570 cm",
+    description: "Painted in the first campaign of the Sistine ceiling, this panel shows the desperate scramble of humanity as the floodwaters rise — figures clinging to high ground, swimming, loading a boat. It is the most narratively complex panel on the ceiling, with dozens of figures in anguished motion. Michelangelo's figures here are smaller and more crowded than his later, more confident panels.",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
+  },
+
+  // ── VATICAN MUSEUMS (APOSTOLIC PALACE) ────────────────────────────────────
+  {
+    id: 204, rank: null, museumOnly: true,
+    title: "Disputation of the Holy Sacrament (Disputa)",
+    artist: "Raphael",
+    year: "1509–1510",
+    medium: "Fresco",
+    dimensions: "500 × 770 cm",
+    description: "Facing The School of Athens across the Stanza della Segnatura, this fresco shows the Church Triumphant and Militant united around the Eucharist — saints and theologians below, Christ enthroned in heaven above. Raphael organized a cast of hundreds into a composition of serene clarity. Together with the School of Athens, it defines High Renaissance fresco painting.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Raphael_-_Disputation_of_the_Holy_Sacrament.jpg/330px-Raphael_-_Disputation_of_the_Holy_Sacrament.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
+  },
+  {
+    id: 205, rank: null, museumOnly: true,
+    title: "Parnassus",
+    artist: "Raphael",
+    year: "1509–1511",
+    medium: "Fresco",
+    dimensions: "670 cm wide",
+    description: "Apollo plays the lira da braccio on Mount Parnassus surrounded by the nine Muses and the great poets — Homer, Dante, Virgil, Sappho, Ovid — ancient and modern combined. Raphael includes a self-portrait in the right foreground. The scene extends the program of the Stanza: as the Disputa represents Theology and the School of Athens Philosophy, Parnassus represents Poetry.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Raffaello_Sanzio_-_Parnassus_-_WGA18586.jpg/330px-Raffaello_Sanzio_-_Parnassus_-_WGA18586.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
+  },
+
+  // ── GALLERIA BORGHESE ──────────────────────────────────────────────────────
+  {
+    id: 206, rank: null, museumOnly: true,
+    title: "Lady with a Unicorn",
+    artist: "Raphael",
+    year: "c. 1505–1506",
+    medium: "Oil on panel",
+    dimensions: "65 × 51 cm",
+    description: "A young woman holds a small unicorn — symbol of chastity — in a pose echoing Leonardo's portrait compositions. Originally the unicorn was a dog; Raphael repainted it sometime after the initial sitting. The sitter's identity is debated (possibly Maddalena Doni). X-ray and infrared examination have revealed the multiple layers of revision.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Raffaello_-_Dama_con_liocorno.jpg/330px-Raffaello_-_Dama_con_liocorno.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
+  },
+  {
+    id: 207, rank: null, museumOnly: true,
+    title: "Self-Portrait as Bacchus (Sick Bacchus)",
+    artist: "Caravaggio",
+    year: "c. 1593",
+    medium: "Oil on canvas",
+    dimensions: "67 × 53 cm",
+    description: "A pale, greenish young Caravaggio — possibly recovering from a horse-riding injury — poses as a sickly Bacchus, offering a cluster of grapes and a glass of wine. The grapes are realistic to the point of entomological scrutiny; leaves show insect damage. It is Caravaggio's first self-portrait and demonstrates his radical naturalism already fully formed.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Michelangelo_Merisi_da_Caravaggio_-_Self-Portrait_as_the_Sick_Bacchus_-_Google_Art_Project.jpg/330px-Michelangelo_Merisi_da_Caravaggio_-_Self-Portrait_as_the_Sick_Bacchus_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
+  },
+  {
+    id: 208, rank: null, museumOnly: true,
+    title: "David with the Head of Goliath",
+    artist: "Caravaggio",
+    year: "1610",
+    medium: "Oil on canvas",
+    dimensions: "125 × 101 cm",
+    description: "A melancholy David holds the severed head of Goliath — whose face is Caravaggio's own self-portrait, painted while he was a fugitive murderer seeking a papal pardon. The identification of the head as Caravaggio's face is universally accepted. He sent the painting to Cardinal Scipione Borghese, who was handling his pardon. He died of fever before it was granted.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Caravaggio_-_David_con_la_testa_di_Golia.jpg/330px-Caravaggio_-_David_con_la_testa_di_Golia.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
+  },
+  {
+    id: 209, rank: null, museumOnly: true,
+    title: "Madonna and Child with St. Anne (Dei Palafrenieri)",
+    artist: "Caravaggio",
+    year: "1605–1606",
+    medium: "Oil on canvas",
+    dimensions: "292 × 211 cm",
+    description: "The Madonna and the Christ child together crush the serpent underfoot while St. Anne watches. The figures are life-size and deeply human — the Madonna and child depicted without idealization, touching in their ordinariness. Rejected by its original patrons (who objected to the peasant realism), it was immediately purchased by Cardinal Borghese.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Michelangelo_Merisi_da_Caravaggio_-_Madonna_dei_Palafrenieri_-_Google_Art_Project.jpg/330px-Michelangelo_Merisi_da_Caravaggio_-_Madonna_dei_Palafrenieri_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
+  },
+
+  // ── GEMÄLDEGALERIE ALTE MEISTER (Dresden) ─────────────────────────────────
+  {
+    id: 210, rank: null, museumOnly: true,
+    title: "Girl Reading a Letter at an Open Window",
+    artist: "Johannes Vermeer",
+    year: "c. 1657–1659",
+    medium: "Oil on canvas",
+    dimensions: "84 × 65 cm",
+    description: "A young woman reads a letter by an open window, her reflection faintly visible in the glass. For centuries, the wall behind her appeared empty, but in 2019 cleaning and restoration revealed that Vermeer had painted a Cupid there — later overpainted by another hand. The restoration transformed the painting's meaning: the Cupid confirms the letter is a love letter.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Johannes_Vermeer_-_Girl_Reading_a_Letter_at_an_Open_Window_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_Girl_Reading_a_Letter_at_an_Open_Window_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
+  },
+  {
+    id: 211, rank: null, museumOnly: true,
+    title: "Sleeping Venus (Dresden Venus)",
+    artist: "Giorgione (completed by Titian)",
+    year: "c. 1508–1510",
+    medium: "Oil on canvas",
+    dimensions: "108 × 175 cm",
+    description: "The first monumental reclining nude in Western art — Venus asleep in a Venetian landscape, utterly at ease and unaware of being observed. Giorgione died of plague before completing it; Titian painted the landscape and drapery. Every subsequent reclining nude (Titian's Venus of Urbino, Manet's Olympia) descends from this revolutionary image.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Giorgione_and_Tiziano%2C_Venere_dormiente_o_di_Dresda%2C_1508-1510_%28Dresden%29.jpg/330px-Giorgione_and_Tiziano%2C_Venere_dormiente_o_di_Dresda%2C_1508-1510_%28Dresden%29.jpg",
+    location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
+  },
+  {
+    id: 212, rank: null, museumOnly: true,
+    title: "The Tribute Money",
+    artist: "Titian",
+    year: "c. 1516",
+    medium: "Oil on panel",
+    dimensions: "75 × 56 cm",
+    description: "A Pharisee holds a coin toward Christ, who responds to the question 'Is it lawful to pay taxes to Caesar?' by pointing heavenward. Titian restricts the scene to two busts — the contrast between the scheming questioner and the serene Christ — making it one of the first large-scale two-figure devotional paintings. Augustus the Strong of Saxony acquired it in 1746 for Dresden.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tizian_083.jpg/330px-Tizian_083.jpg",
+    location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
+  },
+
+  // ── SAN LUIGI DEI FRANCESI ────────────────────────────────────────────────
+  {
+    id: 213, rank: null, museumOnly: true,
+    title: "The Inspiration of Saint Matthew",
+    artist: "Caravaggio",
+    year: "1602",
+    medium: "Oil on canvas",
+    dimensions: "292 × 186 cm",
+    description: "An angel descends urgently to guide the hand of Saint Matthew as he writes the Gospel — their faces nearly touching, the angel's fingers touching Matthew's. Caravaggio's first version was rejected because Matthew appeared illiterate; this second version, accepted, shows the same radical intimacy between the divine and the human world. The three paintings form the Contarelli Chapel cycle.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/0_L%27Inspiration_de_saint_Matthieu_-_Caravage_%281602%29_%281%29.JPG/330px-0_L%27Inspiration_de_saint_Matthieu_-_Caravage_%281602%29_%281%29.JPG",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
+  },
+  {
+    id: 214, rank: null, museumOnly: true,
+    title: "The Martyrdom of Saint Matthew",
+    artist: "Caravaggio",
+    year: "1599–1600",
+    medium: "Oil on canvas",
+    dimensions: "323 × 343 cm",
+    description: "A barely clothed executioner raises a sword over the prostrate Matthew while a crowd scatters in panic. Caravaggio painted himself as a witness in the background, staring out from the chaos. The scene's violence and naturalism — no halos, no heavenly glow, just flesh and fear — scandalized Rome and permanently altered the course of religious painting.",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Caravaggio_-_Martirio_di_san_Matteo.jpg/330px-Caravaggio_-_Martirio_di_san_Matteo.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
   }
 ];
 

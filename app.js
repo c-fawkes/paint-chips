@@ -112,7 +112,7 @@ function renderPaintingCard(p) {
   return `<div class="painting-card${isChecked ? ' checked' : ''}" onclick="openDetail('${key}')">
     <div class="card-img-wrap">
       ${imgHtml}
-      ${p.rank <= 100 ? `<div class="card-rank-badge">#${p.rank}</div>` : ''}
+      ${p.rank != null && p.rank <= 100 ? `<div class="card-rank-badge">#${p.rank}</div>` : ''}
       <div class="card-seen-badge${isChecked ? ' checked' : ''}"
            onclick="rowToggleCheck(event,'${key}')" title="Mark as seen">
         ${isChecked ? ICONS.check : ''}
@@ -143,7 +143,7 @@ function renderPaintingRow(p) {
     <div class="row-meta">
       <div class="row-title">${esc(p.title)}${isUser ? '<span class="user-badge">added</span>' : ''}</div>
       <div class="row-artist">${esc(p.artist)} · ${esc(p.year)}</div>
-      ${p.rank <= 100 ? `<div class="row-rank">#${p.rank} of 100</div>` : ''}
+      ${p.rank != null && p.rank <= 100 ? `<div class="row-rank">#${p.rank} of 100</div>` : ''}
     </div>
     <div class="row-check${isChecked ? ' checked' : ''}"
          onclick="rowToggleCheck(event,'${key}')" title="Mark as seen">
@@ -154,7 +154,7 @@ function renderPaintingRow(p) {
 
 /* ── Top-100 List View ───────────────────────────────────────────────────── */
 function renderListView() {
-  const paintings = filteredSorted();
+  const paintings = filteredSorted().filter(p => !p.museumOnly);
   const filterChips = buildFilterChips();
   const isGrid = S.listMode !== 'compact';
 
@@ -567,7 +567,7 @@ function openDetail(id) {
 
       <div class="detail-body">
         <div class="detail-top-row">
-          ${p.rank <= 100 ? `<span class="detail-rank-badge">#${p.rank} of 100</span>` : ''}
+          ${p.rank != null && p.rank <= 100 ? `<span class="detail-rank-badge">#${p.rank} of 100</span>` : ''}
           ${p.isUser ? '<span class="user-badge">added</span>' : ''}
         </div>
 
@@ -697,6 +697,11 @@ function setView(v) {
 function handleSearch(val) {
   S.search = val;
   render();
+  const input = document.getElementById('search-input');
+  if (input) {
+    input.focus();
+    input.setSelectionRange(val.length, val.length);
+  }
 }
 
 function setListMode(key) {
