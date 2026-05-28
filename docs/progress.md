@@ -410,6 +410,12 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - `collectionSearch` removed from `save()` payload — search box resets on app reopen instead of silently pre-filtering the collection
 - Deleted dead `formatDateSeen` helper (was never called)
 
+### Painting detail modal layout polish
+- Added a dividing line between the painting info (description, specs) and the user's section (photo, note, date)
+- Collapsed Camera + Library into a single "Add photo" button using the camera icon (the file picker already offers both sources without `capture="environment"`)
+- Moved Date seen below the note field — order is now: photo → note → date
+- Added bottom padding (`safe-area-inset-bottom + 32px`) to avoid content being clipped by screen curvature/home indicator
+
 ### Detail modal: photo source, zoom fix, date seen, note polish
 - Photo upload now shows two buttons side by side: "Camera" (capture=environment) and "Library" (file picker) — previously only camera was offered
 - Note textarea font-size bumped to 1rem (16px) and date input also uses 1rem to prevent iOS auto-zoom on focus

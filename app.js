@@ -914,37 +914,32 @@ function openDetail(id) {
 
         ${p.description ? `<p class="detail-description">${esc(p.description)}</p>` : ''}
 
-        <div class="detail-photos-section">
-          ${photoGridHtml}
-          <div class="add-photo-btns">
-            <label style="cursor:pointer;flex:1">
-              <input type="file" accept="image/*" capture="environment" class="hidden"
-                     onchange="handlePhotoUpload(event,'${key}')">
-              <div class="add-photo-btn">${ICONS.camera} Camera</div>
-            </label>
-            <label style="cursor:pointer;flex:1">
+        <div class="detail-user-section">
+          <div class="detail-photos-section">
+            ${photoGridHtml}
+            <label style="cursor:pointer;display:block">
               <input type="file" accept="image/*" class="hidden"
                      onchange="handlePhotoUpload(event,'${key}')">
-              <div class="add-photo-btn">${ICONS.frame} Library</div>
+              <div class="add-photo-btn">${ICONS.camera} Add photo</div>
             </label>
           </div>
-        </div>
 
-        <div class="detail-date-section${isChecked ? '' : ' hidden'}">
-          <div class="detail-section-label">Date seen</div>
-          <div class="detail-date-row">
-            <input type="date" class="detail-date-input" id="detail-date-input"
-                   value="${S.dateSeen[key] && S.dateSeen[key] !== 'unknown' ? S.dateSeen[key] : ''}"
-                   ${S.dateSeen[key] === 'unknown' ? 'disabled' : ''}
-                   onchange="saveDateSeen('${key}', this.value)">
-            <button class="detail-date-unknown${S.dateSeen[key] === 'unknown' ? ' active' : ''}"
-                    onclick="toggleDateUnknown('${key}')">Unknown</button>
+          <div class="detail-note-section">
+            <textarea class="detail-note-input" placeholder="Add a note about this painting"
+                      oninput="saveNote('${key}', this.value)">${esc(note)}</textarea>
           </div>
-        </div>
 
-        <div class="detail-note-section">
-          <textarea class="detail-note-input" placeholder="Add a note about this painting"
-                    oninput="saveNote('${key}', this.value)">${esc(note)}</textarea>
+          <div class="detail-date-section${isChecked ? '' : ' hidden'}">
+            <div class="detail-section-label">Date seen</div>
+            <div class="detail-date-row">
+              <input type="date" class="detail-date-input" id="detail-date-input"
+                     value="${S.dateSeen[key] && S.dateSeen[key] !== 'unknown' ? S.dateSeen[key] : ''}"
+                     ${S.dateSeen[key] === 'unknown' ? 'disabled' : ''}
+                     onchange="saveDateSeen('${key}', this.value)">
+              <button class="detail-date-unknown${S.dateSeen[key] === 'unknown' ? ' active' : ''}"
+                      onclick="toggleDateUnknown('${key}')">Unknown</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
