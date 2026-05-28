@@ -10,6 +10,8 @@ const S = {
   sort: 'rank',
   search: '',
   filter: { continent: null, country: null, city: null, museum: null },
+  units: 'metric',
+  scope: 'top100',
   expandedMuseums: new Set(),
   expandedContinents: new Set(),
   expandedCountries: new Set(),
@@ -25,7 +27,7 @@ function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
       checked: S.checked, photos: S.photos, userPaintings: S.userPaintings,
-      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter,
+      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
     }));
   } catch (_) {}
 }
@@ -39,18 +41,23 @@ function load() {
     S.expandedMuseums    = new Set();
     S.expandedContinents = new Set();
     S.expandedCountries  = new Set();
+    if (S.view === 'stats' || S.view === 'settings') S.view = 'list';
   } catch (_) {}
 }
 
 /* ── Data helpers ───────────────────────────────────────────────────────── */
 function allPaintings() { return [...PAINTINGS, ...S.userPaintings]; }
+function scopedPaintings() {
+  const all = allPaintings();
+  return S.scope === 'top100' ? all.filter(p => !p.museumOnly) : all;
+}
 function checkedCount(ids) { return ids.filter(id => S.checked[String(id)]).length; }
-function globalChecked() { return Object.values(S.checked).filter(Boolean).length; }
-function globalTotal()   { return allPaintings().length; }
+function globalChecked() { return scopedPaintings().filter(p => S.checked[String(p.id)]).length; }
+function globalTotal()   { return scopedPaintings().length; }
 
 /* ── Sorting & filtering ─────────────────────────────────────────────────── */
 function filteredSorted() {
-  let list = allPaintings();
+  let list = scopedPaintings();
   if (S.filter.museum)    list = list.filter(p => p.location.museum    === S.filter.museum);
   else if (S.filter.city) list = list.filter(p => p.location.city      === S.filter.city);
   else if (S.filter.country) list = list.filter(p => p.location.country === S.filter.country);
@@ -104,11 +111,22 @@ const ICONS = {
   pin:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
   palette: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="9" r="1.5" fill="currentColor"/><circle cx="15.5" cy="9" r="1.5" fill="currentColor"/><circle cx="12" cy="15" r="1.5" fill="currentColor"/><circle cx="8.5" cy="15" r="1.5" fill="currentColor"/><circle cx="15.5" cy="15" r="1.5" fill="currentColor"/></svg>`,
   info:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
+  gear:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
 };
 
 /* ── Escape helper ──────────────────────────────────────────────────────── */
 function esc(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ── Dimensions formatting ──────────────────────────────────────────────── */
+let _prevView = 'list';
+
+function formatDimensions(dim) {
+  if (!dim || S.units === 'metric') return dim;
+  return dim
+    .replace(/(\d+(?:\.\d+)?)\s*cm/g, (_, n) => `${(parseFloat(n) * 0.393701).toFixed(1)} in`)
+    .replace(/(\d+(?:\.\d+)?)\s*m\b/g, (_, n) => `${(parseFloat(n) * 3.28084).toFixed(1)} ft`);
 }
 
 /* ── Painting Card (grid, Top 100 view) ─────────────────────────────────── */
@@ -167,7 +185,7 @@ function renderPaintingRow(p) {
 
 /* ── Top-100 List View ───────────────────────────────────────────────────── */
 function renderListView() {
-  const paintings = filteredSorted().filter(p => !p.museumOnly);
+  const paintings = filteredSorted();
   const filterChips = buildFilterChips();
   const isGrid = S.listMode !== 'compact';
 
@@ -302,7 +320,7 @@ function renderMuseumBlock(name, paintings) {
 
 function renderMuseumsAlpha() {
   const museums = {};
-  allPaintings().forEach(p => {
+  scopedPaintings().forEach(p => {
     const key = p.location.museum;
     if (!museums[key]) museums[key] = { ...p.location, paintings: [] };
     museums[key].paintings.push(p);
@@ -343,7 +361,7 @@ function renderMuseumsAlpha() {
 
 function renderMuseumsCity() {
   const cities = {};
-  allPaintings().forEach(p => {
+  scopedPaintings().forEach(p => {
     const { city, museum } = p.location;
     if (!cities[city]) cities[city] = {};
     if (!cities[city][museum]) cities[city][museum] = [];
@@ -365,7 +383,7 @@ function renderMuseumsCity() {
 
 function renderMuseumsCountry() {
   const countries = {};
-  allPaintings().forEach(p => {
+  scopedPaintings().forEach(p => {
     const { country, city, museum } = p.location;
     if (!countries[country]) countries[country] = {};
     if (!countries[country][city]) countries[country][city] = {};
@@ -402,7 +420,7 @@ function renderMuseumsCountry() {
 
 function renderMuseumsContinent() {
   const tree = {};
-  allPaintings().forEach(p => {
+  scopedPaintings().forEach(p => {
     const { continent, country, city, museum } = p.location;
     if (!tree[continent]) tree[continent] = {};
     if (!tree[continent][country]) tree[continent][country] = {};
@@ -411,7 +429,7 @@ function renderMuseumsContinent() {
     tree[continent][country][city][museum].push(p);
   });
   const flags = { Europe:'🌍', 'North America':'🌎', 'South America':'🌎', Asia:'🌏', Africa:'🌍', Oceania:'🌏' };
-  const all = allPaintings();
+  const all = scopedPaintings();
   return Object.keys(tree).sort().map(continent => {
     const cOpen = S.expandedContinents.has(continent);
     const cPs   = all.filter(p => p.location.continent === continent);
@@ -450,7 +468,7 @@ function renderMuseumsContinent() {
 
 /* ── Stats View ─────────────────────────────────────────────────────────── */
 function renderStatsView() {
-  const all   = allPaintings();
+  const all   = scopedPaintings();
   const total = all.length;
   const done  = globalChecked();
   const pct   = total ? Math.round(done / total * 100) : 0;
@@ -485,6 +503,9 @@ function renderStatsView() {
     }).join('');
 
   return `
+    <div class="stats-back-row">
+      <button class="detail-back-btn" onclick="closeStats()">${ICONS.back} Back</button>
+    </div>
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-num">${done}</div><div class="stat-label">Paintings Seen</div></div>
       <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total in List</div></div>
@@ -500,12 +521,12 @@ function renderStatsView() {
 
 /* ── Collection View ────────────────────────────────────────────────────── */
 function renderCollectionView() {
-  const seen = allPaintings().filter(p => S.checked[String(p.id)]);
+  const seen = scopedPaintings().filter(p => S.checked[String(p.id)]);
   if (seen.length === 0) {
     return `<div class="empty-state">
       <div class="empty-icon">🖼️</div>
       <p>No paintings seen yet.</p>
-      <p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">Mark paintings as seen in the Top 100 tab.</p>
+      <p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">Mark paintings as seen in the Paintings tab.</p>
     </div>`;
   }
   seen.sort((a, b) => (a.rank || 9999) - (b.rank || 9999));
@@ -562,10 +583,16 @@ function render() {
     document.querySelectorAll('.nav-btn').forEach(b => {
       b.classList.toggle('active', b.dataset.view === S.view);
     });
+    const settingsBtn = document.getElementById('settings-btn');
+    if (settingsBtn) settingsBtn.classList.toggle('active', S.view === 'settings');
+    const counterEl = document.getElementById('global-counter');
+    if (counterEl) counterEl.classList.toggle('active', S.view === 'stats');
     if (S.view === 'list')            main.innerHTML = renderListView();
     else if (S.view === 'museums')    main.innerHTML = renderMuseumsView();
     else if (S.view === 'collection') main.innerHTML = renderCollectionView();
     else if (S.view === 'stats')      main.innerHTML = renderStatsView();
+    else if (S.view === 'settings')   main.innerHTML = renderSettingsView();
+    // stats and settings are not in the bottom nav; don't highlight any nav btn for them
   } catch (err) {
     console.error('Paint Chips render error:', err);
     const main = document.getElementById('main');
@@ -644,7 +671,7 @@ function openDetail(id) {
 
         ${(p.medium || p.dimensions || p.movement) ? `<div class="detail-specs">
           ${p.medium     ? `<div class="detail-spec-item"><span>Medium</span><span>${esc(p.medium)}</span></div>` : ''}
-          ${p.dimensions ? `<div class="detail-spec-item"><span>Size</span><span>${esc(p.dimensions)}</span></div>` : ''}
+          ${p.dimensions ? `<div class="detail-spec-item"><span>Size</span><span>${esc(formatDimensions(p.dimensions))}</span></div>` : ''}
           ${p.movement   ? `<div class="detail-spec-item detail-spec-movement" onclick="openMovementPopup('${p.movement}')"><span>Movement</span><span class="movement-tag">${esc(p.movement)} ${ICONS.info}</span></div>` : ''}
         </div>` : ''}
 
@@ -1217,6 +1244,71 @@ function closeMuseumPopup() {
   document.body.style.overflow = '';
 }
 
+/* ── Stats navigation ────────────────────────────────────────────────────── */
+function openStats() {
+  if (S.view !== 'stats') _prevView = S.view;
+  setView('stats');
+}
+
+function closeStats() {
+  setView(_prevView || 'list');
+}
+
+/* ── Settings View ───────────────────────────────────────────────────────── */
+function renderSettingsView() {
+  return `
+    <div class="settings-view">
+      <div class="settings-section">
+        <div class="settings-section-title">Tracking</div>
+        <div class="settings-row">
+          <div class="settings-row-label">
+            <div class="settings-row-name">Painting List</div>
+            <div class="settings-row-sub">Which paintings appear in the list and museums tabs</div>
+          </div>
+          <div class="settings-toggle-group">
+            <button class="settings-toggle-btn${S.scope === 'top100'   ? ' active' : ''}" onclick="setScope('top100')">Top 100</button>
+            <button class="settings-toggle-btn${S.scope === 'extended' ? ' active' : ''}" onclick="setScope('extended')">All Famous</button>
+          </div>
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section-title">Display</div>
+        <div class="settings-row">
+          <div class="settings-row-label">
+            <div class="settings-row-name">Units</div>
+            <div class="settings-row-sub">Painting dimensions</div>
+          </div>
+          <div class="settings-toggle-group">
+            <button class="settings-toggle-btn${S.units === 'metric'   ? ' active' : ''}" onclick="setUnits('metric')">Metric</button>
+            <button class="settings-toggle-btn${S.units === 'imperial' ? ' active' : ''}" onclick="setUnits('imperial')">Imperial</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function openSettings() {
+  if (S.view !== 'settings') _prevView = S.view;
+  setView('settings');
+}
+
+function closeSettings() {
+  setView(_prevView || 'list');
+}
+
+function setUnits(u) {
+  S.units = u;
+  save();
+  render();
+}
+
+function setScope(s) {
+  S.scope = s;
+  save();
+  render();
+}
+
 /* ── Init ────────────────────────────────────────────────────────────────── */
 function init() {
   try {
@@ -1226,17 +1318,20 @@ function init() {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
 
+    const settingsBtn = document.getElementById('settings-btn');
+    if (settingsBtn) settingsBtn.innerHTML = ICONS.gear;
+
     const nav = document.getElementById('bottom-nav');
     const navItems = [
-      { view: 'list',       icon: ICONS.list,     label: 'Top 100' },
-      { view: 'museums',    icon: ICONS.museum,   label: 'Museums' },
-      { view: 'collection', icon: ICONS.bookmark, label: 'Collection' },
-      { view: 'stats',      icon: ICONS.stats,    label: 'Stats' },
+      { view: 'list',       icon: ICONS.list,   label: 'Paintings' },
+      { view: 'collection', icon: ICONS.frame,  label: 'Collection', special: true },
+      { view: 'museums',    icon: ICONS.museum, label: 'Museums' },
     ];
-    nav.innerHTML = navItems.map(n =>
-      `<button class="nav-btn${S.view === n.view ? ' active' : ''}" data-view="${n.view}"
-               onclick="setView('${n.view}')">${n.icon}<span>${n.label}</span></button>`
-    ).join('');
+    nav.innerHTML = navItems.map(n => {
+      const isActive = S.view === n.view;
+      const cls = `nav-btn${n.special ? ' nav-btn-collection' : ''}${isActive ? ' active' : ''}`;
+      return `<button class="${cls}" data-view="${n.view}" onclick="setView('${n.view}')">${n.icon}<span>${n.label}</span></button>`;
+    }).join('');
 
     render();
   } catch (err) {

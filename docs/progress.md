@@ -162,6 +162,23 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 ---
 
+## Session 7 — 2026-05-28
+
+### Settings panel
+- Added gear icon button to the fixed header (right of the progress counter); tapping opens a Settings view that replaces `#main`
+- Settings: **Units** toggle (Metric / Imperial) — painting dimensions in the detail sheet now convert `N cm` → `N.X in` and `N m` → `N.X ft` via `formatDimensions()` when imperial is selected; persisted to localStorage
+- Settings: **Painting List** scope toggle (Top 100 / All Famous) — controls which paintings appear in the Paintings and Museums tabs; "All Famous" includes the 114 museum-only paintings alongside the canonical Top 100; persisted to localStorage
+- `scopedPaintings()` helper gates all view functions (list, museums, stats, collection) so the scope setting is respected everywhere including the header progress counter
+
+### Nav restructure
+- "Top 100" tab renamed to "Paintings"
+- Stats tab removed from bottom nav
+- Tab order changed to: Paintings | Collection | Museums
+- Collection tab button is a raised outlined box: `border-radius: 10px 10px 0 0`, no bottom border, `position: relative; top: -14px` to extend 14px above the nav bar line; uses the frame icon
+- Progress counter in the header (`X / Y`) is now tappable — opens the Stats view; counter border turns gold when stats is active; Stats view has a Back button to return to the previous tab
+
+---
+
 ## Session 6 — 2026-05-28
 
 **Commits:** *(this commit)*

@@ -70,7 +70,12 @@ body {
   border-radius: 20px;
   padding: 4px 12px;
   font-size: .85rem;
+  cursor: pointer;
+  transition: border-color .2s;
+  -webkit-tap-highlight-color: transparent;
 }
+#global-counter:hover { border-color: var(--gold-dim); }
+#global-counter.active { border-color: var(--gold-dim); }
 
 #global-counter .count { font-weight: 700; color: var(--gold); }
 #global-counter .total { color: var(--text-dim); }
@@ -108,6 +113,7 @@ body {
   border-top: 1px solid var(--border);
   display: flex;
   z-index: 100;
+  overflow: visible;
 }
 
 .nav-btn {
@@ -129,6 +135,95 @@ body {
 
 .nav-btn.active { color: var(--gold); }
 .nav-btn svg { width: 22px; height: 22px; }
+
+/* ── Collection nav button (raised outlined square) ─────────────────────── */
+.nav-btn-collection {
+  position: relative;
+  top: -14px;
+  height: calc(var(--nav-h) + 14px);
+  flex: 0 0 68px;
+  border: 1.5px solid var(--border);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  background: var(--bg2);
+  z-index: 1;
+  transition: color .2s, border-color .2s;
+}
+.nav-btn-collection.active {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+
+/* ── Header settings button ─────────────────────────────────────────────── */
+.header-btn {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: color .2s, background .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.header-btn:hover { color: var(--text-dim); background: var(--bg3); }
+.header-btn.active { color: var(--gold); }
+.header-btn svg { width: 20px; height: 20px; }
+
+/* ── Settings View ──────────────────────────────────────────────────────── */
+.settings-view {
+  padding: 12px;
+}
+.settings-section {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+.settings-section-title {
+  font-size: .68rem;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 10px 14px 6px;
+}
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--border);
+}
+.settings-row-label { flex: 1; }
+.settings-row-name { font-size: .88rem; color: var(--text); }
+.settings-row-sub { font-size: .73rem; color: var(--text-faint); margin-top: 2px; }
+.settings-toggle-group {
+  display: flex;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.settings-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: .8rem;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+  -webkit-tap-highlight-color: transparent;
+  font-family: var(--font-sans);
+}
+.settings-toggle-btn.active {
+  background: var(--gold-dim);
+  color: var(--text);
+}
 
 /* ── Toolbar (search / sort / filter) ───────────────────────────────────── */
 #toolbar {
@@ -413,9 +508,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
   transition: border-color .15s;
 }
+.add-painting-thumb svg {
+  width: 28px;
+  height: 28px;
+  color: var(--text-faint);
+  stroke-width: 1.5;
+}
+.add-painting-btn:hover .add-painting-thumb svg { color: var(--gold); }
 
 /* ── Add Painting search autocomplete ───────────────────────────────────── */
 .ap-search-wrap { position: relative; }
@@ -786,6 +887,11 @@ body {
   color: var(--text-faint);
   text-transform: uppercase;
   letter-spacing: .08em;
+}
+
+/* ── Stats back row ──────────────────────────────────────────────────────── */
+.stats-back-row {
+  padding: 8px 14px 0;
 }
 
 /* ── Stats tab ───────────────────────────────────────────────────────────── */

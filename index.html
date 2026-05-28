@@ -40,10 +40,11 @@
   <!-- Fixed Header -->
   <header id="app-header">
     <h1>🎨 Paint Chips</h1>
-    <div id="global-counter">
+    <div id="global-counter" onclick="openStats()" title="View statistics">
       <span id="counter-checked" class="count">0</span>
       <span id="counter-total" class="total">/ 100</span>
     </div>
+    <button class="header-btn" onclick="openSettings()" id="settings-btn" title="Settings"></button>
   </header>
 
   <!-- Progress Bar -->
