@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Before every commit
 
-Update `docs/progress.md` with a brief note of what changed in this session before committing. Add to the current session's section if one already exists for today, or open a new `## Session N — YYYY-MM-DD` block. One bullet per meaningful change — no need to repeat what's already in the commit message verbatim, but capture the *why* and any decisions made.
+Update `docs/progress.md` with a brief note of what changed in this session before committing. Add to the current session's section if one already exists for today, or append a new `## Session N — YYYY-MM-DD` block at the **bottom** of the Session Progress section. One bullet per meaningful change — no need to repeat what's already in the commit message verbatim, but capture the *why* and any decisions made.
 
 ## Development
 
