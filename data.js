@@ -1281,7 +1281,7 @@ const PAINTINGS = [
     dimensions: "270 × 531 cm",
     description: "One of Pollock's largest and most celebrated drip paintings, created at the height of his Action Painting period. Working on canvas laid on the floor, Pollock poured and flung enamel in dense, layered webs of black, white, and gray. It is one of the defining works of Abstract Expressionism.",
     movement: "Abstract Expressionism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Regarding_One.jpg/500px-Regarding_One.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
   {
@@ -1293,7 +1293,7 @@ const PAINTINGS = [
     dimensions: "54 × 81 cm",
     description: "A large human eye whose iris has been replaced by a cloudy blue sky. The pupil at center becomes a void or eclipse. Magritte questioned the reliability of vision — the eye that appears to see is itself a window onto an imagined world, making it a 'false mirror.' MoMA acquired it in 1936.",
     movement: "Surrealism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/The_False_Mirror.jpg/330px-The_False_Mirror.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
 
@@ -1345,7 +1345,7 @@ const PAINTINGS = [
     dimensions: "100 × 81 cm",
     description: "Picasso made Gertrude Stein sit for over 80 sessions, then repainted the face after encountering Iberian masks. The masklike, flattened face prefigures Cubism by a year. When critics said the portrait looked nothing like her, Picasso replied: 'It will.' Stein bequeathed it to the Met on her death in 1946.",
     movement: "Cubism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/GertrudeStein.JPG/330px-GertrudeStein.JPG",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
   {
@@ -1481,7 +1481,7 @@ const PAINTINGS = [
     dimensions: "122 × 83 cm",
     description: "A gaunt, blind old man bends over his guitar on a street in Barcelona, painted during Picasso's Blue Period following the suicide of his close friend Carlos Casagemas. The monochromatic blue conveys extreme melancholy. X-ray examination revealed a woman and child beneath the guitarist — a memory of a different composition.",
     movement: "Expressionism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Old_guitarist_chicago.jpg/330px-Old_guitarist_chicago.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
   {
@@ -1517,7 +1517,7 @@ const PAINTINGS = [
     dimensions: "260 × 392 cm",
     description: "Matisse reworked this large canvas over seven years, transforming it from a pastoral Arcadian scene into one of the most severe and geometric paintings of his career. The influence of Cubism (which he resisted but could not ignore) pushed the four bathers toward abstraction. It is one of his most important transitional works.",
     movement: "Fauvism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bathers_by_a_River.jpg/330px-Bathers_by_a_River.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
   {
@@ -2067,7 +2067,7 @@ const PAINTINGS = [
     dimensions: "147 × 89 cm",
     description: "A figure descends a staircase rendered in successive overlapping positions — a Cubist analysis of movement in time influenced by chronophotography. When shown at the 1913 Armory Show in New York, it caused a national scandal and made Duchamp famous. Theodore Roosevelt declared it looked like 'an explosion in a shingle factory.'",
     movement: "Cubism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Duchamp_-_Nude_Descending_a_Staircase.jpg/330px-Duchamp_-_Nude_Descending_a_Staircase.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
   },
   {
@@ -2079,7 +2079,7 @@ const PAINTINGS = [
     dimensions: "201 × 223 cm",
     description: "Three masked Commedia dell'Arte figures — Pierrot, Harlequin, and a friar — play clarinet, guitar, and accordion in a shallow, stage-like space of interlocking flat planes. One of Picasso's largest and most celebrated Synthetic Cubist paintings, it was a farewell to Cubism as he moved toward Neoclassicism. A second nearly identical version is at MoMA.",
     movement: "Cubism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Picasso_three_musicians_moma_2006.jpg/500px-Picasso_three_musicians_moma_2006.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
   },
   {
@@ -2207,7 +2207,7 @@ const PAINTINGS = [
     dimensions: "22 × 30 cm",
     description: "Kahlo's face on a deer's body, pierced by nine arrows, runs through a dying forest. Painted after a failed spinal operation she had hoped would end her chronic pain, it is one of her most direct self-portraits of suffering. The deer appears young and vital yet is already mortally wounded — the gap between appearance and inner reality that defined her art.",
     movement: "Surrealism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/9/92/The_Wounded_Deer_1946.jpg/330px-The_Wounded_Deer_1946.jpg",
     location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
   },
   {
@@ -2245,7 +2245,7 @@ const PAINTINGS = [
     dimensions: "110 × 150 cm",
     description: "A monumental melting head — a self-portrait of Dalí's own face — dominates the lower center, its closed eyes suggesting dream and shame. From it emerge figures of erotic fantasy and anxiety: a woman pressing her face to a man's thigh, a locust (Dalí's phobia), a grasshopper. Painted the year he met Gala, it lays bare the obsessions that would define Surrealism.",
     movement: "Surrealism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/9/90/DaliGreatMasturbator.jpg/500px-DaliGreatMasturbator.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
   {
@@ -2295,7 +2295,7 @@ const PAINTINGS = [
     dimensions: "172 × 406 cm",
     description: "A two-panel painting based on a panel from a 1962 DC war comic, showing a jet firing a rocket at an enemy plane which explodes in a burst of orange flame and the onomatopoeic 'WHAAM!' Lichtenstein replicated the printing dots (Ben-Day dots), bold outlines, and primary colors of cheap comic reproduction, elevating them to monumental fine art.",
     movement: "Pop Art",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/b/b7/Roy_Lichtenstein_Whaam.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
   {
@@ -2307,7 +2307,7 @@ const PAINTINGS = [
     dimensions: "94 × 74 cm (each panel)",
     description: "Three screaming, writhing figures on an orange ground — identified as the Eumenides (Greek Furies) — form a triptych of visceral horror. When shown in 1945, it shocked a London emerging from war. Bacon cited Grünewald's Isenheim Altarpiece and Picasso's Guernica as inspirations. It established his career and remains the most important British painting of the 20th century.",
     movement: "Expressionism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/1/11/Three_Studies_for_Figures_at_the_Base_of_a_Crucifixion.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
   {
@@ -2331,7 +2331,7 @@ const PAINTINGS = [
     dimensions: "51 × 78 cm",
     description: "On the left, Narcissus kneels gazing at his reflection; on the right, a stone hand holds an egg from which a narcissus flower blooms — the same pose transformed. Dalí based the composition on his own 'paranoiac-critical method,' using double images to render the myth of obsessive self-love and death. He brought the painting when he visited Freud in London.",
     movement: "Surrealism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Metamorphosis_of_Narcissus.jpg/330px-Metamorphosis_of_Narcissus.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
 

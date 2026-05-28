@@ -162,6 +162,16 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 ---
 
+## Session 10 — 2026-05-28
+
+### Missing painting images
+- Audited all 214 paintings for null `imageUrl` fields; found 17 nulls
+- Resolved 12 via Wikimedia Commons and Wikipedia fair-use thumbnails: Pollock (Number 31), Magritte (The False Mirror), Picasso (Gertrude Stein, The Old Guitarist, Three Musicians), Matisse (Bathers by a River), Duchamp (Nude Descending a Staircase), Kahlo (The Wounded Deer), Dalí (The Great Masturbator, Metamorphosis of Narcissus), Lichtenstein (Whaam!), Bacon (Three Studies for Figures at the Base of a Crucifixion)
+- 20th-century copyrighted works use `en.wikipedia.org` fair-use thumbnail URLs (not just Commons) — the only Wikimedia-hosted copies available
+- 5 paintings remain null with no usable Wikimedia source: Migration Series Panel 49 (Lawrence), Naturaleza Viva (Tamayo), Portrait of Elena Flores (Izquierdo), Woman in Blue (Izquierdo), The Harlequin (Miró) — all museumOnly paintings
+
+---
+
 ## Session 9 — 2026-05-28
 
 ### Onboarding screen
