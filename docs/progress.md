@@ -403,6 +403,13 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Paintings and Museums tabs: gold top-line indicator appears above the active tab (pseudo-element on `.nav-btn::before`)
 - Collection search bar: now uses the same `flex:1` styling as the paintings tab search bar — fills all available space between the sort and view buttons
 
+### Code review fixes
+- Search toolbar now renders above the empty-state check, so the search input stays visible even when results are zero; empty-state message is now context-aware (no seen, no search match, or all hidden)
+- `todayISO()` switched from `toISOString()` (UTC) to local date components — users west of UTC no longer get tomorrow's date when marking paintings seen in the evening
+- `toggleDateUnknown` now stashes the prior real date in `_prevDateSeen` before overwriting with 'unknown'; toggling back restores that date instead of defaulting to today
+- `collectionSearch` removed from `save()` payload — search box resets on app reopen instead of silently pre-filtering the collection
+- Deleted dead `formatDateSeen` helper (was never called)
+
 ### Detail modal: photo source, zoom fix, date seen, note polish
 - Photo upload now shows two buttons side by side: "Camera" (capture=environment) and "Library" (file picker) — previously only camera was offered
 - Note textarea font-size bumped to 1rem (16px) and date input also uses 1rem to prevent iOS auto-zoom on focus

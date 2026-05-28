@@ -32,12 +32,15 @@ const S = {
 let _apMuseum = '';
 let _apAutofillMuseum = null;
 
+/* ── Ephemeral UI state ──────────────────────────────────────────────────── */
+const _prevDateSeen = {}; // remembers the last real date before toggling Unknown
+
 /* ── Persistence ────────────────────────────────────────────────────────── */
 function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
       checked: S.checked, photos: S.photos, notes: S.notes, dateSeen: S.dateSeen, hiddenFromCollection: S.hiddenFromCollection, userPaintings: S.userPaintings,
-      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionSearch: S.collectionSearch, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
+      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
     }));
   } catch (_) {}
 }
@@ -63,12 +66,8 @@ function load() {
 
 /* ── Date helpers ───────────────────────────────────────────────────────── */
 function todayISO() {
-  return new Date().toISOString().slice(0, 10);
-}
-function formatDateSeen(iso) {
-  if (!iso || iso === 'unknown') return 'Unknown';
-  const [y, m, d] = iso.split('-');
-  return new Date(+y, +m - 1, +d).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 
 /* ── Data helpers ───────────────────────────────────────────────────────── */
@@ -655,20 +654,9 @@ function renderCollectionView() {
       p.location.museum.toLowerCase().includes(q)
     );
   }
-  if (visible.length === 0) {
-    const msg = seen.length > 0
-      ? `<p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">All seen paintings are hidden from your collection.</p>`
-      : `<p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">Mark paintings as seen in the Paintings tab.</p>`;
-    return `<div class="empty-state">
-      <div class="empty-icon">🖼️</div>
-      <p>${seen.length > 0 ? 'Nothing in your collection.' : 'No paintings seen yet.'}</p>
-      ${msg}
-    </div>`;
-  }
 
-  const sorted = sortCollection(visible);
-  const mode   = S.collectionMode;
-  const cs     = S.collectionSort;
+  const mode = S.collectionMode;
+  const cs   = S.collectionSort;
 
   const toolbar = `<div id="toolbar">
     <input id="coll-search-input" type="search" placeholder="Search your collection…"
@@ -680,6 +668,27 @@ function renderCollectionView() {
       ${mode === 'gallery' ? ICONS.frame : mode === 'compact' ? ICONS.rows : ICONS.grid}
     </button>
   </div>`;
+
+  if (visible.length === 0) {
+    let headline, subline;
+    if (seen.length === 0) {
+      headline = 'No paintings seen yet.';
+      subline  = 'Mark paintings as seen in the Paintings tab.';
+    } else if (S.collectionSearch) {
+      headline = 'No results.';
+      subline  = `No paintings in your collection match "${esc(S.collectionSearch)}".`;
+    } else {
+      headline = 'Nothing in your collection.';
+      subline  = 'All seen paintings are hidden from your collection.';
+    }
+    return toolbar + `<div class="empty-state">
+      <div class="empty-icon">🖼️</div>
+      <p>${headline}</p>
+      <p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">${subline}</p>
+    </div>`;
+  }
+
+  const sorted = sortCollection(visible);
 
   // Grouped rendering for artist/museum/movement
   if (cs === 'museum' && mode !== 'gallery') {
@@ -1067,7 +1076,17 @@ function saveDateSeen(id, value) {
 function toggleDateUnknown(id) {
   const key = String(id);
   const isUnknown = S.dateSeen[key] === 'unknown';
-  S.dateSeen[key] = isUnknown ? todayISO() : 'unknown';
+  if (isUnknown) {
+    // Revert: restore the last real date we remembered, or fall back to today
+    S.dateSeen[key] = _prevDateSeen[key] || todayISO();
+    delete _prevDateSeen[key];
+  } else {
+    // Going to Unknown: stash the current real date so we can restore it
+    if (S.dateSeen[key] && S.dateSeen[key] !== 'unknown') {
+      _prevDateSeen[key] = S.dateSeen[key];
+    }
+    S.dateSeen[key] = 'unknown';
+  }
   save();
   const input = document.getElementById('detail-date-input');
   const btn = input && input.nextElementSibling;
