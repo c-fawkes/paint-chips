@@ -129,6 +129,7 @@ body {
 
 .nav-btn {
   flex: 1;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,6 +145,22 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Gold top-line indicator for non-collection active tabs */
+.nav-btn:not(.nav-btn-collection)::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 16%;
+  right: 16%;
+  height: 2px;
+  background: transparent;
+  border-radius: 0 0 2px 2px;
+  transition: background .2s;
+}
+.nav-btn:not(.nav-btn-collection).active::before {
+  background: var(--gold);
+}
+
 .nav-btn.active { color: var(--gold); }
 .nav-btn svg { width: 22px; height: 22px; }
 
@@ -154,8 +171,7 @@ body {
   height: calc(var(--nav-h) + 14px);
   flex: 0 0 84px;
   border: 1.5px solid var(--border);
-  border-bottom: none;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 6px 6px;
   background: var(--bg2);
   z-index: 1;
   transition: color .2s, border-color .2s;
@@ -244,7 +260,7 @@ body {
   padding: 0 12px 10px;
 }
 
-#search-input {
+#search-input, #coll-search-input {
   flex: 1;
   background: var(--bg3);
   border: 1px solid var(--border);
@@ -254,8 +270,8 @@ body {
   padding: 8px 12px;
   outline: none;
 }
-#search-input::placeholder { color: var(--text-faint); }
-#search-input:focus { border-color: var(--gold-dim); }
+#search-input::placeholder, #coll-search-input::placeholder { color: var(--text-faint); }
+#search-input:focus, #coll-search-input:focus { border-color: var(--gold-dim); }
 
 .toolbar-btn {
   background: var(--bg3);

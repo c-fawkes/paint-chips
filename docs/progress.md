@@ -398,6 +398,11 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added search bar matching the paintings tab style; filters by title, artist, or museum
 - Removed the redundant "X of Y paintings seen" count from the collection header; count was already shown in the global progress indicator
 
+### Nav bar and collection search polish
+- Collection nav button: added bottom border and full rounded corners — now a complete closed box instead of open-bottomed
+- Paintings and Museums tabs: gold top-line indicator appears above the active tab (pseudo-element on `.nav-btn::before`)
+- Collection search bar: now uses the same `flex:1` styling as the paintings tab search bar — fills all available space between the sort and view buttons
+
 ### Detail modal: photo source, zoom fix, date seen, note polish
 - Photo upload now shows two buttons side by side: "Camera" (capture=environment) and "Library" (file picker) — previously only camera was offered
 - Note textarea font-size bumped to 1rem (16px) and date input also uses 1rem to prevent iOS auto-zoom on focus
