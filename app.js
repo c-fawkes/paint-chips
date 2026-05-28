@@ -233,6 +233,7 @@ const ICONS = {
   palette: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="9" r="1.5" fill="currentColor"/><circle cx="15.5" cy="9" r="1.5" fill="currentColor"/><circle cx="12" cy="15" r="1.5" fill="currentColor"/><circle cx="8.5" cy="15" r="1.5" fill="currentColor"/><circle cx="15.5" cy="15" r="1.5" fill="currentColor"/></svg>`,
   info:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
   gear:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
+  dice:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15.5" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1.5" fill="currentColor" stroke="none"/></svg>`,
 };
 
 /* ── Escape helper ──────────────────────────────────────────────────────── */
@@ -424,8 +425,11 @@ function renderListView() {
 
   return `
     <div id="toolbar">
-      <input id="search-input" type="search" placeholder="Search paintings, artists…"
-             value="${esc(S.search)}" oninput="handleSearch(this.value)">
+      <div class="search-wrap">
+        <input id="search-input" type="search" placeholder="Search paintings, artists…"
+               value="${esc(S.search)}" oninput="handleSearch(this.value)">
+        <button class="search-clear" onclick="handleSearch('')" title="Clear search" ${S.search ? '' : 'hidden'}>✕</button>
+      </div>
       <button class="toolbar-btn icon-only${S.sort !== 'rank' ? ' active' : ''}" onclick="openSortDropdown(event,this)" title="Sort">
         ${ICONS.sort}
       </button>
@@ -753,8 +757,11 @@ function renderCollectionView() {
   const cs   = S.collectionSort;
 
   const toolbar = `<div id="toolbar">
-    <input id="coll-search-input" type="search" placeholder="Search your collection…"
-           value="${esc(S.collectionSearch)}" oninput="handleCollectionSearch(this.value)">
+    <div class="search-wrap">
+      <input id="coll-search-input" type="search" placeholder="Search your collection…"
+             value="${esc(S.collectionSearch)}" oninput="handleCollectionSearch(this.value)">
+      <button class="search-clear" onclick="handleCollectionSearch('')" title="Clear search" ${S.collectionSearch ? '' : 'hidden'}>✕</button>
+    </div>
     <button class="toolbar-btn icon-only${cs !== 'rank' ? ' active' : ''}" onclick="openCollectionSortDropdown(event,this)" title="Sort">
       ${ICONS.sort}
     </button>
@@ -1031,10 +1038,13 @@ function openDetail(id, { refresh = false } = {}) {
           <div class="detail-date-section${isChecked ? '' : ' hidden'}">
             <div class="detail-section-label">Date seen</div>
             <div class="detail-date-row">
-              <input type="date" class="detail-date-input" id="detail-date-input"
-                     value="${S.dateSeen[key] && S.dateSeen[key] !== 'unknown' ? S.dateSeen[key] : ''}"
-                     ${S.dateSeen[key] === 'unknown' ? 'disabled' : ''}
-                     onchange="saveDateSeen('${key}', this.value)">
+              <div class="detail-date-wrap${S.dateSeen[key] === 'unknown' ? ' is-unknown' : ''}">
+                <input type="date" class="detail-date-input" id="detail-date-input"
+                       value="${S.dateSeen[key] && S.dateSeen[key] !== 'unknown' ? S.dateSeen[key] : ''}"
+                       ${S.dateSeen[key] === 'unknown' ? 'disabled' : ''}
+                       onchange="saveDateSeen('${key}', this.value)">
+                <span class="detail-date-placeholder">— —</span>
+              </div>
               <button class="detail-date-unknown${S.dateSeen[key] === 'unknown' ? ' active' : ''}"
                       onclick="toggleDateUnknown('${key}')">Unknown</button>
             </div>
@@ -1177,12 +1187,14 @@ function toggleDateUnknown(id) {
   }
   save();
   const input = document.getElementById('detail-date-input');
-  const btn = input && input.nextElementSibling;
   if (input) {
     input.value = isUnknown ? S.dateSeen[key] : '';
     input.disabled = !isUnknown;
+    const wrap = input.closest('.detail-date-wrap');
+    if (wrap) wrap.classList.toggle('is-unknown', !isUnknown);
+    const btn = wrap && wrap.closest('.detail-date-row') && wrap.closest('.detail-date-row').querySelector('.detail-date-unknown');
+    if (btn) btn.classList.toggle('active', !isUnknown);
   }
-  if (btn) btn.classList.toggle('active', !isUnknown);
 }
 
 function saveNote(id, text) {
@@ -1998,6 +2010,346 @@ function dismissOnboarding() {
   setTimeout(() => el.remove(), 300);
 }
 
+/* ── Quiz ────────────────────────────────────────────────────────────────── */
+let _quiz = null;
+let _quizOpts = []; // current question's options array, indexed by MC buttons
+
+function openQuiz() {
+  if (document.getElementById('quiz-overlay')) return;
+  _quiz = {
+    phase: 'setup',
+    setup: { count: 10, types: ['artist', 'year', 'museum', 'movement', 'title'], mode: 'multiple' },
+    questions: [],
+    current: 0,
+    answers: [],
+    answered: false,
+  };
+  const overlay = document.createElement('div');
+  overlay.id = 'quiz-overlay';
+  overlay.className = 'quiz-overlay';
+  overlay.innerHTML = `<div class="quiz-sheet" id="quiz-sheet"></div>`;
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeQuiz(); });
+  document.body.appendChild(overlay);
+  document.body.style.overflow = 'hidden';
+  _renderQuiz();
+}
+
+function closeQuiz() {
+  const el = document.getElementById('quiz-overlay');
+  if (el) { el.style.opacity = '0'; setTimeout(() => el.remove(), 200); }
+  document.body.style.overflow = '';
+  _quiz = null;
+}
+
+function _renderQuiz() {
+  const sheet = document.getElementById('quiz-sheet');
+  if (!sheet || !_quiz) return;
+  if (_quiz.phase === 'setup')    sheet.innerHTML = _quizSetupHTML();
+  else if (_quiz.phase === 'question') sheet.innerHTML = _quizQuestionHTML();
+  else if (_quiz.phase === 'score')    sheet.innerHTML = _quizScoreHTML();
+  sheet.scrollTop = 0;
+}
+
+/* ── Setup screen ─────────────────────────────────────────────────────────── */
+function _quizSetupHTML() {
+  const s = _quiz.setup;
+  const types = [
+    { key: 'artist',   label: 'Artist' },
+    { key: 'year',     label: 'Year' },
+    { key: 'museum',   label: 'Museum' },
+    { key: 'movement', label: 'Movement' },
+    { key: 'title',    label: 'Painting name' },
+  ];
+  return `
+    <div class="quiz-nav">
+      <button class="detail-back-btn" onclick="closeQuiz()">${ICONS.back} Close</button>
+      <span class="quiz-nav-title">Art Quiz</span>
+    </div>
+    <div class="quiz-setup">
+      <div class="quiz-section">
+        <div class="quiz-section-label">Questions — <span id="quiz-count-val">${s.count}</span></div>
+        <input type="range" class="quiz-slider" min="5" max="20" step="1" value="${s.count}"
+               oninput="quizSetCount(this.value)">
+      </div>
+      <div class="quiz-section">
+        <div class="quiz-section-label">Question types</div>
+        <div class="quiz-type-grid">
+          ${types.map(t => `
+            <button class="quiz-type-btn${s.types.includes(t.key) ? ' active' : ''}"
+                    id="qt-${t.key}" onclick="quizToggleType('${t.key}')">${t.label}</button>
+          `).join('')}
+        </div>
+      </div>
+      <div class="quiz-section">
+        <div class="quiz-section-label">Answer mode</div>
+        <div class="quiz-mode-row">
+          <button class="quiz-mode-btn${s.mode === 'multiple' ? ' active' : ''}"
+                  id="qm-multiple" onclick="quizSetMode('multiple')">Multiple choice</button>
+          <button class="quiz-mode-btn${s.mode === 'dropdown' ? ' active' : ''}"
+                  id="qm-dropdown" onclick="quizSetMode('dropdown')">Dropdown</button>
+        </div>
+      </div>
+      <button class="quiz-start-btn" onclick="quizStart()">Start Quiz</button>
+    </div>
+  `;
+}
+
+function quizSetCount(val) {
+  _quiz.setup.count = parseInt(val);
+  const el = document.getElementById('quiz-count-val');
+  if (el) el.textContent = val;
+}
+
+function quizToggleType(type) {
+  const types = _quiz.setup.types;
+  const idx = types.indexOf(type);
+  if (idx >= 0) {
+    if (types.length === 1) return;
+    types.splice(idx, 1);
+  } else {
+    types.push(type);
+  }
+  const btn = document.getElementById(`qt-${type}`);
+  if (btn) btn.classList.toggle('active', types.includes(type));
+}
+
+function quizSetMode(mode) {
+  _quiz.setup.mode = mode;
+  document.getElementById('qm-multiple').classList.toggle('active', mode === 'multiple');
+  document.getElementById('qm-dropdown').classList.toggle('active', mode === 'dropdown');
+}
+
+/* ── Question generation ──────────────────────────────────────────────────── */
+function quizStart() {
+  const { count, types, mode } = _quiz.setup;
+  if (!types.length) return;
+
+  const pool = PAINTINGS.filter(p => p.rank && p.rank <= 100);
+
+  const allArtists   = [...new Set(pool.map(p => p.artist))];
+  const allYears     = [...new Set(pool.map(p => p.year))];
+  const allMuseums   = [...new Set(pool.map(p => p.location.museum))];
+  const allMovements = [...new Set(pool.filter(p => p.movement).map(p => p.movement))];
+  const allTitles    = [...new Set(pool.map(p => p.title))];
+
+  const optionPools = { artist: allArtists, year: allYears, museum: allMuseums, movement: allMovements, title: allTitles };
+
+  const shuffled = [...pool].sort(() => Math.random() - 0.5);
+
+  const questions = [];
+  let attempts = 0;
+  while (questions.length < count && attempts < 500) {
+    attempts++;
+    const painting = shuffled[attempts % shuffled.length];
+    const type = types[Math.floor(Math.random() * types.length)];
+
+    if (type === 'movement' && !painting.movement) continue;
+    if (questions.some(q => q.painting.id === painting.id && q.type === type)) continue;
+
+    let answer, optPool, questionText, hint;
+    if (type === 'artist') {
+      answer = painting.artist;
+      optPool = allArtists;
+      questionText = 'Who painted this?';
+      hint = painting.title;
+    } else if (type === 'year') {
+      answer = painting.year;
+      optPool = allYears;
+      questionText = 'When was this painted?';
+      hint = `${painting.title}  ·  ${painting.artist}`;
+    } else if (type === 'museum') {
+      answer = painting.location.museum;
+      optPool = allMuseums;
+      questionText = 'Where is this painting displayed?';
+      hint = `${painting.title}  ·  ${painting.artist}`;
+    } else if (type === 'movement') {
+      answer = painting.movement;
+      optPool = allMovements;
+      questionText = 'What movement is this from?';
+      hint = `${painting.title}  ·  ${painting.artist}`;
+    } else {
+      answer = painting.title;
+      optPool = allTitles;
+      questionText = 'What is this painting called?';
+      hint = painting.artist;
+    }
+
+    let options;
+    if (mode === 'multiple') {
+      const distractors = optPool.filter(o => o !== answer).sort(() => Math.random() - 0.5).slice(0, 3);
+      if (distractors.length < 3) continue;
+      options = [...distractors, answer].sort(() => Math.random() - 0.5);
+    } else {
+      options = [...optPool].sort((a, b) => a.localeCompare(b));
+    }
+
+    questions.push({ painting, type, questionText, hint, answer, options });
+  }
+
+  _quiz.questions = questions.slice(0, count);
+  _quiz.current = 0;
+  _quiz.answers = [];
+  _quiz.answered = false;
+  _quiz.phase = 'question';
+  _renderQuiz();
+}
+
+/* ── Question screen ──────────────────────────────────────────────────────── */
+function _quizQuestionHTML() {
+  const q = _quiz.questions[_quiz.current];
+  const n = _quiz.current;
+  const total = _quiz.questions.length;
+  const answered = _quiz.answered;
+  const userAnswer = answered ? _quiz.answers[n].given : null;
+
+  _quizOpts = q.options;
+
+  const imgHtml = q.painting.imageUrl
+    ? `<img class="quiz-painting-img" src="${q.painting.imageUrl}" alt="" onerror="this.style.display='none'">`
+    : `<div class="quiz-painting-placeholder">🎨</div>`;
+
+  const pips = Array.from({ length: total }, (_, i) => {
+    let cls = 'quiz-pip';
+    if (i < n) cls += _quiz.answers[i].correct ? ' done' : ' missed';
+    else if (i === n) cls += ' current';
+    return `<span class="${cls}"></span>`;
+  }).join('');
+
+  let answersHtml;
+  if (_quiz.setup.mode === 'multiple') {
+    answersHtml = `<div class="quiz-options">
+      ${q.options.map((opt, i) => {
+        let cls = 'quiz-option';
+        if (answered) {
+          if (opt === q.answer) cls += ' correct';
+          else if (opt === userAnswer) cls += ' wrong';
+          else cls += ' faded';
+        }
+        return `<button class="${cls}" ${answered ? 'disabled' : `onclick="quizAnswerMC(${i})"`}>${esc(opt)}</button>`;
+      }).join('')}
+    </div>`;
+  } else {
+    answersHtml = `<div class="quiz-dropdown-wrap">
+      <select class="quiz-select" id="quiz-select" ${answered ? 'disabled' : ''}>
+        <option value="">— select an answer —</option>
+        ${q.options.map(opt => `<option value="${esc(opt)}"${answered && opt === userAnswer ? ' selected' : ''}>${esc(opt)}</option>`).join('')}
+      </select>
+      ${!answered
+        ? `<button class="quiz-submit-btn" onclick="quizAnswerDropdown()">Submit</button>`
+        : `<div class="quiz-dd-result ${userAnswer === q.answer ? 'correct' : 'wrong'}">
+             ${userAnswer === q.answer ? '✓ Correct!' : `✗ Correct answer: ${esc(q.answer)}`}
+           </div>`}
+    </div>`;
+  }
+
+  return `
+    <div class="quiz-nav">
+      <button class="detail-back-btn" onclick="closeQuiz()">${ICONS.back} Close</button>
+      <div class="quiz-progress-pips">${pips}</div>
+      <span class="quiz-qnum">${n + 1} / ${total}</span>
+    </div>
+    <div class="quiz-body">
+      <div class="quiz-img-wrap">${imgHtml}</div>
+      <div class="quiz-hint">${esc(q.hint)}</div>
+      <div class="quiz-question">${esc(q.questionText)}</div>
+      ${answersHtml}
+      ${answered ? `<button class="quiz-next-btn" onclick="quizNext()">
+        ${n + 1 < total ? 'Next →' : 'See results'}
+      </button>` : ''}
+    </div>
+  `;
+}
+
+function quizAnswerMC(idx) {
+  if (_quiz.answered) return;
+  quizRecordAnswer(_quizOpts[idx]);
+}
+
+function quizAnswerDropdown() {
+  const sel = document.getElementById('quiz-select');
+  if (!sel || !sel.value) return;
+  quizRecordAnswer(sel.value);
+}
+
+function quizRecordAnswer(given) {
+  if (_quiz.answered) return;
+  _quiz.answered = true;
+  const q = _quiz.questions[_quiz.current];
+  _quiz.answers.push({ given, correct: given === q.answer });
+  _renderQuiz();
+}
+
+function quizNext() {
+  _quiz.current++;
+  _quiz.answered = false;
+  if (_quiz.current >= _quiz.questions.length) {
+    _quiz.phase = 'score';
+  }
+  _renderQuiz();
+}
+
+/* ── Score screen ─────────────────────────────────────────────────────────── */
+function _quizScoreHTML() {
+  const total = _quiz.answers.length;
+  const correct = _quiz.answers.filter(a => a.correct).length;
+  const pct = total ? Math.round((correct / total) * 100) : 0;
+
+  const byType = {};
+  _quiz.questions.forEach((q, i) => {
+    if (!byType[q.type]) byType[q.type] = { correct: 0, total: 0 };
+    byType[q.type].total++;
+    if (_quiz.answers[i] && _quiz.answers[i].correct) byType[q.type].correct++;
+  });
+
+  const typeLabels = { artist: 'Artist', year: 'Year', museum: 'Museum', movement: 'Movement', title: 'Painting name' };
+
+  const grade = pct === 100 ? 'Perfect score!' : pct >= 80 ? 'Art expert!' : pct >= 60 ? 'Well done!' : pct >= 40 ? 'Getting there!' : 'Keep exploring!';
+
+  const pips = _quiz.answers.map(a =>
+    `<span class="quiz-pip ${a.correct ? 'done' : 'missed'}"></span>`
+  ).join('');
+
+  const hasMultipleTypes = Object.keys(byType).length > 1;
+
+  return `
+    <div class="quiz-nav">
+      <button class="detail-back-btn" onclick="closeQuiz()">${ICONS.back} Close</button>
+    </div>
+    <div class="quiz-score">
+      <div class="quiz-score-grade">${grade}</div>
+      <div class="quiz-score-display">
+        <span class="quiz-score-big">${correct}</span>
+        <span class="quiz-score-denom">/ ${total}</span>
+      </div>
+      <div class="quiz-progress-pips">${pips}</div>
+      ${hasMultipleTypes ? `<div class="quiz-breakdown">
+        ${Object.entries(byType).map(([type, st]) => `
+          <div class="quiz-breakdown-row">
+            <span class="quiz-breakdown-label">${typeLabels[type]}</span>
+            <div class="quiz-breakdown-bar-wrap">
+              <div class="quiz-breakdown-bar" style="width:${Math.round(st.correct/st.total*100)}%"></div>
+            </div>
+            <span class="quiz-breakdown-score">${st.correct}/${st.total}</span>
+          </div>
+        `).join('')}
+      </div>` : ''}
+      <div class="quiz-score-actions">
+        <button class="quiz-start-btn" onclick="quizPlayAgain()">Play again</button>
+        <button class="quiz-close-btn" onclick="closeQuiz()">Close</button>
+      </div>
+    </div>
+  `;
+}
+
+function quizPlayAgain() {
+  _quiz.phase = 'setup';
+  _quiz.questions = [];
+  _quiz.current = 0;
+  _quiz.answers = [];
+  _quiz.answered = false;
+  _renderQuiz();
+}
+
 /* ── Init ────────────────────────────────────────────────────────────────── */
 function init() {
   try {
@@ -2007,6 +2359,8 @@ function init() {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
 
+    const quizBtn = document.getElementById('quiz-btn');
+    if (quizBtn) quizBtn.innerHTML = ICONS.dice;
     const settingsBtn = document.getElementById('settings-btn');
     if (settingsBtn) settingsBtn.innerHTML = ICONS.gear;
 

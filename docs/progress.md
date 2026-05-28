@@ -357,6 +357,29 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ---
 
+## Session 16 — 2026-05-28
+
+### Search bar clear button
+- Added an `✕` button inside both search inputs (Paintings tab and Collection tab) that appears only when there is text entered, positioned absolutely at the right edge of the input
+- Wrapped each input in a `.search-wrap` div so the button can be positioned without affecting the toolbar flex layout
+- Suppressed the browser's native webkit search-cancel button to avoid a double ×
+- Clicking calls the existing `handleSearch('')` / `handleCollectionSearch('')` which clears, re-renders, and refocuses
+
+### Date seen "Unknown" state — fixed collapsing input
+- When "Unknown" is toggled, the date input previously shrank because an empty `type="date"` collapses on Safari/iOS
+- Wrapped the input in `.detail-date-wrap` with `is-unknown` class toggled via JS; `min-height: 40px` on the input prevents collapse
+- Disabled state now shows a dashed border (instead of low opacity) to signal "no data entered intentionally"
+- Added a `— —` placeholder span inside the wrapper that appears only when `is-unknown` is active
+- Fixed `toggleDateUnknown` DOM manipulation to use `.closest()` to find the Unknown button (broke after wrapper was added)
+
+### Art Quiz feature
+- Added a dice (⚄) button in the app header, left of the settings gear, that opens an Art Quiz modal
+- **Setup screen**: slider for 5–20 questions; pill toggles for question types (Artist, Year, Museum, Movement, Painting name); Multiple choice vs. Dropdown mode selector
+- **Question generation**: picks randomly from the Top 100 pool, distributes types evenly, avoids duplicate painting+type combos; MC mode generates 3 wrong distractors from the same category pool
+- **Question screen**: painting image, contextual hint, question text, answer options; after answering MC options highlight green/red; dropdown shows inline ✓/✗ result; progress pips in nav bar
+- **Score screen**: large correct/total, grade label, full pip history, per-type breakdown with mini bar charts, Play again / Close actions
+- All quiz state is ephemeral (`_quiz` let, not persisted to localStorage); modal follows the same bottom-sheet overlay pattern as detail/artist/museum overlays
+
 ## Session 15 — 2026-05-28
 
 ### Rebrand to "Beheld"
