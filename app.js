@@ -2,6 +2,8 @@
 const S = {
   checked: {},
   photos: {},
+  notes: {},
+  hiddenFromCollection: {},
   userPaintings: [],
   view: 'list',
   listMode: 'grid',
@@ -28,7 +30,7 @@ let _apAutofillMuseum = null;
 function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
-      checked: S.checked, photos: S.photos, userPaintings: S.userPaintings,
+      checked: S.checked, photos: S.photos, notes: S.notes, hiddenFromCollection: S.hiddenFromCollection, userPaintings: S.userPaintings,
       view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
     }));
   } catch (_) {}
@@ -577,15 +579,19 @@ function renderStatsView() {
 
 /* ── Collection View ────────────────────────────────────────────────────── */
 function renderCollectionView() {
-  const seen = scopedPaintings().filter(p => S.checked[String(p.id)]);
-  if (seen.length === 0) {
+  const seen    = scopedPaintings().filter(p => S.checked[String(p.id)]);
+  const visible = seen.filter(p => !S.hiddenFromCollection[String(p.id)]);
+  if (visible.length === 0) {
+    const msg = seen.length > 0
+      ? `<p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">All seen paintings are hidden from your collection.</p>`
+      : `<p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">Mark paintings as seen in the Paintings tab.</p>`;
     return `<div class="empty-state">
       <div class="empty-icon">🖼️</div>
-      <p>No paintings seen yet.</p>
-      <p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">Mark paintings as seen in the Paintings tab.</p>
+      <p>${seen.length > 0 ? 'Nothing in your collection.' : 'No paintings seen yet.'}</p>
+      ${msg}
     </div>`;
   }
-  seen.sort((a, b) => (a.rank || 9999) - (b.rank || 9999));
+  visible.sort((a, b) => (a.rank || 9999) - (b.rank || 9999));
   const mode = S.collectionMode;
 
   const toggleBtns = `
@@ -599,7 +605,7 @@ function renderCollectionView() {
   </div>`;
 
   if (mode === 'gallery') {
-    return header + `<div class="gallery-view">${seen.map(p => {
+    return header + `<div class="gallery-view">${visible.map(p => {
       const key = String(p.id);
       if (!p.imageUrl) return '';
       return `<div class="gallery-frame-wrap" onclick="openDetail('${key}')">
@@ -614,8 +620,8 @@ function renderCollectionView() {
   }
 
   return header + (mode === 'compact'
-    ? `<div class="paintings-compact">${seen.map(p => renderPaintingRow(p)).join('')}</div>`
-    : `<div class="paintings-grid">${seen.map(p => renderPaintingCard(p)).join('')}</div>`);
+    ? `<div class="paintings-compact">${visible.map(p => renderPaintingRow(p)).join('')}</div>`
+    : `<div class="paintings-grid">${visible.map(p => renderPaintingCard(p)).join('')}</div>`);
 }
 
 function setCollectionMode(mode) {
@@ -665,8 +671,10 @@ function openDetail(id) {
 
   closeDetail();
 
-  const isChecked = !!S.checked[key];
-  const photos    = S.photos[key] || [];
+  const isChecked  = !!S.checked[key];
+  const inColl     = isChecked && !S.hiddenFromCollection[key];
+  const photos     = S.photos[key] || [];
+  const note       = S.notes[key] || '';
 
   const imgHtml = p.imageUrl
     ? `<img class="detail-img" src="${p.imageUrl}" alt="${esc(p.title)}"
@@ -690,9 +698,9 @@ function openDetail(id) {
     <div class="detail-sheet" id="detail-sheet">
       <div class="detail-nav">
         <button class="detail-back-btn" onclick="closeDetail()">${ICONS.back} Back</button>
-        <button class="detail-collection-btn${isChecked ? ' visible' : ''}" id="detail-collection-btn"
-                onclick="showInCollection()">
-          ${ICONS.bookmark}<span>Collection</span>
+        <button class="detail-collection-btn${isChecked ? ' visible' : ''}${inColl ? ' in-collection' : ''}" id="detail-collection-btn"
+                onclick="toggleCollectionVisibility('${key}')">
+          ${ICONS.bookmark}<span>${inColl ? 'In Collection' : 'Add to Collection'}</span>
         </button>
         <button class="detail-seen-btn${isChecked ? ' checked' : ''}" id="detail-seen-btn"
                 onclick="detailToggleCheck('${key}')">
@@ -734,13 +742,18 @@ function openDetail(id) {
         ${p.description ? `<p class="detail-description">${esc(p.description)}</p>` : ''}
 
         <div class="detail-photos-section">
-          <div class="detail-section-label">Your Photos</div>
           ${photoGridHtml}
           <label style="cursor:pointer;display:block;margin-top:6px">
             <input type="file" accept="image/*" capture="environment" class="hidden"
                    onchange="handlePhotoUpload(event,'${key}')">
             <div class="add-photo-btn">${ICONS.camera} Add your photo</div>
           </label>
+        </div>
+
+        <div class="detail-note-section">
+          <div class="detail-section-label">Add a note</div>
+          <textarea class="detail-note-input" placeholder="Write something about this painting…"
+                    oninput="saveNote('${key}', this.value)">${esc(note)}</textarea>
         </div>
       </div>
     </div>
@@ -775,12 +788,29 @@ function detailToggleCheck(id) {
       : '<span>Mark Seen</span>';
   }
   const colBtn = document.getElementById('detail-collection-btn');
-  if (colBtn) colBtn.className = 'detail-collection-btn' + (isChecked ? ' visible' : '');
+  if (colBtn) {
+    const inColl = isChecked && !S.hiddenFromCollection[key];
+    colBtn.className = 'detail-collection-btn' + (isChecked ? ' visible' : '') + (inColl ? ' in-collection' : '');
+    colBtn.innerHTML = `${ICONS.bookmark}<span>${inColl ? 'In Collection' : 'Add to Collection'}</span>`;
+  }
 }
 
-function showInCollection() {
-  closeDetail();
-  setView('collection');
+function toggleCollectionVisibility(id) {
+  const key = String(id);
+  if (!S.checked[key]) return;
+  if (S.hiddenFromCollection[key]) {
+    delete S.hiddenFromCollection[key];
+  } else {
+    S.hiddenFromCollection[key] = true;
+  }
+  save();
+  render();
+  const inColl = !S.hiddenFromCollection[key];
+  const colBtn = document.getElementById('detail-collection-btn');
+  if (colBtn) {
+    colBtn.className = 'detail-collection-btn visible' + (inColl ? ' in-collection' : '');
+    colBtn.innerHTML = `${ICONS.bookmark}<span>${inColl ? 'In Collection' : 'Add to Collection'}</span>`;
+  }
 }
 
 /* ── Inline check toggle (from list row, doesn't open modal) ─────────────── */
@@ -824,6 +854,16 @@ function deletePhoto(id, index) {
     const overlay = document.getElementById('detail-overlay');
     if (overlay && overlay.dataset.paintingId === key) openDetail(id);
   }
+}
+
+function saveNote(id, text) {
+  const key = String(id);
+  if (text.trim()) {
+    S.notes[key] = text;
+  } else {
+    delete S.notes[key];
+  }
+  save();
 }
 
 function openPhotoLightbox(id, index) {
@@ -1369,16 +1409,6 @@ function renderSettingsView() {
         </div>
       </div>
       <div class="settings-section">
-        <div class="settings-section-title">About</div>
-        <div class="settings-row">
-          <div class="settings-row-label">
-            <div class="settings-row-name">Show intro screen</div>
-            <div class="settings-row-sub">Review the app introduction</div>
-          </div>
-          <button class="settings-action-btn" onclick="showOnboarding()">View</button>
-        </div>
-      </div>
-      <div class="settings-section">
         <div class="settings-section-title">Display</div>
         <div class="settings-row">
           <div class="settings-row-label">
@@ -1389,6 +1419,16 @@ function renderSettingsView() {
             <button class="settings-toggle-btn${S.units === 'metric'   ? ' active' : ''}" onclick="setUnits('metric')">Metric</button>
             <button class="settings-toggle-btn${S.units === 'imperial' ? ' active' : ''}" onclick="setUnits('imperial')">Imperial</button>
           </div>
+        </div>
+      </div>
+      <div class="settings-section">
+        <div class="settings-section-title">About</div>
+        <div class="settings-row">
+          <div class="settings-row-label">
+            <div class="settings-row-name">Show intro screen</div>
+            <div class="settings-row-sub">Review the app introduction</div>
+          </div>
+          <button class="settings-action-btn" onclick="showOnboarding()">View</button>
         </div>
       </div>
     </div>
@@ -1434,17 +1474,17 @@ function _obPage1HTML() {
         <div class="ob-stats">
           <div class="ob-stat">
             <div class="ob-stat-num">35</div>
-            <div class="ob-stat-label">museums<br>to visit</div>
+            <div class="ob-stat-label">museums</div>
           </div>
           <div class="ob-stat-divider"></div>
           <div class="ob-stat">
             <div class="ob-stat-num">21</div>
-            <div class="ob-stat-label">cities across<br>2 continents</div>
+            <div class="ob-stat-label">cities</div>
           </div>
           <div class="ob-stat-divider"></div>
           <div class="ob-stat">
             <div class="ob-stat-num">12</div>
-            <div class="ob-stat-label">countries<br>to reach</div>
+            <div class="ob-stat-label">countries</div>
           </div>
         </div>
 
@@ -1501,8 +1541,8 @@ function _obPage2HTML() {
           <div class="ob-feature">
             <div class="ob-feature-icon">${ICONS.check}</div>
             <div class="ob-feature-text">
-              <div class="ob-feature-title">Mark as Seen</div>
-              <div class="ob-feature-desc">Tap any painting to check it off your list. Your progress is tracked across all 100 masterpieces and shown right in the header.</div>
+              <div class="ob-feature-title">Collect paintings you've seen</div>
+              <div class="ob-feature-desc">Tap the check on any painting to mark it as seen and add it to your collection.</div>
             </div>
           </div>
           <div class="ob-feature">

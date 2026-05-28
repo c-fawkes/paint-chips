@@ -377,3 +377,16 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Replaced the palette-emoji PWA icon with a gold (`#c9a84c`) cursive **B** on the same dark `#1a1917` background, matching the new Beheld wordmark (Pacifico)
 - Regenerated `icon-192.png` / `icon-512.png` via a new `scripts/generate-icons.py` (Pillow, 4× supersampled, centered on the glyph's ink bounds, sized to 62% so it stays inside the maskable safe zone)
 - Removed the obsolete `scripts/generate-icons.js` (depended on the uninstalled node `canvas` module and produced the old emoji icon)
+
+### Onboarding, settings, and detail modal polish
+- Enlarged the Beheld cursive wordmark on both onboarding pages (1.5rem → 2.4rem)
+- Simplified the three stat labels on page 1: removed "to visit", "across 2 continents", and "to reach" — labels now read just "museums", "cities", "countries"
+- Onboarding page 2 first feature: renamed title to "Collect paintings you've seen" and rewrote the description to be action-focused
+- Moved the About section in Settings to the bottom (below Display), so less-used options don't lead
+- Detail modal: removed the "Your Photos" section header (photos are self-evident)
+- Detail modal: added an "Add a note" textarea below the photo upload button; notes are persisted in `S.notes` (keyed by painting ID) and saved to localStorage on every keystroke
+
+### Collection visibility toggle
+- The collection button in the detail modal is now a toggle: "In Collection" (gold, active) vs "Add to Collection" (dimmed)
+- Paintings default to in-collection when first marked as seen; the toggle lets you hide specific paintings from the Collection tab while keeping them marked as seen
+- `S.hiddenFromCollection` persisted in localStorage; collection view filters out hidden paintings but the seen count in the header still reflects all seen paintings

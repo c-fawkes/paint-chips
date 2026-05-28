@@ -31,7 +31,7 @@
   font-weight: 400 !important;
 }
 #app-header h1.brand-cursive { font-size: 1.55rem; line-height: 1; }
-.ob-brand.brand-cursive { font-size: 1.5rem; }
+.ob-brand.brand-cursive { font-size: 2.4rem; }
 
 html { font-size: 16px; }
 
@@ -1207,9 +1207,9 @@ body {
   display: none;
   align-items: center; gap: 5px;
   background: none;
-  border: 1px solid var(--gold-dim);
+  border: 1px solid rgba(255,255,255,.15);
   border-radius: 20px;
-  color: var(--gold); font-size: .82rem;
+  color: var(--text-faint); font-size: .82rem;
   padding: 6px 14px;
   cursor: pointer;
   transition: all .15s;
@@ -1217,6 +1217,10 @@ body {
   animation: fadeIn .2s ease;
 }
 .detail-collection-btn.visible { display: flex; }
+.detail-collection-btn.in-collection {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
 .detail-collection-btn:active { opacity: .7; }
 .detail-collection-btn svg { width: 14px; height: 14px; }
 
@@ -1326,6 +1330,24 @@ body {
 }
 
 .detail-photos-section { margin-top: 4px; }
+.detail-note-section { margin-top: 20px; }
+.detail-note-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: .9rem;
+  line-height: 1.5;
+  padding: 10px 12px;
+  resize: none;
+  min-height: 90px;
+  outline: none;
+}
+.detail-note-input::placeholder { color: var(--text-faint); }
+.detail-note-input:focus { border-color: var(--gold-dim); }
 .detail-section-label {
   font-size: .72rem;
   color: var(--text-faint);
