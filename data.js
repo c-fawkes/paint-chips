@@ -3285,177 +3285,177 @@ const MUSEUMS_INFO = {
   "Louvre Museum": {
     city: "Paris", country: "France",
     blurb: "The world's largest and most visited art museum, the Louvre occupies a former royal palace on the banks of the Seine. Its collection spans 5,000 years of civilization — from ancient Egyptian antiquities to 19th-century European paintings — with over 35,000 works on display. The iconic glass pyramid entrance was added by I.M. Pei in 1989.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Louvre_Museum_Wikimedia_Commons.jpg/800px-Louvre_Museum_Wikimedia_Commons.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Louvre_Museum_Wikimedia_Commons.jpg/330px-Louvre_Museum_Wikimedia_Commons.jpg"
   },
   "Metropolitan Museum of Art": {
     city: "New York", country: "USA",
     blurb: "The Met is the largest art museum in the United States and one of the greatest in the world, with a collection of over two million objects spanning 5,000 years across every culture. Its neoclassical Fifth Avenue facade has been a fixture of the Upper East Side since 1880, and its encyclopedic holdings range from Egyptian mummies to Impressionist masterpieces to contemporary installations.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Metropolitan_Museum_of_Art_%28The_Met%29_-_Central_Park%2C_NYC.jpg/800px-Metropolitan_Museum_of_Art_%28The_Met%29_-_Central_Park%2C_NYC.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Metropolitan_Museum_of_Art_%28The_Met%29_-_Central_Park%2C_NYC.jpg/330px-Metropolitan_Museum_of_Art_%28The_Met%29_-_Central_Park%2C_NYC.jpg"
   },
   "National Gallery": {
     city: "London", country: "United Kingdom",
     blurb: "Overlooking Trafalgar Square, the National Gallery houses one of the greatest collections of Western European painting in the world, spanning from 1250 to 1900. Founded in 1824, its collection was intentionally built to represent the full history of painting rather than to showcase royal taste, making it unusually democratic in scope. Entry is permanently free.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/The_National_Gallery%2C_London_-_Oct_2008.jpg/800px-The_National_Gallery%2C_London_-_Oct_2008.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Galer%C3%ADa_Nacional%2C_Londres%2C_Inglaterra%2C_2014-08-07%2C_DD_036.JPG/330px-Galer%C3%ADa_Nacional%2C_Londres%2C_Inglaterra%2C_2014-08-07%2C_DD_036.JPG"
   },
   "Museo del Prado": {
     city: "Madrid", country: "Spain",
     blurb: "The Prado is the national museum of Spain and the definitive showcase of Spanish art, as well as one of the world's greatest repositories of European Old Master painting. Its collection was built from the Spanish royal collections, giving it unrivaled holdings of Velázquez, Goya, and El Greco, as well as outstanding Flemish and Italian works. It opened to the public in 1819.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Museo_del_Prado_2016_%2825185969599%29.jpg/800px-Museo_del_Prado_2016_%2825185969599%29.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Museo_del_Prado_2016_%2825185969599%29.jpg/330px-Museo_del_Prado_2016_%2825185969599%29.jpg"
   },
   "Rijksmuseum": {
     city: "Amsterdam", country: "Netherlands",
     blurb: "The Rijksmuseum is the Netherlands' national museum of art and history, with a collection representing 800 years of Dutch and Flemish achievement. Its grand neo-Gothic building, reopened after a decade-long renovation in 2013, is home to Rembrandt's Night Watch, Vermeer's Milkmaid, and the largest collection of Dutch Golden Age painting in the world.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Rijksmuseumamsterdam.jpg/800px-Rijksmuseumamsterdam.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/South_facade_of_the_Rijksmuseum_Amsterdam_%28DSCF0528%29.jpg/330px-South_facade_of_the_Rijksmuseum_Amsterdam_%28DSCF0528%29.jpg"
   },
   "Uffizi Gallery": {
     city: "Florence", country: "Italy",
     blurb: "The Uffizi is the preeminent museum of Italian Renaissance painting, housed in a 16th-century administrative building commissioned by Cosimo I de' Medici. The Medici family's incomparable art collection — assembled over two centuries — forms its core, and no other museum can match its concentration of Botticelli, Leonardo, Michelangelo, Raphael, and Titian. The word 'uffizi' simply means 'offices.'",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Uffizi_Florence.jpg/800px-Uffizi_Florence.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Florence%2C_Italy_-_panoramio_%28125%29.jpg/330px-Florence%2C_Italy_-_panoramio_%28125%29.jpg"
   },
   "State Hermitage Museum": {
     city: "Saint Petersburg", country: "Russia",
     blurb: "The Hermitage is one of the largest and oldest museums in the world, occupying six buildings along the Neva River including the Winter Palace of the Tsars. Its collection of nearly three million objects was assembled primarily by Catherine the Great in the 18th century and includes extraordinary holdings of Dutch and Flemish masters, French Impressionists, and ancient antiquities.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Hermitage_Museum_-_St._Petersburg%2C_Russia_-_Jan._2008.jpg/800px-Hermitage_Museum_-_St._Petersburg%2C_Russia_-_Jan._2008.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/5174-3._St._Petersburg._Greater_Hermitage.jpg/330px-5174-3._St._Petersburg._Greater_Hermitage.jpg"
   },
   "Museum of Modern Art (MoMA)": {
     city: "New York", country: "USA",
     blurb: "MoMA is the museum that invented the modern canon — its collection of painting, sculpture, film, photography, and design from 1880 to the present is among the most influential in the world. Founded in 1929 by Abby Aldrich Rockefeller and others, it was the first institution to treat modern art with the same institutional seriousness as the Old Masters. Its midtown Manhattan building has been expanded four times.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/MoMA_NYC_2019-04-28.jpg/800px-MoMA_NYC_2019-04-28.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/MoMa_NY_USA_1.jpg/330px-MoMa_NY_USA_1.jpg"
   },
   "Musée d'Orsay": {
     city: "Paris", country: "France",
     blurb: "The Musée d'Orsay occupies a Beaux-Arts railway station built for the 1900 World's Fair and holds the world's largest collection of Impressionist and Post-Impressionist masterpieces. Works by Monet, Renoir, Degas, Manet, Van Gogh, Gauguin, and Cézanne fill its spectacular iron-and-glass main hall. The building itself, saved from demolition in 1977, is as remarkable as its contents.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Mus%C3%A9e_d%27Orsay_-_22_Wikimedia_Commons_-_2019.jpg/800px-Mus%C3%A9e_d%27Orsay_-_22_Wikimedia_Commons_-_2019.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Mus%C3%A9e_D_Orsay_At_Sunset_%28134278411%29.jpeg/960px-Mus%C3%A9e_D_Orsay_At_Sunset_%28134278411%29.jpeg"
   },
   "Vatican Museums (Sistine Chapel)": {
     city: "Vatican City", country: "Vatican City",
     blurb: "The Vatican Museums comprise the pontifical art collections housed in a series of palaces adjacent to St. Peter's Basilica — among the oldest, largest, and richest museums in the world. The Sistine Chapel, with Michelangelo's ceiling and Last Judgment, is their most celebrated space, though the Vatican's holdings extend from classical antiquities to contemporary art. Over six million visitors pass through annually.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/The_Sistine_Chapel_-_Vatican_Museums%2C_Vatican_City_%28cropped%29.jpg/800px-The_Sistine_Chapel_-_Vatican_Museums%2C_Vatican_City_%28cropped%29.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/8/82/Sistina-interno.jpg"
   },
   "Vatican Museums (Apostolic Palace)": {
     city: "Vatican City", country: "Vatican City",
     blurb: "The Apostolic Palace — the official residence of the Pope — contains the Raphael Rooms, four chambers decorated entirely by Raphael and his workshop between 1508 and 1524, including The School of Athens. These frescoed rooms, along with the Sistine Chapel next door, represent the highest achievement of Vatican Renaissance decoration and draw millions of visitors each year.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Raphael_-_The_School_of_Athens.jpg/800px-Raphael_-_The_School_of_Athens.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Raffael_Stanza_della_Segnatura.jpg/960px-Raffael_Stanza_della_Segnatura.jpg"
   },
   "Art Institute of Chicago": {
     city: "Chicago", country: "USA",
     blurb: "The Art Institute is the second-largest art museum in the United States and one of the most encyclopedic, with a collection spanning 5,000 years. Its Impressionist and Post-Impressionist holdings are among the finest outside of France, anchored by Seurat's A Sunday on La Grande Jatte. The bronze lions flanking its Michigan Avenue entrance have been a Chicago landmark since 1893.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Art_Institute_of_Chicago%2C_Chicago%2C_Illinois%2C_USA.jpg/800px-Art_Institute_of_Chicago%2C_Chicago%2C_Illinois%2C_USA.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/7/75/Chicago_Art_Institute_-_Visitors_at_Facade_on_March_11th_2024.jpg"
   },
   "National Gallery of Art": {
     city: "Washington D.C.", country: "USA",
     blurb: "The National Gallery of Art on the National Mall houses one of the finest art collections in the United States, from medieval to contemporary, with particular strength in Italian Renaissance, Dutch, and American art. It was established by an act of Congress in 1937 with a gift from Andrew Mellon and has been free to the public since it opened in 1941. Its East Building, by I.M. Pei, opened in 1978.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Gallery_of_Art_-_West_Building.jpg/800px-National_Gallery_of_Art_-_West_Building.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/National_Gallery_of_Art_-_2026_%2855255088792%29.jpg/330px-National_Gallery_of_Art_-_2026_%2855255088792%29.jpg"
   },
   "Kunsthistorisches Museum": {
     city: "Vienna", country: "Austria",
     blurb: "The Kunsthistorisches Museum ('Museum of Art History') is Austria's greatest art institution, built by Emperor Franz Joseph I to house the imperial Habsburg collections and opened in 1891. Its Picture Gallery is among the finest in the world, with extraordinary holdings of Bruegel, Dürer, Vermeer, Rubens, and Titian. The building itself, by Gottfried Semper and Karl von Hasenauer, is a masterwork of Historicist architecture.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Kunsthistorisches_Museum_Wien.jpg/800px-Kunsthistorisches_Museum_Wien.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/AT_13763_Exterior_of_the_Kunsthistorisches_Museum%2C_Vienna-2397.jpg/960px-AT_13763_Exterior_of_the_Kunsthistorisches_Museum%2C_Vienna-2397.jpg"
   },
   "Österreichische Galerie Belvedere": {
     city: "Vienna", country: "Austria",
     blurb: "The Belvedere is a Baroque palace complex built for Prince Eugene of Savoy between 1714 and 1723, now housing Austria's most important art collection. The Upper Belvedere holds the world's largest collection of Gustav Klimt paintings, including The Kiss, as well as major works of Austrian Expressionism and international Symbolism. The gardens connecting the two palace buildings are among the finest Baroque landscapes in Europe.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Belvedere_IMG_2673.jpg/800px-Belvedere_IMG_2673.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Oberes_Belvedere_Wien.jpg/960px-Oberes_Belvedere_Wien.jpg"
   },
   "Mauritshuis": {
     city: "The Hague", country: "Netherlands",
     blurb: "The Mauritshuis is a small museum in the former palace of Count John Maurice of Nassau, housing the Royal Picture Gallery of the Netherlands. Its compact collection is of extraordinary quality, including Vermeer's Girl with a Pearl Earring, Rembrandt's The Anatomy Lesson, and major works by Rubens and Holbein. It is often called the most perfect small museum in the world.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Mauritshuis_2019.jpg/800px-Mauritshuis_2019.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Mauritshuis_exterior_02.jpg/960px-Mauritshuis_exterior_02.jpg"
   },
   "Van Gogh Museum": {
     city: "Amsterdam", country: "Netherlands",
     blurb: "The Van Gogh Museum holds the world's largest collection of works by Vincent van Gogh — over 200 paintings, 500 drawings, and 700 letters — most inherited from his brother Theo's family. Its permanent collection tells the story of Van Gogh's entire career, from his dark Dutch period through his sunlit Arles breakthrough to the final Auvers canvases. It is the most visited museum in the Netherlands.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Van_Gogh_Museum_2016.jpg/800px-Van_Gogh_Museum_2016.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Van_Gogh_Museum_Amsterdam_%2825674085523%29.jpg/960px-Van_Gogh_Museum_Amsterdam_%2825674085523%29.jpg"
   },
   "Tate Modern": {
     city: "London", country: "United Kingdom",
     blurb: "Tate Modern opened in 2000 in the converted Bankside Power Station on the South Bank of the Thames, and has become the world's most visited gallery of modern and contemporary art. Its permanent collection includes defining works of 20th-century art from Picasso, Matisse, Dalí, and Rothko to contemporary global artists. The vast Turbine Hall hosts annual large-scale commissions that have become cultural events in themselves.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tate_Modern_2016.jpg/800px-Tate_Modern_2016.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tate_Modern_-_Bankside_Power_Station.jpg/960px-Tate_Modern_-_Bankside_Power_Station.jpg"
   },
   "Philadelphia Museum of Art": {
     city: "Philadelphia", country: "USA",
     blurb: "The Philadelphia Museum of Art, whose steps were immortalized by Rocky Balboa, is one of the largest art museums in the United States, with a collection of over 240,000 objects. Its holdings are particularly strong in American art, medieval European art, and works by Marcel Duchamp — its Arensberg Collection is the definitive Duchamp archive. The Greek Revival temple was designed in 1919.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Philadelphia_Museum_of_Art_2010.jpg/800px-Philadelphia_Museum_of_Art_2010.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/PhiladelphiaMuseumOfArt2017.jpg/960px-PhiladelphiaMuseumOfArt2017.jpg"
   },
   "Marmottan Monet Museum": {
     city: "Paris", country: "France",
     blurb: "The Marmottan Monet Museum in the Bois de Boulogne houses the world's largest collection of Claude Monet's work — over 300 paintings and sketches, including the original Impression, Sunrise that gave Impressionism its name. The collection was donated by Monet's son Michel in 1966 and is displayed in a 19th-century hunting lodge with purpose-built underground galleries. It is the most intimate major Impressionist museum in Paris.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Mus%C3%A9e_Marmottan_Monet.jpg/800px-Mus%C3%A9e_Marmottan_Monet.jpg"
+    photo: null
   },
   "Musée de l'Orangerie": {
     city: "Paris", country: "France",
     blurb: "Built in 1852 as a greenhouse for the orange trees of the Tuileries Garden, the Orangerie is now home to the Nymphéas — eight monumental water lily paintings that Monet designed specifically for two oval rooms, as a gift to France. Installed after his death in 1927, these immersive canvases remain among the most extraordinary encounters between art and architecture in existence. The museum also holds major Impressionist and Post-Impressionist works.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Mus%C3%A9e_de_l%27Orangerie_-_Paris.jpg/800px-Mus%C3%A9e_de_l%27Orangerie_-_Paris.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Mus%C3%A9e_de_l%E2%80%99Orangerie_exterior.JPG/960px-Mus%C3%A9e_de_l%E2%80%99Orangerie_exterior.JPG"
   },
   "National Museum of Norway": {
     city: "Oslo", country: "Norway",
     blurb: "The National Museum of Norway, which opened its new building in 2022, is the largest art museum in the Nordic countries. Its collection spans fine arts, architecture, and design from antiquity to the present. The most visited work is Edvard Munch's The Scream (1893 version), whose iconic image of existential anguish has become one of the most recognized paintings in the world. The building itself, on the waterfront by Aker Brygge, is a landmark of contemporary Norwegian architecture.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Nasjonalmuseet_2022.jpg/800px-Nasjonalmuseet_2022.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Nye_Nasjonalmuseet_%282022%29_%282%29.jpg/960px-Nye_Nasjonalmuseet_%282022%29_%282%29.jpg"
   },
   "Galleria Borghese": {
     city: "Rome", country: "Italy",
     blurb: "The Borghese Gallery occupies the casino of Cardinal Scipione Borghese in the Villa Borghese gardens and contains one of the finest private art collections ever assembled. Its sculpture collection, anchored by Bernini's masterpieces — Apollo and Daphne, The Rape of Proserpina, David — is unmatched. Visits are limited to two hours and must be booked in advance, making it among the most exclusive museum experiences in the world.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Galleria_Borghese_facade.jpg/800px-Galleria_Borghese_facade.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Galleria_borghese_facade.jpg/960px-Galleria_borghese_facade.jpg"
   },
   "San Luigi dei Francesi": {
     city: "Rome", country: "Italy",
     blurb: "San Luigi dei Francesi is the French national church in Rome, built in the 16th century, and is best known as the home of Caravaggio's Contarelli Chapel paintings — three monumental works depicting the life of St. Matthew that established him as the most radical painter in Rome. The church is an active place of worship, but the Contarelli Chapel draws art pilgrims from around the world.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/San_Luigi_dei_Francesi_%28Rome%29_-_Facade.jpg/800px-San_Luigi_dei_Francesi_%28Rome%29_-_Facade.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/%C3%89glise_San_Luigi_Francesi_-_Rome_%28IT62%29_-_2021-08-28_-_2.jpg/330px-%C3%89glise_San_Luigi_Francesi_-_Rome_%28IT62%29_-_2021-08-28_-_2.jpg"
   },
   "Santa Maria delle Grazie": {
     city: "Milan", country: "Italy",
     blurb: "Santa Maria delle Grazie is a 15th-century church and Dominican convent in Milan, a UNESCO World Heritage Site since 1980. Its refectory wall bears Leonardo da Vinci's Last Supper, painted between 1495 and 1498 directly onto the plaster — not as a fresco but with experimental tempera, which began deteriorating almost immediately. Viewing is strictly limited to groups of 25 for 15 minutes, making it among the most controlled museum visits in the world.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Refectory_of_Santa_Maria_delle_Grazie.jpg/800px-Refectory_of_Santa_Maria_delle_Grazie.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Santa_Maria_delle_Grazie_Milan_2013.jpg/330px-Santa_Maria_delle_Grazie_Milan_2013.jpg"
   },
   "Wallace Collection": {
     city: "London", country: "United Kingdom",
     blurb: "The Wallace Collection is housed in Hertford House in Manchester Square and contains one of the finest private collections of art ever assembled — including Fragonard's The Swing, Hals' Laughing Cavalier, and works by Titian, Velázquez, and Rembrandt — all bequeathed to the nation in 1897 by Lady Wallace. Entry is free, and the collection cannot be lent, making it permanently and completely accessible only in London.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Wallace_Collection_-_Hertford_House.jpg/800px-Wallace_Collection_-_Hertford_House.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Front_entrance_to_the_Wallace_Collection%2C_Manchester_Square_-_geograph.org.uk_-_1600012.jpg/330px-Front_entrance_to_the_Wallace_Collection%2C_Manchester_Square_-_geograph.org.uk_-_1600012.jpg"
   },
   "Neue Galerie New York": {
     city: "New York", country: "USA",
     blurb: "The Neue Galerie is a small but extraordinary museum dedicated exclusively to German and Austrian art from 1890 to 1940, housed in a 1914 Fifth Avenue mansion. Its collection includes Klimt's Woman in Gold and major works of Vienna Secession, German Expressionism, and the Bauhaus. Founded in 2001 by Ronald Lauder and Serge Sabarsky, it is New York's most focused and intimate world-class museum.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Neue_Galerie_New_York.jpg/800px-Neue_Galerie_New_York.jpg"
+    photo: null
   },
   "Phillips Collection": {
     city: "Washington D.C.", country: "USA",
     blurb: "The Phillips Collection, founded in 1921 in Washington D.C., was the first museum of modern art in the United States. Its collection of Impressionist and modern art was assembled through the personal passion of Duncan Phillips, who lived in the building alongside his collection. Renoir's Luncheon of the Boating Party, acquired in 1923, is its centerpiece — one of the most beloved Impressionist paintings in America.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/The_Phillips_Collection.jpg/800px-The_Phillips_Collection.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/The_Phillips_Collection.JPG/330px-The_Phillips_Collection.JPG"
   },
   "Barnes Foundation": {
     city: "Philadelphia", country: "USA",
     blurb: "The Barnes Foundation holds one of the world's great collections of Impressionist, Post-Impressionist, and early Modern art — assembled obsessively by Albert C. Barnes in the early 20th century — including 181 Renoirs, 69 Cézannes, 59 Matisses, and 46 Picassos. Barnes hung his collection in highly unconventional arrangements mixing paintings with ironwork and Native American objects. The collection moved from its original Merion, Pennsylvania home to a purpose-built Philadelphia building in 2012.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Barnes_Foundation_Building.jpg/800px-Barnes_Foundation_Building.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Barnes_Foundation_%2853574516274%29.jpg/330px-Barnes_Foundation_%2853574516274%29.jpg"
   },
   "J. Paul Getty Museum": {
     city: "Los Angeles", country: "USA",
     blurb: "The Getty Museum sits on a hilltop above Brentwood with views of Los Angeles and the Pacific, its modernist Richard Meier campus opened in 1997. Its collection spans 4,000 years of Western art, with particular strength in European paintings from the 14th to 19th centuries, illuminated manuscripts, and decorative arts. Admission is free; the travertine-clad buildings and gardens are considered masterworks of late-20th-century architecture.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Getty_Center_-_Los_Angeles_-_exterior.jpg/800px-Getty_Center_-_Los_Angeles_-_exterior.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Aerial_Getty_Museum.jpg/330px-Aerial_Getty_Museum.jpg"
   },
   "Huntington Library": {
     city: "San Marino", country: "USA",
     blurb: "The Huntington Library, Art Museum, and Botanical Gardens in San Marino, California is one of the great cultural institutions of the American West. Henry Huntington assembled an extraordinary collection of rare books, manuscripts, British and American art, and 120 acres of thematic gardens. Gainsborough's Blue Boy and Lawrence's Pinkie are its two most celebrated paintings, both acquired for staggering sums in the 1920s.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/HuntingtonLibrary.jpg/800px-HuntingtonLibrary.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Huntington_Library.jpg/960px-Huntington_Library.jpg"
   },
   "Gemäldegalerie Alte Meister": {
     city: "Dresden", country: "Germany",
     blurb: "Dresden's Gemäldegalerie Alte Meister ('Old Masters Picture Gallery') houses one of the finest collections of European painting in the world, assembled by the Electors of Saxony in the 17th and 18th centuries. Raphael's Sistine Madonna and Giorgione's Sleeping Venus are its most celebrated works. The neoclassical building, reopened after World War II restoration, looks onto the Zwinger palace complex.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Gem%C3%A4ldegalerie_Alte_Meister_-_front.jpg/800px-Gem%C3%A4ldegalerie_Alte_Meister_-_front.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Dresden-Zwinger-Courtyard.11.JPG/330px-Dresden-Zwinger-Courtyard.11.JPG"
   },
   "Yale University Art Gallery": {
     city: "New Haven", country: "USA",
     blurb: "The Yale University Art Gallery, founded in 1832, is the oldest university art museum in the Western Hemisphere. Its collection of over 200,000 works spans all cultures and periods, with particular strength in American art, European paintings, and ancient Mediterranean objects. The 1953 Louis Kahn building, Kahn's first major commission, is a landmark of 20th-century American architecture and is free and open to the public.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Yale_University_Art_Gallery.jpg/800px-Yale_University_Art_Gallery.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Yale_University_Art_Gallery_exterior.jpg/330px-Yale_University_Art_Gallery_exterior.jpg"
   },
   "Museo Nacional Centro de Arte Reina Sofía": {
     city: "Madrid", country: "Spain",
     blurb: "The Reina Sofía is Spain's national museum of 20th-century and contemporary art, housed in a converted 18th-century hospital adjacent to the Prado. Its permanent collection covers the major Spanish and international movements of Modernism, Surrealism, and the avant-garde. Picasso's Guernica — relocated from MoMA to Madrid in 1981 following the restoration of democracy — is the defining work of the collection and one of the most powerful political paintings ever made.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/MuseoReinaSofia.jpg/800px-MuseoReinaSofia.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Museo_Reina_Sofia-exterior.jpg/960px-Museo_Reina_Sofia-exterior.jpg"
   },
   "Museo de Arte Moderno": {
     city: "Mexico City", country: "Mexico",
     blurb: "The Museo de Arte Moderno in Chapultepec Park is Mexico's primary institution for modern and contemporary Mexican art, opened in 1964. Its collection is strongest in the muralist generation and the Mexican Modernists who followed — Rivera, Siqueiros, Tamayo, Kahlo, and Izquierdo — and its Kahlo holdings include The Two Fridas. The circular building, surrounded by trees in the park, is considered a landmark of mid-century Mexican architecture.",
-    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Museo_de_Arte_Moderno_de_M%C3%A9xico_%28exterior%29.jpg/800px-Museo_de_Arte_Moderno_de_M%C3%A9xico_%28exterior%29.jpg"
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Museo_de_Arte_Moderno.jpg/960px-Museo_de_Arte_Moderno.jpg"
   }
 };
 

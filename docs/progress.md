@@ -184,6 +184,7 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 ### Bug fixes
 - Fixed movement tag onclick and accordion onclick broken by `JSON.stringify` double-quote collision in HTML attributes — switched to single-quoted JS strings
 - Fixed `ARTIST_PORTRAITS` URLs returning 400/403 errors: original URLs used `400px-` Wikimedia thumbnail prefix which doesn't exist as a pre-generated size. Replaced entire block using verified URLs from Wikipedia REST API (`/api/rest_v1/page/summary/`) which returns the actual generated thumbnail size (330px or 500px). Artists with no accessible portrait left as `null`.
+- Fixed `MUSEUMS_INFO` photo URLs: same root cause — original `800px-` Wikimedia thumbnail URLs are invalid (800px not a pre-generated size). Replaced all 35 museum photos by querying Wikipedia REST API and Commons imageinfo API to get verified thumbnail URLs (330px or 960px depending on what was pre-generated). 2 museums (Marmottan Monet, Neue Galerie New York) set to `null` — no accessible exterior photo found. Vatican Museums entries now use interior shots (Sistine Chapel interior, Raphael Rooms).
 
 ---
 
