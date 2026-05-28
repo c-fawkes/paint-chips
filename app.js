@@ -3,6 +3,7 @@ const S = {
   checked: {},
   photos: {},
   notes: {},
+  dateSeen: {},
   hiddenFromCollection: {},
   userPaintings: [],
   view: 'list',
@@ -30,7 +31,7 @@ let _apAutofillMuseum = null;
 function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
-      checked: S.checked, photos: S.photos, notes: S.notes, hiddenFromCollection: S.hiddenFromCollection, userPaintings: S.userPaintings,
+      checked: S.checked, photos: S.photos, notes: S.notes, dateSeen: S.dateSeen, hiddenFromCollection: S.hiddenFromCollection, userPaintings: S.userPaintings,
       view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
     }));
   } catch (_) {}
@@ -50,6 +51,16 @@ function load() {
     S.expandedListArtists = new Set();
     if (S.view === 'stats' || S.view === 'settings') S.view = 'list';
   } catch (_) {}
+}
+
+/* ── Date helpers ───────────────────────────────────────────────────────── */
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+function formatDateSeen(iso) {
+  if (!iso || iso === 'unknown') return 'Unknown';
+  const [y, m, d] = iso.split('-');
+  return new Date(+y, +m - 1, +d).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
 }
 
 /* ── Data helpers ───────────────────────────────────────────────────────── */
@@ -743,16 +754,34 @@ function openDetail(id) {
 
         <div class="detail-photos-section">
           ${photoGridHtml}
-          <label style="cursor:pointer;display:block;margin-top:6px">
-            <input type="file" accept="image/*" capture="environment" class="hidden"
-                   onchange="handlePhotoUpload(event,'${key}')">
-            <div class="add-photo-btn">${ICONS.camera} Add your photo</div>
-          </label>
+          <div class="add-photo-btns">
+            <label style="cursor:pointer;flex:1">
+              <input type="file" accept="image/*" capture="environment" class="hidden"
+                     onchange="handlePhotoUpload(event,'${key}')">
+              <div class="add-photo-btn">${ICONS.camera} Camera</div>
+            </label>
+            <label style="cursor:pointer;flex:1">
+              <input type="file" accept="image/*" class="hidden"
+                     onchange="handlePhotoUpload(event,'${key}')">
+              <div class="add-photo-btn">${ICONS.frame} Library</div>
+            </label>
+          </div>
+        </div>
+
+        <div class="detail-date-section${isChecked ? '' : ' hidden'}">
+          <div class="detail-section-label">Date seen</div>
+          <div class="detail-date-row">
+            <input type="date" class="detail-date-input" id="detail-date-input"
+                   value="${S.dateSeen[key] && S.dateSeen[key] !== 'unknown' ? S.dateSeen[key] : ''}"
+                   ${S.dateSeen[key] === 'unknown' ? 'disabled' : ''}
+                   onchange="saveDateSeen('${key}', this.value)">
+            <button class="detail-date-unknown${S.dateSeen[key] === 'unknown' ? ' active' : ''}"
+                    onclick="toggleDateUnknown('${key}')">Unknown</button>
+          </div>
         </div>
 
         <div class="detail-note-section">
-          <div class="detail-section-label">Add a note</div>
-          <textarea class="detail-note-input" placeholder="Write something about this painting…"
+          <textarea class="detail-note-input" placeholder="Add a note about this painting"
                     oninput="saveNote('${key}', this.value)">${esc(note)}</textarea>
         </div>
       </div>
@@ -774,8 +803,13 @@ function closeDetail() {
 
 function detailToggleCheck(id) {
   const key = String(id);
-  S.checked[key] = !S.checked[key];
-  if (!S.checked[key]) delete S.checked[key];
+  const wasChecked = !!S.checked[key];
+  S.checked[key] = !wasChecked;
+  if (!S.checked[key]) {
+    delete S.checked[key];
+  } else if (!S.dateSeen[key]) {
+    S.dateSeen[key] = todayISO();
+  }
   save();
   render();
 
@@ -792,6 +826,12 @@ function detailToggleCheck(id) {
     const inColl = isChecked && !S.hiddenFromCollection[key];
     colBtn.className = 'detail-collection-btn' + (isChecked ? ' visible' : '') + (inColl ? ' in-collection' : '');
     colBtn.innerHTML = `${ICONS.bookmark}<span>${inColl ? 'In Collection' : 'Add to Collection'}</span>`;
+  }
+  const dateSection = document.querySelector('.detail-date-section');
+  if (dateSection) dateSection.classList.toggle('hidden', !isChecked);
+  const dateInput = document.getElementById('detail-date-input');
+  if (dateInput && isChecked && S.dateSeen[key] && S.dateSeen[key] !== 'unknown') {
+    dateInput.value = S.dateSeen[key];
   }
 }
 
@@ -817,8 +857,13 @@ function toggleCollectionVisibility(id) {
 function rowToggleCheck(e, id) {
   e.stopPropagation();
   const key = String(id);
-  S.checked[key] = !S.checked[key];
-  if (!S.checked[key]) delete S.checked[key];
+  const wasChecked = !!S.checked[key];
+  S.checked[key] = !wasChecked;
+  if (!S.checked[key]) {
+    delete S.checked[key];
+  } else if (!S.dateSeen[key]) {
+    S.dateSeen[key] = todayISO();
+  }
   save();
   render();
 }
@@ -832,7 +877,10 @@ function handlePhotoUpload(e, id) {
     const key = String(id);
     if (!S.photos[key]) S.photos[key] = [];
     S.photos[key].push(ev.target.result);
-    S.checked[key] = true;
+    if (!S.checked[key]) {
+      S.checked[key] = true;
+      if (!S.dateSeen[key]) S.dateSeen[key] = todayISO();
+    }
     save();
     render();
     // Refresh the detail modal
@@ -854,6 +902,27 @@ function deletePhoto(id, index) {
     const overlay = document.getElementById('detail-overlay');
     if (overlay && overlay.dataset.paintingId === key) openDetail(id);
   }
+}
+
+function saveDateSeen(id, value) {
+  const key = String(id);
+  if (value) S.dateSeen[key] = value;
+  else delete S.dateSeen[key];
+  save();
+}
+
+function toggleDateUnknown(id) {
+  const key = String(id);
+  const isUnknown = S.dateSeen[key] === 'unknown';
+  S.dateSeen[key] = isUnknown ? todayISO() : 'unknown';
+  save();
+  const input = document.getElementById('detail-date-input');
+  const btn = input && input.nextElementSibling;
+  if (input) {
+    input.value = isUnknown ? S.dateSeen[key] : '';
+    input.disabled = !isUnknown;
+  }
+  if (btn) btn.classList.toggle('active', !isUnknown);
 }
 
 function saveNote(id, text) {
