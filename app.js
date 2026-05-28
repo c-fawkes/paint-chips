@@ -104,6 +104,8 @@ const ICONS = {
   camera:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>`,
   list:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`,
   museum:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 9 12 2 21 9"/><line x1="12" y1="2" x2="12" y2="22"/><rect x="3" y="9" width="4" height="13"/><rect x="17" y="9" width="4" height="13"/><line x1="3" y1="22" x2="21" y2="22"/></svg>`,
+  brush:   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg>`,
+  landmark:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>`,
   globe:   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
   stats:   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
   plus:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
@@ -648,7 +650,7 @@ function render() {
     else if (S.view === 'settings')   main.innerHTML = renderSettingsView();
     // stats and settings are not in the bottom nav; don't highlight any nav btn for them
   } catch (err) {
-    console.error('Paint Chips render error:', err);
+    console.error('Beheld render error:', err);
     const main = document.getElementById('main');
     if (main) main.innerHTML =
       `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Error: ${err.message}</p></div>`;
@@ -1419,8 +1421,7 @@ function setScope(s) {
 function _obPage1HTML() {
   return `
         <div class="ob-top">
-          <div class="ob-emoji">🎨</div>
-          <div class="ob-brand">Paint Chips</div>
+          <div class="ob-brand brand-cursive">Beheld</div>
         </div>
 
         <div class="ob-hero">
@@ -1489,8 +1490,7 @@ function _obPage1HTML() {
 function _obPage2HTML() {
   return `
         <div class="ob-top">
-          <div class="ob-emoji">🎨</div>
-          <div class="ob-brand">Paint Chips</div>
+          <div class="ob-brand brand-cursive">Beheld</div>
         </div>
 
         <div class="ob-p2-headline">Your collection,<br>your story.</div>
@@ -1587,9 +1587,9 @@ function init() {
 
     const nav = document.getElementById('bottom-nav');
     const navItems = [
-      { view: 'list',       icon: ICONS.list,   label: 'Paintings' },
-      { view: 'collection', icon: ICONS.frame,  label: 'Collection', special: true },
-      { view: 'museums',    icon: ICONS.museum, label: 'Museums' },
+      { view: 'list',       icon: ICONS.brush,    label: 'Paintings' },
+      { view: 'collection', icon: ICONS.frame,    label: 'Collection', special: true },
+      { view: 'museums',    icon: ICONS.landmark, label: 'Museums' },
     ];
     nav.innerHTML = navItems.map(n => {
       const isActive = S.view === n.view;
@@ -1603,7 +1603,7 @@ function init() {
   } catch (err) {
     document.getElementById('main').innerHTML =
       `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Error: ${err.message}</p></div>`;
-    console.error('Paint Chips init error:', err);
+    console.error('Beheld init error:', err);
   }
 }
 

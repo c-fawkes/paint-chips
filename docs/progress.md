@@ -354,3 +354,16 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Fixed 43 with verified Commons thumbnails (all HEAD-checked → 200)
 - id 209 (Caravaggio, Madonna dei Palafrenieri): auto-search first matched a non-Caravaggio "Scuola Romana" work — manually corrected to `Caravaggio_-_La_Madonna_dei_Palafrenieri,_1605,_110.jpg`
 - id 184 (Matisse, The Snail): no valid Wikimedia/Wikipedia source exists (1953 cut-out, still under US copyright) — set `imageUrl: null` rather than use a wrong image. Now 6 paintings are permanently null (158, 176, 177, 179, 181, 184)
+
+---
+
+## Session 15 — 2026-05-28
+
+### Rebrand to "Beheld"
+- Renamed the app from "Paint Chips" to **Beheld** across the header, splash screen, onboarding pages, `<title>`, manifest `name`/`short_name`, and apple web-app title
+- Wordmark now displays in a thick cursive font (Google Fonts **Pacifico**) via a new `.brand-cursive` class and `--font-cursive` CSS var; loaded with preconnect + stylesheet link in `index.html`
+- Displayed as title-case "Beheld" rather than all-caps — cursive scripts lose their connecting strokes in uppercase
+- Removed the 🎨 paint emoji from the header, splash, and both onboarding pages (kept it only as the image-load fallback placeholder)
+- Swapped bottom-nav icons: Paintings tab now uses the Lucide **brush** icon, Museums tab the Lucide **landmark** icon (added `brush`/`landmark` to the `ICONS` map)
+- Bumped service-worker cache to `paint-chips-v2` so clients re-cache the changed static assets
+- Kept `start_url` `/paint-chips/` and the repo path unchanged (deployment URLs, not display names)

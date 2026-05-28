@@ -1,6 +1,6 @@
 {
-  "name": "Paint Chips — Famous Paintings Checklist",
-  "short_name": "Paint Chips",
+  "name": "Beheld — Famous Paintings Checklist",
+  "short_name": "Beheld",
   "description": "Track the 100 most famous paintings on Earth",
   "start_url": "/paint-chips/",
   "display": "standalone",
