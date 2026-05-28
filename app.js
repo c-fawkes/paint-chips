@@ -16,6 +16,8 @@ const S = {
   expandedContinents: new Set(),
   expandedCountries: new Set(),
   expandedMovements: new Set(), // used for movement groups in sort-by-movement view
+  expandedListMuseums: new Set(), // museum groups in sort-by-museum view
+  expandedListArtists: new Set(), // artist groups in sort-by-artist view
 };
 
 /* ── Add-painting modal state ────────────────────────────────────────────── */
@@ -41,6 +43,9 @@ function load() {
     S.expandedMuseums    = new Set();
     S.expandedContinents = new Set();
     S.expandedCountries  = new Set();
+    S.expandedMovements   = new Set();
+    S.expandedListMuseums = new Set();
+    S.expandedListArtists = new Set();
     if (S.view === 'stats' || S.view === 'settings') S.view = 'list';
   } catch (_) {}
 }
@@ -202,14 +207,63 @@ function renderListView() {
     const museumOrder = [...new Set(paintings.map(p => p.location.museum))];
     const groups = {};
     paintings.forEach(p => { const m = p.location.museum; if (!groups[m]) groups[m] = []; groups[m].push(p); });
-    paintingsHtml = `<div class="list-museum-groups">${museumOrder.map(museum => {
+    const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
+      'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
+      'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
+    paintingsHtml = `<div class="list-movement-groups">${museumOrder.map(museum => {
       const mps = groups[museum];
       const mc  = checkedCount(mps.map(p => p.id));
-      return `<div class="list-museum-group">
-        <div class="list-museum-header">
-          <span class="list-museum-name">${esc(museum)}</span>
-          <span class="list-museum-stat">${mc}/${mps.length} seen</span>
+      const loc = mps[0].location;
+      const info = typeof MUSEUMS_INFO !== 'undefined' ? MUSEUMS_INFO[museum] : null;
+      const flag = flagFor[loc.country] || '';
+      const isOpen = S.expandedListMuseums.has(museum);
+      const infoBody = isOpen ? `<div class="list-movement-info">
+        ${info && info.photo ? `<img class="museum-popup-photo" src="${info.photo}" alt="${esc(museum)}" style="margin-bottom:12px" onerror="this.style.display='none'">` : ''}
+        ${info ? `<p class="mv-row-full-summary">${esc(info.blurb)}</p>` : '<p class="mv-row-full-summary" style="color:var(--text-faint)">No description available.</p>'}
+      </div>` : '';
+      return `<div class="list-movement-group${isOpen ? ' open' : ''}">
+        <div class="list-movement-header" onclick="toggleListMuseumGroup('${museum.replace(/'/g, "\\'")}')">
+          <div class="list-movement-chevron">${ICONS.chevron}</div>
+          <span class="list-movement-name">${esc(museum)}</span>
+          <span class="list-movement-era">${flag} ${esc(loc.city)}, ${esc(loc.country)}</span>
+          <span class="list-movement-stat">${mc}/${mps.length} seen</span>
         </div>
+        ${infoBody}
+        ${isGrid
+          ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
+          : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
+      </div>`;
+    }).join('')}</div>`;
+  } else if (S.sort === 'artist') {
+    const artistOrder = [...new Set(paintings.map(p => p.artist))];
+    const groups = {};
+    paintings.forEach(p => { const a = p.artist; if (!groups[a]) groups[a] = []; groups[a].push(p); });
+    paintingsHtml = `<div class="list-movement-groups">${artistOrder.map(artist => {
+      const mps = groups[artist];
+      const mc  = checkedCount(mps.map(p => p.id));
+      const info = typeof ARTISTS !== 'undefined' ? ARTISTS[artist] : null;
+      const portrait = typeof ARTIST_PORTRAITS !== 'undefined' ? ARTIST_PORTRAITS[artist] : null;
+      const metaLine = info ? [esc(info.nationality), `${esc(info.born)}–${esc(info.died)}`].filter(Boolean).join(' · ') : '';
+      const movementNames = [...new Set(mps.map(p => p.movement).filter(Boolean))];
+      const isOpen = S.expandedListArtists.has(artist);
+      const movementChips = movementNames.map(k => {
+        const mv = typeof MOVEMENTS !== 'undefined' ? MOVEMENTS[k] : null;
+        return `<span class="mv-artist-chip">${esc(k)}${mv ? `<span style="color:var(--text-faint);font-size:.65rem"> · ${esc(mv.era)}</span>` : ''}</span>`;
+      }).join('');
+      const infoBody = isOpen ? `<div class="list-movement-info">
+        ${portrait ? `<img class="artist-portrait" src="${portrait}" alt="${esc(artist)}" style="margin-bottom:12px" onerror="this.style.display='none'">` : ''}
+        ${info ? `<p class="mv-row-full-summary">${esc(info.bio)}</p>` : '<p class="mv-row-full-summary" style="color:var(--text-faint)">No biography available.</p>'}
+        ${movementChips ? `<div class="mv-section-label" style="margin-top:14px">Movement${movementNames.length > 1 ? 's' : ''}</div>
+        <div class="mv-artists">${movementChips}</div>` : ''}
+      </div>` : '';
+      return `<div class="list-movement-group${isOpen ? ' open' : ''}">
+        <div class="list-movement-header" onclick="toggleListArtistGroup('${artist.replace(/'/g, "\\'")}')">
+          <div class="list-movement-chevron">${ICONS.chevron}</div>
+          <span class="list-movement-name">${esc(artist)}</span>
+          ${metaLine ? `<span class="list-movement-era">${metaLine}</span>` : ''}
+          <span class="list-movement-stat">${mc}/${mps.length} seen</span>
+        </div>
+        ${infoBody}
         ${isGrid
           ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
           : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
@@ -1074,6 +1128,18 @@ function toggleMovementGroup(key) {
   } else {
     S.expandedMovements.add(key);
   }
+  render();
+}
+
+function toggleListMuseumGroup(key) {
+  if (S.expandedListMuseums.has(key)) S.expandedListMuseums.delete(key);
+  else S.expandedListMuseums.add(key);
+  render();
+}
+
+function toggleListArtistGroup(key) {
+  if (S.expandedListArtists.has(key)) S.expandedListArtists.delete(key);
+  else S.expandedListArtists.add(key);
   render();
 }
 

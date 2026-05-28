@@ -333,3 +333,13 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - id 171 Declaration of Independence (Trumbull): wrong filename — replaced with correct Commons URL
 - id 205 Parnassus (Raphael): WGA file removed — replaced with `Raphael_-_The_Parnassus.jpg`
 - 5 null imageUrls remain (ids 158, 176, 177, 179, 181) — no Wikimedia source exists for these
+
+---
+
+## Session 13 — 2026-05-28
+
+### Paintings tab: expandable museum & artist sort groups
+- Made the Museum and Artist sorts match the Movement sort format — grouped under expandable accordion headers (reusing `.list-movement-*` styling)
+- Museum header shows flag + city/country + seen count; expanded body shows museum photo + blurb (from `MUSEUMS_INFO`)
+- Artist header shows nationality · birth–death + seen count; expanded body shows portrait + bio + movement chips (from `ARTISTS`/`ARTIST_PORTRAITS`)
+- Added state Sets `expandedListMuseums` / `expandedListArtists` (not persisted, reset on load) and toggles `toggleListMuseumGroup()` / `toggleListArtistGroup()` — kept separate from Museums-tab state to avoid cross-tab bleed
