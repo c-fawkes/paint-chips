@@ -367,3 +367,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Swapped bottom-nav icons: Paintings tab now uses the Lucide **brush** icon, Museums tab the Lucide **landmark** icon (added `brush`/`landmark` to the `ICONS` map)
 - Bumped service-worker cache to `paint-chips-v2` so clients re-cache the changed static assets
 - Kept `start_url` `/paint-chips/` and the repo path unchanged (deployment URLs, not display names)
+
+### Repo cleanup: scripts/ folder + .gitignore
+- Added a `.gitignore` (ignores `.claude/`, `.DS_Store`, editor dirs, `node_modules/`, logs/temp)
+- Moved all one-off dev/helper scripts (fetch-*, patch-*, apply-*, search-commons, fetch-via-mediawiki, generate-icons, plus the two python helpers) into a new `scripts/` folder
+- Left the runtime files (`app.js`, `data.js`, `sw.js`) at root — index.html references and the service-worker scope depend on them staying there
