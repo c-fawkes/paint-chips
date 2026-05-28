@@ -1350,14 +1350,8 @@ function setScope(s) {
 }
 
 /* ── Onboarding ──────────────────────────────────────────────────────────── */
-function showOnboarding() {
-  const el = document.createElement('div');
-  el.className = 'ob-overlay';
-  el.id = 'ob-overlay';
-  el.innerHTML = `
-    <div class="ob-scroll">
-      <div class="ob-content">
-
+function _obPage1HTML() {
+  return `
         <div class="ob-top">
           <div class="ob-emoji">🎨</div>
           <div class="ob-brand">Paint Chips</div>
@@ -1412,16 +1406,97 @@ function showOnboarding() {
           </div>
         </div>
 
+        <button class="ob-cta" onclick="obGoPage(2)">
+          Next
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;vertical-align:middle;margin-left:6px"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <div class="ob-dots">
+          <span class="ob-dot ob-dot-active"></span>
+          <span class="ob-dot"></span>
+        </div>
+
+        <div class="ob-fine">No account · All data stays on your device</div>
+  `;
+}
+
+function _obPage2HTML() {
+  return `
+        <div class="ob-top">
+          <div class="ob-emoji">🎨</div>
+          <div class="ob-brand">Paint Chips</div>
+        </div>
+
+        <div class="ob-p2-headline">Your collection,<br>your story.</div>
+
+        <div class="ob-rule"></div>
+
+        <div class="ob-features">
+          <div class="ob-feature">
+            <div class="ob-feature-icon">${ICONS.check}</div>
+            <div class="ob-feature-text">
+              <div class="ob-feature-title">Mark as Seen</div>
+              <div class="ob-feature-desc">Tap any painting to check it off your list. Your progress is tracked across all 100 masterpieces and shown right in the header.</div>
+            </div>
+          </div>
+          <div class="ob-feature">
+            <div class="ob-feature-icon">${ICONS.camera}</div>
+            <div class="ob-feature-text">
+              <div class="ob-feature-title">Add Your Photos</div>
+              <div class="ob-feature-desc">Took a picture at the museum? Attach it to the painting. Your Collection tab becomes a visual diary of every work you've stood in front of.</div>
+            </div>
+          </div>
+          <div class="ob-feature">
+            <div class="ob-feature-icon">${ICONS.plus}</div>
+            <div class="ob-feature-text">
+              <div class="ob-feature-title">Add Your Own</div>
+              <div class="ob-feature-desc">Found a masterpiece not on the list? Add any painting you love and it lives alongside the greats in your personal collection.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ob-rule" style="margin-top:4px"></div>
+
         <button class="ob-cta" onclick="dismissOnboarding()">
           Begin your journey
         </button>
 
-        <div class="ob-fine">No account · All data stays on your device</div>
+        <div class="ob-dots">
+          <span class="ob-dot"></span>
+          <span class="ob-dot ob-dot-active"></span>
+        </div>
 
-      </div>
-    </div>
+        <div class="ob-fine">No account · All data stays on your device</div>
   `;
+}
+
+function showOnboarding() {
+  const el = document.createElement('div');
+  el.className = 'ob-overlay';
+  el.id = 'ob-overlay';
+  el.innerHTML = `<div class="ob-scroll"><div class="ob-content">${_obPage1HTML()}</div></div>`;
   document.body.appendChild(el);
+}
+
+function obGoPage(n) {
+  const content = document.querySelector('#ob-overlay .ob-content');
+  if (!content) return;
+  content.style.transition = 'opacity .2s, transform .2s';
+  content.style.opacity = '0';
+  content.style.transform = 'translateX(-20px)';
+  setTimeout(() => {
+    content.innerHTML = n === 2 ? _obPage2HTML() : _obPage1HTML();
+    content.style.transition = 'none';
+    content.style.transform = 'translateX(20px)';
+    content.style.opacity = '0';
+    // force reflow then animate in
+    content.getBoundingClientRect();
+    content.style.transition = 'opacity .25s, transform .25s';
+    content.style.opacity = '1';
+    content.style.transform = 'translateX(0)';
+    const scroll = document.querySelector('.ob-scroll');
+    if (scroll) scroll.scrollTop = 0;
+  }, 200);
 }
 
 function dismissOnboarding() {

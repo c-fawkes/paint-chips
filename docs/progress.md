@@ -162,6 +162,19 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 ---
 
+## Session 11 — 2026-05-28
+
+### Onboarding: two-page flow
+- Converted single-page onboarding into a two-page flow with a slide transition between pages
+- Page 1 unchanged: the "what's inside" page (100 / 35 / 21 / 12 stats, body copy, timeline)
+- Page 2 (new): "Your collection, your story." — three feature cards explaining how to use the app: Mark as Seen (check icon), Add Your Photos (camera icon), Add Your Own (plus icon); each uses the existing SVG icons from `ICONS`
+- CTA on page 1 now says "Next →" and calls `obGoPage(2)`; page 2 has the "Begin your journey" CTA
+- Page indicator dots (gold filled = current page) at the bottom of each page
+- Slide animation on page transition: content fades and slides left out, then right-to-center in
+- Refactored HTML into `_obPage1HTML()` and `_obPage2HTML()` helpers; `showOnboarding()` renders page 1, `obGoPage(n)` swaps content in place without re-creating the overlay
+
+---
+
 ## Session 10 — 2026-05-28
 
 ### Missing painting images
