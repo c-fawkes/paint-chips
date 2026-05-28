@@ -162,6 +162,16 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 ---
 
+## Session 9 — 2026-05-28
+
+### Onboarding screen
+- Added a first-launch onboarding overlay (z-index 998, shows beneath the splash screen then revealed when splash fades)
+- Shows once, gated by `localStorage.getItem('pc_onboarded')`; dismissing sets the flag
+- Layout: Paint Chips brand → giant gold "100" hero number with "masterpieces. One lifetime." tagline → three stat columns (35 museums / 21 cities / 12 countries) separated by hairline dividers → horizontal rule → two body paragraphs with evocative copy → timeline bar (Jan van Eyck 1425 ↔ Andy Warhol 1962) → "Begin your journey" gold CTA → fine print
+- Settings → About section added with a "View" button to re-show the intro at any time
+
+---
+
 ## Session 8 — 2026-05-28
 
 ### UI polish

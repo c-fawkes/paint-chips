@@ -1301,6 +1301,16 @@ function renderSettingsView() {
         </div>
       </div>
       <div class="settings-section">
+        <div class="settings-section-title">About</div>
+        <div class="settings-row">
+          <div class="settings-row-label">
+            <div class="settings-row-name">Show intro screen</div>
+            <div class="settings-row-sub">Review the app introduction</div>
+          </div>
+          <button class="settings-action-btn" onclick="showOnboarding()">View</button>
+        </div>
+      </div>
+      <div class="settings-section">
         <div class="settings-section-title">Display</div>
         <div class="settings-row">
           <div class="settings-row-label">
@@ -1339,6 +1349,89 @@ function setScope(s) {
   render();
 }
 
+/* ── Onboarding ──────────────────────────────────────────────────────────── */
+function showOnboarding() {
+  const el = document.createElement('div');
+  el.className = 'ob-overlay';
+  el.id = 'ob-overlay';
+  el.innerHTML = `
+    <div class="ob-scroll">
+      <div class="ob-content">
+
+        <div class="ob-top">
+          <div class="ob-emoji">🎨</div>
+          <div class="ob-brand">Paint Chips</div>
+        </div>
+
+        <div class="ob-hero">
+          <div class="ob-hero-num">100</div>
+          <div class="ob-hero-sub">masterpieces.<br>One lifetime.</div>
+        </div>
+
+        <div class="ob-rule"></div>
+
+        <div class="ob-stats">
+          <div class="ob-stat">
+            <div class="ob-stat-num">35</div>
+            <div class="ob-stat-label">museums<br>to visit</div>
+          </div>
+          <div class="ob-stat-divider"></div>
+          <div class="ob-stat">
+            <div class="ob-stat-num">21</div>
+            <div class="ob-stat-label">cities across<br>2 continents</div>
+          </div>
+          <div class="ob-stat-divider"></div>
+          <div class="ob-stat">
+            <div class="ob-stat-num">12</div>
+            <div class="ob-stat-label">countries<br>to reach</div>
+          </div>
+        </div>
+
+        <div class="ob-rule"></div>
+
+        <p class="ob-body">
+          From Botticelli's Florence to Monet's Paris, Vermeer's Delft
+          to Hopper's New York — these paintings span six centuries of
+          human imagination across the Italian Renaissance, the Dutch
+          Golden Age, Impressionism, and beyond.
+        </p>
+        <p class="ob-body">
+          Some hang in marble palaces. Others in converted power stations.
+          All of them are worth the trip.
+        </p>
+
+        <div class="ob-timeline">
+          <div class="ob-timeline-line"></div>
+          <div class="ob-timeline-dot ob-timeline-start">
+            <div class="ob-timeline-year">1425</div>
+            <div class="ob-timeline-label">Jan van Eyck</div>
+          </div>
+          <div class="ob-timeline-dot ob-timeline-end">
+            <div class="ob-timeline-year">1962</div>
+            <div class="ob-timeline-label">Andy Warhol</div>
+          </div>
+        </div>
+
+        <button class="ob-cta" onclick="dismissOnboarding()">
+          Begin your journey
+        </button>
+
+        <div class="ob-fine">No account · All data stays on your device</div>
+
+      </div>
+    </div>
+  `;
+  document.body.appendChild(el);
+}
+
+function dismissOnboarding() {
+  localStorage.setItem('pc_onboarded', '1');
+  const el = document.getElementById('ob-overlay');
+  if (!el) return;
+  el.style.opacity = '0';
+  setTimeout(() => el.remove(), 300);
+}
+
 /* ── Init ────────────────────────────────────────────────────────────────── */
 function init() {
   try {
@@ -1364,6 +1457,8 @@ function init() {
     }).join('');
 
     render();
+
+    if (!localStorage.getItem('pc_onboarded')) showOnboarding();
   } catch (err) {
     document.getElementById('main').innerHTML =
       `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Error: ${err.message}</p></div>`;
