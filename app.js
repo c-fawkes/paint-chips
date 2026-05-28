@@ -35,6 +35,100 @@ let _apAutofillMuseum = null;
 /* ── Ephemeral UI state ──────────────────────────────────────────────────── */
 const _prevDateSeen = {}; // remembers the last real date before toggling Unknown
 
+/* ── Navigation stack ───────────────────────────────────────────────────── */
+const _navStack = []; // each entry is a fn() that reopens the previous screen
+
+function _currentReopenFn() {
+  const a = document.getElementById('artist-overlay');
+  if (a) { const n = a.dataset.artistName;   return () => openArtistPopup(n); }
+  const v = document.getElementById('movement-overlay');
+  if (v) { const k = v.dataset.movementKey;  return () => openMovementPopup(k); }
+  const m = document.getElementById('museum-overlay');
+  if (m) { const n = m.dataset.museumName;   return () => openMuseumPopup(n); }
+  const d = document.getElementById('detail-overlay');
+  if (d) { const id = d.dataset.paintingId;  return () => openDetail(id); }
+  return null;
+}
+
+function _closeAllOverlays() {
+  ['detail-overlay', 'museum-overlay', 'artist-overlay', 'movement-overlay'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.remove();
+  });
+}
+
+// Step back one screen; if stack is empty, close everything
+function navBack() {
+  _closeAllOverlays();
+  if (_navStack.length > 0) {
+    _navStack.pop()();
+  } else {
+    document.body.style.overflow = '';
+  }
+}
+
+// Swipe-down or explicit full-close — dismisses everything
+function navDismissAll() {
+  _navStack.length = 0;
+  _closeAllOverlays();
+  document.body.style.overflow = '';
+}
+
+// Call at the start of every open* function to push the current screen and clear
+function _navOpen() {
+  const reopen = _currentReopenFn();
+  if (reopen) _navStack.push(reopen);
+  _closeAllOverlays();
+  document.body.style.overflow = 'hidden';
+}
+
+// Swipe-down-to-dismiss — attach to an overlay element
+function addSwipeDismiss(overlayEl) {
+  const sheet = overlayEl.querySelector('.detail-sheet');
+  if (!sheet) return;
+  const handle = sheet.querySelector('.detail-nav');
+  if (!handle) return;
+
+  let startY = 0, active = false;
+
+  handle.addEventListener('touchstart', e => {
+    startY = e.touches[0].clientY;
+    active = true;
+    sheet.style.transition = 'none';
+  }, { passive: true });
+
+  function onMove(e) {
+    if (!active) return;
+    const dy = e.touches[0].clientY - startY;
+    if (dy > 0) {
+      e.preventDefault();
+      sheet.style.transform = `translateY(${dy}px)`;
+      overlayEl.style.background = `rgba(0,0,0,${Math.max(0, 0.5 - dy / 500)})`;
+    }
+  }
+
+  function onEnd(e) {
+    if (!active) return;
+    active = false;
+    window.removeEventListener('touchmove', onMove);
+    window.removeEventListener('touchend', onEnd);
+    const dy = e.changedTouches[0].clientY - startY;
+    sheet.style.transition = 'transform .25s ease';
+    if (dy > 120) {
+      sheet.style.transform = 'translateY(110%)';
+      overlayEl.style.transition = 'opacity .25s';
+      overlayEl.style.opacity = '0';
+      setTimeout(navDismissAll, 240);
+    } else {
+      sheet.style.transform = '';
+      overlayEl.style.background = '';
+    }
+  }
+
+  window.addEventListener('touchmove', onMove, { passive: false });
+  window.addEventListener('touchend', onEnd, { passive: true });
+}
+
 /* ── Persistence ────────────────────────────────────────────────────────── */
 function save() {
   try {
@@ -837,12 +931,17 @@ function render() {
 }
 
 /* ── Detail Modal ───────────────────────────────────────────────────────── */
-function openDetail(id) {
+function openDetail(id, { refresh = false } = {}) {
   const key = String(id);
   const p   = allPaintings().find(p => String(p.id) === key);
   if (!p) return;
 
-  closeDetail();
+  if (refresh) {
+    const existing = document.getElementById('detail-overlay');
+    if (existing) existing.remove();
+  } else {
+    _navOpen();
+  }
 
   const isChecked  = !!S.checked[key];
   const inColl     = isChecked && !S.hiddenFromCollection[key];
@@ -870,7 +969,7 @@ function openDetail(id) {
   overlay.innerHTML = `
     <div class="detail-sheet" id="detail-sheet">
       <div class="detail-nav">
-        <button class="detail-back-btn" onclick="closeDetail()">${ICONS.back} Back</button>
+        <button class="detail-back-btn" onclick="navBack()">${ICONS.back} Back</button>
         <button class="detail-collection-btn${isChecked ? ' visible' : ''}${inColl ? ' in-collection' : ''}" id="detail-collection-btn"
                 onclick="toggleCollectionVisibility('${key}')">
           ${ICONS.bookmark}<span>${inColl ? 'In Collection' : 'Add to Collection'}</span>
@@ -945,18 +1044,12 @@ function openDetail(id) {
     </div>
   `;
 
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeDetail(); });
+  overlay.addEventListener('click', e => { if (e.target === overlay) navDismissAll(); });
   document.body.appendChild(overlay);
-
-  // Prevent body scroll while modal is open
-  document.body.style.overflow = 'hidden';
+  addSwipeDismiss(overlay);
 }
 
-function closeDetail() {
-  const el = document.getElementById('detail-overlay');
-  if (el) el.remove();
-  document.body.style.overflow = '';
-}
+function closeDetail() { navDismissAll(); }
 
 function detailToggleCheck(id) {
   const key = String(id);
@@ -1043,7 +1136,7 @@ function handlePhotoUpload(e, id) {
     // Refresh the detail modal
     const overlay = document.getElementById('detail-overlay');
     if (overlay && overlay.dataset.paintingId === key) {
-      openDetail(id);
+      openDetail(id, { refresh: true });
     }
   };
   reader.readAsDataURL(file);
@@ -1057,7 +1150,7 @@ function deletePhoto(id, index) {
     save();
     render();
     const overlay = document.getElementById('detail-overlay');
-    if (overlay && overlay.dataset.paintingId === key) openDetail(id);
+    if (overlay && overlay.dataset.paintingId === key) openDetail(id, { refresh: true });
   }
 }
 
@@ -1115,6 +1208,7 @@ function openPhotoLightbox(id, index) {
 
 /* ── Nav / View switching ────────────────────────────────────────────────── */
 function setView(v) {
+  navDismissAll();
   S.view = v;
   save();
   render();
@@ -1492,7 +1586,7 @@ function openMovementPopup(movementKey) {
       ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
              onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
       : `<div class="row-thumb-placeholder">🎨</div>`;
-    return `<div class="mv-popup-painting" onclick="closeMovementPopup();openDetail('${String(p.id)}')">
+    return `<div class="mv-popup-painting" onclick="openDetail('${String(p.id)}')">
       <div class="mv-popup-thumb">${img}</div>
       <div class="mv-popup-title">${esc(p.title)}</div>
       <div class="mv-popup-artist">${esc(p.artist)}</div>
@@ -1502,13 +1596,15 @@ function openMovementPopup(movementKey) {
   const traits = m.traits.map(t => `<li>${esc(t)}</li>`).join('');
   const artists = m.artists.map(a => `<span class="mv-artist-chip">${esc(a)}</span>`).join('');
 
+  _navOpen();
   const overlay = document.createElement('div');
   overlay.className = 'detail-overlay';
   overlay.id        = 'movement-overlay';
+  overlay.dataset.movementKey = movementKey;
   overlay.innerHTML = `
     <div class="detail-sheet movement-sheet" id="movement-sheet">
       <div class="detail-nav">
-        <button class="detail-back-btn" onclick="closeMovementPopup()">${ICONS.back} Back</button>
+        <button class="detail-back-btn" onclick="navBack()">${ICONS.back} Back</button>
       </div>
       <div class="mv-popup-body">
         <div class="mv-popup-era">${esc(m.era)}</div>
@@ -1523,16 +1619,12 @@ function openMovementPopup(movementKey) {
       </div>
     </div>
   `;
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeMovementPopup(); });
+  overlay.addEventListener('click', e => { if (e.target === overlay) navDismissAll(); });
   document.body.appendChild(overlay);
-  document.body.style.overflow = 'hidden';
+  addSwipeDismiss(overlay);
 }
 
-function closeMovementPopup() {
-  const el = document.getElementById('movement-overlay');
-  if (el) el.remove();
-  document.body.style.overflow = '';
-}
+function closeMovementPopup() { navDismissAll(); }
 
 /* ── Artist popup ────────────────────────────────────────────────────────── */
 function openArtistPopup(artistName) {
@@ -1551,7 +1643,7 @@ function openArtistPopup(artistName) {
       ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
              onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
       : `<div class="row-thumb-placeholder">🎨</div>`;
-    return `<div class="mv-popup-painting" onclick="closeArtistPopup();openDetail('${String(p.id)}')">
+    return `<div class="mv-popup-painting" onclick="openDetail('${String(p.id)}')">
       <div class="mv-popup-thumb">${img}</div>
       <div class="mv-popup-title">${esc(p.title)}</div>
       <div class="mv-popup-artist">${esc(p.year)}</div>
@@ -1571,18 +1663,20 @@ function openArtistPopup(artistName) {
   const movementChips = movementNames.map(k => {
     const mv = (typeof MOVEMENTS !== 'undefined') ? MOVEMENTS[k] : null;
     return `<span class="mv-artist-chip" style="cursor:pointer"
-      onclick="closeArtistPopup();openMovementPopup('${k.replace(/'/g,"\\'")}')">
+      onclick="openMovementPopup('${k.replace(/'/g,"\\'")}')">
       ${esc(k)}${mv ? `<span style="color:var(--text-faint);font-size:.65rem"> · ${esc(mv.era)}</span>` : ''}
     </span>`;
   }).join('');
 
+  _navOpen();
   const overlay = document.createElement('div');
   overlay.className = 'detail-overlay';
   overlay.id        = 'artist-overlay';
+  overlay.dataset.artistName = artistName;
   overlay.innerHTML = `
     <div class="detail-sheet movement-sheet" id="artist-sheet">
       <div class="detail-nav">
-        <button class="detail-back-btn" onclick="closeArtistPopup()">${ICONS.back} Back</button>
+        <button class="detail-back-btn" onclick="navBack()">${ICONS.back} Back</button>
       </div>
       <div class="mv-popup-body">
         <div class="artist-popup-header">
@@ -1600,16 +1694,12 @@ function openArtistPopup(artistName) {
       </div>
     </div>
   `;
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeArtistPopup(); });
+  overlay.addEventListener('click', e => { if (e.target === overlay) navDismissAll(); });
   document.body.appendChild(overlay);
-  document.body.style.overflow = 'hidden';
+  addSwipeDismiss(overlay);
 }
 
-function closeArtistPopup() {
-  const el = document.getElementById('artist-overlay');
-  if (el) el.remove();
-  document.body.style.overflow = '';
-}
+function closeArtistPopup() { navDismissAll(); }
 
 /* ── Museum popup ────────────────────────────────────────────────────────── */
 function openMuseumPopup(museumName) {
@@ -1635,20 +1725,22 @@ function openMuseumPopup(museumName) {
       ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
              onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
       : `<div class="row-thumb-placeholder">🎨</div>`;
-    return `<div class="mv-popup-painting" onclick="closeMuseumPopup();openDetail('${String(p.id)}')">
+    return `<div class="mv-popup-painting" onclick="openDetail('${String(p.id)}')">
       <div class="mv-popup-thumb">${img}</div>
       <div class="mv-popup-title">${esc(p.title)}</div>
       <div class="mv-popup-artist">${esc(p.artist)}</div>
     </div>`;
   }).join('');
 
+  _navOpen();
   const overlay = document.createElement('div');
   overlay.className = 'detail-overlay';
   overlay.id        = 'museum-overlay';
+  overlay.dataset.museumName = museumName;
   overlay.innerHTML = `
     <div class="detail-sheet movement-sheet" id="museum-sheet">
       <div class="detail-nav">
-        <button class="detail-back-btn" onclick="closeMuseumPopup()">${ICONS.back} Back</button>
+        <button class="detail-back-btn" onclick="navBack()">${ICONS.back} Back</button>
       </div>
       ${photoHtml}
       <div class="mv-popup-body">
@@ -1664,16 +1756,12 @@ function openMuseumPopup(museumName) {
       </div>
     </div>
   `;
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeMuseumPopup(); });
+  overlay.addEventListener('click', e => { if (e.target === overlay) navDismissAll(); });
   document.body.appendChild(overlay);
-  document.body.style.overflow = 'hidden';
+  addSwipeDismiss(overlay);
 }
 
-function closeMuseumPopup() {
-  const el = document.getElementById('museum-overlay');
-  if (el) el.remove();
-  document.body.style.overflow = '';
-}
+function closeMuseumPopup() { navDismissAll(); }
 
 /* ── Stats navigation ────────────────────────────────────────────────────── */
 function openStats() {

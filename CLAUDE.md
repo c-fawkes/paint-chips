@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Git
+
+**Never commit or push unless explicitly told to.** Make changes, describe them, and stop. Do not run `git commit` or `git push` until the user says so (e.g. "commit", "push", "commit and push").
+
+When context usage reaches ~85%, pause and ask: "Context is at ~85% — want me to commit and push the current changes before we continue?"
+
 ## Before every commit
 
 Update `docs/progress.md` with a brief note of what changed in this session before committing. Add to the current session's section if one already exists for today, or append a new `## Session N — YYYY-MM-DD` block at the **bottom** of the Session Progress section. One bullet per meaningful change — no need to repeat what's already in the commit message verbatim, but capture the *why* and any decisions made.

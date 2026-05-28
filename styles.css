@@ -150,11 +150,10 @@ body {
   content: '';
   position: absolute;
   top: -1px;
-  left: 16%;
-  right: 16%;
-  height: 2px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
   background: transparent;
-  border-radius: 0 0 2px 2px;
   transition: background .2s;
 }
 .nav-btn:not(.nav-btn-collection).active::before {
@@ -171,7 +170,7 @@ body {
   height: calc(var(--nav-h) + 14px);
   flex: 0 0 84px;
   border: 1.5px solid var(--border);
-  border-radius: 10px 10px 6px 6px;
+  border-radius: 10px;
   background: var(--bg2);
   z-index: 1;
   transition: color .2s, border-color .2s;

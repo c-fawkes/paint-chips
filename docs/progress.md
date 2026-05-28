@@ -386,6 +386,21 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Detail modal: removed the "Your Photos" section header (photos are self-evident)
 - Detail modal: added an "Add a note" textarea below the photo upload button; notes are persisted in `S.notes` (keyed by painting ID) and saved to localStorage on every keystroke
 
+### Nav stack: step-back navigation + swipe-to-dismiss
+- Added `_navStack` — each `open*` function pushes a reopen-fn before replacing the current screen; Back steps one level, never skips to the main tab
+- `navBack()` pops and restores; `navDismissAll()` clears everything (backdrop tap, swipe-down, tab switch)
+- `addSwipeDismiss(overlay)` attaches drag-down gesture to the `detail-nav` handle area — 120px+ releases and animates the sheet off-screen
+- Photo upload/delete use `{ refresh: true }` to re-render the detail without pushing to the stack
+- Tab switches call `navDismissAll()` so overlays close cleanly on nav
+
+### Nav bar and collection tab polish
+- Collection button: complete closed box (border-bottom + uniform border-radius: 10px)
+- Paintings/Museums active tabs: 1.5px gold top-line indicator spanning full tab width
+- Collection search bar: flex:1, same style as paintings search bar
+
+### CLAUDE.md rules
+- Added: never commit/push unless explicitly told; ask to commit at ~85% context
+
 ### Collection visibility toggle
 - The collection button in the detail modal is now a toggle: "In Collection" (gold, active) vs "Add to Collection" (dimmed)
 - Paintings default to in-collection when first marked as seen; the toggle lets you hide specific paintings from the Collection tab while keeping them marked as seen
