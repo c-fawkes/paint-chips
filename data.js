@@ -1307,7 +1307,7 @@ const PAINTINGS = [
     dimensions: "97 × 190 cm",
     description: "One of the first Western paintings to depict a nude woman with pubic hair, displayed without mythological pretext. Goya painted a clothed version (La Maja Vestida) as a cover to hide it. It caused a scandal and led to Goya's summons by the Spanish Inquisition. The sitter's identity remains unknown.",
     movement: "Romanticism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Maja_desnuda.jpg/330px-Maja_desnuda.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Goya_Maja_naga2.jpg/330px-Goya_Maja_naga2.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
   {
@@ -1319,7 +1319,7 @@ const PAINTINGS = [
     dimensions: "220 × 289 cm",
     description: "Once thought to be a simple genre scene of a royal tapestry workshop, scholars now read it as a complex allegory of the myth of Arachne. The foreground spinners are the Fates; the brightly lit background tableau enacts Athena's punishment of Arachne. It is Velázquez's most intellectually layered late work.",
     movement: "Baroque",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Las_Hilanderas_o_La_f%C3%A1bula_de_Aracne%2C_by_Diego_Vel%C3%A1zquez.jpg/330px-Las_Hilanderas_o_La_f%C3%A1bula_de_Aracne%2C_by_Diego_Vel%C3%A1zquez.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Velazquez-las_hilanderas.jpg/330px-Velazquez-las_hilanderas.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
 
@@ -1333,7 +1333,7 @@ const PAINTINGS = [
     dimensions: "235 × 110 cm",
     description: "A society portrait of Virginie Amélie Avegno Gautreau, an American expatriate known for her beauty, rendered in a stark black dress with an insolently turned face and pale, luminous skin. When exhibited in Paris in 1884 the original low-cut strap scandalized the Salon. Sargent repainted it but the damage to his career sent him to London.",
     movement: "Realism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Madame_X_%28Madame_Pierre_Gautreau%29%2C_John_Singer_Sargent%2C_1884_%28unfree_frame_crop%29.jpg/330px-Madame_X_%28Madame_Pierre_Gautreau%29%2C_John_Singer_Sargent%2C_1884_%28unfree_frame_crop%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Madame_X_%28Madame_Pierre_Gautreau%29%2C_John_Singer_Sargent%2C_1884_%28unfree_frame_crop%29.jpg/330px-Madame_X_%28Madame_Pierre_Gautreau%29%2C_John_Singer_Sargent%2C_1884_%28unfree_frame_crop%29.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
   {
@@ -1345,7 +1345,7 @@ const PAINTINGS = [
     dimensions: "100 × 81 cm",
     description: "Picasso made Gertrude Stein sit for over 80 sessions, then repainted the face after encountering Iberian masks. The masklike, flattened face prefigures Cubism by a year. When critics said the portrait looked nothing like her, Picasso replied: 'It will.' Stein bequeathed it to the Met on her death in 1946.",
     movement: "Cubism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Gertrude_Stein_by_Pablo_Picasso.jpg/330px-Gertrude_Stein_by_Pablo_Picasso.jpg",
+    imageUrl: null,
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
   {
@@ -1368,7 +1368,7 @@ const PAINTINGS = [
     medium: "Oil on cardboard",
     dimensions: "40 × 32 cm",
     description: "One of Van Gogh's finest self-portraits, painted in Paris during his immersion in Impressionism. The broken brushwork and vivid complementary colors — orange beard against blue-green background — show his rapid absorption of the new movement. He completed over 35 self-portraits between 1886 and 1889.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Vincent_van_Gogh_-_Self-Portrait_with_Straw_Hat_-_Metropolitan_Museum_of_Art.jpg/330px-Vincent_van_Gogh_-_Self-Portrait_with_Straw_Hat_-_Metropolitan_Museum_of_Art.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Van_Gogh_Self-Portrait_with_Straw_Hat_1887-Metropolitan.jpg/330px-Van_Gogh_Self-Portrait_with_Straw_Hat_1887-Metropolitan.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
 
@@ -1382,7 +1382,7 @@ const PAINTINGS = [
     dimensions: "119 × 165 cm",
     description: "A reclining nude of extraordinary sensuality, this Venus gazes directly at the viewer with unsettling confidence. She holds roses and a myrtle sprig — symbols of love and fidelity — while servants arrange a dowry chest in the background. Manet's Olympia (1863) is a direct response to this painting's provocative directness.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg/330px-Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg/330px-Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
   {
@@ -1394,7 +1394,7 @@ const PAINTINGS = [
     dimensions: "243 × 246 cm",
     description: "Leonardo abandoned this monumental commission before completing it when he left Florence for Milan. The swirling crowd of figures around the Virgin and Child — including what may be Leonardo's own portrait at far right — anticipates the dynamic compositions of the High Renaissance. It remains one of the most studied unfinished works in art history.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Leonardo_da_Vinci_-_Adorazione_dei_Magi_-_Google_Art_Project.jpg/330px-Leonardo_da_Vinci_-_Adorazione_dei_Magi_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Adoration_of_the_Magi_%28Leonardo%29.jpg/330px-Adoration_of_the_Magi_%28Leonardo%29.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
   {
@@ -1406,7 +1406,7 @@ const PAINTINGS = [
     dimensions: "98 × 85 cm",
     description: "A sensual adolescent Bacchus, god of wine, reclines and offers a glass to the viewer. The carafe reflects Caravaggio's studio and a tiny self-portrait. The fruit shows signs of rot — a Dutch-style memento mori. X-ray analysis revealed a self-portrait of Caravaggio in the upper-left corner, painted over.",
     movement: "Baroque",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Michelangelo_Merisi_da_Caravaggio_-_Bacchus_-_Google_Art_Project.jpg/330px-Michelangelo_Merisi_da_Caravaggio_-_Bacchus_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Baco%2C_por_Caravaggio.jpg/330px-Baco%2C_por_Caravaggio.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
   {
@@ -1417,7 +1417,7 @@ const PAINTINGS = [
     medium: "Tempera on panel",
     dimensions: "47 × 66 cm (both panels)",
     description: "Federico da Montefeltro and his wife Battista Sforza are shown in profile against a luminous landscape — an innovation imported from Flemish portraiture. Federico's nose was once straight; it was broken in a tournament and his right eye lost. Piero always painted him from the left. Battista had died before the painting's completion.",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Piero_della_Francesca_042_detail.jpg/330px-Piero_della_Francesca_042_detail.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Piero_della_Francesca_044.jpg/330px-Piero_della_Francesca_044.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
 
@@ -2003,7 +2003,7 @@ const PAINTINGS = [
     dimensions: "190 × 120 cm",
     description: "Klimt's second portrait of Adele Bloch-Bauer depicts her in a simpler, more elegant manner than the gilded first version — a flowing floral dress, a more direct gaze. This painting remained in Nazi possession after the Bloch-Bauer family fled Austria; it was restituted to the family heirs in 2006 and sold at Christies for $87.9 million.",
     movement: "Art Nouveau",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Gustav_Klimt_047.jpg/330px-Gustav_Klimt_047.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
   },
   {
@@ -2015,7 +2015,7 @@ const PAINTINGS = [
     dimensions: "110 × 140 cm",
     description: "Schiele painted the medieval Bohemian town of Krumau (his mother's birthplace) repeatedly from above, abstracting the tightly packed houses into angular, encrusted forms that seem to press against each other in anxiety. The palette of ochres, greens, and browns creates a landscape of psychological unease. The Neue Galerie holds the premier collection of Vienna 1900 art outside Europe.",
     movement: "Expressionism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Egon_Schiele_-_Krumau_-_Crescent_of_Houses_%28The_small_City_V%29_-_Google_Art_Project.jpg/330px-Egon_Schiele_-_Krumau_-_Crescent_of_Houses_%28The_small_City_V%29_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
   },
 
@@ -2053,7 +2053,7 @@ const PAINTINGS = [
     dimensions: "97 × 133 cm",
     description: "Poussin's late masterpiece depicts the Holy Family in a serene architectural setting with classical columns. The geometrically ordered composition, cool palette, and philosophical calm define French classical painting. Poussin spent most of his career in Rome and never returned to France, but his influence shaped three centuries of French art and the founding of the Académie.",
     movement: "Baroque",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Nicolas_Poussin_%281594-1665%29_%28attributed_to%29_-_The_Holy_Family_with_the_Infant_Saint_John_-_L.F9.1943.4.0_-_Leicester_Museum_%5E_Art_Gallery.jpg/330px-Nicolas_Poussin_%281594-1665%29_%28attributed_to%29_-_The_Holy_Family_with_the_Infant_Saint_John_-_L.F9.1943.4.0_-_Leicester_Museum_%5E_Art_Gallery.jpg",
     location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
   },
 
@@ -2141,7 +2141,7 @@ const PAINTINGS = [
     dimensions: "61 × 46 cm",
     description: "A young girl with tight braids gazes past the viewer with Modigliani's signature elongated neck, masklike face, and blank almond eyes. Modigliani spent his career in poverty, working in a single recognizable style he never varied. He died of tubercular meningitis at 35; this late portrait shows his full stylistic maturity.",
     movement: "Expressionism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Girl_with_pigtails_-_Amedeo_Modigliani.jpg/330px-Girl_with_pigtails_-_Amedeo_Modigliani.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
   },
 
@@ -2395,7 +2395,7 @@ const PAINTINGS = [
     dimensions: "84 × 42 cm",
     description: "Klimt's Judith is not a Jewish heroine but a femme fatale: languid, half-naked, her fingers resting on Holofernes's severed head with proprietary satisfaction. The gold frame integrates with the composition, making the painting itself a precious object. The identity as Judith rather than Salome was so confusing that the frame was labeled 'Salome' for years.",
     movement: "Art Nouveau",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Judith_klimt.jpg/330px-Judith_klimt.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Judith_1_%28cropped%29.jpg/330px-Judith_1_%28cropped%29.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
   },
   {
@@ -2407,7 +2407,7 @@ const PAINTINGS = [
     dimensions: "178 × 198 cm",
     description: "A figure of Death — dark, patterned with crosses and skulls — confronts a mass of naked, intertwined human forms representing Life — sensuous, decorated with flowers. The two halves do not interact but are locked in eternal opposition. Klimt reworked it significantly after 1911, adding the golden background and modifying the life figures.",
     movement: "Art Nouveau",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Gustav_Klimt_-_Death_and_Life_-_Google_Art_Project.jpg/330px-Gustav_Klimt_-_Death_and_Life_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Gustav_Klimt_-_Death_and_Life_-_Google_Art_Project.jpg/330px-Gustav_Klimt_-_Death_and_Life_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
   },
   {
@@ -2419,7 +2419,7 @@ const PAINTINGS = [
     dimensions: "153 × 161 cm",
     description: "Schiele's last great painting, left incomplete at his death at 28 — a seated father (himself), mother (Edith), and infant, painted after Edith's death in the Spanish flu epidemic of October 1918. He died three days after her. The tenderness of the image — so unlike his contorted nudes — marks a new phase of maturity that would never develop.",
     movement: "Expressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Egon_Schiele_-_The_Family_-_Google_Art_Project.jpg/330px-Egon_Schiele_-_The_Family_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Egon_Schiele_-_Kauerndes_Menschenpaar_%28Die_Familie%29_-_4277_-_%C3%96sterreichische_Galerie_Belvedere.jpg/330px-Egon_Schiele_-_Kauerndes_Menschenpaar_%28Die_Familie%29_-_4277_-_%C3%96sterreichische_Galerie_Belvedere.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
   },
   {
@@ -2445,7 +2445,7 @@ const PAINTINGS = [
     dimensions: "117 × 162 cm",
     description: "Part of Bruegel's Months series alongside The Harvesters, this January scene shows huntsmen returning across a snowy hillside, their dogs at their heels, as skaters glide on frozen ponds below. The panoramic space and the way tiny figures animate a vast landscape were revolutionary. Andrei Tarkovsky used it in Solaris (1972) to evoke Earth's irreplaceable beauty.",
     movement: "Northern Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_%28Winter%29_-_Google_Art_Project.jpg/330px-Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_%28Winter%29_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_%28Winter%29_-_Google_Art_Project.jpg/330px-Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_%28Winter%29_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
   },
   {
@@ -2457,7 +2457,7 @@ const PAINTINGS = [
     dimensions: "114 × 164 cm",
     description: "A crowded barn wedding feast in which the bride sits blissful and passive while guests eat, servers carry dishes on a barn door used as a tray, and a bagpiper watches hungrily. Bruegel's paintings of peasant life are not condescending genre scenes but profound observations of communal existence — the energy, appetite, and joy of ordinary people.",
     movement: "Northern Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_%282%29.jpg/330px-Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_%282%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg/330px-Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
   },
   {
@@ -2469,7 +2469,7 @@ const PAINTINGS = [
     dimensions: "67 × 51 cm",
     description: "A human face composed entirely of ripe summer fruits, vegetables, and grain — each item painted with botanical precision. Arcimboldo's composite heads for Emperor Maximilian II were first taken as humorous court diversions but have since been recognized as sophisticated visual puzzles engaging Renaissance theories of Nature and the grotesque. Dalí and the Surrealists claimed him as a forefather.",
     movement: "Mannerism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Arcimboldo_Summer_1563.jpg/330px-Arcimboldo_Summer_1563.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Arcimboldo_-_Les_saisons_-_Le_printemps_-_Sans_cadre.jpg/330px-Arcimboldo_-_Les_saisons_-_Le_printemps_-_Sans_cadre.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
   },
   {
@@ -2481,7 +2481,7 @@ const PAINTINGS = [
     dimensions: "123 × 144 cm",
     description: "Three men — one old with a white beard, one middle-aged in Eastern dress, one young — stand before a rocky landscape. Their identities have never been agreed upon: they may be the Three Magi, the three ages of man, Aristotle and his successors, or astrologers observing a cave. The ambiguity is deliberate — Giorgione pioneered paintings without clear narratives.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Giorgione_-_The_Three_Philosophers_-_Google_Art_Project.jpg/330px-Giorgione_-_The_Three_Philosophers_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Giorgione_-_Three_Philosophers_-_Google_Art_Project.jpg/330px-Giorgione_-_Three_Philosophers_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
   },
 
@@ -2495,7 +2495,7 @@ const PAINTINGS = [
     dimensions: "120 × 119 cm",
     description: "A dying girl turns her face toward a window while a grief-bowed woman sits beside her, unable to look. Munch's sister Sophie died of tuberculosis when he was 14; he returned to this subject six times across his career. The first version, shown here, was attacked by critics for its unfinished, scraped surface — which is precisely what makes it so raw.",
     movement: "Expressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Edvard_Munch_-_The_Sick_Child_-_Google_Art_Project.jpg/330px-Edvard_Munch_-_The_Sick_Child_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Edvard_Munch_-_The_Sick_Child_I_-_NG.K%26H.A.19029_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/330px-Edvard_Munch_-_The_Sick_Child_I_-_NG.K%26H.A.19029_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
     location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
   },
   {
@@ -2507,7 +2507,7 @@ const PAINTINGS = [
     dimensions: "151 × 110 cm",
     description: "A naked adolescent girl sits upright on a bed, arms crossed over her groin in a gesture of vulnerable self-protection. An enormous dark shadow looms behind her on the wall — the shadow of anxiety, sexuality, and adulthood. Munch destroyed an earlier version; this is a reconstruction made from memory. It is one of the most psychologically uncomfortable paintings in Western art.",
     movement: "Expressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Edvard_Munch_-_Puberty_-_Google_Art_Project.jpg/330px-Edvard_Munch_-_Puberty_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Puberty_%281894-95%29_by_Edvard_Munch.jpg/330px-Puberty_%281894-95%29_by_Edvard_Munch.jpg",
     location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
   },
   {
