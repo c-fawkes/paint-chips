@@ -603,7 +603,7 @@ function openDetail(id) {
         ${(p.medium || p.dimensions || p.movement) ? `<div class="detail-specs">
           ${p.medium     ? `<div class="detail-spec-item"><span>Medium</span><span>${esc(p.medium)}</span></div>` : ''}
           ${p.dimensions ? `<div class="detail-spec-item"><span>Size</span><span>${esc(p.dimensions)}</span></div>` : ''}
-          ${p.movement   ? `<div class="detail-spec-item detail-spec-movement" onclick="openMovementPopup(${JSON.stringify(p.movement)})"><span>Movement</span><span class="movement-tag">${esc(p.movement)} ${ICONS.info}</span></div>` : ''}
+          ${p.movement   ? `<div class="detail-spec-item detail-spec-movement" onclick="openMovementPopup('${p.movement}')"><span>Movement</span><span class="movement-tag">${esc(p.movement)} ${ICONS.info}</span></div>` : ''}
         </div>` : ''}
 
         ${p.description ? `<p class="detail-description">${esc(p.description)}</p>` : ''}
@@ -995,7 +995,7 @@ function renderMovementsView() {
       ${thumbs ? `<div class="mv-section-label" style="margin-top:14px">In this collection (${mps.length})</div>
       <div class="mv-thumbs">${thumbs}</div>` : ''}
     </div>` : '';
-    return `<div class="mv-row${isOpen ? ' open' : ''}" onclick="toggleMovement(${JSON.stringify(key)})">
+    return `<div class="mv-row${isOpen ? ' open' : ''}" onclick="toggleMovement('${key}')">
       <div class="mv-row-header">
         <div class="mv-row-name">${esc(key)}</div>
         <div class="mv-row-meta">
