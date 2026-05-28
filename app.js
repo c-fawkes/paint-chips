@@ -13,7 +13,7 @@ const S = {
   expandedMuseums: new Set(),
   expandedContinents: new Set(),
   expandedCountries: new Set(),
-  expandedMovements: new Set(),
+  expandedMovements: new Set(), // used for movement groups in sort-by-movement view
 };
 
 /* ── Add-painting modal state ────────────────────────────────────────────── */
@@ -72,6 +72,12 @@ function filteredSorted() {
     if (S.sort === 'title')  return a.title.localeCompare(b.title);
     if (S.sort === 'museum') {
       const cmp = a.location.museum.localeCompare(b.location.museum);
+      return cmp !== 0 ? cmp : (a.rank || 9999) - (b.rank || 9999);
+    }
+    if (S.sort === 'movement') {
+      const order = typeof MOVEMENTS !== 'undefined' ? Object.keys(MOVEMENTS) : [];
+      const idx = k => { const i = order.indexOf(k || ''); return i === -1 ? 9999 : i; };
+      const cmp = idx(a.movement) - idx(b.movement);
       return cmp !== 0 ? cmp : (a.rank || 9999) - (b.rank || 9999);
     }
     return 0;
@@ -180,6 +186,37 @@ function renderListView() {
           <span class="list-museum-name">${esc(museum)}</span>
           <span class="list-museum-stat">${mc}/${mps.length} seen</span>
         </div>
+        ${isGrid
+          ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
+          : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
+      </div>`;
+    }).join('')}</div>`;
+  } else if (S.sort === 'movement') {
+    const movOrder = typeof MOVEMENTS !== 'undefined' ? Object.keys(MOVEMENTS) : [];
+    const seen = [...new Set(paintings.map(p => p.movement || '(Unknown)'))];
+    const orderedKeys = [...movOrder.filter(k => seen.includes(k)), ...seen.filter(k => !movOrder.includes(k))];
+    const groups = {};
+    paintings.forEach(p => { const k = p.movement || '(Unknown)'; if (!groups[k]) groups[k] = []; groups[k].push(p); });
+    paintingsHtml = `<div class="list-movement-groups">${orderedKeys.map(mvKey => {
+      const mps = groups[mvKey] || [];
+      const mc  = checkedCount(mps.map(p => p.id));
+      const mv  = typeof MOVEMENTS !== 'undefined' ? MOVEMENTS[mvKey] : null;
+      const isOpen = S.expandedMovements.has(mvKey);
+      const infoBody = (mv && isOpen) ? `<div class="list-movement-info">
+        <p class="mv-row-full-summary">${esc(mv.summary)}</p>
+        <div class="mv-section-label" style="margin-top:12px">Key characteristics</div>
+        <ul class="mv-traits">${mv.traits.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+        <div class="mv-section-label" style="margin-top:14px">Key artists</div>
+        <div class="mv-artists">${mv.artists.map(a => `<span class="mv-artist-chip">${esc(a)}</span>`).join('')}</div>
+      </div>` : '';
+      return `<div class="list-movement-group${isOpen ? ' open' : ''}">
+        <div class="list-movement-header" onclick="toggleMovementGroup('${mvKey.replace(/'/g, "\\'")}')">
+          <div class="list-movement-chevron">${ICONS.chevron}</div>
+          <span class="list-movement-name">${esc(mvKey)}</span>
+          ${mv ? `<span class="list-movement-era">${esc(mv.era)}</span>` : ''}
+          <span class="list-movement-stat">${mc}/${mps.length} seen</span>
+        </div>
+        ${infoBody}
         ${isGrid
           ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
           : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
@@ -529,7 +566,6 @@ function render() {
     else if (S.view === 'museums')    main.innerHTML = renderMuseumsView();
     else if (S.view === 'collection') main.innerHTML = renderCollectionView();
     else if (S.view === 'stats')      main.innerHTML = renderStatsView();
-    else if (S.view === 'movements')  main.innerHTML = renderMovementsView();
   } catch (err) {
     console.error('Paint Chips render error:', err);
     const main = document.getElementById('main');
@@ -590,14 +626,20 @@ function openDetail(id) {
         </div>
 
         <h2 class="detail-title">${esc(p.title)}</h2>
-        <p class="detail-artist-line">${esc(p.artist)} <span class="detail-year">· ${esc(p.year)}</span></p>
+        <p class="detail-artist-line">
+          <button class="detail-link-btn" onclick="openArtistPopup('${p.artist.replace(/'/g, "\\'")}')">
+            ${esc(p.artist)}
+          </button>
+          <span class="detail-year">· ${esc(p.year)}</span>
+        </p>
 
-        <div class="detail-location-box">
+        <div class="detail-location-box" onclick="openMuseumPopup('${p.location.museum.replace(/'/g, "\\'")}')">
           <div class="detail-loc-icon">${ICONS.pin}</div>
           <div>
             <div class="detail-museum">${esc(p.location.museum)}</div>
             <div class="detail-city">${esc(p.location.city)}, ${esc(p.location.country)}</div>
           </div>
+          <div class="detail-loc-chevron">${ICONS.chevron}</div>
         </div>
 
         ${(p.medium || p.dimensions || p.movement) ? `<div class="detail-specs">
@@ -755,11 +797,12 @@ function openSortDropdown(e, btn) {
   closeDrop();
   if (wasOpen) return;
   const opts = [
-    { key: 'rank',   label: 'Rank' },
-    { key: 'artist', label: 'Artist' },
-    { key: 'year',   label: 'Year' },
-    { key: 'title',  label: 'Title' },
-    { key: 'museum', label: 'Museum' },
+    { key: 'rank',     label: 'Rank' },
+    { key: 'artist',   label: 'Artist' },
+    { key: 'year',     label: 'Year' },
+    { key: 'title',    label: 'Title' },
+    { key: 'museum',   label: 'Museum' },
+    { key: 'movement', label: 'Movement' },
   ];
   const rect = btn.getBoundingClientRect();
   const drop = document.createElement('div');
@@ -971,52 +1014,8 @@ function closeModal() {
   if (m) m.remove();
 }
 
-/* ── Movements page ──────────────────────────────────────────────────────── */
-function renderMovementsView() {
-  if (typeof MOVEMENTS === 'undefined') {
-    return `<div class="empty-state"><div class="empty-icon">🎨</div><p>Movements data not loaded.</p></div>`;
-  }
-  const paintings = allPaintings();
-  const rows = Object.entries(MOVEMENTS).map(([key, m]) => {
-    const mps = paintings.filter(p => p.movement === key);
-    const isOpen = S.expandedMovements.has(key);
-    const thumbs = mps.slice(0, 6).map(p =>
-      p.imageUrl
-        ? `<img class="mv-thumb" src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
-               onerror="this.style.display='none'"
-               onclick="event.stopPropagation();openDetail('${String(p.id)}')">`
-        : ''
-    ).join('');
-    const traits = m.traits.map(t => `<li>${esc(t)}</li>`).join('');
-    const body = isOpen ? `<div class="mv-row-body">
-      <p class="mv-row-full-summary">${esc(m.summary)}</p>
-      <div class="mv-section-label" style="margin-top:12px">Key characteristics</div>
-      <ul class="mv-traits">${traits}</ul>
-      ${thumbs ? `<div class="mv-section-label" style="margin-top:14px">In this collection (${mps.length})</div>
-      <div class="mv-thumbs">${thumbs}</div>` : ''}
-    </div>` : '';
-    return `<div class="mv-row${isOpen ? ' open' : ''}" onclick="toggleMovement('${key}')">
-      <div class="mv-row-header">
-        <div class="mv-row-name">${esc(key)}</div>
-        <div class="mv-row-meta">
-          <span class="mv-row-era">${esc(m.era)}</span>
-          <span class="mv-row-count">${mps.length}</span>
-        </div>
-        <div class="mv-row-chevron">${ICONS.chevron}</div>
-      </div>
-      ${body}
-    </div>`;
-  }).join('');
-  return `<div class="movements-page">
-    <div class="movements-header">
-      <button class="back-to-nav" onclick="setView('list')">${ICONS.back} Back</button>
-      <h2>Art Movements</h2>
-    </div>
-    <div class="movements-list">${rows}</div>
-  </div>`;
-}
-
-function toggleMovement(key) {
+/* ── Movement group toggle (sort-by-movement in Top 100) ─────────────────── */
+function toggleMovementGroup(key) {
   if (S.expandedMovements.has(key)) {
     S.expandedMovements.delete(key);
   } else {
@@ -1077,24 +1076,109 @@ function closeMovementPopup() {
   document.body.style.overflow = '';
 }
 
-/* ── Info (?) header dropdown ────────────────────────────────────────────── */
-function openInfoDropdown(e, btn) {
-  e.stopPropagation();
-  const wasOpen = !!document.getElementById('toolbar-drop');
-  closeDrop();
-  if (wasOpen) return;
-  const rect = btn.getBoundingClientRect();
-  const drop = document.createElement('div');
-  drop.className = 'toolbar-drop';
-  drop.id = 'toolbar-drop';
-  drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
-  drop.innerHTML = `
-    <button class="drop-item" onclick="closeDrop();setView('movements')">
-      ${ICONS.palette}<span>Art Movements</span>
-    </button>
+/* ── Artist popup ────────────────────────────────────────────────────────── */
+function openArtistPopup(artistName) {
+  const all = allPaintings();
+  const paintings = all.filter(p => p.artist === artistName);
+  if (!paintings.length) return;
+
+  const movementName = paintings.find(p => p.movement)?.movement;
+  const mv = (movementName && typeof MOVEMENTS !== 'undefined') ? MOVEMENTS[movementName] : null;
+
+  const thumbs = paintings.map(p => {
+    const img = p.imageUrl
+      ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
+             onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
+      : `<div class="row-thumb-placeholder">🎨</div>`;
+    return `<div class="mv-popup-painting" onclick="closeArtistPopup();openDetail('${String(p.id)}')">
+      <div class="mv-popup-thumb">${img}</div>
+      <div class="mv-popup-title">${esc(p.title)}</div>
+      <div class="mv-popup-artist">${esc(p.year)}</div>
+    </div>`;
+  }).join('');
+
+  const overlay = document.createElement('div');
+  overlay.className = 'detail-overlay';
+  overlay.id        = 'artist-overlay';
+  overlay.innerHTML = `
+    <div class="detail-sheet movement-sheet" id="artist-sheet">
+      <div class="detail-nav">
+        <button class="detail-back-btn" onclick="closeArtistPopup()">${ICONS.back} Back</button>
+      </div>
+      <div class="mv-popup-body">
+        <h2 class="mv-popup-name">${esc(artistName)}</h2>
+        ${movementName ? `<div class="mv-popup-era">${esc(movementName)}${mv ? ' · ' + esc(mv.era) : ''}</div>` : ''}
+        ${mv ? `<p class="mv-popup-summary" style="margin-top:10px">${esc(mv.summary)}</p>` : '<div style="height:16px"></div>'}
+        <div class="mv-section-label">Works in this collection (${paintings.length})</div>
+        <div class="mv-popup-paintings">${thumbs}</div>
+      </div>
+    </div>
   `;
-  document.body.appendChild(drop);
-  document.addEventListener('click', closeDrop, { once: true });
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeArtistPopup(); });
+  document.body.appendChild(overlay);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeArtistPopup() {
+  const el = document.getElementById('artist-overlay');
+  if (el) el.remove();
+  document.body.style.overflow = '';
+}
+
+/* ── Museum popup ────────────────────────────────────────────────────────── */
+function openMuseumPopup(museumName) {
+  const all = allPaintings();
+  const paintings = all.filter(p => p.location.museum === museumName).sort((a,b) => (a.rank||9999)-(b.rank||9999));
+  if (!paintings.length) return;
+
+  const loc = paintings[0].location;
+  const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
+    'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
+    'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
+  const flag = flagFor[loc.country] || '';
+  const mc   = checkedCount(paintings.map(p => p.id));
+
+  const thumbs = paintings.map(p => {
+    const img = p.imageUrl
+      ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
+             onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
+      : `<div class="row-thumb-placeholder">🎨</div>`;
+    return `<div class="mv-popup-painting" onclick="closeMuseumPopup();openDetail('${String(p.id)}')">
+      <div class="mv-popup-thumb">${img}</div>
+      <div class="mv-popup-title">${esc(p.title)}</div>
+      <div class="mv-popup-artist">${esc(p.artist)}</div>
+    </div>`;
+  }).join('');
+
+  const overlay = document.createElement('div');
+  overlay.className = 'detail-overlay';
+  overlay.id        = 'museum-overlay';
+  overlay.innerHTML = `
+    <div class="detail-sheet movement-sheet" id="museum-sheet">
+      <div class="detail-nav">
+        <button class="detail-back-btn" onclick="closeMuseumPopup()">${ICONS.back} Back</button>
+      </div>
+      <div class="mv-popup-body">
+        <div class="mv-popup-era">${flag} ${esc(loc.city)}, ${esc(loc.country)}</div>
+        <h2 class="mv-popup-name">${esc(museumName)}</h2>
+        <div class="museum-popup-stats">
+          <span class="museum-popup-stat">${mc} of ${paintings.length} seen</span>
+          <div class="museum-popup-bar"><div class="museum-popup-fill" style="width:${paintings.length ? Math.round(mc/paintings.length*100) : 0}%"></div></div>
+        </div>
+        <div class="mv-section-label" style="margin-top:18px">Collection (${paintings.length})</div>
+        <div class="mv-popup-paintings">${thumbs}</div>
+      </div>
+    </div>
+  `;
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeMuseumPopup(); });
+  document.body.appendChild(overlay);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMuseumPopup() {
+  const el = document.getElementById('museum-overlay');
+  if (el) el.remove();
+  document.body.style.overflow = '';
 }
 
 /* ── Init ────────────────────────────────────────────────────────────────── */
@@ -1105,9 +1189,6 @@ function init() {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
-
-    const infoBtn = document.getElementById('info-btn');
-    if (infoBtn) infoBtn.innerHTML = ICONS.info;
 
     const nav = document.getElementById('bottom-nav');
     const navItems = [

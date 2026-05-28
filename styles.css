@@ -75,22 +75,6 @@ body {
 #global-counter .count { font-weight: 700; color: var(--gold); }
 #global-counter .total { color: var(--text-dim); }
 
-#info-btn {
-  display: flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px;
-  background: none;
-  border: none;
-  color: var(--text-dim);
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 0;
-  flex-shrink: 0;
-  -webkit-tap-highlight-color: transparent;
-  transition: color .15s;
-}
-#info-btn:hover { color: var(--gold); }
-#info-btn svg { width: 20px; height: 20px; }
-
 /* ── Progress Bar ───────────────────────────────────────────────────────── */
 #global-progress {
   position: fixed;
@@ -1180,7 +1164,11 @@ body {
   border-radius: var(--radius);
   padding: 10px 12px;
   margin-bottom: 14px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color .15s;
 }
+.detail-location-box:hover { border-color: var(--gold-dim); }
 .detail-loc-icon { color: var(--gold); flex-shrink: 0; margin-top: 1px; }
 .detail-loc-icon svg { width: 16px; height: 16px; }
 .detail-museum { font-size: .88rem; color: var(--text); font-weight: 500; }
@@ -1270,34 +1258,61 @@ body {
 }
 .movement-tag svg { width: 11px; height: 11px; opacity: .7; }
 
-/* ── Movements list page ─────────────────────────────────────────────────── */
-.movements-page { padding-bottom: 80px; }
-.movements-header {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 14px 8px;
+/* ── Movement groups in sort-by-movement list view ───────────────────────── */
+.list-movement-groups { padding-bottom: 80px; }
+.list-movement-group {
   border-bottom: 1px solid var(--border);
-  position: sticky; top: 0;
-  background: var(--bg);
-  z-index: 10;
 }
-.movements-header h2 {
-  font-family: var(--font-serif);
-  font-size: 1rem;
-  color: var(--gold);
-  font-weight: normal;
-  margin: 0;
-}
-.back-to-nav {
-  display: flex; align-items: center; gap: 4px;
-  background: none; border: none;
-  color: var(--text-dim); font-size: .84rem;
-  cursor: pointer; padding: 6px 2px;
+.list-movement-group.open .list-movement-chevron { transform: rotate(180deg); }
+.list-movement-header {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 14px;
+  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  background: var(--bg2);
+  position: sticky; top: 0; z-index: 5;
 }
-.back-to-nav svg { width: 18px; height: 18px; }
-.back-to-nav:active { color: var(--gold); }
+.list-movement-header:active { background: var(--bg3); }
+.list-movement-chevron {
+  color: var(--text-faint); transition: transform .2s; flex-shrink: 0;
+}
+.list-movement-chevron svg { width: 15px; height: 15px; display: block; }
+.list-movement-name {
+  font-family: var(--font-serif); font-size: .95rem; color: var(--text); flex: 1;
+}
+.list-movement-era { font-size: .72rem; color: var(--text-faint); }
+.list-movement-stat { font-size: .72rem; color: var(--gold-dim); flex-shrink: 0; }
+.list-movement-info {
+  padding: 0 16px 16px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
 
-.movements-list { padding: 8px 12px; display: flex; flex-direction: column; gap: 6px; }
+/* ── Clickable artist / museum in detail sheet ───────────────────────────── */
+.detail-link-btn {
+  background: none; border: none; padding: 0;
+  color: var(--text); font-size: inherit; font-family: inherit;
+  cursor: pointer; text-decoration: underline; text-decoration-style: dotted;
+  text-decoration-color: var(--text-faint);
+  -webkit-tap-highlight-color: transparent;
+  transition: color .15s;
+}
+.detail-link-btn:hover { color: var(--gold); }
+.detail-loc-chevron {
+  color: var(--text-faint); margin-left: auto; flex-shrink: 0;
+}
+.detail-loc-chevron svg { width: 15px; height: 15px; display: block; transform: rotate(-90deg); }
+
+/* ── Museum popup stats bar ──────────────────────────────────────────────── */
+.museum-popup-stats { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.museum-popup-stat { font-size: .78rem; color: var(--text-dim); }
+.museum-popup-bar {
+  height: 4px; background: var(--bg3); border-radius: 2px; overflow: hidden;
+}
+.museum-popup-fill {
+  height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+  border-radius: 2px; transition: width .3s;
+}
 
 .mv-row {
   border: 1px solid var(--border);

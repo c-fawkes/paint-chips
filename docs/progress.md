@@ -162,9 +162,22 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 ---
 
-## Session 5 — 2026-05-27
+## Session 6 — 2026-05-28
 
 **Commits:** *(this commit)*
+
+### Movements sort + Artist/Museum popups
+- Removed standalone Movements page and `?` header button; movement info is now accessible inline when sorted by Movement in the Top 100 list
+- Added "Movement" as a sort option in the Top 100 sort dropdown; paintings group by movement in chronological MOVEMENTS order
+- Movement group headers are expandable — tapping reveals the full essay, key characteristics, and key artists (same content as the old movements page)
+- Artist name in the detail sheet is now a tappable underlined link → opens an artist popup (all their works in a 3-col grid, movement name and era, movement summary as bio)
+- Museum name / location box in the detail sheet is now tappable → opens a museum popup (city + flag, seen progress bar, full painting grid)
+- Replaced custom landmark emoji (🗼, 🏛️, etc.) with proper country flag emoji for museum rows
+
+### Bug fixes
+- Fixed movement tag onclick and accordion onclick broken by `JSON.stringify` double-quote collision in HTML attributes — switched to single-quoted JS strings
+
+---
 
 ### Art Movements — accordion page + clickable detail tag
 - Movements page now shows collapsed accordion rows (name, era, count, chevron only); clicking expands to reveal the full movement essay, key characteristics list, and up to 6 painting thumbnails from the collection
