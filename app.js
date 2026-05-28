@@ -75,7 +75,7 @@ function filteredSorted() {
   list.sort((a, b) => {
     if (S.sort === 'rank')   return (a.rank || 9999) - (b.rank || 9999);
     if (S.sort === 'artist') return a.artist.localeCompare(b.artist);
-    if (S.sort === 'year')   return parseInt(a.year) - parseInt(b.year);
+    if (S.sort === 'year')   return parseYear(a.year) - parseYear(b.year);
     if (S.sort === 'title')  return a.title.localeCompare(b.title);
     if (S.sort === 'museum') {
       const cmp = a.location.museum.localeCompare(b.location.museum);
@@ -127,6 +127,12 @@ function formatDimensions(dim) {
   return dim
     .replace(/(\d+(?:\.\d+)?)\s*cm/g, (_, n) => `${(parseFloat(n) * 0.393701).toFixed(1)} in`)
     .replace(/(\d+(?:\.\d+)?)\s*m\b/g, (_, n) => `${(parseFloat(n) * 3.28084).toFixed(1)} ft`);
+}
+
+function parseYear(y) {
+  if (!y) return 9999;
+  const m = String(y).match(/\d{4}/);
+  return m ? parseInt(m[0], 10) : 9999;
 }
 
 /* ── Painting Card (grid, Top 100 view) ─────────────────────────────────── */
@@ -273,24 +279,18 @@ function buildFilterChips() {
 }
 
 /* ── Museums View ───────────────────────────────────────────────────────── */
-function renderMuseumsModeBar() {
-  const modes = [
-    { key: 'alpha', label: 'Museums' },
-    { key: 'city', label: 'City' },
-    { key: 'country', label: 'Country' },
-    { key: 'continent', label: 'Continent' },
-  ];
-  return `<div class="view-mode-bar">${modes.map(m =>
-    `<button class="vmode-btn${S.museumsMode === m.key ? ' active' : ''}"
-      onclick="setMuseumsMode('${m.key}')">${m.label}</button>`).join('')}</div>`;
-}
-
 function renderMuseumsView() {
-  const bar = renderMuseumsModeBar();
-  if (S.museumsMode === 'city')      return bar + renderMuseumsCity();
-  if (S.museumsMode === 'country')   return bar + renderMuseumsCountry();
-  if (S.museumsMode === 'continent') return bar + renderMuseumsContinent();
-  return bar + renderMuseumsAlpha();
+  const modeLabels = { alpha: 'By Museum', city: 'By City', country: 'By Country', continent: 'By Continent' };
+  const toolbar = `<div id="toolbar">
+    <button class="toolbar-btn${S.museumsMode !== 'alpha' ? ' active' : ''}"
+            onclick="openMuseumsViewDropdown(event,this)" title="Group by">
+      ${modeLabels[S.museumsMode]} ${ICONS.chevron}
+    </button>
+  </div>`;
+  if (S.museumsMode === 'city')      return toolbar + renderMuseumsCity();
+  if (S.museumsMode === 'country')   return toolbar + renderMuseumsCountry();
+  if (S.museumsMode === 'continent') return toolbar + renderMuseumsContinent();
+  return toolbar + renderMuseumsAlpha();
 }
 
 function renderMuseumBlock(name, paintings) {
@@ -870,6 +870,32 @@ function openViewDropdown(e, btn) {
   document.addEventListener('click', closeDrop, { once: true });
 }
 
+function openMuseumsViewDropdown(e, btn) {
+  e.stopPropagation();
+  const wasOpen = !!document.getElementById('toolbar-drop');
+  closeDrop();
+  if (wasOpen) return;
+  const opts = [
+    { key: 'alpha',     label: 'By Museum' },
+    { key: 'city',      label: 'By City' },
+    { key: 'country',   label: 'By Country' },
+    { key: 'continent', label: 'By Continent' },
+  ];
+  const rect = btn.getBoundingClientRect();
+  const drop = document.createElement('div');
+  drop.className = 'toolbar-drop';
+  drop.id = 'toolbar-drop';
+  drop.style.cssText = `top:${rect.bottom + 6}px;left:${rect.left}px`;
+  drop.innerHTML = opts.map(o =>
+    `<button class="drop-item${S.museumsMode === o.key ? ' active' : ''}"
+             onclick="setMuseumsMode('${o.key}');closeDrop()">
+       ${S.museumsMode === o.key ? ICONS.check : '<span class="drop-spacer"></span>'} ${o.label}
+     </button>`
+  ).join('');
+  document.body.appendChild(drop);
+  document.addEventListener('click', closeDrop, { once: true });
+}
+
 function closeDrop() {
   const d = document.getElementById('toolbar-drop');
   if (d) d.remove();
@@ -1257,6 +1283,9 @@ function closeStats() {
 /* ── Settings View ───────────────────────────────────────────────────────── */
 function renderSettingsView() {
   return `
+    <div class="stats-back-row">
+      <button class="detail-back-btn" onclick="closeSettings()">${ICONS.back} Back</button>
+    </div>
     <div class="settings-view">
       <div class="settings-section">
         <div class="settings-section-title">Tracking</div>
@@ -1289,7 +1318,8 @@ function renderSettingsView() {
 }
 
 function openSettings() {
-  if (S.view !== 'settings') _prevView = S.view;
+  if (S.view === 'settings') { closeSettings(); return; }
+  _prevView = S.view;
   setView('settings');
 }
 

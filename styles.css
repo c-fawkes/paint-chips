@@ -141,7 +141,7 @@ body {
   position: relative;
   top: -14px;
   height: calc(var(--nav-h) + 14px);
-  flex: 0 0 68px;
+  flex: 0 0 84px;
   border: 1.5px solid var(--border);
   border-bottom: none;
   border-radius: 10px 10px 0 0;

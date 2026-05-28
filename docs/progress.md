@@ -162,6 +162,16 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 ---
 
+## Session 8 — 2026-05-28
+
+### UI polish
+- Collection nav button widened from 68px to 84px
+- Settings screen now has a Back button; pressing the gear icon again while on settings closes it (toggle behavior)
+- Museum tab sort replaced inline button row with a single dropdown button matching the Paintings tab style — "By Museum / By City / By Country / By Continent"; button turns gold when a non-default grouping is active
+- Year sort fixed: `parseInt("c. 1472–1476")` returned `NaN`, causing undefined ordering for all paintings with "c. " circa prefixes. Replaced with `parseYear()` which extracts the first 4-digit number via regex, so circa and range years sort correctly
+
+---
+
 ## Session 7 — 2026-05-28
 
 ### Settings panel
