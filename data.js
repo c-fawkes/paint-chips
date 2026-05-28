@@ -2838,3 +2838,623 @@ const MOVEMENTS = {
     artists: ["Giuseppe Arcimboldo","Pontormo","Rosso Fiorentino","Bronzino","Parmigianino"]
   }
 };
+
+/* ── Artist bios ─────────────────────────────────────────────────────────── */
+const ARTISTS = {
+  "Leonardo da Vinci": {
+    born: "1452", died: "1519", nationality: "Italian",
+    bio: "The archetypal Renaissance polymath, Leonardo was simultaneously a painter, sculptor, architect, engineer, and scientist. His obsessive study of nature and the human body gave his paintings an unmatched sfumato — a smoky, almost atmospheric softening of contours. Only about 15 paintings survive, yet they include two of the most famous works ever made."
+  },
+  "Michelangelo": {
+    born: "1475", died: "1564", nationality: "Italian",
+    bio: "Michelangelo dominated the High Renaissance with a mastery of the human form that no contemporary could match. He considered himself a sculptor first, yet his ceiling for the Sistine Chapel redefined what painting could achieve. His figures carry an almost physical tension — a quality he called terribilità — that remained influential for centuries."
+  },
+  "Raphael": {
+    born: "1483", died: "1520", nationality: "Italian",
+    bio: "Raphael synthesized the greatest achievements of his contemporaries — Leonardo's sfumato, Michelangelo's sculptural power — into a style of serene, harmonious grace. Enormously productive in a short life, he ran a large workshop in Rome and set the standard for idealized beauty that academic painting upheld for 400 years."
+  },
+  "Sandro Botticelli": {
+    born: "1445", died: "1510", nationality: "Italian",
+    bio: "A favorite of the Medici court in Florence, Botticelli created the most celebrated mythological paintings of the Early Renaissance with an elegance and linear rhythm untouched by later High Renaissance weight. After a religious crisis inspired by Savonarola, he abandoned mythological subjects entirely and his late works reflect a haunted, urgent spirituality."
+  },
+  "Titian": {
+    born: "c. 1490", died: "1576", nationality: "Italian (Venetian)",
+    bio: "The dominant figure of Venetian painting for over six decades, Titian elevated oil paint into an instrument of unparalleled richness and sensuality. His late works, applied with fingers as much as brushes, anticipate Impressionism by three centuries. As the most sought-after portraitist in Europe, he painted emperors, popes, and kings."
+  },
+  "Caravaggio": {
+    born: "1571", died: "1610", nationality: "Italian",
+    bio: "Caravaggio revolutionized European painting by bringing a brutal, street-level realism to sacred subjects — his saints have dirty feet and his angels look like Roman boys. His use of extreme tenebrism, with figures emerging from near-total darkness into a single shaft of light, spawned an international school of followers called Caravaggisti. A volatile personality, he fled Rome in 1606 after committing murder."
+  },
+  "Rembrandt van Rijn": {
+    born: "1606", died: "1669", nationality: "Dutch",
+    bio: "Rembrandt is unsurpassed in his ability to render the inner life through paint — a trembling light on an aged face, the weight of shadow carrying as much meaning as the lit surface. He produced nearly 100 self-portraits, forming one of art history's most honest autobiographies. His late works, technically looser but psychologically deeper, were not fully appreciated until the 19th century."
+  },
+  "Johannes Vermeer": {
+    born: "1632", died: "1675", nationality: "Dutch",
+    bio: "Vermeer painted domestic interiors of extraordinary luminosity, capturing the quality of north-facing window light in a way never equaled. He produced very few works — around 34 survive — yet each is so carefully observed it rewards indefinite scrutiny. Almost nothing is known of his personal life, and he died leaving his family in debt."
+  },
+  "Jan van Eyck": {
+    born: "c. 1390", died: "1441", nationality: "Flemish",
+    bio: "Van Eyck pioneered the use of oil paint to achieve a jewel-like precision and depth impossible in earlier tempera technique. His paintings record the texture of fabrics, the reflections in mirrors, and the grain of wood with a microscopic fidelity that still astonishes. The Ghent Altarpiece, completed in 1432, is considered the founding monument of Northern European painting."
+  },
+  "Peter Paul Rubens": {
+    born: "1577", died: "1640", nationality: "Flemish",
+    bio: "Rubens ran the most productive workshop in northern Europe, creating monumental history paintings of irresistible energy and warmth. His figures — full-bodied, radiant-skinned — embody a physical vitality that defines the Baroque ideal of abundance. Equally gifted as a diplomat, he served as a court agent for the Spanish crown while painting some of the largest canvases in Western art."
+  },
+  "Diego Velázquez": {
+    born: "1599", died: "1660", nationality: "Spanish",
+    bio: "Court painter to Philip IV of Spain, Velázquez developed a technique of loose, impressionistic brushwork that captures the visual impression of a scene rather than its precise detail. Las Meninas is among the most analyzed paintings ever made, a meditation on the nature of painting itself. Manet, Sargent, and Bacon all named him as a decisive influence."
+  },
+  "Francisco Goya": {
+    born: "1746", died: "1828", nationality: "Spanish",
+    bio: "Goya began as a successful court painter in Madrid, but illness left him deaf in 1793 and transformed his art into something darker and more personal. His late 'Black Paintings' — nightmarish works he painted directly onto the walls of his house — prefigure Expressionism by a century. He is both the last Old Master and the first truly modern painter."
+  },
+  "Pablo Picasso": {
+    born: "1881", died: "1973", nationality: "Spanish",
+    bio: "No artist of the 20th century matched Picasso's range, productivity, or influence. With Braque he invented Cubism, shattering the single-viewpoint perspective that had governed Western art since the Renaissance. He continually reinvented his style, moving across Cubism, Neoclassicism, Surrealism, and beyond, leaving over 20,000 works."
+  },
+  "Vincent van Gogh": {
+    born: "1853", died: "1890", nationality: "Dutch",
+    bio: "In just ten years of serious painting, Van Gogh created a body of work of visceral emotional intensity — swirling skies, pulsating cypress trees, burning yellows. He sold only one painting in his lifetime and struggled with mental illness, but his letters to his brother Theo reveal one of art history's most searching minds. He died at 37, unrecognized, and became the world's most famous artist."
+  },
+  "Paul Gauguin": {
+    born: "1848", died: "1903", nationality: "French",
+    bio: "Gauguin abandoned his career as a stockbroker at 35 to become a painter, seeking a primitive authenticity he believed European civilization had destroyed. His years in Tahiti and the Marquesas produced flat, brilliantly colored paintings of Polynesian life that pioneered Primitivism and influenced the Fauves and Expressionists. His life and work remain deeply entangled in colonial history."
+  },
+  "Paul Cézanne": {
+    born: "1839", died: "1906", nationality: "French",
+    bio: "Working in near isolation in Provence, Cézanne dedicated his life to a single problem: how to render solid, three-dimensional reality with patches of color on a flat surface. His solution — interlocking planes of color that simultaneously suggest depth and assert the picture's flatness — was the direct ancestor of Cubism. Picasso called him 'the father of us all.'"
+  },
+  "Claude Monet": {
+    born: "1840", died: "1926", nationality: "French",
+    bio: "Monet gave his name to Impressionism — a critic applied the word mockingly to his 1872 painting Impression, Sunrise — and spent his career pushing its principles further than anyone. His serial paintings of haystacks, Rouen Cathedral, and water lilies study how light changes a single subject across time and season. The late Nymphéas, painted as his eyesight failed, became a 20th-century touchstone for abstraction."
+  },
+  "Pierre-Auguste Renoir": {
+    born: "1841", died: "1919", nationality: "French",
+    bio: "The most sensually joyful of the Impressionists, Renoir painted the pleasures of modern Parisian life — sunlit dances, boating parties, café terraces — with a warm, luminous touch. In his later years, crippled by rheumatoid arthritis, he had brushes strapped to his hands and continued painting until his death. He is among the most beloved and most reproduced artists in history."
+  },
+  "Edgar Degas": {
+    born: "1834", died: "1917", nationality: "French",
+    bio: "Degas rejected the Impressionist obsession with painting outdoors, preferring instead the artificial light of racetracks, opera houses, and café-concerts. His dancers are not idealized — they stretch, scratch, and adjust their costumes — yet his compositions, influenced by photography and Japanese prints, are among the most formally sophisticated of his era. He was also a pioneering sculptor in wax."
+  },
+  "Édouard Manet": {
+    born: "1832", died: "1883", nationality: "French",
+    bio: "Manet is the contested pivot between the Old Masters and Modernism. He painted with a directness that scandalized the Salon — flat patches of color, figures staring confrontationally at the viewer, subjects that defied academic decorum. He never joined the Impressionists but inspired and supported them, and his influence on Degas, Monet, and Berthe Morisot was profound."
+  },
+  "Georges Seurat": {
+    born: "1859", died: "1891", nationality: "French",
+    bio: "Seurat brought scientific method to painting, developing Pointillism — applying small dots of pure color that the eye optically mixes from a distance. His grande compositions, meticulously constructed over years, have a monumental stillness unlike anything in Impressionism. He died at 31, leaving only seven large-scale paintings but transforming color theory for the century that followed."
+  },
+  "Henri Matisse": {
+    born: "1869", died: "1954", nationality: "French",
+    bio: "Matisse used color not to describe light but to create emotional states, making him the central figure of Fauvism and one of the defining masters of 20th-century art. His interiors, odalisques, and late paper cut-outs radiate a deliberate sense of pleasure and well-being — what he called 'an armchair for the mind.' He and Picasso were the twin poles of modern painting for half a century."
+  },
+  "Salvador Dalí": {
+    born: "1904", died: "1989", nationality: "Spanish",
+    bio: "The most flamboyant personality in modern art, Dalí combined the precise illusionistic technique of the Old Masters with imagery drawn from dreams and Freudian psychology. His melting watches, burning giraffes, and figures dissolving into particles became the most widely reproduced Surrealist images ever made. He was as much a showman as a painter, cultivating celebrity with the same intensity he brought to his craft."
+  },
+  "René Magritte": {
+    born: "1898", died: "1967", nationality: "Belgian",
+    bio: "Magritte's Surrealism worked through logical paradox rather than dreamlike distortion — ordinary objects placed in impossible relationships, captions that contradict images, the familiar made suddenly strange. He painted in a deliberately flat, commercial style that intensified the uncanniness of his subjects. His images have entered the broader culture as shorthand for the disjunction between words and things."
+  },
+  "Joan Miró": {
+    born: "1893", died: "1983", nationality: "Spanish",
+    bio: "Miró developed a visual language of biomorphic symbols — suns, moons, stars, and ambiguous creatures — that sat between Surrealism's dream logic and pure abstraction. He described his paintings as 'a form of poetry in paint,' and their childlike exuberance disguises a highly sophisticated formal intelligence. His long career bridged Surrealism and the Abstract Expressionists who revered him."
+  },
+  "Jackson Pollock": {
+    born: "1912", died: "1956", nationality: "American",
+    bio: "Pollock's drip paintings, made by pouring and flinging paint onto canvas laid on the floor, redefined the act of painting as a physical, performative gesture. His all-over compositions have no focal point, no hierarchy of incident — they demand to be experienced as a whole field. He was the central figure of Abstract Expressionism and the first American artist to achieve worldwide fame."
+  },
+  "Andy Warhol": {
+    born: "1928", died: "1987", nationality: "American",
+    bio: "Warhol made the consumer image — the soup can, the celebrity headshot, the newspaper photograph — the raw material of high art, erasing the distinction between commercial design and painting. His Factory was a production machine and a social experiment, a space where art, fame, film, and music collapsed into each other. He remains the most influential American artist of the second half of the 20th century."
+  },
+  "Roy Lichtenstein": {
+    born: "1923", died: "1997", nationality: "American",
+    bio: "Lichtenstein transformed the visual language of comic books and advertisements into monumental paintings, using Ben-Day dots, bold outlines, and primary colors to comment on mass culture and the nature of reproduction. His appropriation of low art into high art contexts was central to Pop Art's critique of modernist painting's claims to originality and self-expression."
+  },
+  "Edward Hopper": {
+    born: "1882", died: "1967", nationality: "American",
+    bio: "Hopper painted the emotional geography of American solitude — diners, gas stations, hotel rooms, and theaters suffused with a quality of light that makes the familiar feel estranged. His compositions, influenced by cinema and theater, are studies in psychological tension: figures who seem to be waiting for something that will never arrive. No image better captures the loneliness of modern life than Nighthawks."
+  },
+  "Grant Wood": {
+    born: "1891", died: "1942", nationality: "American",
+    bio: "Wood's American Gothic became an icon of Americana within a year of its exhibition, its farmer and woman (his sister and dentist, not a married couple) endlessly reinterpreted as everything from dignity to narrowness. Trained partly in Europe, he developed a regionalist style combining Flemish Renaissance precision with the rolling landscapes of Iowa. He is inseparable from a certain mythologized vision of rural American life."
+  },
+  "Winslow Homer": {
+    born: "1836", died: "1910", nationality: "American",
+    bio: "Homer began as a magazine illustrator during the Civil War, and his eye for narrative force never left him. His mature work — coastal scenes of fishermen, hunters, and children in nature — achieves a monumental simplicity that makes him one of the greatest American painters of the 19th century. His late Adirondacks and Bahamas watercolors are among the finest ever made."
+  },
+  "Mary Cassatt": {
+    born: "1844", died: "1926", nationality: "American",
+    bio: "Cassatt was the only American to exhibit with the Impressionists and the only woman among their core group. She specialized in domestic scenes of women and children — mothers bathing babies, women reading or visiting — rendered with a warmth and informality that distinguished her from her male contemporaries. She was also a crucial advocate who persuaded American collectors to acquire Impressionist works."
+  },
+  "Thomas Eakins": {
+    born: "1844", died: "1916", nationality: "American",
+    bio: "Eakins pursued a radical realism grounded in anatomy, perspective, and scientific observation, producing paintings of athletes, surgeons, and rowers that prize truth above elegance. His masterpiece, The Gross Clinic, was considered too graphic for the 1876 Centennial Exhibition. Largely unappreciated in his lifetime, he is now considered the greatest American realist of the 19th century."
+  },
+  "John Singer Sargent": {
+    born: "1856", died: "1925", nationality: "American",
+    bio: "Sargent was the supreme society portraitist of the Gilded Age, capturing the texture of silk, the glitter of candlelight, and the psychology of his sitters with bravura brushwork. His scandalous Madame X effectively ended his Paris career but secured his reputation. In later years he largely abandoned portraits for luminous watercolors and the monumental Boston murals."
+  },
+  "James McNeill Whistler": {
+    born: "1834", died: "1903", nationality: "American",
+    bio: "Whistler argued that painting should be purely about aesthetic arrangement — color, tone, composition — independent of narrative or moral content, a philosophy he encoded in musical titles like Arrangement in Grey and Black. His Thames nocturnes and interior harmonies align him with Aestheticism and anticipate Modernism's emphasis on formal values. His libel suit against Ruskin became a Victorian sensation."
+  },
+  "John Singleton Copley": {
+    born: "1738", died: "1815", nationality: "American",
+    bio: "Copley was the first great American-born painter, producing portraits of Colonial Boston merchants and officials with a directness and psychological acuity that surpassed anything being made in the colonies. After moving to London in 1774, he created dramatic history paintings on a scale new to British art. His Watson and the Shark was one of the first paintings to feature a Black figure as its protagonist."
+  },
+  "John Trumbull": {
+    born: "1756", died: "1843", nationality: "American",
+    bio: "Trumbull served as an aide-de-camp to George Washington and dedicated his career to painting the founding moments of the American republic. His Declaration of Independence, derived from direct portraits of the signers he personally knew, became the defining visual record of that event. Four of his paintings hang in the Capitol Rotunda."
+  },
+  "Emanuel Leutze": {
+    born: "1816", died: "1868", nationality: "German-American",
+    bio: "Leutze was a German-born artist working in Düsseldorf when he painted Washington Crossing the Delaware, conceived as an inspiration for the European revolutions of 1848 as much as a historical record. The painting's heroic scale and dramatic lighting made it an instant American icon, though its historical inaccuracies are numerous. It remains the most famous image of the Revolutionary War."
+  },
+  "Andrew Wyeth": {
+    born: "1917", died: "2009", nationality: "American",
+    bio: "Wyeth worked in a quietly realist tradition when abstraction dominated American art, painting the landscapes and people of Chadds Ford, Pennsylvania and coastal Maine with an almost obsessive fidelity. Christina's World, discovered by the public as a surprise, became one of the most reproduced American paintings of the 20th century. His hidden series of 247 paintings of his neighbor Helga, revealed in 1986, shocked the art world."
+  },
+  "Jacob Lawrence": {
+    born: "1917", died: "2000", nationality: "American",
+    bio: "Lawrence told the history of African American life through bold, flat-color compositions influenced by Cubism and African art. His 60-panel Migration Series, documenting the Great Migration of Black Americans northward, was the first work by a Black artist acquired by the Museum of Modern Art. His style — direct, geometric, and unmistakable — shaped American social realism."
+  },
+  "Edvard Munch": {
+    born: "1863", died: "1944", nationality: "Norwegian",
+    bio: "Munch transformed personal trauma — the deaths of his mother and sister, his terror of hereditary madness, his anguished relationships — into paintings of raw psychological intensity. The Scream exists in four versions and has become the most universally recognized expression of anxiety in Western art. His influence on German Expressionism was direct and acknowledged."
+  },
+  "Gustav Klimt": {
+    born: "1862", died: "1918", nationality: "Austrian",
+    bio: "Klimt was the dominant figure of Viennese Art Nouveau and the founding president of the Vienna Secession, which sought to break the academic monopoly on Austrian culture. His paintings fuse Byzantine gilding, Japanese flat patterning, and Symbolist eroticism into an utterly distinctive style. The Kiss has become one of the most reproduced artworks in the world."
+  },
+  "Egon Schiele": {
+    born: "1890", died: "1918", nationality: "Austrian",
+    bio: "Schiele's brief career, cut short by the 1918 influenza pandemic at 28, produced some of the most charged figurative drawings and paintings of the 20th century. His emaciated, contorted nudes confronted sexuality, mortality, and isolation with an unflinching directness that shocked contemporaries and still carries its force today. He was a protégé of Klimt's but quickly developed a rawness entirely his own."
+  },
+  "Frida Kahlo": {
+    born: "1907", died: "1954", nationality: "Mexican",
+    bio: "Kahlo painted her physical pain — from a devastating bus accident at 18 and 35 subsequent surgeries — and her emotional life with a directness that places her among the most powerful self-portraitists in history. Though often associated with Surrealism, she rejected the label: 'I never painted dreams. I painted my own reality.' Her work, largely overlooked in her lifetime, became an icon of feminist and Latin American identity."
+  },
+  "Diego Rivera": {
+    born: "1886", died: "1957", nationality: "Mexican",
+    bio: "Rivera revived the Renaissance tradition of fresco painting on a revolutionary scale, covering the walls of public buildings with epic narratives of Mexican history, the labor movement, and pre-Columbian civilization. His Rockefeller Center mural, destroyed for including Lenin's portrait, became a cause célèbre. His turbulent marriage to Frida Kahlo is among the most chronicled partnerships in art history."
+  },
+  "Rufino Tamayo": {
+    born: "1899", died: "1991", nationality: "Mexican",
+    bio: "Tamayo sought a synthesis between pre-Columbian imagery and European modernism that set him apart from both the political muralists Rivera and Orozco and from pure abstraction. His richly textured canvases in deep reds, ochres, and blacks evoke ancient Mexico while engaging with Cubism and Surrealism. He remains Mexico's most internationally recognized painter after Rivera and Kahlo."
+  },
+  "María Izquierdo": {
+    born: "1902", died: "1955", nationality: "Mexican",
+    bio: "Izquierdo was the first Mexican woman to exhibit in the United States, bringing her country's folk traditions — altars, circus performers, domestic interiors — into dialogue with post-Cubist modernism. Her work has a vivid, slightly naive quality that reflects both her indigenous roots and her awareness of European avant-garde painting. She was long overshadowed by Rivera and Kahlo but is increasingly recognized as a major figure."
+  },
+  "J.M.W. Turner": {
+    born: "1775", died: "1851", nationality: "British",
+    bio: "Turner pushed landscape painting so far toward pure light and atmosphere that his late works are sometimes called proto-Impressionist or even proto-abstract. He was an extraordinary draftsman who made thousands of watercolor studies of weather, sea, and sky. Ruskin became his greatest champion, writing five volumes defending him; Monet crossed the Channel specifically to study his paintings."
+  },
+  "John Constable": {
+    born: "1776", died: "1837", nationality: "British",
+    bio: "Constable dedicated his career to the intimate landscapes of his native Suffolk, painting clouds, fields, and water with a freshness and immediacy that broke from the picturesque tradition. His six-foot canvases shown at the 1824 Paris Salon electrified Delacroix and directly influenced the Barbizon painters who preceded Impressionism. He said he had never seen anything ugly in nature."
+  },
+  "Thomas Gainsborough": {
+    born: "1727", died: "1788", nationality: "British",
+    bio: "Gainsborough divided his career between portraiture, which paid his bills, and landscape, which he loved — a tension that charges his portraits, which he placed within landscape-like settings of feathery foliage. His handling was loose and virtuosic, more concerned with the shimmer of silk and the play of light than anatomical precision. The Blue Boy is his most celebrated painting, though he thought little of it."
+  },
+  "Thomas Lawrence": {
+    born: "1769", died: "1830", nationality: "British",
+    bio: "Lawrence succeeded Reynolds and Gainsborough as the leading British portraitist, bringing a Romantic dash and psychological immediacy to the genre. His portraits of the allied leaders after Waterloo, commissioned by the Prince Regent for the Waterloo Chamber at Windsor, are among the finest portrait suites ever painted. He was elected President of the Royal Academy at 40."
+  },
+  "Hans Holbein the Younger": {
+    born: "1497", died: "1543", nationality: "German",
+    bio: "Holbein was the greatest portrait painter of the Northern Renaissance, combining a precise, almost photographic eye for surface detail with a penetrating grasp of character. As court painter to Henry VIII, he created the definitive image of Tudor royalty — imposing, magnificent, slightly terrifying. His Ambassadors, with its anamorphic skull, is among the most intellectually complex paintings of the Renaissance."
+  },
+  "Albrecht Dürer": {
+    born: "1471", died: "1528", nationality: "German",
+    bio: "Dürer united the observation-based naturalism of the Italian Renaissance with the introspective depth of the Northern tradition, making him the greatest German artist of his era. His self-portraits — one of which shows him in a Christ-like pose — reflect an unprecedented individualism. He was a theoretical writer on proportion and perspective as well as the supreme engraver and woodcut artist of his age."
+  },
+  "Pieter Bruegel the Elder": {
+    born: "c. 1525", died: "1569", nationality: "Flemish",
+    bio: "Bruegel invented the landscape of common life — peasants feasting, skating, harvesting, and dying — elevating it to a subject worthy of the largest format. His Seasons cycle is among the most ambitious and successful series ever painted, capturing the rhythms of the agricultural year with an epic scope. Despite being celebrated in his own time, his true greatness was not fully grasped until the 20th century."
+  },
+  "Hieronymus Bosch": {
+    born: "c. 1450", died: "1516", nationality: "Flemish",
+    bio: "Bosch populated his panels with a teeming, nightmarish imagination — hybrid creatures, tormented sinners, surreal architectures — that has never been satisfactorily explained. Whether his imagery derives from alchemical symbolism, folk proverbs, or personal vision, it remains entirely unprecedented and entirely his own. The Surrealists claimed him as a predecessor; psychologists have interpreted him endlessly."
+  },
+  "Rogier van der Weyden": {
+    born: "c. 1400", died: "1464", nationality: "Flemish",
+    bio: "Van der Weyden was the most influential Flemish painter after Jan van Eyck, and where Van Eyck brought jewel-like observation, Van der Weyden brought an agonized emotional intensity to religious subjects. His Descent from the Cross conveys a grief so concentrated it approaches abstraction. His influence spread through Europe as collectors and rulers competed for his altarpieces."
+  },
+  "Fra Angelico": {
+    born: "c. 1395", died: "1455", nationality: "Italian",
+    bio: "Fra Angelico, a Dominican friar, brought a luminous spiritual sweetness to the Early Renaissance, decorating the monks' cells at San Marco in Florence with frescoes intended for private meditation. He combined the new Renaissance command of perspective and anatomy with a tenderness of feeling that resists entirely secular interpretation. He was beatified by Pope John Paul II in 1982."
+  },
+  "Fra Angelico and Fra Filippo Lippi": {
+    born: "c. 1395 / c. 1406", died: "1455 / 1469", nationality: "Italian",
+    bio: "Fra Angelico and Fra Filippo Lippi were the two dominant figures of Early Florentine Renaissance painting. Fra Angelico brought luminous spiritual devotion to his sacred scenes; Lippi added a more worldly sensuality and psychological naturalism. Their collaborative Adoration of the Magi brings both qualities together in a richly populated narrative."
+  },
+  "Piero della Francesca": {
+    born: "c. 1415", died: "1492", nationality: "Italian",
+    bio: "Piero della Francesca painted with a stillness and geometric serenity unique in the Early Renaissance, his figures inhabiting a world of cool, crystalline light that seems outside time. He was also a mathematician who wrote the first theoretical treatise on perspective in Italian. Neglected for centuries, he was rediscovered in the 20th century as a key ancestor of Cézanne and geometric abstraction."
+  },
+  "Paolo Veronese": {
+    born: "1528", died: "1588", nationality: "Italian (Venetian)",
+    bio: "Veronese filled vast canvases with spectacular feasts, processions, and allegories in the rich chromatic tradition of Venice, deploying silks, architectural vistas, and dramatic lighting on an operatic scale. His Wedding at Cana, hung opposite the Mona Lisa in the Louvre, is the largest painting in the museum. The Inquisition summoned him to justify the secular frivolity of his Last Supper, which he simply retitled."
+  },
+  "Giorgione": {
+    born: "c. 1477", died: "1510", nationality: "Italian (Venetian)",
+    bio: "Giorgione died at about 33, leaving barely a dozen authenticated paintings, yet his invention of the landscape as a setting for mysterious, contemplative figures transformed Venetian painting. His subjects resist narrative explanation — they seem suspended in a mood rather than a story. Titian, his junior colleague, completed at least two of his unfinished works and inherited his lyrical vision."
+  },
+  "Giorgione (completed by Titian)": {
+    born: "c. 1477 / c. 1490", died: "1510 / 1576", nationality: "Italian (Venetian)",
+    bio: "The Sleeping Venus was begun by Giorgione and completed by Titian after Giorgione's early death, making it a collaborative monument of Venetian Renaissance painting. Giorgione established the reclining Venus as a Venetian type; Titian's additions — possibly the landscape and drapery — absorbed the composition so completely that attribution remained contested for centuries."
+  },
+  "Giovanni Bellini and Titian": {
+    born: "c. 1430 / c. 1490", died: "1516 / 1576", nationality: "Italian (Venetian)",
+    bio: "Giovanni Bellini was the master who shaped the Venetian school, bringing a warm luminosity to altarpieces and devotional images that influenced every subsequent Venetian painter. Titian trained in his workshop and completed his late works after his death. Their shared contribution to Venetian painting — from Bellini's Madonna compositions to Titian's mythologies — spans more than a century."
+  },
+  "Canaletto": {
+    born: "1697", died: "1768", nationality: "Italian (Venetian)",
+    bio: "Canaletto made Venice's Grand Canal and piazzas into the defining images of the city, his views so precise and luminous that they served as both tourist souvenirs and architectural documentation. He worked extensively for British patrons who brought his vedute back from the Grand Tour, making him better known in England than in Italy. He may have used a camera obscura to achieve his extraordinary precision."
+  },
+  "Jacques-Louis David": {
+    born: "1748", died: "1825", nationality: "French",
+    bio: "David was the supreme painter of the French Revolution and Napoleonic era, his Neoclassical style — austere, stoic, anchored in ancient Roman virtue — perfectly expressing revolutionary ideology. He literally witnessed the Terror, organized state festivals, and painted Napoleon's coronation. Exiled to Brussels after Napoleon's fall, he remained the most influential French painter of his generation."
+  },
+  "Eugène Delacroix": {
+    born: "1798", died: "1863", nationality: "French",
+    bio: "Delacroix was the great Romantic painter, opposing the cool rational line of David and Ingres with violent color, dynamic composition, and subjects from literature, history, and the imagination. His Liberty Leading the People became the icon of the 1830 Revolution within a year of its painting. His journals, kept for decades, are among the finest documents in art history."
+  },
+  "Théodore Géricault": {
+    born: "1791", died: "1824", nationality: "French",
+    bio: "Géricault died at 32 after a brief career of electrifying intensity, leaving a single monumental masterpiece that redefined what French painting could be. The Raft of the Medusa — based on a contemporary shipwreck scandal — brought the raw scale of history painting to a subject of political accusation and physical horror. His direct influence on Delacroix was profound."
+  },
+  "Jean-Honoré Fragonard": {
+    born: "1732", died: "1806", nationality: "French",
+    bio: "Fragonard painted the pleasures of the French aristocracy before the Revolution — lovers in gardens, young women on swings, domestic dalliance — with a feathery, iridescent lightness that made him the most successful Rococo painter of his era. He survived the Revolution but his work had no place in the new world: he died in obscurity, outliving his market by three decades."
+  },
+  "Nicolas Poussin": {
+    born: "1594", died: "1665", nationality: "French",
+    bio: "Poussin was the founder of the French classical tradition, spending most of his career in Rome and deriving his subjects from ancient history, mythology, and the Bible. His landscapes and figure compositions have a lucid, almost architectural order that made him the touchstone of French academic theory for 200 years. Cézanne admired him deeply, aspiring 'to redo Poussin from nature.'"
+  },
+  "Jean-François Millet": {
+    born: "1814", died: "1875", nationality: "French",
+    bio: "Millet devoted his career to the rural poor, painting peasants at labor — sowing, gleaning, praying in fields — with a dignity and gravity that made him politically controversial and enormously influential. He was a founding figure of the Barbizon school. The Angelus and The Gleaners were the most reproduced paintings in France for decades after his death and profoundly moved Van Gogh."
+  },
+  "Camille Corot": {
+    born: "1796", died: "1875", nationality: "French",
+    bio: "Corot worked between the Classical landscape tradition and a new sensitivity to the transient qualities of light and atmosphere, making him a bridge between Poussin and the Impressionists. His forest interiors and misty Italian studies influenced Monet and Pissarro directly. He was famously generous to young painters — he bought Daumier a house when the caricaturist went blind."
+  },
+  "Gustave Caillebotte": {
+    born: "1848", died: "1894", nationality: "French",
+    bio: "Caillebotte was both a painter of Paris Haussmannization and the financial lifeline of the Impressionist group, purchasing dozens of works that would become the core of the Musée d'Orsay collection. His own paintings — radical cropped perspectives of rain-slicked boulevards and workers scraping floors — are among the most compositionally daring of the Impressionist circle. He was largely overshadowed during his lifetime by his friends."
+  },
+  "Henri de Toulouse-Lautrec": {
+    born: "1864", died: "1901", nationality: "French",
+    bio: "Lautrec spent his brief career in the cabarets and brothels of Montmartre, creating posters, lithographs, and paintings of the performers and prostitutes he encountered with a sympathy born of shared marginality — his own dwarfism had excluded him from aristocratic society despite his noble birth. His posters for the Moulin Rouge essentially invented modern graphic design. He died of alcoholism at 36."
+  },
+  "Henri Rousseau": {
+    born: "1844", died: "1910", nationality: "French",
+    bio: "Rousseau was a customs official with no formal training who began painting in his forties and developed a style of meticulous naïveté — detailed jungle scenes populated with exotic animals and sleeping figures in eerily still moonlight — derived entirely from imagination and zoo visits, not travel. Picasso discovered him and threw a famous banquet in his honor. He is the canonical example of the untrained genius."
+  },
+  "Piet Mondrian": {
+    born: "1872", died: "1944", nationality: "Dutch",
+    bio: "Mondrian pursued a decades-long reduction of painting to its absolute essentials — horizontal and vertical black lines on a white field, with rectangles of primary color — which he called Neoplasticism. He believed this grid expressed universal harmony beneath the surface of appearances. His influence on architecture, graphic design, and typography in the 20th century was enormous and is still felt."
+  },
+  "Amedeo Modigliani": {
+    born: "1884", died: "1920", nationality: "Italian",
+    bio: "Modigliani worked in Paris, outside the major movements around him, developing a singular style of elongated necks, almond-shaped eyes, and tilted oval faces drawn from African sculpture and Italian Mannerism. His portraits and nudes have an intimacy and melancholy that reflects a life of genuine poverty and ill-health. He died of tuberculosis at 35, unknown to the wider world."
+  },
+  "Georges de La Tour": {
+    born: "1593", died: "1652", nationality: "French",
+    bio: "La Tour painted candlelit nocturnal scenes of extraordinary stillness and spiritual concentration, his figures bathed in warm artificial light that simplifies their forms to near-geometric purity. Almost entirely forgotten after his death, he was rediscovered in 1915 and is now recognized as one of the great Caravaggisti and one of the most distinctive voices of 17th-century French painting."
+  },
+  "Frans Hals": {
+    born: "c. 1582", died: "1666", nationality: "Dutch",
+    bio: "Hals was the portraitist of Haarlem's merchant class, capturing laughter, conviviality, and fleeting expression with a loose, flickering brushwork that anticipates Impressionism by two centuries. He worked in poverty in old age, dependent on municipal charity, yet his late group portraits — painted in his eighties — are among the most technically adventurous works of the Dutch Golden Age. Manet and Sargent were devoted students of his technique."
+  },
+  "Carel Fabritius": {
+    born: "1622", died: "1654", nationality: "Dutch",
+    bio: "Fabritius was Rembrandt's most gifted pupil and almost certainly the teacher of Vermeer, making him the missing link between the two greatest Dutch painters. He died at 32 when the Delft powder magazine exploded, destroying most of his work. The Goldfinch is his most celebrated surviving painting: tiny, precise, and inexplicably affecting."
+  },
+  "Jan Steen": {
+    born: "1626", died: "1679", nationality: "Dutch",
+    bio: "Steen painted scenes of chaotic domestic disorder — drunken households, raucous taverns, unruly families — with a comic intelligence and moral undertow that made his name a Dutch idiom for disorder. Behind the laughter are carefully constructed compositions full of emblematic detail. He worked as an innkeeper for much of his career, which may have provided his subject matter directly."
+  },
+  "Jan Davidsz. de Heem": {
+    born: "1606", died: "1684", nationality: "Dutch",
+    bio: "De Heem was the most celebrated still-life painter of the Dutch and Flemish Golden Age, synthesizing the Dutch preference for precisely lit everyday objects with the Flemish taste for abundant, luxurious display. His garlands, banquet pieces, and vanitas paintings were sought by collectors across Europe and he maintained workshops in both Utrecht and Antwerp. His influence on the genre extended well into the 18th century."
+  },
+  "Paulus Potter": {
+    born: "1625", died: "1654", nationality: "Dutch",
+    bio: "Potter specialized in large-scale animal painting at a time when such subjects were considered minor, producing monumental canvases of cattle and horses in landscape that rank among the most technically accomplished animal paintings ever made. His Young Bull, painted when he was 22, was considered a masterpiece in his own lifetime. Like Fabritius, he died very young and left a small but influential body of work."
+  },
+  "Giuseppe Arcimboldo": {
+    born: "1527", died: "1593", nationality: "Italian",
+    bio: "Arcimboldo served the Habsburg emperors in Vienna and Prague, creating his famous composite portraits — human faces assembled entirely from seasonal fruits, vegetables, flowers, or fish — that delighted the imperial court as learned visual puns. Rediscovered by the Surrealists in the 20th century, he is now seen as a forerunner of their collage aesthetic. His works hover between joke and vision."
+  },
+  "Juan Gris": {
+    born: "1887", died: "1927", nationality: "Spanish",
+    bio: "Gris developed Synthetic Cubism into the most lucid and elegant form of the style, building his still lives from flat planes of pure color overlaid with drawn forms in a way that feels both analytical and decorative. He arrived in Paris in 1906, became Picasso's neighbor, and was the third major figure of Cubism after Picasso and Braque. He died of kidney disease at 40."
+  },
+  "Marcel Duchamp": {
+    born: "1887", died: "1968", nationality: "French-American",
+    bio: "Duchamp effectively ended one tradition and started another with a single gesture: submitting a urinal titled Fountain to an exhibition in 1917. His readymades — ordinary objects declared art by the artist's choice — proposed that art is a concept rather than a craft, a provocation that underlies conceptual art, minimalism, and installation art to this day. He spent the last decades of his life apparently playing chess."
+  },
+  "Francis Bacon": {
+    born: "1909", died: "1992", nationality: "Irish-British",
+    bio: "Bacon distorted the human figure into screaming, blurred, meat-like presences that expressed what he called 'the brutality of fact' — existence stripped of consolation or meaning. Working from photographs, Velázquez, and Muybridge, he created an existentialist figuration uniquely his own. His triptychs of his companion George Dyer, painted after Dyer's suicide, are among the most devastating works in 20th-century art."
+  },
+  "Attributed to Leonardo da Vinci": {
+    born: "1452", died: "1519", nationality: "Italian",
+    bio: "The attribution of certain works to Leonardo remains contested among scholars, the question of his hand distinguished from workshop assistants by technical analysis, connoisseurship, and archival research. Leonardo's studio produced multiple versions of his most sought-after compositions, and the boundaries between master and workshop were often deliberately blurred. Works attributed to him carry the full weight of his revolutionary sfumato technique and formal intelligence."
+  }
+};
+
+/* ── Artist portraits ────────────────────────────────────────────────────── */
+const ARTIST_PORTRAITS = {
+  "Leonardo da Vinci":         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Leonardo_self_portrait_zoomed.jpg/400px-Leonardo_self_portrait_zoomed.jpg",
+  "Attributed to Leonardo da Vinci": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Leonardo_self_portrait_zoomed.jpg/400px-Leonardo_self_portrait_zoomed.jpg",
+  "Michelangelo":              "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Miguel_%C3%81ngel%2C_por_Daniele_da_Volterra_%28detalle%29.jpg/400px-Miguel_%C3%81ngel%2C_por_Daniele_da_Volterra_%28detalle%29.jpg",
+  "Raphael":                   "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Raffaello_Sanzio.jpg/400px-Raffaello_Sanzio.jpg",
+  "Sandro Botticelli":         "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sandro_Botticelli_-_Self-Portrait_-_WGA02872.jpg/400px-Sandro_Botticelli_-_Self-Portrait_-_WGA02872.jpg",
+  "Titian":                    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Tizian_107.jpg/400px-Tizian_107.jpg",
+  "Caravaggio":                "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Caravaggio_-_Self-Portrait_as_Sick_Bacchus.jpg/400px-Caravaggio_-_Self-Portrait_as_Sick_Bacchus.jpg",
+  "Rembrandt van Rijn":        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg/400px-Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg",
+  "Johannes Vermeer":          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Johannes_Vermeer_-_The_Art_of_Painting_-_Google_Art_Project.jpg/400px-Johannes_Vermeer_-_The_Art_of_Painting_-_Google_Art_Project.jpg",
+  "Jan van Eyck":              "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Van_Eyck_-_Arnolfini_Portrait.jpg/400px-Van_Eyck_-_Arnolfini_Portrait.jpg",
+  "Peter Paul Rubens":         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Rubens_self_portrait.jpg/400px-Rubens_self_portrait.jpg",
+  "Diego Velázquez":           "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Vel%C3%A1zquez_-_Self-Portrait_in_the_Workshop.jpg/400px-Vel%C3%A1zquez_-_Self-Portrait_in_the_Workshop.jpg",
+  "Francisco Goya":            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Francisco_Goya_y_Lucientes_-_Self-portrait%2C_1795-1797.jpg/400px-Francisco_Goya_y_Lucientes_-_Self-portrait%2C_1795-1797.jpg",
+  "Pablo Picasso":             "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pablo_picasso_1.jpg/400px-Pablo_picasso_1.jpg",
+  "Vincent van Gogh":          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg/400px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project.jpg",
+  "Paul Gauguin":              "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Paul_Gauguin_146.jpg/400px-Paul_Gauguin_146.jpg",
+  "Paul Cézanne":              "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Paul_C%C3%A9zanne_099.jpg/400px-Paul_C%C3%A9zanne_099.jpg",
+  "Claude Monet":              "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet_1899_Nadar_crop.jpg/400px-Claude_Monet_1899_Nadar_crop.jpg",
+  "Pierre-Auguste Renoir":     "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Auguste_Renoir_-_Self-Portrait_-_1875.jpg/400px-Auguste_Renoir_-_Self-Portrait_-_1875.jpg",
+  "Edgar Degas":               "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Edgar_Degas_-_Self-Portrait_%281855%29.jpg/400px-Edgar_Degas_-_Self-Portrait_%281855%29.jpg",
+  "Édouard Manet":             "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/%C3%89douard_Manet_-_Self-Portrait_with_Palette.jpg/400px-%C3%89douard_Manet_-_Self-Portrait_with_Palette.jpg",
+  "Georges Seurat":            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Georges_Seurat_-_Portrait_-_1883.jpg/400px-Georges_Seurat_-_Portrait_-_1883.jpg",
+  "Henri Matisse":             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Henri_Matisse_1933_May_20.jpg/400px-Henri_Matisse_1933_May_20.jpg",
+  "Salvador Dalí":             "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Salvador_Dal%C3%AD_1939.jpg/400px-Salvador_Dal%C3%AD_1939.jpg",
+  "René Magritte":             "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Ren%C3%A9_Magritte_IMEC_Fonds_Magritte.jpg/400px-Ren%C3%A9_Magritte_IMEC_Fonds_Magritte.jpg",
+  "Joan Miró":                 "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Joan_Mir%C3%B3_1935.jpg/400px-Joan_Mir%C3%B3_1935.jpg",
+  "Jackson Pollock":           "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Pollock.jpg/400px-Pollock.jpg",
+  "Andy Warhol":               "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Andy_Warhol_1975.jpg/400px-Andy_Warhol_1975.jpg",
+  "Roy Lichtenstein":          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Roy_Lichtenstein_1994.jpg/400px-Roy_Lichtenstein_1994.jpg",
+  "Edward Hopper":             "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Edward_Hopper_%281950%29.jpg/400px-Edward_Hopper_%281950%29.jpg",
+  "Grant Wood":                "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Grant_DeVolson_Wood.jpg/400px-Grant_DeVolson_Wood.jpg",
+  "Mary Cassatt":              "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Mary_Cassatt_-_Self-Portrait_%281878%29.jpg/400px-Mary_Cassatt_-_Self-Portrait_%281878%29.jpg",
+  "Thomas Eakins":             "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Thomas_Eakins_-_Self_Portrait_%281902%29.jpg/400px-Thomas_Eakins_-_Self_Portrait_%281902%29.jpg",
+  "John Singer Sargent":       "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/John_Singer_Sargent_-_Self-Portrait_%281907%29.jpg/400px-John_Singer_Sargent_-_Self-Portrait_%281907%29.jpg",
+  "James McNeill Whistler":    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/James_Abbott_McNeill_Whistler_-_Self-Portrait_%281872%29.jpg/400px-James_Abbott_McNeill_Whistler_-_Self-Portrait_%281872%29.jpg",
+  "Winslow Homer":             "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Winslow_Homer_-_Self-Portrait_%281867%29.jpg/400px-Winslow_Homer_-_Self-Portrait_%281867%29.jpg",
+  "Edvard Munch":              "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Edvard_Munch_-_Self-Portrait_with_Wine_Bottle.jpg/400px-Edvard_Munch_-_Self-Portrait_with_Wine_Bottle.jpg",
+  "Gustav Klimt":              "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Klimt_-_Portrait_Emilie_Fl%C3%B6ge.jpg/400px-Klimt_-_Portrait_Emilie_Fl%C3%B6ge.jpg",
+  "Egon Schiele":              "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Egon_Schiele_-_Self-Portrait_with_Physalis_%281912%29.jpg/400px-Egon_Schiele_-_Self-Portrait_with_Physalis_%281912%29.jpg",
+  "Frida Kahlo":               "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg/400px-Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg",
+  "Rufino Tamayo":             "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Rufino_Tamayo_en_1973.jpg/400px-Rufino_Tamayo_en_1973.jpg",
+  "J.M.W. Turner":             "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/George_Dance_-_Portrait_of_J.M.W._Turner_%281800%29.jpg/400px-George_Dance_-_Portrait_of_J.M.W._Turner_%281800%29.jpg",
+  "John Constable":            "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/John_Constable_by_Daniel_Gardner%2C_1796.jpg/400px-John_Constable_by_Daniel_Gardner%2C_1796.jpg",
+  "Thomas Gainsborough":       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Thomas_Gainsborough_-_Self-portrait_%281759%29.jpg/400px-Thomas_Gainsborough_-_Self-portrait_%281759%29.jpg",
+  "Hans Holbein the Younger":  "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Hans_Holbein_d._J._-_Selbstbildnis_%28Uffizien%29.jpg/400px-Hans_Holbein_d._J._-_Selbstbildnis_%28Uffizien%29.jpg",
+  "Pieter Bruegel the Elder":  "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Pieter_Bruegel_the_Elder_-_The_Painter_and_the_Buyer.jpg/400px-Pieter_Bruegel_the_Elder_-_The_Painter_and_the_Buyer.jpg",
+  "Hieronymus Bosch":          "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Hieronymus_Bosch.jpg/400px-Hieronymus_Bosch.jpg",
+  "Rogier van der Weyden":     "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Lorne_Portraitof_Rogier_van_der_Weyden.jpg/400px-Lorne_Portraitof_Rogier_van_der_Weyden.jpg",
+  "Fra Angelico":              "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Fra_Angelico_-_Portrait_of_a_man_-_Getty.jpg/400px-Fra_Angelico_-_Portrait_of_a_man_-_Getty.jpg",
+  "Piero della Francesca":     "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Piero_della_Francesca_-_Portraits_of_Federico_da_Montefeltro_and_Battista_Sforza_%28detail%29_-_WGA17587.jpg/400px-Piero_della_Francesca_-_Portraits_of_Federico_da_Montefeltro_and_Battista_Sforza_%28detail%29_-_WGA17587.jpg",
+  "Caravaggio":                "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Caravaggio_-_Self-Portrait_as_Sick_Bacchus.jpg/400px-Caravaggio_-_Self-Portrait_as_Sick_Bacchus.jpg",
+  "Paolo Veronese":            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Veronese_Self_Portrait.jpg/400px-Veronese_Self_Portrait.jpg",
+  "Giorgione":                 "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Giorgione_-_Portrait_of_a_Young_Man.jpg/400px-Giorgione_-_Portrait_of_a_Young_Man.jpg",
+  "Canaletto":                 "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Canaletto_Self-portrait.jpg/400px-Canaletto_Self-portrait.jpg",
+  "Jacques-Louis David":       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Jacques-Louis_David_-_Self-Portrait_-_WGA6069.jpg/400px-Jacques-Louis_David_-_Self-Portrait_-_WGA6069.jpg",
+  "Eugène Delacroix":          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Eug%C3%A8ne_Delacroix_-_Self-Portrait_%281837%29.jpg/400px-Eug%C3%A8ne_Delacroix_-_Self-Portrait_%281837%29.jpg",
+  "Théodore Géricault":        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Theodore_Gericault%2C_Portrait_of_a_Man_-_Joseph_Morant.jpg/400px-Theodore_Gericault%2C_Portrait_of_a_Man_-_Joseph_Morant.jpg",
+  "Jean-Honoré Fragonard":     "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Jean-Honor%C3%A9_Fragonard_-_Self-Portrait_%281769%29.jpg/400px-Jean-Honor%C3%A9_Fragonard_-_Self-Portrait_%281769%29.jpg",
+  "Nicolas Poussin":           "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Nicolas_Poussin_-_Self-Portrait_%281649-1650%29.jpg/400px-Nicolas_Poussin_-_Self-Portrait_%281649-1650%29.jpg",
+  "Jean-François Millet":      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Jean-Fran%C3%A7ois_Millet_-_Self-Portrait_1847.jpg/400px-Jean-Fran%C3%A7ois_Millet_-_Self-Portrait_1847.jpg",
+  "Camille Corot":             "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Corot_-_Autoportrait_1825.jpg/400px-Corot_-_Autoportrait_1825.jpg",
+  "Gustave Caillebotte":       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Gustave_Caillebotte_-_Self_portrait_%281889%29.jpg/400px-Gustave_Caillebotte_-_Self_portrait_%281889%29.jpg",
+  "Henri de Toulouse-Lautrec": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Henri_de_Toulouse-Lautrec_%281894%29.jpg/400px-Henri_de_Toulouse-Lautrec_%281894%29.jpg",
+  "Henri Rousseau":            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Henri_Rousseau_-_Myself%2C_Portrait-Landscape.jpg/400px-Henri_Rousseau_-_Myself%2C_Portrait-Landscape.jpg",
+  "Piet Mondrian":             "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Piet_Mondrian%2C_1872-1944%2C_Photograph_by_Charles_Karsten.jpg/400px-Piet_Mondrian%2C_1872-1944%2C_Photograph_by_Charles_Karsten.jpg",
+  "Amedeo Modigliani":         "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Amedeo_Modigliani_1909.jpg/400px-Amedeo_Modigliani_1909.jpg",
+  "Georges de La Tour":        "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Georges_de_La_Tour.jpg/400px-Georges_de_La_Tour.jpg",
+  "Frans Hals":                "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Frans_Hals_-_Self-Portrait_-_WGA11266.jpg/400px-Frans_Hals_-_Self-Portrait_-_WGA11266.jpg",
+  "Carel Fabritius":           "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Carel_Fabritius_-_Self-Portrait_%281645%29.jpg/400px-Carel_Fabritius_-_Self-Portrait_%281645%29.jpg",
+  "Giuseppe Arcimboldo":       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Arcimboldo_Self-Portrait.jpg/400px-Arcimboldo_Self-Portrait.jpg",
+  "Juan Gris":                 "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Juan_Gris_1913.jpg/400px-Juan_Gris_1913.jpg",
+  "Marcel Duchamp":            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Marcel_Duchamp%2C_1942.jpg/400px-Marcel_Duchamp%2C_1942.jpg",
+  "Francis Bacon":             "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Francis_Bacon_1950.jpg/400px-Francis_Bacon_1950.jpg",
+  "Andrew Wyeth":              "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Andrew_Wyeth.jpg/400px-Andrew_Wyeth.jpg",
+  "Jacob Lawrence":            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Jacob_Lawrence_%281941%29.jpg/400px-Jacob_Lawrence_%281941%29.jpg",
+  "John Singleton Copley":     "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/John_Singleton_Copley_-_Self-Portrait_%281769%29.jpg/400px-John_Singleton_Copley_-_Self-Portrait_%281769%29.jpg",
+  "John Trumbull":             "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/John_Trumbull_by_John_Trumbull.jpg/400px-John_Trumbull_by_John_Trumbull.jpg",
+  "Emanuel Leutze":            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Emanuel_Leutze.jpg/400px-Emanuel_Leutze.jpg",
+  "Thomas Lawrence":           "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Thomas_Lawrence_-_Self-Portrait_%281788%29.jpg/400px-Thomas_Lawrence_-_Self-Portrait_%281788%29.jpg",
+  "María Izquierdo":           "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Mar%C3%ADa_Izquierdo_%281902-1955%29.jpg/400px-Mar%C3%ADa_Izquierdo_%281902-1955%29.jpg",
+  "Fra Angelico and Fra Filippo Lippi": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Fra_Angelico_-_Portrait_of_a_man_-_Getty.jpg/400px-Fra_Angelico_-_Portrait_of_a_man_-_Getty.jpg",
+  "Giorgione (completed by Titian)": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Giorgione_-_Portrait_of_a_Young_Man.jpg/400px-Giorgione_-_Portrait_of_a_Young_Man.jpg",
+  "Giovanni Bellini and Titian": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Tizian_107.jpg/400px-Tizian_107.jpg"
+};
+
+/* ── Museum info ─────────────────────────────────────────────────────────── */
+const MUSEUMS_INFO = {
+  "Louvre Museum": {
+    city: "Paris", country: "France",
+    blurb: "The world's largest and most visited art museum, the Louvre occupies a former royal palace on the banks of the Seine. Its collection spans 5,000 years of civilization — from ancient Egyptian antiquities to 19th-century European paintings — with over 35,000 works on display. The iconic glass pyramid entrance was added by I.M. Pei in 1989.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Louvre_Museum_Wikimedia_Commons.jpg/800px-Louvre_Museum_Wikimedia_Commons.jpg"
+  },
+  "Metropolitan Museum of Art": {
+    city: "New York", country: "USA",
+    blurb: "The Met is the largest art museum in the United States and one of the greatest in the world, with a collection of over two million objects spanning 5,000 years across every culture. Its neoclassical Fifth Avenue facade has been a fixture of the Upper East Side since 1880, and its encyclopedic holdings range from Egyptian mummies to Impressionist masterpieces to contemporary installations.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Metropolitan_Museum_of_Art_%28The_Met%29_-_Central_Park%2C_NYC.jpg/800px-Metropolitan_Museum_of_Art_%28The_Met%29_-_Central_Park%2C_NYC.jpg"
+  },
+  "National Gallery": {
+    city: "London", country: "United Kingdom",
+    blurb: "Overlooking Trafalgar Square, the National Gallery houses one of the greatest collections of Western European painting in the world, spanning from 1250 to 1900. Founded in 1824, its collection was intentionally built to represent the full history of painting rather than to showcase royal taste, making it unusually democratic in scope. Entry is permanently free.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/The_National_Gallery%2C_London_-_Oct_2008.jpg/800px-The_National_Gallery%2C_London_-_Oct_2008.jpg"
+  },
+  "Museo del Prado": {
+    city: "Madrid", country: "Spain",
+    blurb: "The Prado is the national museum of Spain and the definitive showcase of Spanish art, as well as one of the world's greatest repositories of European Old Master painting. Its collection was built from the Spanish royal collections, giving it unrivaled holdings of Velázquez, Goya, and El Greco, as well as outstanding Flemish and Italian works. It opened to the public in 1819.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Museo_del_Prado_2016_%2825185969599%29.jpg/800px-Museo_del_Prado_2016_%2825185969599%29.jpg"
+  },
+  "Rijksmuseum": {
+    city: "Amsterdam", country: "Netherlands",
+    blurb: "The Rijksmuseum is the Netherlands' national museum of art and history, with a collection representing 800 years of Dutch and Flemish achievement. Its grand neo-Gothic building, reopened after a decade-long renovation in 2013, is home to Rembrandt's Night Watch, Vermeer's Milkmaid, and the largest collection of Dutch Golden Age painting in the world.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Rijksmuseumamsterdam.jpg/800px-Rijksmuseumamsterdam.jpg"
+  },
+  "Uffizi Gallery": {
+    city: "Florence", country: "Italy",
+    blurb: "The Uffizi is the preeminent museum of Italian Renaissance painting, housed in a 16th-century administrative building commissioned by Cosimo I de' Medici. The Medici family's incomparable art collection — assembled over two centuries — forms its core, and no other museum can match its concentration of Botticelli, Leonardo, Michelangelo, Raphael, and Titian. The word 'uffizi' simply means 'offices.'",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Uffizi_Florence.jpg/800px-Uffizi_Florence.jpg"
+  },
+  "State Hermitage Museum": {
+    city: "Saint Petersburg", country: "Russia",
+    blurb: "The Hermitage is one of the largest and oldest museums in the world, occupying six buildings along the Neva River including the Winter Palace of the Tsars. Its collection of nearly three million objects was assembled primarily by Catherine the Great in the 18th century and includes extraordinary holdings of Dutch and Flemish masters, French Impressionists, and ancient antiquities.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Hermitage_Museum_-_St._Petersburg%2C_Russia_-_Jan._2008.jpg/800px-Hermitage_Museum_-_St._Petersburg%2C_Russia_-_Jan._2008.jpg"
+  },
+  "Museum of Modern Art (MoMA)": {
+    city: "New York", country: "USA",
+    blurb: "MoMA is the museum that invented the modern canon — its collection of painting, sculpture, film, photography, and design from 1880 to the present is among the most influential in the world. Founded in 1929 by Abby Aldrich Rockefeller and others, it was the first institution to treat modern art with the same institutional seriousness as the Old Masters. Its midtown Manhattan building has been expanded four times.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/MoMA_NYC_2019-04-28.jpg/800px-MoMA_NYC_2019-04-28.jpg"
+  },
+  "Musée d'Orsay": {
+    city: "Paris", country: "France",
+    blurb: "The Musée d'Orsay occupies a Beaux-Arts railway station built for the 1900 World's Fair and holds the world's largest collection of Impressionist and Post-Impressionist masterpieces. Works by Monet, Renoir, Degas, Manet, Van Gogh, Gauguin, and Cézanne fill its spectacular iron-and-glass main hall. The building itself, saved from demolition in 1977, is as remarkable as its contents.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Mus%C3%A9e_d%27Orsay_-_22_Wikimedia_Commons_-_2019.jpg/800px-Mus%C3%A9e_d%27Orsay_-_22_Wikimedia_Commons_-_2019.jpg"
+  },
+  "Vatican Museums (Sistine Chapel)": {
+    city: "Vatican City", country: "Vatican City",
+    blurb: "The Vatican Museums comprise the pontifical art collections housed in a series of palaces adjacent to St. Peter's Basilica — among the oldest, largest, and richest museums in the world. The Sistine Chapel, with Michelangelo's ceiling and Last Judgment, is their most celebrated space, though the Vatican's holdings extend from classical antiquities to contemporary art. Over six million visitors pass through annually.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/The_Sistine_Chapel_-_Vatican_Museums%2C_Vatican_City_%28cropped%29.jpg/800px-The_Sistine_Chapel_-_Vatican_Museums%2C_Vatican_City_%28cropped%29.jpg"
+  },
+  "Vatican Museums (Apostolic Palace)": {
+    city: "Vatican City", country: "Vatican City",
+    blurb: "The Apostolic Palace — the official residence of the Pope — contains the Raphael Rooms, four chambers decorated entirely by Raphael and his workshop between 1508 and 1524, including The School of Athens. These frescoed rooms, along with the Sistine Chapel next door, represent the highest achievement of Vatican Renaissance decoration and draw millions of visitors each year.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Raphael_-_The_School_of_Athens.jpg/800px-Raphael_-_The_School_of_Athens.jpg"
+  },
+  "Art Institute of Chicago": {
+    city: "Chicago", country: "USA",
+    blurb: "The Art Institute is the second-largest art museum in the United States and one of the most encyclopedic, with a collection spanning 5,000 years. Its Impressionist and Post-Impressionist holdings are among the finest outside of France, anchored by Seurat's A Sunday on La Grande Jatte. The bronze lions flanking its Michigan Avenue entrance have been a Chicago landmark since 1893.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Art_Institute_of_Chicago%2C_Chicago%2C_Illinois%2C_USA.jpg/800px-Art_Institute_of_Chicago%2C_Chicago%2C_Illinois%2C_USA.jpg"
+  },
+  "National Gallery of Art": {
+    city: "Washington D.C.", country: "USA",
+    blurb: "The National Gallery of Art on the National Mall houses one of the finest art collections in the United States, from medieval to contemporary, with particular strength in Italian Renaissance, Dutch, and American art. It was established by an act of Congress in 1937 with a gift from Andrew Mellon and has been free to the public since it opened in 1941. Its East Building, by I.M. Pei, opened in 1978.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/National_Gallery_of_Art_-_West_Building.jpg/800px-National_Gallery_of_Art_-_West_Building.jpg"
+  },
+  "Kunsthistorisches Museum": {
+    city: "Vienna", country: "Austria",
+    blurb: "The Kunsthistorisches Museum ('Museum of Art History') is Austria's greatest art institution, built by Emperor Franz Joseph I to house the imperial Habsburg collections and opened in 1891. Its Picture Gallery is among the finest in the world, with extraordinary holdings of Bruegel, Dürer, Vermeer, Rubens, and Titian. The building itself, by Gottfried Semper and Karl von Hasenauer, is a masterwork of Historicist architecture.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Kunsthistorisches_Museum_Wien.jpg/800px-Kunsthistorisches_Museum_Wien.jpg"
+  },
+  "Österreichische Galerie Belvedere": {
+    city: "Vienna", country: "Austria",
+    blurb: "The Belvedere is a Baroque palace complex built for Prince Eugene of Savoy between 1714 and 1723, now housing Austria's most important art collection. The Upper Belvedere holds the world's largest collection of Gustav Klimt paintings, including The Kiss, as well as major works of Austrian Expressionism and international Symbolism. The gardens connecting the two palace buildings are among the finest Baroque landscapes in Europe.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Belvedere_IMG_2673.jpg/800px-Belvedere_IMG_2673.jpg"
+  },
+  "Mauritshuis": {
+    city: "The Hague", country: "Netherlands",
+    blurb: "The Mauritshuis is a small museum in the former palace of Count John Maurice of Nassau, housing the Royal Picture Gallery of the Netherlands. Its compact collection is of extraordinary quality, including Vermeer's Girl with a Pearl Earring, Rembrandt's The Anatomy Lesson, and major works by Rubens and Holbein. It is often called the most perfect small museum in the world.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Mauritshuis_2019.jpg/800px-Mauritshuis_2019.jpg"
+  },
+  "Van Gogh Museum": {
+    city: "Amsterdam", country: "Netherlands",
+    blurb: "The Van Gogh Museum holds the world's largest collection of works by Vincent van Gogh — over 200 paintings, 500 drawings, and 700 letters — most inherited from his brother Theo's family. Its permanent collection tells the story of Van Gogh's entire career, from his dark Dutch period through his sunlit Arles breakthrough to the final Auvers canvases. It is the most visited museum in the Netherlands.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Van_Gogh_Museum_2016.jpg/800px-Van_Gogh_Museum_2016.jpg"
+  },
+  "Tate Modern": {
+    city: "London", country: "United Kingdom",
+    blurb: "Tate Modern opened in 2000 in the converted Bankside Power Station on the South Bank of the Thames, and has become the world's most visited gallery of modern and contemporary art. Its permanent collection includes defining works of 20th-century art from Picasso, Matisse, Dalí, and Rothko to contemporary global artists. The vast Turbine Hall hosts annual large-scale commissions that have become cultural events in themselves.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tate_Modern_2016.jpg/800px-Tate_Modern_2016.jpg"
+  },
+  "Philadelphia Museum of Art": {
+    city: "Philadelphia", country: "USA",
+    blurb: "The Philadelphia Museum of Art, whose steps were immortalized by Rocky Balboa, is one of the largest art museums in the United States, with a collection of over 240,000 objects. Its holdings are particularly strong in American art, medieval European art, and works by Marcel Duchamp — its Arensberg Collection is the definitive Duchamp archive. The Greek Revival temple was designed in 1919.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Philadelphia_Museum_of_Art_2010.jpg/800px-Philadelphia_Museum_of_Art_2010.jpg"
+  },
+  "Marmottan Monet Museum": {
+    city: "Paris", country: "France",
+    blurb: "The Marmottan Monet Museum in the Bois de Boulogne houses the world's largest collection of Claude Monet's work — over 300 paintings and sketches, including the original Impression, Sunrise that gave Impressionism its name. The collection was donated by Monet's son Michel in 1966 and is displayed in a 19th-century hunting lodge with purpose-built underground galleries. It is the most intimate major Impressionist museum in Paris.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Mus%C3%A9e_Marmottan_Monet.jpg/800px-Mus%C3%A9e_Marmottan_Monet.jpg"
+  },
+  "Musée de l'Orangerie": {
+    city: "Paris", country: "France",
+    blurb: "Built in 1852 as a greenhouse for the orange trees of the Tuileries Garden, the Orangerie is now home to the Nymphéas — eight monumental water lily paintings that Monet designed specifically for two oval rooms, as a gift to France. Installed after his death in 1927, these immersive canvases remain among the most extraordinary encounters between art and architecture in existence. The museum also holds major Impressionist and Post-Impressionist works.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Mus%C3%A9e_de_l%27Orangerie_-_Paris.jpg/800px-Mus%C3%A9e_de_l%27Orangerie_-_Paris.jpg"
+  },
+  "National Museum of Norway": {
+    city: "Oslo", country: "Norway",
+    blurb: "The National Museum of Norway, which opened its new building in 2022, is the largest art museum in the Nordic countries. Its collection spans fine arts, architecture, and design from antiquity to the present. The most visited work is Edvard Munch's The Scream (1893 version), whose iconic image of existential anguish has become one of the most recognized paintings in the world. The building itself, on the waterfront by Aker Brygge, is a landmark of contemporary Norwegian architecture.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Nasjonalmuseet_2022.jpg/800px-Nasjonalmuseet_2022.jpg"
+  },
+  "Galleria Borghese": {
+    city: "Rome", country: "Italy",
+    blurb: "The Borghese Gallery occupies the casino of Cardinal Scipione Borghese in the Villa Borghese gardens and contains one of the finest private art collections ever assembled. Its sculpture collection, anchored by Bernini's masterpieces — Apollo and Daphne, The Rape of Proserpina, David — is unmatched. Visits are limited to two hours and must be booked in advance, making it among the most exclusive museum experiences in the world.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Galleria_Borghese_facade.jpg/800px-Galleria_Borghese_facade.jpg"
+  },
+  "San Luigi dei Francesi": {
+    city: "Rome", country: "Italy",
+    blurb: "San Luigi dei Francesi is the French national church in Rome, built in the 16th century, and is best known as the home of Caravaggio's Contarelli Chapel paintings — three monumental works depicting the life of St. Matthew that established him as the most radical painter in Rome. The church is an active place of worship, but the Contarelli Chapel draws art pilgrims from around the world.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/San_Luigi_dei_Francesi_%28Rome%29_-_Facade.jpg/800px-San_Luigi_dei_Francesi_%28Rome%29_-_Facade.jpg"
+  },
+  "Santa Maria delle Grazie": {
+    city: "Milan", country: "Italy",
+    blurb: "Santa Maria delle Grazie is a 15th-century church and Dominican convent in Milan, a UNESCO World Heritage Site since 1980. Its refectory wall bears Leonardo da Vinci's Last Supper, painted between 1495 and 1498 directly onto the plaster — not as a fresco but with experimental tempera, which began deteriorating almost immediately. Viewing is strictly limited to groups of 25 for 15 minutes, making it among the most controlled museum visits in the world.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Refectory_of_Santa_Maria_delle_Grazie.jpg/800px-Refectory_of_Santa_Maria_delle_Grazie.jpg"
+  },
+  "Wallace Collection": {
+    city: "London", country: "United Kingdom",
+    blurb: "The Wallace Collection is housed in Hertford House in Manchester Square and contains one of the finest private collections of art ever assembled — including Fragonard's The Swing, Hals' Laughing Cavalier, and works by Titian, Velázquez, and Rembrandt — all bequeathed to the nation in 1897 by Lady Wallace. Entry is free, and the collection cannot be lent, making it permanently and completely accessible only in London.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Wallace_Collection_-_Hertford_House.jpg/800px-Wallace_Collection_-_Hertford_House.jpg"
+  },
+  "Neue Galerie New York": {
+    city: "New York", country: "USA",
+    blurb: "The Neue Galerie is a small but extraordinary museum dedicated exclusively to German and Austrian art from 1890 to 1940, housed in a 1914 Fifth Avenue mansion. Its collection includes Klimt's Woman in Gold and major works of Vienna Secession, German Expressionism, and the Bauhaus. Founded in 2001 by Ronald Lauder and Serge Sabarsky, it is New York's most focused and intimate world-class museum.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Neue_Galerie_New_York.jpg/800px-Neue_Galerie_New_York.jpg"
+  },
+  "Phillips Collection": {
+    city: "Washington D.C.", country: "USA",
+    blurb: "The Phillips Collection, founded in 1921 in Washington D.C., was the first museum of modern art in the United States. Its collection of Impressionist and modern art was assembled through the personal passion of Duncan Phillips, who lived in the building alongside his collection. Renoir's Luncheon of the Boating Party, acquired in 1923, is its centerpiece — one of the most beloved Impressionist paintings in America.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/The_Phillips_Collection.jpg/800px-The_Phillips_Collection.jpg"
+  },
+  "Barnes Foundation": {
+    city: "Philadelphia", country: "USA",
+    blurb: "The Barnes Foundation holds one of the world's great collections of Impressionist, Post-Impressionist, and early Modern art — assembled obsessively by Albert C. Barnes in the early 20th century — including 181 Renoirs, 69 Cézannes, 59 Matisses, and 46 Picassos. Barnes hung his collection in highly unconventional arrangements mixing paintings with ironwork and Native American objects. The collection moved from its original Merion, Pennsylvania home to a purpose-built Philadelphia building in 2012.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Barnes_Foundation_Building.jpg/800px-Barnes_Foundation_Building.jpg"
+  },
+  "J. Paul Getty Museum": {
+    city: "Los Angeles", country: "USA",
+    blurb: "The Getty Museum sits on a hilltop above Brentwood with views of Los Angeles and the Pacific, its modernist Richard Meier campus opened in 1997. Its collection spans 4,000 years of Western art, with particular strength in European paintings from the 14th to 19th centuries, illuminated manuscripts, and decorative arts. Admission is free; the travertine-clad buildings and gardens are considered masterworks of late-20th-century architecture.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Getty_Center_-_Los_Angeles_-_exterior.jpg/800px-Getty_Center_-_Los_Angeles_-_exterior.jpg"
+  },
+  "Huntington Library": {
+    city: "San Marino", country: "USA",
+    blurb: "The Huntington Library, Art Museum, and Botanical Gardens in San Marino, California is one of the great cultural institutions of the American West. Henry Huntington assembled an extraordinary collection of rare books, manuscripts, British and American art, and 120 acres of thematic gardens. Gainsborough's Blue Boy and Lawrence's Pinkie are its two most celebrated paintings, both acquired for staggering sums in the 1920s.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/HuntingtonLibrary.jpg/800px-HuntingtonLibrary.jpg"
+  },
+  "Gemäldegalerie Alte Meister": {
+    city: "Dresden", country: "Germany",
+    blurb: "Dresden's Gemäldegalerie Alte Meister ('Old Masters Picture Gallery') houses one of the finest collections of European painting in the world, assembled by the Electors of Saxony in the 17th and 18th centuries. Raphael's Sistine Madonna and Giorgione's Sleeping Venus are its most celebrated works. The neoclassical building, reopened after World War II restoration, looks onto the Zwinger palace complex.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Gem%C3%A4ldegalerie_Alte_Meister_-_front.jpg/800px-Gem%C3%A4ldegalerie_Alte_Meister_-_front.jpg"
+  },
+  "Yale University Art Gallery": {
+    city: "New Haven", country: "USA",
+    blurb: "The Yale University Art Gallery, founded in 1832, is the oldest university art museum in the Western Hemisphere. Its collection of over 200,000 works spans all cultures and periods, with particular strength in American art, European paintings, and ancient Mediterranean objects. The 1953 Louis Kahn building, Kahn's first major commission, is a landmark of 20th-century American architecture and is free and open to the public.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Yale_University_Art_Gallery.jpg/800px-Yale_University_Art_Gallery.jpg"
+  },
+  "Museo Nacional Centro de Arte Reina Sofía": {
+    city: "Madrid", country: "Spain",
+    blurb: "The Reina Sofía is Spain's national museum of 20th-century and contemporary art, housed in a converted 18th-century hospital adjacent to the Prado. Its permanent collection covers the major Spanish and international movements of Modernism, Surrealism, and the avant-garde. Picasso's Guernica — relocated from MoMA to Madrid in 1981 following the restoration of democracy — is the defining work of the collection and one of the most powerful political paintings ever made.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/MuseoReinaSofia.jpg/800px-MuseoReinaSofia.jpg"
+  },
+  "Museo de Arte Moderno": {
+    city: "Mexico City", country: "Mexico",
+    blurb: "The Museo de Arte Moderno in Chapultepec Park is Mexico's primary institution for modern and contemporary Mexican art, opened in 1964. Its collection is strongest in the muralist generation and the Mexican Modernists who followed — Rivera, Siqueiros, Tamayo, Kahlo, and Izquierdo — and its Kahlo holdings include The Two Fridas. The circular building, surrounded by trees in the park, is considered a landmark of mid-century Mexican architecture.",
+    photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Museo_de_Arte_Moderno_de_M%C3%A9xico_%28exterior%29.jpg/800px-Museo_de_Arte_Moderno_de_M%C3%A9xico_%28exterior%29.jpg"
+  }
+};
+
+

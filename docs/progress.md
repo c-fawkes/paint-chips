@@ -166,6 +166,13 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 **Commits:** *(this commit)*
 
+### Artist bios, portraits, and museum blurbs/photos
+- Added `ARTISTS` constant to `data.js` with individual short bios, birth/death dates, and nationality for all ~80 artists in the app
+- Added `ARTIST_PORTRAITS` with Wikimedia Commons portrait image URLs for each artist (self-portraits and well-known photographs)
+- Added `MUSEUMS_INFO` with a 3-4 sentence blurb and exterior/landmark photo URL for all 35 museums
+- Artist popup now shows: circular portrait thumbnail, name, nationality + dates, bio paragraph, movement chips (tappable to open the movement popup), and all their works in a grid
+- Museum popup now shows: full-width exterior photo, flag + city/country, seen progress bar, blurb paragraph, and the full painting collection grid
+
 ### Movements sort + Artist/Museum popups
 - Removed standalone Movements page and `?` header button; movement info is now accessible inline when sorted by Movement in the Top 100 list
 - Added "Movement" as a sort option in the Top 100 sort dropdown; paintings group by movement in chronological MOVEMENTS order

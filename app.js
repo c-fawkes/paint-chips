@@ -1082,8 +1082,11 @@ function openArtistPopup(artistName) {
   const paintings = all.filter(p => p.artist === artistName);
   if (!paintings.length) return;
 
-  const movementName = paintings.find(p => p.movement)?.movement;
-  const mv = (movementName && typeof MOVEMENTS !== 'undefined') ? MOVEMENTS[movementName] : null;
+  const info     = (typeof ARTISTS !== 'undefined') ? ARTISTS[artistName] : null;
+  const portrait = (typeof ARTIST_PORTRAITS !== 'undefined') ? ARTIST_PORTRAITS[artistName] : null;
+
+  // collect all unique movements this artist is associated with
+  const movementNames = [...new Set(paintings.map(p => p.movement).filter(Boolean))];
 
   const thumbs = paintings.map(p => {
     const img = p.imageUrl
@@ -1097,6 +1100,24 @@ function openArtistPopup(artistName) {
     </div>`;
   }).join('');
 
+  const portraitHtml = portrait
+    ? `<img class="artist-portrait" src="${portrait}" alt="${esc(artistName)}"
+           onerror="this.style.display='none'">`
+    : '';
+
+  const metaLine = [
+    info ? `${esc(info.nationality)}` : '',
+    info ? `${esc(info.born)}–${esc(info.died)}` : '',
+  ].filter(Boolean).join(' · ');
+
+  const movementChips = movementNames.map(k => {
+    const mv = (typeof MOVEMENTS !== 'undefined') ? MOVEMENTS[k] : null;
+    return `<span class="mv-artist-chip" style="cursor:pointer"
+      onclick="closeArtistPopup();openMovementPopup('${k.replace(/'/g,"\\'")}')">
+      ${esc(k)}${mv ? `<span style="color:var(--text-faint);font-size:.65rem"> · ${esc(mv.era)}</span>` : ''}
+    </span>`;
+  }).join('');
+
   const overlay = document.createElement('div');
   overlay.className = 'detail-overlay';
   overlay.id        = 'artist-overlay';
@@ -1106,10 +1127,17 @@ function openArtistPopup(artistName) {
         <button class="detail-back-btn" onclick="closeArtistPopup()">${ICONS.back} Back</button>
       </div>
       <div class="mv-popup-body">
-        <h2 class="mv-popup-name">${esc(artistName)}</h2>
-        ${movementName ? `<div class="mv-popup-era">${esc(movementName)}${mv ? ' · ' + esc(mv.era) : ''}</div>` : ''}
-        ${mv ? `<p class="mv-popup-summary" style="margin-top:10px">${esc(mv.summary)}</p>` : '<div style="height:16px"></div>'}
-        <div class="mv-section-label">Works in this collection (${paintings.length})</div>
+        <div class="artist-popup-header">
+          ${portraitHtml}
+          <div class="artist-popup-meta">
+            <h2 class="mv-popup-name" style="margin-bottom:4px">${esc(artistName)}</h2>
+            ${metaLine ? `<div class="mv-popup-era">${metaLine}</div>` : ''}
+          </div>
+        </div>
+        ${info ? `<p class="mv-popup-summary">${esc(info.bio)}</p>` : '<div style="height:12px"></div>'}
+        ${movementChips ? `<div class="mv-section-label">Movement${movementNames.length > 1 ? 's' : ''}</div>
+        <div class="mv-artists">${movementChips}</div>` : ''}
+        <div class="mv-section-label" style="margin-top:20px">Works in this collection (${paintings.length})</div>
         <div class="mv-popup-paintings">${thumbs}</div>
       </div>
     </div>
@@ -1131,12 +1159,18 @@ function openMuseumPopup(museumName) {
   const paintings = all.filter(p => p.location.museum === museumName).sort((a,b) => (a.rank||9999)-(b.rank||9999));
   if (!paintings.length) return;
 
-  const loc = paintings[0].location;
+  const loc  = paintings[0].location;
+  const info = (typeof MUSEUMS_INFO !== 'undefined') ? MUSEUMS_INFO[museumName] : null;
   const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
     'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
     'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
   const flag = flagFor[loc.country] || '';
   const mc   = checkedCount(paintings.map(p => p.id));
+
+  const photoHtml = (info && info.photo)
+    ? `<img class="museum-popup-photo" src="${info.photo}" alt="${esc(museumName)}"
+           onerror="this.style.display='none'">`
+    : '';
 
   const thumbs = paintings.map(p => {
     const img = p.imageUrl
@@ -1158,6 +1192,7 @@ function openMuseumPopup(museumName) {
       <div class="detail-nav">
         <button class="detail-back-btn" onclick="closeMuseumPopup()">${ICONS.back} Back</button>
       </div>
+      ${photoHtml}
       <div class="mv-popup-body">
         <div class="mv-popup-era">${flag} ${esc(loc.city)}, ${esc(loc.country)}</div>
         <h2 class="mv-popup-name">${esc(museumName)}</h2>
@@ -1165,6 +1200,7 @@ function openMuseumPopup(museumName) {
           <span class="museum-popup-stat">${mc} of ${paintings.length} seen</span>
           <div class="museum-popup-bar"><div class="museum-popup-fill" style="width:${paintings.length ? Math.round(mc/paintings.length*100) : 0}%"></div></div>
         </div>
+        ${info ? `<p class="mv-popup-summary" style="margin-top:14px;border-bottom:none;padding-bottom:0">${esc(info.blurb)}</p>` : ''}
         <div class="mv-section-label" style="margin-top:18px">Collection (${paintings.length})</div>
         <div class="mv-popup-paintings">${thumbs}</div>
       </div>
