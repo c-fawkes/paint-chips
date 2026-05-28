@@ -735,13 +735,6 @@ body {
 .list-museum-stat { font-size: .8rem; color: var(--text-dim); }
 
 /* ── Collection view ─────────────────────────────────────────────────────── */
-.collection-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 12px 10px;
-}
-.collection-count { font-size: .85rem; color: var(--text-dim); }
 
 /* ── Gallery (framed) view ───────────────────────────────────────────────── */
 .gallery-view {

@@ -391,6 +391,13 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Paintings default to in-collection when first marked as seen; the toggle lets you hide specific paintings from the Collection tab while keeping them marked as seen
 - `S.hiddenFromCollection` persisted in localStorage; collection view filters out hidden paintings but the seen count in the header still reflects all seen paintings
 
+### Collection tab overhaul
+- Replaced three separate view toggle buttons with a single View dropdown (Grid / List / Framed) matching the paintings tab style
+- Added Sort dropdown with options: Rank, Artist, Year, Title, Museum, Movement, Date Seen
+- Sort by Artist/Museum/Movement renders collapsible group headers showing only groups present in the collection (same pattern as paintings tab)
+- Added search bar matching the paintings tab style; filters by title, artist, or museum
+- Removed the redundant "X of Y paintings seen" count from the collection header; count was already shown in the global progress indicator
+
 ### Detail modal: photo source, zoom fix, date seen, note polish
 - Photo upload now shows two buttons side by side: "Camera" (capture=environment) and "Library" (file picker) — previously only camera was offered
 - Note textarea font-size bumped to 1rem (16px) and date input also uses 1rem to prevent iOS auto-zoom on focus

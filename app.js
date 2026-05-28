@@ -9,6 +9,8 @@ const S = {
   view: 'list',
   listMode: 'grid',
   collectionMode: 'grid',
+  collectionSort: 'rank',
+  collectionSearch: '',
   museumsMode: 'alpha',
   sort: 'rank',
   search: '',
@@ -21,6 +23,9 @@ const S = {
   expandedMovements: new Set(), // used for movement groups in sort-by-movement view
   expandedListMuseums: new Set(), // museum groups in sort-by-museum view
   expandedListArtists: new Set(), // artist groups in sort-by-artist view
+  expandedCollMuseums: new Set(),
+  expandedCollArtists: new Set(),
+  expandedCollMovements: new Set(),
 };
 
 /* ── Add-painting modal state ────────────────────────────────────────────── */
@@ -32,7 +37,7 @@ function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
       checked: S.checked, photos: S.photos, notes: S.notes, dateSeen: S.dateSeen, hiddenFromCollection: S.hiddenFromCollection, userPaintings: S.userPaintings,
-      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
+      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionSearch: S.collectionSearch, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
     }));
   } catch (_) {}
 }
@@ -49,6 +54,9 @@ function load() {
     S.expandedMovements   = new Set();
     S.expandedListMuseums = new Set();
     S.expandedListArtists = new Set();
+    S.expandedCollMuseums  = new Set();
+    S.expandedCollArtists  = new Set();
+    S.expandedCollMovements = new Set();
     if (S.view === 'stats' || S.view === 'settings') S.view = 'list';
   } catch (_) {}
 }
@@ -589,34 +597,36 @@ function renderStatsView() {
 }
 
 /* ── Collection View ────────────────────────────────────────────────────── */
-function renderCollectionView() {
-  const seen    = scopedPaintings().filter(p => S.checked[String(p.id)]);
-  const visible = seen.filter(p => !S.hiddenFromCollection[String(p.id)]);
-  if (visible.length === 0) {
-    const msg = seen.length > 0
-      ? `<p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">All seen paintings are hidden from your collection.</p>`
-      : `<p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">Mark paintings as seen in the Paintings tab.</p>`;
-    return `<div class="empty-state">
-      <div class="empty-icon">🖼️</div>
-      <p>${seen.length > 0 ? 'Nothing in your collection.' : 'No paintings seen yet.'}</p>
-      ${msg}
-    </div>`;
+function sortCollection(list) {
+  const cs = S.collectionSort;
+  if (cs === 'artist')    return [...list].sort((a, b) => a.artist.localeCompare(b.artist));
+  if (cs === 'year')      return [...list].sort((a, b) => parseYear(a.year) - parseYear(b.year));
+  if (cs === 'title')     return [...list].sort((a, b) => a.title.localeCompare(b.title));
+  if (cs === 'museum')    return [...list].sort((a, b) => a.location.museum.localeCompare(b.location.museum) || (a.rank||9999) - (b.rank||9999));
+  if (cs === 'movement')  {
+    const order = typeof MOVEMENTS !== 'undefined' ? Object.keys(MOVEMENTS) : [];
+    const idx = k => { const i = order.indexOf(k || ''); return i === -1 ? 9999 : i; };
+    return [...list].sort((a, b) => idx(a.movement) - idx(b.movement) || (a.rank||9999) - (b.rank||9999));
   }
-  visible.sort((a, b) => (a.rank || 9999) - (b.rank || 9999));
-  const mode = S.collectionMode;
+  if (cs === 'date') {
+    return [...list].sort((a, b) => {
+      const da = S.dateSeen[String(a.id)] || '';
+      const db = S.dateSeen[String(b.id)] || '';
+      if (da === 'unknown' && db === 'unknown') return 0;
+      if (da === 'unknown') return 1;
+      if (db === 'unknown') return -1;
+      if (!da && !db) return 0;
+      if (!da) return 1;
+      if (!db) return -1;
+      return db.localeCompare(da); // newest first
+    });
+  }
+  return [...list].sort((a, b) => (a.rank || 9999) - (b.rank || 9999));
+}
 
-  const toggleBtns = `
-    <button class="toolbar-btn${mode === 'grid'    ? ' active' : ''}" onclick="setCollectionMode('grid')"    title="Grid">${ICONS.grid}</button>
-    <button class="toolbar-btn${mode === 'compact' ? ' active' : ''}" onclick="setCollectionMode('compact')" title="List">${ICONS.rows}</button>
-    <button class="toolbar-btn${mode === 'gallery' ? ' active' : ''}" onclick="setCollectionMode('gallery')" title="Gallery">${ICONS.frame}</button>`;
-
-  const header = `<div class="collection-header">
-    <span class="collection-count">${seen.length} of ${allPaintings().length} paintings seen</span>
-    <div style="display:flex;gap:6px">${toggleBtns}</div>
-  </div>`;
-
+function renderCollectionPaintings(list, mode) {
   if (mode === 'gallery') {
-    return header + `<div class="gallery-view">${visible.map(p => {
+    return `<div class="gallery-view">${list.map(p => {
       const key = String(p.id);
       if (!p.imageUrl) return '';
       return `<div class="gallery-frame-wrap" onclick="openDetail('${key}')">
@@ -629,15 +639,158 @@ function renderCollectionView() {
       </div>`;
     }).join('')}</div>`;
   }
+  return mode === 'compact'
+    ? `<div class="paintings-compact">${list.map(p => renderPaintingRow(p)).join('')}</div>`
+    : `<div class="paintings-grid">${list.map(p => renderPaintingCard(p)).join('')}</div>`;
+}
 
-  return header + (mode === 'compact'
-    ? `<div class="paintings-compact">${visible.map(p => renderPaintingRow(p)).join('')}</div>`
-    : `<div class="paintings-grid">${visible.map(p => renderPaintingCard(p)).join('')}</div>`);
+function renderCollectionView() {
+  const seen    = scopedPaintings().filter(p => S.checked[String(p.id)]);
+  let visible   = seen.filter(p => !S.hiddenFromCollection[String(p.id)]);
+  if (S.collectionSearch) {
+    const q = S.collectionSearch.toLowerCase();
+    visible = visible.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.artist.toLowerCase().includes(q) ||
+      p.location.museum.toLowerCase().includes(q)
+    );
+  }
+  if (visible.length === 0) {
+    const msg = seen.length > 0
+      ? `<p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">All seen paintings are hidden from your collection.</p>`
+      : `<p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">Mark paintings as seen in the Paintings tab.</p>`;
+    return `<div class="empty-state">
+      <div class="empty-icon">🖼️</div>
+      <p>${seen.length > 0 ? 'Nothing in your collection.' : 'No paintings seen yet.'}</p>
+      ${msg}
+    </div>`;
+  }
+
+  const sorted = sortCollection(visible);
+  const mode   = S.collectionMode;
+  const cs     = S.collectionSort;
+
+  const toolbar = `<div id="toolbar">
+    <input id="coll-search-input" type="search" placeholder="Search your collection…"
+           value="${esc(S.collectionSearch)}" oninput="handleCollectionSearch(this.value)">
+    <button class="toolbar-btn icon-only${cs !== 'rank' ? ' active' : ''}" onclick="openCollectionSortDropdown(event,this)" title="Sort">
+      ${ICONS.sort}
+    </button>
+    <button class="toolbar-btn icon-only" onclick="openCollectionViewDropdown(event,this)" title="View">
+      ${mode === 'gallery' ? ICONS.frame : mode === 'compact' ? ICONS.rows : ICONS.grid}
+    </button>
+  </div>`;
+
+  // Grouped rendering for artist/museum/movement
+  if (cs === 'museum' && mode !== 'gallery') {
+    const museumOrder = [...new Set(sorted.map(p => p.location.museum))];
+    const groups = {};
+    sorted.forEach(p => { const m = p.location.museum; if (!groups[m]) groups[m] = []; groups[m].push(p); });
+    const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
+      'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
+      'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
+    const groupsHtml = museumOrder.map(museum => {
+      const mps = groups[museum];
+      const loc = mps[0].location;
+      const flag = flagFor[loc.country] || '';
+      const isOpen = S.expandedCollMuseums.has(museum);
+      return `<div class="list-movement-group${isOpen ? ' open' : ''}">
+        <div class="list-movement-header" onclick="toggleCollMuseumGroup('${museum.replace(/'/g, "\\'")}')">
+          <div class="list-movement-chevron">${ICONS.chevron}</div>
+          <span class="list-movement-name">${esc(museum)}</span>
+          <span class="list-movement-era">${flag} ${esc(loc.city)}, ${esc(loc.country)}</span>
+          <span class="list-movement-stat">${mps.length} painting${mps.length !== 1 ? 's' : ''}</span>
+        </div>
+        ${isOpen ? (mode === 'compact'
+          ? `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`
+          : `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`)
+        : ''}
+      </div>`;
+    }).join('');
+    return toolbar + `<div class="list-movement-groups">${groupsHtml}</div>`;
+  }
+
+  if (cs === 'artist' && mode !== 'gallery') {
+    const artistOrder = [...new Set(sorted.map(p => p.artist))];
+    const groups = {};
+    sorted.forEach(p => { const a = p.artist; if (!groups[a]) groups[a] = []; groups[a].push(p); });
+    const groupsHtml = artistOrder.map(artist => {
+      const mps = groups[artist];
+      const info = typeof ARTISTS !== 'undefined' ? ARTISTS[artist] : null;
+      const metaLine = info ? [esc(info.nationality), `${esc(info.born)}–${esc(info.died)}`].filter(Boolean).join(' · ') : '';
+      const isOpen = S.expandedCollArtists.has(artist);
+      return `<div class="list-movement-group${isOpen ? ' open' : ''}">
+        <div class="list-movement-header" onclick="toggleCollArtistGroup('${artist.replace(/'/g, "\\'")}')">
+          <div class="list-movement-chevron">${ICONS.chevron}</div>
+          <span class="list-movement-name">${esc(artist)}</span>
+          ${metaLine ? `<span class="list-movement-era">${metaLine}</span>` : ''}
+          <span class="list-movement-stat">${mps.length} painting${mps.length !== 1 ? 's' : ''}</span>
+        </div>
+        ${isOpen ? (mode === 'compact'
+          ? `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`
+          : `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`)
+        : ''}
+      </div>`;
+    }).join('');
+    return toolbar + `<div class="list-movement-groups">${groupsHtml}</div>`;
+  }
+
+  if (cs === 'movement' && mode !== 'gallery') {
+    const movOrder = typeof MOVEMENTS !== 'undefined' ? Object.keys(MOVEMENTS) : [];
+    const presentKeys = [...new Set(sorted.map(p => p.movement || '(Unknown)'))];
+    const orderedKeys = [...movOrder.filter(k => presentKeys.includes(k)), ...presentKeys.filter(k => !movOrder.includes(k))];
+    const groups = {};
+    sorted.forEach(p => { const k = p.movement || '(Unknown)'; if (!groups[k]) groups[k] = []; groups[k].push(p); });
+    const groupsHtml = orderedKeys.map(mvKey => {
+      const mps = groups[mvKey] || [];
+      const mv  = typeof MOVEMENTS !== 'undefined' ? MOVEMENTS[mvKey] : null;
+      const isOpen = S.expandedCollMovements.has(mvKey);
+      return `<div class="list-movement-group${isOpen ? ' open' : ''}">
+        <div class="list-movement-header" onclick="toggleCollMovementGroup('${mvKey.replace(/'/g, "\\'")}')">
+          <div class="list-movement-chevron">${ICONS.chevron}</div>
+          <span class="list-movement-name">${esc(mvKey)}</span>
+          ${mv ? `<span class="list-movement-era">${esc(mv.era)}</span>` : ''}
+          <span class="list-movement-stat">${mps.length} painting${mps.length !== 1 ? 's' : ''}</span>
+        </div>
+        ${isOpen ? (mode === 'compact'
+          ? `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`
+          : `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`)
+        : ''}
+      </div>`;
+    }).join('');
+    return toolbar + `<div class="list-movement-groups">${groupsHtml}</div>`;
+  }
+
+  return toolbar + renderCollectionPaintings(sorted, mode);
 }
 
 function setCollectionMode(mode) {
   S.collectionMode = mode;
   save();
+  render();
+}
+
+function setCollectionSort(key) {
+  S.collectionSort = key;
+  save();
+  render();
+}
+
+function toggleCollMuseumGroup(name) {
+  if (S.expandedCollMuseums.has(name)) S.expandedCollMuseums.delete(name);
+  else S.expandedCollMuseums.add(name);
+  render();
+}
+
+function toggleCollArtistGroup(name) {
+  if (S.expandedCollArtists.has(name)) S.expandedCollArtists.delete(name);
+  else S.expandedCollArtists.add(name);
+  render();
+}
+
+function toggleCollMovementGroup(name) {
+  if (S.expandedCollMovements.has(name)) S.expandedCollMovements.delete(name);
+  else S.expandedCollMovements.add(name);
   render();
 }
 
@@ -1064,6 +1217,67 @@ function openMuseumsViewDropdown(e, btn) {
 function closeDrop() {
   const d = document.getElementById('toolbar-drop');
   if (d) d.remove();
+}
+
+function openCollectionSortDropdown(e, btn) {
+  e.stopPropagation();
+  const wasOpen = !!document.getElementById('toolbar-drop');
+  closeDrop();
+  if (wasOpen) return;
+  const opts = [
+    { key: 'rank',     label: 'Rank' },
+    { key: 'artist',   label: 'Artist' },
+    { key: 'year',     label: 'Year' },
+    { key: 'title',    label: 'Title' },
+    { key: 'museum',   label: 'Museum' },
+    { key: 'movement', label: 'Movement' },
+    { key: 'date',     label: 'Date Seen' },
+  ];
+  const rect = btn.getBoundingClientRect();
+  const drop = document.createElement('div');
+  drop.className = 'toolbar-drop';
+  drop.id = 'toolbar-drop';
+  drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
+  drop.innerHTML = opts.map(o =>
+    `<button class="drop-item${S.collectionSort === o.key ? ' active' : ''}"
+             onclick="setCollectionSort('${o.key}');closeDrop()">
+       ${S.collectionSort === o.key ? ICONS.check : '<span class="drop-spacer"></span>'} ${o.label}
+     </button>`
+  ).join('');
+  document.body.appendChild(drop);
+  document.addEventListener('click', closeDrop, { once: true });
+}
+
+function openCollectionViewDropdown(e, btn) {
+  e.stopPropagation();
+  const wasOpen = !!document.getElementById('toolbar-drop');
+  closeDrop();
+  if (wasOpen) return;
+  const opts = [
+    { key: 'grid',    label: 'Grid',   icon: ICONS.grid },
+    { key: 'compact', label: 'List',   icon: ICONS.rows },
+    { key: 'gallery', label: 'Framed', icon: ICONS.frame },
+  ];
+  const rect = btn.getBoundingClientRect();
+  const drop = document.createElement('div');
+  drop.className = 'toolbar-drop';
+  drop.id = 'toolbar-drop';
+  drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
+  drop.innerHTML = opts.map(o =>
+    `<button class="drop-item${S.collectionMode === o.key ? ' active' : ''}"
+             onclick="setCollectionMode('${o.key}');closeDrop()">
+       ${o.icon} ${o.label}
+     </button>`
+  ).join('');
+  document.body.appendChild(drop);
+  document.addEventListener('click', closeDrop, { once: true });
+}
+
+function handleCollectionSearch(val) {
+  S.collectionSearch = val;
+  render();
+  const input = document.getElementById('coll-search-input');
+  if (input) { input.focus(); input.setSelectionRange(val.length, val.length); }
 }
 
 function clearFilter(level) {
