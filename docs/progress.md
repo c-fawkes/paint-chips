@@ -183,6 +183,7 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 ### Bug fixes
 - Fixed movement tag onclick and accordion onclick broken by `JSON.stringify` double-quote collision in HTML attributes — switched to single-quoted JS strings
+- Fixed `ARTIST_PORTRAITS` URLs returning 400/403 errors: original URLs used `400px-` Wikimedia thumbnail prefix which doesn't exist as a pre-generated size. Replaced entire block using verified URLs from Wikipedia REST API (`/api/rest_v1/page/summary/`) which returns the actual generated thumbnail size (330px or 500px). Artists with no accessible portrait left as `null`.
 
 ---
 
