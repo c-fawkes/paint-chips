@@ -372,3 +372,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added a `.gitignore` (ignores `.claude/`, `.DS_Store`, editor dirs, `node_modules/`, logs/temp)
 - Moved all one-off dev/helper scripts (fetch-*, patch-*, apply-*, search-commons, fetch-via-mediawiki, generate-icons, plus the two python helpers) into a new `scripts/` folder
 - Left the runtime files (`app.js`, `data.js`, `sw.js`) at root — index.html references and the service-worker scope depend on them staying there
+
+### New app icon: gold cursive "B"
+- Replaced the palette-emoji PWA icon with a gold (`#c9a84c`) cursive **B** on the same dark `#1a1917` background, matching the new Beheld wordmark (Pacifico)
+- Regenerated `icon-192.png` / `icon-512.png` via a new `scripts/generate-icons.py` (Pillow, 4× supersampled, centered on the glyph's ink bounds, sized to 62% so it stays inside the maskable safe zone)
+- Removed the obsolete `scripts/generate-icons.js` (depended on the uninstalled node `canvas` module and produced the old emoji icon)
