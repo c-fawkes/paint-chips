@@ -13,6 +13,7 @@ const S = {
   expandedMuseums: new Set(),
   expandedContinents: new Set(),
   expandedCountries: new Set(),
+  expandedMovements: new Set(),
 };
 
 /* ── Add-painting modal state ────────────────────────────────────────────── */
@@ -602,7 +603,7 @@ function openDetail(id) {
         ${(p.medium || p.dimensions || p.movement) ? `<div class="detail-specs">
           ${p.medium     ? `<div class="detail-spec-item"><span>Medium</span><span>${esc(p.medium)}</span></div>` : ''}
           ${p.dimensions ? `<div class="detail-spec-item"><span>Size</span><span>${esc(p.dimensions)}</span></div>` : ''}
-          ${p.movement   ? `<div class="detail-spec-item"><span>Movement</span><button class="movement-tag" onclick="openMovementPopup(${JSON.stringify(p.movement)})">${esc(p.movement)} ${ICONS.info}</button></div>` : ''}
+          ${p.movement   ? `<div class="detail-spec-item detail-spec-movement" onclick="openMovementPopup(${JSON.stringify(p.movement)})"><span>Movement</span><span class="movement-tag">${esc(p.movement)} ${ICONS.info}</span></div>` : ''}
         </div>` : ''}
 
         ${p.description ? `<p class="detail-description">${esc(p.description)}</p>` : ''}
@@ -978,20 +979,32 @@ function renderMovementsView() {
   const paintings = allPaintings();
   const rows = Object.entries(MOVEMENTS).map(([key, m]) => {
     const mps = paintings.filter(p => p.movement === key);
-    const examples = mps.slice(0, 3).map(p =>
+    const isOpen = S.expandedMovements.has(key);
+    const thumbs = mps.slice(0, 6).map(p =>
       p.imageUrl
         ? `<img class="mv-thumb" src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
-               onerror="this.style.display='none'" onclick="event.stopPropagation();openDetail('${String(p.id)}')">`
+               onerror="this.style.display='none'"
+               onclick="event.stopPropagation();openDetail('${String(p.id)}')">`
         : ''
     ).join('');
-    return `<div class="mv-row" onclick="openMovementPopup(${JSON.stringify(key)})">
+    const traits = m.traits.map(t => `<li>${esc(t)}</li>`).join('');
+    const body = isOpen ? `<div class="mv-row-body">
+      <p class="mv-row-full-summary">${esc(m.summary)}</p>
+      <div class="mv-section-label" style="margin-top:12px">Key characteristics</div>
+      <ul class="mv-traits">${traits}</ul>
+      ${thumbs ? `<div class="mv-section-label" style="margin-top:14px">In this collection (${mps.length})</div>
+      <div class="mv-thumbs">${thumbs}</div>` : ''}
+    </div>` : '';
+    return `<div class="mv-row${isOpen ? ' open' : ''}" onclick="toggleMovement(${JSON.stringify(key)})">
       <div class="mv-row-header">
         <div class="mv-row-name">${esc(key)}</div>
-        <div class="mv-row-era">${esc(m.era)}</div>
-        <div class="mv-row-count">${mps.length} painting${mps.length !== 1 ? 's' : ''}</div>
+        <div class="mv-row-meta">
+          <span class="mv-row-era">${esc(m.era)}</span>
+          <span class="mv-row-count">${mps.length}</span>
+        </div>
+        <div class="mv-row-chevron">${ICONS.chevron}</div>
       </div>
-      <div class="mv-row-summary">${esc(m.summary.substring(0, 140))}…</div>
-      ${examples ? `<div class="mv-thumbs">${examples}</div>` : ''}
+      ${body}
     </div>`;
   }).join('');
   return `<div class="movements-page">
@@ -1001,6 +1014,15 @@ function renderMovementsView() {
     </div>
     <div class="movements-list">${rows}</div>
   </div>`;
+}
+
+function toggleMovement(key) {
+  if (S.expandedMovements.has(key)) {
+    S.expandedMovements.delete(key);
+  } else {
+    S.expandedMovements.add(key);
+  }
+  render();
 }
 
 function openMovementPopup(movementKey) {

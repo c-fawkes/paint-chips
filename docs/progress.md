@@ -166,6 +166,11 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 **Commits:** *(this commit)*
 
+### Art Movements — accordion page + clickable detail tag
+- Movements page now shows collapsed accordion rows (name, era, count, chevron only); clicking expands to reveal the full movement essay, key characteristics list, and up to 6 painting thumbnails from the collection
+- Movement tag in painting detail sheet is now a tappable cell (whole spec box is the tap target) that opens the movement popup
+- Chevron rotates 180° on expand; open rows get a gold border accent
+
 ### Art Movements feature
 - Categorized all 214 paintings into 18 art movements (Italian Renaissance through Mannerism) via `patch_data.py`
 - Added `const MOVEMENTS` to `data.js` with 18 entries, each containing era, detailed essay-style summary, 5 key traits, and key artists
