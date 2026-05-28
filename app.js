@@ -284,14 +284,14 @@ function renderMuseumBlock(name, paintings) {
     <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
     ${paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
     <div class="add-painting-row">
-      <button class="add-painting-btn" onclick="openAddPainting('${esc(name)}')">
+      <button class="add-painting-btn" onclick="openAddPainting('${esc(name).replace(/'/g, "\\'")}')">
         <div class="add-painting-thumb">${ICONS.plus}</div>
         <span>Add painting</span>
       </button>
     </div>
   </div>` : '';
   return `<div class="museum-section" style="margin:0 0 6px">
-    <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${esc(name)}')" style="padding:8px 12px">
+    <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${esc(name).replace(/'/g, "\\'")}')" style="padding:8px 12px">
       <div class="museum-info"><div class="museum-name" style="font-size:.85rem">${esc(name)}</div></div>
       <div class="museum-counter"><div class="mc-nums">${mc}/${mt}</div><div class="mc-label">seen</div></div>
       <div class="museum-chevron">${ICONS.chevron}</div>
@@ -320,14 +320,14 @@ function renderMuseumsAlpha() {
       <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
       ${m.paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
       <div class="add-painting-row">
-        <button class="add-painting-btn" onclick="openAddPainting('${esc(name)}')">
+        <button class="add-painting-btn" onclick="openAddPainting('${esc(name).replace(/'/g, "\\'")}')">
           <div class="add-painting-thumb">${ICONS.plus}</div>
           <span>Add painting</span>
         </button>
       </div>
     </div>` : '';
     return `<div class="museum-section">
-      <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${esc(name)}')">
+      <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${esc(name).replace(/'/g, "\\'")}')" >
         <div class="museum-icon">${icon}</div>
         <div class="museum-info">
           <div class="museum-name">${esc(name)}</div>
