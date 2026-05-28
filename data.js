@@ -1357,7 +1357,7 @@ const PAINTINGS = [
     dimensions: "119 × 162 cm",
     description: "Part of Bruegel's series on the Months, this panoramic summer scene shows peasants resting under a pear tree while others work the wheat-covered hillside. It is one of the earliest pure landscape paintings without a biblical or mythological subject, and one of five surviving panels from the series.",
     movement: "Northern Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Pieter_Bruegel_the_Elder-_The_Harvesters_-_Google_Art_Project.jpg/330px-Pieter_Bruegel_the_Elder-_The_Harvesters_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Pieter_Bruegel_the_Elder-_The_Harvesters_-_Google_Art_Project.jpg/330px-Pieter_Bruegel_the_Elder-_The_Harvesters_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
   {
@@ -1431,7 +1431,7 @@ const PAINTINGS = [
     dimensions: "44 × 39 cm",
     description: "A maid delivers a letter to her mistress, who pauses from playing a cittern to receive it. We view the scene through a darkened doorway — Vermeer's signature device of spatial mystery. The seascape painting on the wall and the cittern signal themes of love and communication, and the maid's expression reveals that such letters are nothing new.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Jan_Vermeer_van_Delft_-_The_Love_Letter_-_WGA24674.jpg/330px-Jan_Vermeer_van_Delft_-_The_Love_Letter_-_WGA24674.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Johannes_Vermeer_-_%27De_liefdesbrief%27_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_%27De_liefdesbrief%27_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
   {
@@ -1443,7 +1443,7 @@ const PAINTINGS = [
     dimensions: "54 × 44 cm",
     description: "One of only two surviving Vermeer cityscapes, this intimate view of a Delft alley captures ordinary life with extraordinary stillness — a woman sewing in a doorway, children playing, another woman scrubbing in the passage. Recent research identified the building as a real almshouse on Vlamingstraat, demolished in 1661.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Jan_Vermeer_van_Delft_022.jpg/330px-Jan_Vermeer_van_Delft_022.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Johannes_Vermeer_-_Gezicht_op_huizen_in_Delft%2C_bekend_als_%27Het_straatje%27_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_Gezicht_op_huizen_in_Delft%2C_bekend_als_%27Het_straatje%27_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
   {
@@ -1455,7 +1455,7 @@ const PAINTINGS = [
     dimensions: "111 × 141 cm",
     description: "Three generations of a Dutch family eat, drink, smoke, and make music in boisterous disorder. The banner reads 'As the old sing, so twitter the young' — a Dutch proverb warning that children learn bad habits from parents. Steen, who ran a brewery and tavern, depicted moral chaos with gleeful irony.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Jan_Steen_-_The_Merry_Family_-_Google_Art_Project.jpg/330px-Jan_Steen_-_The_Merry_Family_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Jan_Steen_005.jpg/330px-Jan_Steen_005.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
   {
@@ -1467,7 +1467,7 @@ const PAINTINGS = [
     dimensions: "191 × 279 cm",
     description: "Five sampling officials of the Amsterdam drapers' guild pause as if interrupted by the viewer's arrival — a stroke of compositional genius that creates an illusion of live interaction. Rembrandt was 56 and at the height of his powers. The man standing at center-left was added at a late stage, making the grouping asymmetrical and more dynamic.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Rembrandt_-_De_Staalmeesters-_het_college_van_staalmeesters_%28waardijns%29_van_het_Amsterdamse_lakengilde-_Google_Art_Project.jpg/330px-Rembrandt_-_De_Staalmeesters-_het_college_van_staalmeesters_%28waardijns%29_van_het_Amsterdamse_lakengilde-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Rembrandt_-_De_Staalmeesters-_het_college_van_staalmeesters_%28waardijns%29_van_het_Amsterdamse_lakenbereidersgilde_-_Google_Art_Project.jpg/330px-Rembrandt_-_De_Staalmeesters-_het_college_van_staalmeesters_%28waardijns%29_van_het_Amsterdamse_lakenbereidersgilde_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
 
@@ -1505,7 +1505,7 @@ const PAINTINGS = [
     dimensions: "60 × 100 cm",
     description: "One of Monet's most celebrated series, in which he painted the same haystacks in his Giverny fields under different light conditions — dawn, midday, foggy, twilight, snowy. The AIC holds the finest group of the 25 surviving canvases. Critics who had dismissed Monet's series method reversed their view after seeing these together in 1891.",
     movement: "Impressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Claude_Monet_-_Stacks_of_Wheat_%28End_of_Summer%29_-_Google_Art_Project.jpg/330px-Claude_Monet_-_Stacks_of_Wheat_%28End_of_Summer%29_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Claude_Monet_-_Stacks_of_Wheat_%28End_of_Summer%29_-_1985.1103_-_Art_Institute_of_Chicago.jpg/330px-Claude_Monet_-_Stacks_of_Wheat_%28End_of_Summer%29_-_1985.1103_-_Art_Institute_of_Chicago.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
   {
@@ -1543,7 +1543,7 @@ const PAINTINGS = [
     dimensions: "91 × 122 cm",
     description: "A ghostly white warship that fought at Trafalgar is towed by a small, fire-bellied steam tugboat toward its final berth to be broken up. Turner paints the old ship luminous and enormous, the tug dark and squat — a meditation on heroism, obsolescence, and death. In 2005, it was voted the Greatest Painting in Britain.",
     movement: "Romanticism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg/330px-The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg/330px-The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
   {
@@ -1555,7 +1555,7 @@ const PAINTINGS = [
     dimensions: "70 × 119 cm",
     description: "A newly married Suffolk couple pose in their estate: Robert Andrews stands casually, gun under arm and dog at his feet; Frances sits on a bench. The vast agricultural landscape behind them, stretching to a luminous sky, is as much a statement of land ownership as a wedding portrait. Frances's lap curiously holds an unfinished area — possibly meant for a baby.",
     movement: "Rococo",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Gainsborough_mrsmrAndrews.jpg/330px-Gainsborough_mrsmrAndrews.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Thomas_Gainsborough_-_Mr_and_Mrs_Andrews.jpg/330px-Thomas_Gainsborough_-_Mr_and_Mrs_Andrews.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
   {
@@ -1567,7 +1567,7 @@ const PAINTINGS = [
     dimensions: "69 × 174 cm",
     description: "Mars, god of war, sleeps in a deep post-coital slumber while Venus, goddess of love, watches alert and composed. Infant satyrs play with his armor — his power disarmed. The panel's extreme horizontal format suggests it decorated a chest or headboard for a Medici wedding. Wasps in the upper corner may encode the Vespucci family crest.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Sandro_Botticelli_-_Venus_and_Mars_-_National_Gallery%2C_London.jpg/330px-Sandro_Botticelli_-_Venus_and_Mars_-_National_Gallery%2C_London.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Venus_and_Mars_National_Gallery.jpg/330px-Venus_and_Mars_National_Gallery.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
   {
@@ -1591,7 +1591,7 @@ const PAINTINGS = [
     dimensions: "93 × 80 cm",
     description: "Rembrandt presents himself in elegant Renaissance dress, his arm resting on a ledge — a pose borrowed directly from Raphael's portrait of Baldassare Castiglione (which Rembrandt had sketched at auction that year). It is an act of deliberate self-elevation, claiming kinship with the Old Masters, painted at the peak of his commercial success.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Rembrandt_van_Rijn_-_Self-Portrait_at_the_Age_of_34.jpg/330px-Rembrandt_van_Rijn_-_Self-Portrait_at_the_Age_of_34.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Rembrandt%2C_Self_Portrait_at_the_Age_of_34.jpg/330px-Rembrandt%2C_Self_Portrait_at_the_Age_of_34.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
 
@@ -1605,7 +1605,7 @@ const PAINTINGS = [
     dimensions: "95 × 73 cm",
     description: "The fourth and final version of Van Gogh's sunflower series, with a turquoise background unique among the series. He painted sunflowers to decorate Gauguin's room at the Yellow House in Arles, viewing them as symbols of gratitude and devotion. This version was made as a copy after the two artists' catastrophic falling out.",
     movement: "Post-Impressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Vincent_van_Gogh_-_Sunflowers_-_VGM_F458.jpg/330px-Vincent_van_Gogh_-_Sunflowers_-_VGM_F458.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Vincent_Willem_van_Gogh_128.jpg/330px-Vincent_Willem_van_Gogh_128.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
   {
@@ -1617,7 +1617,7 @@ const PAINTINGS = [
     dimensions: "64 × 80 cm",
     description: "A peasant sower strides across a plowed field at sunset, the enormous yellow sun behind him dividing the composition diagonally. Inspired by Millet's sower engravings, Van Gogh transformed the subject into a radiant icon of labor and spiritual renewal. He made over 30 drawings and paintings of sowers throughout his career.",
     movement: "Post-Impressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Van_Gogh_-_Der_S%C3%A4mann_-_1888.jpeg/330px-Van_Gogh_-_Der_S%C3%A4mann_-_1888.jpeg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Sower_at_Sunset_-_Vincent_Van_Gogh.jpg/330px-Sower_at_Sunset_-_Vincent_Van_Gogh.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
   {
@@ -1629,7 +1629,7 @@ const PAINTINGS = [
     dimensions: "44 × 38 cm",
     description: "The most celebrated of Van Gogh's Paris self-portraits, showing him in a grey hat against a swirling blue background of short, comma-like brushstrokes. He is experimenting with the Pointillist technique he had just encountered through Seurat and Signac. The intense blue eyes stare with unsettling directness.",
     movement: "Post-Impressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Van_Gogh_self-portrait_with_grey_felt_hat_1886-87.jpg/330px-Van_Gogh_self-portrait_with_grey_felt_hat_1886-87.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Van_Gogh_Self-Portrait_with_Grey_Felt_Hat_1886-87_Rijksmuseum.jpg/330px-Van_Gogh_Self-Portrait_with_Grey_Felt_Hat_1886-87_Rijksmuseum.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
   {
@@ -1641,7 +1641,7 @@ const PAINTINGS = [
     dimensions: "72 × 92 cm",
     description: "Van Gogh's depiction of his rented home in Arles — the right wing of the yellow building — on a blazing Provençal afternoon. He moved here dreaming of founding an artists' community, the Studio of the South. The painting documents the actual house where he invited Gauguin, where their friendship unraveled, and where he severed his own ear.",
     movement: "Post-Impressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg/330px-Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg/330px-Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
   {
@@ -1665,7 +1665,7 @@ const PAINTINGS = [
     dimensions: "65 × 82 cm",
     description: "During a three-day trip to the Mediterranean coast, Van Gogh worked in a frenzy, making drawings and this radiant oil of colorful boats on the beach. The flat water, intense blue sky, and bold complementary colors anticipate the expressionist phase to come. He wrote to Theo: 'The Mediterranean has the colors of mackerel — changeable, I mean.'",
     movement: "Post-Impressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Vincent_van_Gogh_-_Fishing_Boats_on_the_Beach_at_Saintes-Maries-de-la-Mer.jpg/330px-Vincent_van_Gogh_-_Fishing_Boats_on_the_Beach_at_Saintes-Maries-de-la-Mer.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WLANL_-_Minke_Wagenaar_-_Vincent_van_Gogh_1888_Fishing_boats_on_the_beach_at_Les_Saintes-Maries-de-la-Mer.jpg/330px-WLANL_-_Minke_Wagenaar_-_Vincent_van_Gogh_1888_Fishing_boats_on_the_beach_at_Les_Saintes-Maries-de-la-Mer.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
 
@@ -1679,7 +1679,7 @@ const PAINTINGS = [
     dimensions: "260 × 389 cm",
     description: "Commissioned alongside The Dance by Russian collector Sergei Shchukin, this massive canvas shows five flat, crimson figures against green and blue bands representing earth and sky — one playing violin, one double-pipe, three sitting. Where The Dance pulses with movement, Music is profoundly still, a contrast Matisse described as active vs. contemplative.",
     movement: "Fauvism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/La_musique%2C_by_Henri_Matisse%2C_1910._Oil_on_canvas._The_State_Hermitage_Museum%2C_St._Petersburg.jpg/330px-La_musique%2C_by_Henri_Matisse%2C_1910._Oil_on_canvas._The_State_Hermitage_Museum%2C_St._Petersburg.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/La_Musique%2C_par_Henri_Matisse_%281910%29.jpg/330px-La_Musique%2C_par_Henri_Matisse_%281910%29.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
   {
@@ -1691,7 +1691,7 @@ const PAINTINGS = [
     dimensions: "181 × 221 cm",
     description: "A tablecloth and wallpaper with swirling blue-and-white vine patterns merge seamlessly, collapsing the distinction between surface and space. The entire room glows with saturated red. Also commissioned by Shchukin, it was originally painted in blue (then green) before Matisse demanded to repaint it red. A radical assertion that color creates its own reality.",
     movement: "Fauvism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Matiss._Red_room.jpg/330px-Matiss._Red_room.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Henri_Matisse_-_The_Red_Room-1908.jpg/330px-Henri_Matisse_-_The_Red_Room-1908.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
   {
@@ -1703,7 +1703,7 @@ const PAINTINGS = [
     dimensions: "48 × 31 cm",
     description: "One of Leonardo's earliest surviving paintings, showing the young Virgin playing with the Christ child over a flower. The warm, pyramidal composition and the natural, almost playful interaction between mother and child depart radically from the stiff Byzantine and early Renaissance conventions Leonardo had been trained in. The Hermitage acquired it in 1914.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Leonardo_da_Vinci_-_Madonna_%28Benois_Madonna%29_-_Google_Art_Project.jpg/330px-Leonardo_da_Vinci_-_Madonna_%28Benois_Madonna%29_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Madonna_benois_01.jpg/330px-Madonna_benois_01.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
   {
@@ -1715,7 +1715,7 @@ const PAINTINGS = [
     dimensions: "108 × 86 cm",
     description: "An elderly man in a red robe sits in quiet contemplation, his age and dignity rendered with Rembrandt's signature loose, luminous handling of paint. The identity of the sitter is unknown, but the psychological depth — the sense of a whole life behind those eyes — exemplifies why Rembrandt's late portraits are considered the apex of Western portraiture.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Rembrandt_van_Rijn_-_Old_Man_in_Red.jpg/330px-Rembrandt_van_Rijn_-_Old_Man_in_Red.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Rembrandt_Harmensz._van_Rijn_-_Portrait_of_an_Old_Man_in_Red.jpg/330px-Rembrandt_Harmensz._van_Rijn_-_Portrait_of_an_Old_Man_in_Red.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
   {
@@ -1777,7 +1777,7 @@ const PAINTINGS = [
     dimensions: "40 × 36 cm",
     description: "A young woman holds a balance scale with empty pans while a painting of the Last Judgment hangs directly behind her — a moralizing juxtaposition linking earthly measurement to divine judgment. The balance appears to hold nothing, suggesting spiritual equilibrium rather than material weighing. X-ray analysis reveals Vermeer added the Last Judgment deliberately.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Jan_Vermeer_-_Woman_Holding_a_Balance_-_Google_Art_Project.jpg/330px-Jan_Vermeer_-_Woman_Holding_a_Balance_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Johannes_Vermeer_-_Woman_Holding_a_Balance_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_Woman_Holding_a_Balance_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
   {
@@ -1789,7 +1789,7 @@ const PAINTINGS = [
     dimensions: "182 × 230 cm",
     description: "A group of sailors in a small boat frantically attempt to rescue a naked young man from the jaws of a shark in Havana harbor. The scene is based on a real 1749 incident: Brook Watson, a 14-year-old orphan, lost his leg to a shark and survived. Watson commissioned this painting as an adult and left it to Christ's Hospital school on his death.",
     movement: "Neoclassicism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Watson_and_the_Shark_by_John_Singleton_Copley%2C_1778.jpg/330px-Watson_and_the_Shark_by_John_Singleton_Copley%2C_1778.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Watsonandtheshark-original.jpg/330px-Watsonandtheshark-original.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
   {
@@ -1801,7 +1801,7 @@ const PAINTINGS = [
     dimensions: "137 cm diameter",
     description: "A tondo (round painting) of exceptional richness, teeming with figures, horses, and processions wrapping around the circular frame. Begun by Fra Angelico in the convent of San Marco, it was completed by Fra Filippo Lippi after Angelico's death. The NGA has identified over 200 individual figures. It was in the Medici collection for a century.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Filippino_Lippi_and_Fra_Angelico_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg/330px-Filippino_Lippi_and_Fra_Angelico_-_Adoration_of_the_Magi_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Fra_Angelico%2C_Fra_Filippo_Lippi%2C_The_Adoration_of_the_Magi.jpg/330px-Fra_Angelico%2C_Fra_Filippo_Lippi%2C_The_Adoration_of_the_Magi.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
   {
@@ -1813,7 +1813,7 @@ const PAINTINGS = [
     dimensions: "170 × 188 cm",
     description: "Painted for Alfonso d'Este's private camerino in Ferrara, this shows the gods feasting from ancient bowls while nymphs and satyrs mingle. Bellini painted it at 84, his last major work. After Bellini's death, Titian repainted the landscape background three times to harmonize with canvases he was adding to the same room.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Giovanni_Bellini_and_Titian_-_The_Feast_of_the_Gods_-_Google_Art_Project.jpg/330px-Giovanni_Bellini_and_Titian_-_The_Feast_of_the_Gods_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/FeastofthegodsFXD.jpg/330px-FeastofthegodsFXD.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
   {
@@ -1825,7 +1825,7 @@ const PAINTINGS = [
     dimensions: "224 × 330 cm",
     description: "Daniel stands calm among seven lions in a dark pit, hands clasped in prayer, while an angel above reassures him. Rubens painted the lions from life at the menagerie of Archduke Albert in Brussels. The animals are rendered with zoological accuracy — their power palpable — making Daniel's serenity all the more remarkable.",
     movement: "Baroque",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Peter_Paul_Rubens_-_Daniel_in_the_Lions%27_Den_-_Google_Art_Project_%28cropped%29.jpg/330px-Peter_Paul_Rubens_-_Daniel_in_the_Lions%27_Den_-_Google_Art_Project_%28cropped%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Sir_Peter_Paul_Rubens_-_Daniel_in_the_Lions%27_Den_-_Google_Art_Project.jpg/330px-Sir_Peter_Paul_Rubens_-_Daniel_in_the_Lions%27_Den_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
 
@@ -1839,7 +1839,7 @@ const PAINTINGS = [
     dimensions: "33 × 23 cm",
     description: "A tiny goldfinch is chained by its foot to a perch against a white-grey wall, rendered with trompe l'oeil precision. Fabritius, Rembrandt's most gifted pupil, died in the Delft gunpowder explosion the year this was painted. The small scale and intimate intensity suggest it was designed to be hung low and viewed closely. Donna Tartt's 2013 Pulitzer-winning novel took it as its title.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Carel_Fabritius_-_The_Goldfinch_-_WGA7721.jpg/330px-Carel_Fabritius_-_The_Goldfinch_-_WGA7721.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Fabritius-vink.jpg/330px-Fabritius-vink.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
   {
@@ -1851,7 +1851,7 @@ const PAINTINGS = [
     dimensions: "236 × 339 cm",
     description: "A monumental life-size bull stands in a meadow, staring at the viewer with forthright frankness. It was the most talked-about painting in 17th-century Europe — celebrated for its unprecedented realism and extraordinary size. Potter was only 22 when he painted it. Napoleon had it transported to Paris as war booty; it required its own custom wagon.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Paulus_Potter_-_The_Bull_-_Google_Art_Project.jpg/330px-Paulus_Potter_-_The_Bull_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Paulus_Potter_-_The_Bull_-_136_-_Mauritshuis.jpg/330px-Paulus_Potter_-_The_Bull_-_136_-_Mauritshuis.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
   {
@@ -1863,7 +1863,7 @@ const PAINTINGS = [
     dimensions: "130 × 164 cm",
     description: "Saul, tormented by an evil spirit, listens as young David plays the harp to soothe him. Rembrandt shows Saul raising a curtain to his face — half obscuring himself — in a gesture of ambivalent tenderness and encroaching madness. The spear in his left hand betrays his murderous jealousy. The psychological complexity is extraordinary.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Rembrandt_-_Saul_and_David_-_Mauritshuis_621.jpg/330px-Rembrandt_-_Saul_and_David_-_Mauritshuis_621.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Rembrandt_Saul_and_David.jpg/330px-Rembrandt_Saul_and_David.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
   {
@@ -1901,7 +1901,7 @@ const PAINTINGS = [
     dimensions: "89 × 93 cm",
     description: "In his final years, nearly blind with cataracts, Monet painted his Japanese bridge at Giverny in increasingly abstract, turbulent strokes. Where earlier versions (at the Met and other museums) show a serene arched bridge in gentle greens, these late canvases are explosive — the bridge barely legible under dense impasto. They anticipated Abstract Expressionism by decades.",
     movement: "Impressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Claude_Monet_-_The_Japanese_Footbridge_-_Google_Art_Project.jpg/330px-Claude_Monet_-_The_Japanese_Footbridge_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Claude_Monet_-_The_Japanese_bridge_-_Google_Art_Project.jpg/330px-Claude_Monet_-_The_Japanese_bridge_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Marmottan Monet Museum" }
   },
   {
@@ -2041,7 +2041,7 @@ const PAINTINGS = [
     dimensions: "62 × 77 cm",
     description: "Zeus, disguised as a white bull, carries the Phoenician princess Europa into the sea as her companions reach out in horror from the shore. The water froths around the bull's legs; Europa clutches his horns. At only 26, Rembrandt's command of dramatic narrative, light, and expression was already complete. The Getty acquired it in 1995.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Rembrandt_-_The_Abduction_of_Europa_-_Google_Art_Project.jpg/330px-Rembrandt_-_The_Abduction_of_Europa_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Rembrandt_-_The_Abduction_of_Europa_-_Google_Art_Project.jpg/330px-Rembrandt_-_The_Abduction_of_Europa_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
   },
   {
@@ -2105,7 +2105,7 @@ const PAINTINGS = [
     dimensions: "176 × 240 cm",
     description: "Matisse's programmatic manifesto of color and hedonism: nude figures lounge, dance, and embrace in an Arcadian landscape of impossibly saturated pinks, greens, and oranges. Scale is irrational — the distant dancers are larger than the foreground figures. Picasso, upon seeing it, immediately began Les Demoiselles d'Avignon. The Barnes Foundation has owned it since 1922.",
     movement: "Fauvism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/La_Joie_de_vivre_-_Henri_Matisse.jpg/330px-La_Joie_de_vivre_-_Henri_Matisse.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Le_Bonheur_de_vivre_Barnes_%2801c%29_-_Flickr_-_rverc.jpg/330px-Le_Bonheur_de_vivre_Barnes_%2801c%29_-_Flickr_-_rverc.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
   },
   {
@@ -2181,7 +2181,7 @@ const PAINTINGS = [
     dimensions: "148 × 102 cm",
     description: "Sarah Barrett Moulton, age 11, stands against a wind-swept sky in a pink muslin dress, sash billowing. Painted the year before her death at 13, it was commissioned by her grandmother. The Huntington paired it with Gainsborough's 'The Blue Boy' in 1921. Together the two paintings became the most visited pair in American art museum history for decades.",
     movement: "Romanticism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Thomas_Lawrence_-_Pinkie%2C_1794_-_Huntington_Library.jpg/330px-Thomas_Lawrence_-_Pinkie%2C_1794_-_Huntington_Library.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Thomas_Lawrence_-_Sarah_Goodin_Barrett_Moulton%2C_Pinkie_%281794%29.jpg/330px-Thomas_Lawrence_-_Sarah_Goodin_Barrett_Moulton%2C_Pinkie_%281794%29.jpg",
     location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
   },
   {
@@ -2319,7 +2319,7 @@ const PAINTINGS = [
     dimensions: "287 × 288 cm",
     description: "In his late eighties and confined to a wheelchair, Matisse created his greatest works with scissors and painted paper — a process he called 'drawing with scissors.' The Snail is a near-abstract spiral of colored rectangles. Matisse described it as his most complete rendering of color relationships, and declared the cutouts his best work.",
     movement: "Fauvism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/The_snail_henri_matisse.jpg/330px-The_snail_henri_matisse.jpg",
+    imageUrl: null,
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
   {
@@ -2345,7 +2345,7 @@ const PAINTINGS = [
     dimensions: "81 × 65 cm",
     description: "A young woman on a swing kicks her shoe toward a hidden admirer below while her oblivious husband (or chaperone) pulls the rope from behind. It is the defining image of Rococo frivolity — all pink, powder blue, and garden lushness. The Baron de Saint-Julien commissioned it to show his mistress. The shoe flying toward the young man below leaves nothing to interpretation.",
     movement: "Rococo",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Fragonard%2C_The_Swing.jpg/330px-Fragonard%2C_The_Swing.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Joean_Honor%C3%A9_Fragonard_-_The_Swing.jpg/330px-Joean_Honor%C3%A9_Fragonard_-_The_Swing.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
   },
   {
@@ -2545,7 +2545,7 @@ const PAINTINGS = [
     dimensions: "280 × 570 cm",
     description: "A single panel of the Sistine ceiling shows two scenes divided by the Tree of Knowledge: on the left, a serpent with a woman's torso offers the fruit to Adam and Eve; on the right, an angel drives the fallen couple from Paradise. The contrast between the lush garden and the barren landscape outside Eden is stark and haunting.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Michelangelo_-_Expulsion_from_paradise.jpg/330px-Michelangelo_-_Expulsion_from_paradise.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Michelangelo%2C_Fall_and_Expulsion_from_Garden_of_Eden_00.jpg/330px-Michelangelo%2C_Fall_and_Expulsion_from_Garden_of_Eden_00.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
   },
   {
@@ -2571,7 +2571,7 @@ const PAINTINGS = [
     dimensions: "500 × 770 cm",
     description: "Facing The School of Athens across the Stanza della Segnatura, this fresco shows the Church Triumphant and Militant united around the Eucharist — saints and theologians below, Christ enthroned in heaven above. Raphael organized a cast of hundreds into a composition of serene clarity. Together with the School of Athens, it defines High Renaissance fresco painting.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Raphael_-_Disputation_of_the_Holy_Sacrament.jpg/330px-Raphael_-_Disputation_of_the_Holy_Sacrament.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Raphaels_Disputation_of_the_Holy_Sacrament.jpg/330px-Raphaels_Disputation_of_the_Holy_Sacrament.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
   },
   {
@@ -2597,7 +2597,7 @@ const PAINTINGS = [
     dimensions: "65 × 51 cm",
     description: "A young woman holds a small unicorn — symbol of chastity — in a pose echoing Leonardo's portrait compositions. Originally the unicorn was a dog; Raphael repainted it sometime after the initial sitting. The sitter's identity is debated (possibly Maddalena Doni). X-ray and infrared examination have revealed the multiple layers of revision.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Raffaello_-_Dama_con_liocorno.jpg/330px-Raffaello_-_Dama_con_liocorno.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_with_unicorn_by_Rafael_Santi.jpg/330px-Lady_with_unicorn_by_Rafael_Santi.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
   },
   {
@@ -2609,7 +2609,7 @@ const PAINTINGS = [
     dimensions: "67 × 53 cm",
     description: "A pale, greenish young Caravaggio — possibly recovering from a horse-riding injury — poses as a sickly Bacchus, offering a cluster of grapes and a glass of wine. The grapes are realistic to the point of entomological scrutiny; leaves show insect damage. It is Caravaggio's first self-portrait and demonstrates his radical naturalism already fully formed.",
     movement: "Baroque",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Michelangelo_Merisi_da_Caravaggio_-_Self-Portrait_as_the_Sick_Bacchus_-_Google_Art_Project.jpg/330px-Michelangelo_Merisi_da_Caravaggio_-_Self-Portrait_as_the_Sick_Bacchus_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Sick_young_Bacchus_by_Caravaggio.jpg/330px-Sick_young_Bacchus_by_Caravaggio.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
   },
   {
@@ -2621,7 +2621,7 @@ const PAINTINGS = [
     dimensions: "125 × 101 cm",
     description: "A melancholy David holds the severed head of Goliath — whose face is Caravaggio's own self-portrait, painted while he was a fugitive murderer seeking a papal pardon. The identification of the head as Caravaggio's face is universally accepted. He sent the painting to Cardinal Scipione Borghese, who was handling his pardon. He died of fever before it was granted.",
     movement: "Baroque",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Caravaggio_-_David_con_la_testa_di_Golia.jpg/330px-Caravaggio_-_David_con_la_testa_di_Golia.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Caravaggio_-_David_with_the_Head_of_Goliath_-_Vienna.jpg/330px-Caravaggio_-_David_with_the_Head_of_Goliath_-_Vienna.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
   },
   {
@@ -2633,7 +2633,7 @@ const PAINTINGS = [
     dimensions: "292 × 211 cm",
     description: "The Madonna and the Christ child together crush the serpent underfoot while St. Anne watches. The figures are life-size and deeply human — the Madonna and child depicted without idealization, touching in their ordinariness. Rejected by its original patrons (who objected to the peasant realism), it was immediately purchased by Cardinal Borghese.",
     movement: "Baroque",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Michelangelo_Merisi_da_Caravaggio_-_Madonna_dei_Palafrenieri_-_Google_Art_Project.jpg/330px-Michelangelo_Merisi_da_Caravaggio_-_Madonna_dei_Palafrenieri_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Caravaggio_-_La_Madonna_dei_Palafrenieri%2C_1605%2C_110.jpg/330px-Caravaggio_-_La_Madonna_dei_Palafrenieri%2C_1605%2C_110.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
   },
 
@@ -2647,7 +2647,7 @@ const PAINTINGS = [
     dimensions: "84 × 65 cm",
     description: "A young woman reads a letter by an open window, her reflection faintly visible in the glass. For centuries, the wall behind her appeared empty, but in 2019 cleaning and restoration revealed that Vermeer had painted a Cupid there — later overpainted by another hand. The restoration transformed the painting's meaning: the Cupid confirms the letter is a love letter.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Johannes_Vermeer_-_Girl_Reading_a_Letter_at_an_Open_Window_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_Girl_Reading_a_Letter_at_an_Open_Window_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Johannes_Vermeer_-_Girl_Reading_a_Letter_by_an_Open_Window_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_Girl_Reading_a_Letter_by_an_Open_Window_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
   },
   {
@@ -2659,7 +2659,7 @@ const PAINTINGS = [
     dimensions: "108 × 175 cm",
     description: "The first monumental reclining nude in Western art — Venus asleep in a Venetian landscape, utterly at ease and unaware of being observed. Giorgione died of plague before completing it; Titian painted the landscape and drapery. Every subsequent reclining nude (Titian's Venus of Urbino, Manet's Olympia) descends from this revolutionary image.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Giorgione_and_Tiziano%2C_Venere_dormiente_o_di_Dresda%2C_1508-1510_%28Dresden%29.jpg/330px-Giorgione_and_Tiziano%2C_Venere_dormiente_o_di_Dresda%2C_1508-1510_%28Dresden%29.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Giorgione_-_Sleeping_Venus_-_Google_Art_Project_2.jpg/330px-Giorgione_-_Sleeping_Venus_-_Google_Art_Project_2.jpg",
     location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
   },
   {
@@ -2671,7 +2671,7 @@ const PAINTINGS = [
     dimensions: "75 × 56 cm",
     description: "A Pharisee holds a coin toward Christ, who responds to the question 'Is it lawful to pay taxes to Caesar?' by pointing heavenward. Titian restricts the scene to two busts — the contrast between the scheming questioner and the serene Christ — making it one of the first large-scale two-figure devotional paintings. Augustus the Strong of Saxony acquired it in 1746 for Dresden.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tizian_083.jpg/330px-Tizian_083.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Titian_-_The_Tribute_Money_-_Google_Art_Project.jpg/330px-Titian_-_The_Tribute_Money_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
   },
 
@@ -2685,7 +2685,7 @@ const PAINTINGS = [
     dimensions: "292 × 186 cm",
     description: "An angel descends urgently to guide the hand of Saint Matthew as he writes the Gospel — their faces nearly touching, the angel's fingers touching Matthew's. Caravaggio's first version was rejected because Matthew appeared illiterate; this second version, accepted, shows the same radical intimacy between the divine and the human world. The three paintings form the Contarelli Chapel cycle.",
     movement: "Baroque",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/0_L%27Inspiration_de_saint_Matthieu_-_Caravage_%281602%29_%281%29.JPG/330px-0_L%27Inspiration_de_saint_Matthieu_-_Caravage_%281602%29_%281%29.JPG",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/The_Inspiration_of_Saint_Matthew_by_Caravaggio.jpg/330px-The_Inspiration_of_Saint_Matthew_by_Caravaggio.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
   },
   {
@@ -2697,7 +2697,7 @@ const PAINTINGS = [
     dimensions: "323 × 343 cm",
     description: "A barely clothed executioner raises a sword over the prostrate Matthew while a crowd scatters in panic. Caravaggio painted himself as a witness in the background, staring out from the chaos. The scene's violence and naturalism — no halos, no heavenly glow, just flesh and fear — scandalized Rome and permanently altered the course of religious painting.",
     movement: "Baroque",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Caravaggio_-_Martirio_di_san_Matteo.jpg/330px-Caravaggio_-_Martirio_di_san_Matteo.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/The_Martyrdom_of_Saint_Matthew-Caravaggio_%28c._1599-1600%29.jpg/330px-The_Martyrdom_of_Saint_Matthew-Caravaggio_%28c._1599-1600%29.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
   }
 ];

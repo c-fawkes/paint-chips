@@ -343,3 +343,14 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Museum header shows flag + city/country + seen count; expanded body shows museum photo + blurb (from `MUSEUMS_INFO`)
 - Artist header shows nationality · birth–death + seen count; expanded body shows portrait + bio + movement chips (from `ARTISTS`/`ARTIST_PORTRAITS`)
 - Added state Sets `expandedListMuseums` / `expandedListArtists` (not persisted, reset on load) and toggles `toggleListMuseumGroup()` / `toggleListArtistGroup()` — kept separate from Museums-tab state to avoid cross-tab bleed
+
+---
+
+## Session 14 — 2026-05-28
+
+### Fix 44 remaining broken imageUrls (404s)
+- A slow re-audit with 429 retry/backoff (the earlier audit's 429s had masked them) revealed 44 genuine 404s beyond the 6 fixed in Session 12
+- Root cause for most: correct Commons filename but **wrong hash-prefix directory** in the URL (e.g. `5/55/` vs `0/05/`) — found correct URLs via Commons `imageinfo` thumburl lookup
+- Fixed 43 with verified Commons thumbnails (all HEAD-checked → 200)
+- id 209 (Caravaggio, Madonna dei Palafrenieri): auto-search first matched a non-Caravaggio "Scuola Romana" work — manually corrected to `Caravaggio_-_La_Madonna_dei_Palafrenieri,_1605,_110.jpg`
+- id 184 (Matisse, The Snail): no valid Wikimedia/Wikipedia source exists (1953 cut-out, still under US copyright) — set `imageUrl: null` rather than use a wrong image. Now 6 paintings are permanently null (158, 176, 177, 179, 181, 184)
