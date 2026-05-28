@@ -1493,7 +1493,7 @@ const PAINTINGS = [
     dimensions: "100 × 66 cm",
     description: "A woman tenderly washes a child's feet in a basin, depicted from a radical high vantage point that flattens perspective in the manner of Japanese woodblock prints. Cassatt, the only American in the French Impressionist circle, focused her career on domestic scenes of women and children. This is considered her masterpiece.",
     movement: "Impressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg/330px-Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg/330px-Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
   {
@@ -1579,7 +1579,7 @@ const PAINTINGS = [
     dimensions: "141 × 196 cm",
     description: "The risen Christ, depicted beardless and youthful, blesses bread at an inn, triggering sudden recognition in two disciples. Their arms thrust outward in astonishment — one reaching toward us, breaking the picture plane. The still life on the table, painted with stunning detail, includes a fruit basket overhanging the edge, casting a real shadow.",
     movement: "Baroque",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Michelangelo_Caravaggio_062.jpg/330px-Michelangelo_Caravaggio_062.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Supper_at_Emmaus-Caravaggio_%281601%29.jpg/330px-Supper_at_Emmaus-Caravaggio_%281601%29.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
   {
@@ -1653,7 +1653,7 @@ const PAINTINGS = [
     dimensions: "33 × 24 cm",
     description: "A skeleton smokes a cigarette in this sardonic student exercise painted while Van Gogh studied anatomy at the Antwerp Academy. It parodies both the memento mori tradition and the self-satisfied bourgeois smokers of Dutch genre painting. One of his earliest oil paintings on canvas and a rare work of dark humor from an artist better known for pathos.",
     movement: "Post-Impressionism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Vincent_van_Gogh_-_Head_of_a_skeleton_with_a_burning_cigarette_-_Google_Art_Project.jpg/330px-Vincent_van_Gogh_-_Head_of_a_skeleton_with_a_burning_cigarette_-_Google_Art_Project.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Vincent_van_Gogh_-_Head_of_a_Skeleton_with_a_Burning_Cigarette_-_VGM_F212.jpg/330px-Vincent_van_Gogh_-_Head_of_a_Skeleton_with_a_Burning_Cigarette_-_VGM_F212.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
   {
@@ -1765,7 +1765,7 @@ const PAINTINGS = [
     dimensions: "45 × 40 cm",
     description: "A young woman in a yellow jacket trimmed with white fur pauses from writing to look up at the viewer. The interrupted letter and her relaxed, open expression suggest a love letter. The composition is one of Vermeer's most direct — no crowded props, no window shown — just intimate psychological contact across a simple desk.",
     movement: "Dutch Golden Age",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Jan_Vermeer_-_Lady_Writing_a_Letter_-_National_Gallery_of_Art.jpg/330px-Jan_Vermeer_-_Lady_Writing_a_Letter_-_National_Gallery_of_Art.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Lady_Writing_by_Johannes_Vermeer%2C_1665-6.png/330px-A_Lady_Writing_by_Johannes_Vermeer%2C_1665-6.png",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
   {
@@ -2155,7 +2155,7 @@ const PAINTINGS = [
     dimensions: "53 × 79 cm",
     description: "The original study for Trumbull's famous mural in the Capitol Rotunda, this smaller version was the first to be completed and includes portraits painted from life of figures including Jefferson, Adams, and Franklin. Trumbull donated it and his entire collection to Yale in 1831, founding the first college art museum in America.",
     movement: "Neoclassicism",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg/330px-Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg/330px-Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg",
     location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
   },
   {
@@ -2583,7 +2583,7 @@ const PAINTINGS = [
     dimensions: "670 cm wide",
     description: "Apollo plays the lira da braccio on Mount Parnassus surrounded by the nine Muses and the great poets — Homer, Dante, Virgil, Sappho, Ovid — ancient and modern combined. Raphael includes a self-portrait in the right foreground. The scene extends the program of the Stanza: as the Disputa represents Theology and the School of Athens Philosophy, Parnassus represents Poetry.",
     movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Raffaello_Sanzio_-_Parnassus_-_WGA18586.jpg/330px-Raffaello_Sanzio_-_Parnassus_-_WGA18586.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Raphael_-_The_Parnassus.jpg/330px-Raphael_-_The_Parnassus.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
   },
 

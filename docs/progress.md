@@ -162,6 +162,20 @@ Available from any museum's expanded accordion in the Museums tab. A modal form 
 
 ---
 
+## Session 12 — 2026-05-28
+
+### Fix 6 broken imageUrls (404s)
+- Audited all 209 non-null imageUrls; 181 returned 429 (Wikimedia rate-limiting, URLs are fine), 6 returned genuine 404
+- id 118 The Child's Bath (Cassatt): wrong filename hash — replaced with verified Commons URL
+- id 125 The Supper at Emmaus (Caravaggio): Google Art Project file removed — replaced with `Supper_at_Emmaus-Caravaggio_(1601).jpg`
+- id 131 Skull of a Skeleton with Burning Cigarette (van Gogh): Google Art Project file removed — replaced with Van Gogh Museum file `VGM_F212`
+- id 140 A Lady Writing (Vermeer): file removed — replaced with `.png` version from Commons
+- id 171 Declaration of Independence (Trumbull): wrong filename — replaced with correct Commons URL
+- id 205 Parnassus (Raphael): WGA file removed — replaced with `Raphael_-_The_Parnassus.jpg`
+- 5 null imageUrls remain (ids 158, 176, 177, 179, 181) — no Wikimedia source exists for these
+
+---
+
 ## Session 11 — 2026-05-28
 
 ### Onboarding: two-page flow
