@@ -270,9 +270,9 @@ function renderMuseumsAlpha() {
     if (!museums[key]) museums[key] = { ...p.location, paintings: [] };
     museums[key].paintings.push(p);
   });
-  const flagFor = { France:'🗼', Italy:'🏛️', USA:'🗽', Netherlands:'🌷', Spain:'🌹',
-    'United Kingdom':'💂', Russia:'🪆', Norway:'🏔️', Austria:'🎼', Germany:'🏰',
-    'Vatican City':'✝️', Mexico:'🌮' };
+  const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
+    'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
+    'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
   return Object.entries(museums).sort(([a], [b]) => a.localeCompare(b)).map(([name, m]) => {
     const checked = checkedCount(m.paintings.map(x => x.id));
     const total   = m.paintings.length;
