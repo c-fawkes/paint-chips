@@ -8,7 +8,7 @@ const S = {
   userPaintings: [],
   view: 'list',
   listMode: 'grid',
-  collectionMode: 'grid',
+  collectionMode: 'gallery',
   collectionSort: 'rank',
   collectionSearch: '',
   museumsMode: 'alpha',
@@ -1378,9 +1378,9 @@ function openCollectionViewDropdown(e, btn) {
   closeDrop();
   if (wasOpen) return;
   const opts = [
+    { key: 'gallery', label: 'Gallery', icon: ICONS.frame },
     { key: 'grid',    label: 'Grid',   icon: ICONS.grid },
     { key: 'compact', label: 'List',   icon: ICONS.rows },
-    { key: 'gallery', label: 'Framed', icon: ICONS.frame },
   ];
   const rect = btn.getBoundingClientRect();
   const drop = document.createElement('div');
@@ -1865,16 +1865,21 @@ function _obPage1HTML() {
         </div>
 
         <div class="ob-hero">
-          <div class="ob-hero-num">100</div>
-          <div class="ob-hero-sub">masterpieces.<br>One lifetime.</div>
+          <div class="ob-hero-stat">
+            <div class="ob-hero-num">100</div>
+            <div class="ob-hero-word">masterpieces</div>
+          </div>
+          <div class="ob-stat-divider"></div>
+          <div class="ob-hero-stat">
+            <div class="ob-hero-num">1</div>
+            <div class="ob-hero-word">lifetime</div>
+          </div>
         </div>
-
-        <div class="ob-rule"></div>
 
         <div class="ob-stats">
           <div class="ob-stat">
-            <div class="ob-stat-num">35</div>
-            <div class="ob-stat-label">museums</div>
+            <div class="ob-stat-num">12</div>
+            <div class="ob-stat-label">countries</div>
           </div>
           <div class="ob-stat-divider"></div>
           <div class="ob-stat">
@@ -1883,12 +1888,10 @@ function _obPage1HTML() {
           </div>
           <div class="ob-stat-divider"></div>
           <div class="ob-stat">
-            <div class="ob-stat-num">12</div>
-            <div class="ob-stat-label">countries</div>
+            <div class="ob-stat-num">35</div>
+            <div class="ob-stat-label">museums</div>
           </div>
         </div>
-
-        <div class="ob-rule"></div>
 
         <p class="ob-body">
           From Botticelli's Florence to Monet's Paris, Vermeer's Delft
@@ -1922,8 +1925,6 @@ function _obPage1HTML() {
           <span class="ob-dot ob-dot-active"></span>
           <span class="ob-dot"></span>
         </div>
-
-        <div class="ob-fine">No account · All data stays on your device</div>
   `;
 }
 
@@ -2389,6 +2390,12 @@ function init() {
       const scrollY = window.scrollY;
       const dy = scrollY - _lastScrollY;
       _lastScrollY = scrollY;
+      // Always show toolbar near the top — catches fast scrolls where dy events are sparse
+      if (scrollY <= 60 && _toolbarHidden) {
+        _toolbarHidden = false;
+        toolbar.classList.remove('toolbar-up');
+        return;
+      }
       if (Math.abs(dy) < 2) return;
       if (dy > 0 && !_toolbarHidden && scrollY > 60) {
         _toolbarHidden = true;

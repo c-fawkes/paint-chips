@@ -468,6 +468,25 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Quiz painting images now use `object-fit: contain` at a fixed 240px height so images display at their natural proportions without cropping
 - Quiz header button icon changed from a dice to a question-mark-in-circle (Lucide help-circle)
 
+## Session 20 — 2026-05-28
+
+### Toolbar gap fix (scroll-to-top)
+- After scrolling down (toolbar hidden) and returning to the top, sparse scroll events left `toolbar-up` active at low scroll positions, showing a dark gap below the header
+- Fixed by adding a `scrollY <= 60` guard at the top of the scroll handler that force-shows the toolbar whenever scroll drops back within the hide threshold
+
+### Collection tab default view
+- Default `collectionMode` changed from `'grid'` to `'gallery'`
+- "Framed" renamed to "Gallery" in the view dropdown
+- Gallery moved to the top of the view options list
+
+### Onboarding page 1 redesign
+- Hero section: `100` and `MASTERPIECES` now inline on one line; `1` and `LIFETIME` inline beside them, separated by a vertical divider matching the countries/cities/museums stat row style
+- Both hero pairs use the large gold serif number + small uppercase faint label format; `.ob-hero` is now a horizontal flex row mirroring `.ob-stats`
+- Stats reordered to countries → cities → museums
+- Both `ob-rule` dividers above and below the stat row removed
+- "No account · All data stays on your device" line removed from page 1 (still present on page 2)
+- Logo-to-hero gap reduced (margin-bottom 36px → 20px)
+
 ## Session 19 — 2026-05-28
 
 ### Sticky group subheaders
