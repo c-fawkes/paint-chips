@@ -574,3 +574,11 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Active sort option shows a checkmark aligned to the right (icon → label flex-1 → check)
 - When the active sort has group sections (Artist, Museum, or Movement) and view is not Gallery, a divider and **Expand All** / **Collapse All** buttons appear at the bottom of the sort dropdown
 - `collExpandAll()` populates the relevant `expandedColl*` Set from the currently visible paintings; `collCollapseAll()` clears it
+
+## Session 27 — 2026-05-29
+
+### Paintings tab sort dropdown parity with collection tab
+- Added contextual icons to all six sort options: hash (Rank), brush (Artist), calendar (Year), type-T (Title), museum building (Museum), palette (Movement)
+- Active sort option shows a checkmark aligned to the right, matching collection tab style
+- Expand All / Collapse All section appears below a divider when sort is Artist, Museum, or Movement
+- `listExpandAll()` / `listCollapseAll()` operate on the paintings tab's own Sets (`expandedListArtists`, `expandedListMuseums`, `expandedMovements`) — no cross-tab bleed

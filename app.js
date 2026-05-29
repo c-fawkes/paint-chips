@@ -1345,26 +1345,51 @@ function openSortDropdown(e, btn) {
   closeDrop();
   if (wasOpen) return;
   const opts = [
-    { key: 'rank',     label: 'Rank' },
-    { key: 'artist',   label: 'Artist' },
-    { key: 'year',     label: 'Year' },
-    { key: 'title',    label: 'Title' },
-    { key: 'museum',   label: 'Museum' },
-    { key: 'movement', label: 'Movement' },
+    { key: 'rank',     label: 'Rank',     icon: ICONS.hash },
+    { key: 'artist',   label: 'Artist',   icon: ICONS.brush },
+    { key: 'year',     label: 'Year',     icon: ICONS.calendar },
+    { key: 'title',    label: 'Title',    icon: ICONS.type },
+    { key: 'museum',   label: 'Museum',   icon: ICONS.museum },
+    { key: 'movement', label: 'Movement', icon: ICONS.palette },
   ];
+  const grouped = ['artist', 'museum', 'movement'];
+  const isGrouped = grouped.includes(S.sort);
   const rect = btn.getBoundingClientRect();
   const drop = document.createElement('div');
   drop.className = 'toolbar-drop';
   drop.id = 'toolbar-drop';
   drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
-  drop.innerHTML = opts.map(o =>
-    `<button class="drop-item${S.sort === o.key ? ' active' : ''}"
-             onclick="setSort('${o.key}');closeDrop()">
-       ${S.sort === o.key ? ICONS.check : '<span class="drop-spacer"></span>'} ${o.label}
-     </button>`
-  ).join('');
+  drop.innerHTML =
+    opts.map(o =>
+      `<button class="drop-item${S.sort === o.key ? ' active' : ''}"
+               onclick="setSort('${o.key}');closeDrop()">
+         ${o.icon}<span style="flex:1">${o.label}</span>${S.sort === o.key ? ICONS.check : ''}
+       </button>`
+    ).join('') +
+    (isGrouped ? `<div class="drop-divider"></div>
+      <button class="drop-item" onclick="listExpandAll();closeDrop()">${ICONS.expandAll} Expand All</button>
+      <button class="drop-item" onclick="listCollapseAll();closeDrop()">${ICONS.collapseAll} Collapse All</button>` : '');
   document.body.appendChild(drop);
   document.addEventListener('click', closeDrop, { once: true });
+}
+
+function listExpandAll() {
+  const paintings = filteredSorted();
+  if (S.sort === 'museum') {
+    paintings.forEach(p => S.expandedListMuseums.add(p.location.museum));
+  } else if (S.sort === 'artist') {
+    paintings.forEach(p => S.expandedListArtists.add(p.artist));
+  } else if (S.sort === 'movement') {
+    paintings.forEach(p => S.expandedMovements.add(p.movement || '(Unknown)'));
+  }
+  render();
+}
+
+function listCollapseAll() {
+  if (S.sort === 'museum') S.expandedListMuseums.clear();
+  else if (S.sort === 'artist') S.expandedListArtists.clear();
+  else if (S.sort === 'movement') S.expandedMovements.clear();
+  render();
 }
 
 function openViewDropdown(e, btn) {
