@@ -553,3 +553,24 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added Artemisia Gentileschi bio and self-portrait to `ARTISTS` and `ARTIST_PORTRAITS`
 - Filled in previously-null portrait URLs for: María Izquierdo, Thomas Lawrence, Paolo Veronese, Giorgione, Giorgione (completed by Titian), Jacques-Louis David, Eugène Delacroix, Jean-Honoré Fragonard, Frans Hals, Jan Steen, Jan Davidsz. de Heem, Paulus Potter, Francis Bacon, Andrew Wyeth, Emanuel Leutze
 - Cleared The Weeping Woman's imageUrl (set to null) — the 1937 Picasso is under copyright and was incorrectly pointing to a Rembrandt image URL
+
+## Session 26 — 2026-05-29
+
+### Favorites replacing "In Collection" toggle
+- Replaced the "In Collection" / "Add to Collection" bookmark button in the detail modal with a heart-based **Favorite** button
+- Defaults to off when a painting is marked as seen (previously "In Collection" defaulted to on)
+- Active state shows a filled heart in rose-red; inactive shows an outline heart in the faint text color
+- New `S.favorites` dict (persisted) replaces the toggle role of `S.hiddenFromCollection` (which is kept but no longer drives UI)
+- `toggleFavorite()` replaces `toggleCollectionVisibility()`
+
+### Collection view: All Seen / Favorites filter
+- Added `S.collectionFilter` state (default `'all'`); persisted to localStorage
+- Collection view dropdown now has two sections: view mode (Gallery / Grid / List) at top, filter (All Seen / Favorites) at bottom separated by a divider
+- "All Seen" shows every seen painting; "Favorites" shows only hearted ones
+- Empty-state message is context-aware for the Favorites filter
+
+### Collection sort dropdown: icons + Expand/Collapse All
+- Each sort option now has a contextual icon: hash for Rank, brush for Artist, calendar for Year/Date Seen, type "T" for Title, museum building for Museum, palette for Movement
+- Active sort option shows a checkmark aligned to the right (icon → label flex-1 → check)
+- When the active sort has group sections (Artist, Museum, or Movement) and view is not Gallery, a divider and **Expand All** / **Collapse All** buttons appear at the bottom of the sort dropdown
+- `collExpandAll()` populates the relevant `expandedColl*` Set from the currently visible paintings; `collCollapseAll()` clears it

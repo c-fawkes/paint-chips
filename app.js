@@ -5,12 +5,14 @@ const S = {
   notes: {},
   dateSeen: {},
   hiddenFromCollection: {},
+  favorites: {},
   userPaintings: [],
   view: 'list',
   listMode: 'grid',
   collectionMode: 'gallery',
   collectionSort: 'rank',
   collectionSearch: '',
+  collectionFilter: 'all',
   museumsMode: 'alpha',
   sort: 'rank',
   search: '',
@@ -175,8 +177,8 @@ function addSwipeDismiss(overlayEl) {
 function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
-      checked: S.checked, notes: S.notes, dateSeen: S.dateSeen, hiddenFromCollection: S.hiddenFromCollection, userPaintings: S.userPaintings,
-      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
+      checked: S.checked, notes: S.notes, dateSeen: S.dateSeen, hiddenFromCollection: S.hiddenFromCollection, favorites: S.favorites, userPaintings: S.userPaintings,
+      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionFilter: S.collectionFilter, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
     }));
   } catch (_) {}
 }
@@ -269,6 +271,8 @@ const ICONS = {
   grid:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>`,
   rows:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`,
   bookmark: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
+  heart:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  heartFill:`<svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
   frame:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="1"/><rect x="5" y="5" width="14" height="14" rx="1"/></svg>`,
   back:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>`,
   pin:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
@@ -276,6 +280,11 @@ const ICONS = {
   info:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
   gear:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
   dice:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+  hash:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>`,
+  calendar:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+  type:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>`,
+  expandAll:   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>`,
+  collapseAll: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="7 11 12 6 17 11"/><polyline points="7 18 12 13 17 18"/></svg>`,
 };
 
 /* ── Escape helper ──────────────────────────────────────────────────────── */
@@ -785,7 +794,9 @@ function renderCollectionPaintings(list, mode) {
 
 function renderCollectionView() {
   const seen    = scopedPaintings().filter(p => S.checked[String(p.id)]);
-  let visible   = seen.filter(p => !S.hiddenFromCollection[String(p.id)]);
+  let visible   = S.collectionFilter === 'favorites'
+    ? seen.filter(p => !!S.favorites[String(p.id)])
+    : seen;
   if (S.collectionSearch) {
     const q = S.collectionSearch.toLowerCase();
     visible = visible.filter(p =>
@@ -817,12 +828,15 @@ function renderCollectionView() {
     if (seen.length === 0) {
       headline = 'No paintings seen yet.';
       subline  = 'Mark paintings as seen in the Paintings tab.';
+    } else if (S.collectionFilter === 'favorites' && !S.collectionSearch) {
+      headline = 'No favorites yet.';
+      subline  = 'Open a painting and tap the heart to favorite it.';
     } else if (S.collectionSearch) {
       headline = 'No results.';
-      subline  = `No paintings in your collection match "${esc(S.collectionSearch)}".`;
+      subline  = `No paintings match "${esc(S.collectionSearch)}".`;
     } else {
-      headline = 'Nothing in your collection.';
-      subline  = 'All seen paintings are hidden from your collection.';
+      headline = 'Nothing here.';
+      subline  = '';
     }
     return toolbar + `<div class="empty-state">
       <div class="empty-icon">🖼️</div>
@@ -993,7 +1007,7 @@ function openDetail(id, { refresh = false } = {}) {
   }
 
   const isChecked  = !!S.checked[key];
-  const inColl     = isChecked && !S.hiddenFromCollection[key];
+  const isFav      = !!S.favorites[key];
   const photos     = S.photos[key] || [];
   const note       = S.notes[key] || '';
 
@@ -1019,9 +1033,9 @@ function openDetail(id, { refresh = false } = {}) {
     <div class="detail-sheet" id="detail-sheet">
       <div class="detail-nav">
         <button class="detail-back-btn" onclick="navBack()">${ICONS.back} Back</button>
-        <button class="detail-collection-btn${isChecked ? ' visible' : ''}${inColl ? ' in-collection' : ''}" id="detail-collection-btn"
-                onclick="toggleCollectionVisibility('${key}')">
-          ${ICONS.bookmark}<span>${inColl ? 'In Collection' : 'Add to Collection'}</span>
+        <button class="detail-favorite-btn${isChecked ? ' visible' : ''}${isFav ? ' favorited' : ''}" id="detail-favorite-btn"
+                onclick="toggleFavorite('${key}')">
+          ${isFav ? ICONS.heartFill : ICONS.heart}<span>${isFav ? 'Favorited' : 'Favorite'}</span>
         </button>
         <button class="detail-seen-btn${isChecked ? ' checked' : ''}" id="detail-seen-btn"
                 onclick="detailToggleCheck('${key}')">
@@ -1124,11 +1138,11 @@ function detailToggleCheck(id) {
       ? ICONS.check + '<span>Seen</span>'
       : '<span>Mark Seen</span>';
   }
-  const colBtn = document.getElementById('detail-collection-btn');
-  if (colBtn) {
-    const inColl = isChecked && !S.hiddenFromCollection[key];
-    colBtn.className = 'detail-collection-btn' + (isChecked ? ' visible' : '') + (inColl ? ' in-collection' : '');
-    colBtn.innerHTML = `${ICONS.bookmark}<span>${inColl ? 'In Collection' : 'Add to Collection'}</span>`;
+  const favBtn = document.getElementById('detail-favorite-btn');
+  if (favBtn) {
+    const isFav = !!S.favorites[key];
+    favBtn.className = 'detail-favorite-btn' + (isChecked ? ' visible' : '') + (isFav ? ' favorited' : '');
+    favBtn.innerHTML = `${isFav ? ICONS.heartFill : ICONS.heart}<span>${isFav ? 'Favorited' : 'Favorite'}</span>`;
   }
   const dateSection = document.querySelector('.detail-date-section');
   if (dateSection) dateSection.classList.toggle('hidden', !isChecked);
@@ -1138,21 +1152,21 @@ function detailToggleCheck(id) {
   }
 }
 
-function toggleCollectionVisibility(id) {
+function toggleFavorite(id) {
   const key = String(id);
   if (!S.checked[key]) return;
-  if (S.hiddenFromCollection[key]) {
-    delete S.hiddenFromCollection[key];
+  if (S.favorites[key]) {
+    delete S.favorites[key];
   } else {
-    S.hiddenFromCollection[key] = true;
+    S.favorites[key] = true;
   }
   save();
   render();
-  const inColl = !S.hiddenFromCollection[key];
-  const colBtn = document.getElementById('detail-collection-btn');
-  if (colBtn) {
-    colBtn.className = 'detail-collection-btn visible' + (inColl ? ' in-collection' : '');
-    colBtn.innerHTML = `${ICONS.bookmark}<span>${inColl ? 'In Collection' : 'Add to Collection'}</span>`;
+  const isFav = !!S.favorites[key];
+  const favBtn = document.getElementById('detail-favorite-btn');
+  if (favBtn) {
+    favBtn.className = 'detail-favorite-btn visible' + (isFav ? ' favorited' : '');
+    favBtn.innerHTML = `${isFav ? ICONS.heartFill : ICONS.heart}<span>${isFav ? 'Favorited' : 'Favorite'}</span>`;
   }
 }
 
@@ -1414,27 +1428,53 @@ function openCollectionSortDropdown(e, btn) {
   closeDrop();
   if (wasOpen) return;
   const opts = [
-    { key: 'rank',     label: 'Rank' },
-    { key: 'artist',   label: 'Artist' },
-    { key: 'year',     label: 'Year' },
-    { key: 'title',    label: 'Title' },
-    { key: 'museum',   label: 'Museum' },
-    { key: 'movement', label: 'Movement' },
-    { key: 'date',     label: 'Date Seen' },
+    { key: 'rank',     label: 'Rank',      icon: ICONS.hash },
+    { key: 'artist',   label: 'Artist',    icon: ICONS.brush },
+    { key: 'year',     label: 'Year',      icon: ICONS.calendar },
+    { key: 'title',    label: 'Title',     icon: ICONS.type },
+    { key: 'museum',   label: 'Museum',    icon: ICONS.museum },
+    { key: 'movement', label: 'Movement',  icon: ICONS.palette },
+    { key: 'date',     label: 'Date Seen', icon: ICONS.calendar },
   ];
+  const grouped = ['artist', 'museum', 'movement'];
+  const isGrouped = grouped.includes(S.collectionSort) && S.collectionMode !== 'gallery';
   const rect = btn.getBoundingClientRect();
   const drop = document.createElement('div');
   drop.className = 'toolbar-drop';
   drop.id = 'toolbar-drop';
   drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
-  drop.innerHTML = opts.map(o =>
-    `<button class="drop-item${S.collectionSort === o.key ? ' active' : ''}"
-             onclick="setCollectionSort('${o.key}');closeDrop()">
-       ${S.collectionSort === o.key ? ICONS.check : '<span class="drop-spacer"></span>'} ${o.label}
-     </button>`
-  ).join('');
+  drop.innerHTML =
+    opts.map(o =>
+      `<button class="drop-item${S.collectionSort === o.key ? ' active' : ''}"
+               onclick="setCollectionSort('${o.key}');closeDrop()">
+         ${o.icon}<span style="flex:1">${o.label}</span>${S.collectionSort === o.key ? ICONS.check : ''}
+       </button>`
+    ).join('') +
+    (isGrouped ? `<div class="drop-divider"></div>
+      <button class="drop-item" onclick="collExpandAll();closeDrop()">${ICONS.expandAll} Expand All</button>
+      <button class="drop-item" onclick="collCollapseAll();closeDrop()">${ICONS.collapseAll} Collapse All</button>` : '');
   document.body.appendChild(drop);
   document.addEventListener('click', closeDrop, { once: true });
+}
+
+function collExpandAll() {
+  const seen = scopedPaintings().filter(p => S.checked[String(p.id)]);
+  const visible = S.collectionFilter === 'favorites' ? seen.filter(p => !!S.favorites[String(p.id)]) : seen;
+  if (S.collectionSort === 'museum') {
+    visible.forEach(p => S.expandedCollMuseums.add(p.location.museum));
+  } else if (S.collectionSort === 'artist') {
+    visible.forEach(p => S.expandedCollArtists.add(p.artist));
+  } else if (S.collectionSort === 'movement') {
+    visible.forEach(p => S.expandedCollMovements.add(p.movement || '(Unknown)'));
+  }
+  render();
+}
+
+function collCollapseAll() {
+  if (S.collectionSort === 'museum') S.expandedCollMuseums.clear();
+  else if (S.collectionSort === 'artist') S.expandedCollArtists.clear();
+  else if (S.collectionSort === 'movement') S.expandedCollMovements.clear();
+  render();
 }
 
 function openCollectionViewDropdown(e, btn) {
@@ -1442,24 +1482,42 @@ function openCollectionViewDropdown(e, btn) {
   const wasOpen = !!document.getElementById('toolbar-drop');
   closeDrop();
   if (wasOpen) return;
-  const opts = [
+  const viewOpts = [
     { key: 'gallery', label: 'Gallery', icon: ICONS.frame },
     { key: 'grid',    label: 'Grid',   icon: ICONS.grid },
     { key: 'compact', label: 'List',   icon: ICONS.rows },
+  ];
+  const filterOpts = [
+    { key: 'all',       label: 'All Seen',  icon: ICONS.check },
+    { key: 'favorites', label: 'Favorites', icon: ICONS.heart },
   ];
   const rect = btn.getBoundingClientRect();
   const drop = document.createElement('div');
   drop.className = 'toolbar-drop';
   drop.id = 'toolbar-drop';
   drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
-  drop.innerHTML = opts.map(o =>
-    `<button class="drop-item${S.collectionMode === o.key ? ' active' : ''}"
-             onclick="setCollectionMode('${o.key}');closeDrop()">
-       ${o.icon} ${o.label}
-     </button>`
-  ).join('');
+  drop.innerHTML =
+    viewOpts.map(o =>
+      `<button class="drop-item${S.collectionMode === o.key ? ' active' : ''}"
+               onclick="setCollectionMode('${o.key}');closeDrop()">
+         ${o.icon} ${o.label}
+       </button>`
+    ).join('') +
+    `<div class="drop-divider"></div>` +
+    filterOpts.map(o =>
+      `<button class="drop-item${S.collectionFilter === o.key ? ' active' : ''}"
+               onclick="setCollectionFilter('${o.key}');closeDrop()">
+         ${o.icon} ${o.label}
+       </button>`
+    ).join('');
   document.body.appendChild(drop);
   document.addEventListener('click', closeDrop, { once: true });
+}
+
+function setCollectionFilter(key) {
+  S.collectionFilter = key;
+  save();
+  render();
 }
 
 function handleCollectionSearch(val) {

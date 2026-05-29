@@ -356,6 +356,7 @@ body {
 .drop-item.active { color: var(--gold); }
 .drop-item svg { width: 14px; height: 14px; flex-shrink: 0; }
 .drop-spacer { display: inline-block; width: 14px; flex-shrink: 0; }
+.drop-divider { height: 1px; background: var(--border); margin: 2px 0; }
 
 /* ── Filter chips ───────────────────────────────────────────────────────── */
 #filter-bar {
@@ -1241,7 +1242,7 @@ body {
   color: var(--bg); font-weight: 600;
 }
 
-.detail-collection-btn {
+.detail-favorite-btn {
   display: none;
   align-items: center; gap: 5px;
   background: none;
@@ -1254,13 +1255,13 @@ body {
   -webkit-tap-highlight-color: transparent;
   animation: fadeIn .2s ease;
 }
-.detail-collection-btn.visible { display: flex; }
-.detail-collection-btn.in-collection {
-  border-color: var(--gold-dim);
-  color: var(--gold);
+.detail-favorite-btn.visible { display: flex; }
+.detail-favorite-btn.favorited {
+  border-color: #c0626280;
+  color: #e87070;
 }
-.detail-collection-btn:active { opacity: .7; }
-.detail-collection-btn svg { width: 14px; height: 14px; }
+.detail-favorite-btn:active { opacity: .7; }
+.detail-favorite-btn svg { width: 14px; height: 14px; }
 
 .detail-img-wrap {
   width: 100%;
