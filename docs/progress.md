@@ -468,6 +468,23 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Quiz painting images now use `object-fit: contain` at a fixed 240px height so images display at their natural proportions without cropping
 - Quiz header button icon changed from a dice to a question-mark-in-circle (Lucide help-circle)
 
+## Session 19 — 2026-05-28
+
+### Sticky group subheaders
+- Group headers (artist / museum / movement sorts on both Paintings and Collection tabs) were already `position: sticky` but `top: 0` hid them under the fixed app header
+- Fixed by setting `top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 3px)` so they pin just below the header + progress bar
+
+### Artist popup layout
+- Portrait image no longer crammed at the very top — `mv-popup-body` top padding increased from 4px to 16px
+- Bio text now flows alongside the portrait: portrait is `float: left` with right/bottom margin inside `.artist-bio-wrap`; text starts inline and wraps under the image naturally
+- Name and nationality/years meta sit as full-width lines above the float section
+
+### Hide-on-scroll toolbar
+- Toolbar (search bar + sort + view buttons) is now `position: sticky` at the header bottom edge
+- Scrolling down past 60px hides it by translating it above the fixed header (`.toolbar-up` class); scrolling up anywhere brings it back with a 0.22s ease transition
+- Scroll state (`_toolbarHidden`, `_lastScrollY`) resets on every `render()` so the toolbar is always visible after a tab or sort change
+- Single `window` scroll listener added in `init()`; no re-attachment needed after re-renders
+
 ## Session 18 — 2026-05-28
 
 ### Header counter centered

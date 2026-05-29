@@ -34,6 +34,8 @@ let _apAutofillMuseum = null;
 
 /* ── Ephemeral UI state ──────────────────────────────────────────────────── */
 const _prevDateSeen = {}; // remembers the last real date before toggling Unknown
+let _lastScrollY    = 0;
+let _toolbarHidden  = false;
 
 /* ── Navigation stack ───────────────────────────────────────────────────── */
 const _navStack = []; // each entry is a fn() that reopens the previous screen
@@ -906,6 +908,8 @@ function toggleCollMovementGroup(name) {
 
 /* ── Main Render ────────────────────────────────────────────────────────── */
 function render() {
+  _toolbarHidden = false;
+  _lastScrollY   = window.scrollY;
   try {
     const main     = document.getElementById('main');
     const checked  = globalChecked();
@@ -1691,14 +1695,13 @@ function openArtistPopup(artistName) {
         <button class="detail-back-btn" onclick="navBack()">${ICONS.back} Back</button>
       </div>
       <div class="mv-popup-body">
-        <div class="artist-popup-header">
+        <h2 class="mv-popup-name artist-popup-name">${esc(artistName)}</h2>
+        ${metaLine ? `<div class="mv-popup-era" style="margin-bottom:12px">${metaLine}</div>` : ''}
+        <div class="artist-bio-wrap">
           ${portraitHtml}
-          <div class="artist-popup-meta">
-            <h2 class="mv-popup-name" style="margin-bottom:4px">${esc(artistName)}</h2>
-            ${metaLine ? `<div class="mv-popup-era">${metaLine}</div>` : ''}
-          </div>
+          ${info ? `<p class="mv-popup-summary artist-bio-text">${esc(info.bio)}</p>` : ''}
         </div>
-        ${info ? `<p class="mv-popup-summary">${esc(info.bio)}</p>` : '<div style="height:12px"></div>'}
+        ${!info ? '<div style="height:12px"></div>' : ''}
         ${movementChips ? `<div class="mv-section-label">Movement${movementNames.length > 1 ? 's' : ''}</div>
         <div class="mv-artists">${movementChips}</div>` : ''}
         <div class="mv-section-label" style="margin-top:20px">Works in this collection (${paintings.length})</div>
@@ -2379,6 +2382,22 @@ function init() {
 
     const quizBtn = document.getElementById('quiz-btn');
     if (quizBtn) quizBtn.innerHTML = ICONS.dice;
+
+    window.addEventListener('scroll', () => {
+      const toolbar = document.getElementById('toolbar');
+      if (!toolbar) { _lastScrollY = window.scrollY; return; }
+      const scrollY = window.scrollY;
+      const dy = scrollY - _lastScrollY;
+      _lastScrollY = scrollY;
+      if (Math.abs(dy) < 2) return;
+      if (dy > 0 && !_toolbarHidden && scrollY > 60) {
+        _toolbarHidden = true;
+        toolbar.classList.add('toolbar-up');
+      } else if (dy < 0 && _toolbarHidden) {
+        _toolbarHidden = false;
+        toolbar.classList.remove('toolbar-up');
+      }
+    }, { passive: true });
     const settingsBtn = document.getElementById('settings-btn');
     if (settingsBtn) settingsBtn.innerHTML = ICONS.gear;
 
