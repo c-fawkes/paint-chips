@@ -34,8 +34,6 @@ let _apAutofillMuseum = null;
 
 /* ── Ephemeral UI state ──────────────────────────────────────────────────── */
 const _prevDateSeen = {}; // remembers the last real date before toggling Unknown
-let _lastScrollY    = 0;
-let _toolbarHidden  = false;
 
 /* ── Navigation stack ───────────────────────────────────────────────────── */
 const _navStack = []; // each entry is a fn() that reopens the previous screen
@@ -227,7 +225,7 @@ const ICONS = {
   plus:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
   sort:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="9" y1="18" x2="15" y2="18"/></svg>`,
   grid:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>`,
-  rows:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`,
+  rows:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`,
   bookmark: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
   frame:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="1"/><rect x="5" y="5" width="14" height="14" rx="1"/></svg>`,
   back:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>`,
@@ -370,7 +368,7 @@ function renderListView() {
         return `<span class="mv-artist-chip">${esc(k)}${mv ? `<span style="color:var(--text-faint);font-size:.65rem"> · ${esc(mv.era)}</span>` : ''}</span>`;
       }).join('');
       const infoBody = isOpen ? `<div class="list-movement-info">
-        ${portrait ? `<img class="artist-portrait" src="${portrait}" alt="${esc(artist)}" style="margin-bottom:12px" onerror="this.style.display='none'">` : ''}
+        ${portrait ? `<img class="artist-portrait" src="${portrait}" alt="${esc(artist)}" onerror="this.style.display='none'">` : ''}
         ${info ? `<p class="mv-row-full-summary">${esc(info.bio)}</p>` : '<p class="mv-row-full-summary" style="color:var(--text-faint)">No biography available.</p>'}
         ${movementChips ? `<div class="mv-section-label" style="margin-top:14px">Movement${movementNames.length > 1 ? 's' : ''}</div>
         <div class="mv-artists">${movementChips}</div>` : ''}
@@ -908,8 +906,6 @@ function toggleCollMovementGroup(name) {
 
 /* ── Main Render ────────────────────────────────────────────────────────── */
 function render() {
-  _toolbarHidden = false;
-  _lastScrollY   = window.scrollY;
   try {
     const main     = document.getElementById('main');
     const checked  = globalChecked();
@@ -2381,27 +2377,6 @@ function init() {
     const quizBtn = document.getElementById('quiz-btn');
     if (quizBtn) quizBtn.innerHTML = ICONS.dice;
 
-    window.addEventListener('scroll', () => {
-      const toolbar = document.getElementById('toolbar');
-      if (!toolbar) { _lastScrollY = window.scrollY; return; }
-      const scrollY = window.scrollY;
-      const dy = scrollY - _lastScrollY;
-      _lastScrollY = scrollY;
-      // Always show toolbar near the top — catches fast scrolls where dy events are sparse
-      if (scrollY <= 60 && _toolbarHidden) {
-        _toolbarHidden = false;
-        toolbar.classList.remove('toolbar-up');
-        return;
-      }
-      if (Math.abs(dy) < 2) return;
-      if (dy > 0 && !_toolbarHidden && scrollY > 60) {
-        _toolbarHidden = true;
-        toolbar.classList.add('toolbar-up');
-      } else if (dy < 0 && _toolbarHidden) {
-        _toolbarHidden = false;
-        toolbar.classList.remove('toolbar-up');
-      }
-    }, { passive: true });
     const settingsBtn = document.getElementById('settings-btn');
     if (settingsBtn) settingsBtn.innerHTML = ICONS.gear;
 

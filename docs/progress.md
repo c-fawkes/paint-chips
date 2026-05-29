@@ -495,6 +495,13 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - All stat numbers (12/21/35/100) switched to `var(--font-cursive)` (Pacifico) matching the Beheld wordmark; `font-weight: 700` removed (Pacifico is single-weight)
 - Stats row margin-bottom tightened from 28px → 12px to reduce gap before the 100 Masterpieces line
 
+## Session 22 — 2026-05-28
+
+### Misc fixes
+- Removed hide-on-scroll toolbar feature entirely — toolbar now scrolls naturally and is only visible at the top of the list; removed scroll listener, `_toolbarHidden`/`_lastScrollY` vars, sticky/transition CSS, and `.toolbar-up` class
+- List view icon on view buttons updated to proper Lucide spec with `stroke-linecap="round" stroke-linejoin="round"` so the dot indicators render as circles
+- Artist group expanded info block: padding changed from `0 16px 16px` to uniform `16px` so the portrait image has equal spacing on all sides instead of touching the subheader; removed redundant inline `margin-bottom:12px` on the portrait
+
 ## Session 19 — 2026-05-28
 
 ### Sticky group subheaders

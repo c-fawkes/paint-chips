@@ -264,14 +264,6 @@ body {
   align-items: center;
   gap: 8px;
   padding: 0 12px 10px;
-  position: sticky;
-  top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 3px);
-  z-index: 10;
-  background: var(--bg2);
-  transition: transform .22s ease;
-}
-#toolbar.toolbar-up {
-  transform: translateY(calc(-100% - var(--header-h) - env(safe-area-inset-top, 0px) - 3px));
 }
 
 .search-wrap {
@@ -1532,7 +1524,7 @@ body {
 .list-movement-era { font-size: .72rem; color: var(--text-faint); }
 .list-movement-stat { font-size: .72rem; color: var(--gold-dim); flex-shrink: 0; }
 .list-movement-info {
-  padding: 0 16px 16px;
+  padding: 16px;
   background: var(--bg);
   border-top: 1px solid var(--border);
 }
