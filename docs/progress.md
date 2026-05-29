@@ -467,3 +467,9 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Museum MC options show museum name on line 1 and "City, Country" in a smaller dimmed second line; dropdown options show "Museum — City, Country" as combined label
 - Quiz painting images now use `object-fit: contain` at a fixed 240px height so images display at their natural proportions without cropping
 - Quiz header button icon changed from a dice to a question-mark-in-circle (Lucide help-circle)
+
+## Session 18 — 2026-05-28
+
+### Header counter centered
+- Wrapped the quiz and settings buttons in a `.header-actions` div with `flex: 1; justify-content: flex-end`
+- `h1` retains `flex: 1` on the left; counter now sits between two equal-flex flanks and is naturally centered
