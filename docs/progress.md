@@ -546,3 +546,10 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Date seen Unknown placeholder
 - The `— —` placeholder text was left-aligned inside the input box when Unknown is selected
 - Centred it with `left: 0; right: 0; text-align: center`
+
+## Session 25 — 2026-05-28
+
+### Artist portraits and bios in data.js
+- Added Artemisia Gentileschi bio and self-portrait to `ARTISTS` and `ARTIST_PORTRAITS`
+- Filled in previously-null portrait URLs for: María Izquierdo, Thomas Lawrence, Paolo Veronese, Giorgione, Giorgione (completed by Titian), Jacques-Louis David, Eugène Delacroix, Jean-Honoré Fragonard, Frans Hals, Jan Steen, Jan Davidsz. de Heem, Paulus Potter, Francis Bacon, Andrew Wyeth, Emanuel Leutze
+- Cleared The Weeping Woman's imageUrl (set to null) — the 1937 Picasso is under copyright and was incorrectly pointing to a Rembrandt image URL
