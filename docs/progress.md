@@ -487,6 +487,14 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - "No account · All data stays on your device" line removed from page 1 (still present on page 2)
 - Logo-to-hero gap reduced (margin-bottom 36px → 20px)
 
+## Session 21 — 2026-05-28
+
+### Onboarding page 1 continued iteration
+- Reordered sections to: Beheld logo → One lifetime → stats row → 100 Masterpieces → body text
+- "One lifetime" restored to original serif font (not uppercase); `ob-hero-sub` re-added with serif, normal weight, 1.35rem, centered
+- All stat numbers (12/21/35/100) switched to `var(--font-cursive)` (Pacifico) matching the Beheld wordmark; `font-weight: 700` removed (Pacifico is single-weight)
+- Stats row margin-bottom tightened from 28px → 12px to reduce gap before the 100 Masterpieces line
+
 ## Session 19 — 2026-05-28
 
 ### Sticky group subheaders

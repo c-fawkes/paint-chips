@@ -1761,26 +1761,19 @@ body {
 
 .ob-hero {
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  gap: 0;
-  width: 100%;
   margin-bottom: 28px;
 }
 .ob-hero-stat {
-  flex: 1;
-  padding: 4px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .ob-hero-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-cursive);
   font-size: 5.5rem;
-  font-weight: 700;
   color: var(--gold);
   line-height: 1;
-  letter-spacing: -.02em;
   margin-bottom: 8px;
 }
 .ob-hero-word {
@@ -1789,6 +1782,16 @@ body {
   text-transform: uppercase;
   letter-spacing: .06em;
   line-height: 1.4;
+}
+.ob-hero-sub {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--text);
+  font-weight: normal;
+  line-height: 1.3;
+  text-align: center;
+  margin-bottom: 28px;
+  margin-top: 4px;
 }
 
 .ob-rule {
@@ -1804,16 +1807,15 @@ body {
   justify-content: center;
   gap: 0;
   width: 100%;
-  margin-bottom: 28px;
+  margin-bottom: 12px;
 }
 .ob-stat {
   flex: 1;
   padding: 4px 0;
 }
 .ob-stat-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-cursive);
   font-size: 2rem;
-  font-weight: 700;
   color: var(--gold);
   line-height: 1;
   margin-bottom: 6px;

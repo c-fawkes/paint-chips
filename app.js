@@ -1864,17 +1864,7 @@ function _obPage1HTML() {
           <div class="ob-brand brand-cursive">Beheld</div>
         </div>
 
-        <div class="ob-hero">
-          <div class="ob-hero-stat">
-            <div class="ob-hero-num">100</div>
-            <div class="ob-hero-word">masterpieces</div>
-          </div>
-          <div class="ob-stat-divider"></div>
-          <div class="ob-hero-stat">
-            <div class="ob-hero-num">1</div>
-            <div class="ob-hero-word">lifetime</div>
-          </div>
-        </div>
+        <div class="ob-hero-sub">One lifetime</div>
 
         <div class="ob-stats">
           <div class="ob-stat">
@@ -1890,6 +1880,13 @@ function _obPage1HTML() {
           <div class="ob-stat">
             <div class="ob-stat-num">35</div>
             <div class="ob-stat-label">museums</div>
+          </div>
+        </div>
+
+        <div class="ob-hero">
+          <div class="ob-hero-stat">
+            <div class="ob-hero-num">100</div>
+            <div class="ob-hero-word">masterpieces</div>
           </div>
         </div>
 
