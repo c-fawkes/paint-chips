@@ -25,16 +25,17 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
 
-  // Network-first for Wikimedia images so we always get fresh images
+  // Cache-first for Wikimedia/Wikipedia images (pre-cached on first load)
   if (url.hostname.includes('wikimedia.org') || url.hostname.includes('wikipedia.org')) {
     e.respondWith(
-      fetch(e.request)
-        .then(res => {
+      caches.match(e.request).then(cached => {
+        if (cached) return cached;
+        return fetch(e.request).then(res => {
           const clone = res.clone();
           caches.open(CACHE).then(c => c.put(e.request, clone));
           return res;
-        })
-        .catch(() => caches.match(e.request))
+        });
+      })
     );
     return;
   }

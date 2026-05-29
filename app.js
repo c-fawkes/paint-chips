@@ -35,6 +35,48 @@ let _apAutofillMuseum = null;
 /* ── Ephemeral UI state ──────────────────────────────────────────────────── */
 const _prevDateSeen = {}; // remembers the last real date before toggling Unknown
 
+/* ── IndexedDB (user photo storage) ─────────────────────────────────────── */
+let _idb = null;
+
+function _idbOpen() {
+  if (_idb) return Promise.resolve(_idb);
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open('beheld-db', 1);
+    req.onupgradeneeded = e => e.target.result.createObjectStore('photos');
+    req.onsuccess = e => { _idb = e.target.result; resolve(_idb); };
+    req.onerror   = () => reject(req.error);
+  });
+}
+
+function _idbPut(key, value) {
+  return _idbOpen().then(db => new Promise((resolve, reject) => {
+    const req = db.transaction('photos', 'readwrite').objectStore('photos').put(value, key);
+    req.onsuccess = () => resolve();
+    req.onerror   = () => reject(req.error);
+  }));
+}
+
+function _idbDelete(key) {
+  return _idbOpen().then(db => new Promise((resolve, reject) => {
+    const req = db.transaction('photos', 'readwrite').objectStore('photos').delete(key);
+    req.onsuccess = () => resolve();
+    req.onerror   = () => reject(req.error);
+  }));
+}
+
+function _idbGetAll() {
+  return _idbOpen().then(db => new Promise((resolve, reject) => {
+    const result = {};
+    const req = db.transaction('photos', 'readonly').objectStore('photos').openCursor();
+    req.onsuccess = e => {
+      const cursor = e.target.result;
+      if (cursor) { result[cursor.key] = cursor.value; cursor.continue(); }
+      else resolve(result);
+    };
+    req.onerror = () => reject(req.error);
+  }));
+}
+
 /* ── Navigation stack ───────────────────────────────────────────────────── */
 const _navStack = []; // each entry is a fn() that reopens the previous screen
 
@@ -133,7 +175,7 @@ function addSwipeDismiss(overlayEl) {
 function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
-      checked: S.checked, photos: S.photos, notes: S.notes, dateSeen: S.dateSeen, hiddenFromCollection: S.hiddenFromCollection, userPaintings: S.userPaintings,
+      checked: S.checked, notes: S.notes, dateSeen: S.dateSeen, hiddenFromCollection: S.hiddenFromCollection, userPaintings: S.userPaintings,
       view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
     }));
   } catch (_) {}
@@ -1032,7 +1074,8 @@ function openDetail(id, { refresh = false } = {}) {
 
           <div class="detail-note-section">
             <textarea class="detail-note-input" placeholder="Add a note about this painting"
-                      oninput="saveNote('${key}', this.value)">${esc(note)}</textarea>
+                      oninput="saveNote('${key}', this.value)"
+                      onblur="saveNote('${key}', this.value)">${esc(note)}</textarea>
           </div>
 
           <div class="detail-date-section${isChecked ? '' : ' hidden'}">
@@ -1129,25 +1172,46 @@ function rowToggleCheck(e, id) {
 }
 
 /* ── Photo handling ──────────────────────────────────────────────────────── */
+function _compressPhoto(dataUrl, callback) {
+  const img = new Image();
+  img.onload = () => {
+    const MAX = 1200;
+    let { width, height } = img;
+    if (width > MAX || height > MAX) {
+      const ratio = Math.min(MAX / width, MAX / height);
+      width  = Math.round(width  * ratio);
+      height = Math.round(height * ratio);
+    }
+    const canvas = document.createElement('canvas');
+    canvas.width  = width;
+    canvas.height = height;
+    canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+    callback(canvas.toDataURL('image/jpeg', 0.75));
+  };
+  img.src = dataUrl;
+}
+
 function handlePhotoUpload(e, id) {
   const file = e.target.files[0];
   if (!file) return;
   const reader = new FileReader();
   reader.onload = ev => {
-    const key = String(id);
-    if (!S.photos[key]) S.photos[key] = [];
-    S.photos[key].push(ev.target.result);
-    if (!S.checked[key]) {
-      S.checked[key] = true;
-      if (!S.dateSeen[key]) S.dateSeen[key] = todayISO();
-    }
-    save();
-    render();
-    // Refresh the detail modal
-    const overlay = document.getElementById('detail-overlay');
-    if (overlay && overlay.dataset.paintingId === key) {
-      openDetail(id, { refresh: true });
-    }
+    _compressPhoto(ev.target.result, compressed => {
+      const key = String(id);
+      if (!S.photos[key]) S.photos[key] = [];
+      S.photos[key].push(compressed);
+      if (!S.checked[key]) {
+        S.checked[key] = true;
+        if (!S.dateSeen[key]) S.dateSeen[key] = todayISO();
+      }
+      save();
+      _idbPut(key, S.photos[key]).catch(() => {});
+      render();
+      const overlay = document.getElementById('detail-overlay');
+      if (overlay && overlay.dataset.paintingId === key) {
+        openDetail(id, { refresh: true });
+      }
+    });
   };
   reader.readAsDataURL(file);
 }
@@ -1156,7 +1220,12 @@ function deletePhoto(id, index) {
   const key = String(id);
   if (S.photos[key]) {
     S.photos[key].splice(index, 1);
-    if (!S.photos[key].length) delete S.photos[key];
+    if (!S.photos[key].length) {
+      delete S.photos[key];
+      _idbDelete(key).catch(() => {});
+    } else {
+      _idbPut(key, S.photos[key]).catch(() => {});
+    }
     save();
     render();
     const overlay = document.getElementById('detail-overlay');
@@ -2365,18 +2434,56 @@ function quizPlayAgain() {
   _renderQuiz();
 }
 
-/* ── Init ────────────────────────────────────────────────────────────────── */
-function init() {
+/* ── Image pre-caching ───────────────────────────────────────────────────── */
+async function _preCacheImages() {
+  if (!('caches' in window)) return;
   try {
-    load();
+    const cache = await caches.open('paint-chips-v2');
+    const urls = new Set();
+    PAINTINGS.forEach(p => { if (p.imageUrl) urls.add(p.imageUrl); });
+    if (typeof ARTIST_PORTRAITS !== 'undefined')
+      Object.values(ARTIST_PORTRAITS).forEach(u => { if (u) urls.add(u); });
+    if (typeof MUSEUMS_INFO !== 'undefined')
+      Object.values(MUSEUMS_INFO).forEach(m => { if (m && m.photo) urls.add(m.photo); });
+    const list = [...urls];
+    for (let i = 0; i < list.length; i += 5) {
+      await Promise.allSettled(list.slice(i, i + 5).map(async url => {
+        if (await cache.match(url)) return;
+        const resp = await fetch(url, { mode: 'cors' });
+        if (resp.ok) await cache.put(url, resp);
+      }));
+    }
+  } catch (_) {}
+}
+
+/* ── Init ────────────────────────────────────────────────────────────────── */
+async function init() {
+  try {
+    load(); // restores all state except photos from localStorage
+
+    // Load user photos from IndexedDB; migrate from localStorage if first run
+    try {
+      const idbPhotos = await _idbGetAll();
+      if (Object.keys(idbPhotos).length > 0) {
+        S.photos = idbPhotos;
+      } else if (Object.keys(S.photos).length > 0) {
+        // First run after upgrade: migrate old localStorage photos into IDB
+        for (const [id, photos] of Object.entries(S.photos)) {
+          await _idbPut(id, photos).catch(() => {});
+        }
+        save(); // rewrite localStorage without photos
+      }
+    } catch (_) {} // IDB unavailable — photos stay in memory only
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
 
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') save(); });
+    window.addEventListener('pagehide', save);
+
     const quizBtn = document.getElementById('quiz-btn');
     if (quizBtn) quizBtn.innerHTML = ICONS.dice;
-
     const settingsBtn = document.getElementById('settings-btn');
     if (settingsBtn) settingsBtn.innerHTML = ICONS.gear;
 
@@ -2395,6 +2502,9 @@ function init() {
     render();
 
     if (!localStorage.getItem('pc_onboarded')) showOnboarding();
+
+    // Pre-cache all painting/museum/artist images for offline use
+    setTimeout(_preCacheImages, 2000);
   } catch (err) {
     document.getElementById('main').innerHTML =
       `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Error: ${err.message}</p></div>`;

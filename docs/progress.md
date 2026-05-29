@@ -524,3 +524,14 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Header counter centered
 - Wrapped the quiz and settings buttons in a `.header-actions` div with `flex: 1; justify-content: flex-end`
 - `h1` retains `flex: 1` on the left; counter now sits between two equal-flex flanks and is naturally centered
+
+## Session 23 — 2026-05-28
+
+### IndexedDB for user photos + background image pre-caching
+- User photos moved from localStorage (5 MB limit) to IndexedDB (`beheld-db`): photos now survive localStorage quota errors and scale with device storage
+- `_idbOpen/Put/Delete/GetAll` Promise wrappers added; `save()` no longer includes photos in its payload
+- `init()` made async: loads photos from IDB before first render; auto-migrates existing users' localStorage photos to IDB on first run
+- `handlePhotoUpload` and `deletePhoto` both write to IDB (fire-and-forget) alongside updating `S.photos` in memory
+- `_compressPhoto` (1200px max, JPEG 0.75) retained — keeps photos ~150–400 KB for faster IDB reads
+- `_preCacheImages()` runs 2s after startup: fetches all painting/artist/museum images into the SW cache in batches of 5; skips already-cached URLs on subsequent starts
+- Service worker updated from network-first to cache-first for Wikimedia images: once pre-cached, images load instantly offline with no network round-trip
