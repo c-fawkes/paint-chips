@@ -535,3 +535,14 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - `_compressPhoto` (1200px max, JPEG 0.75) retained — keeps photos ~150–400 KB for faster IDB reads
 - `_preCacheImages()` runs 2s after startup: fetches all painting/artist/museum images into the SW cache in batches of 5; skips already-cached URLs on subsequent starts
 - Service worker updated from network-first to cache-first for Wikimedia images: once pre-cached, images load instantly offline with no network round-trip
+
+## Session 24 — 2026-05-28
+
+### Photo lightbox close button
+- Close button was hidden behind the iOS status bar/Dynamic Island (`top: 16px` with no safe area offset)
+- Fixed with `top: calc(env(safe-area-inset-top, 0px) + 16px)` so it always appears below the notch
+- Lightbox padding updated to include safe area insets top and bottom so the image doesn't clip under the status bar or home indicator
+
+### Date seen Unknown placeholder
+- The `— —` placeholder text was left-aligned inside the input box when Unknown is selected
+- Centred it with `left: 0; right: 0; text-align: center`
