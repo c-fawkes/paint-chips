@@ -575,6 +575,20 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - When the active sort has group sections (Artist, Museum, or Movement) and view is not Gallery, a divider and **Expand All** / **Collapse All** buttons appear at the bottom of the sort dropdown
 - `collExpandAll()` populates the relevant `expandedColl*` Set from the currently visible paintings; `collCollapseAll()` clears it
 
+## Session 28 — 2026-05-29
+
+### "Seen" → "Collected" — wording and variable standardisation
+- All user-facing "seen" text updated in previous session; this session renames all internal identifiers to match
+- `S.dateSeen` → `S.dateCollected`; `_prevDateSeen` → `_prevDateCollected`; `saveDateSeen()` → `saveDateCollected()`
+- CSS/JS class names: `card-seen-badge` → `card-collected-badge`; `detail-seen-btn` → `detail-collected-btn`
+- Migration shim in `load()`: if saved state has `dateSeen` but not `dateCollected`, copies it across — existing users lose no data
+
+### Quiz: painting pool selection
+- Added "Painting pool" section to the quiz setup screen with three buttons: All Top 100 / Collected / Favorites
+- `quizStart()` filters the Top 100 pool by `S.checked` (collected) or `S.favorites` before generating questions
+- If the selected pool has fewer than 4 paintings, an alert blocks the quiz with a helpful message
+- `quizSetPool()` toggles the active button without a full re-render
+
 ## Session 27 — 2026-05-29
 
 ### Paintings tab sort dropdown parity with collection tab

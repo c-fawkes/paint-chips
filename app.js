@@ -3,7 +3,7 @@ const S = {
   checked: {},
   photos: {},
   notes: {},
-  dateSeen: {},
+  dateCollected: {},
   hiddenFromCollection: {},
   favorites: {},
   userPaintings: [],
@@ -35,7 +35,7 @@ let _apMuseum = '';
 let _apAutofillMuseum = null;
 
 /* ── Ephemeral UI state ──────────────────────────────────────────────────── */
-const _prevDateSeen = {}; // remembers the last real date before toggling Unknown
+const _prevDateCollected = {}; // remembers the last real date before toggling Unknown
 
 /* ── IndexedDB (user photo storage) ─────────────────────────────────────── */
 let _idb = null;
@@ -177,7 +177,7 @@ function addSwipeDismiss(overlayEl) {
 function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
-      checked: S.checked, notes: S.notes, dateSeen: S.dateSeen, hiddenFromCollection: S.hiddenFromCollection, favorites: S.favorites, userPaintings: S.userPaintings,
+      checked: S.checked, notes: S.notes, dateCollected: S.dateCollected, hiddenFromCollection: S.hiddenFromCollection, favorites: S.favorites, userPaintings: S.userPaintings,
       view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionFilter: S.collectionFilter, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
     }));
   } catch (_) {}
@@ -188,6 +188,7 @@ function load() {
     const raw = localStorage.getItem('pc_state');
     if (!raw) return;
     const snap = JSON.parse(raw);
+    if (snap.dateSeen && !snap.dateCollected) snap.dateCollected = snap.dateSeen;
     Object.assign(S, snap);
     S.expandedMuseums    = new Set();
     S.expandedContinents = new Set();
@@ -323,8 +324,8 @@ function renderPaintingCard(p) {
     <div class="card-img-wrap">
       ${imgHtml}
       ${p.rank != null && p.rank <= 100 ? `<div class="card-rank-badge">#${p.rank}</div>` : ''}
-      <div class="card-seen-badge${isChecked ? ' checked' : ''}"
-           onclick="rowToggleCheck(event,'${key}')" title="Mark as seen">
+      <div class="card-collected-badge${isChecked ? ' checked' : ''}"
+           onclick="rowToggleCheck(event,'${key}')" title="Collect">
         ${isChecked ? ICONS.check : ''}
       </div>
       ${hasPhotos ? `<div class="card-photo-badge">📷</div>` : ''}
@@ -356,7 +357,7 @@ function renderPaintingRow(p) {
       ${p.rank != null && p.rank <= 100 ? `<div class="row-rank">#${p.rank} of 100</div>` : ''}
     </div>
     <div class="row-check${isChecked ? ' checked' : ''}"
-         onclick="rowToggleCheck(event,'${key}')" title="Mark as seen">
+         onclick="rowToggleCheck(event,'${key}')" title="Collect">
       ${isChecked ? ICONS.check : ''}
     </div>
   </div>`;
@@ -394,7 +395,7 @@ function renderListView() {
           <div class="list-movement-chevron">${ICONS.chevron}</div>
           <span class="list-movement-name">${esc(museum)}</span>
           <span class="list-movement-era">${flag} ${esc(loc.city)}, ${esc(loc.country)}</span>
-          <span class="list-movement-stat">${mc}/${mps.length} seen</span>
+          <span class="list-movement-stat">${mc}/${mps.length} collected</span>
         </div>
         ${infoBody}
         ${isGrid
@@ -429,7 +430,7 @@ function renderListView() {
           <div class="list-movement-chevron">${ICONS.chevron}</div>
           <span class="list-movement-name">${esc(artist)}</span>
           ${metaLine ? `<span class="list-movement-era">${metaLine}</span>` : ''}
-          <span class="list-movement-stat">${mc}/${mps.length} seen</span>
+          <span class="list-movement-stat">${mc}/${mps.length} collected</span>
         </div>
         ${infoBody}
         ${isGrid
@@ -460,7 +461,7 @@ function renderListView() {
           <div class="list-movement-chevron">${ICONS.chevron}</div>
           <span class="list-movement-name">${esc(mvKey)}</span>
           ${mv ? `<span class="list-movement-era">${esc(mv.era)}</span>` : ''}
-          <span class="list-movement-stat">${mc}/${mps.length} seen</span>
+          <span class="list-movement-stat">${mc}/${mps.length} collected</span>
         </div>
         ${infoBody}
         ${isGrid
@@ -536,7 +537,7 @@ function renderMuseumBlock(name, paintings) {
   return `<div class="museum-section" style="margin:0 0 6px">
     <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${esc(name).replace(/'/g, "\\'")}')" style="padding:8px 12px">
       <div class="museum-info"><div class="museum-name" style="font-size:.85rem">${esc(name)}</div></div>
-      <div class="museum-counter"><div class="mc-nums">${mc}/${mt}</div><div class="mc-label">seen</div></div>
+      <div class="museum-counter"><div class="mc-nums">${mc}/${mt}</div><div class="mc-label">collected</div></div>
       <div class="museum-chevron">${ICONS.chevron}</div>
     </div>
     ${body}
@@ -576,7 +577,7 @@ function renderMuseumsAlpha() {
           <div class="museum-name">${esc(name)}</div>
           <div class="museum-location">${esc(m.city)}, ${esc(m.country)}</div>
         </div>
-        <div class="museum-counter"><div class="mc-nums">${checked}/${total}</div><div class="mc-label">seen</div></div>
+        <div class="museum-counter"><div class="mc-nums">${checked}/${total}</div><div class="mc-label">collected</div></div>
         <div class="museum-chevron">${ICONS.chevron}</div>
       </div>
       ${body}
@@ -599,7 +600,7 @@ function renderMuseumsCity() {
     return `<div class="loc-section">
       <div class="loc-header">
         <span class="loc-name">${esc(city)}</span>
-        <span class="loc-stat">${checked}/${total} seen</span>
+        <span class="loc-stat">${checked}/${total} collected</span>
       </div>
       ${Object.keys(cities[city]).sort().map(m => renderMuseumBlock(m, cities[city][m])).join('')}
     </div>`;
@@ -635,7 +636,7 @@ function renderMuseumsCountry() {
     return `<div class="loc-group">
       <div class="loc-group-header${isOpen ? ' open' : ''}" onclick="toggleContinent('${esc(country)}')">
         <span class="loc-group-name">${esc(country)}</span>
-        <span class="loc-group-stat">${checked}/${total} seen</span>
+        <span class="loc-group-stat">${checked}/${total} collected</span>
         <span class="loc-chevron">${ICONS.chevron}</span>
       </div>
       ${isOpen ? `<div class="loc-group-body">${citiesHtml}</div>` : ''}
@@ -683,7 +684,7 @@ function renderMuseumsContinent() {
       <div class="continent-header${cOpen?' open':''}" onclick="toggleContinent('${esc(continent)}')">
         <span class="continent-flag">${flags[continent]||'🌐'}</span>
         <div class="continent-name">${esc(continent)}</div>
-        <div class="continent-stat">${cC}/${cPs.length} seen</div>
+        <div class="continent-stat">${cC}/${cPs.length} collected</div>
         <div class="continent-chevron">${ICONS.chevron}</div>
       </div>
       ${cOpen ? `<div class="continent-body">${countriesHtml}</div>` : ''}
@@ -732,7 +733,7 @@ function renderStatsView() {
       <button class="detail-back-btn" onclick="closeStats()">${ICONS.back} Back</button>
     </div>
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-num">${done}</div><div class="stat-label">Paintings Seen</div></div>
+      <div class="stat-card"><div class="stat-num">${done}</div><div class="stat-label">Paintings Collected</div></div>
       <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total in List</div></div>
       <div class="stat-card"><div class="stat-num">${pct}%</div><div class="stat-label">Complete</div></div>
       <div class="stat-card"><div class="stat-num">${Object.keys(museums).length}</div><div class="stat-label">Museums</div></div>
@@ -758,8 +759,8 @@ function sortCollection(list) {
   }
   if (cs === 'date') {
     return [...list].sort((a, b) => {
-      const da = S.dateSeen[String(a.id)] || '';
-      const db = S.dateSeen[String(b.id)] || '';
+      const da = S.dateCollected[String(a.id)] || '';
+      const db = S.dateCollected[String(b.id)] || '';
       if (da === 'unknown' && db === 'unknown') return 0;
       if (da === 'unknown') return 1;
       if (db === 'unknown') return -1;
@@ -826,8 +827,8 @@ function renderCollectionView() {
   if (visible.length === 0) {
     let headline, subline;
     if (seen.length === 0) {
-      headline = 'No paintings seen yet.';
-      subline  = 'Mark paintings as seen in the Paintings tab.';
+      headline = 'No paintings collected yet.';
+      subline  = 'Collect paintings from the Paintings tab.';
     } else if (S.collectionFilter === 'favorites' && !S.collectionSearch) {
       headline = 'No favorites yet.';
       subline  = 'Open a painting and tap the heart to favorite it.';
@@ -1037,9 +1038,9 @@ function openDetail(id, { refresh = false } = {}) {
                 onclick="toggleFavorite('${key}')">
           ${isFav ? ICONS.heartFill : ICONS.heart}<span>${isFav ? 'Favorited' : 'Favorite'}</span>
         </button>
-        <button class="detail-seen-btn${isChecked ? ' checked' : ''}" id="detail-seen-btn"
+        <button class="detail-collected-btn${isChecked ? ' checked' : ''}" id="detail-collected-btn"
                 onclick="detailToggleCheck('${key}')">
-          ${isChecked ? ICONS.check + '<span>Seen</span>' : '<span>Mark Seen</span>'}
+          ${isChecked ? ICONS.check + '<span>Collected</span>' : '<span>Collect</span>'}
         </button>
       </div>
 
@@ -1093,16 +1094,16 @@ function openDetail(id, { refresh = false } = {}) {
           </div>
 
           <div class="detail-date-section${isChecked ? '' : ' hidden'}">
-            <div class="detail-section-label">Date seen</div>
+            <div class="detail-section-label">Date collected</div>
             <div class="detail-date-row">
-              <div class="detail-date-wrap${S.dateSeen[key] === 'unknown' ? ' is-unknown' : ''}">
+              <div class="detail-date-wrap${S.dateCollected[key] === 'unknown' ? ' is-unknown' : ''}">
                 <input type="date" class="detail-date-input" id="detail-date-input"
-                       value="${S.dateSeen[key] && S.dateSeen[key] !== 'unknown' ? S.dateSeen[key] : ''}"
-                       ${S.dateSeen[key] === 'unknown' ? 'disabled' : ''}
-                       onchange="saveDateSeen('${key}', this.value)">
+                       value="${S.dateCollected[key] && S.dateCollected[key] !== 'unknown' ? S.dateCollected[key] : ''}"
+                       ${S.dateCollected[key] === 'unknown' ? 'disabled' : ''}
+                       onchange="saveDateCollected('${key}', this.value)">
                 <span class="detail-date-placeholder">— —</span>
               </div>
-              <button class="detail-date-unknown${S.dateSeen[key] === 'unknown' ? ' active' : ''}"
+              <button class="detail-date-unknown${S.dateCollected[key] === 'unknown' ? ' active' : ''}"
                       onclick="toggleDateUnknown('${key}')">Unknown</button>
             </div>
           </div>
@@ -1124,19 +1125,19 @@ function detailToggleCheck(id) {
   S.checked[key] = !wasChecked;
   if (!S.checked[key]) {
     delete S.checked[key];
-  } else if (!S.dateSeen[key]) {
-    S.dateSeen[key] = todayISO();
+  } else if (!S.dateCollected[key]) {
+    S.dateCollected[key] = todayISO();
   }
   save();
   render();
 
   const isChecked = !!S.checked[key];
-  const btn = document.getElementById('detail-seen-btn');
+  const btn = document.getElementById('detail-collected-btn');
   if (btn) {
-    btn.className = 'detail-seen-btn' + (isChecked ? ' checked' : '');
+    btn.className = 'detail-collected-btn' + (isChecked ? ' checked' : '');
     btn.innerHTML = isChecked
-      ? ICONS.check + '<span>Seen</span>'
-      : '<span>Mark Seen</span>';
+      ? ICONS.check + '<span>Collected</span>'
+      : '<span>Collect</span>';
   }
   const favBtn = document.getElementById('detail-favorite-btn');
   if (favBtn) {
@@ -1147,8 +1148,8 @@ function detailToggleCheck(id) {
   const dateSection = document.querySelector('.detail-date-section');
   if (dateSection) dateSection.classList.toggle('hidden', !isChecked);
   const dateInput = document.getElementById('detail-date-input');
-  if (dateInput && isChecked && S.dateSeen[key] && S.dateSeen[key] !== 'unknown') {
-    dateInput.value = S.dateSeen[key];
+  if (dateInput && isChecked && S.dateCollected[key] && S.dateCollected[key] !== 'unknown') {
+    dateInput.value = S.dateCollected[key];
   }
 }
 
@@ -1178,8 +1179,8 @@ function rowToggleCheck(e, id) {
   S.checked[key] = !wasChecked;
   if (!S.checked[key]) {
     delete S.checked[key];
-  } else if (!S.dateSeen[key]) {
-    S.dateSeen[key] = todayISO();
+  } else if (!S.dateCollected[key]) {
+    S.dateCollected[key] = todayISO();
   }
   save();
   render();
@@ -1216,7 +1217,7 @@ function handlePhotoUpload(e, id) {
       S.photos[key].push(compressed);
       if (!S.checked[key]) {
         S.checked[key] = true;
-        if (!S.dateSeen[key]) S.dateSeen[key] = todayISO();
+        if (!S.dateCollected[key]) S.dateCollected[key] = todayISO();
       }
       save();
       _idbPut(key, S.photos[key]).catch(() => {});
@@ -1247,31 +1248,31 @@ function deletePhoto(id, index) {
   }
 }
 
-function saveDateSeen(id, value) {
+function saveDateCollected(id, value) {
   const key = String(id);
-  if (value) S.dateSeen[key] = value;
-  else delete S.dateSeen[key];
+  if (value) S.dateCollected[key] = value;
+  else delete S.dateCollected[key];
   save();
 }
 
 function toggleDateUnknown(id) {
   const key = String(id);
-  const isUnknown = S.dateSeen[key] === 'unknown';
+  const isUnknown = S.dateCollected[key] === 'unknown';
   if (isUnknown) {
     // Revert: restore the last real date we remembered, or fall back to today
-    S.dateSeen[key] = _prevDateSeen[key] || todayISO();
-    delete _prevDateSeen[key];
+    S.dateCollected[key] = _prevDateCollected[key] || todayISO();
+    delete _prevDateCollected[key];
   } else {
     // Going to Unknown: stash the current real date so we can restore it
-    if (S.dateSeen[key] && S.dateSeen[key] !== 'unknown') {
-      _prevDateSeen[key] = S.dateSeen[key];
+    if (S.dateCollected[key] && S.dateCollected[key] !== 'unknown') {
+      _prevDateCollected[key] = S.dateCollected[key];
     }
-    S.dateSeen[key] = 'unknown';
+    S.dateCollected[key] = 'unknown';
   }
   save();
   const input = document.getElementById('detail-date-input');
   if (input) {
-    input.value = isUnknown ? S.dateSeen[key] : '';
+    input.value = isUnknown ? S.dateCollected[key] : '';
     input.disabled = !isUnknown;
     const wrap = input.closest('.detail-date-wrap');
     if (wrap) wrap.classList.toggle('is-unknown', !isUnknown);
@@ -1459,7 +1460,7 @@ function openCollectionSortDropdown(e, btn) {
     { key: 'title',    label: 'Title',     icon: ICONS.type },
     { key: 'museum',   label: 'Museum',    icon: ICONS.museum },
     { key: 'movement', label: 'Movement',  icon: ICONS.palette },
-    { key: 'date',     label: 'Date Seen', icon: ICONS.calendar },
+    { key: 'date',     label: 'Date Collected', icon: ICONS.calendar },
   ];
   const grouped = ['artist', 'museum', 'movement'];
   const isGrouped = grouped.includes(S.collectionSort) && S.collectionMode !== 'gallery';
@@ -1513,7 +1514,7 @@ function openCollectionViewDropdown(e, btn) {
     { key: 'compact', label: 'List',   icon: ICONS.rows },
   ];
   const filterOpts = [
-    { key: 'all',       label: 'All Seen',  icon: ICONS.check },
+    { key: 'all',       label: 'All Collected', icon: ICONS.check },
     { key: 'favorites', label: 'Favorites', icon: ICONS.heart },
   ];
   const rect = btn.getBoundingClientRect();
@@ -1910,7 +1911,7 @@ function openMuseumPopup(museumName) {
         <div class="mv-popup-era">${flag} ${esc(loc.city)}, ${esc(loc.country)}</div>
         <h2 class="mv-popup-name">${esc(museumName)}</h2>
         <div class="museum-popup-stats">
-          <span class="museum-popup-stat">${mc} of ${paintings.length} seen</span>
+          <span class="museum-popup-stat">${mc} of ${paintings.length} collected</span>
           <div class="museum-popup-bar"><div class="museum-popup-fill" style="width:${paintings.length ? Math.round(mc/paintings.length*100) : 0}%"></div></div>
         </div>
         ${info ? `<p class="mv-popup-summary" style="margin-top:14px;border-bottom:none;padding-bottom:0">${esc(info.blurb)}</p>` : ''}
@@ -2087,8 +2088,8 @@ function _obPage2HTML() {
           <div class="ob-feature">
             <div class="ob-feature-icon">${ICONS.check}</div>
             <div class="ob-feature-text">
-              <div class="ob-feature-title">Collect paintings you've seen</div>
-              <div class="ob-feature-desc">Tap the check on any painting to mark it as seen and add it to your collection.</div>
+              <div class="ob-feature-title">Collect paintings you've visited</div>
+              <div class="ob-feature-desc">Tap the check on any painting to collect it and add it to your collection.</div>
             </div>
           </div>
           <div class="ob-feature">
@@ -2167,7 +2168,7 @@ function openQuiz() {
   if (document.getElementById('quiz-overlay')) return;
   _quiz = {
     phase: 'setup',
-    setup: { count: 10, types: ['artist', 'year', 'museum', 'movement', 'title'], mode: 'multiple' },
+    setup: { count: 10, types: ['artist', 'year', 'museum', 'movement', 'title'], mode: 'multiple', pool: 'all' },
     questions: [],
     current: 0,
     answers: [],
@@ -2238,6 +2239,17 @@ function _quizSetupHTML() {
                   id="qm-dropdown" onclick="quizSetMode('dropdown')">Dropdown</button>
         </div>
       </div>
+      <div class="quiz-section">
+        <div class="quiz-section-label">Painting pool</div>
+        <div class="quiz-mode-row">
+          <button class="quiz-mode-btn${s.pool === 'all' ? ' active' : ''}"
+                  id="qp-all" onclick="quizSetPool('all')">All Top 100</button>
+          <button class="quiz-mode-btn${s.pool === 'collected' ? ' active' : ''}"
+                  id="qp-collected" onclick="quizSetPool('collected')">Collected</button>
+          <button class="quiz-mode-btn${s.pool === 'favorites' ? ' active' : ''}"
+                  id="qp-favorites" onclick="quizSetPool('favorites')">Favorites</button>
+        </div>
+      </div>
       <button class="quiz-start-btn" onclick="quizStart()">Start Quiz</button>
     </div>
   `;
@@ -2268,12 +2280,33 @@ function quizSetMode(mode) {
   document.getElementById('qm-dropdown').classList.toggle('active', mode === 'dropdown');
 }
 
+function quizSetPool(pool) {
+  _quiz.setup.pool = pool;
+  ['all', 'collected', 'favorites'].forEach(p =>
+    document.getElementById(`qp-${p}`).classList.toggle('active', pool === p)
+  );
+}
+
 /* ── Question generation ──────────────────────────────────────────────────── */
 function quizStart() {
-  const { count, types, mode } = _quiz.setup;
+  const { count, types, mode, pool: poolKey } = _quiz.setup;
   if (!types.length) return;
 
-  const pool = PAINTINGS.filter(p => p.rank && p.rank <= 100);
+  const top100 = PAINTINGS.filter(p => p.rank && p.rank <= 100);
+  let pool;
+  if (poolKey === 'collected') {
+    pool = top100.filter(p => S.checked[String(p.id)]);
+  } else if (poolKey === 'favorites') {
+    pool = top100.filter(p => S.favorites[String(p.id)]);
+  } else {
+    pool = top100;
+  }
+  if (pool.length < 4) {
+    alert(poolKey === 'favorites'
+      ? 'You need at least 4 favorited paintings to start a quiz.'
+      : 'You need at least 4 collected paintings to start a quiz.');
+    return;
+  }
 
   const allArtists   = [...new Set(pool.map(p => p.artist))];
   const allYears     = [...new Set(pool.map(p => p.year))];
