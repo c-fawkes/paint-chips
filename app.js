@@ -233,7 +233,7 @@ const ICONS = {
   palette: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="9" r="1.5" fill="currentColor"/><circle cx="15.5" cy="9" r="1.5" fill="currentColor"/><circle cx="12" cy="15" r="1.5" fill="currentColor"/><circle cx="8.5" cy="15" r="1.5" fill="currentColor"/><circle cx="15.5" cy="15" r="1.5" fill="currentColor"/></svg>`,
   info:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`,
   gear:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
-  dice:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15.5" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1.5" fill="currentColor" stroke="none"/></svg>`,
+  dice:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
 };
 
 /* ── Escape helper ──────────────────────────────────────────────────────── */
@@ -2132,7 +2132,14 @@ function quizStart() {
   const allMovements = [...new Set(pool.filter(p => p.movement).map(p => p.movement))];
   const allTitles    = [...new Set(pool.map(p => p.title))];
 
-  const optionPools = { artist: allArtists, year: allYears, museum: allMuseums, movement: allMovements, title: allTitles };
+  // Build museum → { city, country } lookup for richer MC display
+  const museumInfo = {};
+  pool.forEach(p => {
+    if (!museumInfo[p.location.museum]) {
+      museumInfo[p.location.museum] = { city: p.location.city, country: p.location.country };
+    }
+  });
+  _quiz.museumInfo = museumInfo;
 
   const shuffled = [...pool].sort(() => Math.random() - 0.5);
 
@@ -2215,6 +2222,12 @@ function _quizQuestionHTML() {
     return `<span class="${cls}"></span>`;
   }).join('');
 
+  const museumLabel = (name) => {
+    const info = _quiz.museumInfo && _quiz.museumInfo[name];
+    if (!info) return esc(name);
+    return `<span class="quiz-opt-name">${esc(name)}</span><span class="quiz-opt-sub">${esc(info.city)}, ${esc(info.country)}</span>`;
+  };
+
   let answersHtml;
   if (_quiz.setup.mode === 'multiple') {
     answersHtml = `<div class="quiz-options">
@@ -2225,14 +2238,19 @@ function _quizQuestionHTML() {
           else if (opt === userAnswer) cls += ' wrong';
           else cls += ' faded';
         }
-        return `<button class="${cls}" ${answered ? 'disabled' : `onclick="quizAnswerMC(${i})"`}>${esc(opt)}</button>`;
+        const label = q.type === 'museum' ? museumLabel(opt) : esc(opt);
+        return `<button class="${cls}" ${answered ? 'disabled' : `onclick="quizAnswerMC(${i})"`}>${label}</button>`;
       }).join('')}
     </div>`;
   } else {
     answersHtml = `<div class="quiz-dropdown-wrap">
       <select class="quiz-select" id="quiz-select" ${answered ? 'disabled' : ''}>
         <option value="">— select an answer —</option>
-        ${q.options.map(opt => `<option value="${esc(opt)}"${answered && opt === userAnswer ? ' selected' : ''}>${esc(opt)}</option>`).join('')}
+        ${q.options.map(opt => {
+          const info = q.type === 'museum' && _quiz.museumInfo && _quiz.museumInfo[opt];
+          const label = info ? `${opt} — ${info.city}, ${info.country}` : opt;
+          return `<option value="${esc(opt)}"${answered && opt === userAnswer ? ' selected' : ''}>${esc(label)}</option>`;
+        }).join('')}
       </select>
       ${!answered
         ? `<button class="quiz-submit-btn" onclick="quizAnswerDropdown()">Submit</button>`
