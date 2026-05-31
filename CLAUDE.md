@@ -34,6 +34,7 @@ To force the service worker to pick up changes during development, go to DevTool
 This is a no-framework, no-build vanilla JS PWA. All logic lives in three files loaded via `<script>` tags at the end of `<body>`:
 
 - **`data.js`** — defines two globals: `PAINTINGS` (array of 100 painting objects) and `MUSEUMS` (object keyed by museum name). Loaded before `app.js`.
+  > **Updated (Session 4+):** `PAINTINGS` now contains 291 objects (100 ranked + 191 `museumOnly` extras added across sessions). `data.js` also exports `ARTISTS`, `ARTIST_PORTRAITS`, `MOVEMENTS`, and `MUSEUMS_INFO` — all referenced by `app.js` for popups and bios.
 - **`app.js`** — all application logic. Single global state object `S`, mutated directly and persisted to `localStorage` via `save()`/`load()`. Re-renders by calling `render()` which sets `innerHTML` on `#main`.
 - **`styles.css`** — all styling. Dark museum aesthetic: near-black `#0f0e0d` background, gold `#c9a84c` accent. Uses CSS custom properties defined on `:root`.
 
@@ -42,12 +43,29 @@ This is a no-framework, no-build vanilla JS PWA. All logic lives in three files 
 `S` in `app.js` holds everything:
 - `checked` — `{ [id]: true }` for seen paintings
 - `photos` — `{ [id]: [dataURL, ...] }` for user-uploaded photos (stored as base64 in localStorage)
+  > **Updated (Session 23):** Photos are now stored in **IndexedDB** (`beheld-db`), not localStorage. `S.photos` is still the in-memory cache but `save()` no longer serialises it. Photos are loaded from IDB in `init()`.
 - `userPaintings` — array of paintings the user added manually
 - `view` — active tab: `'list' | 'museums' | 'collection' | 'stats'`
+  > **Updated:** Settings is now a separate view (`'settings'`), accessible via the gear icon.
 - `listMode / collectionMode` — grid vs compact display toggles
+  > **Updated:** `collectionMode` has three values: `'grid' | 'compact' | 'gallery'`. Default is `'gallery'`.
 - `filter` — `{ continent, country, city, museum }` cascade (lower levels are cleared when a higher level is cleared)
 
+Additional persisted state fields added since initial build:
+- `notes` — `{ [id]: string }` — user notes per painting
+- `dateCollected` — `{ [id]: 'YYYY-MM-DD' | 'unknown' }` — date each painting was collected
+- `favorites` — `{ [id]: true }` — hearted paintings
+- `visitedMuseums` — `{ [museumName]: true }` — museums marked as visited
+- `hiddenFromCollection` — `{ [id]: true }` — paintings hidden from the collection tab
+- `scope` — `'top100' | 'plus10' | 'plus30'` — which paintings are active everywhere
+- `sort` — active sort for the Paintings tab
+- `search` / `collectionSearch` / `museumsSearch` — per-tab search strings (search strings are NOT persisted; cleared on reload)
+- `collectionSort` / `collectionFilter` / `collectionMode` — collection tab state
+- `museumsMode` — `'alpha' | 'city' | 'country'` (continent view removed in Session 30)
+- `units` — `'metric' | 'imperial'`
+
 The Set fields (`expandedMuseums`, `expandedContinents`, `expandedCountries`) track accordion open state and are intentionally **not** persisted to localStorage (they reset on reload).
+> **Updated:** Many more non-persisted Sets exist: `expandedListMuseums`, `expandedListArtists`, `expandedMovements`, `expandedCollMuseums`, `expandedCollArtists`, `expandedCollMovements`, `expandedStatsMuseums`.
 
 ### Rendering pattern
 
@@ -61,6 +79,13 @@ The Set fields (`expandedMuseums`, `expandedContinents`, `expandedCountries`) tr
 | Museums | `renderMuseumsView()` | 4 sub-modes: alpha / city / country / continent; accordion expand per museum |
 | Collection | `renderCollectionView()` | Seen-only paintings; 3 display modes: grid / compact / gallery |
 | Stats | `renderStatsView()` | Aggregated progress by continent and museum |
+
+> **Updated (Sessions 7–30):**
+> - "Top 100" tab is now labelled **Paintings** in the nav; also sortable by Movement with expandable group headers.
+> - Museums tab has **3** sub-modes (continent removed in Session 30); includes search bar and visited-museum badge on each card.
+> - Collection tab has Sort and Filter dropdowns, a Favorites filter, and Gallery as the default view.
+> - Stats is **not a tab** — accessed by tapping the `X / Y` counter in the header. It now shows visited-museum count and expandable per-museum rows with scope breakdown.
+> - A fourth overlay screen `renderSettingsView()` is toggled by the gear icon in the header.
 
 ### Painting object shape
 
@@ -77,9 +102,22 @@ The Set fields (`expandedMuseums`, `expandedContinents`, `expandedCountries`) tr
 }
 ```
 
+> **Updated (Session 4+):** Museum-only paintings (not in the ranked top 100) carry two additional fields:
+> ```js
+> rank: null,
+> museumOnly: true,
+> movement: "Baroque",        // art movement key — matches a key in MOVEMENTS
+> ```
+> `scopedPaintings()` gates which paintings are visible based on `S.scope`:
+> - `'top100'` — only paintings where `!p.museumOnly`
+> - `'plus10'` — all rank paintings + museumOnly up to a total of 10 per museum
+> - `'plus30'` — all rank paintings + museumOnly up to a total of 30 per museum
+
 ### Service worker
 
 `sw.js` uses cache-first for local files and network-first for Wikimedia/Wikipedia image URLs. The cache name is `paint-chips-v1` — bump this string to force all clients to re-cache when static assets change significantly.
+
+> **Updated (Sessions 15 + 23):** Cache name bumped to `paint-chips-v2` in Session 15 (rebrand). Image strategy changed to **cache-first** in Session 23 — `_preCacheImages()` runs 2s after startup and fetches all painting/artist/museum images into the SW cache in batches of 5, so images load instantly offline after first visit.
 
 ### Deployment
 

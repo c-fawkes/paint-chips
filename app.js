@@ -222,13 +222,21 @@ function scopedPaintings() {
   if (S.scope === 'top100') return all.filter(p => !p.museumOnly);
   if (S.scope === 'plus10' || S.scope === 'plus30') {
     const limit = S.scope === 'plus10' ? 10 : 30;
-    const museumCounts = {};
-    return all.filter(p => {
-      if (!p.museumOnly) return true;
+    // Group by museum; rank paintings always included, museumOnly fills remaining slots up to limit
+    const byMuseum = {};
+    all.forEach(p => {
       const m = p.location.museum;
-      museumCounts[m] = (museumCounts[m] || 0) + 1;
-      return museumCounts[m] <= limit;
+      if (!byMuseum[m]) byMuseum[m] = { rank: [], museumOnly: [] };
+      if (!p.museumOnly) byMuseum[m].rank.push(p);
+      else byMuseum[m].museumOnly.push(p);
     });
+    const result = [];
+    Object.values(byMuseum).forEach(({ rank, museumOnly }) => {
+      result.push(...rank);
+      const slots = Math.max(0, limit - rank.length);
+      result.push(...museumOnly.slice(0, slots));
+    });
+    return result;
   }
   return all;
 }
@@ -1483,7 +1491,7 @@ function openSortDropdown(e, btn) {
     opts.map(o =>
       `<button class="drop-item${S.sort === o.key ? ' active' : ''}"
                onclick="setSort('${o.key}');closeDrop()">
-         ${o.icon}<span style="flex:1">${o.label}</span>${S.sort === o.key ? ICONS.check : ''}
+         ${o.icon}<span>${o.label}</span>
        </button>`
     ).join('') +
     (isGrouped ? `<div class="drop-divider"></div>
@@ -1554,7 +1562,7 @@ function openMuseumsViewDropdown(e, btn) {
   drop.innerHTML = opts.map(o =>
     `<button class="drop-item${S.museumsMode === o.key ? ' active' : ''}"
              onclick="setMuseumsMode('${o.key}');closeDrop()">
-       ${o.icon}<span style="flex:1">${o.label}</span>${S.museumsMode === o.key ? ICONS.check : ''}
+       ${o.icon}<span>${o.label}</span>
      </button>`
   ).join('');
   document.body.appendChild(drop);
@@ -1591,7 +1599,7 @@ function openCollectionSortDropdown(e, btn) {
     opts.map(o =>
       `<button class="drop-item${S.collectionSort === o.key ? ' active' : ''}"
                onclick="setCollectionSort('${o.key}');closeDrop()">
-         ${o.icon}<span style="flex:1">${o.label}</span>${S.collectionSort === o.key ? ICONS.check : ''}
+         ${o.icon}<span>${o.label}</span>
        </button>`
     ).join('') +
     (isGrouped ? `<div class="drop-divider"></div>
@@ -2088,12 +2096,12 @@ function renderSettingsView() {
         <div class="settings-row">
           <div class="settings-row-label">
             <div class="settings-row-name">Painting List</div>
-            <div class="settings-row-sub">Which paintings appear in the list and museums tabs</div>
+            <div class="settings-row-sub">Top 100 shows only ranked works. Up to 10/30 caps the total per museum (ranked + extras)</div>
           </div>
           <div class="settings-toggle-group">
             <button class="settings-toggle-btn${S.scope === 'top100'  ? ' active' : ''}" onclick="setScope('top100')">Top 100</button>
-            <button class="settings-toggle-btn${S.scope === 'plus10'  ? ' active' : ''}" onclick="setScope('plus10')">+ 10</button>
-            <button class="settings-toggle-btn${S.scope === 'plus30'  ? ' active' : ''}" onclick="setScope('plus30')">+ 30</button>
+            <button class="settings-toggle-btn${S.scope === 'plus10'  ? ' active' : ''}" onclick="setScope('plus10')">Up to 10</button>
+            <button class="settings-toggle-btn${S.scope === 'plus30'  ? ' active' : ''}" onclick="setScope('plus30')">Up to 30</button>
           </div>
         </div>
       </div>

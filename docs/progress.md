@@ -8,6 +8,10 @@
 
 Paint Chips is a personal Progressive Web App (PWA) checklist for tracking which of the world's 100 most famous paintings you've seen in person. It's built for museum-goers who travel specifically to see art, or who want to cross off the canonical masterpieces as they encounter them.
 
+> **Updated (Session 15):** The app was rebranded from "Paint Chips" to **Beheld**. The name "Paint Chips" is retained only in the repo path and GitHub Pages URL (`/paint-chips/`). The app displays as "Beheld" everywhere in the UI, manifest, and title.
+>
+> **Updated (Session 4+):** The dataset has grown beyond 100 paintings. As of Session 30 the app contains **291 paintings** — 100 ranked works plus 191 `museumOnly` extras spread across 35 museums. The scope toggle in Settings controls which paintings are active: Top 100 only, up to 10 per museum, or up to 30 per museum (total including ranked works).
+
 The app lives at [github.com/c-fawkes/paint-chips](https://github.com/c-fawkes/paint-chips) and is deployed to GitHub Pages at `/paint-chips/`. It can be installed to the home screen on iOS and Android via the PWA manifest, where it runs in standalone (full-screen, no browser chrome) mode. All data is stored locally in the user's browser — no account, no backend.
 
 ---
@@ -17,10 +21,13 @@ The app lives at [github.com/c-fawkes/paint-chips](https://github.com/c-fawkes/p
 **No framework, no build step.** Three files loaded as plain `<script>` tags in `index.html`:
 
 - **`data.js`** — pure data, no logic. Defines two globals: `PAINTINGS` (array of 100 painting objects) and `MUSEUMS` (lookup object keyed by museum name). Loaded first so `app.js` can reference it.
+  > **Updated (Sessions 5–6, 30):** `data.js` now exports five globals: `PAINTINGS` (291 objects), `MUSEUMS` (derived), `ARTISTS` (101 entries with bio/dates/nationality), `ARTIST_PORTRAITS` (Wikimedia portrait URLs), `MOVEMENTS` (19 art movements with summaries and traits), and `MUSEUMS_INFO` (blurbs and exterior photos for all 35 museums).
 - **`app.js`** — all application logic. One global state object `S`, mutated in place, re-rendered via `innerHTML` replacement. No virtual DOM, no reactivity framework.
 - **`styles.css`** — all styles. Uses CSS custom properties for the full design token set.
 
 **Persistence** is `localStorage` only. The `save()` / `load()` functions in `app.js` serialize the relevant subset of `S` (checked status, photos, user-added paintings, UI preferences) to a single key `pc_state`. Photos are stored as base64 data URLs directly in localStorage — there's no file system or remote storage.
+
+> **Updated (Session 23):** Photos are now stored in **IndexedDB** (`beheld-db`), not localStorage. `save()` no longer includes photos in its payload. `S.photos` remains the in-memory cache; it is loaded asynchronously from IDB in `init()` before first render. All other state (checked, notes, dates, favorites, preferences) remains in `localStorage` under `pc_state`.
 
 **Offline support** comes from `sw.js`, a service worker that caches all app files on install and serves them cache-first. Wikimedia image URLs use a network-first strategy so images stay fresh but fall back to cache if offline.
 
@@ -47,6 +54,7 @@ The app shell is a standard mobile-first layout fixed to the viewport:
 - The **progress bar** is a 3px gold gradient strip immediately below the header, always reflecting the current seen count.
 - **`#main`** is the only element that changes. Every tab switch and state update calls `render()`, which sets `main.innerHTML` to the output of the active view's render function. There is no DOM diffing.
 - The **bottom nav** is fixed at 60px + iOS safe area inset. Three items: Paintings, Collection (raised box), Museums. Stats and Settings are accessed from the header, not the nav.
+  > **Updated (Sessions 7–15):** Nav icons updated — Paintings tab uses a **brush** icon, Museums uses a **landmark** icon. Collection button is a full closed box (no open bottom edge). Active Paintings/Museums tabs show a 1.5px gold top-line indicator. Settings is accessed via a **gear** icon in the header (right side); Stats via the `X / Y` counter (centre). A **quiz** icon (question mark circle) also appears in the header.
 
 ---
 
@@ -111,6 +119,8 @@ Tapping any painting opens a bottom sheet modal that slides up with animation. S
 
 Browse all 35 museums with four grouping modes via a dropdown button: By Museum / By City / By Country / By Continent. All modes use collapsible accordions. Expanded state reveals a progress bar, compact painting rows, and an "Add painting" button.
 
+> **Updated (Sessions 8, 30):** Grouping dropdown is now an icon-only button (funnel/sort icon) with three options — By Museum / By City / By Country (By Continent removed). A **search bar** was added filtering by museum name, city, and country. Each museum card has a circular **visited badge** on the flag icon (alpha view) or a circular button in the header (city/country views) — toggling marks the museum as visited (gold check when active; persisted in `S.visitedMuseums`).
+
 #### Collection tab
 
 Shows only paintings marked as seen. Three display modes: Grid / Compact / Gallery (full-bleed framed artwork view).
@@ -119,11 +129,15 @@ Shows only paintings marked as seen. Three display modes: Grid / Compact / Galle
 
 Accessible by tapping the `X / Y` counter in the header. Shows seen count, total, % complete, museums visited, progress bars by continent, and top museums by paintings seen.
 
+> **Updated (Session 30):** Summary cards now show: Collected, % Complete, **Museums Visited X/Y**, and In Scope count. The "Top Museums" bar list is replaced by a full expandable **Museums** section — all museums sorted by % collected, each expandable to show their paintings list. When scope is **Up to 10** or **Up to 30**, the expanded view shows separate sub-bars for "Top 100" titles vs "Museum-only" extras within that museum.
+
 #### Settings
 
 Accessible via the gear icon in the header (toggles closed on re-press). Two settings:
 - **Units** — Metric / Imperial (affects dimension display in detail sheet)
 - **Painting List** — Top 100 / All Famous (gates which paintings appear everywhere via `scopedPaintings()`)
+
+> **Updated (Session 30):** "All Famous" replaced with **Up to 10** and **Up to 30**. "Up to 10" shows all ranked paintings plus museumOnly extras, capping the total at 10 per museum. "Up to 30" caps at 30 per museum total (ranked first, then extras fill remaining slots).
 
 #### Onboarding
 
@@ -617,6 +631,19 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Active sort option shows a checkmark aligned to the right, matching collection tab style
 - Expand All / Collapse All section appears below a divider when sort is Artist, Museum, or Movement
 - `listExpandAll()` / `listCollapseAll()` operate on the paintings tab's own Sets (`expandedListArtists`, `expandedListMuseums`, `expandedMovements`) — no cross-tab bleed
+
+## Session 31 — 2026-05-31
+
+### Search bar, scope fix, dropdown cleanup, and doc annotations
+
+- Fixed museums tab search bar styling — `#museums-search-input` was missing from the CSS selectors that style `#search-input` and `#coll-search-input`; all three inputs now share identical appearance and focus states
+- Removed checkmark icons from all three sort dropdowns (Paintings, Museums, Collection) — active item is indicated by gold highlight (`.drop-item.active`) only, matching the view dropdown behaviour
+- Fixed scope logic in `scopedPaintings()`: **Up to 10** and **Up to 30** now cap the *total* paintings per museum (ranked works always included; museumOnly extras fill remaining slots). Previously extras were added on top of the top-100 set, not subject to the per-museum cap
+- Updated scope setting labels from "+ 10" / "+ 30" to **"Up to 10"** / **"Up to 30"** and rewrote the description sub-line for clarity
+- Annotated `CLAUDE.md` with `> Updated:` notes on every section that describes the original build state — data.js contents, state model fields, four-tabs table, painting object shape, and service worker strategy — all now reflect current reality
+- Annotated `docs/progress.md` App Overview with similar `> Updated:` callouts on the app description, data layer, persistence, nav bar, museums tab, stats view, and settings descriptions
+
+---
 
 ## Session 30 — 2026-05-31
 

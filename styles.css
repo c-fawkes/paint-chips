@@ -273,7 +273,7 @@ body {
   align-items: center;
 }
 
-#search-input, #coll-search-input {
+#search-input, #coll-search-input, #museums-search-input {
   flex: 1;
   background: var(--bg3);
   border: 1px solid var(--border);
@@ -284,9 +284,9 @@ body {
   outline: none;
   width: 100%;
 }
-#search-input::placeholder, #coll-search-input::placeholder { color: var(--text-faint); }
-#search-input:focus, #coll-search-input:focus { border-color: var(--gold-dim); }
-#search-input::-webkit-search-cancel-button, #coll-search-input::-webkit-search-cancel-button { display: none; }
+#search-input::placeholder, #coll-search-input::placeholder, #museums-search-input::placeholder { color: var(--text-faint); }
+#search-input:focus, #coll-search-input:focus, #museums-search-input:focus { border-color: var(--gold-dim); }
+#search-input::-webkit-search-cancel-button, #coll-search-input::-webkit-search-cancel-button, #museums-search-input::-webkit-search-cancel-button { display: none; }
 
 .search-clear {
   position: absolute;
