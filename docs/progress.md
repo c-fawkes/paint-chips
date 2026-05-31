@@ -617,3 +617,41 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Active sort option shows a checkmark aligned to the right, matching collection tab style
 - Expand All / Collapse All section appears below a divider when sort is Artist, Museum, or Movement
 - `listExpandAll()` / `listCollapseAll()` operate on the paintings tab's own Sets (`expandedListArtists`, `expandedListMuseums`, `expandedMovements`) — no cross-tab bleed
+
+## Session 30 — 2026-05-31
+
+### Museum-only painting expansion: Louvre + Musée d'Orsay
+- Added 28 museum-only paintings (IDs 235–262) for the Louvre Museum: Grande Odalisque, The Astronomer, Bathsheba at Her Bath, Death of the Virgin, Saint John the Baptist, The Embarkation for Cythera, The Turkish Bath, Intervention of the Sabine Women, Pierrot, La Belle Jardinière, Gabrielle d'Estrées, The Fortune Teller, Et in Arcadia Ego, Women of Algiers, Virgin of Chancellor Rolin, Portrait of Louis XIV, Man with a Glove, The Card Sharp with the Ace of Diamonds, Portrait of Anne of Cleves, Arrival of Marie de Medici at Marseille, Portrait of Madame Récamier, La Belle Ferronnière, The Ship of Fools, Supper at Emmaus (Rembrandt), Saint Sebastian Tended by Saint Irene, Portrait of Francis I (Clouet), Saint Sebastian (Mantegna), The Supper at Emmaus (Titian)
+- Added 29 museum-only paintings (IDs 263–291) for the Musée d'Orsay: The Balcony, The Fifer, Berthe Morisot with a Bouquet of Violets, On the Beach, Portrait of Émile Zola, The Poppy Field, Women in the Garden, The Magpie, Haystacks End of Summer, The Swing, Dance in the City, Dance in the Country, Young Girls at the Piano, The Floor Scrapers, The Circus, The Card Players, Still Life with Apples and Oranges, Tahitian Women on the Beach, The White Horse, The Cradle, The Birth of Venus (Bouguereau), The Ballet Class, The Tub, L'Étoile (The Star), A Burial at Ornans, The Painter's Studio, The Origin of the World, Bedroom in Arles, The Church at Auvers
+- Added 9 new artists to ARTISTS and ARTIST_PORTRAITS: School of Fontainebleau, Jean Clouet, Andrea Mantegna, Jean-Auguste-Dominique Ingres, Jean-Antoine Watteau, Hyacinthe Rigaud, Berthe Morisot, William-Adolphe Bouguereau, Gustave Courbet
+- Wikimedia thumbnail URLs computed via MD5 hash for all filenames; 1 null image (Virgin of Chancellor Rolin — webp source, no reliable jpg)
+
+### Scope toggle: + 10 / + 30 modes
+- Replaced the binary Top 100 / All Famous toggle with a three-way: **Top 100** / **+ 10** / **+ 30**
+- `+ 10` shows up to 10 museum-only paintings per museum; `+ 30` shows up to 30 — gives users a gradual expansion path
+- `scopedPaintings()` updated with new filtering logic; saved `'extended'` scope migrates to `'plus30'` on load
+
+### CLAUDE.md: /add-paintings command
+- Documented the `/add-paintings` slash command in CLAUDE.md, requiring it to be used for all future painting additions (enforces research workflow, avoids ad-hoc data.js edits)
+
+### Museums tab UI parity
+- Added search bar (matching style of Paintings and Collection tabs) that filters across all group-by modes by museum name, city, and country
+- Changed the group-by button from a text label + chevron to an icon-only button (matching the sort buttons on the other tabs); button activates gold when grouping is non-default
+- Dropdown options for group-by now have leading icons: landmark (By Museum), pin (By City), globe (By Country)
+- Removed "By Continent" as a grouping option — redundant given the country view; saved `'continent'` mode migrates to `'alpha'`
+- Dropdown now right-aligns to the button, consistent with other tab dropdowns
+
+### Museum visited tracking
+- Added `S.visitedMuseums` (persisted to localStorage) — a dictionary keyed by museum name
+- **Alpha view**: visited badge is a small circular button overlaid on the museum's flag icon (bottom-right); tapping toggles visited without expanding the accordion; gold check fills when visited; gold checkmark also appears inline next to the museum name
+- **City/Country views**: visited button appears in the museum block header between the collected counter and the chevron, same gold-when-visited style
+- `toggleMuseumVisited()` stops event propagation so badge taps don't accidentally toggle the accordion
+
+### Stats page overhaul
+- Summary cards: Collected count, % Complete, **Museums Visited X/Y** (new), In Scope count
+- Progress by Continent section retained
+- "Top Museums" section replaced with a full expandable **Museums** list — all museums sorted by % collected descending, each with a progress bar
+- Expanding a museum reveals the painting list (same compact rows as the museums tab, fully interactive)
+- If scope is **+ 10** or **+ 30**: expanded view shows two sub-bars — "Top 100" and "Museum-only" — before the paintings list, so progress on rank vs. museum-only work is clearly separated
+- Museum rows in stats show the gold visited checkmark when visited
+- `S.expandedStatsMuseums` (non-persisted) tracks open sections; resets on reload

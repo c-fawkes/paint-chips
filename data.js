@@ -2941,6 +2941,693 @@ const PAINTINGS = [
     movement: "Baroque",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/El_sue%C3%B1o_de_Jacob%2C_por_Jos%C3%A9_de_Ribera.jpg/330px-El_sue%C3%B1o_de_Jacob%2C_por_Jos%C3%A9_de_Ribera.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  // ── LOUVRE MUSEUM — museum-only paintings ──────────────────────────────
+  {
+    id: 235, rank: null, museumOnly: true,
+    title: "Grande Odalisque",
+    artist: "Jean-Auguste-Dominique Ingres",
+    year: "1814",
+    medium: "Oil on canvas",
+    dimensions: "89 × 163 cm",
+    description: "Ingres deliberately added extra vertebrae to elongate his subject's back into a sinuous, impossible curve — yet the effect feels supremely right, almost inevitable. The painting caused scandal at its 1814 exhibition, with critics noting the anatomical liberties, but these distortions became central to Ingres's stylistic signature. It remains the defining image of 19th-century Orientalist fantasy.",
+    movement: "Neoclassicism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/La_grande_odalisque_-_Jean-Auguste_Dominique_Ingres_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1158.jpg/330px-La_grande_odalisque_-_Jean-Auguste_Dominique_Ingres_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1158.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 236, rank: null, museumOnly: true,
+    title: "The Astronomer",
+    artist: "Johannes Vermeer",
+    year: "c. 1668",
+    medium: "Oil on canvas",
+    dimensions: "51 × 45 cm",
+    description: "Vermeer's scientist reaches toward a celestial globe in a room suffused with afternoon light, exploring the relationship between human knowledge and divine creation. The subject may be Antonie van Leeuwenhoek, the microscopy pioneer who was Vermeer's neighbor in Delft. A Nazi acquisition label on its back records its seizure from a Jewish collector during World War II.",
+    movement: "Dutch Golden Age",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Johannes_Vermeer_-_The_Astronomer_-_1668.jpg/330px-Johannes_Vermeer_-_The_Astronomer_-_1668.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 237, rank: null, museumOnly: true,
+    title: "Bathsheba at Her Bath",
+    artist: "Rembrandt van Rijn",
+    year: "1654",
+    medium: "Oil on canvas",
+    dimensions: "142 × 142 cm",
+    description: "Rembrandt's nude is not an idealized goddess but a real woman lost in thought, holding David's letter summoning her to an adulterous affair that will upend her life. His model was Hendrickje Stoffels, Rembrandt's companion, whose absorbed inwardness suggests someone weighing an impossible choice. Kenneth Clark called it Rembrandt's greatest painting of the nude.",
+    movement: "Dutch Golden Age",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rembrandt_Harmensz._van_Rijn_016.jpg/330px-Rembrandt_Harmensz._van_Rijn_016.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 238, rank: null, museumOnly: true,
+    title: "Death of the Virgin",
+    artist: "Caravaggio",
+    year: "c. 1604–1606",
+    medium: "Oil on canvas",
+    dimensions: "369 × 245 cm",
+    description: "The church that commissioned this painting rejected it because the Virgin looked like a drowned woman rather than a sacred figure — Caravaggio depicted her with a swollen belly and bare feet, the apostles in real grief rather than idealized consolation. The rejection was quickly overridden: Rubens advised the Duke of Mantua to purchase it immediately. It passed through Europe's grandest collections before reaching the Louvre.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Death_of_the_Virgin-Caravaggio_(1606).jpg/330px-Death_of_the_Virgin-Caravaggio_(1606).jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 239, rank: null, museumOnly: true,
+    title: "Saint John the Baptist",
+    artist: "Leonardo da Vinci",
+    year: "c. 1513–1516",
+    medium: "Oil on walnut wood",
+    dimensions: "69 × 57 cm",
+    description: "Leonardo's final painting is his most psychologically unsettling: a smiling figure emerges from impenetrable darkness, arm raised and finger pointing upward in a gesture both sacred and ambiguous. The sfumato is absolute here — the face dissolves at its edges into shadow — and the sexuality of the figure, his soft features and spiral curls, has disturbed and fascinated viewers for five centuries. Kenneth Clark called it 'the eternal question mark.'",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Leonardo_da_Vinci_-_Saint_John_the_Baptist_C2RMF_retouched.jpg/330px-Leonardo_da_Vinci_-_Saint_John_the_Baptist_C2RMF_retouched.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 240, rank: null, museumOnly: true,
+    title: "The Embarkation for Cythera",
+    artist: "Jean-Antoine Watteau",
+    year: "c. 1717",
+    medium: "Oil on canvas",
+    dimensions: "129 × 194 cm",
+    description: "Watteau submitted this as his admission piece to the Royal Academy in 1717, and it was so unlike anything before that the academicians invented a new category — the fête galante — to classify it. Elegantly dressed couples linger near the mythological island of love in a haze of gold and roses. Whether they are arriving toward love or departing from it remains deliberately unresolved, and that ambiguity became the emotional signature of the Rococo.",
+    movement: "Rococo",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/L'Embarquement_pour_Cyth%C3%A8re%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg/330px-L'Embarquement_pour_Cyth%C3%A8re%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 241, rank: null, museumOnly: true,
+    title: "The Turkish Bath",
+    artist: "Jean-Auguste-Dominique Ingres",
+    year: "c. 1852–1862",
+    medium: "Oil on canvas glued to wood",
+    dimensions: "108 × 110 cm",
+    description: "Ingres worked on this tondo for a decade, converting it from a rectangle to a circle at age 82 and adding a new foreground figure at the last moment. The bather lifting her hair is derived from his own Grande Odalisque — created 40 years earlier — making this painting a summation of his lifelong obsession with the female form. It is the final and most concentrated statement of his Orientalist aesthetic.",
+    movement: "Neoclassicism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Le_Bain_Turc%2C_by_Jean_Auguste_Dominique_Ingres%2C_from_C2RMFFXD.jpg/330px-Le_Bain_Turc%2C_by_Jean_Auguste_Dominique_Ingres%2C_from_C2RMFFXD.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 242, rank: null, museumOnly: true,
+    title: "The Intervention of the Sabine Women",
+    artist: "Jacques-Louis David",
+    year: "1799",
+    medium: "Oil on canvas",
+    dimensions: "385 × 522 cm",
+    description: "David's counter to his own Oath of the Horatii replaces masculine sacrifice with feminine intervention — women interposing their bodies and children between fathers and husbands who are about to kill each other. Created during the Directory, it was widely read as a call for reconciliation after the Revolution's violence. David charged admission to view it in his studio, pioneering the modern art exhibition.",
+    movement: "Neoclassicism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/The_Intervention_of_the_Sabine_Women_-_David_(Louvre_INV_3691).jpg/330px-The_Intervention_of_the_Sabine_Women_-_David_(Louvre_INV_3691).jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 243, rank: null, museumOnly: true,
+    title: "Pierrot",
+    artist: "Jean-Antoine Watteau",
+    year: "c. 1718–1719",
+    medium: "Oil on canvas",
+    dimensions: "184.5 × 149.5 cm",
+    description: "Life-sized, frontal, and absolutely alone against an open sky, Pierrot stands while his companions mill below as if he has already been left behind. The figure's absolute stillness and melancholy vacancy make it the most mysterious of Watteau's paintings — not a scene but a confrontation with a soul. Long titled 'Gilles' after the related commedia character, it is often read as a disguised self-portrait.",
+    movement: "Rococo",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Pierrot_-_Antoine_Watteau_-_Mus%C3%A9e_du_Louvre_Peintures_MI_1121_-_apr%C3%A8s_restauration_2024.jpg/330px-Pierrot_-_Antoine_Watteau_-_Mus%C3%A9e_du_Louvre_Peintures_MI_1121_-_apr%C3%A8s_restauration_2024.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 244, rank: null, museumOnly: true,
+    title: "La Belle Jardinière",
+    artist: "Raphael",
+    year: "c. 1507–1508",
+    medium: "Oil on panel",
+    dimensions: "122 × 80 cm",
+    description: "Raphael painted this Virgin in a meadow during his Florentine period under Leonardo's influence, whose sfumato and gentle diffused light infuse the landscape. The Christ child and young John the Baptist interact with unselfconscious naturalism, their bodies modeled with sculptural precision. The painting was unfinished when Raphael left Florence for Rome; a workshop assistant completed the lower portion of Mary's robe.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/La_Vierge_%C3%A0_l'Enfant_avec_le_petit_saint_Jean_Baptiste_-_Rapha%C3%ABl_-_Mus%C3%A9e_du_Louvre_Peintures_INV_602_%3B_MR_433.jpg/330px-La_Vierge_%C3%A0_l'Enfant_avec_le_petit_saint_Jean_Baptiste_-_Rapha%C3%ABl_-_Mus%C3%A9e_du_Louvre_Peintures_INV_602_%3B_MR_433.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 245, rank: null, museumOnly: true,
+    title: "Gabrielle d'Estrées and One of Her Sisters",
+    artist: "School of Fontainebleau",
+    year: "c. 1594",
+    medium: "Oil on wood",
+    dimensions: "96 × 125 cm",
+    description: "One of the most enigmatic images in French painting: two nude women in a bath, one pinching the other's nipple in a gesture whose meaning has never been fully explained — possibly alluding to Gabrielle's pregnancy as the acknowledged mistress of Henry IV. The attendant in the background embroidering adds domestic intimacy to a scene that is simultaneously private and hieratic. The painter is entirely unknown.",
+    movement: "Mannerism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Gabrielle_d'Estr%C3%A9es_et_une_de_ses_s%C5%93urs_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1937_1.jpg/330px-Gabrielle_d'Estr%C3%A9es_et_une_de_ses_s%C5%93urs_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1937_1.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 246, rank: null, museumOnly: true,
+    title: "The Fortune Teller",
+    artist: "Caravaggio",
+    year: "c. 1595",
+    medium: "Oil on canvas",
+    dimensions: "93 × 131 cm",
+    description: "One of Caravaggio's first genre paintings, this small work is a founding document of Italian Baroque naturalism: a gypsy woman tells the fortune of a young man while simultaneously stealing his ring — a glinting demonstration that seeing and understanding are not the same thing. The Louvre version is slightly more refined than the earlier Capitoline version and may have been made for a different patron. Caravaggio reputedly painted from a live street model.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/The_Fortune_Teller-Caravaggio_(Louvre).jpg/330px-The_Fortune_Teller-Caravaggio_(Louvre).jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 247, rank: null, museumOnly: true,
+    title: "Et in Arcadia Ego",
+    artist: "Nicolas Poussin",
+    year: "c. 1637–1638",
+    medium: "Oil on canvas",
+    dimensions: "85 × 121 cm",
+    description: "Poussin's second treatment of this Latin inscription — 'Even in Arcadia, I am there,' death speaking from a tomb in paradise — shifted the tone from his earlier version's shock to a philosophical meditation. The shepherds examine the words with quiet calm, and a shadow falls across one shepherd's arm in a final touch of memento mori. This painting became the visual touchstone for 18th-century meditations on mortality, beauty, and time.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Nicolas_Poussin_-_Et_in_Arcadia_ego_(deuxi%C3%A8me_version).jpg/330px-Nicolas_Poussin_-_Et_in_Arcadia_ego_(deuxi%C3%A8me_version).jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 248, rank: null, museumOnly: true,
+    title: "Women of Algiers in Their Apartment",
+    artist: "Eugène Delacroix",
+    year: "1834",
+    medium: "Oil on canvas",
+    dimensions: "180 × 229 cm",
+    description: "Delacroix painted this after a rare visit inside a private Algerian home during the French occupation — a privilege almost no Westerner had been granted — capturing the women with an immediacy that set his Orientalist imagery apart from fantasy. The odalisque genre here is intimate rather than erotic, focused on light, textile, and gesture. Picasso revisited this painting obsessively, producing 15 variations in 1954–55.",
+    movement: "Romanticism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Les_Femmes_d'Alger_d'Eug%C3%A8ne_Delacroix_(Restaur%C3%A9).jpg/330px-Les_Femmes_d'Alger_d'Eug%C3%A8ne_Delacroix_(Restaur%C3%A9).jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 249, rank: null, museumOnly: true,
+    title: "Virgin of Chancellor Rolin",
+    artist: "Jan van Eyck",
+    year: "c. 1430–1435",
+    medium: "Oil on panel",
+    dimensions: "66 × 62 cm",
+    description: "Nicolas Rolin, chancellor of Burgundy, commissioned this altarpiece and placed himself on equal visual footing with the Virgin and Child — a bold act of self-promotion barely veiled behind piety. Van Eyck opened the room onto a minutely detailed Flemish city where tiny figures walk battlements above a river. Every surface — brocade, marble, tile — is a demonstration of oil paint's capacity to describe the material world.",
+    movement: "Northern Renaissance",
+    imageUrl: null,
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 250, rank: null, museumOnly: true,
+    title: "Portrait of Louis XIV",
+    artist: "Hyacinthe Rigaud",
+    year: "1701",
+    medium: "Oil on canvas",
+    dimensions: "277 × 194 cm",
+    description: "Commissioned as a gift for Louis's grandson Philip V of Spain, this portrait was so admired that the king kept the original and sent a copy. The 62-year-old monarch in full coronation regalia — ermine cloak, crown, scepter — strikes a classical contrapposto that gives the elderly king the stance of a warrior-god. It set the template for royal portraiture that would endure across Europe for a century.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Louis_XIV_of_France.jpg/330px-Louis_XIV_of_France.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 251, rank: null, museumOnly: true,
+    title: "Man with a Glove",
+    artist: "Titian",
+    year: "c. 1520",
+    medium: "Oil on canvas",
+    dimensions: "100 × 89 cm",
+    description: "This portrait of an unidentified Venetian nobleman is among the finest Renaissance portraits in any collection — the sitter's inner life barely contained by the controlled formality of his pose. The glove he holds, only half put on, gives the hands something to do while suggesting a worldly readiness that animates the whole canvas. Its origin in the Gonzaga collection in Mantua means it passed through the grandest European collections before reaching the Louvre.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tiziano_-_Hombre_del_guante_(Louvre).jpg/330px-Tiziano_-_Hombre_del_guante_(Louvre).jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 252, rank: null, museumOnly: true,
+    title: "The Card Sharp with the Ace of Diamonds",
+    artist: "Georges de La Tour",
+    year: "c. 1636–1638",
+    medium: "Oil on canvas",
+    dimensions: "106 × 146 cm",
+    description: "De La Tour's card sharp retrieves a winning card from behind his back while his female accomplice signals their mark — a well-dressed young man who has no idea he is being fleeced. The painting is simultaneously a moral lesson about the three temptations (gambling, wine, and lust) and a bravura exercise in the rendering of silk, velvet, and shadow. The Louvre purchased it in 1972 after it had been misattributed for centuries.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Le_Tricheur_%C3%A0_l'as_de_carreau_-_Georges_de_La_Tour_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1972_8.jpg/330px-Le_Tricheur_%C3%A0_l'as_de_carreau_-_Georges_de_La_Tour_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1972_8.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 253, rank: null, museumOnly: true,
+    title: "Portrait of Anne of Cleves",
+    artist: "Hans Holbein the Younger",
+    year: "1539",
+    medium: "Oil and tempera on parchment on canvas",
+    dimensions: "65 × 48 cm",
+    description: "Henry VIII sent Holbein to paint this betrothal portrait; the artist so flattered his subject — and the elaborate costume so concealed her figure — that Henry was bitterly disappointed when they met. The marriage lasted six months before annulment, and Henry blamed Holbein. A 2021 restoration revealed previously obscured jewel details and confirmed this as one of the finest portrait miniatures on parchment ever made.",
+    movement: "Northern Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_(Louvre).jpg/330px-Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_(Louvre).jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 254, rank: null, museumOnly: true,
+    title: "The Arrival of Marie de Medici at Marseille",
+    artist: "Peter Paul Rubens",
+    year: "c. 1622–1625",
+    medium: "Oil on canvas",
+    dimensions: "394 × 295 cm",
+    description: "One panel of the 24-painting Medici Cycle commissioned to decorate the Luxembourg Palace, this scene of the queen's 1600 arrival in France deploys Neptune, Fame, and water nymphs to elevate a diplomatic event into myth. Rubens and his vast workshop completed the entire cycle in just four years, and the full ensemble — now hanging together in the Louvre — remains the most ambitious decorative painting program of the 17th century.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Le_D%C3%A9barquement_de_la_reine_%C3%A0_Marseille%2C_le_3_novembre_1600_-_Pierre_Paul_Rubens_-_Mus%C3%A9e_du_Louvre_Peintures_INV_1774_%3B_MR_965.jpg/330px-Le_D%C3%A9barquement_de_la_reine_%C3%A0_Marseille%2C_le_3_novembre_1600_-_Pierre_Paul_Rubens_-_Mus%C3%A9e_du_Louvre_Peintures_INV_1774_%3B_MR_965.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 255, rank: null, museumOnly: true,
+    title: "Portrait of Madame Récamier",
+    artist: "Jacques-Louis David",
+    year: "1800",
+    medium: "Oil on canvas",
+    dimensions: "174 × 224 cm",
+    description: "David began this portrait of the celebrated Parisian salon hostess but abandoned it unfinished when she grew impatient and turned to his rival Gérard instead. The unfinished state — empty background, sketchy passages — became integral to the painting's appeal, and the severe neoclassical staging, bare-armed figure on a Directoire sofa looking back over her shoulder, was instantly iconic. Ingres drew directly on this composition for the Grande Odalisque fourteen years later.",
+    movement: "Neoclassicism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Juliette_R%C3%A9camier%2C_n%C3%A9e_Bernard_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3708.jpg/330px-Juliette_R%C3%A9camier%2C_n%C3%A9e_Bernard_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3708.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 256, rank: null, museumOnly: true,
+    title: "La Belle Ferronnière",
+    artist: "Leonardo da Vinci",
+    year: "c. 1490–1496",
+    medium: "Oil on walnut panel",
+    dimensions: "62 × 44 cm",
+    description: "The identity of this half-length portrait — named after the ferronnière headband she wears — has been debated for centuries, with candidates including Lucrezia Crivelli and Beatrice d'Este. Leonardo's handling of the eyes, which glance slightly to the side of the viewer, creates the same uncanny presence as the Mona Lisa in a more intimate format. A court case in the 1920s over attribution ended in confirmation of Leonardo's hand.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/La_Belle_Ferronni%C3%A8re_-_Google_Arts.jpg/330px-La_Belle_Ferronni%C3%A8re_-_Google_Arts.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 257, rank: null, museumOnly: true,
+    title: "The Ship of Fools",
+    artist: "Hieronymus Bosch",
+    year: "c. 1490–1500",
+    medium: "Oil on panel",
+    dimensions: "58 × 33 cm",
+    description: "A fragment of a larger triptych, this small panel shows a boatload of revelers — a monk and nun prominently among them — adrift with no captain, celebrating as their vessel drifts toward destruction. Bosch drew on Sebastian Brant's 1494 satirical poem of the same name, transforming literary critique into hallucinatory vividness. The bottom third of the original panel belongs to Yale University Art Gallery under the title Allegory of Gluttony.",
+    movement: "Northern Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Jheronimus_Bosch_011.jpg/330px-Jheronimus_Bosch_011.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 258, rank: null, museumOnly: true,
+    title: "Supper at Emmaus",
+    artist: "Rembrandt van Rijn",
+    year: "1648",
+    medium: "Oil on mahogany panel",
+    dimensions: "68 × 65 cm",
+    description: "In this intimate panel, the resurrected Christ reveals himself to the disciples through the breaking of bread — captured not through dramatic gesture but in the subtle turn of his face into light and the disciple's hands clasped in sudden prayer. Rembrandt stripped away baroque theatricality to achieve something unbearably quiet. The back-lit Christ is one of the most moving treatments of this subject in Western painting.",
+    movement: "Dutch Golden Age",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Rembrandt_The_Supper_at_Emmaus.jpg/330px-Rembrandt_The_Supper_at_Emmaus.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 259, rank: null, museumOnly: true,
+    title: "Saint Sebastian Tended by Saint Irene",
+    artist: "Georges de La Tour",
+    year: "c. 1645–1650",
+    medium: "Oil on canvas",
+    dimensions: "167 × 130 cm",
+    description: "Saint Irene tends to the wounded Sebastian by candlelight, her face and hands bathed in the warm glow that was de La Tour's visual signature. Unlike the traditional martyrdom image — Sebastian tied to a post, pierced with arrows — de La Tour removes the arrows and focuses on the intimacy of care, transforming a martyrdom into a scene of human tenderness. The candlelight, held by an attendant just outside the frame, is the painting's sole light source.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Georges_de_La_Tour_-_St_Sebastien_Attended_by_St_Irene_-_WGA12342.jpg/330px-Georges_de_La_Tour_-_St_Sebastien_Attended_by_St_Irene_-_WGA12342.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 260, rank: null, museumOnly: true,
+    title: "Portrait of Francis I",
+    artist: "Jean Clouet",
+    year: "c. 1530",
+    medium: "Oil on panel",
+    dimensions: "96 × 74 cm",
+    description: "Clouet's portrait of the French king who launched the Renaissance in France depicts a ruler of extraordinary presence — eyes direct, posture immovable, the slashed doublet a fortune in silk and gold. The modelling is so precise it appears closer to a portrait miniature than an oil panel, reflecting Clouet's Flemish training. Francis I was the patron who brought Leonardo to France; he reportedly held the dying artist's head at Amboise in 1519.",
+    movement: "Northern Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Jean_Clouet_-_Portrait_of_Fran%C3%A7ois_I%2C_King_of_France_-_WGA5081.jpg/330px-Jean_Clouet_-_Portrait_of_Fran%C3%A7ois_I%2C_King_of_France_-_WGA5081.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 261, rank: null, museumOnly: true,
+    title: "Saint Sebastian",
+    artist: "Andrea Mantegna",
+    year: "c. 1480",
+    medium: "Tempera on canvas",
+    dimensions: "255 × 140 cm",
+    description: "The largest of Mantegna's three treatments of this subject, the Louvre Sebastian presents the martyr against a ruined classical arch — a humanist meditation on Christianity's supersession of the ancient world, rendered with almost sculptural conviction. The body is painted with archaeological precision, muscles compressed against the column like a Roman statue. Mantegna inscribed his name in Greek below the figure, claiming this as a proudly self-conscious masterwork.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Andrea_mantegna%2C_san_sebastiano%2C_1480_ca..JPG/330px-Andrea_mantegna%2C_san_sebastiano%2C_1480_ca..JPG",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+  {
+    id: 262, rank: null, museumOnly: true,
+    title: "The Supper at Emmaus",
+    artist: "Titian",
+    year: "c. 1533–1534",
+    medium: "Oil on canvas",
+    dimensions: "169 × 244 cm",
+    description: "Titian's large-scale treatment of the moment when the resurrected Christ reveals himself to the disciples through the breaking of bread is a masterwork of Venetian compositional grandeur, the figures animated by rich color and expressive gesture. It contrasts sharply with Rembrandt's much more intimate 1648 version of the same subject — also at the Louvre — demonstrating how differently two great masters could approach identical material across a century.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Salon_de_Mercure-LE_SOUPER_A_EMMAUS.jpg/330px-Salon_de_Mercure-LE_SOUPER_A_EMMAUS.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
+  },
+
+  // ── MUSÉE D'ORSAY — museum-only paintings ─────────────────────────────
+  {
+    id: 263, rank: null, museumOnly: true,
+    title: "The Balcony",
+    artist: "Édouard Manet",
+    year: "1868–1869",
+    medium: "Oil on canvas",
+    dimensions: "170 × 124 cm",
+    description: "Manet reimagined Goya's Majas on a Balcony as a scene of modern Parisian life — but his figures are strangely disconnected, each absorbed in their own world. The woman seated at left is the painter Berthe Morisot, shown with an intensity that reveals the complex relationship between the two artists. The painting's flat, decorative handling and dissonant green shutters puzzled critics at the 1869 Salon.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Edouard_Manet_-_The_Balcony_-_Google_Art_Project.jpg/330px-Edouard_Manet_-_The_Balcony_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 264, rank: null, museumOnly: true,
+    title: "The Fifer",
+    artist: "Édouard Manet",
+    year: "1866",
+    medium: "Oil on canvas",
+    dimensions: "160 × 97 cm",
+    description: "Manet's study of a young military musician, painted after his transformative visit to the Prado, strips away conventional background and shadow to produce a figure that seems to float against a neutral void. The Salon jury rejected it in 1866; Émile Zola responded with a passionate public defense that launched his role as Manet's champion. The flat, shadow-free technique — borrowed directly from Velázquez — was as radical as anything being done in France at the time.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Manet%2C_Edouard_-_Young_Flautist%2C_or_The_Fifer%2C_1866_(2).jpg/330px-Manet%2C_Edouard_-_Young_Flautist%2C_or_The_Fifer%2C_1866_(2).jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 265, rank: null, museumOnly: true,
+    title: "Berthe Morisot with a Bouquet of Violets",
+    artist: "Édouard Manet",
+    year: "1872",
+    medium: "Oil on canvas",
+    dimensions: "55.5 × 40.5 cm",
+    description: "One of about a dozen portraits Manet made of his sister-in-law Berthe Morisot, this small jewel uses an unusually asymmetric light — illuminating her right side brightly while the left falls into shadow — borrowed from Spanish portraiture. The barely visible violets and the black mourning dress give the painting emotional density out of proportion to its intimate size. Morisot herself acquired it in 1894; it only reached the Orsay in 1998.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Edouard_Manet_-_Berthe_Morisot_With_a_Bouquet_of_Violets_-_Google_Art_Project.jpg/330px-Edouard_Manet_-_Berthe_Morisot_With_a_Bouquet_of_Violets_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 266, rank: null, museumOnly: true,
+    title: "On the Beach",
+    artist: "Édouard Manet",
+    year: "1873",
+    medium: "Oil on canvas",
+    dimensions: "60 × 73 cm",
+    description: "Manet painted this en plein air at Berck-sur-Mer, showing his wife Suzanne and brother Eugène absorbed in reading against the flat grey sea and sky. Sand was later found embedded in the paint, proving it was made directly on the beach. The radical compression of foreground and horizon, with no middle distance, prefigures the compositional strategies of Post-Impressionism.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Edouard_Manet_-_On_the_Beach_-_Google_Art_Project.jpg/330px-Edouard_Manet_-_On_the_Beach_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 267, rank: null, museumOnly: true,
+    title: "Portrait of Émile Zola",
+    artist: "Édouard Manet",
+    year: "1868",
+    medium: "Oil on canvas",
+    dimensions: "146.5 × 114 cm",
+    description: "Manet painted this as a gift for Zola after the writer published a passionate defense of his work, and the painting is itself a theory of art hidden in a portrait. On the wall behind the writer hang a reproduction of Olympia, a print after Velázquez's Bacchus, and a Japanese print — Manet announcing his sources. The wall arrangement is as much manifesto as background.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Edouard_Manet_049.jpg/330px-Edouard_Manet_049.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 268, rank: null, museumOnly: true,
+    title: "The Poppy Field",
+    artist: "Claude Monet",
+    year: "1873",
+    medium: "Oil on canvas",
+    dimensions: "50 × 65 cm",
+    description: "Monet painted this near his home in Argenteuil with his wife Camille and son Jean as figures in the middle distance, repeated again in the foreground in a compositional rhyme he rarely used. The poppies dissolve from individual dabs of red into a collective haze — an early exercise in the perceptual abstraction that would culminate in the Water Lilies. Exhibited at the first Impressionist exhibition in 1874, it is now one of the most reproduced Impressionist paintings in the world.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Claude_Monet_-_Poppy_Field_-_Google_Art_Project.jpg/330px-Claude_Monet_-_Poppy_Field_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 269, rank: null, museumOnly: true,
+    title: "Women in the Garden",
+    artist: "Claude Monet",
+    year: "1866",
+    medium: "Oil on canvas",
+    dimensions: "255 × 205 cm",
+    description: "To paint the upper half of this enormous canvas en plein air, Monet dug a trench in the garden so he could lower it while maintaining a single viewpoint. All four figures were posed by Camille Doncieux, his future wife. The Salon of 1867 rejected it; Frédéric Bazille bought it from Monet on instalment to support him through a financial crisis.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Claude_Monet_024.jpg/330px-Claude_Monet_024.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 270, rank: null, museumOnly: true,
+    title: "The Magpie",
+    artist: "Claude Monet",
+    year: "c. 1868–1869",
+    medium: "Oil on canvas",
+    dimensions: "89 × 130 cm",
+    description: "Monet's largest snow scene renders a winter garden with luminous precision, its shadows in vivid blues and purples rather than grey — a revelation that electrified the Impressionist circle. The single magpie on a gate adds a scale-giving touch of black that snaps the whole composition into focus. Rejected by the Salon of 1869, it was acquired by the Orsay in 1984 and is now one of the collection's most beloved works.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg/330px-Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 271, rank: null, museumOnly: true,
+    title: "Haystacks, End of Summer",
+    artist: "Claude Monet",
+    year: "1891",
+    medium: "Oil on canvas",
+    dimensions: "60 × 100 cm",
+    description: "One of 25 paintings in Monet's Haystacks series, this canvas records the quality of late summer afternoon light that he found so fleeting he hired local girls to run canvases to him as the light changed. When exhibited together at Durand-Ruel's gallery in 1891, the series proved that a single motif could sustain an entire exhibition through purely atmospheric variation. Kandinsky later said seeing this series was his first experience of art that transcended its subject matter.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Claude_Monet_-_Haystacks%2C_end_of_Summer_-_Google_Art_Project.jpg/330px-Claude_Monet_-_Haystacks%2C_end_of_Summer_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 272, rank: null, museumOnly: true,
+    title: "The Swing",
+    artist: "Pierre-Auguste Renoir",
+    year: "1876",
+    medium: "Oil on canvas",
+    dimensions: "92 × 73 cm",
+    description: "Renoir painted this in the garden behind his Montmartre studio, capturing the dappled light filtering through leaves onto the figures as scattered patches of yellow and white — a technique that scandalized academic critics, who saw only careless brushwork. Painted during the same summer as Bal du moulin de la Galette, it shares that painting's celebration of modern Parisian leisure. Gustave Caillebotte bought it directly from the third Impressionist exhibition in 1877.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Swing-Renoir.jpeg/330px-Swing-Renoir.jpeg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 273, rank: null, museumOnly: true,
+    title: "Dance in the City",
+    artist: "Pierre-Auguste Renoir",
+    year: "1883",
+    medium: "Oil on canvas",
+    dimensions: "180 × 90 cm",
+    description: "Commissioned as a pendant to Dance in the Country, this painting's couple — in evening dress, formal and controlled — embodies the bourgeois counterpart to the joyful spontaneity of its rural companion. The female figure is Suzanne Valadon, who later became a distinguished painter and mother of Maurice Utrillo. Together, the two dance paintings are a meditation on class, courtship, and the social geography of pleasure in 1880s Paris.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Pierre-Auguste_Renoir_019.jpg/330px-Pierre-Auguste_Renoir_019.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 274, rank: null, museumOnly: true,
+    title: "Dance in the Country",
+    artist: "Pierre-Auguste Renoir",
+    year: "1883",
+    medium: "Oil on canvas",
+    dimensions: "180 × 90 cm",
+    description: "Renoir's informal dancer in a straw hat — modeled by Aline Charigot, whom he later married — presses her partner with joyful abandon into an outdoor dance that feels genuinely spontaneous. Painted as the bourgeois companion to Dance in the City, this rural version privileges warmth, informality, and happiness over elegance. Both were commissioned by dealer Paul Durand-Ruel as a deliberate study in social contrast.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Pierre_Auguste_Renoir_-_Country_Dance_-_Google_Art_Project.jpg/330px-Pierre_Auguste_Renoir_-_Country_Dance_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 275, rank: null, museumOnly: true,
+    title: "Young Girls at the Piano",
+    artist: "Pierre-Auguste Renoir",
+    year: "1892",
+    medium: "Oil on canvas",
+    dimensions: "116 × 90 cm",
+    description: "Renoir painted five versions of this composition when the French government offered to purchase one for the Musée du Luxembourg — a rare official honor for an Impressionist. This Orsay version is the most resolved, its warm domestic light and absorbed figures capturing the bourgeois ideal of cultivated femininity that Renoir returned to throughout his career. The piano lesson as a subject would later attract Matisse.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Auguste_Renoir_-_Young_Girls_at_the_Piano_-_Google_Art_Project.jpg/330px-Auguste_Renoir_-_Young_Girls_at_the_Piano_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 276, rank: null, museumOnly: true,
+    title: "The Floor Scrapers",
+    artist: "Gustave Caillebotte",
+    year: "1875",
+    medium: "Oil on canvas",
+    dimensions: "102 × 146.5 cm",
+    description: "Caillebotte applied the Impressionist approach to a subject the Salon found shockingly vulgar: working-class men scraping a hardwood floor bare-chested in what is believed to be his own studio. The painting was rejected by the Salon of 1875 for treating a labor subject with the monumental scale reserved for history painting. Exhibited with the Impressionists in 1876, it is now recognized as a masterwork of urban realism.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Gustave_Caillebotte_-_The_Floor_Planers_-_Google_Art_Project.jpg/330px-Gustave_Caillebotte_-_The_Floor_Planers_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 277, rank: null, museumOnly: true,
+    title: "The Circus",
+    artist: "Georges Seurat",
+    year: "1890–1891",
+    medium: "Oil on canvas",
+    dimensions: "185 × 152 cm",
+    description: "Seurat's final painting, left unfinished at his death aged 31 in March 1891, transposes his Pointillist technique to the electric atmosphere of the Cirque Fernando. The formal daring is extraordinary: the flying acrobat, prancing horse, and clown break the severe geometry of his earlier work into dynamic diagonals. The unfinished white border visible on three sides is now considered part of the work.",
+    movement: "Post-Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Georges_Seurat%2C_1891%2C_Le_Cirque_(The_Circus)%2C_oil_on_canvas%2C_185_x_152_cm%2C_Mus%C3%A9e_d'Orsay.jpg/330px-Georges_Seurat%2C_1891%2C_Le_Cirque_(The_Circus)%2C_oil_on_canvas%2C_185_x_152_cm%2C_Mus%C3%A9e_d'Orsay.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 278, rank: null, museumOnly: true,
+    title: "The Card Players",
+    artist: "Paul Cézanne",
+    year: "c. 1894–1895",
+    medium: "Oil on canvas",
+    dimensions: "47.5 × 57 cm",
+    description: "The smallest and most refined of Cézanne's five Card Players canvases, this version reduces the composition to its geometric essence: two men absorbed in their game, the space between them alive with formal tension. Meyer Schapiro called it 'the most monumental and also the most refined' of the series. The pose of the left figure — elbow on table, pipe in mouth — became one of the most influential compositional ideas in early 20th-century painting.",
+    movement: "Post-Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Les_Joueurs_de_cartes%2C_par_Paul_C%C3%A9zanne.jpg/330px-Les_Joueurs_de_cartes%2C_par_Paul_C%C3%A9zanne.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 279, rank: null, museumOnly: true,
+    title: "Still Life with Apples and Oranges",
+    artist: "Paul Cézanne",
+    year: "c. 1899",
+    medium: "Oil on canvas",
+    dimensions: "74 × 93 cm",
+    description: "Cézanne arranged the same cloth, pitcher, and fruit in ever more complex configurations throughout his career, treating the still life as a laboratory for pictorial structure. Here the crumpled white cloth in angular folds competes for attention with the fruit it displays — each apple and orange built up through multiple simultaneous viewpoints. The painting entered the Louvre via the Camondo bequest in 1908 and transferred to the Orsay at its founding.",
+    movement: "Post-Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Nature_morte_aux_pommes_et_aux_oranges%2C_par_Paul_C%C3%A9zanne.jpg/330px-Nature_morte_aux_pommes_et_aux_oranges%2C_par_Paul_C%C3%A9zanne.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 280, rank: null, museumOnly: true,
+    title: "Tahitian Women on the Beach",
+    artist: "Paul Gauguin",
+    year: "1891",
+    medium: "Oil on canvas",
+    dimensions: "69 × 91 cm",
+    description: "Painted in Gauguin's first months in Tahiti, this early work already shows his Synthetist approach: the two women are rendered with simplified ornamental forms and a palette of warm ochres and flat pinks that owe nothing to naturalistic light. The figures' self-contained stillness — the aloof indolence Gauguin admired in Polynesian life — gives the image the quality of an icon rather than a genre scene. It was among the works he brought back for the controversial 1893 Paris exhibition that made his Pacific work famous.",
+    movement: "Post-Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Paul_Gauguin_056.jpg/330px-Paul_Gauguin_056.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 281, rank: null, museumOnly: true,
+    title: "The White Horse",
+    artist: "Paul Gauguin",
+    year: "1898",
+    medium: "Oil on canvas",
+    dimensions: "140 × 91.5 cm",
+    description: "Gauguin's largest Tahitian canvas presents a white horse drinking from a pool in a jungle setting where riders pass like shadows in filtered green light — an image of such otherworldly stillness that it reads simultaneously as observed nature and transcribed myth. The pharmacist who commissioned it rejected the painting because the horse appeared green; Gauguin refused to adjust the color, insisting the greenish cast was essential. The Orsay acquired it from the painter Gustave Fayet's estate.",
+    movement: "Post-Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Paul_Gauguin_-_The_White_Horse_-_Google_Art_Project.jpg/330px-Paul_Gauguin_-_The_White_Horse_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 282, rank: null, museumOnly: true,
+    title: "The Cradle",
+    artist: "Berthe Morisot",
+    year: "1872",
+    medium: "Oil on canvas",
+    dimensions: "56 × 46 cm",
+    description: "Morisot's most celebrated painting shows her sister Edma gazing at her sleeping daughter Blanche through the translucent veil of the cradle canopy — a curtain of white gauze that demonstrates Morisot's mastery of soft, airy handling. Shown at the first Impressionist exhibition in 1874, it remains the most famous work by any woman artist of the Impressionist circle. The tenderness of the gaze and the delicacy of the textile handling are characteristic signatures.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Berthe_Morisot_008.jpg/330px-Berthe_Morisot_008.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 283, rank: null, museumOnly: true,
+    title: "The Birth of Venus",
+    artist: "William-Adolphe Bouguereau",
+    year: "1879",
+    medium: "Oil on canvas",
+    dimensions: "300 × 218 cm",
+    description: "Bouguereau's massive Venus — technically astounding, with fifteen encircling putti and nymphs in flawless academic illusionism — was precisely what the Impressionists rebelled against: a museum-bound mythology of impossible perfection. During his lifetime it commanded the highest Salon prices; after his death it was dismissed as academic confectionery. Its revival since the 1980s has repositioned it as a major work of the academic tradition and one of the Orsay's most visited canvases.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/William-Adolphe_Bouguereau_(1825-1905)_-_The_Birth_of_Venus_(1879).jpg/330px-William-Adolphe_Bouguereau_(1825-1905)_-_The_Birth_of_Venus_(1879).jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 284, rank: null, museumOnly: true,
+    title: "The Ballet Class",
+    artist: "Edgar Degas",
+    year: "c. 1871–1874",
+    medium: "Oil on canvas",
+    dimensions: "85 × 75 cm",
+    description: "One of Degas's earliest treatments of the ballet class that would occupy him for decades, showing the choreographer Jules Perrot supervising practice with his stick — a figure rendered with magisterial authority. The spatial compression, with dancers in foreground and background simultaneously, is already fully developed. This intimate canvas established the vocabulary Degas would explore in hundreds of subsequent works.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Edgar_Degas_-_La_Classe_de_danse.jpg/330px-Edgar_Degas_-_La_Classe_de_danse.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 285, rank: null, museumOnly: true,
+    title: "The Tub",
+    artist: "Edgar Degas",
+    year: "1886",
+    medium: "Pastel on cardboard",
+    dimensions: "60 × 83 cm",
+    description: "Degas exhibited this pastel at the final Impressionist exhibition of 1886 as part of a series of nudes in private acts of bathing and grooming — women he described as 'seen through a keyhole,' unconscious of any observer. The abrupt cropping and the tabletop cutting across the corner give the image the accidental intimacy of a photograph taken from above. Critics responded with a mix of admiration for the technique and unease at the voyeuristic premise.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Edgar_Degas_-_Le_Tub_(1886_Mus%C3%A9e_d'Orsay).jpg/330px-Edgar_Degas_-_Le_Tub_(1886_Mus%C3%A9e_d'Orsay).jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 286, rank: null, museumOnly: true,
+    title: "L'Étoile (The Star)",
+    artist: "Edgar Degas",
+    year: "c. 1876–1877",
+    medium: "Pastel on monotype",
+    dimensions: "58 × 44 cm",
+    description: "Degas's most famous single dance image catches a ballerina mid-performance, her tutu exploding in white light while her male escort lurks in shadow at the right edge — a composition of brilliant asymmetry. The technique of pastel over monotype creates extraordinary luminosity, the black oil ink of the monotype giving the shadows a depth that pure pastel cannot achieve. This is the image most people picture when they think of Degas.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Ballet_(L'%C3%89toile)%2C_Edgar_Degas.jpg/330px-Ballet_(L'%C3%89toile)%2C_Edgar_Degas.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 287, rank: null, museumOnly: true,
+    title: "A Burial at Ornans",
+    artist: "Gustave Courbet",
+    year: "1849–1850",
+    medium: "Oil on canvas",
+    dimensions: "315 × 660 cm",
+    description: "Courbet painted a small-town funeral in Franche-Comté at the scale traditionally reserved for history painting — fifty life-sized provincial figures, a priest, gravedigger, and the horizon of the Jura hills behind them — and exhibited it at the 1851 Salon to outrage and ridicule. The bourgeoisie saw an insult; the provincial dignity of these ordinary faces was evidence of vulgarity. It is now considered the founding work of French Realism.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project_2.jpg/330px-Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project_2.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 288, rank: null, museumOnly: true,
+    title: "The Painter's Studio",
+    artist: "Gustave Courbet",
+    year: "1854–1855",
+    medium: "Oil on canvas",
+    dimensions: "361 × 598 cm",
+    description: "Courbet's enormous allegory — subtitled 'A Real Allegory Summing Up Seven Years of My Artistic and Moral Life' — shows the artist at his canvas flanked by the exploited poor to his left and his intellectual friends (including Baudelaire and Proudhon) to his right. Rejected for the 1855 Exposition Universelle, Courbet mounted it in his own pavilion outside — the first private exhibition in art history. No painting better announces the Realist movement's grand ambitions.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Courbet_LAtelier_du_peintre.jpg/330px-Courbet_LAtelier_du_peintre.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 289, rank: null, museumOnly: true,
+    title: "The Origin of the World",
+    artist: "Gustave Courbet",
+    year: "1866",
+    medium: "Oil on canvas",
+    dimensions: "46 × 55 cm",
+    description: "Commissioned by the Ottoman diplomat Halil Şerif Pasha, this small and frankly explicit painting applies Realism's founding conviction — paint only what you can see — to a subject that art had always veiled in allegory. It passed through several secret collections, including that of the psychoanalyst Jacques Lacan, who kept it hidden behind another painting, and only entered the Orsay in 1995. Its frank title, given by Courbet himself, remains the most provocative in art history.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Origin-of-the-World.jpg/330px-Origin-of-the-World.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 290, rank: null, museumOnly: true,
+    title: "Bedroom in Arles",
+    artist: "Vincent van Gogh",
+    year: "1889",
+    medium: "Oil on canvas",
+    dimensions: "57.5 × 74 cm",
+    description: "The third version of Van Gogh's famous bedroom was painted from memory at the Saint-Paul asylum after the original was damaged by flooding. He described the colors as intended to convey absolute rest: walls pale lilac, floor red tiles, bed and chairs butter yellow. The deliberate thick outlines and flat areas of color, which he associated with Japanese prints, make this one of his purest Post-Impressionist statements.",
+    movement: "Post-Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Vincent_van_Gogh_-_Van_Gogh's_Bedroom_in_Arles_-_Google_Art_Project.jpg/330px-Vincent_van_Gogh_-_Van_Gogh's_Bedroom_in_Arles_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  {
+    id: 291, rank: null, museumOnly: true,
+    title: "The Church at Auvers",
+    artist: "Vincent van Gogh",
+    year: "1890",
+    medium: "Oil on canvas",
+    dimensions: "94 × 74.5 cm",
+    description: "Painted six weeks before Van Gogh's death, this view of the medieval church at Auvers-sur-Oise renders the building's stone in colors that register the artist's psychological state: the sky an agitated cobalt, the paths forking around the church as if avoiding its entrance. The absence of visible windows gives the building a blind, impenetrable quality. Van Gogh described it in a letter as appearing in colors that are 'pure cobalt blue against a simple and deep blue sky.'",
+    movement: "Post-Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Vincent_van_Gogh_-_The_Church_in_Auvers-sur-Oise%2C_View_from_the_Chevet_-_Google_Art_Project.jpg/330px-Vincent_van_Gogh_-_The_Church_in_Auvers-sur-Oise%2C_View_from_the_Chevet_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   }
 ];
 
@@ -3450,6 +4137,42 @@ const ARTISTS = {
   "José de Ribera": {
     born: "1591", died: "1652", nationality: "Spanish (worked in Naples)",
     bio: "Ribera left Spain as a young man and settled in Naples — then under Spanish rule — where he spent his entire career and earned the nickname Lo Spagnoletto (the Little Spaniard). An early Caravaggist of fierce conviction, he specialized in the suffering faces of martyred saints, stoic philosophers, and ancient mythological figures rendered with brutal realism. He later developed a richer, more luminous palette while retaining dramatic tenebrism. The Prado holds the largest collection of his work outside Naples, and he is ranked alongside Velázquez, Zurbarán, and Murillo as a founding figure of Spanish Baroque painting."
+  },
+  "School of Fontainebleau": {
+    born: "c. 1530", died: "c. 1610", nationality: "French",
+    bio: "The School of Fontainebleau refers to two successive groups of artists who worked at the French royal palace of Fontainebleau during the 16th century, creating a uniquely French strain of Mannerism by blending Italian influence with Flemish craft. Their characteristic works — elongated figures, complex allegories, and erotic mythological scenes — reflect the sophisticated tastes of the Valois court. Most School of Fontainebleau paintings are anonymous, attributed by style rather than document."
+  },
+  "Jean Clouet": {
+    born: "c. 1485", died: "c. 1540", nationality: "French (Flemish-born)",
+    bio: "Clouet was the principal portrait painter to Francis I of France for nearly two decades, setting the standard for French court portraiture in the first half of the 16th century. His meticulously finished oil portraits and portrait drawings combine Flemish precision with Italian idealization in a manner perfectly suited to the humanist pretensions of the French court. He was succeeded in his role by his son François Clouet. Little documentary evidence of his life survives, but his few securely attributed paintings are among the most important French portraits of the Renaissance."
+  },
+  "Andrea Mantegna": {
+    born: "1431", died: "1506", nationality: "Italian",
+    bio: "Mantegna was the dominant painter of northern Italy in the 15th century and one of the most intellectually rigorous artists of the entire Renaissance, obsessed with classical antiquity and its archaeological exactitude. His mastery of extreme foreshortening — demonstrated above all in the Dead Christ in Milan — influenced artists from Dürer to Caravaggio. He spent almost his entire career as court painter to the Gonzaga family in Mantua, where he decorated the Camera degli Sposi with the first fully illusionistic ceiling in Western painting. His engraving technique was widely disseminated and influenced printmakers across Europe."
+  },
+  "Jean-Auguste-Dominique Ingres": {
+    born: "1780", died: "1867", nationality: "French",
+    bio: "Ingres was the preeminent Neoclassical painter of 19th-century France and the great champion of academic tradition against the Romantic movement. Though he aspired to recognition as a history painter in the tradition of Poussin, his greatest legacy rests with his portraits and exotic nudes — the Grande Odalisque, the Turkish Bath — where his deliberate anatomical distortions anticipate modernism. His influence extended directly to Matisse and Picasso, who both owned prints of his work. He also directed the French Academy in Rome and shaped the training of a generation of painters."
+  },
+  "Jean-Antoine Watteau": {
+    born: "1684", died: "1721", nationality: "French",
+    bio: "Watteau transformed French painting in his brief 36-year life, shifting the prevailing Baroque aesthetic toward the lighter Rococo and inventing the fête galante genre to accommodate his vision of elegant figures in dreamlike outdoor settings. He drew on Rubens and Venetian color while developing a luminous, feathery brushstroke entirely his own. His admission piece to the Royal Academy, The Embarkation for Cythera, prompted the academicians to create a new artistic category. He died of tuberculosis at 37, leaving a body of work small in quantity but enormous in influence on the entire 18th century."
+  },
+  "Hyacinthe Rigaud": {
+    born: "1659", died: "1743", nationality: "French",
+    bio: "Rigaud was the dominant portrait painter of the French court during the reigns of Louis XIV and Louis XV, renowned for his ability to project royal authority through pose, costume, and grandeur of handling. His 1701 Portrait of Louis XIV is the definitive image of absolute monarchy in Western painting, imitated across Europe for a century. Born in Perpignan to a family of Catalan artists, he became court painter and a fixture of Versailles life. His sitters included virtually every major figure of the French court, and his studio produced hundreds of portraits to satisfy royal demand."
+  },
+  "Berthe Morisot": {
+    born: "1841", died: "1895", nationality: "French",
+    bio: "Morisot was a central figure of the Impressionist movement — the only woman to exhibit at the first Impressionist exhibition of 1874 — and one of its most technically innovative practitioners. Her intimate domestic scenes, painted with a loose airy brushstroke that seemed to dematerialize objects into light, explored a world of private femininity largely closed to her male colleagues. She was deeply connected to the Impressionist circle: a close friend and frequent model of Manet's, she married his brother Eugène in 1874. The critic Gustave Geffroy called her 'one of the three great ladies' of Impressionism."
+  },
+  "William-Adolphe Bouguereau": {
+    born: "1825", died: "1905", nationality: "French",
+    bio: "Bouguereau was the most celebrated academic painter of late 19th-century France, famous for technically perfect mythological and genre paintings that drew enormous crowds at the annual Salon. He embodied the official art establishment that the Impressionists rebelled against, opposing their admission to the Salon and dismissing their work as incompetent. His reputation collapsed almost immediately after his death but has recovered substantially since the 1980s, and his work is now recognized as the apex of the academic figurative tradition. He taught hundreds of students through the École des Beaux-Arts and the Académie Julian."
+  },
+  "Gustave Courbet": {
+    born: "1819", died: "1877", nationality: "French",
+    bio: "Courbet founded the Realist movement with the aggressive conviction that painting should show only what the painter could directly observe — no allegory, no mythology, no idealization. He painted peasants, workers, and the landscapes of his native Franche-Comté on a scale previously reserved for history painting, and exhibited his rejected works in his own pavilion outside the 1855 Exposition Universelle, inventing the model of the independent artist exhibition. A committed socialist, he participated in the Paris Commune of 1871 and died in Swiss exile. His influence on Manet, the Impressionists, and every subsequent Realist movement is immeasurable."
   }
 };
 
@@ -3545,6 +4268,15 @@ const ARTIST_PORTRAITS = {
   "Francisco de Zurbarán": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Francisco_de_Zurbar%C3%A1n_autoportrait.jpg/330px-Francisco_de_Zurbar%C3%A1n_autoportrait.jpg",
   "Bartolomé Esteban Murillo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Autorretrato_de_Murillo.jpg/330px-Autorretrato_de_Murillo.jpg",
   "José de Ribera": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Ribera_-_Self-portrait.jpg/330px-Ribera_-_Self-portrait.jpg",
+  "School of Fontainebleau": null,
+  "Jean Clouet": null,
+  "Andrea Mantegna": null,
+  "Jean-Auguste-Dominique Ingres": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Portrait_de_Jean-Auguste-Dominique_Ingres_(1780-1867)%2C_peintre._PH10351_(Cropped).jpg/330px-Portrait_de_Jean-Auguste-Dominique_Ingres_(1780-1867)%2C_peintre._PH10351_(Cropped).jpg",
+  "Jean-Antoine Watteau": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/(Treviso)_The_painter_Antoine_Watteau_by_Rosalba_Carriera_-_Museo_civico_di_Santa_Caterina.jpg/330px-(Treviso)_The_painter_Antoine_Watteau_by_Rosalba_Carriera_-_Museo_civico_di_Santa_Caterina.jpg",
+  "Hyacinthe Rigaud": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Autoportrait_au_turban_(Perpignan).jpg/330px-Autoportrait_au_turban_(Perpignan).jpg",
+  "Berthe Morisot": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Morisot_berthe_photo.jpg/330px-Morisot_berthe_photo.jpg",
+  "William-Adolphe Bouguereau": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Self_portrait%2C_by_William_Bouguereau.jpg/330px-Self_portrait%2C_by_William_Bouguereau.jpg",
+  "Gustave Courbet": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gustave_Courbet%2C_photograph_Atelier_Nadar%2C_c._1860s.jpg/330px-Gustave_Courbet%2C_photograph_Atelier_Nadar%2C_c._1860s.jpg"
 };
 
 /* ── Museum info ─────────────────────────────────────────────────────────── */

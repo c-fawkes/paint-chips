@@ -6,6 +6,7 @@ const S = {
   dateCollected: {},
   hiddenFromCollection: {},
   favorites: {},
+  visitedMuseums: {},
   userPaintings: [],
   view: 'list',
   listMode: 'grid',
@@ -13,6 +14,7 @@ const S = {
   collectionSort: 'rank',
   collectionSearch: '',
   collectionFilter: 'all',
+  museumsSearch: '',
   museumsMode: 'alpha',
   sort: 'rank',
   search: '',
@@ -28,6 +30,7 @@ const S = {
   expandedCollMuseums: new Set(),
   expandedCollArtists: new Set(),
   expandedCollMovements: new Set(),
+  expandedStatsMuseums: new Set(),
 };
 
 /* ── Add-painting modal state ────────────────────────────────────────────── */
@@ -177,7 +180,7 @@ function addSwipeDismiss(overlayEl) {
 function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
-      checked: S.checked, notes: S.notes, dateCollected: S.dateCollected, hiddenFromCollection: S.hiddenFromCollection, favorites: S.favorites, userPaintings: S.userPaintings,
+      checked: S.checked, notes: S.notes, dateCollected: S.dateCollected, hiddenFromCollection: S.hiddenFromCollection, favorites: S.favorites, visitedMuseums: S.visitedMuseums, userPaintings: S.userPaintings,
       view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionFilter: S.collectionFilter, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
     }));
   } catch (_) {}
@@ -199,7 +202,10 @@ function load() {
     S.expandedCollMuseums  = new Set();
     S.expandedCollArtists  = new Set();
     S.expandedCollMovements = new Set();
+    S.expandedStatsMuseums = new Set();
     if (S.view === 'stats' || S.view === 'settings') S.view = 'list';
+    if (S.scope === 'extended') S.scope = 'plus30';
+    if (S.museumsMode === 'continent') S.museumsMode = 'alpha';
   } catch (_) {}
 }
 
@@ -213,7 +219,18 @@ function todayISO() {
 function allPaintings() { return [...PAINTINGS, ...S.userPaintings]; }
 function scopedPaintings() {
   const all = allPaintings();
-  return S.scope === 'top100' ? all.filter(p => !p.museumOnly) : all;
+  if (S.scope === 'top100') return all.filter(p => !p.museumOnly);
+  if (S.scope === 'plus10' || S.scope === 'plus30') {
+    const limit = S.scope === 'plus10' ? 10 : 30;
+    const museumCounts = {};
+    return all.filter(p => {
+      if (!p.museumOnly) return true;
+      const m = p.location.museum;
+      museumCounts[m] = (museumCounts[m] || 0) + 1;
+      return museumCounts[m] <= limit;
+    });
+  }
+  return all;
 }
 function checkedCount(ids) { return ids.filter(id => S.checked[String(id)]).length; }
 function globalChecked() { return scopedPaintings().filter(p => S.checked[String(p.id)]).length; }
@@ -506,38 +523,48 @@ function buildFilterChips() {
 
 /* ── Museums View ───────────────────────────────────────────────────────── */
 function renderMuseumsView() {
-  const modeLabels = { alpha: 'By Museum', city: 'By City', country: 'By Country', continent: 'By Continent' };
   const toolbar = `<div id="toolbar">
-    <button class="toolbar-btn${S.museumsMode !== 'alpha' ? ' active' : ''}"
+    <div class="search-wrap">
+      <input id="museums-search-input" type="search" placeholder="Search museums, cities…"
+             value="${esc(S.museumsSearch)}" oninput="handleMuseumsSearch(this.value)">
+      <button class="search-clear" onclick="handleMuseumsSearch('')" title="Clear search" ${S.museumsSearch ? '' : 'hidden'}>✕</button>
+    </div>
+    <button class="toolbar-btn icon-only${S.museumsMode !== 'alpha' ? ' active' : ''}"
             onclick="openMuseumsViewDropdown(event,this)" title="Group by">
-      ${modeLabels[S.museumsMode]} ${ICONS.chevron}
+      ${ICONS.sort}
     </button>
   </div>`;
-  if (S.museumsMode === 'city')      return toolbar + renderMuseumsCity();
-  if (S.museumsMode === 'country')   return toolbar + renderMuseumsCountry();
-  if (S.museumsMode === 'continent') return toolbar + renderMuseumsContinent();
+  if (S.museumsMode === 'city')    return toolbar + renderMuseumsCity();
+  if (S.museumsMode === 'country') return toolbar + renderMuseumsCountry();
   return toolbar + renderMuseumsAlpha();
 }
 
 function renderMuseumBlock(name, paintings) {
-  const isOpen = S.expandedMuseums.has(name);
+  const isOpen   = S.expandedMuseums.has(name);
+  const isVisited = !!S.visitedMuseums[name];
   const mc  = checkedCount(paintings.map(p => p.id));
   const mt  = paintings.length;
   const pct = mt ? Math.round(mc / mt * 100) : 0;
+  const safeName = esc(name).replace(/'/g, "\\'");
   const body = isOpen ? `<div class="museum-body">
     <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
     ${paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
     <div class="add-painting-row">
-      <button class="add-painting-btn" onclick="openAddPainting('${esc(name).replace(/'/g, "\\'")}')">
+      <button class="add-painting-btn" onclick="openAddPainting('${safeName}')">
         <div class="add-painting-thumb">${ICONS.plus}</div>
         <span>Add painting</span>
       </button>
     </div>
   </div>` : '';
   return `<div class="museum-section" style="margin:0 0 6px">
-    <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${esc(name).replace(/'/g, "\\'")}')" style="padding:8px 12px">
-      <div class="museum-info"><div class="museum-name" style="font-size:.85rem">${esc(name)}</div></div>
+    <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${safeName}')" style="padding:8px 12px">
+      <div class="museum-info">
+        <div class="museum-name" style="font-size:.85rem">${esc(name)}${isVisited ? `<span class="museum-visited-check" title="Visited">${ICONS.check}</span>` : ''}</div>
+      </div>
       <div class="museum-counter"><div class="mc-nums">${mc}/${mt}</div><div class="mc-label">collected</div></div>
+      <button class="museum-visited-btn${isVisited ? ' visited' : ''}" onclick="toggleMuseumVisited(event,'${safeName}')" title="${isVisited ? 'Visited' : 'Mark as visited'}">
+        ${isVisited ? ICONS.check : ICONS.pin}
+      </button>
       <div class="museum-chevron">${ICONS.chevron}</div>
     </div>
     ${body}
@@ -554,27 +581,39 @@ function renderMuseumsAlpha() {
   const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
     'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
     'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
-  return Object.entries(museums).sort(([a], [b]) => a.localeCompare(b)).map(([name, m]) => {
-    const checked = checkedCount(m.paintings.map(x => x.id));
-    const total   = m.paintings.length;
-    const pct     = total ? Math.round(checked / total * 100) : 0;
-    const isOpen  = S.expandedMuseums.has(name);
-    const icon    = flagFor[m.country] || '🖼️';
+  const q = S.museumsSearch.toLowerCase();
+  let entries = Object.entries(museums).sort(([a], [b]) => a.localeCompare(b));
+  if (q) entries = entries.filter(([name, m]) =>
+    name.toLowerCase().includes(q) || m.city.toLowerCase().includes(q) || m.country.toLowerCase().includes(q));
+  if (!entries.length) return `<div class="empty-state"><div class="empty-icon">🏛️</div><p>No museums match your search.</p></div>`;
+  return entries.map(([name, m]) => {
+    const checked   = checkedCount(m.paintings.map(x => x.id));
+    const total     = m.paintings.length;
+    const pct       = total ? Math.round(checked / total * 100) : 0;
+    const isOpen    = S.expandedMuseums.has(name);
+    const isVisited = !!S.visitedMuseums[name];
+    const icon      = flagFor[m.country] || '🖼️';
+    const safeName  = esc(name).replace(/'/g, "\\'");
     const body = isOpen ? `<div class="museum-body">
       <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
       ${m.paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
       <div class="add-painting-row">
-        <button class="add-painting-btn" onclick="openAddPainting('${esc(name).replace(/'/g, "\\'")}')">
+        <button class="add-painting-btn" onclick="openAddPainting('${safeName}')">
           <div class="add-painting-thumb">${ICONS.plus}</div>
           <span>Add painting</span>
         </button>
       </div>
     </div>` : '';
     return `<div class="museum-section">
-      <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${esc(name).replace(/'/g, "\\'")}')" >
-        <div class="museum-icon">${icon}</div>
+      <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${safeName}')">
+        <div class="museum-icon-wrap">
+          <div class="museum-icon">${icon}</div>
+          <button class="museum-visited-badge${isVisited ? ' visited' : ''}"
+                  onclick="toggleMuseumVisited(event,'${safeName}')"
+                  title="${isVisited ? 'Visited' : 'Mark as visited'}">${isVisited ? ICONS.check : ''}</button>
+        </div>
         <div class="museum-info">
-          <div class="museum-name">${esc(name)}</div>
+          <div class="museum-name">${esc(name)}${isVisited ? `<span class="museum-visited-check" title="Visited">${ICONS.check}</span>` : ''}</div>
           <div class="museum-location">${esc(m.city)}, ${esc(m.country)}</div>
         </div>
         <div class="museum-counter"><div class="mc-nums">${checked}/${total}</div><div class="mc-label">collected</div></div>
@@ -593,7 +632,14 @@ function renderMuseumsCity() {
     if (!cities[city][museum]) cities[city][museum] = [];
     cities[city][museum].push(p);
   });
-  return Object.keys(cities).sort().map(city => {
+  const q = S.museumsSearch.toLowerCase();
+  let cityKeys = Object.keys(cities).sort();
+  if (q) cityKeys = cityKeys.filter(city => {
+    if (city.toLowerCase().includes(q)) return true;
+    return Object.keys(cities[city]).some(m => m.toLowerCase().includes(q));
+  });
+  if (!cityKeys.length) return `<div class="empty-state"><div class="empty-icon">🏛️</div><p>No museums match your search.</p></div>`;
+  return cityKeys.map(city => {
     const allPs   = Object.values(cities[city]).flat();
     const checked = checkedCount(allPs.map(p => p.id));
     const total   = allPs.length;
@@ -616,7 +662,17 @@ function renderMuseumsCountry() {
     if (!countries[country][city][museum]) countries[country][city][museum] = [];
     countries[country][city][museum].push(p);
   });
-  return Object.keys(countries).sort().map(country => {
+  const q = S.museumsSearch.toLowerCase();
+  let countryKeys = Object.keys(countries).sort();
+  if (q) countryKeys = countryKeys.filter(country => {
+    if (country.toLowerCase().includes(q)) return true;
+    return Object.keys(countries[country]).some(city => {
+      if (city.toLowerCase().includes(q)) return true;
+      return Object.keys(countries[country][city]).some(m => m.toLowerCase().includes(q));
+    });
+  });
+  if (!countryKeys.length) return `<div class="empty-state"><div class="empty-icon">🏛️</div><p>No museums match your search.</p></div>`;
+  return countryKeys.map(country => {
     const allPs   = Object.values(countries[country]).flatMap(c => Object.values(c).flat());
     const checked = checkedCount(allPs.map(p => p.id));
     const total   = allPs.length;
@@ -656,7 +712,20 @@ function renderMuseumsContinent() {
   });
   const flags = { Europe:'🌍', 'North America':'🌎', 'South America':'🌎', Asia:'🌏', Africa:'🌍', Oceania:'🌏' };
   const all = scopedPaintings();
-  return Object.keys(tree).sort().map(continent => {
+  const q = S.museumsSearch.toLowerCase();
+  let continentKeys = Object.keys(tree).sort();
+  if (q) continentKeys = continentKeys.filter(continent => {
+    if (continent.toLowerCase().includes(q)) return true;
+    return Object.keys(tree[continent]).some(country => {
+      if (country.toLowerCase().includes(q)) return true;
+      return Object.keys(tree[continent][country]).some(city => {
+        if (city.toLowerCase().includes(q)) return true;
+        return Object.keys(tree[continent][country][city]).some(m => m.toLowerCase().includes(q));
+      });
+    });
+  });
+  if (!continentKeys.length) return `<div class="empty-state"><div class="empty-icon">🏛️</div><p>No museums match your search.</p></div>`;
+  return continentKeys.map(continent => {
     const cOpen = S.expandedContinents.has(continent);
     const cPs   = all.filter(p => p.location.continent === continent);
     const cC    = checkedCount(cPs.map(p => p.id));
@@ -698,7 +767,9 @@ function renderStatsView() {
   const total = all.length;
   const done  = globalChecked();
   const pct   = total ? Math.round(done / total * 100) : 0;
+  const hasScope = S.scope === 'plus10' || S.scope === 'plus30';
 
+  // Continent progress
   const continents = [...new Set(all.map(p => p.location.continent))].sort();
   const contHtml = continents.map(c => {
     const cps = all.filter(p => p.location.continent === c);
@@ -710,21 +781,69 @@ function renderStatsView() {
     </div>`;
   }).join('');
 
-  const museums = {};
+  // Museums: build full data
+  const museumMap = {};
   all.forEach(p => {
     const k = p.location.museum;
-    if (!museums[k]) museums[k] = { total: 0, checked: 0 };
-    museums[k].total++;
-    if (S.checked[String(p.id)]) museums[k].checked++;
+    if (!museumMap[k]) museumMap[k] = { paintings: [], rankPaintings: [], museumOnly: [] };
+    museumMap[k].paintings.push(p);
+    if (!p.museumOnly) museumMap[k].rankPaintings.push(p);
+    else museumMap[k].museumOnly.push(p);
   });
-  const museumHtml = Object.entries(museums)
-    .sort(([,a],[,b]) => b.checked - a.checked || 0)
-    .slice(0, 8)
+
+  const totalMuseums  = Object.keys(museumMap).length;
+  const visitedCount  = Object.keys(museumMap).filter(k => S.visitedMuseums[k]).length;
+
+  const museumHtml = Object.entries(museumMap)
+    .sort(([,a],[,b]) => {
+      const ap = a.paintings.length ? checkedCount(a.paintings.map(p=>p.id)) / a.paintings.length : 0;
+      const bp = b.paintings.length ? checkedCount(b.paintings.map(p=>p.id)) / b.paintings.length : 0;
+      return bp - ap || a.paintings.length - b.paintings.length;
+    })
     .map(([name, m]) => {
-      const mp = m.total ? Math.round(m.checked/m.total*100) : 0;
-      return `<div class="continent-progress">
-        <div class="cp-header"><span class="cp-name" style="font-size:.8rem">${esc(name)}</span><span class="cp-stat">${m.checked}/${m.total}</span></div>
-        <div class="cp-bar"><div class="cp-fill" style="width:${mp}%"></div></div>
+      const mc      = checkedCount(m.paintings.map(p => p.id));
+      const mt      = m.paintings.length;
+      const mp      = mt ? Math.round(mc / mt * 100) : 0;
+      const isOpen  = S.expandedStatsMuseums.has(name);
+      const isVisited = !!S.visitedMuseums[name];
+      const safeName  = esc(name).replace(/'/g, "\\'");
+
+      let scopeBreakdown = '';
+      if (hasScope && m.rankPaintings.length && m.museumOnly.length) {
+        const rc = checkedCount(m.rankPaintings.map(p => p.id));
+        const oc = checkedCount(m.museumOnly.map(p => p.id));
+        const rp = m.rankPaintings.length ? Math.round(rc / m.rankPaintings.length * 100) : 0;
+        const op = m.museumOnly.length   ? Math.round(oc / m.museumOnly.length * 100)    : 0;
+        scopeBreakdown = `<div class="stats-scope-breakdown">
+          <div class="stats-scope-row">
+            <span class="stats-scope-label">Top 100</span>
+            <div class="cp-bar stats-scope-bar"><div class="cp-fill" style="width:${rp}%"></div></div>
+            <span class="stats-scope-stat">${rc}/${m.rankPaintings.length}</span>
+          </div>
+          <div class="stats-scope-row">
+            <span class="stats-scope-label">Museum-only</span>
+            <div class="cp-bar stats-scope-bar"><div class="cp-fill" style="width:${op}%"></div></div>
+            <span class="stats-scope-stat">${oc}/${m.museumOnly.length}</span>
+          </div>
+        </div>`;
+      }
+
+      const body = isOpen ? `<div class="stats-museum-body">
+        ${scopeBreakdown}
+        ${m.paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
+      </div>` : '';
+
+      return `<div class="stats-museum-item">
+        <div class="stats-museum-header" onclick="toggleStatsMuseum('${safeName}')">
+          <div class="stats-museum-name-wrap">
+            <span class="stats-museum-name">${esc(name)}</span>
+            ${isVisited ? `<span class="museum-visited-check" title="Visited">${ICONS.check}</span>` : ''}
+          </div>
+          <span class="stats-museum-stat">${mc}/${mt}</span>
+          <div class="stats-museum-chevron${isOpen ? ' open' : ''}">${ICONS.chevron}</div>
+        </div>
+        <div class="cp-bar stats-museum-bar"><div class="cp-fill" style="width:${mp}%"></div></div>
+        ${body}
       </div>`;
     }).join('');
 
@@ -733,14 +852,14 @@ function renderStatsView() {
       <button class="detail-back-btn" onclick="closeStats()">${ICONS.back} Back</button>
     </div>
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-num">${done}</div><div class="stat-label">Paintings Collected</div></div>
-      <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total in List</div></div>
+      <div class="stat-card"><div class="stat-num">${done}</div><div class="stat-label">Collected</div></div>
       <div class="stat-card"><div class="stat-num">${pct}%</div><div class="stat-label">Complete</div></div>
-      <div class="stat-card"><div class="stat-num">${Object.keys(museums).length}</div><div class="stat-label">Museums</div></div>
+      <div class="stat-card"><div class="stat-num">${visitedCount}/${totalMuseums}</div><div class="stat-label">Museums Visited</div></div>
+      <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">In Scope</div></div>
     </div>
     <div class="section-label">Progress by Continent</div>
     ${contHtml}
-    <div class="section-label">Top Museums</div>
+    <div class="section-label">Museums</div>
     ${museumHtml}
   `;
 }
@@ -1423,20 +1542,19 @@ function openMuseumsViewDropdown(e, btn) {
   closeDrop();
   if (wasOpen) return;
   const opts = [
-    { key: 'alpha',     label: 'By Museum' },
-    { key: 'city',      label: 'By City' },
-    { key: 'country',   label: 'By Country' },
-    { key: 'continent', label: 'By Continent' },
+    { key: 'alpha',   label: 'By Museum',  icon: ICONS.landmark },
+    { key: 'city',    label: 'By City',    icon: ICONS.pin },
+    { key: 'country', label: 'By Country', icon: ICONS.globe },
   ];
   const rect = btn.getBoundingClientRect();
   const drop = document.createElement('div');
   drop.className = 'toolbar-drop';
   drop.id = 'toolbar-drop';
-  drop.style.cssText = `top:${rect.bottom + 6}px;left:${rect.left}px`;
+  drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
   drop.innerHTML = opts.map(o =>
     `<button class="drop-item${S.museumsMode === o.key ? ' active' : ''}"
              onclick="setMuseumsMode('${o.key}');closeDrop()">
-       ${S.museumsMode === o.key ? ICONS.check : '<span class="drop-spacer"></span>'} ${o.label}
+       ${o.icon}<span style="flex:1">${o.label}</span>${S.museumsMode === o.key ? ICONS.check : ''}
      </button>`
   ).join('');
   document.body.appendChild(drop);
@@ -1553,6 +1671,13 @@ function handleCollectionSearch(val) {
   if (input) { input.focus(); input.setSelectionRange(val.length, val.length); }
 }
 
+function handleMuseumsSearch(val) {
+  S.museumsSearch = val;
+  render();
+  const input = document.getElementById('museums-search-input');
+  if (input) { input.focus(); input.setSelectionRange(val.length, val.length); }
+}
+
 function clearFilter(level) {
   if (level === 'museum')    S.filter.museum = null;
   if (level === 'city')      { S.filter.city = null; S.filter.museum = null; }
@@ -1565,6 +1690,20 @@ function clearFilter(level) {
 function toggleMuseum(name) {
   if (S.expandedMuseums.has(name)) S.expandedMuseums.delete(name);
   else S.expandedMuseums.add(name);
+  render();
+}
+
+function toggleMuseumVisited(e, name) {
+  e.stopPropagation();
+  if (S.visitedMuseums[name]) delete S.visitedMuseums[name];
+  else S.visitedMuseums[name] = true;
+  save();
+  render();
+}
+
+function toggleStatsMuseum(name) {
+  if (S.expandedStatsMuseums.has(name)) S.expandedStatsMuseums.delete(name);
+  else S.expandedStatsMuseums.add(name);
   render();
 }
 
@@ -1952,8 +2091,9 @@ function renderSettingsView() {
             <div class="settings-row-sub">Which paintings appear in the list and museums tabs</div>
           </div>
           <div class="settings-toggle-group">
-            <button class="settings-toggle-btn${S.scope === 'top100'   ? ' active' : ''}" onclick="setScope('top100')">Top 100</button>
-            <button class="settings-toggle-btn${S.scope === 'extended' ? ' active' : ''}" onclick="setScope('extended')">All Famous</button>
+            <button class="settings-toggle-btn${S.scope === 'top100'  ? ' active' : ''}" onclick="setScope('top100')">Top 100</button>
+            <button class="settings-toggle-btn${S.scope === 'plus10'  ? ' active' : ''}" onclick="setScope('plus10')">+ 10</button>
+            <button class="settings-toggle-btn${S.scope === 'plus30'  ? ' active' : ''}" onclick="setScope('plus30')">+ 30</button>
           </div>
         </div>
       </div>

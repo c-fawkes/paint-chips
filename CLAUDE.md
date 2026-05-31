@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Adding paintings
+
+**Always use `/add-paintings` when asked to add paintings to the app.** Never add paintings to `data.js` ad-hoc. The slash command is at `.claude/commands/add-paintings.md` and enforces the correct workflow: reading current state, researching images, adding new artists and portraits, and syntax-checking before reporting.
+
 ## Git
 
 **Never commit or push unless explicitly told to.** Make changes, describe them, and stop. Do not run `git commit` or `git push` until the user says so (e.g. "commit", "push", "commit and push").
