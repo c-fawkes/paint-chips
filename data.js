@@ -3628,6 +3628,307 @@ const PAINTINGS = [
     movement: "Post-Impressionism",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Vincent_van_Gogh_-_The_Church_in_Auvers-sur-Oise%2C_View_from_the_Chevet_-_Google_Art_Project.jpg/330px-Vincent_van_Gogh_-_The_Church_in_Auvers-sur-Oise%2C_View_from_the_Chevet_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
+  },
+  // ── MUSEO NACIONAL CENTRO DE ARTE REINA SOFÍA — museum-only paintings ───
+  {
+    id: 292, rank: null, museumOnly: true,
+    title: "House with Palm Tree",
+    artist: "Joan Miró",
+    year: "1918",
+    medium: "Oil on canvas",
+    dimensions: "65 × 73 cm",
+    description: "Painted during Miró's recovery from typhoid at his family farm in Mont-roig, this early canvas absorbs Cézanne and Fauvism while remaining rooted in careful observation of the Catalan landscape. The compressed space, flat planes of color, and intensely observed botanical detail give it the feel of a medieval tapestry rather than a plein-air study. It marks the start of Miró's lifelong attachment to his homeland as the central subject of his art.",
+    movement: "Cubism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Joan_Mir%C3%B3%2C_1918%2C_La_casa_de_la_palmera_(House_with_Palm_Tree)%2C_oil_on_canvas%2C_65_x_73_cm%2C_Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa.jpg/330px-Joan_Mir%C3%B3%2C_1918%2C_La_casa_de_la_palmera_(House_with_Palm_Tree)%2C_oil_on_canvas%2C_65_x_73_cm%2C_Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 293, rank: null, museumOnly: true,
+    title: "Snail, Woman, Flower, Star",
+    artist: "Joan Miró",
+    year: "1934",
+    medium: "Oil on canvas",
+    dimensions: "195 × 172 cm",
+    description: "One of Miró's celebrated 'wild paintings' of the mid-1930s, conceived as a model for a tapestry and commissioned by collector Marie Cuttoli, this large canvas emerged from Miró's growing anxiety about fascism in Spain. The organic forms that share space with the lyrical words of the title carry an undercurrent of biological menace. Despite associations with automatism, Miró planned every element through meticulous preparatory sketches.",
+    movement: "Surrealism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 294, rank: null, museumOnly: true,
+    title: "Woman, Bird, Star (Homage to Pablo Picasso)",
+    artist: "Joan Miró",
+    year: "1966–1973",
+    medium: "Oil on canvas",
+    dimensions: "170 × 245 cm",
+    description: "Miró began this large canvas in 1966 and finished it on the day Picasso died in April 1973, immediately dedicating it to his lifelong friend. The woman, bird, and star — the three recurring symbols of Miró's late work — are rendered in primary colors on a field of flat black, asserting life against loss with deliberate simplicity. The Reina Sofía acquired it in 1988.",
+    movement: "Surrealism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 295, rank: null, museumOnly: true,
+    title: "Violin and Guitar",
+    artist: "Juan Gris",
+    year: "1913",
+    medium: "Oil on canvas",
+    dimensions: "81 × 60 cm",
+    description: "One of Gris's most polished early Cubist canvases, this work translates the Analytic Cubism of Braque and Picasso into a more formally precise and coloristically structured language. Gris arranges the fragments of violin and guitar along a diagonal axis that gives the composition clarity even as the instruments dissolve into interlocking planes. It was exhibited at the Section d'Or in Paris where Gris first established his reputation alongside his older contemporaries.",
+    movement: "Cubism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Juan_Gris_-_Violon_et_guitare_-_Google_Art_Project.jpg/330px-Juan_Gris_-_Violon_et_guitare_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 296, rank: null, museumOnly: true,
+    title: "The Anisette Bottle",
+    artist: "Juan Gris",
+    year: "1914",
+    medium: "Oil and papier collé on canvas",
+    dimensions: "46 × 38 cm",
+    description: "Gris chooses as his subject a bottle of Anís del Mono — the distinctively labeled Spanish anise liqueur — and uses papier collé alongside painted passages to embed the work's geography into its surface. The label's text and the pasted newspaper fragments become as compositionally significant as the bottle's form. It is one of the most self-consciously Spanish of his Parisian canvases, a small but exact statement of cultural identity.",
+    movement: "Cubism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Juan_Gris_-_La_bouteille_d'anis_-_Google_Art_Project.jpg/330px-Juan_Gris_-_La_bouteille_d'anis_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 297, rank: null, museumOnly: true,
+    title: "Coffee Grinder, Cup and Glass on a Table",
+    artist: "Juan Gris",
+    year: "1915",
+    medium: "Oil on canvas",
+    dimensions: "29 × 46 cm",
+    description: "Gris pares the Cubist still life down to its essentials: a coffee grinder, cup, and glass arranged on a tilted tabletop that simultaneously recedes into depth and flattens into pattern. The cool grey and ochre palette is typical of his Synthetic Cubist period, where he no longer fractured objects but reassembled them from independent color planes. At barely larger than a sheet of paper, it is Cubism operating at the scale of a meditation.",
+    movement: "Cubism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Juan_Gris_-_Moulin_%C3%A0_caf%C3%A9%2C_tasse_et_verre_sur_une_table_-_Google_Art_Project.jpg/330px-Juan_Gris_-_Moulin_%C3%A0_caf%C3%A9%2C_tasse_et_verre_sur_une_table_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 298, rank: null, museumOnly: true,
+    title: "Coffee Mill",
+    artist: "Juan Gris",
+    year: "1920",
+    medium: "Oil on canvas",
+    dimensions: "60 × 81 cm",
+    description: "By 1920 Gris had moved into a more lyrical phase of Cubism, using softer curves and richer color to animate his familiar cast of café objects. The coffee mill becomes a quasi-portrait: stable, dignified, occupying the canvas with a presence out of proportion to its domestic insignificance. Like Chardin's still lifes before him, Gris makes the ordinary monumental through the seriousness of his attention.",
+    movement: "Cubism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Juan_Gris_-_Le_moulin_%C3%A0_caf%C3%A9_-_Google_Art_Project.jpg/330px-Juan_Gris_-_Le_moulin_%C3%A0_caf%C3%A9_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 299, rank: null, museumOnly: true,
+    title: "Open Window",
+    artist: "Juan Gris",
+    year: "1921",
+    medium: "Oil on canvas",
+    dimensions: "66 × 100 cm",
+    description: "Gris uses a window to organize two spatial worlds — interior and exterior — into a single flat surface of rhyming color planes, with the view through the glass introducing sky, sea, and architectural fragments that mirror the objects on the windowsill. Apollinaire's praise for Gris as 'the most rigorous' of the Cubists finds its justification in the structural logic of this painting. It is among the finest of his post-1920 works.",
+    movement: "Cubism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Juan_Gris_-_La_fen%C3%AAtre_ouverte_-_Google_Art_Project.jpg/330px-Juan_Gris_-_La_fen%C3%AAtre_ouverte_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 300, rank: null, museumOnly: true,
+    title: "Carafe and Book",
+    artist: "Juan Gris",
+    year: "1920",
+    medium: "Oil on canvas",
+    dimensions: "81.3 × 54 cm",
+    description: "A carafe of water and an open book — the most cerebral of Gris's domestic companions — are arranged into an austere vertical composition that reads as much as architecture as still life. The tipped table plane and the carafe's translucency allow Gris to showcase his approach to depicting transparency through color logic rather than tonal gradation. This is among the major works Gris kept to maintain a presence in his homeland.",
+    movement: "Cubism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Juan_Gris%2C_1910-1927_-_Carafe_et_livre_-_Google_Art_Project.jpg/330px-Juan_Gris%2C_1910-1927_-_Carafe_et_livre_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 301, rank: null, museumOnly: true,
+    title: "Young Woman at a Window",
+    artist: "Salvador Dalí",
+    year: "1925",
+    medium: "Oil on cardboard",
+    dimensions: "105 × 74.5 cm",
+    description: "Dalí's sister Ana María, seen from behind at the window of the family home in Cadaqués overlooking the bay, is the most intimate image he ever made — before Gala arrived and his sister was displaced from his life. The painting belongs to his formative realist phase, influenced by Vermeer, and predates Surrealism entirely. When Dalí later insulted Ana María publicly, she never forgave him; this painting became a memorial to the relationship that shaped his early art.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Young_Woman_at_a_Window.jpg/330px-Young_Woman_at_a_Window.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 302, rank: null, museumOnly: true,
+    title: "The Invisible Man",
+    artist: "Salvador Dalí",
+    year: "1929–1932",
+    medium: "Oil on canvas",
+    dimensions: "140 × 81 cm",
+    description: "Begun the year Dalí first encountered Surrealism in Paris, this painting uses the double-image technique he would make his signature: a seated human figure is simultaneously readable as the architectural environment around it — clouds become a head, a body is assembled from arches and columns. The visible-invisible figure drew on Arcimboldo's composite heads and ancient Egyptian art. It was one of his first canvases to demonstrate the paranoiac-critical method he later theorized.",
+    movement: "Surrealism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/The_Invisible_Man.jpg/330px-The_Invisible_Man.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 303, rank: null, museumOnly: true,
+    title: "The Enigma of Hitler",
+    artist: "Salvador Dalí",
+    year: "c. 1939",
+    medium: "Oil on canvas",
+    dimensions: "51.2 × 79.3 cm",
+    description: "Painted around the time of Dalí's expulsion from the Surrealist movement, this canvas depicts a dream of Hitler as a landscape of disconnected symbols: a cut telephone cord, a bat, a bowl of beans, and a small portrait photo melting into the void. Dalí related having recurring dreams about Hitler, which he interpreted as political premonitions; the painting was first shown in New York in 1939 at $1,750 but found no buyer.",
+    movement: "Surrealism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 304, rank: null, museumOnly: true,
+    title: "Dead Birds",
+    artist: "Pablo Picasso",
+    year: "1912",
+    medium: "Oil on canvas",
+    dimensions: "46 × 65 cm",
+    description: "Two dead pigeons lie on a tabletop in this sober Cubist still life — a subject Picasso returned to throughout his career, connecting the humble genre of dead-game painting to something more meditative. By 1912 Picasso was deep in Analytic Cubism, and the birds dissolve into faceted planes that make identification part of the visual work. The Reina Sofía holds it as a foundational example of Picasso's pre-Synthetic period.",
+    movement: "Cubism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 305, rank: null, museumOnly: true,
+    title: "Head of a Young Woman",
+    artist: "Pablo Picasso",
+    year: "c. 1907",
+    medium: "Oil on canvas",
+    dimensions: "40 × 33 cm",
+    description: "This transitional work sits on the threshold of Cubism, the face flattened into a mask-like reduction that owes a clear debt to the Iberian sculpture and African art Picasso was studying at the Trocadéro. The economy of means — a few flat planes of ochre and grey to suggest features — prefigures the radical simplification of Les Demoiselles d'Avignon, which Picasso was developing simultaneously. It is among the earliest examples of the new visual language he was constructing.",
+    movement: "Cubism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 306, rank: null, museumOnly: true,
+    title: "Garrote vil",
+    artist: "Ramon Casas",
+    year: "1894",
+    medium: "Oil on canvas",
+    dimensions: "127 × 162.5 cm",
+    description: "Casas witnessed the execution of Aniceto Peinador by garrotte in Barcelona in 1893 and painted this unflinching account the following year. A priest administers last rites on the left while the executioner tightens the iron collar, the crowd behind them an anonymous grey mass. When exhibited at the National Exhibition of Fine Arts in 1895 it won third prize and was purchased by the state, cementing Casas's reputation as the leading voice of Spanish Social Realism.",
+    movement: "Realism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Garrote_vil%2C_de_Ram%C3%B3n_Casas.jpg/330px-Garrote_vil%2C_de_Ram%C3%B3n_Casas.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 307, rank: null, museumOnly: true,
+    title: "Interior at Outdoors",
+    artist: "Ramon Casas",
+    year: "1892",
+    medium: "Oil on canvas",
+    dimensions: "160 × 119 cm",
+    description: "A young woman sits reading in the dappled shade of an outdoor café or garden, absorbed and oblivious to the painter's gaze — a scene of modern bourgeois leisure rendered with the loose, light-filled brushwork Casas absorbed during his years in Paris. His mastery of Impressionist technique in a Spanish key, and his sensitivity to women in the new public spaces of urban modernity, established him as the leading Catalan Impressionist.",
+    movement: "Impressionism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Interior_at_Outdoors_by_Ramon_Casas_i_Carbo%2C_1892_AD%2C_oil_on_canvas_-_Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_-_DSC08746.JPG/330px-Interior_at_Outdoors_by_Ramon_Casas_i_Carbo%2C_1892_AD%2C_oil_on_canvas_-_Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_-_DSC08746.JPG",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 308, rank: null, museumOnly: true,
+    title: "Portrait of Tristan Tzara",
+    artist: "Robert Delaunay",
+    year: "1923",
+    medium: "Oil on paperboard",
+    dimensions: "104.5 × 75 cm",
+    description: "The Dada poet Tristan Tzara sits in three-quarter view, his monocle glinting, a vivid orange scarf — made by Sonia Delaunay using simultaneist color theory — dominating the composition. Delaunay uses the scarf as a vehicle for his Orphist color experiments while keeping the portrait's psychological charge intact. The Delaunays and Tzara were close friends within the same avant-garde Paris circle, and this double portrait of sitter and textile is also a document of that friendship.",
+    movement: "Modernism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Retrato_de_Tristan_Tzara_(Robert_Delaunay).jpg/330px-Retrato_de_Tristan_Tzara_(Robert_Delaunay).jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 309, rank: null, museumOnly: true,
+    title: "Totalizer",
+    artist: "Francis Picabia",
+    year: "1922",
+    medium: "Ink and watercolor on paper",
+    dimensions: "55 × 73 cm",
+    description: "After his Dada period, Picabia pivoted to mechanomorphic abstraction — this watercolor uses overlapping circles and arcs to suggest a betting or timing machine while draining the mechanism of any practical meaning. Form is evacuated of function; beauty is divorced from use. Exhibited at the Dalmau gallery in Barcelona in 1922, it helped introduce geometric abstraction to Spain.",
+    movement: "Modernism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 310, rank: null, museumOnly: true,
+    title: "Woman with a Fan",
+    artist: "María Blanchard",
+    year: "1916",
+    medium: "Oil on canvas",
+    dimensions: "100 × 72 cm",
+    description: "Blanchard assembles the figure of a woman holding a fan from the overlapping geometric planes of Synthetic Cubism, but inflects the style with warmth and color saturation rarely found in Picasso or Braque. The fan becomes a visual counterpart to the Cubist faceting — both are artifacts of the same impulse to break and rearrange a unified surface. Blanchard was close friends with Juan Gris and Diego Rivera in Paris; her work deserves wider recognition.",
+    movement: "Cubism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Woman_with_a_Fan%2C_by_Maria_Blanchard%2C_1916%2C_oil_on_canvas_-_Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_-_Madrid%2C_Spain_-_DSC08510.JPG/330px-Woman_with_a_Fan%2C_by_Maria_Blanchard%2C_1916%2C_oil_on_canvas_-_Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa_-_Madrid%2C_Spain_-_DSC08510.JPG",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 311, rank: null, museumOnly: true,
+    title: "Woman with Guitar",
+    artist: "María Blanchard",
+    year: "1917",
+    medium: "Oil on canvas",
+    dimensions: "100 × 72 cm",
+    description: "The guitar was the emblematic Cubist instrument — analyzed, fractured, and reassembled by Braque and Picasso — and Blanchard takes up the motif in a canvas more decorative and emotionally warm than her male contemporaries' treatments. The figure and instrument are nearly fused, their geometry continuous, suggesting that for Blanchard the human body was as available to Cubist analysis as any object. Her work challenges the assumption that Cubism was exclusively a cold, masculine project.",
+    movement: "Cubism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 312, rank: null, museumOnly: true,
+    title: "The Gathering at the Café de Pombo",
+    artist: "José Gutiérrez Solana",
+    year: "1920",
+    medium: "Oil on canvas",
+    dimensions: "162 × 211 cm",
+    description: "Solana's group portrait of the regular Wednesday tertulia at Madrid's Café de Pombo is the most iconic image of early 20th-century Spanish intellectual life — ten writers, poets, and artists rendered with raw, unflinching directness. The dark palette and hard staring faces recall Goya's group portraits more than the light-filled canvases of Modernism. Solana was himself a member of the tertulia, and his presence in the painting is both documentary and self-mythologizing.",
+    movement: "Expressionism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 313, rank: null, museumOnly: true,
+    title: "Portrait of Sonia Klamery",
+    artist: "Hermenegildo Anglada Camarasa",
+    year: "1913",
+    medium: "Oil on canvas",
+    dimensions: "220 × 150 cm",
+    description: "Anglada Camarasa's monumental portrait of a young socialite showcases the decorative intensity that made him one of the most celebrated society painters in early 20th-century Europe. The canvas blazes with jeweled color — influenced by the Vienna Secession and Klimt — and the figure is nearly overwhelmed by the ornamental richness of setting and costume. His work bridges Spanish Modernisme and international Art Nouveau at their most opulent.",
+    movement: "Art Nouveau",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 314, rank: null, museumOnly: true,
+    title: "A World",
+    artist: "Ángeles Santos",
+    year: "1929",
+    medium: "Oil on canvas",
+    dimensions: "300 × 300 cm",
+    description: "Painted at age 17, this enormous three-by-three-metre canvas presents a dreamlike cosmic panorama — planets, animals, figures, and mythological scenes packed into a visionary theatre — that astonished viewers at the 1929 Ibero-American Exposition. Santos had no formal training and painted from a state she described as 'fever or ecstasy.' It resists easy classification: too literal for Surrealism and too strange for realism, it remains one of the most astonishing debuts in the history of Spanish art.",
+    movement: "Surrealism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 315, rank: null, museumOnly: true,
+    title: "Lying Figure",
+    artist: "Francis Bacon",
+    year: "1959",
+    medium: "Oil on canvas",
+    dimensions: "198 × 142 cm",
+    description: "A nude figure writhes on a bed in a compressed, low-ceilinged room — space and body equally distorted, equally under pressure. Bacon painted his lying figures throughout the late 1950s as studies in vulnerability, the body unguarded in sleep or pain, stripped of the social armor of upright posture. The smeared flesh tones and the isolation of the figure on an otherwise bare canvas are characteristic of his method of building form through erasure as much as application.",
+    movement: "Expressionism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+  {
+    id: 316, rank: null, museumOnly: true,
+    title: "Garrote",
+    artist: "Francisco Goya",
+    year: "c. 1778–1780",
+    medium: "Oil on canvas",
+    dimensions: "43 × 32 cm",
+    description: "Goya's small oil of an execution by garrotte predates Ramon Casas's monumental 1894 treatment of the same subject by more than a century, making it one of the earliest Spanish paintings to address state violence with unflinching directness. The bound prisoner and the assembled onlookers are rendered in loose, rapid brushwork typical of Goya's sketch-like preparatory studies. The Reina Sofía's collection spans from Goya to the present day as an arc of Spanish art history.",
+    movement: "Romanticism",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   }
 ];
 
@@ -4173,6 +4474,34 @@ const ARTISTS = {
   "Gustave Courbet": {
     born: "1819", died: "1877", nationality: "French",
     bio: "Courbet founded the Realist movement with the aggressive conviction that painting should show only what the painter could directly observe — no allegory, no mythology, no idealization. He painted peasants, workers, and the landscapes of his native Franche-Comté on a scale previously reserved for history painting, and exhibited his rejected works in his own pavilion outside the 1855 Exposition Universelle, inventing the model of the independent artist exhibition. A committed socialist, he participated in the Paris Commune of 1871 and died in Swiss exile. His influence on Manet, the Impressionists, and every subsequent Realist movement is immeasurable."
+  },
+  "Ramon Casas": {
+    born: "1866", died: "1932", nationality: "Spanish (Catalan)",
+    bio: "Ramon Casas i Carbó was the leading painter of Catalan Modernisme and a central figure of the circle at the Quatre Gats café in Barcelona, where the young Picasso also exhibited. He spent formative years in Paris absorbing Impressionism and the social realism of Toulouse-Lautrec, bringing that synthesis back to Spain in portraits and confrontational paintings of public executions and workers' demonstrations. His poster work made him the dominant graphic artist of early-20th-century Catalonia."
+  },
+  "Robert Delaunay": {
+    born: "1885", died: "1941", nationality: "French",
+    bio: "Delaunay developed Orphism — a lyrical, color-based variant of Cubism — through his research into the simultaneous contrast of colors derived from Chevreul's optical theories. Working alongside his wife Sonia Delaunay, he transformed Cubist structure into pure chromatic rhythm. His Eiffel Tower series and the Windows compositions dismantled pictorial space through color rather than line, influencing Klee, Macke, and the entire development of abstract painting."
+  },
+  "Francis Picabia": {
+    born: "1879", died: "1953", nationality: "French",
+    bio: "Picabia was the most restlessly protean artist of the early avant-garde, moving through Impressionism, Cubism, Dada, mechanomorphism, and Surrealism while systematically refusing any single stylistic identity. His 'machine' paintings of the 1910s used mechanical diagrams as ironic metaphors for human relationships and desires, and his Dada activities were as much artistic statements as the canvases themselves. He collaborated with Duchamp, Apollinaire, and Breton."
+  },
+  "María Blanchard": {
+    born: "1881", died: "1932", nationality: "Spanish",
+    bio: "Born with a physical disability that shaped her outsider perspective, Blanchard studied in Madrid before moving to Paris, where she became an intimate of the Cubist circle and one of the most accomplished Cubist painters of any nationality. Her work brings a warmth of color and emotional directness to the Cubist vocabulary that distinguishes it from the cooler analytical mode of Picasso and Braque. She was close friends with Juan Gris and Diego Rivera; her reputation has grown considerably since her death."
+  },
+  "José Gutiérrez Solana": {
+    born: "1886", died: "1945", nationality: "Spanish",
+    bio: "Solana was the most singular Spanish painter of his generation — a dark, independent visionary whose Expressionist canvases of Madrid's underworld, carnival, and death rituals recall Goya without imitating him. He was also a writer whose books about Spanish popular culture provide an essential literary complement to his painted world. His rejection of fashionable modernist movements made him simultaneously marginal and irreplaceable."
+  },
+  "Hermenegildo Anglada Camarasa": {
+    born: "1871", died: "1959", nationality: "Spanish (Catalan)",
+    bio: "Anglada Camarasa was the most celebrated Spanish society painter of the Belle Époque, acclaimed in Paris for his dazzling nocturnal scenes and decorative portraits that fused Symbolism, Art Nouveau, and Fauvist color intensity. He spent much of his career between Paris and Mallorca, where he eventually settled. His paintings of flamenco dancers, cabaret performers, and elegant socialites are among the most opulent decorative paintings produced by any Spanish artist."
+  },
+  "Ángeles Santos": {
+    born: "1911", died: "2013", nationality: "Spanish",
+    bio: "Ángeles Santos painted her monumental vision 'A World' at age 17, without formal training, in a state she described as creative fever — and was immediately befriended by Federico García Lorca and examined by psychiatrists debating whether her art was genius or illness. She stopped painting for decades after marrying, only returning to her art in the 1970s. Her early masterpiece remains one of the most astonishing debuts in the history of Spanish art."
   }
 };
 
