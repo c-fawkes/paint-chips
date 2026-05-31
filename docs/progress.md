@@ -643,6 +643,10 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Annotated `CLAUDE.md` with `> Updated:` notes on every section that describes the original build state — data.js contents, state model fields, four-tabs table, painting object shape, and service worker strategy — all now reflect current reality
 - Annotated `docs/progress.md` App Overview with similar `> Updated:` callouts on the app description, data layer, persistence, nav bar, museums tab, stats view, and settings descriptions
 
+### Sort dropdown icons updated to Lucide
+- Replaced `ICONS.museum` (custom building) with Lucide `landmark` (columns + triangular roof) — now matches the icon already used in the Museums groupby dropdown
+- Replaced `ICONS.palette` (custom dot-circle) with Lucide `palette` (actual artist's palette shape with thumb hole and paint dots)
+
 ### Reina Sofía museum-only paintings
 - Added 25 museum-only paintings (IDs 292–316) for Museo Nacional Centro de Arte Reina Sofía: House with Palm Tree, Snail Woman Flower Star, Woman Bird Star (Homage to Picasso) by Miró; Violin and Guitar, The Anisette Bottle, Coffee Grinder Cup and Glass, Coffee Mill, Open Window, Carafe and Book by Juan Gris; Young Woman at a Window, The Invisible Man, The Enigma of Hitler by Dalí; Dead Birds and Head of a Young Woman by Picasso; Garrote vil and Interior at Outdoors by Ramon Casas; Portrait of Tristan Tzara by Delaunay; Totalizer by Picabia; Woman with a Fan and Woman with Guitar by María Blanchard; The Gathering at the Café de Pombo by Solana; Portrait of Sonia Klamery by Anglada Camarasa; A World by Ángeles Santos; Lying Figure by Francis Bacon; Garrote by Goya
 - Added 8 new artists to ARTISTS: Ramon Casas, Robert Delaunay, Francis Picabia, María Blanchard, José Gutiérrez Solana, Hermenegildo Anglada Camarasa, Ángeles Santos — all with full bios and nationality/dates
