@@ -2699,6 +2699,248 @@ const PAINTINGS = [
     movement: "Baroque",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/The_Martyrdom_of_Saint_Matthew-Caravaggio_%28c._1599-1600%29.jpg/330px-The_Martyrdom_of_Saint_Matthew-Caravaggio_%28c._1599-1600%29.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
+  },
+
+  // ── Museo del Prado additions ─────────────────────────────────────────────
+  {
+    id: 215, rank: null, museumOnly: true,
+    title: "The Nobleman with his Hand on his Chest",
+    artist: "El Greco",
+    year: "c. 1580",
+    medium: "Oil on canvas",
+    dimensions: "81.8 × 65.8 cm",
+    description: "The most celebrated portrait in Spanish art, this anonymous nobleman presses his right hand to his chest in a gesture of solemn oath or loyalty — a convention of the Spanish aristocracy. The stark black doublet and white ruff lend the figure a severe, almost otherworldly dignity. El Greco's elongated form and luminous treatment of the collar anticipate the psychological intensity of modern portraiture.",
+    movement: "Mannerism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/El_caballero_de_la_mano_en_el_pecho.jpg/330px-El_caballero_de_la_mano_en_el_pecho.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 216, rank: null, museumOnly: true,
+    title: "The Adoration of the Shepherds",
+    artist: "El Greco",
+    year: "1612–14",
+    medium: "Oil on canvas",
+    dimensions: "319 × 180 cm",
+    description: "El Greco's final masterpiece, painted for his own tomb chapel in Toledo and completed in the last years of his life. The composition spirals upward in a characteristic flame-like surge — earthly shepherds below, angelic host above — bathed in a cold, ecstatic light that seems to emanate from the Christ child himself. It is the fullest expression of his idiosyncratic Byzantine-Mannerist vision.",
+    movement: "Mannerism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/The_Adoration_of_the_Shepherds%2C_El_Greco.jpg/330px-The_Adoration_of_the_Shepherds%2C_El_Greco.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 217, rank: null, museumOnly: true,
+    title: "The Holy Trinity",
+    artist: "El Greco",
+    year: "1577–79",
+    medium: "Oil on canvas",
+    dimensions: "300 × 179 cm",
+    description: "Painted for the church of Santo Domingo el Antiguo in Toledo, this was one of El Greco's first major commissions after arriving in Spain. God the Father supports the dead Christ while angels weep around them — a composition derived from Dürer's print but utterly transformed by El Greco's Byzantine sense of gold, elongation, and spiritual urgency. It announced a new voice in Spanish painting.",
+    movement: "Mannerism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/La_Trinidad_%28El_Greco%2C_1577-1579%29.jpg/330px-La_Trinidad_%28El_Greco%2C_1577-1579%29.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 218, rank: null, museumOnly: true,
+    title: "Charles V at Mühlberg",
+    artist: "Titian",
+    year: "1548",
+    medium: "Oil on canvas",
+    dimensions: "335 × 283 cm",
+    description: "The greatest equestrian portrait of the Renaissance, painted to commemorate Charles V's victory over the Protestant Schmalkaldic League. Titian shows the Holy Roman Emperor in black armor, lance in hand, at dusk — invoking the Christian knight of legend. The work defined the conventions of royal equestrian portraiture for two centuries, directly influencing Velázquez and then Van Dyck.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Carlos_V_en_M%C3%BChlberg%2C_by_Titian%2C_from_Prado_in_Google_Earth.jpg/330px-Carlos_V_en_M%C3%BChlberg%2C_by_Titian%2C_from_Prado_in_Google_Earth.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 219, rank: null, museumOnly: true,
+    title: "Bacchanal of the Andrians",
+    artist: "Titian",
+    year: "1523–26",
+    medium: "Oil on canvas",
+    dimensions: "175 × 193 cm",
+    description: "The mythical inhabitants of the island of Andros celebrate a river of wine described in an ancient text by Philostratus. Titian's figures revel in a golden afternoon light — reclining, dancing, drinking — with a nude in the right foreground often compared to the Louvre's Sleeping Ariadne. Painted for the Este court in Ferrara, it is among the supreme achievements of Venetian pagan mythology painting.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Bacanal_de_los_andrios.jpg/330px-Bacanal_de_los_andrios.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 220, rank: null, museumOnly: true,
+    title: "Venus and Adonis",
+    artist: "Titian",
+    year: "1553–54",
+    medium: "Oil on canvas",
+    dimensions: "186 × 207 cm",
+    description: "The goddess of love clings desperately to Adonis as he tears himself away to hunt — unaware she knows he will die. Titian chose to show Venus from behind, a radical compositional choice that turns an erotic spectacle into a meditation on futile love. The Prado holds the prime autograph version of a composition Titian replicated many times across Europe.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Venus_and_Adonis_by_Titian.jpg/330px-Venus_and_Adonis_by_Titian.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 221, rank: null, museumOnly: true,
+    title: "The Three Graces",
+    artist: "Peter Paul Rubens",
+    year: "c. 1635",
+    medium: "Oil on panel",
+    dimensions: "221 × 181 cm",
+    description: "Rubens' late masterpiece of the nude — three women, identified as the Charites of Greek mythology, embrace in a woodland clearing. With extraordinary intimacy, one of the figures has the features of his young second wife, Hélène Fourment. The painting is Rubens at his most private: painterly brushwork, warm flesh, and a lyrical ease that places it beyond his large allegorical productions.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/The_Three_Graces%2C_by_Peter_Paul_Rubens%2C_from_Prado_in_Google_Earth.jpg/330px-The_Three_Graces%2C_by_Peter_Paul_Rubens%2C_from_Prado_in_Google_Earth.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 222, rank: null, museumOnly: true,
+    title: "Self-Portrait",
+    artist: "Albrecht Dürer",
+    year: "1498",
+    medium: "Oil on panel",
+    dimensions: "52 × 41 cm",
+    description: "A 26-year-old Dürer presents himself as a fashionable young gentleman — Italian doublet, braided hair, gloves in hand — staring directly at the viewer with calm, almost arrogant confidence. The open window behind him frames an Alpine landscape. Dürer was the first Northern European artist to produce a systematic series of self-portraits, and this is his most famous.",
+    movement: "Northern Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Selbstportr%C3%A4t%2C_by_Albrecht_D%C3%BCrer%2C_from_Prado_in_Google_Earth.jpg/330px-Selbstportr%C3%A4t%2C_by_Albrecht_D%C3%BCrer%2C_from_Prado_in_Google_Earth.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 223, rank: null, museumOnly: true,
+    title: "Adam and Eve",
+    artist: "Albrecht Dürer",
+    year: "1507",
+    medium: "Oil on panel (diptych)",
+    dimensions: "209 × 81 cm each",
+    description: "Dürer's largest and most ambitious paintings, executed on two tall panels after his second Italian journey. Adam and Eve stand in separate panels as ideal nude figures — Dürer's attempt to establish a canon of human proportion in the manner of the ancient Greeks. Yet there is nothing cold about them: Eve extends the apple with graceful curiosity while Adam reaches tentatively forward. The Prado pair is the only fully autograph painted version of the subject.",
+    movement: "Northern Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Albrecht_D%C3%BCrer_-_Adam_and_Eve_%28Prado%29_2.jpg/330px-Albrecht_D%C3%BCrer_-_Adam_and_Eve_%28Prado%29_2.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 224, rank: null, museumOnly: true,
+    title: "The Triumph of Death",
+    artist: "Pieter Bruegel the Elder",
+    year: "c. 1562",
+    medium: "Oil on panel",
+    dimensions: "117 × 162 cm",
+    description: "An army of skeletons wages total war on humanity. Across a scorched, smoking landscape, Death on a pale horse leads legions of the dead against kings, knights, lovers, and peasants alike — no rank or plea offers protection. One of the most terrifying paintings ever made, it compresses the medieval Dance of Death tradition into a panoramic vision of apocalyptic horror that feels disturbingly modern.",
+    movement: "Northern Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Triumph_of_Death_Brueghel.jpg/330px-Triumph_of_Death_Brueghel.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 225, rank: null, museumOnly: true,
+    title: "The Clothed Maja",
+    artist: "Francisco Goya",
+    year: "c. 1800–07",
+    medium: "Oil on canvas",
+    dimensions: "97 × 190 cm",
+    description: "The companion to The Naked Maja, this portrait shows the same woman — thought to be the Duchess of Alba — fully dressed in a white bolero jacket and yellow trousers in the style of a maja, a fashionable working-class woman. Both paintings were commissioned by Prime Minister Godoy and hung together, possibly on a hidden mechanism. The Clothed Maja has the stranger charge: a clothed figure that somehow feels more transgressive.",
+    movement: "Romanticism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Goya_Maja_ubrana2.jpg/330px-Goya_Maja_ubrana2.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 226, rank: null, museumOnly: true,
+    title: "The Second of May 1808",
+    artist: "Francisco Goya",
+    year: "1814",
+    medium: "Oil on canvas",
+    dimensions: "266 × 345 cm",
+    description: "Painted with The Third of May 1808 as its companion, this canvas shows the uprising itself: Mamluk cavalry from Napoleon's Egyptian forces attacked by a frenzied Madrid crowd in the Puerta del Sol. Where The Third of May shows the aftermath — execution — this shows the chaos of revolt, bodies and horses churning together in desperate hand-to-hand combat. Together the two paintings form the founding monument of anti-war imagery.",
+    movement: "Romanticism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/El_dos_de_mayo_de_1808_en_Madrid.jpg/330px-El_dos_de_mayo_de_1808_en_Madrid.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 227, rank: null, museumOnly: true,
+    title: "Witches' Sabbath (The Great He-Goat)",
+    artist: "Francisco Goya",
+    year: "1820–23",
+    medium: "Oil mural transferred to canvas",
+    dimensions: "140 × 436 cm",
+    description: "One of Goya's Black Paintings, made directly on the walls of his farmhouse outside Madrid — a place he called the Quinta del Sordo. A coven of hollow-eyed figures huddles around a giant silhouetted goat in an unlit field. Painted for his own walls, not for exhibition, these works strip away all professional restraint; they are the most rawly disturbing paintings of the 19th century.",
+    movement: "Romanticism",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Francisco_de_Goya_y_Lucientes_-_Witches%27_Sabbath_%28The_Great_He-Goat%29.jpg/330px-Francisco_de_Goya_y_Lucientes_-_Witches%27_Sabbath_%28The_Great_He-Goat%29.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 228, rank: null, museumOnly: true,
+    title: "The Parasol",
+    artist: "Francisco Goya",
+    year: "1777",
+    medium: "Oil on linen",
+    dimensions: "104 × 152 cm",
+    description: "An early Goya, made as a tapestry cartoon for the royal palaces when he was still working in a light, Rococo-inflected style. A fashionable young woman sits in sunlight while a young man holds a parasol over her — the scene captures the leisure world of late 18th-century Madrid with a charm and spontaneity that already marks Goya's quick brushwork and eye for social observation.",
+    movement: "Rococo",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/El_Quitasol_%28Goya%29.jpg/330px-El_Quitasol_%28Goya%29.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 229, rank: null, museumOnly: true,
+    title: "Holy Family with a Lamb",
+    artist: "Raphael",
+    year: "1507",
+    medium: "Oil on panel",
+    dimensions: "32 × 22 cm",
+    description: "A small, luminous panel from Raphael's Florentine years. The infant Christ holds a lamb — symbol of his future sacrifice — while the Virgin and Joseph look on with tender concern. Leonardo's influence is unmistakable in the pyramidal grouping and soft landscape background. Despite its small scale it is one of the most harmoniously composed devotional works of the High Renaissance.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Raphael_Holy_Family_with_the_Lamb.jpg/330px-Raphael_Holy_Family_with_the_Lamb.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 230, rank: null, museumOnly: true,
+    title: "Portrait of a Cardinal",
+    artist: "Raphael",
+    year: "c. 1510",
+    medium: "Oil on panel",
+    dimensions: "79 × 61 cm",
+    description: "One of the most penetrating portraits of the Renaissance, this unknown cardinal — possibly Alessandro Farnese or Luigi d'Aragona — meets the viewer's gaze with an expression of cool, watchful intelligence. Raphael reduces the palette to red and white, letting the face carry everything. The identity remains unknown, which only deepens the sense of confronting a real, guarded personality across five centuries.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Portrait_of_a_Cardinal%2C_by_Raffael%2C_from_Prado_in_Google_Earth.jpg/330px-Portrait_of_a_Cardinal%2C_by_Raffael%2C_from_Prado_in_Google_Earth.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 231, rank: null, museumOnly: true,
+    title: "The Madonna of the Fish",
+    artist: "Raphael",
+    year: "c. 1513–14",
+    medium: "Oil on panel transferred to canvas",
+    dimensions: "113 × 88 cm",
+    description: "The archangel Raphael presents young Tobias — carrying the healing fish of scripture — to the enthroned Virgin and Child, while St. Jerome kneels opposite with his lion and Bible. Raphael's composition flows in a stately diagonal, each figure individualized yet unified in a golden, contemplative calm. The painting gives its name to the theme it defined: the Sacra Conversazione of the High Renaissance.",
+    movement: "Italian Renaissance",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Raffaello_Sanzio_-_Sacra_Famiglia_con_Rafael%2C_Tobia_e_San_Girolamo%2C_o_Vergine_del_pesce.jpg/330px-Raffaello_Sanzio_-_Sacra_Famiglia_con_Rafael%2C_Tobia_e_San_Girolamo%2C_o_Vergine_del_pesce.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 232, rank: null, museumOnly: true,
+    title: "Agnus Dei",
+    artist: "Francisco de Zurbarán",
+    year: "c. 1635–40",
+    medium: "Oil on canvas",
+    dimensions: "38 × 62 cm",
+    description: "A lamb lies bound on a stone slab, its legs tied, its head turned toward us with dark, patient eyes. Nothing else. No narrative, no symbolic props — just light falling on wool against shadow. One of the most austere and quietly devastating images in all of European painting, this small canvas translates Christian sacrifice into an almost unbearably literal still life.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Francisco_de_Zurbar%C3%A1n_006.jpg/330px-Francisco_de_Zurbar%C3%A1n_006.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 233, rank: null, museumOnly: true,
+    title: "The Immaculate Conception of Los Venerables",
+    artist: "Bartolomé Esteban Murillo",
+    year: "1678",
+    medium: "Oil on canvas",
+    dimensions: "274 × 190 cm",
+    description: "Murillo's grandest treatment of the Immaculate Conception — a subject he returned to throughout his career. The Virgin ascends on clouds supported by cherubs, surrounded by the traditional Marian symbols: moon underfoot, halo of stars, white and blue robes of purity. The warm golden light and vaporous softness of the flesh mark Murillo's mature estilo vaporoso, which captivated European collectors for a century after his death.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Murillo_immaculate_conception.jpg/330px-Murillo_immaculate_conception.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
+  },
+  {
+    id: 234, rank: null, museumOnly: true,
+    title: "Jacob's Dream",
+    artist: "José de Ribera",
+    year: "1639",
+    medium: "Oil on canvas",
+    dimensions: "179 × 233 cm",
+    description: "The patriarch Jacob sleeps on a stone, his cloak drawn over him, utterly at rest — while above him the ladder to heaven and the promise of God's covenant unfold. Ribera stages the divine vision with characteristically restrained drama: the ladder is barely suggested by light, the angel's presence implied rather than shown. It is a painting about the interior experience of faith, rendered with extraordinary humanity.",
+    movement: "Baroque",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/El_sue%C3%B1o_de_Jacob%2C_por_Jos%C3%A9_de_Ribera.jpg/330px-El_sue%C3%B1o_de_Jacob%2C_por_Jos%C3%A9_de_Ribera.jpg",
+    location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   }
 ];
 
@@ -3192,6 +3434,22 @@ const ARTISTS = {
   "Attributed to Leonardo da Vinci": {
     born: "1452", died: "1519", nationality: "Italian",
     bio: "The attribution of certain works to Leonardo remains contested among scholars, the question of his hand distinguished from workshop assistants by technical analysis, connoisseurship, and archival research. Leonardo's studio produced multiple versions of his most sought-after compositions, and the boundaries between master and workshop were often deliberately blurred. Works attributed to him carry the full weight of his revolutionary sfumato technique and formal intelligence."
+  },
+  "El Greco": {
+    born: "c. 1541", died: "1614", nationality: "Greek (worked in Spain)",
+    bio: "Born in Crete and trained in the Byzantine icon tradition, El Greco travelled to Venice and Rome before settling permanently in Toledo in 1577. He absorbed Mannerist and Venetian Renaissance influences — especially Titian and Tintoretto — while never abandoning the spiritual intensity of his Orthodox roots. His style of elongated figures, cold acid colors, and dramatic lighting was considered eccentric in his lifetime and was largely forgotten after his death. Rediscovered in the early 20th century, he is now recognized as a profound individualist and a direct precursor to Expressionism and Cubism."
+  },
+  "Francisco de Zurbarán": {
+    born: "1598", died: "1664", nationality: "Spanish",
+    bio: "Known as the 'Spanish Caravaggio,' Zurbarán mastered dramatic chiaroscuro to produce intensely devotional religious paintings and austere still lifes. Appointed painter to Philip IV around 1630, he dominated Seville's religious art market for decades with series of monks, saints, and the famous bound lamb, Agnus Dei. His meditative, almost hallucinatory realism — figures emerging from absolute darkness into a single shaft of light — gave Spanish Baroque painting some of its most quietly devastating images."
+  },
+  "Bartolomé Esteban Murillo": {
+    born: "c. 1617", died: "1682", nationality: "Spanish",
+    bio: "Murillo spent almost his entire career in Seville, becoming the city's most celebrated painter of the 17th century. He is renowned for warm, luminous depictions of the Virgin Mary, the Immaculate Conception, and tender genre scenes of street children that combine Flemish color harmonies with Italian chiaroscuro. His soft atmospheric style — the estilo vaporoso — made him enormously popular across Europe for two centuries. He co-founded the Seville Academy of Fine Arts in 1660 and died from injuries suffered after a fall from scaffolding while working on an altarpiece."
+  },
+  "José de Ribera": {
+    born: "1591", died: "1652", nationality: "Spanish (worked in Naples)",
+    bio: "Ribera left Spain as a young man and settled in Naples — then under Spanish rule — where he spent his entire career and earned the nickname Lo Spagnoletto (the Little Spaniard). An early Caravaggist of fierce conviction, he specialized in the suffering faces of martyred saints, stoic philosophers, and ancient mythological figures rendered with brutal realism. He later developed a richer, more luminous palette while retaining dramatic tenebrism. The Prado holds the largest collection of his work outside Naples, and he is ranked alongside Velázquez, Zurbarán, and Murillo as a founding figure of Spanish Baroque painting."
   }
 };
 
@@ -3283,6 +3541,10 @@ const ARTIST_PORTRAITS = {
   "John Singleton Copley": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/John_Singleton_Copley_-_John_Singleton_Copley_Self-Portrait_-_Google_Art_Project.jpg/500px-John_Singleton_Copley_-_John_Singleton_Copley_Self-Portrait_-_Google_Art_Project.jpg",
   "John Trumbull": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Self_Portrait_by_John_Trumbull_circa_1802.jpeg/500px-Self_Portrait_by_John_Trumbull_circa_1802.jpeg",
   "Emanuel Leutze": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Emanuel_Leutze-crop.jpg/330px-Emanuel_Leutze-crop.jpg",
+  "El Greco": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/El_Greco_-_Portrait_of_a_Man_-_WGA10554.jpg/330px-El_Greco_-_Portrait_of_a_Man_-_WGA10554.jpg",
+  "Francisco de Zurbarán": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Francisco_de_Zurbar%C3%A1n_autoportrait.jpg/330px-Francisco_de_Zurbar%C3%A1n_autoportrait.jpg",
+  "Bartolomé Esteban Murillo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Autorretrato_de_Murillo.jpg/330px-Autorretrato_de_Murillo.jpg",
+  "José de Ribera": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Ribera_-_Self-portrait.jpg/330px-Ribera_-_Self-portrait.jpg",
 };
 
 /* ── Museum info ─────────────────────────────────────────────────────────── */

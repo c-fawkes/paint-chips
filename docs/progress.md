@@ -589,6 +589,27 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - If the selected pool has fewer than 4 paintings, an alert blocks the quiz with a helpful message
 - `quizSetPool()` toggles the active button without a full re-render
 
+## Session 29 — 2026-05-30
+
+### Add top 20 Museo del Prado paintings (IDs 215–234)
+- El Greco: The Nobleman with his Hand on his Chest, The Adoration of the Shepherds, The Holy Trinity
+- Titian: Charles V at Mühlberg, Bacchanal of the Andrians, Venus and Adonis
+- Rubens: The Three Graces
+- Dürer: Self-Portrait (1498), Adam and Eve
+- Bruegel the Elder: The Triumph of Death
+- Goya: The Clothed Maja, The Second of May 1808, Witches' Sabbath (The Great He-Goat), The Parasol
+- Raphael: Holy Family with a Lamb, Portrait of a Cardinal, The Madonna of the Fish
+- Zurbarán: Agnus Dei
+- Murillo: The Immaculate Conception of Los Venerables
+- Ribera: Jacob's Dream
+- All paintings carry Wikimedia Commons 330px thumbnail URLs, medium, dimensions, description, and movement
+
+### New artists added to ARTISTS and ARTIST_PORTRAITS
+- El Greco — Greek-born, worked in Toledo; Mannerism / Spanish Renaissance; self-portrait URL
+- Francisco de Zurbarán — Spanish Baroque; self-portrait URL
+- Bartolomé Esteban Murillo — Spanish Baroque; self-portrait URL
+- José de Ribera ("Lo Spagnoletto") — Spanish Baroque / Tenebrist; self-portrait URL
+
 ## Session 27 — 2026-05-29
 
 ### Paintings tab sort dropdown parity with collection tab
