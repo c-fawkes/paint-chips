@@ -31,6 +31,7 @@ const S = {
   expandedCollArtists: new Set(),
   expandedCollMovements: new Set(),
   expandedStatsMuseums: new Set(),
+  activeMuseum: null,
 };
 
 /* ── Add-painting modal state ────────────────────────────────────────────── */
@@ -203,7 +204,7 @@ function load() {
     S.expandedCollArtists  = new Set();
     S.expandedCollMovements = new Set();
     S.expandedStatsMuseums = new Set();
-    if (S.view === 'stats' || S.view === 'settings') S.view = 'list';
+    if (S.view === 'stats' || S.view === 'settings' || S.view === 'museum-detail') S.view = 'list';
     if (S.scope === 'extended') S.scope = 'plus30';
     if (S.museumsMode === 'continent') S.museumsMode = 'alpha';
   } catch (_) {}
@@ -548,24 +549,12 @@ function renderMuseumsView() {
 }
 
 function renderMuseumBlock(name, paintings) {
-  const isOpen   = S.expandedMuseums.has(name);
   const isVisited = !!S.visitedMuseums[name];
   const mc  = checkedCount(paintings.map(p => p.id));
   const mt  = paintings.length;
-  const pct = mt ? Math.round(mc / mt * 100) : 0;
   const safeName = esc(name).replace(/'/g, "\\'");
-  const body = isOpen ? `<div class="museum-body">
-    <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
-    ${paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
-    <div class="add-painting-row">
-      <button class="add-painting-btn" onclick="openAddPainting('${safeName}')">
-        <div class="add-painting-thumb">${ICONS.plus}</div>
-        <span>Add painting</span>
-      </button>
-    </div>
-  </div>` : '';
   return `<div class="museum-section" style="margin:0 0 6px">
-    <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${safeName}')" style="padding:8px 12px">
+    <div class="museum-header" onclick="openMuseumDetail('${safeName}')" style="padding:8px 12px">
       <div class="museum-info">
         <div class="museum-name" style="font-size:.85rem">${esc(name)}${isVisited ? `<span class="museum-visited-check" title="Visited">${ICONS.check}</span>` : ''}</div>
       </div>
@@ -575,7 +564,6 @@ function renderMuseumBlock(name, paintings) {
       </button>
       <div class="museum-chevron">${ICONS.chevron}</div>
     </div>
-    ${body}
   </div>`;
 }
 
@@ -597,23 +585,11 @@ function renderMuseumsAlpha() {
   return entries.map(([name, m]) => {
     const checked   = checkedCount(m.paintings.map(x => x.id));
     const total     = m.paintings.length;
-    const pct       = total ? Math.round(checked / total * 100) : 0;
-    const isOpen    = S.expandedMuseums.has(name);
     const isVisited = !!S.visitedMuseums[name];
     const icon      = flagFor[m.country] || '🖼️';
     const safeName  = esc(name).replace(/'/g, "\\'");
-    const body = isOpen ? `<div class="museum-body">
-      <div class="museum-mini-bar"><div class="museum-mini-fill" style="width:${pct}%"></div></div>
-      ${m.paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
-      <div class="add-painting-row">
-        <button class="add-painting-btn" onclick="openAddPainting('${safeName}')">
-          <div class="add-painting-thumb">${ICONS.plus}</div>
-          <span>Add painting</span>
-        </button>
-      </div>
-    </div>` : '';
     return `<div class="museum-section">
-      <div class="museum-header${isOpen ? ' open' : ''}" onclick="toggleMuseum('${safeName}')">
+      <div class="museum-header" onclick="openMuseumDetail('${safeName}')">
         <div class="museum-icon-wrap">
           <div class="museum-icon">${icon}</div>
           <button class="museum-visited-badge${isVisited ? ' visited' : ''}"
@@ -627,7 +603,6 @@ function renderMuseumsAlpha() {
         <div class="museum-counter"><div class="mc-nums">${checked}/${total}</div><div class="mc-label">collected</div></div>
         <div class="museum-chevron">${ICONS.chevron}</div>
       </div>
-      ${body}
     </div>`;
   }).join('');
 }
@@ -1100,8 +1075,9 @@ function render() {
     if (checkedEl) checkedEl.textContent = checked;
     if (totalEl)   totalEl.textContent   = '/ ' + total;
     if (barEl)     barEl.style.width     = (total ? checked / total * 100 : 0) + '%';
+    const activeNavView = S.view === 'museum-detail' ? 'museums' : S.view;
     document.querySelectorAll('.nav-btn').forEach(b => {
-      b.classList.toggle('active', b.dataset.view === S.view);
+      b.classList.toggle('active', b.dataset.view === activeNavView);
     });
     const settingsBtn = document.getElementById('settings-btn');
     if (settingsBtn) settingsBtn.classList.toggle('active', S.view === 'settings');
@@ -1111,8 +1087,9 @@ function render() {
     else if (S.view === 'museums')    main.innerHTML = renderMuseumsView();
     else if (S.view === 'collection') main.innerHTML = renderCollectionView();
     else if (S.view === 'stats')      main.innerHTML = renderStatsView();
-    else if (S.view === 'settings')   main.innerHTML = renderSettingsView();
-    // stats and settings are not in the bottom nav; don't highlight any nav btn for them
+    else if (S.view === 'settings')      main.innerHTML = renderSettingsView();
+    else if (S.view === 'museum-detail') main.innerHTML = renderMuseumDetailView();
+    // stats, settings, museum-detail are not in the bottom nav tabs directly
   } catch (err) {
     console.error('Beheld render error:', err);
     const main = document.getElementById('main');
@@ -2012,7 +1989,75 @@ function openArtistPopup(artistName) {
 
 function closeArtistPopup() { navDismissAll(); }
 
-/* ── Museum popup ────────────────────────────────────────────────────────── */
+/* ── Museum detail view (replaces #main content, keeps header visible) ────── */
+function openMuseumDetail(name) {
+  navDismissAll();
+  S.activeMuseum = name;
+  S.view = 'museum-detail';
+  save();
+  render();
+  window.scrollTo(0, 0);
+}
+
+function renderMuseumDetailView() {
+  const museumName = S.activeMuseum;
+  const all = allPaintings();
+  const paintings = all.filter(p => p.location.museum === museumName).sort((a,b) => (a.rank||9999)-(b.rank||9999));
+  if (!paintings.length) return `<div class="empty-state"><div class="empty-icon">🏛️</div><p>Museum not found.</p></div>`;
+
+  const loc  = paintings[0].location;
+  const info = (typeof MUSEUMS_INFO !== 'undefined') ? MUSEUMS_INFO[museumName] : null;
+  const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
+    'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
+    'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
+  const flag = flagFor[loc.country] || '';
+  const mc   = checkedCount(paintings.map(p => p.id));
+  const isVisited = !!S.visitedMuseums[museumName];
+  const safeName  = esc(museumName).replace(/'/g, "\\'");
+
+  const photoHtml = (info && info.photo)
+    ? `<img class="museum-detail-photo" src="${info.photo}" alt="${esc(museumName)}"
+           onerror="this.style.display='none'">`
+    : '';
+
+  const thumbs = paintings.map(p => {
+    const img = p.imageUrl
+      ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
+             onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
+      : `<div class="row-thumb-placeholder">🎨</div>`;
+    return `<div class="mv-popup-painting" onclick="openDetail('${String(p.id)}')">
+      <div class="mv-popup-thumb">${img}</div>
+      <div class="mv-popup-title">${esc(p.title)}</div>
+      <div class="mv-popup-artist">${esc(p.artist)}</div>
+    </div>`;
+  }).join('');
+
+  return `
+    <div class="museum-detail-nav">
+      <button class="detail-back-btn" onclick="setView('museums')">${ICONS.back} Back</button>
+      <button class="museum-detail-visited-btn${isVisited ? ' visited' : ''}"
+              onclick="toggleMuseumVisited(event,'${safeName}')"
+              title="${isVisited ? 'Visited' : 'Mark as visited'}">
+        ${isVisited ? ICONS.check : ICONS.pin}
+        <span>${isVisited ? 'Visited' : 'Mark visited'}</span>
+      </button>
+    </div>
+    ${photoHtml}
+    <div class="mv-popup-body">
+      <div class="mv-popup-era">${flag} ${esc(loc.city)}, ${esc(loc.country)}</div>
+      <h2 class="mv-popup-name">${esc(museumName)}</h2>
+      <div class="museum-popup-stats">
+        <span class="museum-popup-stat">${mc} of ${paintings.length} collected</span>
+        <div class="museum-popup-bar"><div class="museum-popup-fill" style="width:${paintings.length ? Math.round(mc/paintings.length*100) : 0}%"></div></div>
+      </div>
+      ${info ? `<p class="mv-popup-summary" style="margin-top:14px;border-bottom:none;padding-bottom:0">${esc(info.blurb)}</p>` : ''}
+      <div class="mv-section-label" style="margin-top:18px">Collection (${paintings.length})</div>
+      <div class="mv-popup-paintings">${thumbs}</div>
+    </div>
+  `;
+}
+
+/* ── Museum popup (from painting detail overlay) ──────────────────────────── */
 function openMuseumPopup(museumName) {
   const all = allPaintings();
   const paintings = all.filter(p => p.location.museum === museumName).sort((a,b) => (a.rank||9999)-(b.rank||9999));

@@ -643,6 +643,15 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Annotated `CLAUDE.md` with `> Updated:` notes on every section that describes the original build state — data.js contents, state model fields, four-tabs table, painting object shape, and service worker strategy — all now reflect current reality
 - Annotated `docs/progress.md` App Overview with similar `> Updated:` callouts on the app description, data layer, persistence, nav bar, museums tab, stats view, and settings descriptions
 
+### Museum tab: detail page view
+- Clicking a museum on the Museums tab now opens a full detail page that replaces `#main` content — the header/nav bar stays visible and the Museums tab stays highlighted
+- Detail page shows: museum photo (if available), flag + city/country, museum name, collected progress bar, blurb, and the full painting collection grid
+- Visited toggle button appears in the detail nav row (styled like the detail-collected button)
+- Back button returns to the Museums tab list via `setView('museums')`
+- Removed accordion expand/collapse from museum cards in all three grouping modes (alpha/city/country) — cards are now simple clickable rows
+- `openMuseumPopup` (overlay) is preserved for when museum is clicked from within a painting's detail overlay
+- New view state: `museum-detail` (not persisted; resets to `list` on reload like stats/settings)
+
 ### Sort dropdown icons updated to Lucide
 - Replaced `ICONS.museum` (custom building) with Lucide `landmark` (columns + triangular roof) — now matches the icon already used in the Museums groupby dropdown
 - Replaced `ICONS.palette` (custom dot-circle) with Lucide `palette` (actual artist's palette shape with thumb hole and paint dots)
