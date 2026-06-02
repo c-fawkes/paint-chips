@@ -592,15 +592,15 @@ function renderMuseumsAlpha() {
       <div class="museum-header" onclick="openMuseumDetail('${safeName}')">
         <div class="museum-icon-wrap">
           <div class="museum-icon">${icon}</div>
-          <button class="museum-visited-badge${isVisited ? ' visited' : ''}"
-                  onclick="toggleMuseumVisited(event,'${safeName}')"
-                  title="${isVisited ? 'Visited' : 'Mark as visited'}">${isVisited ? ICONS.check : ''}</button>
         </div>
         <div class="museum-info">
-          <div class="museum-name">${esc(name)}${isVisited ? `<span class="museum-visited-check" title="Visited">${ICONS.check}</span>` : ''}</div>
+          <div class="museum-name">${esc(name)}</div>
           <div class="museum-location">${esc(m.city)}, ${esc(m.country)}</div>
         </div>
         <div class="museum-counter"><div class="mc-nums">${checked}/${total}</div><div class="mc-label">collected</div></div>
+        <button class="museum-visited-btn${isVisited ? ' visited' : ''}" onclick="toggleMuseumVisited(event,'${safeName}')" title="${isVisited ? 'Visited' : 'Mark as visited'}">
+          ${isVisited ? ICONS.check : ICONS.pin}
+        </button>
         <div class="museum-chevron">${ICONS.chevron}</div>
       </div>
     </div>`;

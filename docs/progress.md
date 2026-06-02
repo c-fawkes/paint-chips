@@ -643,6 +643,11 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Annotated `CLAUDE.md` with `> Updated:` notes on every section that describes the original build state — data.js contents, state model fields, four-tabs table, painting object shape, and service worker strategy — all now reflect current reality
 - Annotated `docs/progress.md` App Overview with similar `> Updated:` callouts on the app description, data layer, persistence, nav bar, museums tab, stats view, and settings descriptions
 
+### Museum alpha view: visited button cleanup
+- Removed the circle badge overlay on the flag icon — visited state no longer shown there
+- Removed the inline checkmark next to the museum name — redundant with the button
+- Moved the pin/check visited button to the far right of the row, matching the city/country grouping style
+
 ### Museum tab: detail page view
 - Clicking a museum on the Museums tab now opens a full detail page that replaces `#main` content — the header/nav bar stays visible and the Museums tab stays highlighted
 - Detail page shows: museum photo (if available), flag + city/country, museum name, collected progress bar, blurb, and the full painting collection grid
