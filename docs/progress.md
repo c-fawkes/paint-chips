@@ -858,3 +858,10 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - UI condition updated to `(p.wikiUrl || p.grokUrl)` — More Info box only appears when at least one URL is non-null
 - The Wedding at Cana `grokUrl` corrected to `null` (no Grokipedia article exists)
 - `ICONS.wikipedia` and `ICONS.grokipedia` added in Session 37
+
+## Session 39 — 2026-06-02
+
+### Database audit: capped all museums at 30 paintings
+- Louvre had 38 (10 ranked + 28 extras) → removed 8 extras: Pierrot, Man with a Glove, Portrait of Anne of Cleves, Supper at Emmaus (Rembrandt 1648), Saint Sebastian Tended by Saint Irene, Portrait of Francis I, Saint Sebastian (Mantegna), The Supper at Emmaus (Titian)
+- Musée d'Orsay had 39 (10 ranked + 29 extras) → removed 9 extras: On the Beach, Women in the Garden, Haystacks End of Summer, Dance in the Country, Young Girls at the Piano, Still Life with Apples and Oranges, The White Horse, The Tub, The Painter's Studio — trimmed over-represented artists (4→3 Manets, 4→2 Monets, 3→1 Renoirs, etc.)
+- DB now 299 paintings; all museums ≤ 30; "Up to 30" scope shows all 299

@@ -3498,20 +3498,6 @@ const PAINTINGS = [
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
   {
-    id: 243, rank: null, museumOnly: true,
-    title: "Pierrot",
-    artist: "Jean-Antoine Watteau",
-    year: "c. 1718–1719",
-    medium: "Oil on canvas",
-    dimensions: "184.5 × 149.5 cm",
-    description: "Life-sized, frontal, and absolutely alone against an open sky, Pierrot stands while his companions mill below as if he has already been left behind. The figure's absolute stillness and melancholy vacancy make it the most mysterious of Watteau's paintings — not a scene but a confrontation with a soul. Long titled 'Gilles' after the related commedia character, it is often read as a disguised self-portrait.",
-    movement: "Rococo",
-    wikiUrl: "https://en.wikipedia.org/wiki/Pierrot_(Watteau)",
-    grokUrl: null,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Pierrot_-_Antoine_Watteau_-_Mus%C3%A9e_du_Louvre_Peintures_MI_1121_-_apr%C3%A8s_restauration_2024.jpg/330px-Pierrot_-_Antoine_Watteau_-_Mus%C3%A9e_du_Louvre_Peintures_MI_1121_-_apr%C3%A8s_restauration_2024.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
-  },
-  {
     id: 244, rank: null, museumOnly: true,
     title: "La Belle Jardinière",
     artist: "Raphael",
@@ -3610,20 +3596,6 @@ const PAINTINGS = [
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
   {
-    id: 251, rank: null, museumOnly: true,
-    title: "Man with a Glove",
-    artist: "Titian",
-    year: "c. 1520",
-    medium: "Oil on canvas",
-    dimensions: "100 × 89 cm",
-    description: "This portrait of an unidentified Venetian nobleman is among the finest Renaissance portraits in any collection — the sitter's inner life barely contained by the controlled formality of his pose. The glove he holds, only half put on, gives the hands something to do while suggesting a worldly readiness that animates the whole canvas. Its origin in the Gonzaga collection in Mantua means it passed through the grandest European collections before reaching the Louvre.",
-    movement: "Italian Renaissance",
-    wikiUrl: "https://en.wikipedia.org/wiki/Man_with_a_Glove_(Titian)",
-    grokUrl: "https://grokipedia.com/page/Man_with_a_Glove",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tiziano_-_Hombre_del_guante_(Louvre).jpg/330px-Tiziano_-_Hombre_del_guante_(Louvre).jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
-  },
-  {
     id: 252, rank: null, museumOnly: true,
     title: "The Card Sharp with the Ace of Diamonds",
     artist: "Georges de La Tour",
@@ -3635,20 +3607,6 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/The_Cheat_with_the_Ace_of_Diamonds",
     grokUrl: "https://grokipedia.com/page/The_Card_Sharp_with_the_Ace_of_Diamonds",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Le_Tricheur_%C3%A0_l'as_de_carreau_-_Georges_de_La_Tour_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1972_8.jpg/330px-Le_Tricheur_%C3%A0_l'as_de_carreau_-_Georges_de_La_Tour_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1972_8.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
-  },
-  {
-    id: 253, rank: null, museumOnly: true,
-    title: "Portrait of Anne of Cleves",
-    artist: "Hans Holbein the Younger",
-    year: "1539",
-    medium: "Oil and tempera on parchment on canvas",
-    dimensions: "65 × 48 cm",
-    description: "Henry VIII sent Holbein to paint this betrothal portrait; the artist so flattered his subject — and the elaborate costume so concealed her figure — that Henry was bitterly disappointed when they met. The marriage lasted six months before annulment, and Henry blamed Holbein. A 2021 restoration revealed previously obscured jewel details and confirmed this as one of the finest portrait miniatures on parchment ever made.",
-    movement: "Northern Renaissance",
-    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Anne_of_Cleves",
-    grokUrl: null,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_(Louvre).jpg/330px-Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_(Louvre).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
   {
@@ -3707,72 +3665,6 @@ const PAINTINGS = [
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Jheronimus_Bosch_011.jpg/330px-Jheronimus_Bosch_011.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
-  {
-    id: 258, rank: null, museumOnly: true,
-    title: "Supper at Emmaus",
-    artist: "Rembrandt van Rijn",
-    year: "1648",
-    medium: "Oil on mahogany panel",
-    dimensions: "68 × 65 cm",
-    description: "In this intimate panel, the resurrected Christ reveals himself to the disciples through the breaking of bread — captured not through dramatic gesture but in the subtle turn of his face into light and the disciple's hands clasped in sudden prayer. Rembrandt stripped away baroque theatricality to achieve something unbearably quiet. The back-lit Christ is one of the most moving treatments of this subject in Western painting.",
-    movement: "Dutch Golden Age",
-    wikiUrl: "https://en.wikipedia.org/wiki/The_Supper_at_Emmaus_(Rembrandt,_1648)",
-    grokUrl: null,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Rembrandt_The_Supper_at_Emmaus.jpg/330px-Rembrandt_The_Supper_at_Emmaus.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
-  },
-  {
-    id: 259, rank: null, museumOnly: true,
-    title: "Saint Sebastian Tended by Saint Irene",
-    artist: "Georges de La Tour",
-    year: "c. 1645–1650",
-    medium: "Oil on canvas",
-    dimensions: "167 × 130 cm",
-    description: "Saint Irene tends to the wounded Sebastian by candlelight, her face and hands bathed in the warm glow that was de La Tour's visual signature. Unlike the traditional martyrdom image — Sebastian tied to a post, pierced with arrows — de La Tour removes the arrows and focuses on the intimacy of care, transforming a martyrdom into a scene of human tenderness. The candlelight, held by an attendant just outside the frame, is the painting's sole light source.",
-    movement: "Baroque",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Georges_de_La_Tour_-_St_Sebastien_Attended_by_St_Irene_-_WGA12342.jpg/330px-Georges_de_La_Tour_-_St_Sebastien_Attended_by_St_Irene_-_WGA12342.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
-  },
-  {
-    id: 260, rank: null, museumOnly: true,
-    title: "Portrait of Francis I",
-    artist: "Jean Clouet",
-    year: "c. 1530",
-    medium: "Oil on panel",
-    dimensions: "96 × 74 cm",
-    description: "Clouet's portrait of the French king who launched the Renaissance in France depicts a ruler of extraordinary presence — eyes direct, posture immovable, the slashed doublet a fortune in silk and gold. The modelling is so precise it appears closer to a portrait miniature than an oil panel, reflecting Clouet's Flemish training. Francis I was the patron who brought Leonardo to France; he reportedly held the dying artist's head at Amboise in 1519.",
-    movement: "Northern Renaissance",
-    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Francis_I_(Clouet)",
-    grokUrl: null,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Jean_Clouet_-_Portrait_of_Fran%C3%A7ois_I%2C_King_of_France_-_WGA5081.jpg/330px-Jean_Clouet_-_Portrait_of_Fran%C3%A7ois_I%2C_King_of_France_-_WGA5081.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
-  },
-  {
-    id: 261, rank: null, museumOnly: true,
-    title: "Saint Sebastian",
-    artist: "Andrea Mantegna",
-    year: "c. 1480",
-    medium: "Tempera on canvas",
-    dimensions: "255 × 140 cm",
-    description: "The largest of Mantegna's three treatments of this subject, the Louvre Sebastian presents the martyr against a ruined classical arch — a humanist meditation on Christianity's supersession of the ancient world, rendered with almost sculptural conviction. The body is painted with archaeological precision, muscles compressed against the column like a Roman statue. Mantegna inscribed his name in Greek below the figure, claiming this as a proudly self-conscious masterwork.",
-    movement: "Italian Renaissance",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Andrea_mantegna%2C_san_sebastiano%2C_1480_ca..JPG/330px-Andrea_mantegna%2C_san_sebastiano%2C_1480_ca..JPG",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
-  },
-  {
-    id: 262, rank: null, museumOnly: true,
-    title: "The Supper at Emmaus",
-    artist: "Titian",
-    year: "c. 1533–1534",
-    medium: "Oil on canvas",
-    dimensions: "169 × 244 cm",
-    description: "Titian's large-scale treatment of the moment when the resurrected Christ reveals himself to the disciples through the breaking of bread is a masterwork of Venetian compositional grandeur, the figures animated by rich color and expressive gesture. It contrasts sharply with Rembrandt's much more intimate 1648 version of the same subject — also at the Louvre — demonstrating how differently two great masters could approach identical material across a century.",
-    movement: "Italian Renaissance",
-    wikiUrl: "https://en.wikipedia.org/wiki/The_Supper_at_Emmaus_(Titian)",
-    grokUrl: null,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Salon_de_Mercure-LE_SOUPER_A_EMMAUS.jpg/330px-Salon_de_Mercure-LE_SOUPER_A_EMMAUS.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
-  },
 
   // ── MUSÉE D'ORSAY — museum-only paintings ─────────────────────────────
   {
@@ -3818,20 +3710,6 @@ const PAINTINGS = [
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
   {
-    id: 266, rank: null, museumOnly: true,
-    title: "On the Beach",
-    artist: "Édouard Manet",
-    year: "1873",
-    medium: "Oil on canvas",
-    dimensions: "60 × 73 cm",
-    description: "Manet painted this en plein air at Berck-sur-Mer, showing his wife Suzanne and brother Eugène absorbed in reading against the flat grey sea and sky. Sand was later found embedded in the paint, proving it was made directly on the beach. The radical compression of foreground and horizon, with no middle distance, prefigures the compositional strategies of Post-Impressionism.",
-    movement: "Realism",
-    wikiUrl: "https://en.wikipedia.org/wiki/On_the_Beach_(Manet)",
-    grokUrl: null,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Edouard_Manet_-_On_the_Beach_-_Google_Art_Project.jpg/330px-Edouard_Manet_-_On_the_Beach_-_Google_Art_Project.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
-  },
-  {
     id: 267, rank: null, museumOnly: true,
     title: "Portrait of Émile Zola",
     artist: "Édouard Manet",
@@ -3860,20 +3738,6 @@ const PAINTINGS = [
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
   {
-    id: 269, rank: null, museumOnly: true,
-    title: "Women in the Garden",
-    artist: "Claude Monet",
-    year: "1866",
-    medium: "Oil on canvas",
-    dimensions: "255 × 205 cm",
-    description: "To paint the upper half of this enormous canvas en plein air, Monet dug a trench in the garden so he could lower it while maintaining a single viewpoint. All four figures were posed by Camille Doncieux, his future wife. The Salon of 1867 rejected it; Frédéric Bazille bought it from Monet on instalment to support him through a financial crisis.",
-    movement: "Impressionism",
-    wikiUrl: "https://en.wikipedia.org/wiki/Women_in_the_Garden_(Monet)",
-    grokUrl: "https://grokipedia.com/page/Women_in_the_Garden",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Claude_Monet_024.jpg/330px-Claude_Monet_024.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
-  },
-  {
     id: 270, rank: null, museumOnly: true,
     title: "The Magpie",
     artist: "Claude Monet",
@@ -3885,20 +3749,6 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/The_Magpie_(Monet)",
     grokUrl: "https://grokipedia.com/page/The_Magpie",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg/330px-Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
-  },
-  {
-    id: 271, rank: null, museumOnly: true,
-    title: "Haystacks, End of Summer",
-    artist: "Claude Monet",
-    year: "1891",
-    medium: "Oil on canvas",
-    dimensions: "60 × 100 cm",
-    description: "One of 25 paintings in Monet's Haystacks series, this canvas records the quality of late summer afternoon light that he found so fleeting he hired local girls to run canvases to him as the light changed. When exhibited together at Durand-Ruel's gallery in 1891, the series proved that a single motif could sustain an entire exhibition through purely atmospheric variation. Kandinsky later said seeing this series was his first experience of art that transcended its subject matter.",
-    movement: "Impressionism",
-    wikiUrl: "https://en.wikipedia.org/wiki/Haystacks_(Monet_series)",
-    grokUrl: null,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Claude_Monet_-_Haystacks%2C_end_of_Summer_-_Google_Art_Project.jpg/330px-Claude_Monet_-_Haystacks%2C_end_of_Summer_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
   {
@@ -3927,34 +3777,6 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/Dance_in_the_City",
     grokUrl: "https://grokipedia.com/page/Dance_in_the_City",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Pierre-Auguste_Renoir_019.jpg/330px-Pierre-Auguste_Renoir_019.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
-  },
-  {
-    id: 274, rank: null, museumOnly: true,
-    title: "Dance in the Country",
-    artist: "Pierre-Auguste Renoir",
-    year: "1883",
-    medium: "Oil on canvas",
-    dimensions: "180 × 90 cm",
-    description: "Renoir's informal dancer in a straw hat — modeled by Aline Charigot, whom he later married — presses her partner with joyful abandon into an outdoor dance that feels genuinely spontaneous. Painted as the bourgeois companion to Dance in the City, this rural version privileges warmth, informality, and happiness over elegance. Both were commissioned by dealer Paul Durand-Ruel as a deliberate study in social contrast.",
-    movement: "Impressionism",
-    wikiUrl: "https://en.wikipedia.org/wiki/Dance_in_the_Country",
-    grokUrl: "https://grokipedia.com/page/Dance_in_the_Country",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Pierre_Auguste_Renoir_-_Country_Dance_-_Google_Art_Project.jpg/330px-Pierre_Auguste_Renoir_-_Country_Dance_-_Google_Art_Project.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
-  },
-  {
-    id: 275, rank: null, museumOnly: true,
-    title: "Young Girls at the Piano",
-    artist: "Pierre-Auguste Renoir",
-    year: "1892",
-    medium: "Oil on canvas",
-    dimensions: "116 × 90 cm",
-    description: "Renoir painted five versions of this composition when the French government offered to purchase one for the Musée du Luxembourg — a rare official honor for an Impressionist. This Orsay version is the most resolved, its warm domestic light and absorbed figures capturing the bourgeois ideal of cultivated femininity that Renoir returned to throughout his career. The piano lesson as a subject would later attract Matisse.",
-    movement: "Impressionism",
-    wikiUrl: "https://en.wikipedia.org/wiki/Young_Girls_at_the_Piano",
-    grokUrl: "https://grokipedia.com/page/Young_Girls_at_the_Piano",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Auguste_Renoir_-_Young_Girls_at_the_Piano_-_Google_Art_Project.jpg/330px-Auguste_Renoir_-_Young_Girls_at_the_Piano_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
   {
@@ -4000,20 +3822,6 @@ const PAINTINGS = [
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
   {
-    id: 279, rank: null, museumOnly: true,
-    title: "Still Life with Apples and Oranges",
-    artist: "Paul Cézanne",
-    year: "c. 1899",
-    medium: "Oil on canvas",
-    dimensions: "74 × 93 cm",
-    description: "Cézanne arranged the same cloth, pitcher, and fruit in ever more complex configurations throughout his career, treating the still life as a laboratory for pictorial structure. Here the crumpled white cloth in angular folds competes for attention with the fruit it displays — each apple and orange built up through multiple simultaneous viewpoints. The painting entered the Louvre via the Camondo bequest in 1908 and transferred to the Orsay at its founding.",
-    movement: "Post-Impressionism",
-    wikiUrl: "https://en.wikipedia.org/wiki/Still_Life_with_Apples_and_Oranges",
-    grokUrl: "https://grokipedia.com/page/Still_Life_with_Apples_and_Oranges",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Nature_morte_aux_pommes_et_aux_oranges%2C_par_Paul_C%C3%A9zanne.jpg/330px-Nature_morte_aux_pommes_et_aux_oranges%2C_par_Paul_C%C3%A9zanne.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
-  },
-  {
     id: 280, rank: null, museumOnly: true,
     title: "Tahitian Women on the Beach",
     artist: "Paul Gauguin",
@@ -4025,20 +3833,6 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/Tahitian_Women_on_the_Beach",
     grokUrl: "https://grokipedia.com/page/Tahitian_Women_on_the_Beach",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Paul_Gauguin_056.jpg/330px-Paul_Gauguin_056.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
-  },
-  {
-    id: 281, rank: null, museumOnly: true,
-    title: "The White Horse",
-    artist: "Paul Gauguin",
-    year: "1898",
-    medium: "Oil on canvas",
-    dimensions: "140 × 91.5 cm",
-    description: "Gauguin's largest Tahitian canvas presents a white horse drinking from a pool in a jungle setting where riders pass like shadows in filtered green light — an image of such otherworldly stillness that it reads simultaneously as observed nature and transcribed myth. The pharmacist who commissioned it rejected the painting because the horse appeared green; Gauguin refused to adjust the color, insisting the greenish cast was essential. The Orsay acquired it from the painter Gustave Fayet's estate.",
-    movement: "Post-Impressionism",
-    wikiUrl: "https://en.wikipedia.org/wiki/The_White_Horse_(Gauguin)",
-    grokUrl: "https://grokipedia.com/page/The_White_Horse",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Paul_Gauguin_-_The_White_Horse_-_Google_Art_Project.jpg/330px-Paul_Gauguin_-_The_White_Horse_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
   {
@@ -4084,20 +3878,6 @@ const PAINTINGS = [
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
   {
-    id: 285, rank: null, museumOnly: true,
-    title: "The Tub",
-    artist: "Edgar Degas",
-    year: "1886",
-    medium: "Pastel on cardboard",
-    dimensions: "60 × 83 cm",
-    description: "Degas exhibited this pastel at the final Impressionist exhibition of 1886 as part of a series of nudes in private acts of bathing and grooming — women he described as 'seen through a keyhole,' unconscious of any observer. The abrupt cropping and the tabletop cutting across the corner give the image the accidental intimacy of a photograph taken from above. Critics responded with a mix of admiration for the technique and unease at the voyeuristic premise.",
-    movement: "Impressionism",
-    wikiUrl: "https://en.wikipedia.org/wiki/The_Tub_(Degas)",
-    grokUrl: "https://grokipedia.com/page/The_Tub",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Edgar_Degas_-_Le_Tub_(1886_Mus%C3%A9e_d'Orsay).jpg/330px-Edgar_Degas_-_Le_Tub_(1886_Mus%C3%A9e_d'Orsay).jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
-  },
-  {
     id: 286, rank: null, museumOnly: true,
     title: "L'Étoile (The Star)",
     artist: "Edgar Degas",
@@ -4123,20 +3903,6 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/A_Burial_at_Ornans",
     grokUrl: "https://grokipedia.com/page/A_Burial_at_Ornans",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project_2.jpg/330px-Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project_2.jpg",
-    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
-  },
-  {
-    id: 288, rank: null, museumOnly: true,
-    title: "The Painter's Studio",
-    artist: "Gustave Courbet",
-    year: "1854–1855",
-    medium: "Oil on canvas",
-    dimensions: "361 × 598 cm",
-    description: "Courbet's enormous allegory — subtitled 'A Real Allegory Summing Up Seven Years of My Artistic and Moral Life' — shows the artist at his canvas flanked by the exploited poor to his left and his intellectual friends (including Baudelaire and Proudhon) to his right. Rejected for the 1855 Exposition Universelle, Courbet mounted it in his own pavilion outside — the first private exhibition in art history. No painting better announces the Realist movement's grand ambitions.",
-    movement: "Realism",
-    wikiUrl: "https://en.wikipedia.org/wiki/The_Painter%27s_Studio",
-    grokUrl: "https://grokipedia.com/page/The_Painter%27s_Studio",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Courbet_LAtelier_du_peintre.jpg/330px-Courbet_LAtelier_du_peintre.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
   {
