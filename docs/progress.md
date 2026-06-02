@@ -940,3 +940,12 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added As the Old Sing, So Pipe the Young (Jan Steen, c. 1668–70, ID 359) — definitive version of Steen's most famous proverb painting
 - Added View of Haarlem with Bleaching Grounds (Jacob van Ruisdael, c. 1670–75, ID 360) — finest Dutch landscape in the collection
 - New artist: Jacob van Ruisdael (no known portrait exists)
+
+### Museum build-up: Marmottan Monet Museum (4 → 10)
+- Added The Train in the Snow (Monet, 1875, ID 361) — locomotive dissolving into blizzard at Argenteuil
+- Added Rouen Cathedral, Facade (Sunset) (Monet, 1892–94, ID 362) — twilight version from the landmark series; subtitled "harmonie in gold and blue"
+- Added Parliament, Reflections on the Thames (Monet, 1905, ID 363) — Houses of Parliament in violet-orange fog from the London series
+- Added At the Ball (Berthe Morisot, 1875, ID 364) — frontal female gaze; painted the year of the first Impressionist exhibition
+- Added The Cherry Tree (Berthe Morisot, 1891, ID 365) — Morisot's most ambitious composition; tall vertical format, daughter Julie picking cherries
+- Added Self-Portrait (Berthe Morisot, 1885, ID 366) — palette in hand, artist looking directly at viewer; centerpiece of the world's largest Morisot collection
+- No new artists (Monet and Morisot already in ARTISTS)
