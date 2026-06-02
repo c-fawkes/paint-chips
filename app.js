@@ -363,7 +363,7 @@ function renderCondensedCard(p) {
            onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
     : `<div class="row-thumb-placeholder">🎨</div>`;
   const rankBadge = (p.rank != null && p.rank <= 100) ? `<div class="mv-rank-badge">#${p.rank}</div>` : '';
-  return `<div class="mv-popup-painting${isChecked ? ' condensed-checked' : ''}" onclick="openDetail('${key}')">
+  return `<div class="mv-popup-painting${isChecked ? ' condensed-checked' : ''}" data-pid="${key}" onclick="openDetail('${key}')">
     <div class="mv-popup-thumb-wrap">
       ${rankBadge}
       <div class="mv-popup-thumb">${img}</div>
@@ -388,7 +388,7 @@ function renderPaintingCard(p) {
            onerror="this.classList.add('card-img-error');this.outerHTML='<div class=card-img-placeholder>🎨</div>'">`
     : `<div class="card-img-placeholder">🎨</div>`;
 
-  return `<div class="painting-card${isChecked ? ' checked' : ''}" onclick="openDetail('${key}')">
+  return `<div class="painting-card${isChecked ? ' checked' : ''}" data-pid="${key}" onclick="openDetail('${key}')">
     <div class="card-img-wrap">
       ${imgHtml}
       ${p.rank != null && p.rank <= 100 ? `<div class="card-rank-badge">#${p.rank}</div>` : ''}
@@ -417,7 +417,7 @@ function renderPaintingRow(p) {
            onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
     : `<div class="row-thumb-placeholder">🎨</div>`;
 
-  return `<div class="painting-row${isChecked ? ' checked' : ''}" onclick="openDetail('${key}')">
+  return `<div class="painting-row${isChecked ? ' checked' : ''}" data-pid="${key}" onclick="openDetail('${key}')">
     <div class="row-img-wrap">${imgHtml}</div>
     <div class="row-meta">
       <div class="row-title">${esc(p.title)}${isUser ? '<span class="user-badge">added</span>' : ''}</div>
@@ -1399,7 +1399,7 @@ function detailToggleCheck(id) {
     S.dateCollected[key] = todayISO();
   }
   save();
-  render();
+  _patchCheckState(key);
 
   const isChecked = !!S.checked[key];
   const btn = document.getElementById('detail-collected-btn');
@@ -1453,7 +1453,40 @@ function rowToggleCheck(e, id) {
     S.dateCollected[key] = todayISO();
   }
   save();
-  render();
+  _patchCheckState(key);
+}
+
+function _patchCheckState(key) {
+  const isChecked = !!S.checked[key];
+
+  // Update header counter without re-rendering main
+  const checked = globalChecked();
+  const total   = globalTotal();
+  const checkedEl = document.getElementById('counter-checked');
+  const totalEl   = document.getElementById('counter-total');
+  const barEl     = document.getElementById('global-progress-bar');
+  if (checkedEl) checkedEl.textContent = checked;
+  if (totalEl)   totalEl.textContent   = '/ ' + total;
+  if (barEl)     barEl.style.width     = (total ? checked / total * 100 : 0) + '%';
+
+  // Patch every visible card/row for this painting in-place
+  document.querySelectorAll(`[data-pid="${key}"]`).forEach(card => {
+    if (card.classList.contains('painting-card') || card.classList.contains('painting-row')) {
+      card.classList.toggle('checked', isChecked);
+    } else if (card.classList.contains('mv-popup-painting')) {
+      card.classList.toggle('condensed-checked', isChecked);
+    }
+    const badge = card.querySelector('.card-collected-badge');
+    if (badge) {
+      badge.classList.toggle('checked', isChecked);
+      badge.innerHTML = isChecked ? ICONS.check : '';
+    }
+    const rowCheck = card.querySelector('.row-check');
+    if (rowCheck) {
+      rowCheck.classList.toggle('checked', isChecked);
+      rowCheck.innerHTML = isChecked ? ICONS.check : '';
+    }
+  });
 }
 
 /* ── Photo handling ──────────────────────────────────────────────────────── */
@@ -2284,23 +2317,7 @@ function renderMuseumDetailView() {
   } else if (mode === 'list') {
     paintingsHtml = `<div class="paintings-compact">${paintings.map(p => renderPaintingRow(p)).join('')}</div>`;
   } else {
-    const thumbs = paintings.map(p => {
-      const img = p.imageUrl
-        ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
-               onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
-        : `<div class="row-thumb-placeholder">🎨</div>`;
-      const rankBadge = (p.rank != null && p.rank <= 100)
-        ? `<div class="mv-rank-badge">#${p.rank}</div>` : '';
-      return `<div class="mv-popup-painting" onclick="openDetail('${String(p.id)}')">
-        <div class="mv-popup-thumb-wrap">
-          ${rankBadge}
-          <div class="mv-popup-thumb">${img}</div>
-        </div>
-        <div class="mv-popup-title">${esc(p.title)}</div>
-        <div class="mv-popup-artist">${esc(p.artist)}</div>
-      </div>`;
-    }).join('');
-    paintingsHtml = `<div class="mv-popup-paintings">${thumbs}</div>`;
+    paintingsHtml = `<div class="mv-popup-paintings">${paintings.map(p => renderCondensedCard(p)).join('')}</div>`;
   }
 
   return _museumsToolbar() + `

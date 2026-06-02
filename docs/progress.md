@@ -1068,3 +1068,11 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Force App Update Setting
 - Added **Force app update** button to Settings → About section — unregisters all service workers, clears all caches, and hard-reloads to fetch the latest version without reinstalling the PWA
 - User data (localStorage and IndexedDB) is unaffected; only the HTTP cache is cleared
+
+### Collect Badge on Museum Detail 3×3 View
+- Museum detail condensed (3×3) view now uses `renderCondensedCard` instead of inline rendering — collect badge matches the paintings tab exactly
+
+### Fix Image Flash on Collect Toggle
+- `rowToggleCheck` and `detailToggleCheck` no longer call `render()`, eliminating the full `innerHTML` replacement that caused all images to flash on every check/uncheck
+- Added `data-pid` attribute to `painting-card`, `painting-row`, and `mv-popup-painting` wrappers
+- New `_patchCheckState()` helper surgically updates card classes, badge icon, and header counter in-place
