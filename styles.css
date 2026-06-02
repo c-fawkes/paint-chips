@@ -477,6 +477,7 @@ body {
   border-bottom-right-radius: 0;
   border-color: var(--gold-dim);
 }
+.museum-header.visited-museum { border-color: var(--gold-dim); }
 
 .museum-icon {
   width: 36px; height: 36px;

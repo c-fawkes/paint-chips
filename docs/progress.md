@@ -919,3 +919,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### 3×3 grid: collect button
 - Added `.card-collected-badge` button to `renderCondensedCard()` — same circle, gold-fill, check icon as the 2×2 grid
 - `.card-collected-badge::before { inset: -8px }` extends the tap target 8 px beyond the visible button on all sides
+
+### Museums tab: visited indicator replaced with gold border
+- Removed inline `museum-visited-check` checkmark span from museum name in city/country views
+- Visited museums now show `.museum-header.visited-museum { border-color: var(--gold-dim) }` — matches collected painting card border style
+- Applied to all three museum tab views (alpha, city, country) via `visited-museum` class on the header element

@@ -618,9 +618,9 @@ function renderMuseumBlock(name, paintings) {
   const mt  = paintings.length;
   const safeName = esc(name).replace(/'/g, "\\'");
   return `<div class="museum-section" style="margin:0 0 6px">
-    <div class="museum-header" onclick="openMuseumDetail('${safeName}')" style="padding:8px 12px">
+    <div class="museum-header${isVisited ? ' visited-museum' : ''}" onclick="openMuseumDetail('${safeName}')" style="padding:8px 12px">
       <div class="museum-info">
-        <div class="museum-name" style="font-size:.85rem">${esc(name)}${isVisited ? `<span class="museum-visited-check" title="Visited">${ICONS.check}</span>` : ''}</div>
+        <div class="museum-name" style="font-size:.85rem">${esc(name)}</div>
       </div>
       <div class="museum-counter"><div class="mc-nums">${mc}/${mt}</div><div class="mc-label">collected</div></div>
       <button class="museum-visited-btn${isVisited ? ' visited' : ''}" onclick="toggleMuseumVisited(event,'${safeName}')" title="${isVisited ? 'Visited' : 'Mark as visited'}">
@@ -653,7 +653,7 @@ function renderMuseumsAlpha() {
     const icon      = flagFor[m.country] || '🖼️';
     const safeName  = esc(name).replace(/'/g, "\\'");
     return `<div class="museum-section">
-      <div class="museum-header" onclick="openMuseumDetail('${safeName}')">
+      <div class="museum-header${isVisited ? ' visited-museum' : ''}" onclick="openMuseumDetail('${safeName}')">
         <div class="museum-icon-wrap">
           <div class="museum-icon">${icon}</div>
         </div>
