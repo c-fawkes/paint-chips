@@ -949,3 +949,66 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added The Cherry Tree (Berthe Morisot, 1891, ID 365) — Morisot's most ambitious composition; tall vertical format, daughter Julie picking cherries
 - Added Self-Portrait (Berthe Morisot, 1885, ID 366) — palette in hand, artist looking directly at viewer; centerpiece of the world's largest Morisot collection
 - No new artists (Monet and Morisot already in ARTISTS)
+
+### Museum build-up: Phillips Collection (4 → 10)
+- Added The Repentant St. Peter (El Greco, c. 1600–05, ID 367) — Duncan Phillips called El Greco "the first impassioned expressionist"; elongated twisting figure in electric blue robe
+- Added Entrance to the Public Gardens in Arles (Van Gogh, 1888, ID 368) — strident saturated colors from the most intensely creative Arles period; acquired by Phillips in 1930
+- Added The Road Menders (Van Gogh, 1889, ID 369) — painted from the window of the Saint-Paul asylum; dazzling planes of yellow and gold, "the most successful" of the series per Van Gogh
+- Added Ginger Pot with Pomegranate and Pears (Cézanne, 1893–94, ID 370) — a daring still life with tilted perspective; the ginger pot recurs across Cézanne's late still-life cycle
+- Added Tree Nursery (Paul Klee, 1929, ID 371) — geometric grid of colored rectangles evoking seedling nursery rows; Klee's Bauhaus years at their most systematic and playful
+- Added Green and Maroon (Mark Rothko, 1953, ID 372) — transitional canvas between Rothko's red and black periods; two stacked rectangles that reward sustained, close attention
+- New artists: El Greco, Paul Klee, Mark Rothko
+
+### Museum build-up: J. Paul Getty Museum (4 → 10)
+- Added Portrait of a Halberdier (Jacopo Pontormo, 1529–30, ID 373) — supreme Mannerist portrait; acidic green doublet against pale blue, sold for a record $32.5 million in 1989
+- Added Danaë (Orazio Gentileschi, c. 1623, ID 374) — Zeus as shower of gold coins; clear even light unlike Baroque contemporaries; acquired by Getty in 2016 for $30.5 million
+- Added An Old Man in Military Costume (Rembrandt, c. 1630–31, ID 375) — Rembrandt's father or a Leiden neighbour in archaic gorget; one of the earliest works in the Getty's Rembrandt holdings
+- Added Jeanne (Spring) (Édouard Manet, 1881, ID 376) — Manet's last great female portrait; model Jeanne Demarsy in flowered hat with parasol; `imageUrl: null` (Manet copyright expired but no Commons file found)
+- Added Wheatstacks, Snow Effect, Morning (Monet, 1891, ID 377) — from the Haystacks series, exhibited at Durand-Ruel 1891 where all 15 sold within three days of opening
+- Added Christ's Entry into Brussels in 1889 (James Ensor, 1888, ID 378) — vast 14-foot canvas of masked carnival crowd; Ensor's masterpiece, prophetic of Expressionism and Surrealism
+- New artists: Jacopo Pontormo, Orazio Gentileschi, James Ensor
+
+### Museum build-up: Philadelphia Museum of Art (4 → 10)
+- Added Saint Francis of Assisi Receiving the Stigmata (Jan van Eyck, c. 1430–32, ID 379) — smallest panel painting by a major master; microscopic alpine landscape in 5-inch panel
+- Added Prometheus Bound (Rubens, c. 1611–18, ID 380) — eagle by Frans Snyders; Rubens considered it one of his most important works, retained it personally for years
+- Added The Life Line (Winslow Homer, 1884, ID 381) — hero rescues unconscious woman on breeches buoy; Homer's breakthrough work at the 1884 National Academy exhibition
+- Added The Annunciation (Henry Ossawa Tanner, 1898, ID 382) — Mary as an ordinary Palestinian teenager; the angel rendered as a column of golden light, rejecting academic convention
+- Added Soft Construction with Boiled Beans (Premonition of Civil War) (Dalí, 1936, ID 383) — painted six months before the Spanish Civil War began; grotesque body tears itself apart; `imageUrl: null` (Dalí copyright until 2059)
+- Added The Large Bathers (Renoir, 1884–87, ID 384) — Renoir's most ambitious figure painting; three years in preparation; a departure from Impressionism toward classical line
+- New artists: Henry Ossawa Tanner (Winslow Homer already in ARTISTS)
+
+### Museum build-up: National Museum of Norway (4 → 10)
+- Added Blue Interior (Harriet Backer, 1883, ID 385) — woman reading by window in warm interior light; Backer's masterpiece and the finest Norwegian Impressionist interior painting
+- Added Albertine in the Police Doctor's Waiting-Room (Christian Krohg, 1887, ID 386) — scandalous social-realist painting depicting registered prostitutes; the novel it illustrated was seized by police
+- Added View from Stalheim (Johan Christian Dahl, 1842, ID 387) — spectacular panorama of the Nærøydalen valley; the definitive Romantic landscape of Norway
+- Added Bridal Procession on the Hardangerfjord (Hans Gude, 1848, ID 388) — boats of wedding guests in national costume on the Hardanger; Adolph Tidemand painted the figures while Gude painted the landscape
+- Added Madonna (Edvard Munch, . 1894–95, ID 389) — the most enigmatic of Munch's subjects; the female figure oscillates between sacred and erotic, saint and femme fatale
+- Added Winter at the River Simoa (Frits Thaulow, 1883, ID 390) — still winter river with ice-edged banks; Thaulow's Naturalist style bridges Norwegian Romanticism and Impressionism
+- New artists: Harriet Backer, Christian Krohg, Johan Christian Dahl, Hans Gude, Frits Thaulow
+
+### Museum build-up: Vatican Museums — Sistine Chapel (4 → 10)
+- Added The Creation of Eve (Michelangelo, 1509–10, ID 391) — God gestures Eve out of the sleeping Adam's side; one of the nine Genesis narratives on the ceiling
+- Added The Creation of the Sun, Moon, and Plants (Michelangelo, 1511, ID 392) — God shown twice in one panel; vigorous foreshortening of the divine figure, back turned on the second pass
+- Added The Libyan Sibyl (Michelangelo, 1511–12, ID 393) — most admired of the five sibyls; preparatory red-chalk study for her hands is one of the most celebrated drawings in art history
+- Added Temptations of Christ (Botticelli, 1481–82, ID 394) — three episodes of Satan's temptations painted across a single continuous landscape on the south wall; `imageUrl: null` (no suitable Commons image)
+- Added Delivery of the Keys (Pietro Perugino, 1481–82, ID 395) — Christ hands keys to Peter before an ideal Renaissance piazza; the clearest statement of papal authority on the chapel walls
+- Added The Punishment of Korah, Dathan, and Abiram (Botticelli, 1481–82, ID 396) — rebels against Moses's authority swallowed by the earth; the Arch of Constantine in the background underlines Rome's succession from Israel
+- New artist: Pietro Perugino
+
+### Museum build-up: Gemäldegalerie Alte Meister (4 → 10)
+- Added Holy Night (Nativity) (Correggio, c. 1528–30, ID 397) — Mary's radiance illuminates the nocturnal scene from within the Child; first fully night-lit nativity in Italian painting
+- Added The Procuress (Vermeer, 1656, ID 398) — Vermeer's earliest dated genre painting; a soldier pays for a woman's favors while another man watches; self-portrait in left corner
+- Added The Prodigal Son in the Brothel (Rembrandt, c. 1635, ID 399) — self-portrait with Saskia on his knee in a tavern scene; Rembrandt playing the Prodigal to his wife's barmaid
+- Added Duke Henry the Pious (Lucas Cranach the Elder, 1514, ID 400) — pendant portraits of Henry and his wife Catherine of Mecklenburg; finest courtly portraits of the German Renaissance
+- Added Portrait of Charles de Solier, Sieur de Morette (Hans Holbein the Younger, 1534–35, ID 401) — French ambassador to England; Holbein's most powerful male portrait, with unwavering psychological presence
+- Added Dresden Triptych (Jan van Eyck, c. 1437, ID 402) — tiny foldable altarpiece with the Virgin enthroned flanked by saints; inscribed with Van Eyck's motto and dated 1437
+- New artists: Correggio, Lucas Cranach the Elder (Hans Holbein the Younger already in ARTISTS)
+
+### Museum build-up: Museo de Arte Moderno (4 → 10)
+- Added Creation of the Birds (Remedios Varo, c. 1957, ID 403) — owl-like painter mixes moonlight from a flask to create birds that fly off the canvas; Varo's meditation on artistic creation; `imageUrl: null` (copyright until 2033)
+- Added Portrait of Lupe Marín (Diego Rivera, 1938, ID 404) — uncompromising frontal portrait of Rivera's former wife, known for her sharp wit and striking appearance; `imageUrl: null` (copyright until 2027)
+- Added The Magical World of the Mayas (Leonora Carrington, 1963, ID 405) — mural-scale canvas blending pre-Columbian mythology with Surrealist imagery; commissioned for the National Museum of Anthropology; `imageUrl: null` (copyright until 2044)
+- Added El Coronelazo (Self-Portrait) (David Alfaro Siqueiros, 1945, ID 406) — Siqueiros depicts himself in a colonel's coat with fist raised; bold Pyroxilin lacquer on masonite with his characteristic spray technique; `imageUrl: null` (copyright until 2044)
+- Added Caravan (Remedios Varo, 1955, ID 407) — cloaked figures whose robes sprout wheels, traveling through a desolate townscape; Varo's signature fusion of medieval imagery and Surrealist displacement; `imageUrl: null` (copyright until 2033)
+- Added Day of the Dead (Diego Rivera, c. 1944, ID 408) — folk festival scene with skeletal revelers and flowers; Rivera's celebration of pre-Hispanic death ritual as living popular culture; `imageUrl: null` (copyright until 2027)
+- New artists: Remedios Varo, Leonora Carrington, David Alfaro Siqueiros

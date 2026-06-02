@@ -2416,6 +2416,90 @@ const PAINTINGS = [
     imageUrl: null,
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
   },
+  {
+    id: 367, rank: null, museumOnly: true,
+    title: "The Repentant St. Peter",
+    artist: "El Greco",
+    year: "c. 1600–1605",
+    medium: "Oil on canvas",
+    dimensions: "94 × 75 cm",
+    description: "El Greco painted at least six autograph versions of this subject — the weeping Peter after his denial of Christ — each one subtly different in the saint's posture and the anguish registered in his face. Duncan Phillips called El Greco 'the first impassioned expressionist,' and this painting was among his most important acquisitions. The elongated, twisting figure and electric blue robe distort the body expressively rather than naturalistically, anticipating modern painting by three centuries.",
+    movement: "Mannerism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Tears_of_Saint_Peter_(El_Greco,_Washington)",
+    grokUrl: "https://grokipedia.com/page/The_Tears_of_Saint_Peter_(El_Greco,_Washington)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/El_Greco_-_The_Repentant_St._Peter_-_Google_Art_Project.jpg/330px-El_Greco_-_The_Repentant_St._Peter_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
+  },
+  {
+    id: 368, rank: null, museumOnly: true,
+    title: "Entrance to the Public Gardens in Arles",
+    artist: "Vincent van Gogh",
+    year: "1888",
+    medium: "Oil on canvas",
+    dimensions: "72.5 × 91 cm",
+    description: "Painted during the most intensely creative period of Van Gogh's time in Arles, this canvas captures the entrance to a public park with strident saturated colors and shadowless light — the blazing Provençal sun made visible. Van Gogh wrote to his brother Theo that it was 'another garden,' one of a series he made of the park opposite his Yellow House. The Phillips acquired it in 1930, recognizing it as one of the finest examples of the Arles period outside Europe.",
+    movement: "Post-Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Vincent_van_Gogh_-_Entrance_to_the_Public_Gardens_in_Arle_-_Google_Art_Project.jpg/330px-Vincent_van_Gogh_-_Entrance_to_the_Public_Gardens_in_Arle_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
+  },
+  {
+    id: 369, rank: null, museumOnly: true,
+    title: "The Road Menders",
+    artist: "Vincent van Gogh",
+    year: "1889",
+    medium: "Oil on canvas",
+    dimensions: "73.7 × 143.5 cm",
+    description: "Workers repave a street in Saint-Rémy beneath a canopy of plane trees, their yellowing leaves blazing against the blue sky. Van Gogh painted two versions: the first outdoors, this one back in his studio at the asylum — working from the same composition with even more intense color. Duncan Phillips considered it 'among the best van Goghs,' a judgment confirmed by the painting's extraordinary sense of light filtering through an autumnal ceiling of leaves.",
+    movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Large_Plane_Trees",
+    grokUrl: "https://grokipedia.com/page/The_Large_Plane_Trees",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Vincent_van_Gogh_-_The_Road_Menders_-_Google_Art_Project.jpg/330px-Vincent_van_Gogh_-_The_Road_Menders_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
+  },
+  {
+    id: 370, rank: null, museumOnly: true,
+    title: "Ginger Pot with Pomegranate and Pears",
+    artist: "Paul Cézanne",
+    year: "1893",
+    medium: "Oil on canvas",
+    dimensions: "46.4 × 55.6 cm",
+    description: "Cézanne returns to his recurring vocabulary of objects — the ginger pot, piled fruit, artfully folded cloth — in a composition that introduces a second table and a hanging curtain to deepen the spatial puzzle. The objects sit on planes that tilt, overlap, and refuse to recede in the expected way, as Cézanne dismantles the Renaissance conventions of perspective while appearing to paint a simple table. The Phillips version was acquired in 1939 and has become one of the most studied still lifes in the American collection.",
+    movement: "Post-Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Paul_C%C3%A9zanne_-_Ginger_Pot_with_Pomegranate_and_Pears_-_Google_Art_Project.jpg/330px-Paul_C%C3%A9zanne_-_Ginger_Pot_with_Pomegranate_and_Pears_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
+  },
+  {
+    id: 371, rank: null, museumOnly: true,
+    title: "Tree Nursery",
+    artist: "Paul Klee",
+    year: "1929",
+    medium: "Oil on incised gesso on canvas",
+    dimensions: "43.8 × 52.4 cm",
+    description: "A cross-section of a tree nursery rendered in Klee's characteristic grid of small, irregular rectangles — earthy greens and ochres patterned with a rhythmic vitality that suggests organic growth rather than geometry. Duncan Phillips purchased this in 1930, making the Phillips Collection the third museum in the United States to own a Klee. The painting is the most important among the museum's substantial Klee holdings, which reflect Phillips's early and prescient championing of the artist.",
+    movement: "Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Tree_Nursery%2C_Paul_Klee%2C_1929%2C_oil_on_incised_gesso_on_canvas_-_Phillips_Collection_-_DSC04894.JPG/330px-Tree_Nursery%2C_Paul_Klee%2C_1929%2C_oil_on_incised_gesso_on_canvas_-_Phillips_Collection_-_DSC04894.JPG",
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
+  },
+  {
+    id: 372, rank: null, museumOnly: true,
+    title: "Green and Maroon",
+    artist: "Mark Rothko",
+    year: "1953",
+    medium: "Oil on canvas",
+    dimensions: "231.4 × 139.4 cm",
+    description: "Two luminous rectangular fields of color — a soft green above, a dark maroon below — hover against a darker ground, their edges soft and breathing rather than hard. Rothko wanted his large-scale paintings viewed at close range in intimate spaces, and this was among the four works Duncan Phillips installed in 1960 in the dedicated Rothko Room — the world's first public space given over entirely to a living artist's work. Rothko himself chose the room's low lighting and the arrangement of the paintings.",
+    movement: "Abstract Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
+  },
 
   // ── NEUE GALERIE NEW YORK ─────────────────────────────────────────────────
   {
@@ -2488,6 +2572,90 @@ const PAINTINGS = [
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Nicolas_Poussin_%281594-1665%29_%28attributed_to%29_-_The_Holy_Family_with_the_Infant_Saint_John_-_L.F9.1943.4.0_-_Leicester_Museum_%5E_Art_Gallery.jpg/330px-Nicolas_Poussin_%281594-1665%29_%28attributed_to%29_-_The_Holy_Family_with_the_Infant_Saint_John_-_L.F9.1943.4.0_-_Leicester_Museum_%5E_Art_Gallery.jpg",
     location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
   },
+  {
+    id: 373, rank: null, museumOnly: true,
+    title: "Portrait of a Halberdier",
+    artist: "Jacopo Pontormo",
+    year: "1529–1530",
+    medium: "Oil on panel, transferred to canvas",
+    dimensions: "92 × 72 cm",
+    description: "A young soldier — probably Francesco Guardi, who fought in the defence of the Florentine Republic — stands in an attitude of wary alertness, his halberd barely visible, his gaze unsettling in its directness. Pontormo's colours are acidic and strange, the green doublet almost luminescent against the pale blue ground, and the figure seems to float rather than stand. It sold at auction in 1989 for $32.5 million, then a record for any painting, and is widely considered the supreme Mannerist portrait.",
+    movement: "Mannerism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_a_Halberdier",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_a_Halberdier",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Pontormo_%28Jacopo_Carucci%29_%28Italian%2C_Florentine%29_-_Portrait_of_a_Halberdier_%28Francesco_Guardi%3F%29_-_Google_Art_Project.jpg/330px-Pontormo_%28Jacopo_Carucci%29_%28Italian%2C_Florentine%29_-_Portrait_of_a_Halberdier_%28Francesco_Guardi%3F%29_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
+  },
+  {
+    id: 374, rank: null, museumOnly: true,
+    title: "Danaë",
+    artist: "Orazio Gentileschi",
+    year: "c. 1623",
+    medium: "Oil on canvas",
+    dimensions: "161.3 × 226.7 cm",
+    description: "Danaë reclines on crumpled white and gold sheets as a shower of golden coins — Zeus in disguise — falls from the heavens onto her lap. Gentileschi paints the scene with a cool sensuality quite unlike his Baroque contemporaries: the light is clear and even, the drapery almost sculpted. Acquired by the Getty in 2016 for $30.5 million, it is one of the most important Old Master paintings to enter an American museum in the 21st century.",
+    movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Dana%C3%AB_(Orazio_Gentileschi)",
+    grokUrl: "https://grokipedia.com/page/Danaë_(Orazio_Gentileschi)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Orazio_Gentileschi_-_Dana%C3%AB_and_the_Shower_of_Gold_-_2016.6_-_J._Paul_Getty_Museum.jpg/330px-Orazio_Gentileschi_-_Dana%C3%AB_and_the_Shower_of_Gold_-_2016.6_-_J._Paul_Getty_Museum.jpg",
+    location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
+  },
+  {
+    id: 375, rank: null, museumOnly: true,
+    title: "An Old Man in Military Costume",
+    artist: "Rembrandt van Rijn",
+    year: "c. 1630–1631",
+    medium: "Oil on panel",
+    dimensions: "65.7 × 51.8 cm",
+    description: "A man of advanced age stares out with an intensity that feels confrontational — the gorget and plumed helmet of a soldier adding costume drama to the psychological weight. This type of character study, known as a tronie, was a specialty of the young Rembrandt in Leiden; here his command of light and shadow suggests decades of experience already mastered at 25. Modern imaging has revealed a second painting beneath the surface, making it a literal palimpsest of Rembrandt's creative process.",
+    movement: "Dutch Golden Age",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Rembrandt_Harmensz._van_Rijn_%28Dutch_-_An_Old_Man_in_Military_Costume_-_Google_Art_Project.jpg/330px-Rembrandt_Harmensz._van_Rijn_%28Dutch_-_An_Old_Man_in_Military_Costume_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
+  },
+  {
+    id: 376, rank: null, museumOnly: true,
+    title: "Jeanne (Spring)",
+    artist: "Édouard Manet",
+    year: "1881",
+    medium: "Oil on canvas",
+    dimensions: "74 × 51.5 cm",
+    description: "The actress Jeanne Demarsy stands against a flowering garden backdrop, parasol in hand, embodying springtime leisure. Manet exhibited it at the 1882 Paris Salon to great acclaim — one of his last public successes before his death the following year — and it became the first artwork ever reproduced in colour in a newspaper. The Getty acquired it in 2014 for $65 million, the highest price ever paid for a Manet at auction.",
+    movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Spring_(Manet)",
+    grokUrl: "https://grokipedia.com/page/Spring_(Manet)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Edouard_Manet_023.jpg/330px-Edouard_Manet_023.jpg",
+    location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
+  },
+  {
+    id: 377, rank: null, museumOnly: true,
+    title: "Wheatstacks, Snow Effect, Morning",
+    artist: "Claude Monet",
+    year: "1891",
+    medium: "Oil on canvas",
+    dimensions: "64.8 × 99.7 cm",
+    description: "Two haystacks near Monet's home in Giverny rise through a pale morning haze, their shapes simplified almost to abstraction in the cool winter light. Monet arranged for the stacks to be left standing through the winter so he could paint them in series — at least thirty canvases tracking the same motif through changing seasons and times of day. This systematic investigation of light's effect on a single object anticipated abstract painting's central obsession by half a century.",
+    movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Haystacks_(Monet_series)",
+    grokUrl: "https://grokipedia.com/page/Haystacks_(Monet_series)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Getty_monet_wheatstacks.jpg/330px-Getty_monet_wheatstacks.jpg",
+    location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
+  },
+  {
+    id: 378, rank: null, museumOnly: true,
+    title: "Christ's Entry into Brussels in 1889",
+    artist: "James Ensor",
+    year: "1888",
+    medium: "Oil on canvas",
+    dimensions: "252.6 × 431 cm",
+    description: "A vast, seething crowd fills the canvas — masked figures, skeletons, carnival banners, military brass bands — surging through Brussels while a tiny, almost invisible Christ rides a donkey at the centre. Ensor painted it in 1888 but imagined the scene set in 1889, contemporizing the biblical Entry into Jerusalem as a modern political spectacle and indicting the crowd that crucifies without knowing it. Rejected for exhibition by every Belgian society, kept rolled in his studio for decades, it is now recognized as one of the most ambitious and prophetic paintings in Western art.",
+    movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Christ%27s_Entry_Into_Brussels_in_1889",
+    grokUrl: "https://grokipedia.com/page/Christ's_Entry_Into_Brussels_in_1889",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Christ%27s_Entry_into_Brussels_in_1889.jpg/330px-Christ%27s_Entry_into_Brussels_in_1889.jpg",
+    location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
+  },
 
   // ── PHILADELPHIA MUSEUM OF ART ────────────────────────────────────────────
   {
@@ -2530,6 +2698,90 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/The_Gross_Clinic",
     grokUrl: "https://grokipedia.com/page/The_Gross_Clinic",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Thomas_Eakins%2C_American_-_Portrait_of_Dr._Samuel_D._Gross_%28The_Gross_Clinic%29_-_Google_Art_Project.jpg/330px-Thomas_Eakins%2C_American_-_Portrait_of_Dr._Samuel_D._Gross_%28The_Gross_Clinic%29_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
+  },
+  {
+    id: 379, rank: null, museumOnly: true,
+    title: "Saint Francis of Assisi Receiving the Stigmata",
+    artist: "Jan van Eyck",
+    year: "c. 1430–1432",
+    medium: "Oil on vellum on panel",
+    dimensions: "12.7 × 14.6 cm",
+    description: "At just five inches square, this is among the smallest panel paintings in existence by a major master — and yet it contains a meticulously realized alpine landscape, a seraph bearing the crucified Christ, and the kneeling saint with wounds appearing on his hands and feet. Van Eyck's almost microscopic refinement is extraordinary: dendrochronological analysis has shown the Philadelphia panel's wood came from the same oak tree as two authenticated van Eyck portraits. It was intended to be held in the hands and studied at close range — a portable devotional object of extraordinary intimacy.",
+    movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Saint_Francis_Receiving_the_Stigmata_(van_Eyck)",
+    grokUrl: "https://grokipedia.com/page/Saint_Francis_Receiving_the_Stigmata_(van_Eyck)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Jan_van_eyck_%28attr.%29%2C_stimmate_di_s._francesco_di_philadelphia%2C_1430-32%2C_01.JPG/330px-Jan_van_eyck_%28attr.%29%2C_stimmate_di_s._francesco_di_philadelphia%2C_1430-32%2C_01.JPG",
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
+  },
+  {
+    id: 380, rank: null, museumOnly: true,
+    title: "Prometheus Bound",
+    artist: "Peter Paul Rubens",
+    year: "c. 1611–1618",
+    medium: "Oil on canvas",
+    dimensions: "243.5 × 209.5 cm",
+    description: "The Titan Prometheus writhes in agony as the eagle — painted by Frans Snyders, Rubens's specialist collaborator — tears into his side to devour his regenerating liver. Rubens considered this one of his most important works, retaining it in his personal collection for years before trading it to the English collector Sir Dudley Carleton. The tremendous muscular torso, derived from Michelangelo but twisted into a vortex of suffering, makes it the supreme example of Flemish Baroque drama.",
+    movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Prometheus_Bound_(Rubens)",
+    grokUrl: "https://grokipedia.com/page/Prometheus_Bound_(Rubens)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Peter_Paul_Rubens%2C_Flemish_%28active_Italy%2C_Antwerp%2C_and_England%29_-_Prometheus_Bound_-_Google_Art_Project.jpg/330px-Peter_Paul_Rubens%2C_Flemish_%28active_Italy%2C_Antwerp%2C_and_England%29_-_Prometheus_Bound_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
+  },
+  {
+    id: 381, rank: null, museumOnly: true,
+    title: "The Life Line",
+    artist: "Winslow Homer",
+    year: "1884",
+    medium: "Oil on canvas",
+    dimensions: "72.7 × 113.7 cm",
+    description: "A woman, unconscious or exhausted, is hauled through stormy surf on a breeches buoy — a lifesaving pulley system new to the 1880s — by an anonymous rescuer whose face is hidden by a scarf. Homer was inspired by a real disaster off Atlantic City; he studied the equipment and the physics of the rescue mechanism with characteristic precision. When exhibited at the National Academy in 1884 it was immediately recognized as a major contribution to American art, praised for its painterly virtuosity and psychological tension.",
+    movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Life_Line_(painting)",
+    grokUrl: "https://grokipedia.com/page/The_Life_Line_(painting)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Winslow_Homer_-_The_Life_Line_%281884%29.jpg/330px-Winslow_Homer_-_The_Life_Line_%281884%29.jpg",
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
+  },
+  {
+    id: 382, rank: null, museumOnly: true,
+    title: "The Annunciation",
+    artist: "Henry Ossawa Tanner",
+    year: "1898",
+    medium: "Oil on canvas",
+    dimensions: "144.8 × 181 cm",
+    description: "Rather than depicting the angel Gabriel as a winged figure, Tanner renders him as a shaft of golden light — warm, vibrating, and suffusing the room. Mary, dressed in simple peasant clothing and unadorned by halo or celestial props, sits on a rumpled bed and turns toward the light with an expression of quiet wonder rather than theatrical awe. Tanner painted the scene after a research trip to Egypt and Palestine sponsored by the Philadelphia merchant Rodman Wanamaker; his radical de-sentimentalization of the subject caused a sensation at the 1898 Paris Salon, and its acquisition by the Philadelphia Museum of Art made it the first work by Tanner to enter an American museum.",
+    movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Annunciation_(Tanner)",
+    grokUrl: "https://grokipedia.com/page/The_Annunciation_(Tanner)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_Annunciation%2C_Philadelphia_Museum_of_Art%2C_W1899-1-1-pma%2C_by_Henry_Ossawa_Tanner.jpg/330px-The_Annunciation%2C_Philadelphia_Museum_of_Art%2C_W1899-1-1-pma%2C_by_Henry_Ossawa_Tanner.jpg",
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
+  },
+  {
+    id: 383, rank: null, museumOnly: true,
+    title: "Soft Construction with Boiled Beans (Premonition of Civil War)",
+    artist: "Salvador Dalí",
+    year: "1936",
+    medium: "Oil on canvas",
+    dimensions: "100 × 99 cm",
+    description: "A vast, self-consuming figure tears itself apart against a Catalonian sky, its limbs and torso locked in a mutual devouring while boiled beans litter the ground below. Dalí claimed to have painted it six months before the Spanish Civil War began, calling it proof of the prophetic power of his subconscious; in reality he probably retitled an existing work after the war started. Art historian Robert Hughes argued it surpassed Picasso's Guernica as a statement on the Spanish conflict — not because it was better propaganda, but because its psychic horror went deeper.",
+    movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Soft_Construction_with_Boiled_Beans_(Premonition_of_Civil_War)",
+    grokUrl: "https://grokipedia.com/page/Soft_Construction_with_Boiled_Beans_(Premonition_of_Civil_War)",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
+  },
+  {
+    id: 384, rank: null, museumOnly: true,
+    title: "The Large Bathers",
+    artist: "Pierre-Auguste Renoir",
+    year: "1884–1887",
+    medium: "Oil on canvas",
+    dimensions: "115 × 170 cm",
+    description: "Three years in the making, this large-scale composition of nude women bathing by a stream was Renoir's calculated response to the Impressionism he had himself helped create — he wanted to return to the classical draftsmanship of Ingres and Raphael, and the result is a deliberate tension: the left figures outlined and sculptural, the right side dissolved in Impressionist brushwork. Monet admired it enormously; Cézanne's entire series of Bathers was directly inspired by it. It is the painting where Renoir stepped back from Impressionism to look at the French Old Masters — and invented the next phase of his career.",
+    movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Les_Grandes_Baigneuses_(Renoir)",
+    grokUrl: "https://grokipedia.com/page/Les_Grandes_Baigneuses_(Renoir)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pierre-Auguste_Renoir%2C_French_-_The_Large_Bathers_-_Google_Art_Project.jpg/330px-Pierre-Auguste_Renoir%2C_French_-_The_Large_Bathers_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
   },
 
@@ -2681,6 +2933,90 @@ const PAINTINGS = [
     dimensions: "55 × 45 cm",
     description: "A composed young woman in traditional Mexican dress gazes from the canvas with quiet dignity. Izquierdo, the first Mexican woman to exhibit in the United States (1930), developed a personal vocabulary drawing on popular Mexican imagery, altarpieces, and fairs. She was a close colleague of Tamayo and a significant voice of Mexican modernism.",
     movement: "Modernism",
+    imageUrl: null,
+    location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
+  },
+  {
+    id: 403, rank: null, museumOnly: true,
+    title: "Creation of the Birds",
+    artist: "Remedios Varo",
+    year: "c. 1957",
+    medium: "Oil on masonite",
+    dimensions: "54 × 64 cm",
+    description: "A bird-headed figure at an octagonal desk draws birds onto paper; they come alive the moment they are touched by starlight filtered through a prism hanging from her violin-brush. The painting encapsulates everything distinctive about Varo's vision — the merging of science, alchemy, music, and creation mythology into a single tightly painted parable. It is her most celebrated work and the one most often reproduced to represent the Spanish Surrealist exile community that found its fullest expression in Mexico.",
+    movement: "Surrealism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
+  },
+  {
+    id: 404, rank: null, museumOnly: true,
+    title: "Portrait of Lupe Marín",
+    artist: "Diego Rivera",
+    year: "1938",
+    medium: "Oil on canvas",
+    dimensions: "171 × 122 cm",
+    description: "Rivera's former wife sits in a high-backed chair, white-draped and elaborately jewelled, her fierce intelligence meeting the viewer's gaze in a portrait that is both a tribute and an act of reckoning. Lupe Marín had been one of the most formidable presences in 1920s Mexico City — poet, model, and Rivera's famously combative companion — and this large-format canvas catches her some years after their divorce, still imperious. The mirror behind her deepens the psychological dimension without resolving it.",
+    movement: "Realism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
+  },
+  {
+    id: 405, rank: null, museumOnly: true,
+    title: "The Magical World of the Mayas",
+    artist: "Leonora Carrington",
+    year: "1963",
+    medium: "Casein on panel",
+    dimensions: "165 × 425 cm",
+    description: "A vast, panoramic panel commissioned by the National Anthropology Museum depicts the Maya cosmos — gods, serpents, sacred animals, and the cycle of death and rebirth — through Carrington's characteristically dense symbolic imagery that fuses Mesoamerican mythology with alchemical and Celtic traditions she carried from England. One of her most ambitious works, it established her as a central figure of Mexico City's cultural life, moving well beyond the Surrealist label that had first defined her in Europe. The painting now anchors the MAM's Carrington holdings, which constitute one of the most significant public collections of her work.",
+    movement: "Surrealism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
+  },
+  {
+    id: 406, rank: null, museumOnly: true,
+    title: "El Coronelazo (Self-Portrait)",
+    artist: "David Alfaro Siqueiros",
+    year: "1945",
+    medium: "Pyroxylin on masonite",
+    dimensions: "96 × 76 cm",
+    description: "Siqueiros portrays himself as 'El Coronelazo' — the big colonel — a nickname earned from his years of political militancy and imprisonment; the face confronts the viewer with defiant, almost theatrical intensity. Painted in pyroxylin (industrial lacquer), the medium he pioneered, the surface has the sheen and speed of his militant aesthetic. It is both a personal statement and a demonstration of the techniques he developed that would influence Jackson Pollock, who attended his New York workshop in 1936.",
+    movement: "Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
+  },
+  {
+    id: 407, rank: null, museumOnly: true,
+    title: "Caravan",
+    artist: "Remedios Varo",
+    year: "1955",
+    medium: "Oil on masonite",
+    dimensions: "42 × 61 cm",
+    description: "A procession of robed figures move through a nocturnal landscape, each carrying a small lantern, their cowled forms merging with the shapes of the rocks and hills around them. The mood is one of timeless pilgrimage, secular yet deeply ceremonial — a hallmark of Varo's imagery in which ordinary journeys acquire the gravity of spiritual quests. It was painted three years after she arrived in Mexico and shows her fully settled into the personal mythology she had been building since fleeing occupied France.",
+    movement: "Surrealism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
+  },
+  {
+    id: 408, rank: null, museumOnly: true,
+    title: "Day of the Dead",
+    artist: "Diego Rivera",
+    year: "c. 1944",
+    medium: "Oil on canvas",
+    dimensions: "73 × 92 cm",
+    description: "Celebrants surround a flower-covered altar on Día de Muertos, their faces obscured by the crowd and by the festive density of marigolds, sugar skulls, and offerings. Unlike the monumental scale of Rivera's murals, this intimate canvas presents the festival as a lived experience rather than a nationalist symbol. It is one of his most direct depictions of popular Mexican culture painted in his mature easel style, acquired by the museum as a cornerstone of its Rivera holdings.",
+    movement: "Realism",
+    wikiUrl: null,
+    grokUrl: null,
     imageUrl: null,
     location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
   },
@@ -3014,6 +3350,90 @@ const PAINTINGS = [
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Munch_Girls_on_the_pier.jpg/330px-Munch_Girls_on_the_pier.jpg",
     location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
   },
+  {
+    id: 385, rank: null, museumOnly: true,
+    title: "Blue Interior",
+    artist: "Harriet Backer",
+    year: "1883",
+    medium: "Oil on canvas",
+    dimensions: "84 × 66 cm",
+    description: "A woman sits in a Parisian interior suffused with cool blue light, the curtain fabric, walls, and shadows all merging into a single luminous atmosphere. Backer spent years in Paris studying the Impressionists and brought their preoccupation with light back to a distinctly Scandinavian subject — the quiet, enclosed interior. Painted in 1883, it was immediately acclaimed as the first full statement of her mature style and is now considered the finest interior painting in the Norwegian tradition.",
+    movement: "Realism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Harriet_Backer_-_Blue_Interior_-_Google_Art_Project.jpg/330px-Harriet_Backer_-_Blue_Interior_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
+  },
+  {
+    id: 386, rank: null, museumOnly: true,
+    title: "Albertine in the Police Doctor's Waiting-Room",
+    artist: "Christian Krohg",
+    year: "1885–1887",
+    medium: "Oil on canvas",
+    dimensions: "211 × 326 cm",
+    description: "A crowd of women — some visibly poor, some frightened, some resigned — sit in a state waiting room where prostitutes were compelled by law to submit to medical inspection. Krohg painted the scene at life-size scale, hiring actual prostitutes as models, and published the companion novel Albertine simultaneously; both were confiscated by police within days of release. The scandal made him the most controversial Norwegian artist of his generation and established him as the conscience of Norwegian Naturalism.",
+    movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Albertine_in_the_Police_Doctor%27s_Waiting-Room",
+    grokUrl: "https://grokipedia.com/page/Albertine_in_the_Police_Doctor's_Waiting-Room",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Christian_Krohg-Albertine_i_politil%C3%A6gens_ventev%C3%A6relse.jpg/330px-Christian_Krohg-Albertine_i_politil%C3%A6gens_ventev%C3%A6relse.jpg",
+    location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
+  },
+  {
+    id: 387, rank: null, museumOnly: true,
+    title: "View from Stalheim",
+    artist: "Johan Christian Dahl",
+    year: "1842",
+    medium: "Oil on canvas",
+    dimensions: "190 × 246 cm",
+    description: "A vast panorama sweeps from a cleft in the Norwegian mountains down through the Nærøy valley toward a distant fjord, framed by a rainbow and late afternoon light. Dahl began the painting from sketches made in 1826 during his first visit to this part of Norway, finishing it sixteen years later in Dresden where he had lived since 1818 — a long meditation on a homeland he loved from afar. It is the most celebrated Norwegian landscape painting before Munch, and has been called the national picture of Norway.",
+    movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/View_from_Stalheim",
+    grokUrl: "https://grokipedia.com/page/View_from_Stalheim",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Johan_Christian_Claussen_Dahl_%E2%80%93_View_from_Stalheim_%E2%80%93_Google_Art_Project.jpg/330px-Johan_Christian_Claussen_Dahl_%E2%80%93_View_from_Stalheim_%E2%80%93_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
+  },
+  {
+    id: 388, rank: null, museumOnly: true,
+    title: "Bridal Procession on the Hardangerfjord",
+    artist: "Hans Gude",
+    year: "1848",
+    medium: "Oil on canvas",
+    dimensions: "93 × 130 cm",
+    description: "A wedding party crosses a Norwegian fjord in decorated rowing boats, the Hardangerfjord's steep mountain walls rising behind them, birch trees at the water's edge still in their summer green. The landscape was painted by Hans Gude and the bridal procession by Adolph Tidemand — a collaboration that combined the two great subjects of Norwegian Romantic Nationalism into a single iconic image. Acquired by the National Gallery in 1895, it is the most recognized painting in Norway and one of the defining images of Norwegian cultural identity.",
+    movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Bridal_Procession_on_the_Hardangerfjord",
+    grokUrl: "https://grokipedia.com/page/Bridal_Procession_on_the_Hardangerfjord",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Adolph_Tidemand_%26_Hans_Gude_-_Bridal_Procession_on_the_Hardangerfjord_-_Google_Art_Project.jpg/330px-Adolph_Tidemand_%26_Hans_Gude_-_Bridal_Procession_on_the_Hardangerfjord_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
+  },
+  {
+    id: 389, rank: null, museumOnly: true,
+    title: "Madonna",
+    artist: "Edvard Munch",
+    year: "1894–1895",
+    medium: "Oil on canvas",
+    dimensions: "90.5 × 70.5 cm",
+    description: "A bare-breasted woman tilts her head back with closed eyes in an expression that hovers between ecstasy and death — Munch's synthesis of the sacred and the erotic, the Madonna and the femme fatale, into a single ambiguous image. He made five oil versions and numerous prints, each slightly different; the National Museum's is the earliest, the one he kept for himself and worked from. The lithographic version adds a border of swimming sperm and a foetus in one corner — images that make the painting's theme of conception, sex, and mortality unmistakable.",
+    movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Madonna_(Munch)",
+    grokUrl: "https://grokipedia.com/page/Madonna_(Munch)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Edvard_Munch_-_Madonna_%281894-1895%29.jpg/330px-Edvard_Munch_-_Madonna_%281894-1895%29.jpg",
+    location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
+  },
+  {
+    id: 390, rank: null, museumOnly: true,
+    title: "Winter at the River Simoa",
+    artist: "Frits Thaulow",
+    year: "1883",
+    medium: "Oil on canvas",
+    dimensions: "49.5 × 78.5 cm",
+    description: "A woman in a small boat rows across a quiet winter river, the water dark and still, the far bank a row of tumbledown buildings reflected in the surface. Thaulow discovered his lifelong subject at the River Simoa in 1883 — moving water in all weathers and seasons — and spent the rest of his career painting rivers across Norway, France, and Belgium. His virtuosity with water, its reflections, currents, and surfaces, made him internationally celebrated; Zola called him 'the painter of water.'",
+    movement: "Realism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Frits_Thaulow_-_Winter_at_the_River_Simoa_-_Google_Art_Project.jpg/330px-Frits_Thaulow_-_Winter_at_the_River_Simoa_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
+  },
 
   // ── VATICAN MUSEUMS (SISTINE CHAPEL) ──────────────────────────────────────
   {
@@ -3056,6 +3476,90 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/The_Flood_(Michelangelo)",
     grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/The_Deluge_after_restoration.jpg/330px-The_Deluge_after_restoration.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
+  },
+  {
+    id: 391, rank: null, museumOnly: true,
+    title: "The Creation of Eve",
+    artist: "Michelangelo",
+    year: "1510",
+    medium: "Fresco",
+    dimensions: "170 × 260 cm",
+    description: "God stands beside the sleeping Adam and summons Eve from his rib with a commanding gesture, as the newly created woman rises and reaches back toward her maker with joined hands in an attitude of prayer. The panel is one of the most compositionally serene on the ceiling — no crowd of figures, no dramatic foreshortening — its power entirely in the relationship between the three figures. It occupies the center bay of the vault, the hinge between the stories of the world's creation and humanity's fall.",
+    movement: "Italian Renaissance",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Michelangelo%2C_Creation_of_Eve_01.jpg/330px-Michelangelo%2C_Creation_of_Eve_01.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
+  },
+  {
+    id: 392, rank: null, museumOnly: true,
+    title: "The Creation of the Sun, Moon, and Plants",
+    artist: "Michelangelo",
+    year: "1511",
+    medium: "Fresco",
+    dimensions: "280 × 570 cm",
+    description: "God appears twice in a single panel: on the right, hurtling toward the viewer in full foreshortening as he points the sun into existence with one hand and the moon with the other; on the left, seen from behind as he gestures toward the new growth below. The foreshortened God — soles of his feet facing the viewer, robes billowing — is one of the most audacious figures Michelangelo painted, making visible the kinetic energy of divine creation.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Creation_of_the_Sun,_Moon,_and_Plants",
+    grokUrl: "https://grokipedia.com/page/The_Creation_of_the_Sun,_Moon,_and_Plants",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Michelangelo%2C_Creation_of_the_Sun%2C_Moon%2C_and_Plants_01.jpg/330px-Michelangelo%2C_Creation_of_the_Sun%2C_Moon%2C_and_Plants_01.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
+  },
+  {
+    id: 393, rank: null, museumOnly: true,
+    title: "The Libyan Sibyl",
+    artist: "Michelangelo",
+    year: "c. 1511",
+    medium: "Fresco",
+    dimensions: "395 × 380 cm",
+    description: "The most celebrated of the five sibyls on the Sistine ceiling twists her torso away from her massive open book in a complex movement that has no precedent in painting — her left foot balanced on a ledge, her body coiled like a spring. A preparatory red-chalk drawing at the Metropolitan Museum shows Michelangelo's painstaking anatomical study of a male model to achieve this torsion. The 2026 sale of a related study at Christie's for $23 million confirmed the Libyan Sibyl's enduring status as one of Michelangelo's supreme inventions.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Libyan_Sibyl",
+    grokUrl: "https://grokipedia.com/page/Libyan_Sibyl",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/LibyanSibyl_SistineChapel.jpg/330px-LibyanSibyl_SistineChapel.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
+  },
+  {
+    id: 394, rank: null, museumOnly: true,
+    title: "Temptations of Christ",
+    artist: "Sandro Botticelli",
+    year: "1480–1482",
+    medium: "Fresco",
+    dimensions: "345.5 × 555 cm",
+    description: "Three scenes from the Gospel temptations occupy the upper register — the Devil as hermit urging Christ to turn stones to bread, the Temple roof challenge, the mountain of earthly kingdoms — while the lower foreground shows a leper's ritual purification by a priest. Botticelli's largest surviving work, commissioned as part of the Quattrocento program before Michelangelo transformed the ceiling above, it demonstrates his ability to organize multiple simultaneous narrative scenes across a vast surface. Its pendant on the opposite wall shows the corresponding Trials of Moses.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Temptations_of_Christ_(Botticelli)",
+    grokUrl: "https://grokipedia.com/page/Temptations_of_Christ_(Botticelli)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Sandro_Botticelli_031.jpg/330px-Sandro_Botticelli_031.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
+  },
+  {
+    id: 395, rank: null, museumOnly: true,
+    title: "Delivery of the Keys",
+    artist: "Pietro Perugino",
+    year: "1481–1482",
+    medium: "Fresco",
+    dimensions: "330 × 550 cm",
+    description: "Christ hands the silver and gold keys of heaven to the kneeling Peter in a vast open piazza, the crowd of apostles arranged in a classical frieze and the Temple of Jerusalem — shown as a Renaissance domed building — receding in perfect perspective behind them. It is Perugino's masterpiece and one of the defining statements of Early Renaissance pictorial order: vast, lucid, serene. His pupil Raphael studied its spatial logic obsessively; it is the painting that made High Renaissance composition possible.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Delivery_of_the_Keys",
+    grokUrl: "https://grokipedia.com/page/Delivery_of_the_Keys",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Entrega_de_las_llaves_a_San_Pedro_%28Perugino%29.jpg/330px-Entrega_de_las_llaves_a_San_Pedro_%28Perugino%29.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
+  },
+  {
+    id: 396, rank: null, museumOnly: true,
+    title: "The Punishment of Korah, Dathan, and Abiram",
+    artist: "Sandro Botticelli",
+    year: "1481–1482",
+    medium: "Fresco",
+    dimensions: "348.5 × 570 cm",
+    description: "Three simultaneous scenes from Numbers 16 unfold across the fresco: on the right, the Levite rebels attempt to stone Moses; at center, Aaron confronts Korah's usurping sacrificial fire; on the left, the earth opens to swallow the conspirators. In the background stands the Arch of Constantine, a deliberate anachronism linking Old Testament rebellion against priestly authority with the contemporary political message of papal supremacy. Botticelli embedded a direct challenge to rebels against the papacy — and a warning — into what appears to be a straightforward biblical narrative.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Punishment_of_the_Sons_of_Korah",
+    grokUrl: "https://grokipedia.com/page/Punishment_of_the_Sons_of_Korah",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sandro_Botticelli_-_The_Punishment_of_Korah_and_the_Stoning_of_Moses_and_Aaron_-_WGA2747.jpg/330px-Sandro_Botticelli_-_The_Punishment_of_Korah_and_the_Stoning_of_Moses_and_Aaron_-_WGA2747.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
   },
 
@@ -3188,6 +3692,90 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/Tribute_Money_(Titian)",
     grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Titian_-_The_Tribute_Money_-_Google_Art_Project.jpg/330px-Titian_-_The_Tribute_Money_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
+  },
+  {
+    id: 397, rank: null, museumOnly: true,
+    title: "Holy Night (Nativity)",
+    artist: "Correggio",
+    year: "c. 1529–1530",
+    medium: "Oil on canvas",
+    dimensions: "256.5 × 188 cm",
+    description: "The newborn Christ illuminates the entire scene from within, his body the radiant source of light that falls on the Virgin's face, the shepherds, and the angels floating above — the first systematic use of a single luminous figure as the sole light source in Italian painting. Commissioned for a family chapel in Reggio Emilia in 1522, Correggio did not complete it until 1530, and it arrived in Dresden via the Este collection in 1746. Goethe, who saw it there, called it one of the most extraordinary paintings in the world.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Nativity_(Correggio)",
+    grokUrl: "https://grokipedia.com/page/Nativity_(Correggio)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Correggio_-_The_Holy_Night_-_Google_Art_Project.jpg/330px-Correggio_-_The_Holy_Night_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
+  },
+  {
+    id: 398, rank: null, museumOnly: true,
+    title: "The Procuress",
+    artist: "Johannes Vermeer",
+    year: "1656",
+    medium: "Oil on canvas",
+    dimensions: "143 × 130 cm",
+    description: "Vermeer's first genre painting shows a mercenary transaction — a soldier pressing coins into a young woman's palm while fondling her breast, supervised by a procuress in black — and may include a self-portrait of the artist himself in the left-hand corner. It is one of only three paintings Vermeer signed and dated, and its large scale and dark palette mark it as entirely different in mood from his later domestic interiors. Acquired for Dresden in 1741, it was the painting that influenced scholars to link the Woman Reading a Letter (also in Dresden) to Vermeer.",
+    movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Procuress_(Vermeer)",
+    grokUrl: "https://grokipedia.com/page/The_Procuress_(Vermeer)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Johannes_Vermeer_-_The_Procuress_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_The_Procuress_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
+  },
+  {
+    id: 399, rank: null, museumOnly: true,
+    title: "The Prodigal Son in the Brothel",
+    artist: "Rembrandt van Rijn",
+    year: "c. 1635",
+    medium: "Oil on canvas",
+    dimensions: "161 × 131 cm",
+    description: "A rakish man in a plumed hat raises a glass while a woman sits on his knee — the figures traditionally identified as Rembrandt himself and his young wife Saskia, in the guise of the prodigal son squandering his inheritance on loose living. Whether or not it is a self-portrait, the painting overflows with a defiant pleasure; its exuberant confidence contrasts with the moral gravity of Rembrandt's many later biblical works. The signature is genuine; the subsequent additions and changes to the composition are not.",
+    movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Prodigal_Son_in_the_Brothel",
+    grokUrl: "https://grokipedia.com/page/The_Prodigal_Son_in_the_Brothel",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Rembrandt_-_Rembrandt_and_Saskia_in_the_Scene_of_the_Prodigal_Son_-_Google_Art_Project.jpg/330px-Rembrandt_-_Rembrandt_and_Saskia_in_the_Scene_of_the_Prodigal_Son_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
+  },
+  {
+    id: 400, rank: null, museumOnly: true,
+    title: "Duke Henry the Pious",
+    artist: "Lucas Cranach the Elder",
+    year: "1514",
+    medium: "Oil on canvas",
+    dimensions: "184 × 82.5 cm",
+    description: "Henry, Duke of Saxony, stands full-length in tournament armour with his hand on his sword and his hunting dog at his feet — one of the first true full-length portraits in Northern art, painted when Cranach was already court painter to the Electors of Saxony. Its companion panel shows his wife Catherine of Mecklenburg in the same imposing format. Together they established the full-length royal portrait formula that Holbein and Titian would later bring to European courts.",
+    movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portraits_of_Henry_IV_of_Saxony_and_Catherine_of_Mecklenburg",
+    grokUrl: "https://grokipedia.com/page/Portraits_of_Henry_IV_of_Saxony_and_Catherine_of_Mecklenburg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Lucas_Cranach_the_Elder_-_Duke_Henry_the_Pious_-_Google_Art_Project.jpg/330px-Lucas_Cranach_the_Elder_-_Duke_Henry_the_Pious_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
+  },
+  {
+    id: 401, rank: null, museumOnly: true,
+    title: "Portrait of Charles de Solier, Sieur de Morette",
+    artist: "Hans Holbein the Younger",
+    year: "c. 1534–1535",
+    medium: "Oil and tempera on oak panel",
+    dimensions: "92.5 × 75.5 cm",
+    description: "The French ambassador to England stares out with an expression of enormous psychological weight — still, guarded, assessing — dressed in black satin and elaborate gold accessories against a sea-green damask curtain. Susan Foister described it as 'one of the greatest of all Holbein's individual portraits,' and it is easy to see why: the sitter's presence is almost intimidating in its solidity. The painting was for centuries attributed to Leonardo da Vinci; its true authorship was only confirmed in 1881.",
+    movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Charles_de_Solier,_Sieur_de_Morette",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_Charles_de_Solier,_Sieur_de_Morette",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Hans_Holbein_the_Younger_-_Portrait_of_Charles_de_Solier%2C_Sieur_de_Morette_-_Google_Art_Project.jpg/330px-Hans_Holbein_the_Younger_-_Portrait_of_Charles_de_Solier%2C_Sieur_de_Morette_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
+  },
+  {
+    id: 402, rank: null, museumOnly: true,
+    title: "Dresden Triptych",
+    artist: "Jan van Eyck",
+    year: "1437",
+    medium: "Oil on oak panel",
+    dimensions: "33.1 × 27.5 cm",
+    description: "The Virgin holds the Christ Child on a marble throne while St. Michael presents a kneeling donor on the left wing and St. Catherine stands reading on the right — all three panels barely larger than a sheet of paper, yet painted with the full technical command van Eyck brought to his largest commissions. It is the only van Eyck triptych signed with his personal device ('ALC IXH XAN' — 'As I Can'), and the combination of the tiny scale with the monumental spiritual weight makes it one of the most remarkable objects in Western art.",
+    movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Dresden_Triptych",
+    grokUrl: "https://grokipedia.com/page/Dresden_Triptych",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Jan_van_Eyck_-_Triptych_of_Mary_and_Child%2C_St._Michael%2C_and_the_Catherine_-_Google_Art_Project.jpg/330px-Jan_van_Eyck_-_Triptych_of_Mary_and_Child%2C_St._Michael%2C_and_the_Catherine_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
   },
 
@@ -5609,6 +6197,74 @@ const ARTISTS = {
   "Wassily Kandinsky": {
     born: "1866", died: "1944", nationality: "Russian",
     bio: "Generally credited as the first painter to make a fully non-objective, purely abstract work, Wassily Kandinsky arrived at abstraction not through formal theory but through the conviction that color and form could carry spiritual meaning independent of subject matter. Born in Moscow, he studied law before moving to Munich in 1896 to pursue painting, and co-founded Der Blaue Reiter ('The Blue Rider') group in 1911 with Franz Marc, producing his landmark Composition VII in the same year. He taught at the Bauhaus from 1922 to 1933 before fleeing Nazi Germany for Paris, where he lived until his death. His theoretical writings, especially Concerning the Spiritual in Art (1911), remain foundational texts of modern aesthetics."
+  },
+  "Remedios Varo": {
+    born: "1908", died: "1963", nationality: "Spanish-Mexican",
+    bio: "Varo was the most technically precise and philosophically elaborate of the European Surrealists who settled in Mexico during World War II, developing a hermetic personal iconography that drew on alchemy, Gurdjieffian mysticism, science, and medieval illuminated manuscripts. Born in Anglés, Spain, she trained in Madrid, fled occupied Paris with her companion Benjamin Péret in 1941, and settled permanently in Mexico City — where the climate of exile proved creatively liberating. Her tightly painted, jewel-like canvases depicting solitary figures on ritualistic journeys through uncanny architectures are among the most technically accomplished Surrealist paintings, and her influence on Mexican art and international fantasy has grown enormously since her death. The Museo de Arte Moderno in Mexico City holds the most significant public collection of her work."
+  },
+  "Leonora Carrington": {
+    born: "1917", died: "2011", nationality: "British-Mexican",
+    bio: "Carrington was one of the last survivors of the first Surrealist generation and, after settling in Mexico City in 1943, became a central figure of Latin American modernism whose symbolic world drew equally on Celtic mythology, Jungian psychology, medieval alchemy, and Mesoamerican cosmology. Born in Lancashire to a wealthy industrialist family, she fled Nazi-occupied Paris with Max Ernst, endured a traumatic breakdown in Spain documented in her memoir Down Below (1944), and rebuilt her life in Mexico where she would spend the rest of her 94 years. Her paintings — densely symbolic, technically exact, often darkly humorous — resist easy categorization within Surrealism or any other movement. The Magical World of the Mayas (1963), her monumental panel at the Museo de Arte Moderno, is the fullest expression of her engagement with Mexico's indigenous cosmologies."
+  },
+  "David Alfaro Siqueiros": {
+    born: "1896", died: "1974", nationality: "Mexican",
+    bio: "Siqueiros was the most politically radical and technically experimental of the three great Mexican muralists, combining Marxist militancy with an obsessive drive to renovate the materials and methods of painting. He served in the Mexican Revolution, cofounded the muralist movement, and was repeatedly imprisoned and exiled for his activism — including a period in New York in 1936 where he ran a workshop whose students included Jackson Pollock, influencing Abstract Expressionism's drip technique. He pioneered the use of pyroxylin (industrial lacquer) and spray guns to achieve dynamic curved surfaces and explosive colour in his massive public frescoes at the Palacio de Bellas Artes and Chapultepec Castle. His easel paintings, including the self-portrait 'El Coronelazo' at the Museo de Arte Moderno, are less celebrated but equally uncompromising in their technical ambition."
+  },
+  "Correggio": {
+    born: "c. 1489", died: "1534", nationality: "Italian",
+    bio: "Correggio was the dominant painter of the Parma school and one of the most influential figures of the High Renaissance, whose luminous sfumato, proto-Baroque illusionism, and exquisitely tender figures pointed directly toward Baroque painting and the 18th-century decorative tradition. Working principally for churches and noble patrons in Parma, he developed ceiling frescoes of breathtaking illusionistic depth — the dome of the Cathedral of Parma anticipates everything Tiepolo would do two centuries later. His nocturnal light effects, first fully realized in the Holy Night (c. 1530), made him the direct precursor of Caravaggio's chiaroscuro; his soft, sensuous Madonnas inspired Raphael and enchanted Titian. Despite his enormous posthumous influence, he was barely known outside northern Italy in his own lifetime."
+  },
+  "Lucas Cranach the Elder": {
+    born: "1472", died: "1553", nationality: "German",
+    bio: "Cranach was the pre-eminent painter of the German Reformation, court artist to the Electors of Saxony for decades and one of Martin Luther's closest friends — he designed the woodcut portraits and broadsheets that spread Reformation ideas across Europe. His distinctive style combined sensuous elongated nudes with the crisp precision of German graphic art; his many versions of Venus, Eve, and the Judgment of Paris established the northern European nude. The Gemäldegalerie Alte Meister in Dresden holds the world's largest Cranach collection (58 works), including the 1514 full-length portraits of Henry the Pious that established the format for German royal portraiture. He ran a prolific workshop that turned out devotional panels, portraits, and mythological scenes at industrial scale, making him one of the first truly commercial artists in the modern sense."
+  },
+  "Pietro Perugino": {
+    born: "c. 1448", died: "1523", nationality: "Italian",
+    bio: "Perugino was the dominant painter of late 15th-century Umbria and one of the most sought-after fresco painters in Italy, celebrated for figures of serene grace set in clear, airy landscapes that opened up the picture plane in a way that pointed directly toward the High Renaissance. He trained in Verrocchio's Florence workshop alongside Leonardo da Vinci and went on to become the most successful painter of his generation, with commissions from popes and princes across Italy. His greatest surviving achievement is the Delivery of the Keys in the Sistine Chapel (1481-82), whose perfect pictorial order his pupil Raphael studied exhaustively. The very quality that made him famous — the gentle, slightly repetitive sweetness of his figures — also brought critical backlash in his later years, when Raphael's arrival in Rome made his formula seem thin; Michelangelo reportedly mocked him in public."
+  },
+  "Harriet Backer": {
+    born: "1845", died: "1932", nationality: "Norwegian",
+    bio: "Backer was the most celebrated Norwegian woman painter of the 19th century and a pioneering figure in Scandinavian art, acclaimed for interior scenes that explore the interplay of light and colour with a subtlety that places her alongside the great Impressionists. She trained in Munich and Paris, studying under Jean-Léon Gérôme and Léon Bonnat and sharing a studio with fellow Norwegian Kitty Lange Kielland. Returning permanently to Norway in 1888, she founded an influential art school that shaped the next generation of Norwegian painters. Her approximately 180 works — almost all interiors or church scenes — constitute one of the most coherent and atmospherically distinctive bodies of work in Nordic art."
+  },
+  "Christian Krohg": {
+    born: "1852", died: "1925", nationality: "Norwegian",
+    bio: "Krohg was the central figure of Norwegian Naturalism, a painter, novelist, and journalist who documented the lives of prostitutes, fishermen, and the urban poor with a bluntness that repeatedly ran him into conflict with the Norwegian authorities. His 1886 novel Albertine — published simultaneously with the painting of the same name — was confiscated by police within days; both were eventually vindicated and are now regarded as landmarks of social realism. He was a mentor to Edvard Munch, and served as founding director of the Norwegian Academy of Arts from 1909 until his death. His influence on Norwegian art is difficult to overstate: he trained a generation, provoked a culture, and defined what Norwegian painting could say about society."
+  },
+  "Johan Christian Dahl": {
+    born: "1788", died: "1857", nationality: "Norwegian",
+    bio: "Dahl was the first great Norwegian painter and the father of Norwegian landscape painting, working in the Romantic tradition alongside his close friend Caspar David Friedrich in Dresden. Though he spent most of his adult life in Germany and rose to become professor at the Dresden Academy, his deepest allegiance was to Norway — he made multiple return visits and systematically documented its landscapes in sketches that formed the basis of major studio works. His advocacy for Norwegian cultural institutions was crucial in the establishment of the National Gallery in Christiania (Oslo), and his influence on subsequent Norwegian painters was decisive. He is considered the founder of the Norwegian national painting tradition."
+  },
+  "Hans Gude": {
+    born: "1825", died: "1903", nationality: "Norwegian",
+    bio: "Gude was one of the greatest Norwegian landscape painters of the Romantic period and a hugely influential teacher whose pupils included generations of Nordic artists. He spent forty-five years as a professor at the academies in Düsseldorf, Karlsruhe, and Berlin, yet his deepest inspiration remained the Norwegian fjords, mountains, and coastline he had absorbed in his youth. The Bridal Procession on the Hardangerfjord (1848), painted with Adolph Tidemand, became the most recognized image of Norwegian Romantic Nationalism. In later years he moved from idealized mountain scenes to more direct and powerful seascapes and coastal works."
+  },
+  "Frits Thaulow": {
+    born: "1847", died: "1906", nationality: "Norwegian",
+    bio: "Thaulow was the most internationally successful Norwegian painter of the 19th century, achieving fame across Europe and America for his virtuosic paintings of rivers, streams, and water in motion. He trained at the Copenhagen Academy and under Hans Gude in Karlsruhe before settling in France in 1892, where he painted riverside scenes in Normandy, Brittany, and Picardy. Émile Zola called him 'the painter of water'; his ability to render moving water — its currents, reflections, and changing surfaces — remains technically unmatched in the plein air tradition. He helped establish the first Norwegian national art exhibition and was a formative influence on the development of Norwegian Impressionism."
+  },
+  "Henry Ossawa Tanner": {
+    born: "1859", died: "1937", nationality: "American",
+    bio: "Tanner was the first African-American painter to gain international recognition, studying with Thomas Eakins at the Pennsylvania Academy of the Fine Arts before moving to Paris in 1891 to escape the racism of American artistic life — and never permanently returning. His biblical paintings, informed by research trips to Egypt and Palestine, combined Impressionist light with a spiritual seriousness that set him apart from both European and American contemporaries. The Annunciation (1898) was the first work by Tanner purchased by an American museum; a second trip to North Africa in 1908 deepened his palette into the warm ochres and blues that define his mature work. He received a Legion of Honour from France in 1923 and is now recognized as one of the most significant American painters of the 19th century."
+  },
+  "Jacopo Pontormo": {
+    born: "1494", died: "1557", nationality: "Italian",
+    bio: "Pontormo was the most radical of the first-generation Florentine Mannerists, abandoning the classical equilibrium of the High Renaissance for elongated figures, acidic color, and spatial ambiguity that seems to defy gravity. His Deposition from the Cross in Santa Felicita, Florence, is one of the strangest and most spiritually intense paintings of the 16th century — a swirling composition with no cross, no tomb, and barely any ground. Though Giorgio Vasari, who knew him, wrote him off as an eccentric recluse obsessed with anatomy, modern scholarship recognizes him as a major independent force whose psychological intensity anticipated El Greco and German Expressionism. His Portrait of a Halberdier sold for $32.5 million in 1989, then the highest price ever paid for a painting at auction."
+  },
+  "Orazio Gentileschi": {
+    born: "1563", died: "1639", nationality: "Italian",
+    bio: "Orazio Gentileschi was one of the most important Caravaggisti, adopting the revolutionary naturalism and dramatic candlelit chiaroscuro of Caravaggio while maintaining a cooler, more elegant palette of his own. Born in Pisa, he worked across Rome, Genoa, Paris, and finally London, where Charles I appointed him court painter — one of the most prestigious positions available to a European artist. He is perhaps best known today as the father of Artemisia Gentileschi, but his own luminous, precise works are now recognized as a distinct contribution to 17th-century Baroque painting independent of his daughter's reputation. His Danaë, acquired by the Getty for $30.5 million in 2016, is considered one of the finest Old Master acquisitions by an American museum in the 21st century."
+  },
+  "James Ensor": {
+    born: "1860", died: "1949", nationality: "Belgian",
+    bio: "Ensor was one of the most original and provocative European painters of the late 19th century, working in near-total isolation in the seaside town of Ostend, Belgium, while anticipating Expressionism and Surrealism by decades. His family's souvenir shop filled with carnival masks, shells, and curios became the symbolic vocabulary of his art — a language of disguise, death, and social satire that no contemporary could quite understand. His monumental Christ's Entry into Brussels in 1889 was rejected by every Belgian exhibition society and kept rolled in his studio for forty years before being recognized as one of the most ambitious paintings in modern art. He lived to 89, long enough to receive a barony and be hailed as a national treasure, though the scandalous intensity of his early work was never surpassed."
+  },
+  "Paul Klee": {
+    born: "1879", died: "1940", nationality: "Swiss-German",
+    bio: "Klee developed one of the most distinctively personal visual languages in modern art — a symbolic grammar that wove together Expressionism, Surrealism, Cubism, and Bauhaus rationalism into something entirely his own. He taught at the Bauhaus alongside Kandinsky from 1921 to 1931, and his theoretical lectures on color and form remain foundational texts of modern art education. His prolific output — more than 9,000 works — ranged from precise geometric abstraction to childlike fantasy, always animated by an acute sensitivity to the inner life of natural forms, line, and rhythm. Dismissed by the Nazis as a purveyor of 'degenerate art,' he died in Muralto in 1940, just days before Swiss citizenship was granted."
+  },
+  "Mark Rothko": {
+    born: "1903", died: "1970", nationality: "American",
+    bio: "Rothko was one of the central figures of Abstract Expressionism and the defining practitioner of Color Field painting — large canvases of luminous, hovering rectangles of pure color intended to evoke primal human emotions without narrative or representation. Born in Daugavpils, Latvia, he emigrated to Oregon at ten and eventually settled in New York, where he abandoned figuration in the late 1940s and arrived at the format he would refine for the rest of his life. The Phillips Collection's Rothko Room (1960) was the world's first public space dedicated solely to a living artist's work, installed to Rothko's own specifications for low light and intimate viewing distance. He died by suicide in 1970, having produced some of the most emotionally intense paintings in American art history."
   }
 };
 
@@ -5729,7 +6385,24 @@ const ARTIST_PORTRAITS = {
   "Guido Reni": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Guido_Reni_-_Self-portrait_2.jpg/330px-Guido_Reni_-_Self-portrait_2.jpg",
   "Francesco Bassano the Younger": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Francesco_bassano%2C_autoritratto%2C_1585-1592.jpg/330px-Francesco_bassano%2C_autoritratto%2C_1585-1592.jpg",
   "Plautilla Bricci": null,
-  "Charles-Joseph Natoire": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Charles-Joseph_Natoire.jpg/330px-Charles-Joseph_Natoire.jpg"
+  "Charles-Joseph Natoire": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Charles-Joseph_Natoire.jpg/330px-Charles-Joseph_Natoire.jpg",
+  "Remedios Varo": null,
+  "Leonora Carrington": null,
+  "David Alfaro Siqueiros": null,
+  "Correggio": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Correggio_-_Portrait_of_a_Man%2C_possibly_a_Self-Portrait%2C_circa_1510-1525.jpg/330px-Correggio_-_Portrait_of_a_Man%2C_possibly_a_Self-Portrait%2C_circa_1510-1525.jpg",
+  "Lucas Cranach the Elder": null,
+  "Pietro Perugino": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Pietro_Perugino_031.jpg/330px-Pietro_Perugino_031.jpg",
+  "Harriet Backer": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Eilif_Peterssen_-_Portrait_of_the_Painter_Harriet_Backer_-_NG.M.00824_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/330px-Eilif_Peterssen_-_Portrait_of_the_Painter_Harriet_Backer_-_NG.M.00824_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
+  "Christian Krohg": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Portrett_av_Christian_Krohg%2C_ca_1903.jpg/330px-Portrett_av_Christian_Krohg%2C_ca_1903.jpg",
+  "Johan Christian Dahl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Carl_Christian_Vogel_von_Vogelstein_-_Johan_Christian_Clausen_Dahl.jpg/330px-Carl_Christian_Vogel_von_Vogelstein_-_Johan_Christian_Clausen_Dahl.jpg",
+  "Hans Gude": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Hans_Gude%2C_by_Julius_Amatus_Roeting.jpg/330px-Hans_Gude%2C_by_Julius_Amatus_Roeting.jpg",
+  "Frits Thaulow": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Fritz_Thaulow_%281847_-_1906%29_%287859299524%29.jpg/330px-Fritz_Thaulow_%281847_-_1906%29_%287859299524%29.jpg",
+  "Henry Ossawa Tanner": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Portrait_of_Henry_Ossawa_Tanner_by_Richard_Edward_Miller.JPG/330px-Portrait_of_Henry_Ossawa_Tanner_by_Richard_Edward_Miller.JPG",
+  "Jacopo Pontormo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/138_le_vite%2C_jacopo_pontormo.jpg/330px-138_le_vite%2C_jacopo_pontormo.jpg",
+  "Orazio Gentileschi": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Lucas_Emil_Vorsterman_after_Sir_Anthony_van_Dyck%2C_Orazio_Gentileschi%2C_probably_1626-1641%2C_NGA_10780_%28cropped%29.jpg/330px-Lucas_Emil_Vorsterman_after_Sir_Anthony_van_Dyck%2C_Orazio_Gentileschi%2C_probably_1626-1641%2C_NGA_10780_%28cropped%29.jpg",
+  "James Ensor": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Ensor_voor_zijn_schildersezel%2C_James_Ensor%2C_1890%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_2809.001.jpeg/330px-Ensor_voor_zijn_schildersezel%2C_James_Ensor%2C_1890%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_2809.001.jpeg",
+  "Paul Klee": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Paul_Klee_by_Hugo_Erfurth%2C_1922.jpg/330px-Paul_Klee_by_Hugo_Erfurth%2C_1922.jpg",
+  "Mark Rothko": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Consuelo_Kanaga%2C_Mark_Rothko%2C_Yorktown_Heights%2C_ca._1949.jpg/330px-Consuelo_Kanaga%2C_Mark_Rothko%2C_Yorktown_Heights%2C_ca._1949.jpg"
 };
 
 /* ── Museum info ─────────────────────────────────────────────────────────── */
