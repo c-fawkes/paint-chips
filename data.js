@@ -1481,6 +1481,8 @@ const PAINTINGS = [
     dimensions: "270 × 531 cm",
     description: "One of Pollock's largest and most celebrated drip paintings, created at the height of his Action Painting period. Working on canvas laid on the floor, Pollock poured and flung enamel in dense, layered webs of black, white, and gray. It is one of the defining works of Abstract Expressionism.",
     movement: "Abstract Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Number_31_(Pollock)",
+    grokUrl: "https://grokipedia.com/page/Number_31",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Regarding_One.jpg/500px-Regarding_One.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
@@ -1509,6 +1511,8 @@ const PAINTINGS = [
     dimensions: "97 × 190 cm",
     description: "One of the first Western paintings to depict a nude woman with pubic hair, displayed without mythological pretext. Goya painted a clothed version (La Maja Vestida) as a cover to hide it. It caused a scandal and led to Goya's summons by the Spanish Inquisition. The sitter's identity remains unknown.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/La_maja_desnuda",
+    grokUrl: "https://grokipedia.com/page/The_Naked_Maja",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Goya_Maja_naga2.jpg/330px-Goya_Maja_naga2.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -1537,6 +1541,8 @@ const PAINTINGS = [
     dimensions: "235 × 110 cm",
     description: "A society portrait of Virginie Amélie Avegno Gautreau, an American expatriate known for her beauty, rendered in a stark black dress with an insolently turned face and pale, luminous skin. When exhibited in Paris in 1884 the original low-cut strap scandalized the Salon. Sargent repainted it but the damage to his career sent him to London.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Madame_X",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_Madame_X",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Madame_X_%28Madame_Pierre_Gautreau%29%2C_John_Singer_Sargent%2C_1884_%28unfree_frame_crop%29.jpg/330px-Madame_X_%28Madame_Pierre_Gautreau%29%2C_John_Singer_Sargent%2C_1884_%28unfree_frame_crop%29.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
@@ -1592,6 +1598,8 @@ const PAINTINGS = [
     dimensions: "119 × 165 cm",
     description: "A reclining nude of extraordinary sensuality, this Venus gazes directly at the viewer with unsettling confidence. She holds roses and a myrtle sprig — symbols of love and fidelity — while servants arrange a dowry chest in the background. Manet's Olympia (1863) is a direct response to this painting's provocative directness.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Venus_of_Urbino",
+    grokUrl: "https://grokipedia.com/page/Venus_of_Urbino",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg/330px-Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
@@ -1647,6 +1655,8 @@ const PAINTINGS = [
     dimensions: "44 × 39 cm",
     description: "A maid delivers a letter to her mistress, who pauses from playing a cittern to receive it. We view the scene through a darkened doorway — Vermeer's signature device of spatial mystery. The seascape painting on the wall and the cittern signal themes of love and communication, and the maid's expression reveals that such letters are nothing new.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Love_Letter_(Vermeer)",
+    grokUrl: "https://grokipedia.com/page/The_Love_Letter",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Johannes_Vermeer_-_%27De_liefdesbrief%27_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_%27De_liefdesbrief%27_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
@@ -1703,6 +1713,8 @@ const PAINTINGS = [
     dimensions: "122 × 83 cm",
     description: "A gaunt, blind old man bends over his guitar on a street in Barcelona, painted during Picasso's Blue Period following the suicide of his close friend Carlos Casagemas. The monochromatic blue conveys extreme melancholy. X-ray examination revealed a woman and child beneath the guitarist — a memory of a different composition.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Old_Guitarist",
+    grokUrl: "https://grokipedia.com/page/The_Old_Guitarist",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Old_guitarist_chicago.jpg/330px-Old_guitarist_chicago.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
@@ -1773,6 +1785,8 @@ const PAINTINGS = [
     dimensions: "91 × 122 cm",
     description: "A ghostly white warship that fought at Trafalgar is towed by a small, fire-bellied steam tugboat toward its final berth to be broken up. Turner paints the old ship luminous and enormous, the tug dark and squat — a meditation on heroism, obsolescence, and death. In 2005, it was voted the Greatest Painting in Britain.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Fighting_Temeraire",
+    grokUrl: "https://grokipedia.com/page/The_Fighting_Temeraire",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg/330px-The_Fighting_Temeraire%2C_JMW_Turner%2C_National_Gallery.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
@@ -1929,6 +1943,8 @@ const PAINTINGS = [
     dimensions: "260 × 389 cm",
     description: "Commissioned alongside The Dance by Russian collector Sergei Shchukin, this massive canvas shows five flat, crimson figures against green and blue bands representing earth and sky — one playing violin, one double-pipe, three sitting. Where The Dance pulses with movement, Music is profoundly still, a contrast Matisse described as active vs. contemplative.",
     movement: "Fauvism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Music_(Matisse)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/La_Musique%2C_par_Henri_Matisse_%281910%29.jpg/330px-La_Musique%2C_par_Henri_Matisse_%281910%29.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
@@ -2011,6 +2027,8 @@ const PAINTINGS = [
     dimensions: "38 × 37 cm",
     description: "The only Leonardo painting in the Americas. The sixteen-year-old Ginevra de' Benci stares with cool, unsmiling directness — a departure from the feminine idealization of the time. The juniper bush (ginepro) behind her head is a visual pun on her name. The reverse of the panel bears a Latin motto: 'Beauty Adorns Virtue.'",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Ginevra_de%27_Benci",
+    grokUrl: "https://grokipedia.com/page/Ginevra_de%27_Benci",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Leonardo_da_Vinci_-_Ginevra_de%27_Benci_-_Google_Art_Project.jpg/330px-Leonardo_da_Vinci_-_Ginevra_de%27_Benci_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
@@ -2109,6 +2127,8 @@ const PAINTINGS = [
     dimensions: "33 × 23 cm",
     description: "A tiny goldfinch is chained by its foot to a perch against a white-grey wall, rendered with trompe l'oeil precision. Fabritius, Rembrandt's most gifted pupil, died in the Delft gunpowder explosion the year this was painted. The small scale and intimate intensity suggest it was designed to be hung low and viewed closely. Donna Tartt's 2013 Pulitzer-winning novel took it as its title.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Goldfinch_(painting)",
+    grokUrl: "https://grokipedia.com/page/The_Goldfinch",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Fabritius-vink.jpg/330px-Fabritius-vink.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
@@ -2179,6 +2199,8 @@ const PAINTINGS = [
     dimensions: "89 × 93 cm",
     description: "In his final years, nearly blind with cataracts, Monet painted his Japanese bridge at Giverny in increasingly abstract, turbulent strokes. Where earlier versions (at the Met and other museums) show a serene arched bridge in gentle greens, these late canvases are explosive — the bridge barely legible under dense impasto. They anticipated Abstract Expressionism by decades.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Japanese_Footbridge_(Monet)",
+    grokUrl: "https://grokipedia.com/page/The_Japanese_Bridge",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Claude_Monet_-_The_Japanese_bridge_-_Google_Art_Project.jpg/330px-Claude_Monet_-_The_Japanese_bridge_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Marmottan Monet Museum" }
   },
@@ -2221,6 +2243,8 @@ const PAINTINGS = [
     dimensions: "105 × 75 cm",
     description: "Paul Guillaume, the art dealer who championed Modigliani, Soutine, and the École de Paris, is depicted with his characteristic elongated features — almond eyes without pupils, swanlike neck. The inscription 'Novo Pilota' (New Pilot) reflects his role as champion of a new artistic generation. The Orangerie's Paul Guillaume collection is among the finest in France.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Paul_Guillaume%2C_Novo_Pilota",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Amedeo_Modigliani_%28Livorno_1884_-_Parigi_1920%29_-_Ritratto_di_Paul_Guillaume_%281916%29_Olio_su_tela_81%C3%9754_cm_-_Museo_del_Novecento%2C_Milano.jpg/330px-Amedeo_Modigliani_%28Livorno_1884_-_Parigi_1920%29_-_Ritratto_di_Paul_Guillaume_%281916%29_Olio_su_tela_81%C3%9754_cm_-_Museo_del_Novecento%2C_Milano.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
   },
@@ -2247,6 +2271,8 @@ const PAINTINGS = [
     dimensions: "50 × 61 cm",
     description: "A woman bathes in a Parisian studio whose walls are hung with a poster of Toulouse-Lautrec's 'May Milton.' Painted in the early weeks of Picasso's Blue Period, it synthesizes his affection for the Post-Impressionists with an emerging bleaker palette. The Phillips Collection acquired it in 1927 for $9,000 — one of its most prescient early purchases.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Blue_Room_(Picasso)",
+    grokUrl: "https://grokipedia.com/page/The_Blue_Room",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/75/Picasso%27s_Blue_Room_1901.jpg/330px-Picasso%27s_Blue_Room_1901.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
   },
@@ -2289,6 +2315,8 @@ const PAINTINGS = [
     dimensions: "190 × 120 cm",
     description: "Klimt's second portrait of Adele Bloch-Bauer depicts her in a simpler, more elegant manner than the gilded first version — a flowing floral dress, a more direct gaze. This painting remained in Nazi possession after the Bloch-Bauer family fled Austria; it was restituted to the family heirs in 2006 and sold at Christies for $87.9 million.",
     movement: "Art Nouveau",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Adele_Bloch-Bauer_II",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_Adele_Bloch-Bauer_II",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Gustav_Klimt_047.jpg/330px-Gustav_Klimt_047.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
   },
@@ -2317,6 +2345,8 @@ const PAINTINGS = [
     dimensions: "81 × 65 cm",
     description: "A young couple strolls in a dappled woodland, the woman in a brilliant white dress, the man in dark clothes. Painted the year before the Franco-Prussian War, it captures the ease and leisure of Second Empire Paris. The bold contrasts of sunlight filtering through foliage — flecks of light on the dress — point toward the full Impressionist style Renoir would achieve in the 1870s.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/La_Promenade_(Renoir)",
+    grokUrl: "https://grokipedia.com/page/La_Promenade",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/La_Promenade%2C_by_Pierre-Auguste_Renoir.jpg/330px-La_Promenade%2C_by_Pierre-Auguste_Renoir.jpg",
     location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
   },
@@ -2357,6 +2387,8 @@ const PAINTINGS = [
     dimensions: "147 × 89 cm",
     description: "A figure descends a staircase rendered in successive overlapping positions — a Cubist analysis of movement in time influenced by chronophotography. When shown at the 1913 Armory Show in New York, it caused a national scandal and made Duchamp famous. Theodore Roosevelt declared it looked like 'an explosion in a shingle factory.'",
     movement: "Cubism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Nude_Descending_a_Staircase%2C_No._2",
+    grokUrl: "https://grokipedia.com/page/Nude_Descending_a_Staircase_No._2",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Duchamp_-_Nude_Descending_a_Staircase.jpg/330px-Duchamp_-_Nude_Descending_a_Staircase.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
   },
@@ -2399,6 +2431,8 @@ const PAINTINGS = [
     dimensions: "176 × 240 cm",
     description: "Matisse's programmatic manifesto of color and hedonism: nude figures lounge, dance, and embrace in an Arcadian landscape of impossibly saturated pinks, greens, and oranges. Scale is irrational — the distant dancers are larger than the foreground figures. Picasso, upon seeing it, immediately began Les Demoiselles d'Avignon. The Barnes Foundation has owned it since 1922.",
     movement: "Fauvism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Le_bonheur_de_vivre",
+    grokUrl: "https://grokipedia.com/page/The_Joy_of_Life",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Le_Bonheur_de_vivre_Barnes_%2801c%29_-_Flickr_-_rverc.jpg/330px-Le_Bonheur_de_vivre_Barnes_%2801c%29_-_Flickr_-_rverc.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
   },
@@ -2453,6 +2487,8 @@ const PAINTINGS = [
     dimensions: "53 × 79 cm",
     description: "The original study for Trumbull's famous mural in the Capitol Rotunda, this smaller version was the first to be completed and includes portraits painted from life of figures including Jefferson, Adams, and Franklin. Trumbull donated it and his entire collection to Yale in 1831, founding the first college art museum in America.",
     movement: "Neoclassicism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Declaration_of_Independence_(Trumbull)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg/330px-Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg",
     location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
   },
@@ -2479,6 +2515,8 @@ const PAINTINGS = [
     dimensions: "148 × 102 cm",
     description: "Sarah Barrett Moulton, age 11, stands against a wind-swept sky in a pink muslin dress, sash billowing. Painted the year before her death at 13, it was commissioned by her grandmother. The Huntington paired it with Gainsborough's 'The Blue Boy' in 1921. Together the two paintings became the most visited pair in American art museum history for decades.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Pinkie_(painting)",
+    grokUrl: "https://grokipedia.com/page/Pinkie",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Thomas_Lawrence_-_Sarah_Goodin_Barrett_Moulton%2C_Pinkie_%281794%29.jpg/330px-Thomas_Lawrence_-_Sarah_Goodin_Barrett_Moulton%2C_Pinkie_%281794%29.jpg",
     location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
   },
@@ -2505,6 +2543,8 @@ const PAINTINGS = [
     dimensions: "22 × 30 cm",
     description: "Kahlo's face on a deer's body, pierced by nine arrows, runs through a dying forest. Painted after a failed spinal operation she had hoped would end her chronic pain, it is one of her most direct self-portraits of suffering. The deer appears young and vital yet is already mortally wounded — the gap between appearance and inner reality that defined her art.",
     movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Wounded_Deer",
+    grokUrl: "https://grokipedia.com/page/The_Wounded_Deer",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/9/92/The_Wounded_Deer_1946.jpg/330px-The_Wounded_Deer_1946.jpg",
     location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
   },
@@ -2543,6 +2583,8 @@ const PAINTINGS = [
     dimensions: "110 × 150 cm",
     description: "A monumental melting head — a self-portrait of Dalí's own face — dominates the lower center, its closed eyes suggesting dream and shame. From it emerge figures of erotic fantasy and anxiety: a woman pressing her face to a man's thigh, a locust (Dalí's phobia), a grasshopper. Painted the year he met Gala, it lays bare the obsessions that would define Surrealism.",
     movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Great_Masturbator",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/9/90/DaliGreatMasturbator.jpg/500px-DaliGreatMasturbator.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
@@ -2555,6 +2597,8 @@ const PAINTINGS = [
     dimensions: "133 × 101 cm",
     description: "A large, frontal portrait of a woman in an elaborate blue dress and hat, painted in a single day in Madrid in the manner of Velázquez. Its bold brushwork, flattened form, and psychological directness show the 19-year-old Picasso absorbing Spanish tradition as he moved toward his mature style. The Reina Sofía holds the most comprehensive collection of Picasso and Dalí in Spain.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Woman_in_Blue_(Picasso)",
+    grokUrl: null,
     imageUrl: null,
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
@@ -2593,6 +2637,8 @@ const PAINTINGS = [
     dimensions: "172 × 406 cm",
     description: "A two-panel painting based on a panel from a 1962 DC war comic, showing a jet firing a rocket at an enemy plane which explodes in a burst of orange flame and the onomatopoeic 'WHAAM!' Lichtenstein replicated the printing dots (Ben-Day dots), bold outlines, and primary colors of cheap comic reproduction, elevating them to monumental fine art.",
     movement: "Pop Art",
+    wikiUrl: "https://en.wikipedia.org/wiki/Whaam%21",
+    grokUrl: "https://grokipedia.com/page/Whaam%21",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/b/b7/Roy_Lichtenstein_Whaam.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
@@ -2707,6 +2753,8 @@ const PAINTINGS = [
     dimensions: "84 × 42 cm",
     description: "Klimt's Judith is not a Jewish heroine but a femme fatale: languid, half-naked, her fingers resting on Holofernes's severed head with proprietary satisfaction. The gold frame integrates with the composition, making the painting itself a precious object. The identity as Judith rather than Salome was so confusing that the frame was labeled 'Salome' for years.",
     movement: "Art Nouveau",
+    wikiUrl: "https://en.wikipedia.org/wiki/Judith_I",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Judith_1_%28cropped%29.jpg/330px-Judith_1_%28cropped%29.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
   },
@@ -2763,6 +2811,8 @@ const PAINTINGS = [
     dimensions: "117 × 162 cm",
     description: "Part of Bruegel's Months series alongside The Harvesters, this January scene shows huntsmen returning across a snowy hillside, their dogs at their heels, as skaters glide on frozen ponds below. The panoramic space and the way tiny figures animate a vast landscape were revolutionary. Andrei Tarkovsky used it in Solaris (1972) to evoke Earth's irreplaceable beauty.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Hunters_in_the_Snow",
+    grokUrl: "https://grokipedia.com/page/Hunters_in_the_Snow",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_%28Winter%29_-_Google_Art_Project.jpg/330px-Pieter_Bruegel_the_Elder_-_Hunters_in_the_Snow_%28Winter%29_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
   },
@@ -2819,6 +2869,8 @@ const PAINTINGS = [
     dimensions: "120 × 119 cm",
     description: "A dying girl turns her face toward a window while a grief-bowed woman sits beside her, unable to look. Munch's sister Sophie died of tuberculosis when he was 14; he returned to this subject six times across his career. The first version, shown here, was attacked by critics for its unfinished, scraped surface — which is precisely what makes it so raw.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Sick_Child_(Munch)",
+    grokUrl: "https://grokipedia.com/page/The_Sick_Child",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Edvard_Munch_-_The_Sick_Child_I_-_NG.K%26H.A.19029_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/330px-Edvard_Munch_-_The_Sick_Child_I_-_NG.K%26H.A.19029_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
     location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
   },
@@ -2861,6 +2913,8 @@ const PAINTINGS = [
     dimensions: "1370 × 1220 cm",
     description: "The entire altar wall of the Sistine Chapel is covered by this massive fresco of the Second Coming — Christ at center, the saved ascending on the left, the damned dragged to hell on the right. Michelangelo included his own face in the flayed skin held by Saint Bartholomew. When unveiled, the nudity caused scandal; Pope Paul IV had loincloths painted over the figures.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Last_Judgment_(Michelangelo)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Last_Judgement_%28Michelangelo%29.jpg/330px-Last_Judgement_%28Michelangelo%29.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
   },
@@ -2903,6 +2957,8 @@ const PAINTINGS = [
     dimensions: "500 × 770 cm",
     description: "Facing The School of Athens across the Stanza della Segnatura, this fresco shows the Church Triumphant and Militant united around the Eucharist — saints and theologians below, Christ enthroned in heaven above. Raphael organized a cast of hundreds into a composition of serene clarity. Together with the School of Athens, it defines High Renaissance fresco painting.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Disputation_of_the_Eucharist",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Raphaels_Disputation_of_the_Holy_Sacrament.jpg/330px-Raphaels_Disputation_of_the_Holy_Sacrament.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
   },
@@ -2931,6 +2987,8 @@ const PAINTINGS = [
     dimensions: "65 × 51 cm",
     description: "A young woman holds a small unicorn — symbol of chastity — in a pose echoing Leonardo's portrait compositions. Originally the unicorn was a dog; Raphael repainted it sometime after the initial sitting. The sitter's identity is debated (possibly Maddalena Doni). X-ray and infrared examination have revealed the multiple layers of revision.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Lady_with_a_Unicorn_(Raphael)",
+    grokUrl: "https://grokipedia.com/page/Lady_with_a_Unicorn",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lady_with_unicorn_by_Rafael_Santi.jpg/330px-Lady_with_unicorn_by_Rafael_Santi.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
   },
@@ -2987,6 +3045,8 @@ const PAINTINGS = [
     dimensions: "84 × 65 cm",
     description: "A young woman reads a letter by an open window, her reflection faintly visible in the glass. For centuries, the wall behind her appeared empty, but in 2019 cleaning and restoration revealed that Vermeer had painted a Cupid there — later overpainted by another hand. The restoration transformed the painting's meaning: the Cupid confirms the letter is a love letter.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Girl_Reading_a_Letter_at_an_Open_Window",
+    grokUrl: "https://grokipedia.com/page/Girl_Reading_a_Letter_at_an_Open_Window",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Johannes_Vermeer_-_Girl_Reading_a_Letter_by_an_Open_Window_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_Girl_Reading_a_Letter_by_an_Open_Window_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
   },
@@ -3029,6 +3089,8 @@ const PAINTINGS = [
     dimensions: "292 × 186 cm",
     description: "An angel descends urgently to guide the hand of Saint Matthew as he writes the Gospel — their faces nearly touching, the angel's fingers touching Matthew's. Caravaggio's first version was rejected because Matthew appeared illiterate; this second version, accepted, shows the same radical intimacy between the divine and the human world. The three paintings form the Contarelli Chapel cycle.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Saint_Matthew_and_the_Angel_(Caravaggio)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/The_Inspiration_of_Saint_Matthew_by_Caravaggio.jpg/330px-The_Inspiration_of_Saint_Matthew_by_Caravaggio.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
   },
@@ -3057,6 +3119,8 @@ const PAINTINGS = [
     dimensions: "81.8 × 65.8 cm",
     description: "The most celebrated portrait in Spanish art, this anonymous nobleman presses his right hand to his chest in a gesture of solemn oath or loyalty — a convention of the Spanish aristocracy. The stark black doublet and white ruff lend the figure a severe, almost otherworldly dignity. El Greco's elongated form and luminous treatment of the collar anticipate the psychological intensity of modern portraiture.",
     movement: "Mannerism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Nobleman_with_his_Hand_on_his_Chest",
+    grokUrl: "https://grokipedia.com/page/The_Nobleman_with_his_Hand_on_his_Chest",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/El_caballero_de_la_mano_en_el_pecho.jpg/330px-El_caballero_de_la_mano_en_el_pecho.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -3332,6 +3396,8 @@ const PAINTINGS = [
     dimensions: "89 × 163 cm",
     description: "Ingres deliberately added extra vertebrae to elongate his subject's back into a sinuous, impossible curve — yet the effect feels supremely right, almost inevitable. The painting caused scandal at its 1814 exhibition, with critics noting the anatomical liberties, but these distortions became central to Ingres's stylistic signature. It remains the defining image of 19th-century Orientalist fantasy.",
     movement: "Neoclassicism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Grande_Odalisque",
+    grokUrl: "https://grokipedia.com/page/Grande_Odalisque",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/La_grande_odalisque_-_Jean-Auguste_Dominique_Ingres_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1158.jpg/330px-La_grande_odalisque_-_Jean-Auguste_Dominique_Ingres_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1158.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
