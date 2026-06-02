@@ -767,3 +767,39 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ### Toolbar content padding
 - `.toolbar-spacer` height increased by 8px (`calc(var(--toolbar-h) + 8px)`) to add breathing room between the toolbar and content on all three tabs
+
+## Session 35 — 2026-06-01
+
+### Museum detail: search within museum
+- Search bar placeholder changes to "Search {Museum Name}…" when a museum card is open
+- Typing filters paintings by title or artist within that museum; "Collection (N of Total)" label reflects filtered count while the progress bar and collected stat always show the full museum
+- Back button calls `closeMuseumDetail()` which clears `S.museumSearch` before returning — previous museums-list search is preserved
+- `handleMuseumSearch()` and `closeMuseumDetail()` added; `_museumsToolbar()` switches input binding based on `S.view`
+
+### Tab scroll memory + museum card persistence
+- `_tabScroll` object tracks scroll position per tab; position is saved before leaving a tab and restored after rendering the new one (`requestAnimationFrame` to allow DOM to settle)
+- `_museumsDetailState` saves the active museum and search when switching away from a museum card via a tab button; switching back to the Museums tab restores the museum card, not the list
+- Back button (`closeMuseumDetail`) explicitly clears `_museumsDetailState` so Back always returns to the museum list
+
+### Swipe right from left edge = Back
+- `_initSwipeBack()` adds a global `touchstart`/`touchend` listener; a touch starting within 40px of the left edge that travels ≥ 80px rightward (mostly horizontal) triggers `_globalBack()`
+- `_globalBack()` checks current state: overlays → `navBack()`, museum-detail → `closeMuseumDetail()`, settings → `closeSettings()`, stats → `closeStats()`
+
+### Museum detail painting spacing
+- `.mv-popup-body` horizontal padding reduced from 16px to 12px; added `padding-left: 0; padding-right: 0` overrides for `.paintings-grid` and `.paintings-compact` inside it — all three view modes now have 12px left/right margins matching the paintings tab
+
+### Museum list top padding
+- `.museum-section:first-child` gets `margin-top: 8px`; `.loc-section:first-child` and `.loc-group:first-child` get `margin-top: 6px` (2px less for city/country views)
+
+### Settings: Stat Tracking option
+- When scope is Up to 10 or Up to 30, a **Stat Tracking** row appears in the Tracking section with Top 100 / All options
+- Top 100: header counter always shows top-100 progress (X / 100); All: shows all scoped paintings (default)
+- `S.statTracking` persisted; `globalChecked()` and `globalTotal()` updated to respect it
+
+### Settings: Painting List layout + copy
+- Row changed to stacked layout (`.settings-row-stacked`) — description spans full width, toggle buttons sit below
+- Description rewritten to explain the +10/+30 feature conversationally
+
+### Museums tab country sort: Expand/Collapse All
+- When "By Country" is the active grouping, the sort dropdown shows a divider + Expand All / Collapse All buttons (matching paintings tab style)
+- `museumsExpandAll()` adds all country keys to `S.expandedContinents`; `museumsCollapseAll()` clears it

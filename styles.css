@@ -258,6 +258,13 @@ body {
   background: var(--gold-dim);
   color: var(--text);
 }
+.settings-row-stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.settings-row-stacked .settings-row-label { flex: none; width: 100%; }
+.settings-row-stacked .settings-row-sub { font-size: .8rem; line-height: 1.5; }
 
 /* ── Toolbar (search / sort / filter) ───────────────────────────────────── */
 #toolbar {
@@ -272,7 +279,7 @@ body {
   z-index: 50;
   border-bottom: 1px solid var(--bg4);
 }
-.toolbar-spacer { height: calc(var(--toolbar-h) + 8px); }
+.toolbar-spacer { height: calc(var(--toolbar-h) + 12px); }
 
 .search-wrap {
   flex: 1;
@@ -455,6 +462,7 @@ body {
 .museum-section {
   margin: 0 12px 10px;
 }
+.museum-section:first-child { margin-top: 8px; }
 
 .museum-header {
   display: flex;
@@ -727,6 +735,7 @@ body {
 
 /* ── City grouping (Museums → City view) ────────────────────────────────── */
 .loc-section { padding: 0 12px; margin-bottom: 20px; }
+.loc-section:first-child { margin-top: 6px; }
 .loc-header {
   display: flex;
   justify-content: space-between;
@@ -756,6 +765,7 @@ body {
 
 /* ── Country grouping (Museums → Country view) ──────────────────────────── */
 .loc-group { border-bottom: 1px solid var(--border); }
+.loc-group:first-child { margin-top: 6px; }
 .loc-group-header {
   display: flex;
   align-items: center;
@@ -1792,7 +1802,9 @@ body {
 
 /* ── Movement detail popup ───────────────────────────────────────────────── */
 .movement-sheet { max-height: 92dvh; }
-.mv-popup-body { padding: 16px 16px 40px; }
+.mv-popup-body { padding: 16px 12px 40px; }
+.mv-popup-body .paintings-grid,
+.mv-popup-body .paintings-compact { padding-left: 0; padding-right: 0; }
 .mv-popup-era {
   font-size: .72rem; color: var(--gold-dim);
   text-transform: uppercase; letter-spacing: .08em;

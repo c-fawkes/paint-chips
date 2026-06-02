@@ -15,6 +15,7 @@ const S = {
   collectionSearch: '',
   collectionFilter: 'all',
   museumsSearch: '',
+  museumSearch: '',
   museumsMode: 'alpha',
   museumsDetailMode: 'condensed',
   sort: 'rank',
@@ -22,6 +23,7 @@ const S = {
   filter: { continent: null, country: null, city: null, museum: null },
   units: 'metric',
   scope: 'top100',
+  statTracking: 'all',
   expandedMuseums: new Set(),
   expandedContinents: new Set(),
   expandedCountries: new Set(),
@@ -34,6 +36,10 @@ const S = {
   expandedStatsMuseums: new Set(),
   activeMuseum: null,
 };
+
+/* ── Per-tab scroll position (not persisted) ────────────────────────────── */
+const _tabScroll = { list: 0, museums: 0, 'museum-detail': 0, collection: 0 };
+let _museumsDetailState = null; // saved when leaving museum-detail via tab switch
 
 /* ── Add-painting modal state ────────────────────────────────────────────── */
 let _apMuseum = '';
@@ -183,7 +189,7 @@ function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
       checked: S.checked, notes: S.notes, dateCollected: S.dateCollected, hiddenFromCollection: S.hiddenFromCollection, favorites: S.favorites, visitedMuseums: S.visitedMuseums, userPaintings: S.userPaintings,
-      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionFilter: S.collectionFilter, museumsMode: S.museumsMode, museumsDetailMode: S.museumsDetailMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
+      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionFilter: S.collectionFilter, museumsMode: S.museumsMode, museumsDetailMode: S.museumsDetailMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope, statTracking: S.statTracking,
     }));
   } catch (_) {}
 }
@@ -243,8 +249,16 @@ function scopedPaintings() {
   return all;
 }
 function checkedCount(ids) { return ids.filter(id => S.checked[String(id)]).length; }
-function globalChecked() { return scopedPaintings().filter(p => S.checked[String(p.id)]).length; }
-function globalTotal()   { return scopedPaintings().length; }
+function globalChecked() {
+  const pool = (S.statTracking === 'top100' && S.scope !== 'top100')
+    ? allPaintings().filter(p => !p.museumOnly && !p.isUser)
+    : scopedPaintings();
+  return pool.filter(p => S.checked[String(p.id)]).length;
+}
+function globalTotal() {
+  if (S.statTracking === 'top100' && S.scope !== 'top100') return 100;
+  return scopedPaintings().length;
+}
 
 /* ── Sorting & filtering ─────────────────────────────────────────────────── */
 function filteredSorted() {
@@ -562,11 +576,16 @@ function buildFilterChips() {
 
 /* ── Museums View ───────────────────────────────────────────────────────── */
 function _museumsToolbar() {
+  const isDetail = S.view === 'museum-detail';
+  const searchVal  = isDetail ? S.museumSearch  : S.museumsSearch;
+  const placeholder = isDetail ? `Search ${esc(S.activeMuseum)}…` : 'Search museums, cities…';
+  const onInput    = isDetail ? `handleMuseumSearch(this.value)` : `handleMuseumsSearch(this.value)`;
+  const onClear    = isDetail ? `handleMuseumSearch('')`          : `handleMuseumsSearch('')`;
   return `<div id="toolbar">
     <div class="search-wrap">
-      <input id="museums-search-input" type="search" placeholder="Search museums, cities…"
-             value="${esc(S.museumsSearch)}" oninput="handleMuseumsSearch(this.value)">
-      <button class="search-clear" onclick="handleMuseumsSearch('')" title="Clear search" ${S.museumsSearch ? '' : 'hidden'}>✕</button>
+      <input id="museums-search-input" type="search" placeholder="${placeholder}"
+             value="${esc(searchVal)}" oninput="${onInput}">
+      <button class="search-clear" onclick="${onClear}" title="Clear search" ${searchVal ? '' : 'hidden'}>✕</button>
     </div>
     <button class="toolbar-btn icon-only"
             onclick="openMuseumsViewDropdown(event,this)" title="Group by">
@@ -1474,11 +1493,32 @@ function openPhotoLightbox(id, index) {
 
 /* ── Nav / View switching ────────────────────────────────────────────────── */
 function setView(v) {
+  // Save scroll for the view we're leaving
+  if (_tabScroll.hasOwnProperty(S.view)) _tabScroll[S.view] = window.scrollY;
+
+  // If leaving museum-detail via a tab switch (not the Back button), save state to restore later
+  if (S.view === 'museum-detail' && v !== 'museums') {
+    _museumsDetailState = { activeMuseum: S.activeMuseum, museumSearch: S.museumSearch };
+  }
+
   navDismissAll();
-  S.view = v;
+
+  // Switching to museums tab: restore museum-detail if the user was there
+  if (v === 'museums' && _museumsDetailState) {
+    S.activeMuseum  = _museumsDetailState.activeMuseum;
+    S.museumSearch  = _museumsDetailState.museumSearch;
+    S.view = 'museum-detail';
+    _museumsDetailState = null;
+  } else {
+    S.view = v;
+  }
+
   save();
   render();
-  window.scrollTo(0, 0);
+
+  const savedScroll = _tabScroll[S.view] || 0;
+  if (savedScroll) requestAnimationFrame(() => window.scrollTo(0, savedScroll));
+  else window.scrollTo(0, 0);
 }
 
 function handleSearch(val) {
@@ -1603,14 +1643,29 @@ function openMuseumsViewDropdown(e, btn) {
   drop.className = 'toolbar-drop';
   drop.id = 'toolbar-drop';
   drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
-  drop.innerHTML = opts.map(o =>
-    `<button class="drop-item${S.museumsMode === o.key ? ' active' : ''}"
-             onclick="setMuseumsMode('${o.key}');closeDrop()">
-       ${o.icon}<span>${o.label}</span>
-     </button>`
-  ).join('');
+  drop.innerHTML =
+    opts.map(o =>
+      `<button class="drop-item${S.museumsMode === o.key ? ' active' : ''}"
+               onclick="setMuseumsMode('${o.key}');closeDrop()">
+         ${o.icon}<span>${o.label}</span>
+       </button>`
+    ).join('') +
+    (S.museumsMode === 'country' ? `<div class="drop-divider"></div>
+      <button class="drop-item" onclick="museumsExpandAll();closeDrop()">${ICONS.expandAll} Expand All</button>
+      <button class="drop-item" onclick="museumsCollapseAll();closeDrop()">${ICONS.collapseAll} Collapse All</button>` : '');
   document.body.appendChild(drop);
   document.addEventListener('click', closeDrop, { once: true });
+}
+
+function museumsExpandAll() {
+  const countries = [...new Set(scopedPaintings().map(p => p.location.country))];
+  countries.forEach(c => S.expandedContinents.add(c));
+  render();
+}
+
+function museumsCollapseAll() {
+  S.expandedContinents.clear();
+  render();
 }
 
 function openMuseumsDetailModeDropdown(e, btn) {
@@ -1760,6 +1815,19 @@ function handleMuseumsSearch(val) {
   render();
   const input = document.getElementById('museums-search-input');
   if (input) { input.focus(); input.setSelectionRange(val.length, val.length); }
+}
+
+function handleMuseumSearch(val) {
+  S.museumSearch = val;
+  render();
+  const input = document.getElementById('museums-search-input');
+  if (input) { input.focus(); input.setSelectionRange(val.length, val.length); }
+}
+
+function closeMuseumDetail() {
+  S.museumSearch = '';
+  _museumsDetailState = null; // explicit Back: don't restore detail, go to list
+  setView('museums');
 }
 
 function clearFilter(level) {
@@ -2091,6 +2159,8 @@ function closeArtistPopup() { navDismissAll(); }
 /* ── Museum detail view (replaces #main content, keeps header visible) ────── */
 function openMuseumDetail(name) {
   navDismissAll();
+  _tabScroll['museums'] = window.scrollY; // save list scroll before entering detail
+  _museumsDetailState = { activeMuseum: name, museumSearch: '' };
   S.activeMuseum = name;
   S.view = 'museum-detail';
   save();
@@ -2100,8 +2170,12 @@ function openMuseumDetail(name) {
 
 function renderMuseumDetailView() {
   const museumName = S.activeMuseum;
-  const paintings = scopedPaintings().filter(p => p.location.museum === museumName).sort((a,b) => (a.rank||9999)-(b.rank||9999));
-  if (!paintings.length) return `<div class="empty-state"><div class="empty-icon">🏛️</div><p>Museum not found.</p></div>`;
+  const allMuseumPaintings = scopedPaintings().filter(p => p.location.museum === museumName).sort((a,b) => (a.rank||9999)-(b.rank||9999));
+  if (!allMuseumPaintings.length) return `<div class="empty-state"><div class="empty-icon">🏛️</div><p>Museum not found.</p></div>`;
+  const q = S.museumSearch.toLowerCase();
+  const paintings = q
+    ? allMuseumPaintings.filter(p => p.title.toLowerCase().includes(q) || p.artist.toLowerCase().includes(q))
+    : allMuseumPaintings;
 
   const loc  = paintings[0].location;
   const info = (typeof MUSEUMS_INFO !== 'undefined') ? MUSEUMS_INFO[museumName] : null;
@@ -2109,7 +2183,7 @@ function renderMuseumDetailView() {
     'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
     'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
   const flag = flagFor[loc.country] || '';
-  const mc   = checkedCount(paintings.map(p => p.id));
+  const mc   = checkedCount(allMuseumPaintings.map(p => p.id));
   const isVisited = !!S.visitedMuseums[museumName];
   const safeName  = esc(museumName).replace(/'/g, "\\'");
 
@@ -2146,7 +2220,7 @@ function renderMuseumDetailView() {
 
   return _museumsToolbar() + `
     <div class="museum-detail-nav">
-      <button class="detail-back-btn" onclick="setView('museums')">${ICONS.back} Back</button>
+      <button class="detail-back-btn" onclick="closeMuseumDetail()">${ICONS.back} Back</button>
       <button class="museum-detail-visited-btn${isVisited ? ' visited' : ''}"
               onclick="toggleMuseumVisited(event,'${safeName}')"
               title="${isVisited ? 'Visited' : 'Mark as visited'}">
@@ -2159,11 +2233,11 @@ function renderMuseumDetailView() {
       <div class="mv-popup-era">${flag} ${esc(loc.city)}, ${esc(loc.country)}</div>
       <h2 class="mv-popup-name">${esc(museumName)}</h2>
       <div class="museum-popup-stats">
-        <span class="museum-popup-stat">${mc} of ${paintings.length} collected</span>
-        <div class="museum-popup-bar"><div class="museum-popup-fill" style="width:${paintings.length ? Math.round(mc/paintings.length*100) : 0}%"></div></div>
+        <span class="museum-popup-stat">${mc} of ${allMuseumPaintings.length} collected</span>
+        <div class="museum-popup-bar"><div class="museum-popup-fill" style="width:${allMuseumPaintings.length ? Math.round(mc/allMuseumPaintings.length*100) : 0}%"></div></div>
       </div>
       ${info ? `<p class="mv-popup-summary" style="margin-top:14px;border-bottom:none;padding-bottom:0">${esc(info.blurb)}</p>` : ''}
-      <div class="mv-section-label" style="margin-top:18px">Collection (${paintings.length})</div>
+      <div class="mv-section-label" style="margin-top:18px">Collection (${q ? `${paintings.length} of ${allMuseumPaintings.length}` : allMuseumPaintings.length})</div>
       ${paintingsHtml}
     </div>
   `;
@@ -2250,10 +2324,10 @@ function renderSettingsView() {
     <div class="settings-view">
       <div class="settings-section">
         <div class="settings-section-title">Tracking</div>
-        <div class="settings-row">
+        <div class="settings-row settings-row-stacked">
           <div class="settings-row-label">
             <div class="settings-row-name">Painting List</div>
-            <div class="settings-row-sub">Top 100 shows only ranked works. Up to 10/30 caps the total per museum (ranked + extras)</div>
+            <div class="settings-row-sub">Some museums hold several paintings from the Top 100 — others just one. Since you're already there, why not see a few more masterpieces? +10 and +30 fill each museum's list to up to 10 or 30 great works, so every visit goes deeper.</div>
           </div>
           <div class="settings-toggle-group">
             <button class="settings-toggle-btn${S.scope === 'top100'  ? ' active' : ''}" onclick="setScope('top100')">Top 100</button>
@@ -2261,6 +2335,17 @@ function renderSettingsView() {
             <button class="settings-toggle-btn${S.scope === 'plus30'  ? ' active' : ''}" onclick="setScope('plus30')">Up to 30</button>
           </div>
         </div>
+        ${(S.scope === 'plus10' || S.scope === 'plus30') ? `
+        <div class="settings-row">
+          <div class="settings-row-label">
+            <div class="settings-row-name">Stat Tracking</div>
+            <div class="settings-row-sub">What the header counter counts when an expanded list is active</div>
+          </div>
+          <div class="settings-toggle-group">
+            <button class="settings-toggle-btn${S.statTracking === 'top100' ? ' active' : ''}" onclick="setStatTracking('top100')">Top 100</button>
+            <button class="settings-toggle-btn${S.statTracking === 'all'    ? ' active' : ''}" onclick="setStatTracking('all')">All</button>
+          </div>
+        </div>` : ''}
       </div>
       <div class="settings-section">
         <div class="settings-section-title">Display</div>
@@ -2297,6 +2382,12 @@ function openSettings() {
 
 function closeSettings() {
   setView(_prevView || 'list');
+}
+
+function setStatTracking(v) {
+  S.statTracking = v;
+  save();
+  render();
 }
 
 function setUnits(u) {
@@ -2921,6 +3012,7 @@ async function init() {
     }).join('');
 
     render();
+    _initSwipeBack();
 
     if (!localStorage.getItem('pc_onboarded')) showOnboarding();
 
@@ -2931,6 +3023,39 @@ async function init() {
       `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Error: ${err.message}</p></div>`;
     console.error('Beheld init error:', err);
   }
+}
+
+/* ── Global back action ─────────────────────────────────────────────────── */
+function _globalBack() {
+  const overlayIds = ['detail-overlay','museum-overlay','artist-overlay','movement-overlay'];
+  if (overlayIds.some(id => document.getElementById(id))) { navBack(); return; }
+  if (S.view === 'museum-detail') { closeMuseumDetail(); return; }
+  if (S.view === 'settings')      { closeSettings();     return; }
+  if (S.view === 'stats')         { closeStats();         return; }
+}
+
+/* ── Swipe-right from left edge = Back ──────────────────────────────────── */
+function _initSwipeBack() {
+  const EDGE   = 40;   // px from left to start a back swipe
+  const MIN_DX = 80;   // minimum rightward travel
+  const MAX_RATIO = 0.6; // max |dy/dx| — keeps it mostly horizontal
+
+  let startX = 0, startY = 0, tracking = false;
+
+  document.addEventListener('touchstart', e => {
+    const t = e.touches[0];
+    tracking = t.clientX <= EDGE;
+    if (tracking) { startX = t.clientX; startY = t.clientY; }
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    if (!tracking) return;
+    tracking = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX;
+    const dy = Math.abs(t.clientY - startY);
+    if (dx >= MIN_DX && (dx === 0 || dy / dx < MAX_RATIO)) _globalBack();
+  }, { passive: true });
 }
 
 // Scripts are at end of <body> — DOM is ready, call init directly
