@@ -1344,6 +1344,9 @@ body {
   justify-content: center;
   animation: fadeIn .18s ease;
 }
+.swipe-back-open .detail-overlay,
+.swipe-back-open [class*="-overlay"] { animation: none !important; }
+.swipe-back-open .detail-sheet       { animation: none !important; }
 
 .detail-sheet {
   background: var(--bg2);

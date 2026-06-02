@@ -920,6 +920,12 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added `.card-collected-badge` button to `renderCondensedCard()` — same circle, gold-fill, check icon as the 2×2 grid
 - `.card-collected-badge::before { inset: -8px }` extends the tap target 8 px beyond the visible button on all sides
 
+### Swipe-back: cleaner overlay transitions
+- Removed backdrop fade-during-drag so #main no longer shows through while swiping (backdrop stays opaque until commit)
+- After commit, overlay and backdrop fade out together over 220ms
+- Added `swipe-back-open` body class + CSS rules to suppress `slideUp`/`fadeIn` animations on re-opened previous overlay, eliminating the "pop" on return
+- Museum-detail swipe still gesture-only (no translateX on #main) from prior session
+
 ### Museums tab: By Visited sort mode
 - New "By Visited" option appears in the museums group-by dropdown when ≥1 museum is marked visited
 - Shows visited museums first (alphabetical, gold border) then unvisited below (alphabetical) with section labels

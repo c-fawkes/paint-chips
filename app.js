@@ -1074,8 +1074,8 @@ function renderCollectionView() {
         'every legendary collection started somewhere.'
       ];
       const quip = quips[Math.floor(Math.random() * quips.length)];
-      headline = `Your gallery is empty — ${quip}`;
-      subline  = 'Tap a painting in the Paintings tab to add it to your collection.';
+      headline = `Your gallery is empty —<br>${quip}`;
+      subline  = 'Add a painting to start<br>building your collection.';
       icon     = ICONS.frame;
     } else if (S.collectionFilter === 'favorites' && !S.collectionSearch) {
       headline = 'No favorites yet.';
@@ -3126,8 +3126,9 @@ function _initSwipeBack() {
   const DIR_LOCK  = 10;   // px of movement before direction is decided
 
   let startX = 0, startY = 0;
-  let phase  = 'idle';    // 'idle' | 'pending' | 'dragging' | 'rejected'
-  let target = null;      // element being dragged
+  let phase    = 'idle';  // 'idle' | 'pending' | 'dragging' | 'rejected'
+  let target   = null;    // element being dragged
+  let fullPage = false;   // true when target is #main (no slide animation)
 
   function getTarget() {
     for (const id of ['detail-overlay','museum-overlay','artist-overlay','movement-overlay']) {
@@ -3143,6 +3144,7 @@ function _initSwipeBack() {
     if (t.clientX > EDGE) { phase = 'idle'; return; }
     startX = t.clientX; startY = t.clientY;
     target = getTarget();
+    fullPage = target?.id === 'main';
     phase = target ? 'pending' : 'idle';
   }, { passive: true });
 
@@ -3156,14 +3158,13 @@ function _initSwipeBack() {
       if (Math.max(dx, dy) < DIR_LOCK) return;
       if (dy > dx || dx < 0) { phase = 'rejected'; return; }
       phase = 'dragging';
-      target.style.transition = 'none';
+      if (!fullPage) target.style.transition = 'none';
     }
 
-    if (phase === 'dragging') {
+    if (phase === 'dragging' && !fullPage) {
       const x = Math.max(0, dx);
       target.style.transform = `translateX(${x}px)`;
-      const overlay = target.closest && target.closest('.detail-overlay');
-      if (overlay) overlay.style.background = `rgba(0,0,0,${Math.max(0, 0.72 - x / window.innerWidth)})`;
+      // Keep backdrop opaque during drag — don't reveal #main underneath
     }
   }, { passive: true });
 
@@ -3171,24 +3172,38 @@ function _initSwipeBack() {
     if (phase !== 'dragging' || !target) { phase = 'idle'; return; }
     const dx  = e.changedTouches[0].clientX - startX;
     const el  = target;
-    const overlay = el.closest && el.closest('.detail-overlay');
+    const overlay = el.closest && el.closest('.detail-overlay, [class*="-overlay"]');
     phase = 'idle';
 
     if (dx >= MIN_DX) {
-      el.style.transition = 'transform 0.22s ease';
-      el.style.transform  = `translateX(${window.innerWidth}px)`;
-      if (overlay) { overlay.style.transition = 'opacity 0.22s'; overlay.style.opacity = '0'; }
-      setTimeout(() => {
-        el.style.cssText = '';
-        if (overlay) overlay.style.cssText = '';
+      if (fullPage) {
         target = null;
         _globalBack();
-      }, 220);
+      } else {
+        el.style.transition = 'transform 0.22s ease';
+        el.style.transform  = `translateX(${window.innerWidth}px)`;
+        if (overlay) {
+          overlay.style.transition = 'opacity 0.22s';
+          overlay.style.opacity = '0';
+        }
+        // Suppress the re-open animation so the previous screen appears instantly
+        document.body.classList.add('swipe-back-open');
+        setTimeout(() => {
+          document.body.classList.remove('swipe-back-open');
+          el.style.cssText = '';
+          if (overlay) overlay.style.cssText = '';
+          target = null;
+          _globalBack();
+        }, 220);
+      }
     } else {
-      el.style.transition = 'transform 0.2s ease';
-      el.style.transform  = '';
-      if (overlay) overlay.style.background = '';
-      setTimeout(() => { el.style.transition = ''; target = null; }, 200);
+      if (!fullPage) {
+        el.style.transition = 'transform 0.2s ease';
+        el.style.transform  = '';
+        setTimeout(() => { el.style.transition = ''; target = null; }, 200);
+      } else {
+        target = null;
+      }
     }
   }, { passive: true });
 }
