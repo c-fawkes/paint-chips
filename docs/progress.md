@@ -920,6 +920,11 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added `.card-collected-badge` button to `renderCondensedCard()` — same circle, gold-fill, check icon as the 2×2 grid
 - `.card-collected-badge::before { inset: -8px }` extends the tap target 8 px beyond the visible button on all sides
 
+### Museums tab: By Visited sort mode
+- New "By Visited" option appears in the museums group-by dropdown when ≥1 museum is marked visited
+- Shows visited museums first (alphabetical, gold border) then unvisited below (alphabetical) with section labels
+- Falls back to alpha view if all visited museums are later unmarked
+
 ### Museums tab: visited indicator replaced with gold border
 - Removed inline `museum-visited-check` checkmark span from museum name in city/country views
 - Visited museums now show `.museum-header.visited-museum { border-color: var(--gold-dim) }` — matches collected painting card border style

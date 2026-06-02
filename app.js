@@ -609,6 +609,8 @@ function renderMuseumsView() {
   const toolbar = _museumsToolbar();
   if (S.museumsMode === 'city')    return toolbar + renderMuseumsCity();
   if (S.museumsMode === 'country') return toolbar + renderMuseumsCountry();
+  if (S.museumsMode === 'visited' && Object.keys(S.visitedMuseums).length > 0)
+    return toolbar + renderMuseumsVisited();
   return toolbar + renderMuseumsAlpha();
 }
 
@@ -669,6 +671,52 @@ function renderMuseumsAlpha() {
       </div>
     </div>`;
   }).join('');
+}
+
+function renderMuseumsVisited() {
+  const museums = {};
+  scopedPaintings().forEach(p => {
+    const key = p.location.museum;
+    if (!museums[key]) museums[key] = { ...p.location, paintings: [] };
+    museums[key].paintings.push(p);
+  });
+  const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
+    'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
+    'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
+  const q = S.museumsSearch.toLowerCase();
+  let entries = Object.entries(museums).sort(([a], [b]) => a.localeCompare(b));
+  if (q) entries = entries.filter(([name, m]) =>
+    name.toLowerCase().includes(q) || m.city.toLowerCase().includes(q) || m.country.toLowerCase().includes(q));
+  if (!entries.length) return `<div class="empty-state"><div class="empty-icon">🏛️</div><p>No museums match your search.</p></div>`;
+
+  const visited   = entries.filter(([name]) => !!S.visitedMuseums[name]);
+  const unvisited = entries.filter(([name]) => !S.visitedMuseums[name]);
+
+  function museumCard([name, m]) {
+    const isVisited = !!S.visitedMuseums[name];
+    const checked   = checkedCount(m.paintings.map(x => x.id));
+    const total     = m.paintings.length;
+    const icon      = flagFor[m.country] || '🖼️';
+    const safeName  = esc(name).replace(/'/g, "\\'");
+    return `<div class="museum-section">
+      <div class="museum-header${isVisited ? ' visited-museum' : ''}" onclick="openMuseumDetail('${safeName}')">
+        <div class="museum-icon-wrap"><div class="museum-icon">${icon}</div></div>
+        <div class="museum-info">
+          <div class="museum-name">${esc(name)}</div>
+          <div class="museum-location">${esc(m.city)}, ${esc(m.country)}</div>
+        </div>
+        <div class="museum-counter"><div class="mc-nums">${checked}/${total}</div><div class="mc-label">collected</div></div>
+        <button class="museum-visited-btn${isVisited ? ' visited' : ''}" onclick="toggleMuseumVisited(event,'${safeName}')" title="${isVisited ? 'Visited' : 'Mark as visited'}">
+          ${isVisited ? ICONS.check : ''}
+        </button>
+        <div class="museum-chevron">${ICONS.chevron}</div>
+      </div>
+    </div>`;
+  }
+
+  const visitedHtml   = visited.length   ? `<div class="museums-visited-label">Visited</div>${visited.map(museumCard).join('')}`   : '';
+  const unvisitedHtml = unvisited.length ? `<div class="museums-visited-label" style="color:var(--text-faint)">Not Yet Visited</div>${unvisited.map(museumCard).join('')}` : '';
+  return visitedHtml + unvisitedHtml;
 }
 
 function renderMuseumsCity() {
@@ -1666,8 +1714,10 @@ function openMuseumsViewDropdown(e, btn) {
   const wasOpen = !!document.getElementById('toolbar-drop');
   closeDrop();
   if (wasOpen) return;
+  const hasVisited = Object.keys(S.visitedMuseums).length > 0;
   const opts = [
     { key: 'alpha',   label: 'By Museum',  icon: ICONS.landmark },
+    ...(hasVisited ? [{ key: 'visited', label: 'By Visited', icon: ICONS.check }] : []),
     { key: 'city',    label: 'By City',    icon: ICONS.pin },
     { key: 'country', label: 'By Country', icon: ICONS.globe },
   ];

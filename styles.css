@@ -478,6 +478,12 @@ body {
   border-color: var(--gold-dim);
 }
 .museum-header.visited-museum { border-color: var(--gold-dim); }
+.museums-visited-label {
+  font-size: .7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em;
+  color: var(--gold);
+  padding: 14px 12px 6px;
+}
 
 .museum-icon {
   width: 36px; height: 36px;
