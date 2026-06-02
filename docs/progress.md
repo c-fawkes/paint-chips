@@ -880,3 +880,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added Young Girls at the Piano (Renoir, 1892, ID 319), Large Bather (Picasso, 1921, ID 320), The Little Pastry Chef (Soutine, c. 1922, ID 321), Father Junier's Cart (Rousseau, 1908, ID 322), Odalisque with Red Culottes (Matisse, 1921, ID 323), Portrait de Madame Cézanne (Cézanne, c. 1890, ID 324), Portrait de Mademoiselle Chanel (Laurencin, 1923, ID 325)
 - `imageUrl: null` on Large Bather (Picasso copyright until 2043) and Portrait de Mademoiselle Chanel (no Commons image)
 - New artists: Chaïm Soutine, Marie Laurencin
+
+### Museum build-up: Neue Galerie New York (3 → 10)
+- Added The Dancer (Klimt, c. 1916–17, ID 326), Berlin Street Scene (Kirchner, 1913, ID 327), Self-Portrait with Horn (Beckmann, 1938, ID 328), Martha Hirsch (Kokoschka, 1909, ID 329), Stein on the Danube Seen from the South (Schiele, 1913, ID 330), Self-Portrait in front of a Stove (Gerstl, c. 1906–07, ID 331), Forester's House in Weissenbach II (Klimt, 1914, ID 332)
+- `imageUrl: null` on Kokoschka (copyright until 2050), Schiele landscape (no Commons image), Gerstl (no Commons image)
+- New artists: Ernst Ludwig Kirchner, Max Beckmann, Oskar Kokoschka, Richard Gerstl

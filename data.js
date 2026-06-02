@@ -4391,6 +4391,105 @@ const PAINTINGS = [
     grokUrl: null,
     imageUrl: null,
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
+  },
+
+  // ── Neue Galerie New York ─────────────────────────────────────────────────
+  {
+    id: 326, rank: null, museumOnly: true,
+    title: "The Dancer",
+    artist: "Gustav Klimt",
+    year: "c. 1916–17",
+    medium: "Oil on canvas (unfinished)",
+    dimensions: "180 × 90 cm",
+    description: "One of the last paintings Klimt worked on before his death in 1918, The Dancer depicts a bare-breasted figure dissolving into a cascade of ornamental flowers — the boundary between person and background intentionally blurred in the manner Klimt had spent two decades perfecting. The lower third remains visibly unfinished, Klimt's charcoal underdrawing exposed beneath unpainted canvas, making it a rare window into his process. It was the first Klimt painting ever shown in America, exhibited at the Vienna Workshop on Fifth Avenue in 1922.",
+    movement: "Art Nouveau",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_Dancer_by_Gustav_Klimt%2C_1916-17.jpg/330px-The_Dancer_by_Gustav_Klimt%2C_1916-17.jpg",
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
+  },
+  {
+    id: 327, rank: null, museumOnly: true,
+    title: "Berlin Street Scene",
+    artist: "Ernst Ludwig Kirchner",
+    year: "1913",
+    medium: "Oil on canvas",
+    dimensions: "121 × 95 cm",
+    description: "Painted during Kirchner's most violently productive Berlin years, this canvas captures the modern city as a space of nervous energy and sexual tension — two street women in angular hats pressing forward against a crowd of dark male coats. The jagged forms and acid palette are a direct translation of urban anxiety into paint, representing German Expressionism's definitive statement on metropolitan life. Restituted in 2006 to the heirs of Jewish collector Alfred Hess, it was acquired by the Neue Galerie for $38 million, the highest price ever paid for a German Expressionist work.",
+    movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Berlin_Street_Scene",
+    grokUrl: "https://grokipedia.com/page/Berlin_Street_Scene",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Kirchner_Berlin_Street_Scene_1913.jpg/330px-Kirchner_Berlin_Street_Scene_1913.jpg",
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
+  },
+  {
+    id: 328, rank: null, museumOnly: true,
+    title: "Self-Portrait with Horn",
+    artist: "Max Beckmann",
+    year: "1938",
+    medium: "Oil on canvas",
+    dimensions: "110 × 89.5 cm",
+    description: "Painted in Amsterdam just after Beckmann fled Nazi Germany — which had declared his work degenerate and removed over 500 of his paintings from museum walls — this self-portrait turns that erasure inward: the artist gazes sideways with sleepless, ringed eyes, holding a horn as if it were a telescope trained into darkness. Art historian Cornelia Stabenow called it 'the most melancholy, but also the most mystifying, of his self-portraits.' Ronald Lauder acquired it for $22.5 million in 2001, making it the centerpiece of the Neue Galerie's German collection.",
+    movement: "Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Self-Portrait_With_Horn_.jpg/330px-Self-Portrait_With_Horn_.jpg",
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
+  },
+  {
+    id: 329, rank: null, museumOnly: true,
+    title: "Martha Hirsch",
+    artist: "Oskar Kokoschka",
+    year: "1909",
+    medium: "Oil on canvas",
+    dimensions: "90 × 71 cm",
+    description: "Painted the summer after Martha Hirsch's marriage to industrialist Wilhelm Hirsch, this portrait captures a 22-year-old with the distanced, wearied gaze of someone much older — her contorted hands suggesting an inner tension that neither subject nor husband recognized, and they refused to purchase the work. Kokoschka used weak colors and delicate lines to expose psychological depth beneath social composure, in the proto-analytical style he was developing alongside Vienna's early psychoanalytic milieu. Architect Adolf Loos, Kokoschka's great champion, became its first owner; its original title, 'The Dreaming Woman,' captures what the Hirschs could not see.",
+    movement: "Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
+  },
+  {
+    id: 330, rank: null, museumOnly: true,
+    title: "Stein on the Danube, Seen from the South (Large)",
+    artist: "Egon Schiele",
+    year: "1913",
+    medium: "Oil on canvas",
+    dimensions: "90 × 90 cm",
+    description: "Schiele visited the medieval town of Stein on the Danube in 1913 and made several small panel studies before completing this large canvas in his Vienna studio, treating the townscape as a problem of horizontal structure — bands of river, cliff, and roofline flattened into decorative pattern. The colored facades of the old buildings are arranged with the same graphic intensity Schiele brought to his figurative work, their jewel-toned surfaces glowing against a muted ground. It represents Schiele's architectural vision at its most controlled, far from the anguished figuration for which he is better known.",
+    movement: "Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
+  },
+  {
+    id: 331, rank: null, museumOnly: true,
+    title: "Self-Portrait in front of a Stove",
+    artist: "Richard Gerstl",
+    year: "c. 1906–07",
+    medium: "Oil on canvas",
+    description: "One of the most intimate surviving works by the tragically short-lived Austrian painter — who killed himself at 25 after the collapse of his affair with Mathilde Schönberg, wife of the composer Arnold Schönberg — this studio self-portrait places Gerstl before a tiled stove in his Vienna Academy workshop, a portion of his palette just visible at the lower edge. A portrait of Professor Ernst Diez hanging in the background allows the work to be precisely dated to the winter of 1906-07. Acquired by the Neue Galerie New York in 2006, it is one of the few Gerstl works held outside Austria.",
+    movement: "Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
+  },
+  {
+    id: 332, rank: null, museumOnly: true,
+    title: "Forester's House in Weissenbach II (Garden)",
+    artist: "Gustav Klimt",
+    year: "1914",
+    medium: "Oil on canvas",
+    dimensions: "110 × 110 cm",
+    description: "During his last summer at the Attersee, Klimt vacationed at a forester's cottage in the village of Weissenbach and painted it twice — this second version focusing on the ivy-covered facade and the garden blazing with anemones and window-box flowers. Rather than depicting the house as architecture, Klimt treats the whole surface as interlocking pattern: the deep green ground, the blanket of ivy, the hot spots of bloom, and the sky all rendered with equal decorative intensity. It is one of his purest exercises in color as structure, working the square canvas format he preferred for his landscapes.",
+    movement: "Art Nouveau",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Maison_foresti%C3%A8re_%C3%A0_Weissenbach.jpg/330px-Maison_foresti%C3%A8re_%C3%A0_Weissenbach.jpg",
+    location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
   }
 ];
 
@@ -4980,6 +5079,22 @@ const ARTISTS = {
   "Marie Laurencin": {
     born: "1883", died: "1956", nationality: "French",
     bio: "A pivotal figure in the Parisian avant-garde, Marie Laurencin moved in the circles of Picasso, Braque, and her lover Guillaume Apollinaire in the early years of Cubism, exhibiting at the Section d'Or in 1912. She developed a highly personal style of pastel-toned, graceful figures of women and animals that stood apart from the geometric rigors of her male contemporaries — lyrical rather than analytical, atmospheric rather than structural. As a portraitist of fashionable Paris in the 1920s she was enormously successful, capturing aristocrats, actresses, and artists in her distinctive hazy register. Her portrait of Coco Chanel — rejected by its subject — became one of the most famous commissions in 20th-century French portraiture."
+  },
+  "Ernst Ludwig Kirchner": {
+    born: "1880", died: "1938", nationality: "German",
+    bio: "Co-founder of Die Brücke in Dresden in 1905 and the most radical voice of German Expressionism, Ernst Ludwig Kirchner channeled the anxiety of modernity — the crowded street, the dance hall, the nude in an airless interior — into jagged, acid-colored forms that broke deliberately with academic tradition. His Berlin years from 1911 onward produced the greatest cycle of urban Expressionist paintings in 20th-century art, defining the visual language of the modern metropolis. He volunteered for WWI service, suffered a mental breakdown, and spent his later years in the Swiss Alps; when the Nazi regime branded his work 'degenerate' in 1937 and removed 600 works from German museums, he destroyed much of his own work and took his life the following year."
+  },
+  "Max Beckmann": {
+    born: "1884", died: "1950", nationality: "German",
+    bio: "One of the defining painters of 20th-century Germany, Max Beckmann refused to abandon figuration even as abstraction swept European art, creating dense allegorical canvases of distorted figures in claustrophobic spaces that drew on medieval German painting as much as modern Expressionism. When the Nazis declared his work 'degenerate' in 1937 and removed over 500 paintings from museum walls, he fled to Amsterdam and spent the war in hiding, producing his most powerful self-portraits. He emigrated to the United States in 1947 and died in New York in 1950, leaving behind ten monumental triptychs that stand as his masterworks. His reputation has grown steadily since his death, and he is now considered one of the great figurative painters of the 20th century."
+  },
+  "Oskar Kokoschka": {
+    born: "1886", died: "1980", nationality: "Austrian",
+    bio: "The longest-lived of the great Viennese Expressionists, Oskar Kokoschka came to prominence in Vienna with portraits that seemed to expose the psychological interior of his subjects — thin, feverish paint describing inner states rather than outward appearances. His turbulent affair with Alma Mahler, widow of the composer, became one of the most discussed relationships in early 20th-century art history; when it ended in 1915, Kokoschka famously commissioned a life-size doll in her likeness. He spent decades in London, Prague, and eventually Switzerland, broadening his subjects to include sweeping city panoramas and political allegories. His career spanned more than seven decades, from the Vienna Secession to post-war European modernism."
+  },
+  "Richard Gerstl": {
+    born: "1883", died: "1908", nationality: "Austrian",
+    bio: "Austrian painter Richard Gerstl produced fewer than 70 paintings in only five years before taking his own life at 25, yet that small body of work placed him decades ahead of his contemporaries in psychological intensity and painterly freedom. Self-taught in his loosely Expressionist technique — with its thick, energetic surface and radical cropping — he worked in near-total obscurity, exhibiting nothing in his lifetime. His fatal affair with Mathilde Schönberg, wife of the composer Arnold Schönberg with whom Gerstl had become close, ended when she returned to her husband; Gerstl burned most of his correspondence and killed himself that night. His work was virtually unknown until a posthumous exhibition in Vienna in 1931."
   }
 };
 
@@ -5087,7 +5202,11 @@ const ARTIST_PORTRAITS = {
   "Giovanni Donato da Montorfano": null,
   "Gaudenzio Ferrari": null,
   "Chaïm Soutine": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/%27Self_Portrait%27_by_Chaim_Soutine%2C_1916%2C_Hermitage.JPG/330px-%27Self_Portrait%27_by_Chaim_Soutine%2C_1916%2C_Hermitage.JPG",
-  "Marie Laurencin": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Marie_Laurencin%2C_c.1912%2C_Paris.jpg/330px-Marie_Laurencin%2C_c.1912%2C_Paris.jpg"
+  "Marie Laurencin": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Marie_Laurencin%2C_c.1912%2C_Paris.jpg/330px-Marie_Laurencin%2C_c.1912%2C_Paris.jpg",
+  "Ernst Ludwig Kirchner": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ernst_Ludwig_Kirchner_-_Selbstportr%C3%A4t_in_der_Atelierwohnung_in_Berlin-Friedenau_%281913-15%29.jpg/330px-Ernst_Ludwig_Kirchner_-_Selbstportr%C3%A4t_in_der_Atelierwohnung_in_Berlin-Friedenau_%281913-15%29.jpg",
+  "Max Beckmann": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Max_Beckmann_1928%2C_by_Hugo_Erfurth.jpg/330px-Max_Beckmann_1928%2C_by_Hugo_Erfurth.jpg",
+  "Oskar Kokoschka": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Oskar_Kokoschka_%281963%29_by_Erling_Mandelmann.jpg/330px-Oskar_Kokoschka_%281963%29_by_Erling_Mandelmann.jpg",
+  "Richard Gerstl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Richard_Gerstl_1902_%281903%29.jpg/330px-Richard_Gerstl_1902_%281903%29.jpg"
 };
 
 /* ── Museum info ─────────────────────────────────────────────────────────── */
