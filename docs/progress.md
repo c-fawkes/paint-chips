@@ -901,3 +901,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added Hall of the Saints / Disputation of Saint Catherine (Pinturicchio, 1492–94, ID 352) from the Borgia Apartments
 - Added Scenes from the Lives of Saints Stephen and Lawrence (Fra Angelico, 1447–51, ID 353) from the Niccoline Chapel
 - New artist: Pinturicchio
+
+### Museum build-up: San Luigi dei Francesi (3 → 8, genuine limit)
+- Added Scenes from the Life of Saint Cecilia (Domenichino, 1612–15, ID 354), Saint Cecilia (Guido Reni, c. 1606, ID 355), Assumption of the Virgin (Bassano the Younger, 1589, ID 356), Saint Louis IX between History and Faith (Plautilla Bricci, c. 1676–80, ID 357), Apotheosis of Saint Louis (Natoire, 1754–56, ID 358)
+- Capped at 8 — church has no more culturally significant paintings beyond the 3 Caravaggios and these 5
+- New artists: Domenichino, Guido Reni, Francesco Bassano the Younger, Plautilla Bricci, Charles-Joseph Natoire

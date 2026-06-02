@@ -4788,6 +4788,74 @@ const PAINTINGS = [
     grokUrl: "https://grokipedia.com/page/Niccoline_Chapel",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/St._Peter_Niccoline_Chapel.jpg/330px-St._Peter_Niccoline_Chapel.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
+  },
+
+  // ── San Luigi dei Francesi ────────────────────────────────────────────────
+  {
+    id: 354, rank: null, museumOnly: true,
+    title: "Scenes from the Life of Saint Cecilia",
+    artist: "Domenichino",
+    year: "1612–15",
+    medium: "Fresco",
+    description: "Commissioned by Cardinal Pierre Polet for the second chapel of the right nave, Domenichino's five-fresco cycle on the life of the early Christian martyr Saint Cecilia was immediately recognized as one of the greatest achievements of the new Baroque classicism in Rome — second only to Raphael in authority and gravity. The most celebrated scene, Saint Cecilia Distributing Alms, arranges a diverse crowd of impoverished Romans beneath the saint with the compositional clarity and emotional directness that Domenichino had absorbed from Annibale Carracci. Throughout the 17th century the frescoes were rated by Poussin, Bellori, and other critics as second only to the Raphael Rooms in Rome; their rehabilitation after 19th-century neglect confirmed Domenichino's position as a pivotal figure between the Renaissance and the Baroque.",
+    movement: "Baroque",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/CeciliaAlms.jpg/330px-CeciliaAlms.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
+  },
+  {
+    id: 355, rank: null, museumOnly: true,
+    title: "Saint Cecilia",
+    artist: "Guido Reni",
+    year: "c. 1606",
+    medium: "Oil on canvas",
+    description: "The altarpiece of the Polet Chapel shows Saint Cecilia in rapturous upward gaze — a pose that became Reni's signature, repeated across dozens of his ecstatic saints — painted as a companion to Domenichino's surrounding frescoes and donated to the chapel after the miraculous preservation of Cecilia's body was confirmed. Reni's work is a free variant after Raphael's celebrated Saint Cecilia in Ecstasy (Bologna), translated into the sweeter, more sentimental register that would define Bolognese Baroque and influence European religious painting for two centuries. Together with Domenichino's frescoes it makes the Polet Chapel one of the finest Baroque interiors in Rome outside the Vatican.",
+    movement: "Baroque",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Reni_-_Saint_Cecilia%2C_21-525337.jpg/330px-Reni_-_Saint_Cecilia%2C_21-525337.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
+  },
+  {
+    id: 356, rank: null, museumOnly: true,
+    title: "The Assumption of the Virgin",
+    artist: "Francesco Bassano the Younger",
+    year: "1589",
+    medium: "Oil on canvas",
+    description: "Commissioned for the main altar of San Luigi dei Francesi when the church was completed in 1589, this large Venetian altarpiece brings the warm, rustic palette and diffuse lighting of the Bassano workshop to the French national church in Rome — a striking stylistic choice for a building associated with French royal patronage. Francesco Bassano the Younger, who ran the family's Venice branch after their father Jacopo's death, adopted his family's signature of integrating genre elements — attendant figures shown from below, dramatic foreshortening — into the traditional Assumption format. The painting remains in its original position above the high altar, flanked by Caffieri's Trinity sculpture above.",
+    movement: "Mannerism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Assumption_of_the_Virgin_-_Francesco_Bassano_The_Younger_-1589%3B_Chiesa_di_San_Luigi_dei_Francesi%2C_Rome.JPG/330px-Assumption_of_the_Virgin_-_Francesco_Bassano_The_Younger_-1589%3B_Chiesa_di_San_Luigi_dei_Francesi%2C_Rome.JPG",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
+  },
+  {
+    id: 357, rank: null, museumOnly: true,
+    title: "Saint Louis IX of France between History and Faith",
+    artist: "Plautilla Bricci",
+    year: "c. 1676–80",
+    medium: "Oil on canvas",
+    dimensions: "321 × 164 cm",
+    description: "Signed 'Plautilla Bricci Romana Invenit' at the lower right edge, this monumental altarpiece is both the artistic and biographical centerpiece of the chapel Bricci herself designed and built — making her one of the only women in European history to have conceived, designed, and painted a major public chapel. Saint Louis IX stands between personifications of History and Faith in a dynamic Baroque composition, flanked by polychrome marble Bricci also planned, creating a total work of art that amounts to a confident architectural and pictorial statement by Rome's first professional female architect. The commission was awarded by Cardinal Cesar d'Estrées, the French ambassador to the Holy See, who recognized in Bricci a talent unusual enough to override the profound gender barriers of late 17th-century Roman art.",
+    movement: "Baroque",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/0_San_Luigi_dei_Francesi_-_%27_St_Louis_%27_retable_de_Plautilla_Bricci.JPG/330px-0_San_Luigi_dei_Francesi_-_%27_St_Louis_%27_retable_de_Plautilla_Bricci.JPG",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
+  },
+  {
+    id: 358, rank: null, museumOnly: true,
+    title: "Apotheosis of Saint Louis",
+    artist: "Charles-Joseph Natoire",
+    year: "1754–56",
+    medium: "Fresco",
+    description: "The nave ceiling of San Luigi dei Francesi bears this large Rococo fresco — Natoire's most prominent Roman commission and arguably his most ambitious decorative achievement — painted during the comprehensive interior renovation directed by architect Antoine Dérizet. The composition shows Louis IX ascending into heaven attended by angels, in the airy, pastel-toned manner of French Rococo that reads as a deliberate counterpoint to the grave Baroque energy of Caravaggio's canvases just below. Natoire's fresco was critically received with some hostility in Rome — where the Rococo was seen as foreign and frivolous — a reception that anticipates the broader clash between French and Italian tastes that shaped European art in the second half of the 18th century.",
+    movement: "Rococo",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Apotheosis-of-saint-louis.jpg/330px-Apotheosis-of-saint-louis.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
   }
 ];
 
@@ -5394,6 +5462,26 @@ const ARTISTS = {
     born: "1883", died: "1908", nationality: "Austrian",
     bio: "Austrian painter Richard Gerstl produced fewer than 70 paintings in only five years before taking his own life at 25, yet that small body of work placed him decades ahead of his contemporaries in psychological intensity and painterly freedom. Self-taught in his loosely Expressionist technique — with its thick, energetic surface and radical cropping — he worked in near-total obscurity, exhibiting nothing in his lifetime. His fatal affair with Mathilde Schönberg, wife of the composer Arnold Schönberg with whom Gerstl had become close, ended when she returned to her husband; Gerstl burned most of his correspondence and killed himself that night. His work was virtually unknown until a posthumous exhibition in Vienna in 1931."
   },
+  "Domenichino": {
+    born: "1581", died: "1641", nationality: "Italian",
+    bio: "Domenico Zampieri, known as Domenichino ('little Domenico'), emerged from Annibale Carracci's Bolognese academy as one of the defining figures of Roman Baroque classicism — praised by Nicolas Poussin, who rated his frescoes second only to Raphael's, and by the critic Bellori as the most perfect artist of his generation. His career in Rome produced major fresco cycles in San Luigi dei Francesi, Sant'Andrea della Valle, and the Villa Farnese at Caprarola, all characterized by the classical clarity, emotional restraint, and narrative economy he inherited from Annibale. He died in Naples in 1641, reportedly poisoned by the jealous local painters' guild ('the Cabal of Naples'), a story that — whether true or not — testifies to the fierce competition his talent provoked. His rehabilitation from 19th-century neglect confirmed his importance as the essential link between the Carracci reform and the work of Poussin and Claude Lorrain."
+  },
+  "Guido Reni": {
+    born: "1575", died: "1642", nationality: "Italian",
+    bio: "The most celebrated Italian painter of the first half of the 17th century during his own lifetime, Guido Reni created an art of ideal beauty and spiritual sweetness that dominated European taste in sacred subjects from his death until the Romantic reassessment dismissed him as too facile. He trained under Calvaert and then under Annibale Carracci in Bologna before establishing himself in Rome, where his Aurora ceiling at the Casino Rospigliosi (1614) became one of the canonical images of the Baroque. His elegant, blond palette, elongated forms, and signature upward gaze of ecstatic saints defined the grammar of devotional painting for two centuries, influencing artists from Guercino to Reynolds. He died in Bologna in 1642, leaving a studio that had spread his style across Catholic Europe."
+  },
+  "Francesco Bassano the Younger": {
+    born: "1549", died: "1592", nationality: "Italian",
+    bio: "Eldest son of the Venetian master Jacopo Bassano and manager of the family's Venice workshop, Francesco Bassano the Younger was the principal disseminator of the Bassano family's distinctive style — warm earthy tones, genre detail embedded in religious narrative, and the rustic populism that made the family famous throughout Europe. He received his most prestigious solo commission — the Assumption for San Luigi dei Francesi in Rome — while also producing large cycles for the Doge's Palace in Venice, demonstrating the family's ability to serve both religious and civic patrons at the highest level. Prone to depression throughout his career, he took his own life in 1592 shortly after his father Jacopo's death, leaving the family workshop to his younger brothers. The Bassano studio's influence on Caravaggio and on early Baroque genre painting has been the subject of significant recent scholarship."
+  },
+  "Plautilla Bricci": {
+    born: "1616", died: "1705", nationality: "Italian",
+    bio: "Recognized as the first professional female architect in modern European history, Plautilla Bricci was a Roman painter, sculptor, and architect who carved out an extraordinary career through a combination of exceptional talent and the sustained patronage of Cardinal Elpidio Benedetti, French ambassador advisor and friend of Cardinal Mazarin. She designed and constructed the Villa Benedetti (later known as the Vascello) on the Janiculum, a building praised by contemporaries for its innovative design, and later designed the entire Chapel of San Luigi in San Luigi dei Francesi — a space she also painted and sculpted. Her altarpiece for that chapel, signed with her full name, is one of the rare signed monumental works by a woman in 17th-century Rome. After Benedetti's death she retired to the convent of San Cosimato, where she continued to paint until near her death at nearly 90."
+  },
+  "Charles-Joseph Natoire": {
+    born: "1700", died: "1777", nationality: "French",
+    bio: "A leading figure of French Rococo, Charles-Joseph Natoire won the Prix de Rome in 1721 and spent his formative years in Italy before returning to Paris where he decorated the Hôtel de Soubise with his masterpiece History of Psyche (1737-38) and produced tapestry cartoons for the Beauvais manufacture. Appointed director of the French Academy in Rome in 1751, he spent the rest of his life in Italy, producing major religious frescoes including the Apotheosis of Saint Louis at San Luigi dei Francesi. His time as director overlapped with the early careers of Fragonard, Robert, and Hubert, making him a key figure in the French artistic formation of the next generation even as his own Rococo style was being displaced by Neoclassicism. He retired to Castel Gandolfo outside Rome, where he continued to draw landscapes until his death."
+  },
   "Pinturicchio": {
     born: "c. 1454", died: "1513", nationality: "Italian",
     bio: "Born Bernardino di Betto in Perugia, Pinturicchio was one of the most sought-after fresco painters of late 15th-century Italy, celebrated for the brilliant color, intricate narrative detail, and lavish gold-leaf embellishment of his large-scale decorative cycles. He trained alongside Perugino in Verrocchio's workshop and accompanied him to Rome for the Sistine Chapel project in 1481-82. His greatest commissions came from Pope Alexander VI, who employed him to decorate the Borgia Apartments (1492-94) in an opulent program blending Christian saints, Egyptian mythology, and covert portraits of the Borgia family. His ornate style fell out of fashion during the High Renaissance when Raphael's arrival in Rome established a new standard, but he remains a vital figure in the transition from Quattrocento to High Renaissance decoration."
@@ -5519,7 +5607,12 @@ const ARTIST_PORTRAITS = {
   "Richard Gerstl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Richard_Gerstl_1902_%281903%29.jpg/330px-Richard_Gerstl_1902_%281903%29.jpg",
   "Wassily Kandinsky": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg/330px-Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg",
   "Joshua Reynolds": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_%282315517%29.jpg/330px-Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_%282315517%29.jpg",
-  "Pinturicchio": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Pinturicchio_self_big.jpg/330px-Pinturicchio_self_big.jpg"
+  "Pinturicchio": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Pinturicchio_self_big.jpg/330px-Pinturicchio_self_big.jpg",
+  "Domenichino": null,
+  "Guido Reni": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Guido_Reni_-_Self-portrait_2.jpg/330px-Guido_Reni_-_Self-portrait_2.jpg",
+  "Francesco Bassano the Younger": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Francesco_bassano%2C_autoritratto%2C_1585-1592.jpg/330px-Francesco_bassano%2C_autoritratto%2C_1585-1592.jpg",
+  "Plautilla Bricci": null,
+  "Charles-Joseph Natoire": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Charles-Joseph_Natoire.jpg/330px-Charles-Joseph_Natoire.jpg"
 };
 
 /* ── Museum info ─────────────────────────────────────────────────────────── */
