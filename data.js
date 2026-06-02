@@ -52,7 +52,7 @@ const PAINTINGS = [
     description: "The largest painting in the Louvre, depicting the biblical miracle of water turned to wine. Veronese set the scene in 16th-century Venice, filling it with 130 figures including portraits of contemporary figures like Titian, Tintoretto, and Bassano.",
     movement: "Italian Renaissance",
     wikiUrl: "https://en.wikipedia.org/wiki/The_Wedding_at_Cana_(Veronese)",
-    grokUrl: "https://grokipedia.com/page/The_Wedding_at_Cana",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Paolo_Veronese_008.jpg/330px-Paolo_Veronese_008.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -151,6 +151,8 @@ const PAINTINGS = [
     dimensions: "144.3 × 162.4 cm",
     description: "Informally known as 'Whistler's Mother', this portrait of the artist's mother Anna was rejected by the Royal Academy before being accepted. Whistler insisted it was an exercise in color harmony, not a sentimental portrait. It became an American cultural icon, reproduced as a Mother's Day image.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Whistler%27s_Mother",
+    grokUrl: "https://grokipedia.com/page/Whistler%27s_Mother",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Whistlers_Mother_high_res.jpg/330px-Whistlers_Mother_high_res.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -163,6 +165,8 @@ const PAINTINGS = [
     dimensions: "130 × 190 cm",
     description: "Manet's nude reclining woman — a real person, not a goddess — caused a scandal at the 1865 Salon. Her direct gaze at the viewer and the flowers from a client (held by her Black maid) replaced mythological pretense with stark modern reality. Zola called it 'the first modern painting.'",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Olympia_(Manet)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edouard_Manet_-_Olympia_-_Google_Art_ProjectFXD.jpg/330px-Edouard_Manet_-_Olympia_-_Google_Art_ProjectFXD.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -175,6 +179,8 @@ const PAINTINGS = [
     dimensions: "208 × 265 cm",
     description: "Two clothed men picnic with a naked woman while another bathes in the background. Rejected from the Salon but exhibited at the Salon des Refusés, it outraged critics. The confrontational gaze of the nude woman and the modern setting — not mythology — made it revolutionary.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Le_D%C3%A9jeuner_sur_l%27herbe",
+    grokUrl: "https://grokipedia.com/page/Le_D%C3%A9jeuner_sur_l%27herbe",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Edouard_Manet_-_Luncheon_on_the_Grass_-_Google_Art_Project.jpg/330px-Edouard_Manet_-_Luncheon_on_the_Grass_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -187,6 +193,8 @@ const PAINTINGS = [
     dimensions: "131 × 175 cm",
     description: "A sun-dappled Sunday afternoon dance at a Montmartre café, filled with Renoir's friends. The dappled light filtering through chestnut trees became one of Impressionism's defining achievements. Renoir transported the large canvas daily from his nearby studio.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Bal_du_moulin_de_la_Galette",
+    grokUrl: "https://grokipedia.com/page/Bal_du_moulin_de_la_Galette",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Renoir%2C_Pierre-Auguste_-_Dance_at_Le_Moulin_de_la_Galette%2C_1876.jpg/330px-Renoir%2C_Pierre-Auguste_-_Dance_at_Le_Moulin_de_la_Galette%2C_1876.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -199,6 +207,8 @@ const PAINTINGS = [
     dimensions: "83.8 × 111.8 cm",
     description: "Three peasant women bend to collect leftover grain after the harvest — a practice called gleaning, one of the few rights of the rural poor. Critics saw it as a political statement; the women's lowered heads formed the lowest rung of the social hierarchy contrasted with the wealthy harvest in the background.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Gleaners",
+    grokUrl: "https://grokipedia.com/page/The_Gleaners",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Jean-Fran%C3%A7ois_Millet_-_Gleaners_-_Google_Art_Project_2.jpg/330px-Jean-Fran%C3%A7ois_Millet_-_Gleaners_-_Google_Art_Project_2.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -211,6 +221,8 @@ const PAINTINGS = [
     dimensions: "55.5 × 66 cm",
     description: "Two peasants pause from harvesting potatoes to pray at the sound of the distant church bell. Salvador Dalí was obsessed with the painting, claiming to see a hidden image of a buried child instead of a potato basket. X-ray studies later revealed Millet did indeed paint over a coffin.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Angelus_(Millet)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Jean-Fran%C3%A7ois_Millet_%28II%29_001.jpg/500px-Jean-Fran%C3%A7ois_Millet_%28II%29_001.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -223,6 +235,8 @@ const PAINTINGS = [
     dimensions: "85 × 75 cm",
     description: "Degas's iconic view of ballet rehearsal shows young dancers being corrected by the famous teacher Jules Perrot. Unlike romanticized depictions, Degas shows the discipline and physical labor of dance. He produced over 1,500 paintings and sculptures of dancers, becoming their unofficial chronicler.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Dance_Class_(Degas)",
+    grokUrl: "https://grokipedia.com/page/The_Dance_Class",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Edgar_Degas_-_La_Classe_de_danse.jpg/330px-Edgar_Degas_-_La_Classe_de_danse.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -235,6 +249,8 @@ const PAINTINGS = [
     dimensions: "65 × 54 cm",
     description: "One of Van Gogh's most powerful self-portraits, painted at Saint-Paul-de-Mausole asylum in Saint-Rémy. The swirling blue-green brushwork of the background seems to merge with his jacket, suggesting an inner turbulence. Painted just over a year before his death.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Self-portrait_(Van_Gogh,_September_1889)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28719161%29.jpg/500px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28719161%29.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -247,6 +263,8 @@ const PAINTINGS = [
     dimensions: "72.5 × 92 cm",
     description: "Painted at night directly from observation in Arles, this precedes the more famous 'Starry Night' (MoMA) by nine months. Gas lighting from the city reflects in the Rhône River, while the stars wheel above. A couple walks along the bank below.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Starry_Night_Over_the_Rh%C3%B4ne",
+    grokUrl: "https://grokipedia.com/page/Starry_Night_Over_the_Rhone",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/330px-Vincent_van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -259,6 +277,8 @@ const PAINTINGS = [
     dimensions: "92 × 68 cm",
     description: "Two figures in a Montmartre café — a woman staring vacantly at a glass of absinthe, a man beside her. The painting shocked Victorian audiences with its unflinching depiction of urban loneliness and alcoholism. The woman was Degas's friend, actress Ellen Andrée; the man was printmaker Marcellin Desboutin.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/L%27Absinthe_(Degas)",
+    grokUrl: "https://grokipedia.com/page/L%27Absinthe",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Edgar_Degas_-_In_a_Caf%C3%A9_-_Google_Art_Project_2.jpg/330px-Edgar_Degas_-_In_a_Caf%C3%A9_-_Google_Art_Project_2.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -273,6 +293,8 @@ const PAINTINGS = [
     dimensions: "48 × 63 cm",
     description: "The painting that named Impressionism. A critic used the title mockingly — and the movement adopted the insult as its badge. It shows the harbor at Le Havre at dawn; the orange sun reflected in the water is painted with just two strokes. Stolen in 1985, recovered in 1990.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Impression%2C_Sunrise",
+    grokUrl: "https://grokipedia.com/page/Impression%2C_Sunrise",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Monet_-_Impression%2C_Sunrise.jpg/330px-Monet_-_Impression%2C_Sunrise.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Marmottan Monet Museum" }
   },
@@ -287,6 +309,8 @@ const PAINTINGS = [
     dimensions: "8 panels, each approx. 200 × 425 cm",
     description: "Monet's monumental late masterpiece fills two oval rooms at the Orangerie, creating a complete immersive environment. Painted in his garden at Giverny over 12 years despite failing eyesight, the panels were his gift to France after World War I — 'a haven of peaceful meditation.'",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Water_Lilies_(Monet_series)",
+    grokUrl: "https://grokipedia.com/page/Water_Lilies",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Reflections_of_Clouds_on_the_Water-Lily_Pond.jpg/330px-Reflections_of_Clouds_on_the_Water-Lily_Pond.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
   },
@@ -301,6 +325,8 @@ const PAINTINGS = [
     dimensions: "73.7 × 92.1 cm",
     description: "Painted from Van Gogh's asylum room window at Saint-Rémy-de-Provence (with the addition of an idealized village), this swirling nocturnal masterpiece was considered minor during his lifetime. He sent it to his brother Theo who called it a failure. Today it is MoMA's most visited work.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Starry_Night",
+    grokUrl: "https://grokipedia.com/page/The_Starry_Night",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/330px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
@@ -313,6 +339,8 @@ const PAINTINGS = [
     dimensions: "24.1 × 33 cm",
     description: "Dalí's most famous painting is startlingly small. The melting watches came to him in a hallucination after staring at a melting Camembert cheese. The landscape is Port Lligat, Catalonia. Dalí called his method 'hand-painted dream photographs' — hyper-real images of irrational subjects.",
     movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Persistence_of_Memory",
+    grokUrl: "https://grokipedia.com/page/The_Persistence_of_Memory",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/The_Persistence_of_Memory.jpg/330px-The_Persistence_of_Memory.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
@@ -325,6 +353,8 @@ const PAINTINGS = [
     dimensions: "243.9 × 233.7 cm",
     description: "The proto-Cubist breakthrough that fractured Western art. Five nude figures in a brothel are shown simultaneously from multiple viewpoints; the two right-hand figures wear jagged African-style masks. Picasso kept the painting hidden in his studio for years before it was seen publicly in 1916.",
     movement: "Cubism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Les_Demoiselles_d%27Avignon",
+    grokUrl: "https://grokipedia.com/page/Les_Demoiselles_d%27Avignon",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Les_Demoiselles_d%27Avignon.jpg/330px-Les_Demoiselles_d%27Avignon.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
@@ -337,6 +367,8 @@ const PAINTINGS = [
     dimensions: "81.9 × 121.3 cm",
     description: "Christina Olson, Wyeth's neighbor in Maine, is shown dragging herself through a field toward a distant farmhouse. She had a degenerative muscle disease that left her unable to walk and refused to use a wheelchair. The painting's melancholy and isolation resonated with postwar America.",
     movement: "Modernism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Christina%27s_World",
+    grokUrl: "https://grokipedia.com/page/Christina%27s_World",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Christinasworld.jpg/330px-Christinasworld.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
@@ -349,6 +381,8 @@ const PAINTINGS = [
     dimensions: "32 canvases, each 50.8 × 40.6 cm",
     description: "32 canvases, each depicting one variety of Campbell's soup, displayed in a row like supermarket shelves. When first exhibited at Ferus Gallery in Los Angeles, a neighboring gallery displayed actual cans in mockery. Warhol erased the boundary between commercial product and high art.",
     movement: "Pop Art",
+    wikiUrl: "https://en.wikipedia.org/wiki/Campbell%27s_Soup_Cans",
+    grokUrl: "https://grokipedia.com/page/Campbell%27s_Soup_Cans",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Campbell%27s_Soup_Cans_by_Andy_Warhol.jpg/330px-Campbell%27s_Soup_Cans_by_Andy_Warhol.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
@@ -361,6 +395,8 @@ const PAINTINGS = [
     dimensions: "127 × 127 cm",
     description: "Mondrian's last completed work, painted after fleeing the Netherlands to New York. The yellow grid pulsing with small colored squares captures the rhythm of jazz and the grid of Manhattan streets. A radical departure from his austere black-and-white grids — New York had freed him.",
     movement: "Modernism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Broadway_Boogie_Woogie",
+    grokUrl: "https://grokipedia.com/page/Broadway_Boogie-Woogie",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Piet_Mondrian%2C_1942_-_Broadway_Boogie_Woogie.jpg/330px-Piet_Mondrian%2C_1942_-_Broadway_Boogie_Woogie.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
@@ -373,6 +409,8 @@ const PAINTINGS = [
     dimensions: "129.5 × 200.7 cm",
     description: "A self-taught customs officer painted this dreamlike scene of a lion sniffing a sleeping woman under a full moon. The flat, carefully rendered figures and mysterious moonlit silence became a template for the Surrealists decades later. Rousseau offered it to his hometown of Laval, which declined.",
     movement: "Modernism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Sleeping_Gypsy",
+    grokUrl: "https://grokipedia.com/page/The_Sleeping_Gypsy",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/La_Boh%C3%A9mienne_endormie.jpg/330px-La_Boh%C3%A9mienne_endormie.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
@@ -385,6 +423,8 @@ const PAINTINGS = [
     dimensions: "162.3 × 130.2 cm",
     description: "Picasso's lover Marie-Thérèse Walter is shown contemplating her reflection in a fractured Cubist style. The bright colors — yellow, green, lavender — are unusual for Picasso. The image of the woman gazing at her reflection suggests youth contemplating age or mortality.",
     movement: "Cubism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Girl_Before_a_Mirror",
+    grokUrl: "https://grokipedia.com/page/Girl_Before_a_Mirror",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/6/60/GirlBeforeAMirror.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
@@ -399,6 +439,8 @@ const PAINTINGS = [
     dimensions: "378.5 × 647.7 cm",
     description: "The most famous image in American history painting. Leutze, a German-American, painted it in Düsseldorf using the Rhine as the Delaware. The night crossing of December 25–26, 1776 preceded the Battle of Trenton. The painting romanticizes the event — Washington would not have stood in the boat.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Washington_Crossing_the_Delaware_(painting)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Washington_Crossing_the_Delaware_by_Emanuel_Leutze%2C_MMA-NYC%2C_1851.jpg/500px-Washington_Crossing_the_Delaware_by_Emanuel_Leutze%2C_MMA-NYC%2C_1851.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
@@ -411,6 +453,8 @@ const PAINTINGS = [
     dimensions: "143.5 × 136.5 cm",
     description: "Commissioned by a Sicilian nobleman, this rare mythological-historical subject shows Aristotle meditating on a bust of Homer, his hand resting on a medallion portrait of his patron Alexander the Great. Rembrandt meditates on the relationship between wealth, wisdom, and art.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Aristotle_with_a_Bust_of_Homer",
+    grokUrl: "https://grokipedia.com/page/Aristotle_with_a_Bust_of_Homer",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Rembrandt_-_Aristotle_with_a_Bust_of_Homer_-_WGA19232.jpg/330px-Rembrandt_-_Aristotle_with_a_Bust_of_Homer_-_WGA19232.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
@@ -423,6 +467,8 @@ const PAINTINGS = [
     dimensions: "129.5 × 196.2 cm",
     description: "Socrates, condemned by Athens, reaches for the hemlock while lecturing his weeping disciples on the immortality of the soul. David painted this two years before the French Revolution, and it was immediately read as a political statement about civic virtue. Stoic calm versus emotional distress.",
     movement: "Neoclassicism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Death_of_Socrates_(David)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/David_-_The_Death_of_Socrates.jpg/330px-David_-_The_Death_of_Socrates.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
@@ -435,6 +481,8 @@ const PAINTINGS = [
     dimensions: "81.3 × 69.9 cm",
     description: "Velázquez painted this as a warm-up exercise before painting Pope Innocent X in Rome. Juan de Pareja was Velázquez's enslaved assistant, a gifted painter himself. Velázquez freed him in 1654. When exhibited at the Pantheon in Rome, contemporaries said all other portraits looked 'dead' beside it.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Juan_de_Pareja",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_Juan_de_Pareja",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Retrato_de_Juan_Pareja%2C_by_Diego_Vel%C3%A1zquez.jpg/330px-Retrato_de_Juan_Pareja%2C_by_Diego_Vel%C3%A1zquez.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
@@ -447,6 +495,8 @@ const PAINTINGS = [
     dimensions: "93.4 × 74 cm",
     description: "Painted in Saint-Rémy the same month as Starry Night, Van Gogh described cypresses as 'beautiful as regards line and proportion, like an Egyptian obelisk.' The flame-like tree dominates the foreground in characteristic swirling brushstrokes. He sent it to his brother Theo, who later sold it.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Cypresses_(Van_Gogh)",
+    grokUrl: "https://grokipedia.com/page/Cypresses",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Wheat-Field-with-Cypresses-%281889%29-Vincent-van-Gogh-Met.jpg/500px-Wheat-Field-with-Cypresses-%281889%29-Vincent-van-Gogh-Met.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
@@ -459,6 +509,8 @@ const PAINTINGS = [
     dimensions: "45.7 × 40.6 cm",
     description: "A woman in a white cap opens a window while holding a pitcher, suffusing the room with diffuse morning light. Vermeer's mastery of domestic interior light is evident in the blue cloth draped over the table and the gleam of the silver basin. One of his finest works.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Young_Woman_with_a_Water_Pitcher",
+    grokUrl: "https://grokipedia.com/page/Young_Woman_with_a_Water_Pitcher",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Jan_Vermeer_van_Delft_019.jpg/330px-Jan_Vermeer_van_Delft_019.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
@@ -473,6 +525,8 @@ const PAINTINGS = [
     dimensions: "207.5 × 308.1 cm",
     description: "The masterpiece of Pointillism — thousands of tiny dots of pure color that blend in the viewer's eye. Seurat spent two years making dozens of preliminary studies before painting this 10-foot canvas. The rigid, statue-like figures have been interpreted as a critique of bourgeois leisure.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/A_Sunday_on_La_Grande_Jatte",
+    grokUrl: "https://grokipedia.com/page/A_Sunday_on_La_Grande_Jatte",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/330px-A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
@@ -485,6 +539,8 @@ const PAINTINGS = [
     dimensions: "78 × 65.3 cm",
     description: "Wood saw a Carpenter Gothic-style house in Eldon, Iowa and imagined who would live there. He used his dentist and his sister as models (not a husband and wife). Endlessly parodied, it became America's most reproduced painting. Wood insisted it was not a satire but a celebration of Midwestern character.",
     movement: "Modernism",
+    wikiUrl: "https://en.wikipedia.org/wiki/American_Gothic",
+    grokUrl: "https://grokipedia.com/page/American_Gothic",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg/330px-Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
@@ -497,6 +553,8 @@ const PAINTINGS = [
     dimensions: "84.1 × 152.4 cm",
     description: "Four figures in a late-night diner on a deserted Greenwich Village street. The harsh artificial light, the curved counter, and the lack of any door or exit create an atmosphere of urban isolation. Painted shortly after Pearl Harbor, it captured America's mood of quiet dread. Hopper said it showed 'the loneliness of a large city.'",
     movement: "Modernism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Nighthawks_(painting)",
+    grokUrl: "https://grokipedia.com/page/Nighthawks",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Nighthawks_by_Edward_Hopper_1942.jpg/330px-Nighthawks_by_Edward_Hopper_1942.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
@@ -509,6 +567,8 @@ const PAINTINGS = [
     dimensions: "123 × 141 cm",
     description: "A backstage view of Paris's most famous cabaret, the Moulin Rouge. In the right foreground, a woman's face is cut off by the frame and lit with an eerie green light. Toulouse-Lautrec himself sits at the table, tiny amid his tall friends. He was a regular here and chronicled the demi-monde of Montmartre.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/At_the_Moulin_Rouge",
+    grokUrl: "https://grokipedia.com/page/At_the_Moulin_Rouge",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Henri_de_Toulouse-Lautrec%2C_At_the_Moulin_Rouge.jpg/330px-Henri_de_Toulouse-Lautrec%2C_At_the_Moulin_Rouge.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
@@ -521,6 +581,8 @@ const PAINTINGS = [
     dimensions: "212.2 × 276.2 cm",
     description: "The intersection near the Gare Saint-Lazare on a rainy day, with modern Haussmann-era Paris as backdrop. Unusually large for an Impressionist work, it uses the sharp perspective of early photography. Caillebotte was the great collector and financier of Impressionism, donating his collection to the state.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Paris_Street%3B_Rainy_Day",
+    grokUrl: "https://grokipedia.com/page/Paris_Street_Rainy_Day",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg/330px-Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
@@ -535,6 +597,8 @@ const PAINTINGS = [
     dimensions: "22.8 × 18 cm",
     description: "One of Vermeer's smallest works, painted on mahogany panel rather than canvas. The young woman wearing a large red hat and an exotic lion-head finial turns toward us as if responding to a call. Recent technical analysis has raised questions about whether Vermeer painted the whole work.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Girl_with_the_Red_Hat",
+    grokUrl: "https://grokipedia.com/page/Girl_with_the_Red_Hat",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Vermeer_-_Girl_with_a_Red_Hat.JPG/500px-Vermeer_-_Girl_with_a_Red_Hat.JPG",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
@@ -547,6 +611,8 @@ const PAINTINGS = [
     dimensions: "84.5 × 66 cm",
     description: "One of Rembrandt's late self-portraits, painted two years after his bankruptcy. The grave, unflinching gaze of this 53-year-old man — who has lost his house and possessions — shows a psychological depth unmatched in portraiture. He painted over 80 self-portraits across his career.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Self-Portrait_(Rembrandt,_1659)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Rembrandt_self_portrait.jpg/500px-Rembrandt_self_portrait.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
@@ -559,6 +625,8 @@ const PAINTINGS = [
     dimensions: "94.5 cm diameter (tondo)",
     description: "One of the finest tondo (circular) paintings in existence. The Virgin Mary, seated on the ground in a landscape, holds the Christ child who reaches for the cross held by the infant John the Baptist. The poses derive from Leonardo but the harmony and the warm landscape are purely Raphael.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Alba_Madonna",
+    grokUrl: "https://grokipedia.com/page/Alba_Madonna",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Raphael_-_The_Alba_Madonna_-_Google_Art_Project.jpg/330px-Raphael_-_The_Alba_Madonna_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
@@ -573,6 +641,8 @@ const PAINTINGS = [
     dimensions: "129.9 × 172.7 cm",
     description: "Friends of Renoir at a riverside restaurant on the Seine. The figures include future wife Aline Charigot (front left, playing with a dog) and the impressionist Gustave Caillebotte (back right). Duncan Phillips called it 'one of the greatest paintings in the world' when he bought it in 1923.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Luncheon_of_the_Boating_Party",
+    grokUrl: "https://grokipedia.com/page/Luncheon_of_the_Boating_Party",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Pierre-Auguste_Renoir_-_Luncheon_of_the_Boating_Party_-_Google_Art_Project.jpg/330px-Pierre-Auguste_Renoir_-_Luncheon_of_the_Boating_Party_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
   },
@@ -587,6 +657,8 @@ const PAINTINGS = [
     dimensions: "138 × 138 cm",
     description: "The 'Woman in Gold,' Klimt's most elaborate and expensive work to commission. The gold-leaf technique draws on Byzantine mosaics and Japanese lacquerwork. Adele Bloch-Bauer was a Viennese Jewish socialite; the painting was looted by the Nazis. After a legal battle, it was returned to her heirs in 2006 for $135 million.",
     movement: "Art Nouveau",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Adele_Bloch-Bauer_I",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_Adele_Bloch-Bauer_I",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Gustav_Klimt_046.jpg/330px-Gustav_Klimt_046.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
   },
@@ -601,6 +673,8 @@ const PAINTINGS = [
     dimensions: "71 × 93 cm",
     description: "Painted in the garden of Saint-Paul-de-Mausole asylum, one week after Van Gogh's arrival. He called it 'the lightning rod for my illness' — painting kept him sane. The intense blue of the irises against the orange of the soil is a study in complementary colors. Sold in 1987 for a then-record $53.9 million.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Irises_(painting)",
+    grokUrl: "https://grokipedia.com/page/Irises",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Irises-Vincent_van_Gogh.jpg/330px-Irises-Vincent_van_Gogh.jpg",
     location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
   },
@@ -615,6 +689,8 @@ const PAINTINGS = [
     dimensions: "210.5 × 250.8 cm",
     description: "Cézanne's final and largest version of his Bathers series, worked on for seven years but left unfinished at his death. The figures — not from life but from imagination and old master drawings — are wedged between the arching trees and sky. Matisse and Picasso both owned smaller versions and credited it as transformative.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Large_Bathers_(C%C3%A9zanne)",
+    grokUrl: "https://grokipedia.com/page/The_Large_Bathers",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Les_Grandes_Baigneuses%2C_par_Paul_C%C3%A9zanne%2C_Yorck%2C_2.jpg/500px-Les_Grandes_Baigneuses%2C_par_Paul_C%C3%A9zanne%2C_Yorck%2C_2.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
   },
@@ -629,6 +705,8 @@ const PAINTINGS = [
     dimensions: "47.5 × 57 cm",
     description: "The most intimate of Cézanne's five versions of this subject, showing just two peasant players at a table. The solid geometry of the figures — particularly the cylindrical quality — directly influenced Cubism. In 2011, this version sold (from a private estate) for over $250 million, then the highest price ever paid for a painting.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Card_Players",
+    grokUrl: "https://grokipedia.com/page/The_Card_Players",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Les_Joueurs_de_cartes%2C_par_Paul_C%C3%A9zanne.jpg/330px-Les_Joueurs_de_cartes%2C_par_Paul_C%C3%A9zanne.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
   },
@@ -643,6 +721,8 @@ const PAINTINGS = [
     dimensions: "72.4 × 92.1 cm",
     description: "Van Gogh called this 'one of the ugliest pictures I have done.' He clashed the most jarring colors — blood red walls against yellow-green gas lamps — to show that 'the café is a place where one can ruin oneself, go mad, commit crimes.' A lone insomniac leans on a table under the billiard table's gaze.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Night_Caf%C3%A9",
+    grokUrl: "https://grokipedia.com/page/The_Night_Cafe",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vincent_Willem_van_Gogh_076.jpg/330px-Vincent_Willem_van_Gogh_076.jpg",
     location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
   },
@@ -657,6 +737,8 @@ const PAINTINGS = [
     dimensions: "177.9 × 121.9 cm",
     description: "Gainsborough painted this elegant portrait to challenge Sir Joshua Reynolds's assertion that blue should not be the dominant color in a composition. The boy — possibly Jonathan Buttall, son of a hardware merchant — is dressed in a Van Dyck-era blue satin costume, merging past glamour with 18th-century reality.",
     movement: "Rococo",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Blue_Boy",
+    grokUrl: "https://grokipedia.com/page/The_Blue_Boy",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/The_Blue_Boy.jpg/330px-The_Blue_Boy.jpg",
     location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
   },
@@ -671,6 +753,8 @@ const PAINTINGS = [
     dimensions: "173.5 × 173 cm",
     description: "Kahlo's largest painting, made during her divorce from Diego Rivera. Two versions of herself sit hand in hand: the European Frida (white dress, broken heart exposed) and the Mexican Frida (Tehuana dress, whole heart). They share a vein running between them — her European self's heart is cut, bleeding onto her dress.",
     movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Two_Fridas",
+    grokUrl: "https://grokipedia.com/page/The_Two_Fridas",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/f/f9/The_Two_Fridas.jpg",
     location: { continent: "North America", country: "Mexico", city: "Mexico City", museum: "Museo de Arte Moderno" }
   },
@@ -685,6 +769,8 @@ const PAINTINGS = [
     dimensions: "318 × 276 cm",
     description: "The most analyzed painting in art history. Velázquez shows himself painting a large canvas; reflected in a mirror at the back are the king and queen. The Infanta Margarita stands at center attended by her ladies-in-waiting. Who is the subject — the Infanta, the painter, or the royal couple in the mirror?",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Las_Meninas",
+    grokUrl: "https://grokipedia.com/page/Las_Meninas",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/330px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -697,6 +783,8 @@ const PAINTINGS = [
     dimensions: "205.5 × 384.9 cm (open)",
     description: "A triptych of astonishing strangeness: left panel shows Eden, the center a world of erotic pleasures and fantastical creatures, the right panel Hell. No definitive interpretation exists. Medieval scholars, Surrealists, and psychologists have all claimed it. The imagery seems both timeless and utterly alien.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Garden_of_Earthly_Delights",
+    grokUrl: "https://grokipedia.com/page/The_Garden_of_Earthly_Delights",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/The_Garden_of_earthly_delights.jpg/330px-The_Garden_of_earthly_delights.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -709,6 +797,8 @@ const PAINTINGS = [
     dimensions: "268 × 347 cm",
     description: "The archetype of anti-war painting, showing Spanish civilians executed by Napoleonic soldiers. The anonymous firing squad faces a man in white with arms raised — echoing the crucifixion — and a lantern on the ground illuminates the condemned but leaves the soldiers in shadow. Manet and Picasso were both directly influenced by it.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Third_of_May_1808",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg/330px-El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -721,6 +811,8 @@ const PAINTINGS = [
     dimensions: "143.5 × 81.4 cm",
     description: "One of Goya's 'Black Paintings' — murals painted on the walls of his own house late in life, in private, never intended for public display. The wild-eyed Saturn consumes a human body with savage intensity. Its rough brushwork and psychological extremity anticipate Expressionism by nearly a century.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Saturn_Devouring_His_Son",
+    grokUrl: "https://grokipedia.com/page/Saturn_Devouring_His_Son",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg/330px-Francisco_de_Goya%2C_Saturno_devorando_a_su_hijo_%281819-1823%29.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -733,6 +825,8 @@ const PAINTINGS = [
     dimensions: "204.5 × 261.5 cm",
     description: "The supreme masterpiece of Early Netherlandish painting. Ten figures remove Christ's body from the cross in a shallow, gold-leafed space. Van der Weyden focuses on emotional expression with an intensity not seen before — Mary's swoon mirrors her son's limp body exactly, as if struck by the same invisible arrow.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Descent_from_the_Cross_(van_der_Weyden)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Weyden_Deposition.jpg/500px-Weyden_Deposition.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -745,6 +839,8 @@ const PAINTINGS = [
     dimensions: "307.5 × 370.5 cm",
     description: "The Dutch city of Breda surrendered to Spanish forces in 1625. Velázquez shows the moment the Dutch commander hands the key to the Spanish general Spinola — who gently prevents the Dutchman from kneeling, creating a scene of magnanimous victory. The forest of lances on the Spanish side gives the painting its nickname 'Las Lanzas.'",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Surrender_of_Breda",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Velazquez-The_Surrender_of_Breda.jpg/330px-Velazquez-The_Surrender_of_Breda.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -757,6 +853,8 @@ const PAINTINGS = [
     dimensions: "194 × 194 cm",
     description: "Fra Angelico painted multiple versions of the Annunciation. This early version, now in the Prado, was made for the convent of Santo Domenico at Fiesole. The tender meeting of Gabriel and Mary under a loggia, with Adam and Eve's expulsion from Eden at upper left, established the visual language for this subject for generations.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Annunciation_(Fra_Angelico,_Prado)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/La_Anunciaci%C3%B3n_de_Fra_Angelico.jpg/330px-La_Anunciaci%C3%B3n_de_Fra_Angelico.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -769,6 +867,8 @@ const PAINTINGS = [
     dimensions: "122.5 × 177 cm",
     description: "The only surviving female nude by Velázquez, and one of the few Spanish Baroque nudes. Venus lies on grey silks looking at her reflection held by Cupid. In 1914, suffragette Mary Richardson slashed the painting with a meat cleaver to protest the imprisonment of Emmeline Pankhurst. Restored, the knife marks are still faintly visible.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Rokeby_Venus",
+    grokUrl: "https://grokipedia.com/page/Rokeby_Venus",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Diego_Vel%C3%A1zquez_-_Rokeby_Venus.jpg/330px-Diego_Vel%C3%A1zquez_-_Rokeby_Venus.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -783,6 +883,8 @@ const PAINTINGS = [
     dimensions: "349.3 × 776.6 cm",
     description: "The most powerful anti-war painting ever made. Picasso created this in response to the Nazi bombing of the Basque town of Guernica in April 1937. In monochromatic grey, black, and white, fragmented figures — a screaming mother with dead baby, a dying horse, a bull — convey the chaos and agony of modern warfare.",
     movement: "Cubism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Guernica_(Picasso)",
+    grokUrl: "https://grokipedia.com/page/Guernica",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/7/74/PicassoGuernica.jpg/330px-PicassoGuernica.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
@@ -797,6 +899,8 @@ const PAINTINGS = [
     dimensions: "172.5 × 278.9 cm",
     description: "The goddess of love emerges from the sea on a shell, blown by Zephyrus while a figure on shore offers a flowered robe. Commissioned by the Medici, it is one of the first large-scale mythological paintings of the Renaissance. The model is thought to be Simonetta Vespucci, the Medici's favorite beauty.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Birth_of_Venus_(Bouguereau)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/330px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
@@ -809,6 +913,8 @@ const PAINTINGS = [
     dimensions: "202 × 314 cm",
     description: "A large mythological painting whose precise meaning has been debated for 500 years. Nine figures in an orange grove include Venus, the Three Graces, Mercury, and the Flora figure with flowers emerging from her mouth. Over 500 plant species have been identified — Botticelli may have used a botanical garden reference.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Primavera_(Botticelli)",
+    grokUrl: "https://grokipedia.com/page/Primavera",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Botticelli-primavera.jpg/330px-Botticelli-primavera.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
@@ -821,6 +927,8 @@ const PAINTINGS = [
     dimensions: "98 × 217 cm",
     description: "Leonardo's earliest surviving large-scale painting, likely made while still in Verrocchio's workshop. The archangel Gabriel kneels to announce the Incarnation to Mary in a garden. The distant landscape through the marble ledge is the first example of Leonardo's atmospheric perspective — mountains dissolving into mist.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Annunciation_(Leonardo)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Annunciation_%28Leonardo_c._1472%E2%80%931476%29.jpg/330px-Annunciation_%28Leonardo_c._1472%E2%80%931476%29.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
@@ -833,6 +941,8 @@ const PAINTINGS = [
     dimensions: "199 × 162.5 cm",
     description: "The most forceful version of this biblical subject: Judith and her maid pin down and behead the Assyrian general with a ferocity unprecedented in art. Artemisia, who survived a rape trial, painted this with visceral conviction. It became a feminist touchstone — a woman avenging herself against a man of power.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Judith_Slaying_Holofernes_(Gentileschi,_Florence)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Judith_Beheading_Holofernes_-_Caravaggio.jpg/500px-Judith_Beheading_Holofernes_-_Caravaggio.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
@@ -845,6 +955,8 @@ const PAINTINGS = [
     dimensions: "120 cm diameter",
     description: "The only confirmed panel painting by Michelangelo, made for the wealthy Florentine merchant Agnolo Doni. The complex twisting composition of the Holy Family, with nude youths in the background, has never been explained. The original carved frame — also by Michelangelo — is one of the finest surviving Renaissance frames.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Doni_Tondo",
+    grokUrl: "https://grokipedia.com/page/Doni_Tondo",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Tondo_Doni%2C_por_Miguel_%C3%81ngel.jpg/330px-Tondo_Doni%2C_por_Miguel_%C3%81ngel.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
@@ -857,6 +969,8 @@ const PAINTINGS = [
     dimensions: "107 × 77.2 cm",
     description: "A tender domestic scene: the young Madonna reads while the infant John the Baptist holds out a goldfinch for Jesus to stroke. The goldfinch — symbol of the Passion — gives the painting its name. Damaged by an earthquake in 1547, it was reassembled from 17 fragments, and the repairs are still visible.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Madonna_of_the_Goldfinch",
+    grokUrl: "https://grokipedia.com/page/Madonna_of_the_Goldfinch",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Raffaello_Sanzio_-_Madonna_del_Cardellino_-_Google_Art_Project.jpg/330px-Raffaello_Sanzio_-_Madonna_del_Cardellino_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
@@ -871,6 +985,8 @@ const PAINTINGS = [
     dimensions: "363 × 437 cm",
     description: "The most famous Dutch Golden Age painting. Captain Frans Banninck Cocq leads his militia company out in a burst of activity and light. Rembrandt broke with the convention of static, evenly-lit group portraits. It was attacked with a bread knife in 1975 and acid in 1990, but all damage has been restored.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Night_Watch",
+    grokUrl: "https://grokipedia.com/page/The_Night_Watch",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg/330px-La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
@@ -883,6 +999,8 @@ const PAINTINGS = [
     dimensions: "45.5 × 41 cm",
     description: "A kitchen maid pours milk with quiet concentration — the stream of milk the painting's still center. Vermeer captures the light from a window at left with extraordinary precision, catching it in the loaf of bread, the basket, the earthenware jugs. This small painting is considered his most perfect.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Milkmaid_(Vermeer)",
+    grokUrl: "https://grokipedia.com/page/The_Milkmaid",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/500px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
@@ -895,6 +1013,8 @@ const PAINTINGS = [
     dimensions: "46.5 × 39 cm",
     description: "A pregnant woman stands in soft light reading a letter — almost certainly from her husband away at sea. The wall map behind her shows Holland, connecting his absence with her solitude. Her absorbed concentration, the blue of her jacket, and the pearl of light on her forehead make this one of Vermeer's most meditative works.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Woman_Reading_a_Letter",
+    grokUrl: "https://grokipedia.com/page/Woman_Reading_a_Letter",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Johannes_Vermeer_-_Woman_in_Blue_Reading_a_Letter_-_WGA24657.jpg/500px-Johannes_Vermeer_-_Woman_in_Blue_Reading_a_Letter_-_WGA24657.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
@@ -907,6 +1027,8 @@ const PAINTINGS = [
     dimensions: "121.5 × 166.5 cm",
     description: "The identity of the couple remains unknown; they may be the biblical Isaac and Rebecca, or actual patrons. Van Gogh said he would give ten years of his life to sit before this painting for two weeks. The way Rembrandt painted the golden fabric — building the impasto with his hands as much as brushes — is unparalleled.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Jewish_Bride",
+    grokUrl: "https://grokipedia.com/page/The_Jewish_Bride",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Rembrandt_Harmensz._van_Rijn_-_Portret_van_een_paar_als_oudtestamentische_figuren%2C_genaamd_%27Het_Joodse_bruidje%27_-_Google_Art_Project.jpg/330px-Rembrandt_Harmensz._van_Rijn_-_Portret_van_een_paar_als_oudtestamentische_figuren%2C_genaamd_%27Het_Joodse_bruidje%27_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
@@ -919,6 +1041,8 @@ const PAINTINGS = [
     dimensions: "91 × 77 cm",
     description: "Rembrandt dressed as St. Paul — sword half-hidden, manuscript in hand, wearing a turban — explores the artist as interpreter and visionary. This is one of his most psychologically profound self-portraits from the late period, when he was aging and financially ruined but producing his greatest work.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Self-Portrait_as_the_Apostle_Paul_(Rembrandt)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Rembrandt_-_Self-Portrait_as_the_Apostle_Paul_-_WGA19222.jpg/500px-Rembrandt_-_Self-Portrait_as_the_Apostle_Paul_-_WGA19222.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
@@ -931,6 +1055,8 @@ const PAINTINGS = [
     dimensions: "81 × 66.5 cm",
     description: "A laughing man raises a glass to us, captured in an instant of jovial connection. Hals's loose, rapid brushwork creates an illusion of spontaneous life unmatched in the 17th century. He could depict the flash of a smile — something no painter before him attempted. Manet called him the greatest painter who ever lived.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Merry_Drinker",
+    grokUrl: "https://grokipedia.com/page/The_Merry_Drinker",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Frans_Hals_-_The_Merry_Drinker_-_WGA11095.jpg/330px-Frans_Hals_-_The_Merry_Drinker_-_WGA11095.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
@@ -945,6 +1071,8 @@ const PAINTINGS = [
     dimensions: "44.5 × 39 cm",
     description: "Often called 'the Mona Lisa of the North,' the girl's sideways glance and parted lips suggest she's about to speak. Her identity remains unknown. The luminous pearl — which may actually be glass or tin — catches the same light as her eyes. Tracy Chevalier's 1999 novel imagined the painting's backstory.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring",
+    grokUrl: "https://grokipedia.com/page/Girl_with_a_Pearl_Earring",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/330px-1665_Girl_with_a_Pearl_Earring.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
@@ -957,6 +1085,8 @@ const PAINTINGS = [
     dimensions: "96.5 × 115.7 cm",
     description: "Proust called this 'the most beautiful painting in the world' after fainting in front of it. The city is shown from the south across the River Schie; the Nieuwe Kerk's tower gleams in sunlight while the foreground remains in shadow. The grainy texture of the brickwork and water has been attributed to Vermeer's use of a camera obscura.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/View_of_Delft",
+    grokUrl: "https://grokipedia.com/page/View_of_Delft",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Vermeer-view-of-delft.jpg/330px-Vermeer-view-of-delft.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
@@ -969,6 +1099,8 @@ const PAINTINGS = [
     dimensions: "169.5 × 216.5 cm",
     description: "Rembrandt's breakthrough commission at age 26. The city's surgeon-general Tulp demonstrates dissection on the corpse of a hanged criminal before seven observers. Unlike static guild portraits, Rembrandt created dynamic triangular compositions and genuine psychological engagement. It established him as Amsterdam's leading portraitist.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Anatomy_Lesson_of_Dr._Nicolaes_Tulp",
+    grokUrl: "https://grokipedia.com/page/The_Anatomy_Lesson_of_Dr._Nicolaes_Tulp",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Rembrandt_-_The_Anatomy_Lesson_of_Dr_Nicolaes_Tulp.jpg/330px-Rembrandt_-_The_Anatomy_Lesson_of_Dr_Nicolaes_Tulp.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
@@ -983,6 +1115,8 @@ const PAINTINGS = [
     dimensions: "50.5 × 103 cm",
     description: "Long thought to be Van Gogh's final painting, made in the last weeks of his life in Auvers-sur-Oise. The stormy sky, crows flying in from the sides, and the path that ends in the middle of the field have been read as intimations of death. Recent scholarship suggests it was not actually his last painting.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Wheatfield_with_Crows",
+    grokUrl: "https://grokipedia.com/page/Wheatfield_with_Crows",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Korenveld_met_kraaien_-_s0149V1962_-_Van_Gogh_Museum.jpg/330px-Korenveld_met_kraaien_-_s0149V1962_-_Van_Gogh_Museum.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
@@ -995,6 +1129,8 @@ const PAINTINGS = [
     dimensions: "82 × 114 cm",
     description: "Van Gogh's first major work, made in Nuenen. A peasant family eats potatoes by lamplight — their dark, earthy faces and knotted hands mirror the potatoes they eat. Van Gogh wrote: 'These people, eating their potatoes in the lamplight, have dug the earth with those very hands they put in the dish.' He considered it his masterpiece of this period.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Potato_Eaters",
+    grokUrl: "https://grokipedia.com/page/The_Potato_Eaters",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Van-willem-vincent-gogh-die-kartoffelesser-03850.jpg/330px-Van-willem-vincent-gogh-die-kartoffelesser-03850.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
@@ -1007,6 +1143,8 @@ const PAINTINGS = [
     dimensions: "73.3 × 92.4 cm",
     description: "Painted to celebrate the birth of his nephew and namesake, Vincent Willem van Gogh. The blue sky behind white and pink almond branches was inspired by Japanese woodblock prints. It was the only painting that Van Gogh's sister-in-law Jo kept in her bedroom after his death, and it remained in the family for decades.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Almond_Blossom_(Van_Gogh)",
+    grokUrl: "https://grokipedia.com/page/Almond_Blossom",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg/500px-Vincent_van_Gogh_-_Almond_blossom_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
@@ -1019,6 +1157,8 @@ const PAINTINGS = [
     dimensions: "72.4 × 91.3 cm",
     description: "Van Gogh painted his bedroom at the Yellow House in Arles three times. This first version (Van Gogh Museum) was made to convey rest and peace — 'Color is to do everything; by its simplification giving a grander style to things, suggesting rest or sleep in general.' The distorted perspective has been attributed to the influence of Japanese prints.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Bedroom_in_Arles",
+    grokUrl: "https://grokipedia.com/page/The_Bedroom",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/La_Chambre_%C3%A0_Arles%2C_by_Vincent_van_Gogh%2C_from_C2RMF.jpg/500px-La_Chambre_%C3%A0_Arles%2C_by_Vincent_van_Gogh%2C_from_C2RMF.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
@@ -1033,6 +1173,8 @@ const PAINTINGS = [
     dimensions: "82.2 × 60 cm",
     description: "One of the most complex and discussed paintings in Western art. The convex mirror on the back wall reflects the whole room from behind, including two additional figures — one possibly van Eyck himself. The Latin inscription above the mirror reads: 'Jan van Eyck was here. 1434.' Is it a wedding? A betrothal? We don't know.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Arnolfini_Portrait",
+    grokUrl: "https://grokipedia.com/page/Arnolfini_Portrait",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_Arnolfini_portrait_%281434%29.jpg/330px-The_Arnolfini_portrait_%281434%29.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
@@ -1045,6 +1187,8 @@ const PAINTINGS = [
     dimensions: "130.2 × 185.4 cm",
     description: "A hay wain (cart) crosses the River Stour at Flatford Mill in Suffolk. Exhibited at the Paris Salon in 1824, it caused a sensation — Delacroix reportedly repainted the background of his Massacre at Chios after seeing the freshness of Constable's greens and whites. Voted Britain's favorite painting multiple times.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Hay_Wain",
+    grokUrl: "https://grokipedia.com/page/The_Hay_Wain",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/John_Constable_-_The_Hay_Wain_%281821%29.jpg/330px-John_Constable_-_The_Hay_Wain_%281821%29.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
@@ -1057,6 +1201,8 @@ const PAINTINGS = [
     dimensions: "92.1 × 73 cm",
     description: "One of five versions Van Gogh painted of sunflowers. He made them to decorate the Yellow House in Arles for the arrival of Gauguin. 'To express scorching love by the radiance of yellow,' he wrote. This version, in London, was acquired in 1924 and is considered the finest. Another version at Christie's sold for $39.9 million in 1987.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Sunflowers_(Van_Gogh_series)",
+    grokUrl: "https://grokipedia.com/page/Sunflowers",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Vincent_Willem_van_Gogh_127.jpg/330px-Vincent_Willem_van_Gogh_127.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
@@ -1069,6 +1215,8 @@ const PAINTINGS = [
     dimensions: "207 × 209.5 cm",
     description: "Two wealthy French diplomats flank a table of instruments symbolizing their intellectual and diplomatic power. At the bottom, an elongated smear resolves into a human skull when viewed from a steep angle — a memento mori (reminder of death) hidden in a political portrait. The green damask curtain at top-left conceals a crucifix.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Ambassadors_(Holbein)",
+    grokUrl: "https://grokipedia.com/page/The_Ambassadors",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Hans_Holbein_the_Younger_-_The_Ambassadors_-_Google_Art_Project.jpg/330px-Hans_Holbein_the_Younger_-_The_Ambassadors_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
@@ -1081,6 +1229,8 @@ const PAINTINGS = [
     dimensions: "189.5 × 120 cm",
     description: "The second of Leonardo's two versions of this mysterious altarpiece, painted for a Milanese confraternity. The Virgin shelters the infant Christ and John the Baptist in a geological fantasy grotto; the angel points to John but the Christ child blesses him. The London version differs subtly but significantly from the Louvre version.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Virgin_of_the_Rocks",
+    grokUrl: "https://grokipedia.com/page/Virgin_of_the_Rocks",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg/330px-Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
@@ -1095,6 +1245,8 @@ const PAINTINGS = [
     dimensions: "59.7 × 49.2 cm",
     description: "Painted just weeks after Guernica, the same jagged style fractures a weeping woman's face into sharp angles of grief. The model was photographer Dora Maar, Picasso's lover. Picasso called her 'the weeping woman' throughout their relationship. Stolen from the National Gallery of Victoria in Melbourne in 1986, returned two weeks later.",
     movement: "Cubism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Weeping_Woman_(Picasso)",
+    grokUrl: "https://grokipedia.com/page/Weeping_Woman",
     imageUrl: null, // 1937 Picasso — under copyright
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
@@ -1109,6 +1261,8 @@ const PAINTINGS = [
     dimensions: "83 × 67.3 cm",
     description: "Despite the nickname — given by a Victorian journalist — the man is not laughing but wearing a self-satisfied smirk, perhaps at a private joke. His lavish lace collar and embroidered sleeve are painted with virtuosic detail. The bold tilt of his hat and upturned moustache exude confidence. One of the great portraits of the 17th century.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Laughing_Cavalier",
+    grokUrl: "https://grokipedia.com/page/The_Laughing_Cavalier",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Cavalier_soldier_Hals-1624x.jpg/330px-Cavalier_soldier_Hals-1624x.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
   },
@@ -1123,6 +1277,8 @@ const PAINTINGS = [
     dimensions: "262 × 205 cm",
     description: "Rembrandt's final meditation on forgiveness, possibly left unfinished at his death. The kneeling son — worn, shaved, with one sandal lost — presses his face into his father's cloak. The father's gentle hands — one masculine, one feminine, one firm, one caressing — have been interpreted as representing both parents of the human soul. Tolstoy wept in front of it.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Return_of_the_Prodigal_Son_(Rembrandt)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Rembrandt_Harmensz._van_Rijn_-_The_Return_of_the_Prodigal_Son.jpg/500px-Rembrandt_Harmensz._van_Rijn_-_The_Return_of_the_Prodigal_Son.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
@@ -1135,6 +1291,8 @@ const PAINTINGS = [
     dimensions: "260 × 391 cm",
     description: "Five pink figures dance in a ring against flat red and blue. Commissioned by the Russian industrialist Sergei Shchukin, it shocked audiences at the 1910 Salon d'Automne. Matisse stripped everything to essence: five figures, three colors, one emotion. The dancer at upper left is about to miss the hand of the dancer at upper right — the circle is breaking.",
     movement: "Fauvism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Dance_(Matisse)",
+    grokUrl: "https://grokipedia.com/page/The_Dance",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Matissedance.jpg/330px-Matissedance.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
@@ -1147,6 +1305,8 @@ const PAINTINGS = [
     dimensions: "42 × 33 cm",
     description: "A deeply intimate Madonna nursing the Christ child, set within two windows showing a daylit landscape. Long attributed to Leonardo, modern scholarship suggests it may be mostly by his pupil Giovanni Antonio Boltraffio. The delicate modeling of the Madonna's face and the landscape behind are typically Leonardesque.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Madonna_Litta",
+    grokUrl: "https://grokipedia.com/page/Madonna_Litta",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Leonardo_da_Vinci_attributed_-_Madonna_Litta.jpg/330px-Leonardo_da_Vinci_attributed_-_Madonna_Litta.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
@@ -1159,6 +1319,8 @@ const PAINTINGS = [
     dimensions: "185 × 202.5 cm",
     description: "The mythological princess Danaë welcomes a shower of gold (Jupiter in disguise). Rembrandt reworked the face — changing it from his first wife Saskia to his later companion Hendrickje Stoffels. In 1985 an emotionally disturbed visitor splashed acid on it and slashed it twice; a decade of restoration was required.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Dana%C3%AB_(Rembrandt)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Rembrandt_Harmensz._van_Rijn_026.jpg/330px-Rembrandt_Harmensz._van_Rijn_026.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
@@ -1173,6 +1335,8 @@ const PAINTINGS = [
     dimensions: "180 × 180 cm",
     description: "A couple embraces on a floral precipice, wrapped in a golden mantle adorned with geometric forms — his rectangular, hers rounded. The faces and hands emerge from the shimmer as the only real flesh. A symbol of total romantic surrender, it became one of the most reproduced images of the 20th century. The model may be Emilie Flöge.",
     movement: "Art Nouveau",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Kiss_(Klimt)",
+    grokUrl: "https://grokipedia.com/page/The_Kiss",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/330px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
   },
@@ -1187,6 +1351,8 @@ const PAINTINGS = [
     dimensions: "114 × 155 cm",
     description: "Bruegel painted the biblical Tower of Babel as a contemporary construction site; the model is the Colosseum in Rome. He sets the colossal unfinished structure against a Flemish landscape with tiny human figures below. A second, smaller version is in Rotterdam. The painting is a meditation on human hubris and the failure of great ambitions.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Tower_of_Babel_(Bruegel)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg/330px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
   },
@@ -1201,6 +1367,8 @@ const PAINTINGS = [
     dimensions: "91 × 73.5 cm",
     description: "The original oil/tempera version, now at the National Museum of Norway (opened 2022; previously at the old National Gallery). Munch wrote in his diary: 'I was walking along the road with two friends — the sun was setting — suddenly the sky turned blood red … I sensed an infinite scream passing through nature.' The face is not screaming but recoiling from a scream in nature itself.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Scream",
+    grokUrl: "https://grokipedia.com/page/The_Scream",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/330px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg",
     location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
   },
@@ -1215,6 +1383,8 @@ const PAINTINGS = [
     dimensions: "280 × 570 cm",
     description: "The ninth scene of the Sistine Chapel ceiling, showing God and Adam reaching toward each other with almost-touching fingers. The space between those fingers is one of the most famous gaps in art history. God's cloak billows around a brain-like shape; scholars have noted that the figures inside may represent areas of the human brain.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Creation_of_Adam",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg/330px-Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
   },
@@ -1227,6 +1397,8 @@ const PAINTINGS = [
     dimensions: "500 × 770 cm",
     description: "Raphael's tribute to classical philosophy fills a lunette in the Vatican's Stanza della Segnatura. Plato (pointing up, modeled on Leonardo) and Aristotle (pointing down) anchor the composition. Every major ancient philosopher is present; Heraclitus (center-left) is modeled on Michelangelo. Raphael included himself at far right.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_School_of_Athens",
+    grokUrl: "https://grokipedia.com/page/The_School_of_Athens",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/330px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
   },
@@ -1241,6 +1413,8 @@ const PAINTINGS = [
     dimensions: "460 × 880 cm",
     description: "Painted on the refectory wall of a Milan convent, this is not a true fresco — Leonardo used tempera on dry plaster to allow reworking, but this caused rapid deterioration. It shows the moment Christ announces his betrayal; the apostles react in distinct emotional groups. It has been restored multiple times and suffered bombing in WWII (the wall survived).",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Last_Supper_(Leonardo_da_Vinci)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/330px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg",
     location: { continent: "Europe", country: "Italy", city: "Milan", museum: "Santa Maria delle Grazie" }
   },
@@ -1255,6 +1429,8 @@ const PAINTINGS = [
     dimensions: "322 × 340 cm",
     description: "A shaft of light from the right (where Christ stands) falls across a group of men at a tax table. Matthew points to himself in disbelief — is it really me being called? Caravaggio uses the harsh chiaroscuro of a street scene rather than any heavenly glow. The painting hangs in the Contarelli Chapel of the French national church in Rome and is free to visit.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Calling_of_Saint_Matthew_(Caravaggio)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Caravaggio_%E2%80%94_The_Calling_of_Saint_Matthew.jpg/330px-Caravaggio_%E2%80%94_The_Calling_of_Saint_Matthew.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
   },
@@ -1269,6 +1445,8 @@ const PAINTINGS = [
     dimensions: "118 × 279 cm",
     description: "Two women flank a fountain — one clothed and earthly, one nude and divine, with a naked Cupid between them. Despite the name (coined in the 18th century), which figure represents sacred and which profane is deliberately ambiguous. The real subject may be two aspects of the same ideal, debated since the Italian Renaissance.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Sacred_and_Profane_Love_(Titian)",
+    grokUrl: "https://grokipedia.com/page/Sacred_and_Profane_Love",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Amor_sacro_e_amor_profano_02.jpg/330px-Amor_sacro_e_amor_profano_02.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
   },
@@ -1283,6 +1461,8 @@ const PAINTINGS = [
     dimensions: "265 × 196 cm",
     description: "The Virgin Mary steps from a parted cloud holding the Christ child, flanked by Saint Sixtus and Saint Barbara. The two cherubs (putti) at the bottom, resting their chins on their hands and looking upward, have become the most reproduced detail in art history — appearing on countless mugs, calendars, and gifts worldwide. Raphael painted this for the monks of Piacenza.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Sistine_Madonna",
+    grokUrl: "https://grokipedia.com/page/Sistine_Madonna",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/RAFAEL_-_Madonna_Sixtina_%28Gem%C3%A4ldegalerie_Alter_Meister%2C_Dresden%2C_1513-14._%C3%93leo_sobre_lienzo%2C_265_x_196_cm%29.jpg/330px-RAFAEL_-_Madonna_Sixtina_%28Gem%C3%A4ldegalerie_Alter_Meister%2C_Dresden%2C_1513-14._%C3%93leo_sobre_lienzo%2C_265_x_196_cm%29.jpg",
     location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
   },
@@ -1313,6 +1493,8 @@ const PAINTINGS = [
     dimensions: "54 × 81 cm",
     description: "A large human eye whose iris has been replaced by a cloudy blue sky. The pupil at center becomes a void or eclipse. Magritte questioned the reliability of vision — the eye that appears to see is itself a window onto an imagined world, making it a 'false mirror.' MoMA acquired it in 1936.",
     movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_False_Mirror",
+    grokUrl: "https://grokipedia.com/page/The_False_Mirror",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/The_False_Mirror.jpg/330px-The_False_Mirror.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Museum of Modern Art (MoMA)" }
   },
@@ -1339,6 +1521,8 @@ const PAINTINGS = [
     dimensions: "220 × 289 cm",
     description: "Once thought to be a simple genre scene of a royal tapestry workshop, scholars now read it as a complex allegory of the myth of Arachne. The foreground spinners are the Fates; the brightly lit background tableau enacts Athena's punishment of Arachne. It is Velázquez's most intellectually layered late work.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Las_Hilanderas",
+    grokUrl: "https://grokipedia.com/page/Las_Hilanderas",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Velazquez-las_hilanderas.jpg/330px-Velazquez-las_hilanderas.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -1365,6 +1549,8 @@ const PAINTINGS = [
     dimensions: "100 × 81 cm",
     description: "Picasso made Gertrude Stein sit for over 80 sessions, then repainted the face after encountering Iberian masks. The masklike, flattened face prefigures Cubism by a year. When critics said the portrait looked nothing like her, Picasso replied: 'It will.' Stein bequeathed it to the Met on her death in 1946.",
     movement: "Cubism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Gertrude_Stein_(Picasso)",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_Gertrude_Stein",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/GertrudeStein.JPG/330px-GertrudeStein.JPG",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
@@ -1377,6 +1563,8 @@ const PAINTINGS = [
     dimensions: "119 × 162 cm",
     description: "Part of Bruegel's series on the Months, this panoramic summer scene shows peasants resting under a pear tree while others work the wheat-covered hillside. It is one of the earliest pure landscape paintings without a biblical or mythological subject, and one of five surviving panels from the series.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Harvesters_(Bruegel)",
+    grokUrl: "https://grokipedia.com/page/The_Harvesters",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Pieter_Bruegel_the_Elder-_The_Harvesters_-_Google_Art_Project.jpg/330px-Pieter_Bruegel_the_Elder-_The_Harvesters_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
@@ -1388,6 +1576,8 @@ const PAINTINGS = [
     medium: "Oil on cardboard",
     dimensions: "40 × 32 cm",
     description: "One of Van Gogh's finest self-portraits, painted in Paris during his immersion in Impressionism. The broken brushwork and vivid complementary colors — orange beard against blue-green background — show his rapid absorption of the new movement. He completed over 35 self-portraits between 1886 and 1889.",
+    wikiUrl: "https://en.wikipedia.org/wiki/Self-Portrait_with_Straw_Hat_(Van_Gogh,_1887)",
+    grokUrl: "https://grokipedia.com/page/Self-Portrait_with_Straw_Hat",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Van_Gogh_Self-Portrait_with_Straw_Hat_1887-Metropolitan.jpg/330px-Van_Gogh_Self-Portrait_with_Straw_Hat_1887-Metropolitan.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
@@ -1414,6 +1604,8 @@ const PAINTINGS = [
     dimensions: "243 × 246 cm",
     description: "Leonardo abandoned this monumental commission before completing it when he left Florence for Milan. The swirling crowd of figures around the Virgin and Child — including what may be Leonardo's own portrait at far right — anticipates the dynamic compositions of the High Renaissance. It remains one of the most studied unfinished works in art history.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Adoration_of_the_Magi_(Leonardo)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Adoration_of_the_Magi_%28Leonardo%29.jpg/330px-Adoration_of_the_Magi_%28Leonardo%29.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
@@ -1426,6 +1618,8 @@ const PAINTINGS = [
     dimensions: "98 × 85 cm",
     description: "A sensual adolescent Bacchus, god of wine, reclines and offers a glass to the viewer. The carafe reflects Caravaggio's studio and a tiny self-portrait. The fruit shows signs of rot — a Dutch-style memento mori. X-ray analysis revealed a self-portrait of Caravaggio in the upper-left corner, painted over.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Bacchus_(Caravaggio)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Baco%2C_por_Caravaggio.jpg/330px-Baco%2C_por_Caravaggio.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
@@ -1437,6 +1631,8 @@ const PAINTINGS = [
     medium: "Tempera on panel",
     dimensions: "47 × 66 cm (both panels)",
     description: "Federico da Montefeltro and his wife Battista Sforza are shown in profile against a luminous landscape — an innovation imported from Flemish portraiture. Federico's nose was once straight; it was broken in a tournament and his right eye lost. Piero always painted him from the left. Battista had died before the painting's completion.",
+    wikiUrl: "https://en.wikipedia.org/wiki/Diptych_of_Federico_da_Montefeltro_and_Battista_Sforza",
+    grokUrl: "https://grokipedia.com/page/Diptych_of_the_Duke_and_Duchess_of_Urbino",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Piero_della_Francesca_044.jpg/330px-Piero_della_Francesca_044.jpg",
     location: { continent: "Europe", country: "Italy", city: "Florence", museum: "Uffizi Gallery" }
   },
@@ -1463,6 +1659,8 @@ const PAINTINGS = [
     dimensions: "54 × 44 cm",
     description: "One of only two surviving Vermeer cityscapes, this intimate view of a Delft alley captures ordinary life with extraordinary stillness — a woman sewing in a doorway, children playing, another woman scrubbing in the passage. Recent research identified the building as a real almshouse on Vlamingstraat, demolished in 1661.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Little_Street",
+    grokUrl: "https://grokipedia.com/page/The_Little_Street",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Johannes_Vermeer_-_Gezicht_op_huizen_in_Delft%2C_bekend_als_%27Het_straatje%27_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_Gezicht_op_huizen_in_Delft%2C_bekend_als_%27Het_straatje%27_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
@@ -1475,6 +1673,8 @@ const PAINTINGS = [
     dimensions: "111 × 141 cm",
     description: "Three generations of a Dutch family eat, drink, smoke, and make music in boisterous disorder. The banner reads 'As the old sing, so twitter the young' — a Dutch proverb warning that children learn bad habits from parents. Steen, who ran a brewery and tavern, depicted moral chaos with gleeful irony.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Merry_Family",
+    grokUrl: "https://grokipedia.com/page/The_Merry_Family",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Jan_Steen_005.jpg/330px-Jan_Steen_005.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
@@ -1487,6 +1687,8 @@ const PAINTINGS = [
     dimensions: "191 × 279 cm",
     description: "Five sampling officials of the Amsterdam drapers' guild pause as if interrupted by the viewer's arrival — a stroke of compositional genius that creates an illusion of live interaction. Rembrandt was 56 and at the height of his powers. The man standing at center-left was added at a late stage, making the grouping asymmetrical and more dynamic.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/De_Staalmeesters",
+    grokUrl: "https://grokipedia.com/page/The_Syndics",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Rembrandt_-_De_Staalmeesters-_het_college_van_staalmeesters_%28waardijns%29_van_het_Amsterdamse_lakenbereidersgilde_-_Google_Art_Project.jpg/330px-Rembrandt_-_De_Staalmeesters-_het_college_van_staalmeesters_%28waardijns%29_van_het_Amsterdamse_lakenbereidersgilde_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Rijksmuseum" }
   },
@@ -1513,6 +1715,8 @@ const PAINTINGS = [
     dimensions: "100 × 66 cm",
     description: "A woman tenderly washes a child's feet in a basin, depicted from a radical high vantage point that flattens perspective in the manner of Japanese woodblock prints. Cassatt, the only American in the French Impressionist circle, focused her career on domestic scenes of women and children. This is considered her masterpiece.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Child%27s_Bath",
+    grokUrl: "https://grokipedia.com/page/The_Child%27s_Bath",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg/330px-Mary_Cassatt_-_The_Child%27s_Bath_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
@@ -1525,6 +1729,8 @@ const PAINTINGS = [
     dimensions: "60 × 100 cm",
     description: "One of Monet's most celebrated series, in which he painted the same haystacks in his Giverny fields under different light conditions — dawn, midday, foggy, twilight, snowy. The AIC holds the finest group of the 25 surviving canvases. Critics who had dismissed Monet's series method reversed their view after seeing these together in 1891.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Haystacks_(Monet_series)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Claude_Monet_-_Stacks_of_Wheat_%28End_of_Summer%29_-_1985.1103_-_Art_Institute_of_Chicago.jpg/330px-Claude_Monet_-_Stacks_of_Wheat_%28End_of_Summer%29_-_1985.1103_-_Art_Institute_of_Chicago.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
@@ -1537,6 +1743,8 @@ const PAINTINGS = [
     dimensions: "260 × 392 cm",
     description: "Matisse reworked this large canvas over seven years, transforming it from a pastoral Arcadian scene into one of the most severe and geometric paintings of his career. The influence of Cubism (which he resisted but could not ignore) pushed the four bathers toward abstraction. It is one of his most important transitional works.",
     movement: "Fauvism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Bathers_by_a_River",
+    grokUrl: "https://grokipedia.com/page/Bathers_by_a_River",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bathers_by_a_River.jpg/330px-Bathers_by_a_River.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
@@ -1549,6 +1757,8 @@ const PAINTINGS = [
     dimensions: "76 × 122 cm",
     description: "Two fishermen haul a net on a heaving gray sea, their small dory dwarfed by waves. Homer painted this after two years in a Northumberland fishing village, which transformed his work from illustrator of American genre scenes to painter of elemental struggles between humans and nature. The faceless, anonymous men convey universal labor.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Herring_Net",
+    grokUrl: "https://grokipedia.com/page/The_Herring_Net",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Winslow_Homer_-_The_Herring_Net_-_Google_Art_Project.jpg/330px-Winslow_Homer_-_The_Herring_Net_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Chicago", museum: "Art Institute of Chicago" }
   },
@@ -1575,6 +1785,8 @@ const PAINTINGS = [
     dimensions: "70 × 119 cm",
     description: "A newly married Suffolk couple pose in their estate: Robert Andrews stands casually, gun under arm and dog at his feet; Frances sits on a bench. The vast agricultural landscape behind them, stretching to a luminous sky, is as much a statement of land ownership as a wedding portrait. Frances's lap curiously holds an unfinished area — possibly meant for a baby.",
     movement: "Rococo",
+    wikiUrl: "https://en.wikipedia.org/wiki/Mr_and_Mrs_Andrews",
+    grokUrl: "https://grokipedia.com/page/Mr_and_Mrs_Andrews",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Thomas_Gainsborough_-_Mr_and_Mrs_Andrews.jpg/330px-Thomas_Gainsborough_-_Mr_and_Mrs_Andrews.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
@@ -1587,6 +1799,8 @@ const PAINTINGS = [
     dimensions: "69 × 174 cm",
     description: "Mars, god of war, sleeps in a deep post-coital slumber while Venus, goddess of love, watches alert and composed. Infant satyrs play with his armor — his power disarmed. The panel's extreme horizontal format suggests it decorated a chest or headboard for a Medici wedding. Wasps in the upper corner may encode the Vespucci family crest.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Venus_and_Mars_(Botticelli)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Venus_and_Mars_National_Gallery.jpg/330px-Venus_and_Mars_National_Gallery.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
@@ -1599,6 +1813,8 @@ const PAINTINGS = [
     dimensions: "141 × 196 cm",
     description: "The risen Christ, depicted beardless and youthful, blesses bread at an inn, triggering sudden recognition in two disciples. Their arms thrust outward in astonishment — one reaching toward us, breaking the picture plane. The still life on the table, painted with stunning detail, includes a fruit basket overhanging the edge, casting a real shadow.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Supper_at_Emmaus_(Caravaggio)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Supper_at_Emmaus-Caravaggio_%281601%29.jpg/330px-Supper_at_Emmaus-Caravaggio_%281601%29.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
@@ -1611,6 +1827,8 @@ const PAINTINGS = [
     dimensions: "93 × 80 cm",
     description: "Rembrandt presents himself in elegant Renaissance dress, his arm resting on a ledge — a pose borrowed directly from Raphael's portrait of Baldassare Castiglione (which Rembrandt had sketched at auction that year). It is an act of deliberate self-elevation, claiming kinship with the Old Masters, painted at the peak of his commercial success.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Self-Portrait_at_the_Age_of_34",
+    grokUrl: "https://grokipedia.com/page/Self-Portrait_at_the_Age_of_34",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Rembrandt%2C_Self_Portrait_at_the_Age_of_34.jpg/330px-Rembrandt%2C_Self_Portrait_at_the_Age_of_34.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "National Gallery" }
   },
@@ -1625,6 +1843,8 @@ const PAINTINGS = [
     dimensions: "95 × 73 cm",
     description: "The fourth and final version of Van Gogh's sunflower series, with a turquoise background unique among the series. He painted sunflowers to decorate Gauguin's room at the Yellow House in Arles, viewing them as symbols of gratitude and devotion. This version was made as a copy after the two artists' catastrophic falling out.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Sunflowers_(Van_Gogh_series)",
+    grokUrl: "https://grokipedia.com/page/Sunflowers",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Vincent_Willem_van_Gogh_128.jpg/330px-Vincent_Willem_van_Gogh_128.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
@@ -1637,6 +1857,8 @@ const PAINTINGS = [
     dimensions: "64 × 80 cm",
     description: "A peasant sower strides across a plowed field at sunset, the enormous yellow sun behind him dividing the composition diagonally. Inspired by Millet's sower engravings, Van Gogh transformed the subject into a radiant icon of labor and spiritual renewal. He made over 30 drawings and paintings of sowers throughout his career.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Sower_(Van_Gogh)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Sower_at_Sunset_-_Vincent_Van_Gogh.jpg/330px-Sower_at_Sunset_-_Vincent_Van_Gogh.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
@@ -1649,6 +1871,8 @@ const PAINTINGS = [
     dimensions: "44 × 38 cm",
     description: "The most celebrated of Van Gogh's Paris self-portraits, showing him in a grey hat against a swirling blue background of short, comma-like brushstrokes. He is experimenting with the Pointillist technique he had just encountered through Seurat and Signac. The intense blue eyes stare with unsettling directness.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Self-Portrait_with_Grey_Felt_Hat",
+    grokUrl: "https://grokipedia.com/page/Self-Portrait_with_Grey_Felt_Hat",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Van_Gogh_Self-Portrait_with_Grey_Felt_Hat_1886-87_Rijksmuseum.jpg/330px-Van_Gogh_Self-Portrait_with_Grey_Felt_Hat_1886-87_Rijksmuseum.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
@@ -1661,6 +1885,8 @@ const PAINTINGS = [
     dimensions: "72 × 92 cm",
     description: "Van Gogh's depiction of his rented home in Arles — the right wing of the yellow building — on a blazing Provençal afternoon. He moved here dreaming of founding an artists' community, the Studio of the South. The painting documents the actual house where he invited Gauguin, where their friendship unraveled, and where he severed his own ear.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Yellow_House",
+    grokUrl: "https://grokipedia.com/page/The_Yellow_House",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg/330px-Vincent_van_Gogh_-_The_yellow_house_%28%27The_street%27%29.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
@@ -1673,6 +1899,8 @@ const PAINTINGS = [
     dimensions: "33 × 24 cm",
     description: "A skeleton smokes a cigarette in this sardonic student exercise painted while Van Gogh studied anatomy at the Antwerp Academy. It parodies both the memento mori tradition and the self-satisfied bourgeois smokers of Dutch genre painting. One of his earliest oil paintings on canvas and a rare work of dark humor from an artist better known for pathos.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Skull_of_a_Skeleton_with_Burning_Cigarette",
+    grokUrl: "https://grokipedia.com/page/Skull_of_a_Skeleton_with_Burning_Cigarette",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Vincent_van_Gogh_-_Head_of_a_Skeleton_with_a_Burning_Cigarette_-_VGM_F212.jpg/330px-Vincent_van_Gogh_-_Head_of_a_Skeleton_with_a_Burning_Cigarette_-_VGM_F212.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
@@ -1685,6 +1913,8 @@ const PAINTINGS = [
     dimensions: "65 × 82 cm",
     description: "During a three-day trip to the Mediterranean coast, Van Gogh worked in a frenzy, making drawings and this radiant oil of colorful boats on the beach. The flat water, intense blue sky, and bold complementary colors anticipate the expressionist phase to come. He wrote to Theo: 'The Mediterranean has the colors of mackerel — changeable, I mean.'",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Fishing_Boats_on_the_Beach_at_Saintes-Maries-de-la-Mer",
+    grokUrl: "https://grokipedia.com/page/Fishing_Boats_on_the_Beach_at_Saintes-Maries",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WLANL_-_Minke_Wagenaar_-_Vincent_van_Gogh_1888_Fishing_boats_on_the_beach_at_Les_Saintes-Maries-de-la-Mer.jpg/330px-WLANL_-_Minke_Wagenaar_-_Vincent_van_Gogh_1888_Fishing_boats_on_the_beach_at_Les_Saintes-Maries-de-la-Mer.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "Amsterdam", museum: "Van Gogh Museum" }
   },
@@ -1711,6 +1941,8 @@ const PAINTINGS = [
     dimensions: "181 × 221 cm",
     description: "A tablecloth and wallpaper with swirling blue-and-white vine patterns merge seamlessly, collapsing the distinction between surface and space. The entire room glows with saturated red. Also commissioned by Shchukin, it was originally painted in blue (then green) before Matisse demanded to repaint it red. A radical assertion that color creates its own reality.",
     movement: "Fauvism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Red_Room_(Matisse)",
+    grokUrl: "https://grokipedia.com/page/The_Red_Room",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Henri_Matisse_-_The_Red_Room-1908.jpg/330px-Henri_Matisse_-_The_Red_Room-1908.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
@@ -1723,6 +1955,8 @@ const PAINTINGS = [
     dimensions: "48 × 31 cm",
     description: "One of Leonardo's earliest surviving paintings, showing the young Virgin playing with the Christ child over a flower. The warm, pyramidal composition and the natural, almost playful interaction between mother and child depart radically from the stiff Byzantine and early Renaissance conventions Leonardo had been trained in. The Hermitage acquired it in 1914.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Benois_Madonna",
+    grokUrl: "https://grokipedia.com/page/Benois_Madonna",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Madonna_benois_01.jpg/330px-Madonna_benois_01.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
@@ -1735,6 +1969,8 @@ const PAINTINGS = [
     dimensions: "108 × 86 cm",
     description: "An elderly man in a red robe sits in quiet contemplation, his age and dignity rendered with Rembrandt's signature loose, luminous handling of paint. The identity of the sitter is unknown, but the psychological depth — the sense of a whole life behind those eyes — exemplifies why Rembrandt's late portraits are considered the apex of Western portraiture.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_an_Old_Man_in_Red",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_an_Old_Man_in_Red",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Rembrandt_Harmensz._van_Rijn_-_Portrait_of_an_Old_Man_in_Red.jpg/330px-Rembrandt_Harmensz._van_Rijn_-_Portrait_of_an_Old_Man_in_Red.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
@@ -1747,6 +1983,8 @@ const PAINTINGS = [
     dimensions: "92 × 73 cm",
     description: "A Tahitian woman reaches for tropical fruit in a lush, flattened landscape of bold colors. Painted during Gauguin's first Tahitian stay, it embodies his rejection of European civilization in favor of what he imagined as a primal paradise. The Hermitage holds one of the world's finest Gauguin collections from Shchukin's systematic patronage.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Woman_Picking_Fruit_(Gauguin)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Paul_Gauguin_-_D%27ou_venons-nous.jpg/330px-Paul_Gauguin_-_D%27ou_venons-nous.jpg",
     location: { continent: "Europe", country: "Russia", city: "Saint Petersburg", museum: "State Hermitage Museum" }
   },
@@ -1785,6 +2023,8 @@ const PAINTINGS = [
     dimensions: "45 × 40 cm",
     description: "A young woman in a yellow jacket trimmed with white fur pauses from writing to look up at the viewer. The interrupted letter and her relaxed, open expression suggest a love letter. The composition is one of Vermeer's most direct — no crowded props, no window shown — just intimate psychological contact across a simple desk.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/A_Lady_Writing",
+    grokUrl: "https://grokipedia.com/page/A_Lady_Writing",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Lady_Writing_by_Johannes_Vermeer%2C_1665-6.png/330px-A_Lady_Writing_by_Johannes_Vermeer%2C_1665-6.png",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
@@ -1797,6 +2037,8 @@ const PAINTINGS = [
     dimensions: "40 × 36 cm",
     description: "A young woman holds a balance scale with empty pans while a painting of the Last Judgment hangs directly behind her — a moralizing juxtaposition linking earthly measurement to divine judgment. The balance appears to hold nothing, suggesting spiritual equilibrium rather than material weighing. X-ray analysis reveals Vermeer added the Last Judgment deliberately.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Woman_Holding_a_Balance",
+    grokUrl: "https://grokipedia.com/page/Woman_Holding_a_Balance",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Johannes_Vermeer_-_Woman_Holding_a_Balance_-_Google_Art_Project.jpg/330px-Johannes_Vermeer_-_Woman_Holding_a_Balance_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
@@ -1809,6 +2051,8 @@ const PAINTINGS = [
     dimensions: "182 × 230 cm",
     description: "A group of sailors in a small boat frantically attempt to rescue a naked young man from the jaws of a shark in Havana harbor. The scene is based on a real 1749 incident: Brook Watson, a 14-year-old orphan, lost his leg to a shark and survived. Watson commissioned this painting as an adult and left it to Christ's Hospital school on his death.",
     movement: "Neoclassicism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Watson_and_the_Shark",
+    grokUrl: "https://grokipedia.com/page/Watson_and_the_Shark",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Watsonandtheshark-original.jpg/330px-Watsonandtheshark-original.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
@@ -1821,6 +2065,8 @@ const PAINTINGS = [
     dimensions: "137 cm diameter",
     description: "A tondo (round painting) of exceptional richness, teeming with figures, horses, and processions wrapping around the circular frame. Begun by Fra Angelico in the convent of San Marco, it was completed by Fra Filippo Lippi after Angelico's death. The NGA has identified over 200 individual figures. It was in the Medici collection for a century.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Adoration_of_the_Magi_(Fra_Angelico_and_Fra_Filippo_Lippi)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Fra_Angelico%2C_Fra_Filippo_Lippi%2C_The_Adoration_of_the_Magi.jpg/330px-Fra_Angelico%2C_Fra_Filippo_Lippi%2C_The_Adoration_of_the_Magi.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
@@ -1833,6 +2079,8 @@ const PAINTINGS = [
     dimensions: "170 × 188 cm",
     description: "Painted for Alfonso d'Este's private camerino in Ferrara, this shows the gods feasting from ancient bowls while nymphs and satyrs mingle. Bellini painted it at 84, his last major work. After Bellini's death, Titian repainted the landscape background three times to harmonize with canvases he was adding to the same room.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Feast_of_the_Gods_(Bellini%2FTitian)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/FeastofthegodsFXD.jpg/330px-FeastofthegodsFXD.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
@@ -1845,6 +2093,8 @@ const PAINTINGS = [
     dimensions: "224 × 330 cm",
     description: "Daniel stands calm among seven lions in a dark pit, hands clasped in prayer, while an angel above reassures him. Rubens painted the lions from life at the menagerie of Archduke Albert in Brussels. The animals are rendered with zoological accuracy — their power palpable — making Daniel's serenity all the more remarkable.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Daniel_in_the_Lions%27_Den_(Rubens)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Sir_Peter_Paul_Rubens_-_Daniel_in_the_Lions%27_Den_-_Google_Art_Project.jpg/330px-Sir_Peter_Paul_Rubens_-_Daniel_in_the_Lions%27_Den_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "National Gallery of Art" }
   },
@@ -1871,6 +2121,8 @@ const PAINTINGS = [
     dimensions: "236 × 339 cm",
     description: "A monumental life-size bull stands in a meadow, staring at the viewer with forthright frankness. It was the most talked-about painting in 17th-century Europe — celebrated for its unprecedented realism and extraordinary size. Potter was only 22 when he painted it. Napoleon had it transported to Paris as war booty; it required its own custom wagon.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Bull_(Potter)",
+    grokUrl: "https://grokipedia.com/page/The_Bull",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Paulus_Potter_-_The_Bull_-_136_-_Mauritshuis.jpg/330px-Paulus_Potter_-_The_Bull_-_136_-_Mauritshuis.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
@@ -1883,6 +2135,8 @@ const PAINTINGS = [
     dimensions: "130 × 164 cm",
     description: "Saul, tormented by an evil spirit, listens as young David plays the harp to soothe him. Rembrandt shows Saul raising a curtain to his face — half obscuring himself — in a gesture of ambivalent tenderness and encroaching madness. The spear in his left hand betrays his murderous jealousy. The psychological complexity is extraordinary.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Saul_and_David_(Rembrandt)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Rembrandt_Saul_and_David.jpg/330px-Rembrandt_Saul_and_David.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
@@ -1895,6 +2149,8 @@ const PAINTINGS = [
     dimensions: "128 × 180 cm",
     description: "The goddess Diana rests with her nymphs after the hunt, surrounded by game and dogs. Rubens, who had just returned from Italy, synthesizes Titian's voluptuous nudes with his own Flemish energy. The cool, silvery light on the flesh tones contrasts with the warm, ruddy dogs and game. The freshness of open-air setting is remarkable.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Diana_and_Her_Nymphs_(Rubens)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Peter_Paul_Rubens_-_Diana_and_Callisto_-_WGA20326.jpg/330px-Peter_Paul_Rubens_-_Diana_and_Callisto_-_WGA20326.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
@@ -1907,6 +2163,8 @@ const PAINTINGS = [
     dimensions: "74 × 59 cm",
     description: "An extravagant floral bouquet spilling insects, dewdrops, and decaying petals — flowers from all seasons assembled in a single impossible arrangement. De Heem was the supreme master of Dutch flower painting, spending years in Antwerp to access the finest and rarest specimens. The perfection and decay coexisting in one image make it a meditation on time.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Vase_with_Flowers_(de_Heem)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Vase_of_Flowers_painting_by_Jan_Davidsz._de_Heem_Mauritshuis_1099.jpg/330px-Vase_of_Flowers_painting_by_Jan_Davidsz._de_Heem_Mauritshuis_1099.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
@@ -1933,6 +2191,8 @@ const PAINTINGS = [
     dimensions: "48 × 75 cm",
     description: "Sailboats on the Seine at Argenteuil dissolve in shimmering reflections, their hulls and the sky above them almost indistinguishable in the broken water. Monet moved to Argenteuil in 1871 and spent seven years painting the river's changing light. This early work already shows the full Impressionist vocabulary: broken brushwork, pure color, no outlining.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Regatta_at_Argenteuil",
+    grokUrl: "https://grokipedia.com/page/Regatta_at_Argenteuil",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Claude_Monet_042.jpg/330px-Claude_Monet_042.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Marmottan Monet Museum" }
   },
@@ -1945,6 +2205,8 @@ const PAINTINGS = [
     dimensions: "73 × 92 cm",
     description: "London's railway bridge dissolves in orange-violet fog, barely distinguishable from the sky and river. Monet made three extended visits to London and produced nearly 100 canvases of the Thames, working on dozens simultaneously to capture different light conditions. 'Without fog, London would not be beautiful,' he said.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Charing_Cross_Bridge%2C_Fog",
+    grokUrl: "https://grokipedia.com/page/Charing_Cross_Bridge_Fog",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Monet_-_Charing_Cross_Bridge_Fog_on_the_Thames%2C_1903.jpg/330px-Monet_-_Charing_Cross_Bridge_Fog_on_the_Thames%2C_1903.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Marmottan Monet Museum" }
   },
@@ -1997,6 +2259,8 @@ const PAINTINGS = [
     dimensions: "113 × 93 cm",
     description: "Mary Magdalen sits alone with a candle, its flame casting the only light in the composition, her hand resting on a skull — meditating on mortality and redemption. La Tour's nocturnal candlelight scenes are among the most meditative in Western art. He was largely forgotten after his death and only rediscovered in the 20th century.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Penitent_Magdalene_(La_Tour)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Georges_de_La_Tour_-_Magdalen_of_Night_Light_-_WGA12337.jpg/330px-Georges_de_La_Tour_-_Magdalen_of_Night_Light_-_WGA12337.jpg",
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
   },
@@ -2009,6 +2273,8 @@ const PAINTINGS = [
     dimensions: "46 × 31 cm",
     description: "One of 60 panels documenting the Great Migration of African Americans from the rural South to the urban North. Lawrence used flat, simplified shapes and bold colors to tell a collective story of hardship and hope. The series was split between MoMA and the Phillips Collection after Fortune magazine published it in 1941. It is one of the most important American narrative art works.",
     movement: "Modernism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Migration_Series",
+    grokUrl: null,
     imageUrl: null,
     location: { continent: "North America", country: "USA", city: "Washington DC", museum: "Phillips Collection" }
   },
@@ -2035,6 +2301,8 @@ const PAINTINGS = [
     dimensions: "110 × 140 cm",
     description: "Schiele painted the medieval Bohemian town of Krumau (his mother's birthplace) repeatedly from above, abstracting the tightly packed houses into angular, encrusted forms that seem to press against each other in anxiety. The palette of ochres, greens, and browns creates a landscape of psychological unease. The Neue Galerie holds the premier collection of Vienna 1900 art outside Europe.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Houses_in_Krumau",
+    grokUrl: "https://grokipedia.com/page/Houses_in_Krumau",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Egon_Schiele_-_Krumau_-_Crescent_of_Houses_%28The_small_City_V%29_-_Google_Art_Project.jpg/330px-Egon_Schiele_-_Krumau_-_Crescent_of_Houses_%28The_small_City_V%29_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
   },
@@ -2061,6 +2329,8 @@ const PAINTINGS = [
     dimensions: "62 × 77 cm",
     description: "Zeus, disguised as a white bull, carries the Phoenician princess Europa into the sea as her companions reach out in horror from the shore. The water froths around the bull's legs; Europa clutches his horns. At only 26, Rembrandt's command of dramatic narrative, light, and expression was already complete. The Getty acquired it in 1995.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Abduction_of_Europa_(Rembrandt)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Rembrandt_-_The_Abduction_of_Europa_-_Google_Art_Project.jpg/330px-Rembrandt_-_The_Abduction_of_Europa_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Los Angeles", museum: "J. Paul Getty Museum" }
   },
@@ -2099,6 +2369,8 @@ const PAINTINGS = [
     dimensions: "201 × 223 cm",
     description: "Three masked Commedia dell'Arte figures — Pierrot, Harlequin, and a friar — play clarinet, guitar, and accordion in a shallow, stage-like space of interlocking flat planes. One of Picasso's largest and most celebrated Synthetic Cubist paintings, it was a farewell to Cubism as he moved toward Neoclassicism. A second nearly identical version is at MoMA.",
     movement: "Cubism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Three_Musicians",
+    grokUrl: "https://grokipedia.com/page/Three_Musicians",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Picasso_three_musicians_moma_2006.jpg/500px-Picasso_three_musicians_moma_2006.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
   },
@@ -2111,6 +2383,8 @@ const PAINTINGS = [
     dimensions: "244 × 198 cm",
     description: "The eminent surgeon Samuel Gross pauses a thigh operation to address his students, his bloody scalpel in hand, while a distraught woman — the patient's relative — covers her face in the background. Rejected from the Philadelphia Centennial Exhibition as too bloody and controversial, it is now considered the greatest American painting of the 19th century.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Gross_Clinic",
+    grokUrl: "https://grokipedia.com/page/The_Gross_Clinic",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Thomas_Eakins%2C_American_-_Portrait_of_Dr._Samuel_D._Gross_%28The_Gross_Clinic%29_-_Google_Art_Project.jpg/330px-Thomas_Eakins%2C_American_-_Portrait_of_Dr._Samuel_D._Gross_%28The_Gross_Clinic%29_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Philadelphia Museum of Art" }
   },
@@ -2137,6 +2411,8 @@ const PAINTINGS = [
     dimensions: "73 × 92 cm",
     description: "One of Cézanne's final views of the mountain that dominated his Provençal landscape, painted from his studio on the Lauves hill. The mountain dissolves into crystalline planes of green, blue, and ochre that no longer describe but analyze. Cézanne painted this subject over 60 times. The Barnes holds multiple Cézannes, forming one of the finest collections anywhere.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Mont_Sainte-Victoire_(Cézanne_series)",
+    grokUrl: "https://grokipedia.com/page/Mont_Sainte-Victoire",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Paul_C%C3%A9zanne_-_Montagne_Saint-victoire_-_Google_Art_Project.jpg/330px-Paul_C%C3%A9zanne_-_Montagne_Saint-victoire_-_Google_Art_Project.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
   },
@@ -2149,6 +2425,8 @@ const PAINTINGS = [
     dimensions: "200 × 250 cm",
     description: "Three nude models pose in Seurat's studio — seen from front, side, and back — with his own large painting 'A Sunday on La Grande Jatte' visible on the wall behind them. The contrast between the clothed Parisians in the background work and the unclothed models in the studio is pointed. A smaller version is at the Barnes; the Merion version is the largest.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Les_Poseuses",
+    grokUrl: "https://grokipedia.com/page/Les_Poseuses",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Georges_Seurat_-_Models_%28Poseuses%29_-_BF811_-_Barnes_Foundation.jpg/330px-Georges_Seurat_-_Models_%28Poseuses%29_-_BF811_-_Barnes_Foundation.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
   },
@@ -2327,6 +2605,8 @@ const PAINTINGS = [
     dimensions: "94 × 74 cm (each panel)",
     description: "Three screaming, writhing figures on an orange ground — identified as the Eumenides (Greek Furies) — form a triptych of visceral horror. When shown in 1945, it shocked a London emerging from war. Bacon cited Grünewald's Isenheim Altarpiece and Picasso's Guernica as inspirations. It established his career and remains the most important British painting of the 20th century.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Three_Studies_for_Figures_at_the_Base_of_a_Crucifixion",
+    grokUrl: "https://grokipedia.com/page/Three_Studies_for_Figures_at_the_Base_of_a_Crucifixion",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/1/11/Three_Studies_for_Figures_at_the_Base_of_a_Crucifixion.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
@@ -2339,6 +2619,8 @@ const PAINTINGS = [
     dimensions: "287 × 288 cm",
     description: "In his late eighties and confined to a wheelchair, Matisse created his greatest works with scissors and painted paper — a process he called 'drawing with scissors.' The Snail is a near-abstract spiral of colored rectangles. Matisse described it as his most complete rendering of color relationships, and declared the cutouts his best work.",
     movement: "Fauvism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Snail_(Matisse)",
+    grokUrl: "https://grokipedia.com/page/The_Snail",
     imageUrl: null,
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
@@ -2351,6 +2633,8 @@ const PAINTINGS = [
     dimensions: "51 × 78 cm",
     description: "On the left, Narcissus kneels gazing at his reflection; on the right, a stone hand holds an egg from which a narcissus flower blooms — the same pose transformed. Dalí based the composition on his own 'paranoiac-critical method,' using double images to render the myth of obsessive self-love and death. He brought the painting when he visited Freud in London.",
     movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Metamorphosis_of_Narcissus",
+    grokUrl: "https://grokipedia.com/page/Metamorphosis_of_Narcissus",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Metamorphosis_of_Narcissus.jpg/330px-Metamorphosis_of_Narcissus.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
@@ -2365,6 +2649,8 @@ const PAINTINGS = [
     dimensions: "81 × 65 cm",
     description: "A young woman on a swing kicks her shoe toward a hidden admirer below while her oblivious husband (or chaperone) pulls the rope from behind. It is the defining image of Rococo frivolity — all pink, powder blue, and garden lushness. The Baron de Saint-Julien commissioned it to show his mistress. The shoe flying toward the young man below leaves nothing to interpretation.",
     movement: "Rococo",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Swing_(Renoir)",
+    grokUrl: "https://grokipedia.com/page/The_Swing",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Joean_Honor%C3%A9_Fragonard_-_The_Swing.jpg/330px-Joean_Honor%C3%A9_Fragonard_-_The_Swing.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
   },
@@ -2377,6 +2663,8 @@ const PAINTINGS = [
     dimensions: "175 × 189 cm",
     description: "One of Titian's celebrated 'poesie' (narrative paintings) for Philip II of Spain, showing Perseus descending from the sky to rescue the chained Andromeda from a sea monster. Titian painted the flesh with the loose, layered technique of his late period — surfaces that seem to breathe. Rubens copied it and declared Titian the supreme colorist in history.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Perseus_and_Andromeda_(Titian)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Perseo_y_Andr%C3%B3meda%2C_por_Tiziano.jpg/330px-Perseo_y_Andr%C3%B3meda%2C_por_Tiziano.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
   },
@@ -2389,6 +2677,8 @@ const PAINTINGS = [
     dimensions: "83 × 104 cm",
     description: "Four allegorical figures — Poverty, Labor, Wealth, and Pleasure — dance in a ring while Father Time plays his lyre and two putti blow bubbles. The circular dance suggests the inevitability of fortune's wheel. Anthony Powell used it as the title and controlling metaphor for his 12-novel sequence. It is the Wallace Collection's most beloved painting.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/A_Dance_to_the_Music_of_Time_(Poussin)",
+    grokUrl: "https://grokipedia.com/page/A_Dance_to_the_Music_of_Time",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/The_dance_to_the_music_of_time_c._1640.jpg/330px-The_dance_to_the_music_of_time_c._1640.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
   },
@@ -2401,6 +2691,8 @@ const PAINTINGS = [
     dimensions: "94 × 123 cm",
     description: "A panoramic view of Rubens's own estate at Het Steen in Flanders after a summer storm, a rainbow arching over the fertile lowland. Painted in the final years of his life for his own pleasure, it is one of the first landscapes in Western art made entirely for private enjoyment. The breadth of sky and earth shows a new relationship between humans and nature.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Rainbow_Landscape",
+    grokUrl: "https://grokipedia.com/page/The_Rainbow_Landscape",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Peter_Paul_Rubens_-_Landscape_with_a_Rainbow_-_WGA20411.jpg/330px-Peter_Paul_Rubens_-_Landscape_with_a_Rainbow_-_WGA20411.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
   },
@@ -2427,6 +2719,8 @@ const PAINTINGS = [
     dimensions: "178 × 198 cm",
     description: "A figure of Death — dark, patterned with crosses and skulls — confronts a mass of naked, intertwined human forms representing Life — sensuous, decorated with flowers. The two halves do not interact but are locked in eternal opposition. Klimt reworked it significantly after 1911, adding the golden background and modifying the life figures.",
     movement: "Art Nouveau",
+    wikiUrl: "https://en.wikipedia.org/wiki/Death_and_Life_(Klimt)",
+    grokUrl: "https://grokipedia.com/page/Death_and_Life",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Gustav_Klimt_-_Death_and_Life_-_Google_Art_Project.jpg/330px-Gustav_Klimt_-_Death_and_Life_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
   },
@@ -2439,6 +2733,8 @@ const PAINTINGS = [
     dimensions: "153 × 161 cm",
     description: "Schiele's last great painting, left incomplete at his death at 28 — a seated father (himself), mother (Edith), and infant, painted after Edith's death in the Spanish flu epidemic of October 1918. He died three days after her. The tenderness of the image — so unlike his contorted nudes — marks a new phase of maturity that would never develop.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Family_(Schiele)",
+    grokUrl: "https://grokipedia.com/page/The_Family",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Egon_Schiele_-_Kauerndes_Menschenpaar_%28Die_Familie%29_-_4277_-_%C3%96sterreichische_Galerie_Belvedere.jpg/330px-Egon_Schiele_-_Kauerndes_Menschenpaar_%28Die_Familie%29_-_4277_-_%C3%96sterreichische_Galerie_Belvedere.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
   },
@@ -2451,6 +2747,8 @@ const PAINTINGS = [
     dimensions: "271 × 232 cm",
     description: "Napoleon on a rearing horse points the way across the Alps, his cloak billowing dramatically — a propaganda masterpiece ordered after the actual crossing, which Napoleon made on a mule. David made five versions; this first, painted for Spain, is considered the finest. The names 'Hannibal' and 'Charlemagne' are carved in the rocks — Bonaparte's chosen predecessors.",
     movement: "Neoclassicism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Napoleon_Crossing_the_Alps",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg/330px-David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
   },
@@ -2477,6 +2775,8 @@ const PAINTINGS = [
     dimensions: "114 × 164 cm",
     description: "A crowded barn wedding feast in which the bride sits blissful and passive while guests eat, servers carry dishes on a barn door used as a tray, and a bagpiper watches hungrily. Bruegel's paintings of peasant life are not condescending genre scenes but profound observations of communal existence — the energy, appetite, and joy of ordinary people.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Peasant_Wedding_(Bruegel)",
+    grokUrl: "https://grokipedia.com/page/The_Peasant_Wedding",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg/330px-Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
   },
@@ -2489,6 +2789,8 @@ const PAINTINGS = [
     dimensions: "67 × 51 cm",
     description: "A human face composed entirely of ripe summer fruits, vegetables, and grain — each item painted with botanical precision. Arcimboldo's composite heads for Emperor Maximilian II were first taken as humorous court diversions but have since been recognized as sophisticated visual puzzles engaging Renaissance theories of Nature and the grotesque. Dalí and the Surrealists claimed him as a forefather.",
     movement: "Mannerism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Summer_(Arcimboldo)",
+    grokUrl: "https://grokipedia.com/page/Summer",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Arcimboldo_-_Les_saisons_-_Le_printemps_-_Sans_cadre.jpg/330px-Arcimboldo_-_Les_saisons_-_Le_printemps_-_Sans_cadre.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
   },
@@ -2501,6 +2803,8 @@ const PAINTINGS = [
     dimensions: "123 × 144 cm",
     description: "Three men — one old with a white beard, one middle-aged in Eastern dress, one young — stand before a rocky landscape. Their identities have never been agreed upon: they may be the Three Magi, the three ages of man, Aristotle and his successors, or astrologers observing a cave. The ambiguity is deliberate — Giorgione pioneered paintings without clear narratives.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Three_Philosophers_(Giorgione)",
+    grokUrl: "https://grokipedia.com/page/The_Three_Philosophers",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Giorgione_-_Three_Philosophers_-_Google_Art_Project.jpg/330px-Giorgione_-_Three_Philosophers_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
   },
@@ -2527,6 +2831,8 @@ const PAINTINGS = [
     dimensions: "151 × 110 cm",
     description: "A naked adolescent girl sits upright on a bed, arms crossed over her groin in a gesture of vulnerable self-protection. An enormous dark shadow looms behind her on the wall — the shadow of anxiety, sexuality, and adulthood. Munch destroyed an earlier version; this is a reconstruction made from memory. It is one of the most psychologically uncomfortable paintings in Western art.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Puberty_(Munch)",
+    grokUrl: "https://grokipedia.com/page/Puberty",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Puberty_%281894-95%29_by_Edvard_Munch.jpg/330px-Puberty_%281894-95%29_by_Edvard_Munch.jpg",
     location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
   },
@@ -2539,6 +2845,8 @@ const PAINTINGS = [
     dimensions: "136 × 125 cm",
     description: "Three girls in white summer dresses lean over a wooden railing at Åsgårdstrand, gazing into dark water while a crescent moon hangs above the fjord. The composition — viewed from behind, no faces shown — creates a dreamlike distance. Munch painted this scene over 20 times across four decades. The National Museum holds the most exhibited version.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Girls_on_the_Pier",
+    grokUrl: "https://grokipedia.com/page/Girls_on_the_Pier",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Munch_Girls_on_the_pier.jpg/330px-Munch_Girls_on_the_pier.jpg",
     location: { continent: "Europe", country: "Norway", city: "Oslo", museum: "National Museum of Norway" }
   },
@@ -2565,6 +2873,8 @@ const PAINTINGS = [
     dimensions: "280 × 570 cm",
     description: "A single panel of the Sistine ceiling shows two scenes divided by the Tree of Knowledge: on the left, a serpent with a woman's torso offers the fruit to Adam and Eve; on the right, an angel drives the fallen couple from Paradise. The contrast between the lush garden and the barren landscape outside Eden is stark and haunting.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Temptation_of_Adam_and_Eve_(Michelangelo)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Michelangelo%2C_Fall_and_Expulsion_from_Garden_of_Eden_00.jpg/330px-Michelangelo%2C_Fall_and_Expulsion_from_Garden_of_Eden_00.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
   },
@@ -2577,6 +2887,8 @@ const PAINTINGS = [
     dimensions: "280 × 570 cm",
     description: "Painted in the first campaign of the Sistine ceiling, this panel shows the desperate scramble of humanity as the floodwaters rise — figures clinging to high ground, swimming, loading a boat. It is the most narratively complex panel on the ceiling, with dozens of figures in anguished motion. Michelangelo's figures here are smaller and more crowded than his later, more confident panels.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Flood_(Michelangelo)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/The_Deluge_after_restoration.jpg/330px-The_Deluge_after_restoration.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Sistine Chapel)" }
   },
@@ -2603,6 +2915,8 @@ const PAINTINGS = [
     dimensions: "670 cm wide",
     description: "Apollo plays the lira da braccio on Mount Parnassus surrounded by the nine Muses and the great poets — Homer, Dante, Virgil, Sappho, Ovid — ancient and modern combined. Raphael includes a self-portrait in the right foreground. The scene extends the program of the Stanza: as the Disputa represents Theology and the School of Athens Philosophy, Parnassus represents Poetry.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Parnassus_(Raphael)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Raphael_-_The_Parnassus.jpg/330px-Raphael_-_The_Parnassus.jpg",
     location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
   },
@@ -2629,6 +2943,8 @@ const PAINTINGS = [
     dimensions: "67 × 53 cm",
     description: "A pale, greenish young Caravaggio — possibly recovering from a horse-riding injury — poses as a sickly Bacchus, offering a cluster of grapes and a glass of wine. The grapes are realistic to the point of entomological scrutiny; leaves show insect damage. It is Caravaggio's first self-portrait and demonstrates his radical naturalism already fully formed.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Sick_Bacchus",
+    grokUrl: "https://grokipedia.com/page/Sick_Bacchus",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Sick_young_Bacchus_by_Caravaggio.jpg/330px-Sick_young_Bacchus_by_Caravaggio.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
   },
@@ -2641,6 +2957,8 @@ const PAINTINGS = [
     dimensions: "125 × 101 cm",
     description: "A melancholy David holds the severed head of Goliath — whose face is Caravaggio's own self-portrait, painted while he was a fugitive murderer seeking a papal pardon. The identification of the head as Caravaggio's face is universally accepted. He sent the painting to Cardinal Scipione Borghese, who was handling his pardon. He died of fever before it was granted.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/David_with_the_Head_of_Goliath_(Caravaggio)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Caravaggio_-_David_with_the_Head_of_Goliath_-_Vienna.jpg/330px-Caravaggio_-_David_with_the_Head_of_Goliath_-_Vienna.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
   },
@@ -2653,6 +2971,8 @@ const PAINTINGS = [
     dimensions: "292 × 211 cm",
     description: "The Madonna and the Christ child together crush the serpent underfoot while St. Anne watches. The figures are life-size and deeply human — the Madonna and child depicted without idealization, touching in their ordinariness. Rejected by its original patrons (who objected to the peasant realism), it was immediately purchased by Cardinal Borghese.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Madonna_dei_Palafrenieri",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Caravaggio_-_La_Madonna_dei_Palafrenieri%2C_1605%2C_110.jpg/330px-Caravaggio_-_La_Madonna_dei_Palafrenieri%2C_1605%2C_110.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
   },
@@ -2679,6 +2999,8 @@ const PAINTINGS = [
     dimensions: "108 × 175 cm",
     description: "The first monumental reclining nude in Western art — Venus asleep in a Venetian landscape, utterly at ease and unaware of being observed. Giorgione died of plague before completing it; Titian painted the landscape and drapery. Every subsequent reclining nude (Titian's Venus of Urbino, Manet's Olympia) descends from this revolutionary image.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Dresden_Venus",
+    grokUrl: "https://grokipedia.com/page/Sleeping_Venus",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Giorgione_-_Sleeping_Venus_-_Google_Art_Project_2.jpg/330px-Giorgione_-_Sleeping_Venus_-_Google_Art_Project_2.jpg",
     location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
   },
@@ -2691,6 +3013,8 @@ const PAINTINGS = [
     dimensions: "75 × 56 cm",
     description: "A Pharisee holds a coin toward Christ, who responds to the question 'Is it lawful to pay taxes to Caesar?' by pointing heavenward. Titian restricts the scene to two busts — the contrast between the scheming questioner and the serene Christ — making it one of the first large-scale two-figure devotional paintings. Augustus the Strong of Saxony acquired it in 1746 for Dresden.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Tribute_Money_(Titian)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Titian_-_The_Tribute_Money_-_Google_Art_Project.jpg/330px-Titian_-_The_Tribute_Money_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Germany", city: "Dresden", museum: "Gemäldegalerie Alte Meister" }
   },
@@ -2717,6 +3041,8 @@ const PAINTINGS = [
     dimensions: "323 × 343 cm",
     description: "A barely clothed executioner raises a sword over the prostrate Matthew while a crowd scatters in panic. Caravaggio painted himself as a witness in the background, staring out from the chaos. The scene's violence and naturalism — no halos, no heavenly glow, just flesh and fear — scandalized Rome and permanently altered the course of religious painting.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Martyrdom_of_Saint_Matthew_(Caravaggio)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/The_Martyrdom_of_Saint_Matthew-Caravaggio_%28c._1599-1600%29.jpg/330px-The_Martyrdom_of_Saint_Matthew-Caravaggio_%28c._1599-1600%29.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "San Luigi dei Francesi" }
   },
@@ -2767,6 +3093,8 @@ const PAINTINGS = [
     dimensions: "335 × 283 cm",
     description: "The greatest equestrian portrait of the Renaissance, painted to commemorate Charles V's victory over the Protestant Schmalkaldic League. Titian shows the Holy Roman Emperor in black armor, lance in hand, at dusk — invoking the Christian knight of legend. The work defined the conventions of royal equestrian portraiture for two centuries, directly influencing Velázquez and then Van Dyck.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Charles_V_at_M%C3%BChlberg",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Carlos_V_en_M%C3%BChlberg%2C_by_Titian%2C_from_Prado_in_Google_Earth.jpg/330px-Carlos_V_en_M%C3%BChlberg%2C_by_Titian%2C_from_Prado_in_Google_Earth.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2779,6 +3107,8 @@ const PAINTINGS = [
     dimensions: "175 × 193 cm",
     description: "The mythical inhabitants of the island of Andros celebrate a river of wine described in an ancient text by Philostratus. Titian's figures revel in a golden afternoon light — reclining, dancing, drinking — with a nude in the right foreground often compared to the Louvre's Sleeping Ariadne. Painted for the Este court in Ferrara, it is among the supreme achievements of Venetian pagan mythology painting.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Bacchanal_of_the_Andrians",
+    grokUrl: "https://grokipedia.com/page/Bacchanal_of_the_Andrians",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Bacanal_de_los_andrios.jpg/330px-Bacanal_de_los_andrios.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2791,6 +3121,8 @@ const PAINTINGS = [
     dimensions: "186 × 207 cm",
     description: "The goddess of love clings desperately to Adonis as he tears himself away to hunt — unaware she knows he will die. Titian chose to show Venus from behind, a radical compositional choice that turns an erotic spectacle into a meditation on futile love. The Prado holds the prime autograph version of a composition Titian replicated many times across Europe.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Venus_and_Adonis_(Titian)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Venus_and_Adonis_by_Titian.jpg/330px-Venus_and_Adonis_by_Titian.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2803,6 +3135,8 @@ const PAINTINGS = [
     dimensions: "221 × 181 cm",
     description: "Rubens' late masterpiece of the nude — three women, identified as the Charites of Greek mythology, embrace in a woodland clearing. With extraordinary intimacy, one of the figures has the features of his young second wife, Hélène Fourment. The painting is Rubens at his most private: painterly brushwork, warm flesh, and a lyrical ease that places it beyond his large allegorical productions.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Three_Graces_(Rubens)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/The_Three_Graces%2C_by_Peter_Paul_Rubens%2C_from_Prado_in_Google_Earth.jpg/330px-The_Three_Graces%2C_by_Peter_Paul_Rubens%2C_from_Prado_in_Google_Earth.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2815,6 +3149,8 @@ const PAINTINGS = [
     dimensions: "52 × 41 cm",
     description: "A 26-year-old Dürer presents himself as a fashionable young gentleman — Italian doublet, braided hair, gloves in hand — staring directly at the viewer with calm, almost arrogant confidence. The open window behind him frames an Alpine landscape. Dürer was the first Northern European artist to produce a systematic series of self-portraits, and this is his most famous.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Self-Portrait_(D%C3%BCrer,_1498)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Selbstportr%C3%A4t%2C_by_Albrecht_D%C3%BCrer%2C_from_Prado_in_Google_Earth.jpg/330px-Selbstportr%C3%A4t%2C_by_Albrecht_D%C3%BCrer%2C_from_Prado_in_Google_Earth.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2827,6 +3163,8 @@ const PAINTINGS = [
     dimensions: "209 × 81 cm each",
     description: "Dürer's largest and most ambitious paintings, executed on two tall panels after his second Italian journey. Adam and Eve stand in separate panels as ideal nude figures — Dürer's attempt to establish a canon of human proportion in the manner of the ancient Greeks. Yet there is nothing cold about them: Eve extends the apple with graceful curiosity while Adam reaches tentatively forward. The Prado pair is the only fully autograph painted version of the subject.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Adam_and_Eve_(D%C3%BCrer)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Albrecht_D%C3%BCrer_-_Adam_and_Eve_%28Prado%29_2.jpg/330px-Albrecht_D%C3%BCrer_-_Adam_and_Eve_%28Prado%29_2.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2839,6 +3177,8 @@ const PAINTINGS = [
     dimensions: "117 × 162 cm",
     description: "An army of skeletons wages total war on humanity. Across a scorched, smoking landscape, Death on a pale horse leads legions of the dead against kings, knights, lovers, and peasants alike — no rank or plea offers protection. One of the most terrifying paintings ever made, it compresses the medieval Dance of Death tradition into a panoramic vision of apocalyptic horror that feels disturbingly modern.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Triumph_of_Death",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Triumph_of_Death_Brueghel.jpg/330px-Triumph_of_Death_Brueghel.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2851,6 +3191,8 @@ const PAINTINGS = [
     dimensions: "97 × 190 cm",
     description: "The companion to The Naked Maja, this portrait shows the same woman — thought to be the Duchess of Alba — fully dressed in a white bolero jacket and yellow trousers in the style of a maja, a fashionable working-class woman. Both paintings were commissioned by Prime Minister Godoy and hung together, possibly on a hidden mechanism. The Clothed Maja has the stranger charge: a clothed figure that somehow feels more transgressive.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/La_maja_vestida",
+    grokUrl: "https://grokipedia.com/page/The_Clothed_Maja",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Goya_Maja_ubrana2.jpg/330px-Goya_Maja_ubrana2.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2863,6 +3205,8 @@ const PAINTINGS = [
     dimensions: "266 × 345 cm",
     description: "Painted with The Third of May 1808 as its companion, this canvas shows the uprising itself: Mamluk cavalry from Napoleon's Egyptian forces attacked by a frenzied Madrid crowd in the Puerta del Sol. Where The Third of May shows the aftermath — execution — this shows the chaos of revolt, bodies and horses churning together in desperate hand-to-hand combat. Together the two paintings form the founding monument of anti-war imagery.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Second_of_May_1808_(Goya)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/El_dos_de_mayo_de_1808_en_Madrid.jpg/330px-El_dos_de_mayo_de_1808_en_Madrid.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2875,6 +3219,8 @@ const PAINTINGS = [
     dimensions: "140 × 436 cm",
     description: "One of Goya's Black Paintings, made directly on the walls of his farmhouse outside Madrid — a place he called the Quinta del Sordo. A coven of hollow-eyed figures huddles around a giant silhouetted goat in an unlit field. Painted for his own walls, not for exhibition, these works strip away all professional restraint; they are the most rawly disturbing paintings of the 19th century.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Witches%27_Sabbath_(Goya)",
+    grokUrl: "https://grokipedia.com/page/Witches%27_Sabbath",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Francisco_de_Goya_y_Lucientes_-_Witches%27_Sabbath_%28The_Great_He-Goat%29.jpg/330px-Francisco_de_Goya_y_Lucientes_-_Witches%27_Sabbath_%28The_Great_He-Goat%29.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2887,6 +3233,8 @@ const PAINTINGS = [
     dimensions: "104 × 152 cm",
     description: "An early Goya, made as a tapestry cartoon for the royal palaces when he was still working in a light, Rococo-inflected style. A fashionable young woman sits in sunlight while a young man holds a parasol over her — the scene captures the leisure world of late 18th-century Madrid with a charm and spontaneity that already marks Goya's quick brushwork and eye for social observation.",
     movement: "Rococo",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Parasol",
+    grokUrl: "https://grokipedia.com/page/The_Parasol",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/El_Quitasol_%28Goya%29.jpg/330px-El_Quitasol_%28Goya%29.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2899,6 +3247,8 @@ const PAINTINGS = [
     dimensions: "32 × 22 cm",
     description: "A small, luminous panel from Raphael's Florentine years. The infant Christ holds a lamb — symbol of his future sacrifice — while the Virgin and Joseph look on with tender concern. Leonardo's influence is unmistakable in the pyramidal grouping and soft landscape background. Despite its small scale it is one of the most harmoniously composed devotional works of the High Renaissance.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Holy_Family_with_a_Lamb_(Raphael)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Raphael_Holy_Family_with_the_Lamb.jpg/330px-Raphael_Holy_Family_with_the_Lamb.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2911,6 +3261,8 @@ const PAINTINGS = [
     dimensions: "79 × 61 cm",
     description: "One of the most penetrating portraits of the Renaissance, this unknown cardinal — possibly Alessandro Farnese or Luigi d'Aragona — meets the viewer's gaze with an expression of cool, watchful intelligence. Raphael reduces the palette to red and white, letting the face carry everything. The identity remains unknown, which only deepens the sense of confronting a real, guarded personality across five centuries.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_a_Cardinal_(Raphael)",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_a_Cardinal",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Portrait_of_a_Cardinal%2C_by_Raffael%2C_from_Prado_in_Google_Earth.jpg/330px-Portrait_of_a_Cardinal%2C_by_Raffael%2C_from_Prado_in_Google_Earth.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2923,6 +3275,8 @@ const PAINTINGS = [
     dimensions: "113 × 88 cm",
     description: "The archangel Raphael presents young Tobias — carrying the healing fish of scripture — to the enthroned Virgin and Child, while St. Jerome kneels opposite with his lion and Bible. Raphael's composition flows in a stately diagonal, each figure individualized yet unified in a golden, contemplative calm. The painting gives its name to the theme it defined: the Sacra Conversazione of the High Renaissance.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Madonna_of_the_Fish",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Raffaello_Sanzio_-_Sacra_Famiglia_con_Rafael%2C_Tobia_e_San_Girolamo%2C_o_Vergine_del_pesce.jpg/330px-Raffaello_Sanzio_-_Sacra_Famiglia_con_Rafael%2C_Tobia_e_San_Girolamo%2C_o_Vergine_del_pesce.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2935,6 +3289,8 @@ const PAINTINGS = [
     dimensions: "38 × 62 cm",
     description: "A lamb lies bound on a stone slab, its legs tied, its head turned toward us with dark, patient eyes. Nothing else. No narrative, no symbolic props — just light falling on wool against shadow. One of the most austere and quietly devastating images in all of European painting, this small canvas translates Christian sacrifice into an almost unbearably literal still life.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Agnus_Dei_(Zurbar%C3%A1n)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Francisco_de_Zurbar%C3%A1n_006.jpg/330px-Francisco_de_Zurbar%C3%A1n_006.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2947,6 +3303,8 @@ const PAINTINGS = [
     dimensions: "274 × 190 cm",
     description: "Murillo's grandest treatment of the Immaculate Conception — a subject he returned to throughout his career. The Virgin ascends on clouds supported by cherubs, surrounded by the traditional Marian symbols: moon underfoot, halo of stars, white and blue robes of purity. The warm golden light and vaporous softness of the flesh mark Murillo's mature estilo vaporoso, which captivated European collectors for a century after his death.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Immaculate_Conception_of_the_Venerables",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Murillo_immaculate_conception.jpg/330px-Murillo_immaculate_conception.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2959,6 +3317,8 @@ const PAINTINGS = [
     dimensions: "179 × 233 cm",
     description: "The patriarch Jacob sleeps on a stone, his cloak drawn over him, utterly at rest — while above him the ladder to heaven and the promise of God's covenant unfold. Ribera stages the divine vision with characteristically restrained drama: the ladder is barely suggested by light, the angel's presence implied rather than shown. It is a painting about the interior experience of faith, rendered with extraordinary humanity.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Jacob%27s_Dream_(Ribera)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/El_sue%C3%B1o_de_Jacob%2C_por_Jos%C3%A9_de_Ribera.jpg/330px-El_sue%C3%B1o_de_Jacob%2C_por_Jos%C3%A9_de_Ribera.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo del Prado" }
   },
@@ -2984,6 +3344,8 @@ const PAINTINGS = [
     dimensions: "51 × 45 cm",
     description: "Vermeer's scientist reaches toward a celestial globe in a room suffused with afternoon light, exploring the relationship between human knowledge and divine creation. The subject may be Antonie van Leeuwenhoek, the microscopy pioneer who was Vermeer's neighbor in Delft. A Nazi acquisition label on its back records its seizure from a Jewish collector during World War II.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Astronomer_(Vermeer)",
+    grokUrl: "https://grokipedia.com/page/The_Astronomer",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Johannes_Vermeer_-_The_Astronomer_-_1668.jpg/330px-Johannes_Vermeer_-_The_Astronomer_-_1668.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -2996,6 +3358,8 @@ const PAINTINGS = [
     dimensions: "142 × 142 cm",
     description: "Rembrandt's nude is not an idealized goddess but a real woman lost in thought, holding David's letter summoning her to an adulterous affair that will upend her life. His model was Hendrickje Stoffels, Rembrandt's companion, whose absorbed inwardness suggests someone weighing an impossible choice. Kenneth Clark called it Rembrandt's greatest painting of the nude.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/Bathsheba_at_Her_Bath",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rembrandt_Harmensz._van_Rijn_016.jpg/330px-Rembrandt_Harmensz._van_Rijn_016.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3008,6 +3372,8 @@ const PAINTINGS = [
     dimensions: "369 × 245 cm",
     description: "The church that commissioned this painting rejected it because the Virgin looked like a drowned woman rather than a sacred figure — Caravaggio depicted her with a swollen belly and bare feet, the apostles in real grief rather than idealized consolation. The rejection was quickly overridden: Rubens advised the Duke of Mantua to purchase it immediately. It passed through Europe's grandest collections before reaching the Louvre.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Death_of_the_Virgin_(Caravaggio)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Death_of_the_Virgin-Caravaggio_(1606).jpg/330px-Death_of_the_Virgin-Caravaggio_(1606).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3032,6 +3398,8 @@ const PAINTINGS = [
     dimensions: "129 × 194 cm",
     description: "Watteau submitted this as his admission piece to the Royal Academy in 1717, and it was so unlike anything before that the academicians invented a new category — the fête galante — to classify it. Elegantly dressed couples linger near the mythological island of love in a haze of gold and roses. Whether they are arriving toward love or departing from it remains deliberately unresolved, and that ambiguity became the emotional signature of the Rococo.",
     movement: "Rococo",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Embarkation_for_Cythera",
+    grokUrl: "https://grokipedia.com/page/The_Embarkation_for_Cythera",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/L'Embarquement_pour_Cyth%C3%A8re%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg/330px-L'Embarquement_pour_Cyth%C3%A8re%2C_by_Antoine_Watteau%2C_from_C2RMF_retouched.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3044,6 +3412,8 @@ const PAINTINGS = [
     dimensions: "108 × 110 cm",
     description: "Ingres worked on this tondo for a decade, converting it from a rectangle to a circle at age 82 and adding a new foreground figure at the last moment. The bather lifting her hair is derived from his own Grande Odalisque — created 40 years earlier — making this painting a summation of his lifelong obsession with the female form. It is the final and most concentrated statement of his Orientalist aesthetic.",
     movement: "Neoclassicism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Turkish_Bath",
+    grokUrl: "https://grokipedia.com/page/The_Turkish_Bath",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Le_Bain_Turc%2C_by_Jean_Auguste_Dominique_Ingres%2C_from_C2RMFFXD.jpg/330px-Le_Bain_Turc%2C_by_Jean_Auguste_Dominique_Ingres%2C_from_C2RMFFXD.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3056,6 +3426,8 @@ const PAINTINGS = [
     dimensions: "385 × 522 cm",
     description: "David's counter to his own Oath of the Horatii replaces masculine sacrifice with feminine intervention — women interposing their bodies and children between fathers and husbands who are about to kill each other. Created during the Directory, it was widely read as a call for reconciliation after the Revolution's violence. David charged admission to view it in his studio, pioneering the modern art exhibition.",
     movement: "Neoclassicism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Intervention_of_the_Sabine_Women",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/The_Intervention_of_the_Sabine_Women_-_David_(Louvre_INV_3691).jpg/330px-The_Intervention_of_the_Sabine_Women_-_David_(Louvre_INV_3691).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3068,6 +3440,8 @@ const PAINTINGS = [
     dimensions: "184.5 × 149.5 cm",
     description: "Life-sized, frontal, and absolutely alone against an open sky, Pierrot stands while his companions mill below as if he has already been left behind. The figure's absolute stillness and melancholy vacancy make it the most mysterious of Watteau's paintings — not a scene but a confrontation with a soul. Long titled 'Gilles' after the related commedia character, it is often read as a disguised self-portrait.",
     movement: "Rococo",
+    wikiUrl: "https://en.wikipedia.org/wiki/Pierrot_(Watteau)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Pierrot_-_Antoine_Watteau_-_Mus%C3%A9e_du_Louvre_Peintures_MI_1121_-_apr%C3%A8s_restauration_2024.jpg/330px-Pierrot_-_Antoine_Watteau_-_Mus%C3%A9e_du_Louvre_Peintures_MI_1121_-_apr%C3%A8s_restauration_2024.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3080,6 +3454,8 @@ const PAINTINGS = [
     dimensions: "122 × 80 cm",
     description: "Raphael painted this Virgin in a meadow during his Florentine period under Leonardo's influence, whose sfumato and gentle diffused light infuse the landscape. The Christ child and young John the Baptist interact with unselfconscious naturalism, their bodies modeled with sculptural precision. The painting was unfinished when Raphael left Florence for Rome; a workshop assistant completed the lower portion of Mary's robe.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/La_Belle_Jardi%C3%A8re",
+    grokUrl: "https://grokipedia.com/page/La_Belle_Jardiniere",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/La_Vierge_%C3%A0_l'Enfant_avec_le_petit_saint_Jean_Baptiste_-_Rapha%C3%ABl_-_Mus%C3%A9e_du_Louvre_Peintures_INV_602_%3B_MR_433.jpg/330px-La_Vierge_%C3%A0_l'Enfant_avec_le_petit_saint_Jean_Baptiste_-_Rapha%C3%ABl_-_Mus%C3%A9e_du_Louvre_Peintures_INV_602_%3B_MR_433.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3092,6 +3468,8 @@ const PAINTINGS = [
     dimensions: "96 × 125 cm",
     description: "One of the most enigmatic images in French painting: two nude women in a bath, one pinching the other's nipple in a gesture whose meaning has never been fully explained — possibly alluding to Gabrielle's pregnancy as the acknowledged mistress of Henry IV. The attendant in the background embroidering adds domestic intimacy to a scene that is simultaneously private and hieratic. The painter is entirely unknown.",
     movement: "Mannerism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Gabrielle_d%27Estr%C3%A9es_et_une_de_ses_s%C5%93urs",
+    grokUrl: "https://grokipedia.com/page/Gabrielle_d%27Estrees_and_One_of_Her_Sisters",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Gabrielle_d'Estr%C3%A9es_et_une_de_ses_s%C5%93urs_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1937_1.jpg/330px-Gabrielle_d'Estr%C3%A9es_et_une_de_ses_s%C5%93urs_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1937_1.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3104,6 +3482,8 @@ const PAINTINGS = [
     dimensions: "93 × 131 cm",
     description: "One of Caravaggio's first genre paintings, this small work is a founding document of Italian Baroque naturalism: a gypsy woman tells the fortune of a young man while simultaneously stealing his ring — a glinting demonstration that seeing and understanding are not the same thing. The Louvre version is slightly more refined than the earlier Capitoline version and may have been made for a different patron. Caravaggio reputedly painted from a live street model.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Fortune_Teller_(Caravaggio)",
+    grokUrl: "https://grokipedia.com/page/The_Fortune_Teller",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/The_Fortune_Teller-Caravaggio_(Louvre).jpg/330px-The_Fortune_Teller-Caravaggio_(Louvre).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3116,6 +3496,8 @@ const PAINTINGS = [
     dimensions: "85 × 121 cm",
     description: "Poussin's second treatment of this Latin inscription — 'Even in Arcadia, I am there,' death speaking from a tomb in paradise — shifted the tone from his earlier version's shock to a philosophical meditation. The shepherds examine the words with quiet calm, and a shadow falls across one shepherd's arm in a final touch of memento mori. This painting became the visual touchstone for 18th-century meditations on mortality, beauty, and time.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Et_in_Arcadia_ego_(Poussin)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Nicolas_Poussin_-_Et_in_Arcadia_ego_(deuxi%C3%A8me_version).jpg/330px-Nicolas_Poussin_-_Et_in_Arcadia_ego_(deuxi%C3%A8me_version).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3128,6 +3510,8 @@ const PAINTINGS = [
     dimensions: "180 × 229 cm",
     description: "Delacroix painted this after a rare visit inside a private Algerian home during the French occupation — a privilege almost no Westerner had been granted — capturing the women with an immediacy that set his Orientalist imagery apart from fantasy. The odalisque genre here is intimate rather than erotic, focused on light, textile, and gesture. Picasso revisited this painting obsessively, producing 15 variations in 1954–55.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Women_of_Algiers",
+    grokUrl: "https://grokipedia.com/page/Women_of_Algiers_in_Their_Apartment",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Les_Femmes_d'Alger_d'Eug%C3%A8ne_Delacroix_(Restaur%C3%A9).jpg/330px-Les_Femmes_d'Alger_d'Eug%C3%A8ne_Delacroix_(Restaur%C3%A9).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3140,6 +3524,8 @@ const PAINTINGS = [
     dimensions: "66 × 62 cm",
     description: "Nicolas Rolin, chancellor of Burgundy, commissioned this altarpiece and placed himself on equal visual footing with the Virgin and Child — a bold act of self-promotion barely veiled behind piety. Van Eyck opened the room onto a minutely detailed Flemish city where tiny figures walk battlements above a river. Every surface — brocade, marble, tile — is a demonstration of oil paint's capacity to describe the material world.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Virgin_of_Chancellor_Rolin",
+    grokUrl: "https://grokipedia.com/page/Virgin_of_Chancellor_Rolin",
     imageUrl: null,
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3152,6 +3538,8 @@ const PAINTINGS = [
     dimensions: "277 × 194 cm",
     description: "Commissioned as a gift for Louis's grandson Philip V of Spain, this portrait was so admired that the king kept the original and sent a copy. The 62-year-old monarch in full coronation regalia — ermine cloak, crown, scepter — strikes a classical contrapposto that gives the elderly king the stance of a warrior-god. It set the template for royal portraiture that would endure across Europe for a century.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Louis_XIV_(Rigaud)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Louis_XIV_of_France.jpg/330px-Louis_XIV_of_France.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3164,6 +3552,8 @@ const PAINTINGS = [
     dimensions: "100 × 89 cm",
     description: "This portrait of an unidentified Venetian nobleman is among the finest Renaissance portraits in any collection — the sitter's inner life barely contained by the controlled formality of his pose. The glove he holds, only half put on, gives the hands something to do while suggesting a worldly readiness that animates the whole canvas. Its origin in the Gonzaga collection in Mantua means it passed through the grandest European collections before reaching the Louvre.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Man_with_a_Glove_(Titian)",
+    grokUrl: "https://grokipedia.com/page/Man_with_a_Glove",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Tiziano_-_Hombre_del_guante_(Louvre).jpg/330px-Tiziano_-_Hombre_del_guante_(Louvre).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3176,6 +3566,8 @@ const PAINTINGS = [
     dimensions: "106 × 146 cm",
     description: "De La Tour's card sharp retrieves a winning card from behind his back while his female accomplice signals their mark — a well-dressed young man who has no idea he is being fleeced. The painting is simultaneously a moral lesson about the three temptations (gambling, wine, and lust) and a bravura exercise in the rendering of silk, velvet, and shadow. The Louvre purchased it in 1972 after it had been misattributed for centuries.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Cheat_with_the_Ace_of_Diamonds",
+    grokUrl: "https://grokipedia.com/page/The_Card_Sharp_with_the_Ace_of_Diamonds",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Le_Tricheur_%C3%A0_l'as_de_carreau_-_Georges_de_La_Tour_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1972_8.jpg/330px-Le_Tricheur_%C3%A0_l'as_de_carreau_-_Georges_de_La_Tour_-_Mus%C3%A9e_du_Louvre_Peintures_RF_1972_8.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3188,6 +3580,8 @@ const PAINTINGS = [
     dimensions: "65 × 48 cm",
     description: "Henry VIII sent Holbein to paint this betrothal portrait; the artist so flattered his subject — and the elaborate costume so concealed her figure — that Henry was bitterly disappointed when they met. The marriage lasted six months before annulment, and Henry blamed Holbein. A 2021 restoration revealed previously obscured jewel details and confirmed this as one of the finest portrait miniatures on parchment ever made.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Anne_of_Cleves",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_(Louvre).jpg/330px-Portrait_Anne_of_Cleves_by_Hans_Holbein_the_Younger_(Louvre).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3200,6 +3594,8 @@ const PAINTINGS = [
     dimensions: "394 × 295 cm",
     description: "One panel of the 24-painting Medici Cycle commissioned to decorate the Luxembourg Palace, this scene of the queen's 1600 arrival in France deploys Neptune, Fame, and water nymphs to elevate a diplomatic event into myth. Rubens and his vast workshop completed the entire cycle in just four years, and the full ensemble — now hanging together in the Louvre — remains the most ambitious decorative painting program of the 17th century.",
     movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Disembarkation_at_Marseilles",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Le_D%C3%A9barquement_de_la_reine_%C3%A0_Marseille%2C_le_3_novembre_1600_-_Pierre_Paul_Rubens_-_Mus%C3%A9e_du_Louvre_Peintures_INV_1774_%3B_MR_965.jpg/330px-Le_D%C3%A9barquement_de_la_reine_%C3%A0_Marseille%2C_le_3_novembre_1600_-_Pierre_Paul_Rubens_-_Mus%C3%A9e_du_Louvre_Peintures_INV_1774_%3B_MR_965.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3212,6 +3608,8 @@ const PAINTINGS = [
     dimensions: "174 × 224 cm",
     description: "David began this portrait of the celebrated Parisian salon hostess but abandoned it unfinished when she grew impatient and turned to his rival Gérard instead. The unfinished state — empty background, sketchy passages — became integral to the painting's appeal, and the severe neoclassical staging, bare-armed figure on a Directoire sofa looking back over her shoulder, was instantly iconic. Ingres drew directly on this composition for the Grande Odalisque fourteen years later.",
     movement: "Neoclassicism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Madame_R%C3%A9camier",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_Madame_Recamier",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Juliette_R%C3%A9camier%2C_n%C3%A9e_Bernard_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3708.jpg/330px-Juliette_R%C3%A9camier%2C_n%C3%A9e_Bernard_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3708.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3224,6 +3622,8 @@ const PAINTINGS = [
     dimensions: "62 × 44 cm",
     description: "The identity of this half-length portrait — named after the ferronnière headband she wears — has been debated for centuries, with candidates including Lucrezia Crivelli and Beatrice d'Este. Leonardo's handling of the eyes, which glance slightly to the side of the viewer, creates the same uncanny presence as the Mona Lisa in a more intimate format. A court case in the 1920s over attribution ended in confirmation of Leonardo's hand.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/La_belle_ferronni%C3%A8re",
+    grokUrl: "https://grokipedia.com/page/La_Belle_Ferronniere",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/La_Belle_Ferronni%C3%A8re_-_Google_Arts.jpg/330px-La_Belle_Ferronni%C3%A8re_-_Google_Arts.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3236,6 +3636,8 @@ const PAINTINGS = [
     dimensions: "58 × 33 cm",
     description: "A fragment of a larger triptych, this small panel shows a boatload of revelers — a monk and nun prominently among them — adrift with no captain, celebrating as their vessel drifts toward destruction. Bosch drew on Sebastian Brant's 1494 satirical poem of the same name, transforming literary critique into hallucinatory vividness. The bottom third of the original panel belongs to Yale University Art Gallery under the title Allegory of Gluttony.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Ship_of_Fools_(Bosch)",
+    grokUrl: "https://grokipedia.com/page/The_Ship_of_Fools",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Jheronimus_Bosch_011.jpg/330px-Jheronimus_Bosch_011.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3248,6 +3650,8 @@ const PAINTINGS = [
     dimensions: "68 × 65 cm",
     description: "In this intimate panel, the resurrected Christ reveals himself to the disciples through the breaking of bread — captured not through dramatic gesture but in the subtle turn of his face into light and the disciple's hands clasped in sudden prayer. Rembrandt stripped away baroque theatricality to achieve something unbearably quiet. The back-lit Christ is one of the most moving treatments of this subject in Western painting.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Supper_at_Emmaus_(Rembrandt,_1648)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Rembrandt_The_Supper_at_Emmaus.jpg/330px-Rembrandt_The_Supper_at_Emmaus.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3272,6 +3676,8 @@ const PAINTINGS = [
     dimensions: "96 × 74 cm",
     description: "Clouet's portrait of the French king who launched the Renaissance in France depicts a ruler of extraordinary presence — eyes direct, posture immovable, the slashed doublet a fortune in silk and gold. The modelling is so precise it appears closer to a portrait miniature than an oil panel, reflecting Clouet's Flemish training. Francis I was the patron who brought Leonardo to France; he reportedly held the dying artist's head at Amboise in 1519.",
     movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Francis_I_(Clouet)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Jean_Clouet_-_Portrait_of_Fran%C3%A7ois_I%2C_King_of_France_-_WGA5081.jpg/330px-Jean_Clouet_-_Portrait_of_Fran%C3%A7ois_I%2C_King_of_France_-_WGA5081.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3296,6 +3702,8 @@ const PAINTINGS = [
     dimensions: "169 × 244 cm",
     description: "Titian's large-scale treatment of the moment when the resurrected Christ reveals himself to the disciples through the breaking of bread is a masterwork of Venetian compositional grandeur, the figures animated by rich color and expressive gesture. It contrasts sharply with Rembrandt's much more intimate 1648 version of the same subject — also at the Louvre — demonstrating how differently two great masters could approach identical material across a century.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Supper_at_Emmaus_(Titian)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Salon_de_Mercure-LE_SOUPER_A_EMMAUS.jpg/330px-Salon_de_Mercure-LE_SOUPER_A_EMMAUS.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -3310,6 +3718,8 @@ const PAINTINGS = [
     dimensions: "170 × 124 cm",
     description: "Manet reimagined Goya's Majas on a Balcony as a scene of modern Parisian life — but his figures are strangely disconnected, each absorbed in their own world. The woman seated at left is the painter Berthe Morisot, shown with an intensity that reveals the complex relationship between the two artists. The painting's flat, decorative handling and dissonant green shutters puzzled critics at the 1869 Salon.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Balcony_(Manet)",
+    grokUrl: "https://grokipedia.com/page/The_Balcony",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Edouard_Manet_-_The_Balcony_-_Google_Art_Project.jpg/330px-Edouard_Manet_-_The_Balcony_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3322,6 +3732,8 @@ const PAINTINGS = [
     dimensions: "160 × 97 cm",
     description: "Manet's study of a young military musician, painted after his transformative visit to the Prado, strips away conventional background and shadow to produce a figure that seems to float against a neutral void. The Salon jury rejected it in 1866; Émile Zola responded with a passionate public defense that launched his role as Manet's champion. The flat, shadow-free technique — borrowed directly from Velázquez — was as radical as anything being done in France at the time.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Fifer",
+    grokUrl: "https://grokipedia.com/page/The_Fifer",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Manet%2C_Edouard_-_Young_Flautist%2C_or_The_Fifer%2C_1866_(2).jpg/330px-Manet%2C_Edouard_-_Young_Flautist%2C_or_The_Fifer%2C_1866_(2).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3334,6 +3746,8 @@ const PAINTINGS = [
     dimensions: "55.5 × 40.5 cm",
     description: "One of about a dozen portraits Manet made of his sister-in-law Berthe Morisot, this small jewel uses an unusually asymmetric light — illuminating her right side brightly while the left falls into shadow — borrowed from Spanish portraiture. The barely visible violets and the black mourning dress give the painting emotional density out of proportion to its intimate size. Morisot herself acquired it in 1894; it only reached the Orsay in 1998.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Berthe_Morisot_with_a_Bouquet_of_Violets",
+    grokUrl: "https://grokipedia.com/page/Berthe_Morisot_with_a_Bouquet_of_Violets",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Edouard_Manet_-_Berthe_Morisot_With_a_Bouquet_of_Violets_-_Google_Art_Project.jpg/330px-Edouard_Manet_-_Berthe_Morisot_With_a_Bouquet_of_Violets_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3346,6 +3760,8 @@ const PAINTINGS = [
     dimensions: "60 × 73 cm",
     description: "Manet painted this en plein air at Berck-sur-Mer, showing his wife Suzanne and brother Eugène absorbed in reading against the flat grey sea and sky. Sand was later found embedded in the paint, proving it was made directly on the beach. The radical compression of foreground and horizon, with no middle distance, prefigures the compositional strategies of Post-Impressionism.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/On_the_Beach_(Manet)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Edouard_Manet_-_On_the_Beach_-_Google_Art_Project.jpg/330px-Edouard_Manet_-_On_the_Beach_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3358,6 +3774,8 @@ const PAINTINGS = [
     dimensions: "146.5 × 114 cm",
     description: "Manet painted this as a gift for Zola after the writer published a passionate defense of his work, and the painting is itself a theory of art hidden in a portrait. On the wall behind the writer hang a reproduction of Olympia, a print after Velázquez's Bacchus, and a Japanese print — Manet announcing his sources. The wall arrangement is as much manifesto as background.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_%C3%89mile_Zola",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_Emile_Zola",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Edouard_Manet_049.jpg/330px-Edouard_Manet_049.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3370,6 +3788,8 @@ const PAINTINGS = [
     dimensions: "50 × 65 cm",
     description: "Monet painted this near his home in Argenteuil with his wife Camille and son Jean as figures in the middle distance, repeated again in the foreground in a compositional rhyme he rarely used. The poppies dissolve from individual dabs of red into a collective haze — an early exercise in the perceptual abstraction that would culminate in the Water Lilies. Exhibited at the first Impressionist exhibition in 1874, it is now one of the most reproduced Impressionist paintings in the world.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Poppy_Field",
+    grokUrl: "https://grokipedia.com/page/The_Poppy_Field",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Claude_Monet_-_Poppy_Field_-_Google_Art_Project.jpg/330px-Claude_Monet_-_Poppy_Field_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3382,6 +3802,8 @@ const PAINTINGS = [
     dimensions: "255 × 205 cm",
     description: "To paint the upper half of this enormous canvas en plein air, Monet dug a trench in the garden so he could lower it while maintaining a single viewpoint. All four figures were posed by Camille Doncieux, his future wife. The Salon of 1867 rejected it; Frédéric Bazille bought it from Monet on instalment to support him through a financial crisis.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Women_in_the_Garden_(Monet)",
+    grokUrl: "https://grokipedia.com/page/Women_in_the_Garden",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Claude_Monet_024.jpg/330px-Claude_Monet_024.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3394,6 +3816,8 @@ const PAINTINGS = [
     dimensions: "89 × 130 cm",
     description: "Monet's largest snow scene renders a winter garden with luminous precision, its shadows in vivid blues and purples rather than grey — a revelation that electrified the Impressionist circle. The single magpie on a gate adds a scale-giving touch of black that snaps the whole composition into focus. Rejected by the Salon of 1869, it was acquired by the Orsay in 1984 and is now one of the collection's most beloved works.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Magpie_(Monet)",
+    grokUrl: "https://grokipedia.com/page/The_Magpie",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg/330px-Claude_Monet_-_The_Magpie_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3406,6 +3830,8 @@ const PAINTINGS = [
     dimensions: "60 × 100 cm",
     description: "One of 25 paintings in Monet's Haystacks series, this canvas records the quality of late summer afternoon light that he found so fleeting he hired local girls to run canvases to him as the light changed. When exhibited together at Durand-Ruel's gallery in 1891, the series proved that a single motif could sustain an entire exhibition through purely atmospheric variation. Kandinsky later said seeing this series was his first experience of art that transcended its subject matter.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Haystacks_(Monet_series)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Claude_Monet_-_Haystacks%2C_end_of_Summer_-_Google_Art_Project.jpg/330px-Claude_Monet_-_Haystacks%2C_end_of_Summer_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3418,6 +3844,8 @@ const PAINTINGS = [
     dimensions: "92 × 73 cm",
     description: "Renoir painted this in the garden behind his Montmartre studio, capturing the dappled light filtering through leaves onto the figures as scattered patches of yellow and white — a technique that scandalized academic critics, who saw only careless brushwork. Painted during the same summer as Bal du moulin de la Galette, it shares that painting's celebration of modern Parisian leisure. Gustave Caillebotte bought it directly from the third Impressionist exhibition in 1877.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Swing_(Renoir)",
+    grokUrl: "https://grokipedia.com/page/The_Swing",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Swing-Renoir.jpeg/330px-Swing-Renoir.jpeg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3430,6 +3858,8 @@ const PAINTINGS = [
     dimensions: "180 × 90 cm",
     description: "Commissioned as a pendant to Dance in the Country, this painting's couple — in evening dress, formal and controlled — embodies the bourgeois counterpart to the joyful spontaneity of its rural companion. The female figure is Suzanne Valadon, who later became a distinguished painter and mother of Maurice Utrillo. Together, the two dance paintings are a meditation on class, courtship, and the social geography of pleasure in 1880s Paris.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Dance_in_the_City",
+    grokUrl: "https://grokipedia.com/page/Dance_in_the_City",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Pierre-Auguste_Renoir_019.jpg/330px-Pierre-Auguste_Renoir_019.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3442,6 +3872,8 @@ const PAINTINGS = [
     dimensions: "180 × 90 cm",
     description: "Renoir's informal dancer in a straw hat — modeled by Aline Charigot, whom he later married — presses her partner with joyful abandon into an outdoor dance that feels genuinely spontaneous. Painted as the bourgeois companion to Dance in the City, this rural version privileges warmth, informality, and happiness over elegance. Both were commissioned by dealer Paul Durand-Ruel as a deliberate study in social contrast.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Dance_in_the_Country",
+    grokUrl: "https://grokipedia.com/page/Dance_in_the_Country",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Pierre_Auguste_Renoir_-_Country_Dance_-_Google_Art_Project.jpg/330px-Pierre_Auguste_Renoir_-_Country_Dance_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3454,6 +3886,8 @@ const PAINTINGS = [
     dimensions: "116 × 90 cm",
     description: "Renoir painted five versions of this composition when the French government offered to purchase one for the Musée du Luxembourg — a rare official honor for an Impressionist. This Orsay version is the most resolved, its warm domestic light and absorbed figures capturing the bourgeois ideal of cultivated femininity that Renoir returned to throughout his career. The piano lesson as a subject would later attract Matisse.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Young_Girls_at_the_Piano",
+    grokUrl: "https://grokipedia.com/page/Young_Girls_at_the_Piano",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Auguste_Renoir_-_Young_Girls_at_the_Piano_-_Google_Art_Project.jpg/330px-Auguste_Renoir_-_Young_Girls_at_the_Piano_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3466,6 +3900,8 @@ const PAINTINGS = [
     dimensions: "102 × 146.5 cm",
     description: "Caillebotte applied the Impressionist approach to a subject the Salon found shockingly vulgar: working-class men scraping a hardwood floor bare-chested in what is believed to be his own studio. The painting was rejected by the Salon of 1875 for treating a labor subject with the monumental scale reserved for history painting. Exhibited with the Impressionists in 1876, it is now recognized as a masterwork of urban realism.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Floor_Scrapers",
+    grokUrl: "https://grokipedia.com/page/The_Floor_Scrapers",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Gustave_Caillebotte_-_The_Floor_Planers_-_Google_Art_Project.jpg/330px-Gustave_Caillebotte_-_The_Floor_Planers_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3478,6 +3914,8 @@ const PAINTINGS = [
     dimensions: "185 × 152 cm",
     description: "Seurat's final painting, left unfinished at his death aged 31 in March 1891, transposes his Pointillist technique to the electric atmosphere of the Cirque Fernando. The formal daring is extraordinary: the flying acrobat, prancing horse, and clown break the severe geometry of his earlier work into dynamic diagonals. The unfinished white border visible on three sides is now considered part of the work.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Circus_(Seurat)",
+    grokUrl: "https://grokipedia.com/page/The_Circus",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Georges_Seurat%2C_1891%2C_Le_Cirque_(The_Circus)%2C_oil_on_canvas%2C_185_x_152_cm%2C_Mus%C3%A9e_d'Orsay.jpg/330px-Georges_Seurat%2C_1891%2C_Le_Cirque_(The_Circus)%2C_oil_on_canvas%2C_185_x_152_cm%2C_Mus%C3%A9e_d'Orsay.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3490,6 +3928,8 @@ const PAINTINGS = [
     dimensions: "47.5 × 57 cm",
     description: "The smallest and most refined of Cézanne's five Card Players canvases, this version reduces the composition to its geometric essence: two men absorbed in their game, the space between them alive with formal tension. Meyer Schapiro called it 'the most monumental and also the most refined' of the series. The pose of the left figure — elbow on table, pipe in mouth — became one of the most influential compositional ideas in early 20th-century painting.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Card_Players",
+    grokUrl: "https://grokipedia.com/page/The_Card_Players",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Les_Joueurs_de_cartes%2C_par_Paul_C%C3%A9zanne.jpg/330px-Les_Joueurs_de_cartes%2C_par_Paul_C%C3%A9zanne.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3502,6 +3942,8 @@ const PAINTINGS = [
     dimensions: "74 × 93 cm",
     description: "Cézanne arranged the same cloth, pitcher, and fruit in ever more complex configurations throughout his career, treating the still life as a laboratory for pictorial structure. Here the crumpled white cloth in angular folds competes for attention with the fruit it displays — each apple and orange built up through multiple simultaneous viewpoints. The painting entered the Louvre via the Camondo bequest in 1908 and transferred to the Orsay at its founding.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Still_Life_with_Apples_and_Oranges",
+    grokUrl: "https://grokipedia.com/page/Still_Life_with_Apples_and_Oranges",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Nature_morte_aux_pommes_et_aux_oranges%2C_par_Paul_C%C3%A9zanne.jpg/330px-Nature_morte_aux_pommes_et_aux_oranges%2C_par_Paul_C%C3%A9zanne.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3514,6 +3956,8 @@ const PAINTINGS = [
     dimensions: "69 × 91 cm",
     description: "Painted in Gauguin's first months in Tahiti, this early work already shows his Synthetist approach: the two women are rendered with simplified ornamental forms and a palette of warm ochres and flat pinks that owe nothing to naturalistic light. The figures' self-contained stillness — the aloof indolence Gauguin admired in Polynesian life — gives the image the quality of an icon rather than a genre scene. It was among the works he brought back for the controversial 1893 Paris exhibition that made his Pacific work famous.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Tahitian_Women_on_the_Beach",
+    grokUrl: "https://grokipedia.com/page/Tahitian_Women_on_the_Beach",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Paul_Gauguin_056.jpg/330px-Paul_Gauguin_056.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3526,6 +3970,8 @@ const PAINTINGS = [
     dimensions: "140 × 91.5 cm",
     description: "Gauguin's largest Tahitian canvas presents a white horse drinking from a pool in a jungle setting where riders pass like shadows in filtered green light — an image of such otherworldly stillness that it reads simultaneously as observed nature and transcribed myth. The pharmacist who commissioned it rejected the painting because the horse appeared green; Gauguin refused to adjust the color, insisting the greenish cast was essential. The Orsay acquired it from the painter Gustave Fayet's estate.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_White_Horse_(Gauguin)",
+    grokUrl: "https://grokipedia.com/page/The_White_Horse",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Paul_Gauguin_-_The_White_Horse_-_Google_Art_Project.jpg/330px-Paul_Gauguin_-_The_White_Horse_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3538,6 +3984,8 @@ const PAINTINGS = [
     dimensions: "56 × 46 cm",
     description: "Morisot's most celebrated painting shows her sister Edma gazing at her sleeping daughter Blanche through the translucent veil of the cradle canopy — a curtain of white gauze that demonstrates Morisot's mastery of soft, airy handling. Shown at the first Impressionist exhibition in 1874, it remains the most famous work by any woman artist of the Impressionist circle. The tenderness of the gaze and the delicacy of the textile handling are characteristic signatures.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Cradle_(Morisot)",
+    grokUrl: "https://grokipedia.com/page/The_Cradle",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Berthe_Morisot_008.jpg/330px-Berthe_Morisot_008.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3550,6 +3998,8 @@ const PAINTINGS = [
     dimensions: "300 × 218 cm",
     description: "Bouguereau's massive Venus — technically astounding, with fifteen encircling putti and nymphs in flawless academic illusionism — was precisely what the Impressionists rebelled against: a museum-bound mythology of impossible perfection. During his lifetime it commanded the highest Salon prices; after his death it was dismissed as academic confectionery. Its revival since the 1980s has repositioned it as a major work of the academic tradition and one of the Orsay's most visited canvases.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Birth_of_Venus_(Bouguereau)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/William-Adolphe_Bouguereau_(1825-1905)_-_The_Birth_of_Venus_(1879).jpg/330px-William-Adolphe_Bouguereau_(1825-1905)_-_The_Birth_of_Venus_(1879).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3562,6 +4012,8 @@ const PAINTINGS = [
     dimensions: "85 × 75 cm",
     description: "One of Degas's earliest treatments of the ballet class that would occupy him for decades, showing the choreographer Jules Perrot supervising practice with his stick — a figure rendered with magisterial authority. The spatial compression, with dancers in foreground and background simultaneously, is already fully developed. This intimate canvas established the vocabulary Degas would explore in hundreds of subsequent works.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Ballet_Class_(Degas)",
+    grokUrl: "https://grokipedia.com/page/The_Ballet_Class",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Edgar_Degas_-_La_Classe_de_danse.jpg/330px-Edgar_Degas_-_La_Classe_de_danse.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3574,6 +4026,8 @@ const PAINTINGS = [
     dimensions: "60 × 83 cm",
     description: "Degas exhibited this pastel at the final Impressionist exhibition of 1886 as part of a series of nudes in private acts of bathing and grooming — women he described as 'seen through a keyhole,' unconscious of any observer. The abrupt cropping and the tabletop cutting across the corner give the image the accidental intimacy of a photograph taken from above. Critics responded with a mix of admiration for the technique and unease at the voyeuristic premise.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Tub_(Degas)",
+    grokUrl: "https://grokipedia.com/page/The_Tub",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Edgar_Degas_-_Le_Tub_(1886_Mus%C3%A9e_d'Orsay).jpg/330px-Edgar_Degas_-_Le_Tub_(1886_Mus%C3%A9e_d'Orsay).jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3586,6 +4040,8 @@ const PAINTINGS = [
     dimensions: "58 × 44 cm",
     description: "Degas's most famous single dance image catches a ballerina mid-performance, her tutu exploding in white light while her male escort lurks in shadow at the right edge — a composition of brilliant asymmetry. The technique of pastel over monotype creates extraordinary luminosity, the black oil ink of the monotype giving the shadows a depth that pure pastel cannot achieve. This is the image most people picture when they think of Degas.",
     movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/L%27%C3%89toile_(Degas)",
+    grokUrl: "https://grokipedia.com/page/L%27Etoile",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Ballet_(L'%C3%89toile)%2C_Edgar_Degas.jpg/330px-Ballet_(L'%C3%89toile)%2C_Edgar_Degas.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3598,6 +4054,8 @@ const PAINTINGS = [
     dimensions: "315 × 660 cm",
     description: "Courbet painted a small-town funeral in Franche-Comté at the scale traditionally reserved for history painting — fifty life-sized provincial figures, a priest, gravedigger, and the horizon of the Jura hills behind them — and exhibited it at the 1851 Salon to outrage and ridicule. The bourgeoisie saw an insult; the provincial dignity of these ordinary faces was evidence of vulgarity. It is now considered the founding work of French Realism.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/A_Burial_at_Ornans",
+    grokUrl: "https://grokipedia.com/page/A_Burial_at_Ornans",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project_2.jpg/330px-Gustave_Courbet_-_A_Burial_at_Ornans_-_Google_Art_Project_2.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3610,6 +4068,8 @@ const PAINTINGS = [
     dimensions: "361 × 598 cm",
     description: "Courbet's enormous allegory — subtitled 'A Real Allegory Summing Up Seven Years of My Artistic and Moral Life' — shows the artist at his canvas flanked by the exploited poor to his left and his intellectual friends (including Baudelaire and Proudhon) to his right. Rejected for the 1855 Exposition Universelle, Courbet mounted it in his own pavilion outside — the first private exhibition in art history. No painting better announces the Realist movement's grand ambitions.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Painter%27s_Studio",
+    grokUrl: "https://grokipedia.com/page/The_Painter%27s_Studio",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Courbet_LAtelier_du_peintre.jpg/330px-Courbet_LAtelier_du_peintre.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3622,6 +4082,8 @@ const PAINTINGS = [
     dimensions: "46 × 55 cm",
     description: "Commissioned by the Ottoman diplomat Halil Şerif Pasha, this small and frankly explicit painting applies Realism's founding conviction — paint only what you can see — to a subject that art had always veiled in allegory. It passed through several secret collections, including that of the psychoanalyst Jacques Lacan, who kept it hidden behind another painting, and only entered the Orsay in 1995. Its frank title, given by Courbet himself, remains the most provocative in art history.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Origin_of_the_World",
+    grokUrl: "https://grokipedia.com/page/The_Origin_of_the_World",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Origin-of-the-World.jpg/330px-Origin-of-the-World.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3634,6 +4096,8 @@ const PAINTINGS = [
     dimensions: "57.5 × 74 cm",
     description: "The third version of Van Gogh's famous bedroom was painted from memory at the Saint-Paul asylum after the original was damaged by flooding. He described the colors as intended to convey absolute rest: walls pale lilac, floor red tiles, bed and chairs butter yellow. The deliberate thick outlines and flat areas of color, which he associated with Japanese prints, make this one of his purest Post-Impressionist statements.",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Bedroom_in_Arles",
+    grokUrl: "https://grokipedia.com/page/Bedroom_in_Arles",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Vincent_van_Gogh_-_Van_Gogh's_Bedroom_in_Arles_-_Google_Art_Project.jpg/330px-Vincent_van_Gogh_-_Van_Gogh's_Bedroom_in_Arles_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3646,6 +4110,8 @@ const PAINTINGS = [
     dimensions: "94 × 74.5 cm",
     description: "Painted six weeks before Van Gogh's death, this view of the medieval church at Auvers-sur-Oise renders the building's stone in colors that register the artist's psychological state: the sky an agitated cobalt, the paths forking around the church as if avoiding its entrance. The absence of visible windows gives the building a blind, impenetrable quality. Van Gogh described it in a letter as appearing in colors that are 'pure cobalt blue against a simple and deep blue sky.'",
     movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Church_at_Auvers",
+    grokUrl: "https://grokipedia.com/page/The_Church_at_Auvers",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Vincent_van_Gogh_-_The_Church_in_Auvers-sur-Oise%2C_View_from_the_Chevet_-_Google_Art_Project.jpg/330px-Vincent_van_Gogh_-_The_Church_in_Auvers-sur-Oise%2C_View_from_the_Chevet_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée d'Orsay" }
   },
@@ -3659,6 +4125,8 @@ const PAINTINGS = [
     dimensions: "65 × 73 cm",
     description: "Painted during Miró's recovery from typhoid at his family farm in Mont-roig, this early canvas absorbs Cézanne and Fauvism while remaining rooted in careful observation of the Catalan landscape. The compressed space, flat planes of color, and intensely observed botanical detail give it the feel of a medieval tapestry rather than a plein-air study. It marks the start of Miró's lifelong attachment to his homeland as the central subject of his art.",
     movement: "Cubism",
+    wikiUrl: "https://en.wikipedia.org/wiki/House_with_Palm_Tree_(Miró)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Joan_Mir%C3%B3%2C_1918%2C_La_casa_de_la_palmera_(House_with_Palm_Tree)%2C_oil_on_canvas%2C_65_x_73_cm%2C_Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa.jpg/330px-Joan_Mir%C3%B3%2C_1918%2C_La_casa_de_la_palmera_(House_with_Palm_Tree)%2C_oil_on_canvas%2C_65_x_73_cm%2C_Museo_Nacional_Centro_de_Arte_Reina_Sof%C3%ADa.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
@@ -3695,6 +4163,8 @@ const PAINTINGS = [
     dimensions: "81 × 60 cm",
     description: "One of Gris's most polished early Cubist canvases, this work translates the Analytic Cubism of Braque and Picasso into a more formally precise and coloristically structured language. Gris arranges the fragments of violin and guitar along a diagonal axis that gives the composition clarity even as the instruments dissolve into interlocking planes. It was exhibited at the Section d'Or in Paris where Gris first established his reputation alongside his older contemporaries.",
     movement: "Cubism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Violin_and_Guitar_(Gris)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Juan_Gris_-_Violon_et_guitare_-_Google_Art_Project.jpg/330px-Juan_Gris_-_Violon_et_guitare_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
@@ -3767,6 +4237,8 @@ const PAINTINGS = [
     dimensions: "105 × 74.5 cm",
     description: "Dalí's sister Ana María, seen from behind at the window of the family home in Cadaqués overlooking the bay, is the most intimate image he ever made — before Gala arrived and his sister was displaced from his life. The painting belongs to his formative realist phase, influenced by Vermeer, and predates Surrealism entirely. When Dalí later insulted Ana María publicly, she never forgave him; this painting became a memorial to the relationship that shaped his early art.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Figure_at_a_Window",
+    grokUrl: "https://grokipedia.com/page/Young_Woman_at_a_Window",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Young_Woman_at_a_Window.jpg/330px-Young_Woman_at_a_Window.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
@@ -3779,6 +4251,8 @@ const PAINTINGS = [
     dimensions: "140 × 81 cm",
     description: "Begun the year Dalí first encountered Surrealism in Paris, this painting uses the double-image technique he would make his signature: a seated human figure is simultaneously readable as the architectural environment around it — clouds become a head, a body is assembled from arches and columns. The visible-invisible figure drew on Arcimboldo's composite heads and ancient Egyptian art. It was one of his first canvases to demonstrate the paranoiac-critical method he later theorized.",
     movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Invisible_Man_(Dalí)",
+    grokUrl: "https://grokipedia.com/page/The_Invisible_Man",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/The_Invisible_Man.jpg/330px-The_Invisible_Man.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
@@ -3791,6 +4265,8 @@ const PAINTINGS = [
     dimensions: "51.2 × 79.3 cm",
     description: "Painted around the time of Dalí's expulsion from the Surrealist movement, this canvas depicts a dream of Hitler as a landscape of disconnected symbols: a cut telephone cord, a bat, a bowl of beans, and a small portrait photo melting into the void. Dalí related having recurring dreams about Hitler, which he interpreted as political premonitions; the painting was first shown in New York in 1939 at $1,750 but found no buyer.",
     movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Enigma_of_Hitler",
+    grokUrl: "https://grokipedia.com/page/The_Enigma_of_Hitler",
     imageUrl: null,
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
@@ -3827,6 +4303,8 @@ const PAINTINGS = [
     dimensions: "127 × 162.5 cm",
     description: "Casas witnessed the execution of Aniceto Peinador by garrotte in Barcelona in 1893 and painted this unflinching account the following year. A priest administers last rites on the left while the executioner tightens the iron collar, the crowd behind them an anonymous grey mass. When exhibited at the National Exhibition of Fine Arts in 1895 it won third prize and was purchased by the state, cementing Casas's reputation as the leading voice of Spanish Social Realism.",
     movement: "Realism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Garrote_vil_(Casas)",
+    grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Garrote_vil%2C_de_Ram%C3%B3n_Casas.jpg/330px-Garrote_vil%2C_de_Ram%C3%B3n_Casas.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
@@ -3899,6 +4377,8 @@ const PAINTINGS = [
     dimensions: "162 × 211 cm",
     description: "Solana's group portrait of the regular Wednesday tertulia at Madrid's Café de Pombo is the most iconic image of early 20th-century Spanish intellectual life — ten writers, poets, and artists rendered with raw, unflinching directness. The dark palette and hard staring faces recall Goya's group portraits more than the light-filled canvases of Modernism. Solana was himself a member of the tertulia, and his presence in the painting is both documentary and self-mythologizing.",
     movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/La_tertulia_del_Café_de_Pombo",
+    grokUrl: null,
     imageUrl: null,
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
@@ -3923,6 +4403,8 @@ const PAINTINGS = [
     dimensions: "300 × 300 cm",
     description: "Painted at age 17, this enormous three-by-three-metre canvas presents a dreamlike cosmic panorama — planets, animals, figures, and mythological scenes packed into a visionary theatre — that astonished viewers at the 1929 Ibero-American Exposition. Santos had no formal training and painted from a state she described as 'fever or ecstasy.' It resists easy classification: too literal for Surrealism and too strange for realism, it remains one of the most astonishing debuts in the history of Spanish art.",
     movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Un_Mundo_(Santos)",
+    grokUrl: null,
     imageUrl: null,
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },

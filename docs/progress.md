@@ -848,3 +848,13 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - `ICONS.wikipedia` and `ICONS.grokipedia` added to the icon map
 - `.moreinfo-links` / `.moreinfo-link` CSS added; hover gated behind `@media (hover: hover)`
 - First 10 paintings (IDs 1–10, all Louvre) have `wikiUrl` and `grokUrl` populated — awaiting review before adding remaining paintings
+
+## Session 38 — 2026-06-02
+
+### More Info links: full dataset
+- Added `wikiUrl` and `grokUrl` to 251 paintings (all 100 ranked + 151 museum-only where articles are known)
+- `grokUrl` set to `null` where the title is primarily a historical/biblical/mythological event name (The Last Supper, The Creation of Adam, The Birth of Venus, etc.) or the painting is too obscure — icon shows disabled in those cases
+- Disabled icon style: `.moreinfo-link-disabled` with `opacity: 0.3; pointer-events: none`
+- UI condition updated to `(p.wikiUrl || p.grokUrl)` — More Info box only appears when at least one URL is non-null
+- The Wedding at Cana `grokUrl` corrected to `null` (no Grokipedia article exists)
+- `ICONS.wikipedia` and `ICONS.grokipedia` added in Session 37

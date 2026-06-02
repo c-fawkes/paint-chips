@@ -1270,8 +1270,12 @@ function openDetail(id, { refresh = false } = {}) {
           ${(p.wikiUrl || p.grokUrl) ? `<div class="detail-spec-item detail-spec-moreinfo">
             <span>More Info</span>
             <div class="moreinfo-links">
-              ${p.wikiUrl ? `<a href="${p.wikiUrl}" target="_blank" rel="noopener" class="moreinfo-link" title="Wikipedia">${ICONS.wikipedia}</a>` : ''}
-              ${p.grokUrl ? `<a href="${p.grokUrl}" target="_blank" rel="noopener" class="moreinfo-link" title="Grokipedia">${ICONS.grokipedia}</a>` : ''}
+              ${p.wikiUrl
+                ? `<a href="${p.wikiUrl}" target="_blank" rel="noopener" class="moreinfo-link" title="Wikipedia">${ICONS.wikipedia}</a>`
+                : `<span class="moreinfo-link moreinfo-link-disabled" title="No Wikipedia article">${ICONS.wikipedia}</span>`}
+              ${p.grokUrl
+                ? `<a href="${p.grokUrl}" target="_blank" rel="noopener" class="moreinfo-link" title="Grokipedia">${ICONS.grokipedia}</a>`
+                : `<span class="moreinfo-link moreinfo-link-disabled" title="No Grokipedia article">${ICONS.grokipedia}</span>`}
             </div>
           </div>` : ''}
         </div>` : ''}
