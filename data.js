@@ -2188,6 +2188,34 @@ const PAINTINGS = [
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Vase_of_Flowers_painting_by_Jan_Davidsz._de_Heem_Mauritshuis_1099.jpg/330px-Vase_of_Flowers_painting_by_Jan_Davidsz._de_Heem_Mauritshuis_1099.jpg",
     location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
   },
+  {
+    id: 359, rank: null, museumOnly: true,
+    title: "As the Old Sing, So Pipe the Young",
+    artist: "Jan Steen",
+    year: "c. 1668–70",
+    medium: "Oil on canvas",
+    dimensions: "133.7 × 162.5 cm",
+    description: "The definitive version of a subject Steen painted thirteen times, this raucous family scene shows three generations sharing a pipe, a drink, and a song — enacting the Dutch proverb that children learn their vices from their parents. Steen packed every surface with comic detail: a baby handed a pipe, a parrot mimicking the adults, an elder blowing smoke. The Mauritshuis calls it the exemplar of the series, and it stands as the fullest expression of Steen's moralizing comedy — a joke the Dutch took seriously enough to name a type of chaotic household after him.",
+    movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/As_the_Old_Sing,_So_Pipe_the_Young_(Jan_Steen)",
+    grokUrl: "https://grokipedia.com/page/As_the_Old_Sing,_So_Pipe_the_Young_(Jan_Steen)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Jan_Steen_022_colour_version_01.jpg/330px-Jan_Steen_022_colour_version_01.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
+  },
+  {
+    id: 360, rank: null, museumOnly: true,
+    title: "View of Haarlem with Bleaching Grounds",
+    artist: "Jacob van Ruisdael",
+    year: "c. 1670–75",
+    medium: "Oil on canvas",
+    dimensions: "55.5 × 62 cm",
+    description: "One of at least fifteen panoramas Ruisdael made of the flat land behind the dunes near Haarlem — a category the Dutch called 'Haarlempjes' — this small canvas gives two-thirds of its space to an immense cloudy sky, pressing the city and its famous linen-bleaching fields into a luminous strip at the horizon. The bleaching grounds were a source of civic pride: Haarlem's linen industry was famous across Europe, and Ruisdael honours both the landscape and its economy in a single sweeping view. It is widely considered the finest Dutch landscape painting in the Mauritshuis.",
+    movement: "Dutch Golden Age",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Jacob_van_Ruisdael_-_View_of_Haarlem_with_Bleaching_Grounds_-_155_-_Mauritshuis.jpg/330px-Jacob_van_Ruisdael_-_View_of_Haarlem_with_Bleaching_Grounds_-_155_-_Mauritshuis.jpg",
+    location: { continent: "Europe", country: "Netherlands", city: "The Hague", museum: "Mauritshuis" }
+  },
 
   // ── MARMOTTAN MONET MUSEUM ────────────────────────────────────────────────
   {
@@ -5490,6 +5518,10 @@ const ARTISTS = {
     born: "1723", died: "1792", nationality: "English",
     bio: "The dominant figure of 18th-century British painting, Joshua Reynolds was the founding President of the Royal Academy of Arts and the principal advocate for a 'Grand Manner' of painting that elevated portraiture to the level of history painting through classical allusion and literary reference. His Discourses, delivered annually to Royal Academy students, remain the most influential body of artistic theory produced in Britain. Reynolds painted almost every notable figure of his era — Samuel Johnson, Edmund Burke, Oliver Goldsmith, David Garrick — and his studio on Leicester Fields was the center of London's cultural life. He gradually lost his sight from 1789 and died in 1792, leaving a body of work that defined the British portrait tradition for the next century."
   },
+  "Jacob van Ruisdael": {
+    born: "c. 1628", died: "1682", nationality: "Dutch",
+    bio: "Generally considered the pre-eminent landscape painter of the Dutch Golden Age, Jacob van Ruisdael transformed the depiction of the Dutch countryside into a serious and emotionally resonant art form, elevating landscape from a background convention to a subject worthy of sustained attention. Born in Haarlem, he was drawn above all to the austere drama of the flat Dutch terrain — wide skies, waterways, windmills, and ruins — and painted them with an intensity that influenced Constable, Turner, and the Barbizon painters. No portrait of Ruisdael is known to exist; he remains one of the great anonymous geniuses of Dutch art. He died in Amsterdam in 1682, having produced nearly 700 paintings, drawings, and etchings."
+  },
   "Wassily Kandinsky": {
     born: "1866", died: "1944", nationality: "Russian",
     bio: "Generally credited as the first painter to make a fully non-objective, purely abstract work, Wassily Kandinsky arrived at abstraction not through formal theory but through the conviction that color and form could carry spiritual meaning independent of subject matter. Born in Moscow, he studied law before moving to Munich in 1896 to pursue painting, and co-founded Der Blaue Reiter ('The Blue Rider') group in 1911 with Franz Marc, producing his landmark Composition VII in the same year. He taught at the Bauhaus from 1922 to 1933 before fleeing Nazi Germany for Paris, where he lived until his death. His theoretical writings, especially Concerning the Spiritual in Art (1911), remain foundational texts of modern aesthetics."
@@ -5605,6 +5637,7 @@ const ARTIST_PORTRAITS = {
   "Max Beckmann": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Max_Beckmann_1928%2C_by_Hugo_Erfurth.jpg/330px-Max_Beckmann_1928%2C_by_Hugo_Erfurth.jpg",
   "Oskar Kokoschka": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Oskar_Kokoschka_%281963%29_by_Erling_Mandelmann.jpg/330px-Oskar_Kokoschka_%281963%29_by_Erling_Mandelmann.jpg",
   "Richard Gerstl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Richard_Gerstl_1902_%281903%29.jpg/330px-Richard_Gerstl_1902_%281903%29.jpg",
+  "Jacob van Ruisdael": null,
   "Wassily Kandinsky": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg/330px-Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg",
   "Joshua Reynolds": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_%282315517%29.jpg/330px-Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_%282315517%29.jpg",
   "Pinturicchio": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Pinturicchio_self_big.jpg/330px-Pinturicchio_self_big.jpg",

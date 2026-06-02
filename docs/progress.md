@@ -935,3 +935,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Removed inline `museum-visited-check` checkmark span from museum name in city/country views
 - Visited museums now show `.museum-header.visited-museum { border-color: var(--gold-dim) }` — matches collected painting card border style
 - Applied to all three museum tab views (alpha, city, country) via `visited-museum` class on the header element
+
+### Museum build-up: Mauritshuis (8 → 10)
+- Added As the Old Sing, So Pipe the Young (Jan Steen, c. 1668–70, ID 359) — definitive version of Steen's most famous proverb painting
+- Added View of Haarlem with Bleaching Grounds (Jacob van Ruisdael, c. 1670–75, ID 360) — finest Dutch landscape in the collection
+- New artist: Jacob van Ruisdael (no known portrait exists)
