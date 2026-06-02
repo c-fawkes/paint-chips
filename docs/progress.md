@@ -724,9 +724,21 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Museum tab: miscellaneous polish
 - Switched view and sort button order in the Museums toolbar (sort first, view second)
 - Unvisited museum circle buttons now use an empty circle matching `.row-check` style (no pin icon, `2px solid var(--border)`)
-- Sticky toolbar: `#toolbar` is now `position: sticky` on all three tabs so search/sort/view buttons stay pinned below the header while scrolling
+- Sticky toolbar: `#toolbar` is now `position: sticky` on all three tabs so search/sort/view buttons stay pinned below the header while scrolling *(changed to `position: fixed` in Session 33)*
 - Condensed view mode: replaced frame icon with a custom 3×3 grid icon (`ICONS.grid3`, `stroke-width="1.5"` rounded squares)
 
 ### Paintings tab: clickable movement/artist chips in group views
 - Sort by artist: movement chips in the expanded artist section are now `<button>` elements that open the movement popup on click; gold hover state added via `.mv-chip-link`
 - Sort by movement: artist chips in the expanded movement section open the artist popup on click
+
+## Session 33 — 2026-06-01
+
+### Fixed toolbar
+- `#toolbar` changed from `position: sticky` to `position: fixed` — no longer shifts when scrolling begins
+- Added `border-bottom: 1px solid var(--bg4)` separator line (slightly dimmer than the header's `var(--border)` line above it)
+- Padding changed to symmetric `10px 12px`; `#main` top padding removed to match
+- `<div class="toolbar-spacer"></div>` injected after the toolbar in all three tab render functions to compensate for the toolbar leaving document flow
+
+### progress.md formatting rules
+- Added detailed `## Before every commit` rules to `CLAUDE.md` covering: session placement and numbering, block format, `###` header style, deprecated feature annotation format (`*(changed/removed in Session N)*`), and pre-commit checklist
+- Corrected session ordering (18–22 and 27–31 were out of order), removed orphaned `---` separators, and added ~15 inline deprecation annotations to sessions 1–30

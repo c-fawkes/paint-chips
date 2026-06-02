@@ -517,6 +517,7 @@ function renderListView() {
         ${isGrid ? ICONS.grid : ICONS.rows}
       </button>
     </div>
+    <div class="toolbar-spacer"></div>
     ${filterChips}
     ${paintingsHtml}
   `;
@@ -549,9 +550,10 @@ function renderMuseumsView() {
       ${S.museumsDetailMode === 'grid' ? ICONS.grid : S.museumsDetailMode === 'list' ? ICONS.rows : ICONS.grid3}
     </button>
   </div>`;
-  if (S.museumsMode === 'city')    return toolbar + renderMuseumsCity();
-  if (S.museumsMode === 'country') return toolbar + renderMuseumsCountry();
-  return toolbar + renderMuseumsAlpha();
+  const spacer = '<div class="toolbar-spacer"></div>';
+  if (S.museumsMode === 'city')    return toolbar + spacer + renderMuseumsCity();
+  if (S.museumsMode === 'country') return toolbar + spacer + renderMuseumsCountry();
+  return toolbar + spacer + renderMuseumsAlpha();
 }
 
 function renderMuseumBlock(name, paintings) {
@@ -951,6 +953,7 @@ function renderCollectionView() {
       ${mode === 'gallery' ? ICONS.frame : mode === 'compact' ? ICONS.rows : ICONS.grid}
     </button>
   </div>`;
+  const spacer = '<div class="toolbar-spacer"></div>';
 
   if (visible.length === 0) {
     let headline, subline;
@@ -967,7 +970,7 @@ function renderCollectionView() {
       headline = 'Nothing here.';
       subline  = '';
     }
-    return toolbar + `<div class="empty-state">
+    return toolbar + spacer + `<div class="empty-state">
       <div class="empty-icon">🖼️</div>
       <p>${headline}</p>
       <p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">${subline}</p>
@@ -1002,7 +1005,7 @@ function renderCollectionView() {
         : ''}
       </div>`;
     }).join('');
-    return toolbar + `<div class="list-movement-groups">${groupsHtml}</div>`;
+    return toolbar + spacer + `<div class="list-movement-groups">${groupsHtml}</div>`;
   }
 
   if (cs === 'artist' && mode !== 'gallery') {
@@ -1027,7 +1030,7 @@ function renderCollectionView() {
         : ''}
       </div>`;
     }).join('');
-    return toolbar + `<div class="list-movement-groups">${groupsHtml}</div>`;
+    return toolbar + spacer + `<div class="list-movement-groups">${groupsHtml}</div>`;
   }
 
   if (cs === 'movement' && mode !== 'gallery') {
@@ -1053,10 +1056,10 @@ function renderCollectionView() {
         : ''}
       </div>`;
     }).join('');
-    return toolbar + `<div class="list-movement-groups">${groupsHtml}</div>`;
+    return toolbar + spacer + `<div class="list-movement-groups">${groupsHtml}</div>`;
   }
 
-  return toolbar + renderCollectionPaintings(sorted, mode);
+  return toolbar + spacer + renderCollectionPaintings(sorted, mode);
 }
 
 function setCollectionMode(mode) {

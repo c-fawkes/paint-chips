@@ -14,7 +14,41 @@ When context usage reaches ~85%, pause and ask: "Context is at ~85% — want me 
 
 ## Before every commit
 
-Update `docs/progress.md` with a brief note of what changed in this session before committing. Add to the current session's section if one already exists for today, or append a new `## Session N — YYYY-MM-DD` block at the **bottom** of the Session Progress section. One bullet per meaningful change — no need to repeat what's already in the commit message verbatim, but capture the *why* and any decisions made.
+Update `docs/progress.md` with a brief note of what changed in this session before committing.
+
+### Placement
+- If a `## Session N — YYYY-MM-DD` block for **today** already exists, add new `###` sections to it.
+- Otherwise append a **new** `## Session N — YYYY-MM-DD` block at the **bottom** of the Session Progress section — never insert above existing sessions.
+- Session numbers must be strictly increasing. Check the last session number before writing a new one.
+
+### Format for a session block
+```
+## Session N — YYYY-MM-DD
+
+### Short feature title
+- One bullet per meaningful change — capture the *why* and any decisions made.
+- Use backticks for code: function names, CSS classes, state keys, file names.
+- Use **bold** for feature names and UI labels.
+- Em dash (—) not hyphen for "before → after" descriptions.
+- Bullet text ends without a period.
+```
+
+### Section headers (`###`)
+- Title-case, concise (3–6 words). Examples: `### Sticky toolbar`, `### Museum detail view`.
+- If a section supersedes a feature from an earlier session, append ` *(replaces Session N)*` to the header.
+
+### Deprecated / changed features
+When a bullet describes something that was **later changed or removed** in a subsequent session, append an inline italic note at the end of that bullet:
+```
+*(changed in Session N)* or *(removed in Session N)* or *(renamed X in Session N)*
+```
+Use the same format consistently — italics, parentheses, "in Session N" phrasing.
+
+### What to check before committing
+1. **Order** — sessions are in ascending numeric order; new session goes at the bottom.
+2. **No orphaned `---` separators** between session blocks (they only appear inside the App Overview section above the session list).
+3. **Deprecated annotations** — if the current commit changes or removes a feature described in an earlier session entry, find that earlier bullet and append the appropriate `*(changed/removed in Session N)*` note.
+4. **Consistent bullet style** — each bullet starts with `-`, uses backticks for code, and does not end with a period.
 
 ## Development
 
