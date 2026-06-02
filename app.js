@@ -297,6 +297,7 @@ const ICONS = {
   plus:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`,
   sort:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="9" y1="18" x2="15" y2="18"/></svg>`,
   grid:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>`,
+  grid3:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><rect x="16" y="2" width="6" height="6" rx="1"/><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/><rect x="16" y="9" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="16" width="6" height="6" rx="1"/><rect x="16" y="16" width="6" height="6" rx="1"/></svg>`,
   rows:     `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>`,
   bookmark: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>`,
   heart:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
@@ -444,7 +445,7 @@ function renderListView() {
       const isOpen = S.expandedListArtists.has(artist);
       const movementChips = movementNames.map(k => {
         const mv = typeof MOVEMENTS !== 'undefined' ? MOVEMENTS[k] : null;
-        return `<span class="mv-artist-chip">${esc(k)}${mv ? `<span style="color:var(--text-faint);font-size:.65rem"> · ${esc(mv.era)}</span>` : ''}</span>`;
+        return `<button class="mv-artist-chip mv-chip-link" onclick="openMovementPopup('${k.replace(/'/g, "\\'")}')">${esc(k)}${mv ? `<span style="color:var(--text-faint);font-size:.65rem"> · ${esc(mv.era)}</span>` : ''}</button>`;
       }).join('');
       const infoBody = isOpen ? `<div class="list-movement-info">
         ${portrait ? `<img class="artist-portrait" src="${portrait}" alt="${esc(artist)}" onerror="this.style.display='none'">` : ''}
@@ -481,7 +482,7 @@ function renderListView() {
         <div class="mv-section-label" style="margin-top:12px">Key characteristics</div>
         <ul class="mv-traits">${mv.traits.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
         <div class="mv-section-label" style="margin-top:14px">Key artists</div>
-        <div class="mv-artists">${mv.artists.map(a => `<span class="mv-artist-chip">${esc(a)}</span>`).join('')}</div>
+        <div class="mv-artists">${mv.artists.map(a => `<button class="mv-artist-chip mv-chip-link" onclick="openArtistPopup('${a.replace(/'/g, "\\'")}')">${esc(a)}</button>`).join('')}</div>
       </div>` : '';
       return `<div class="list-movement-group${isOpen ? ' open' : ''}">
         <div class="list-movement-header" onclick="toggleMovementGroup('${mvKey.replace(/'/g, "\\'")}')">
@@ -539,13 +540,13 @@ function renderMuseumsView() {
              value="${esc(S.museumsSearch)}" oninput="handleMuseumsSearch(this.value)">
       <button class="search-clear" onclick="handleMuseumsSearch('')" title="Clear search" ${S.museumsSearch ? '' : 'hidden'}>✕</button>
     </div>
-    <button class="toolbar-btn icon-only${S.museumsDetailMode !== 'condensed' ? ' active' : ''}"
-            onclick="openMuseumsDetailModeDropdown(event,this)" title="Painting view">
-      ${S.museumsDetailMode === 'grid' ? ICONS.grid : S.museumsDetailMode === 'list' ? ICONS.rows : ICONS.frame}
-    </button>
     <button class="toolbar-btn icon-only${S.museumsMode !== 'alpha' ? ' active' : ''}"
             onclick="openMuseumsViewDropdown(event,this)" title="Group by">
       ${ICONS.sort}
+    </button>
+    <button class="toolbar-btn icon-only${S.museumsDetailMode !== 'condensed' ? ' active' : ''}"
+            onclick="openMuseumsDetailModeDropdown(event,this)" title="Painting view">
+      ${S.museumsDetailMode === 'grid' ? ICONS.grid : S.museumsDetailMode === 'list' ? ICONS.rows : ICONS.grid3}
     </button>
   </div>`;
   if (S.museumsMode === 'city')    return toolbar + renderMuseumsCity();
@@ -565,7 +566,7 @@ function renderMuseumBlock(name, paintings) {
       </div>
       <div class="museum-counter"><div class="mc-nums">${mc}/${mt}</div><div class="mc-label">collected</div></div>
       <button class="museum-visited-btn${isVisited ? ' visited' : ''}" onclick="toggleMuseumVisited(event,'${safeName}')" title="${isVisited ? 'Visited' : 'Mark as visited'}">
-        ${isVisited ? ICONS.check : ICONS.pin}
+        ${isVisited ? ICONS.check : ''}
       </button>
       <div class="museum-chevron">${ICONS.chevron}</div>
     </div>
@@ -604,7 +605,7 @@ function renderMuseumsAlpha() {
         </div>
         <div class="museum-counter"><div class="mc-nums">${checked}/${total}</div><div class="mc-label">collected</div></div>
         <button class="museum-visited-btn${isVisited ? ' visited' : ''}" onclick="toggleMuseumVisited(event,'${safeName}')" title="${isVisited ? 'Visited' : 'Mark as visited'}">
-          ${isVisited ? ICONS.check : ICONS.pin}
+          ${isVisited ? ICONS.check : ''}
         </button>
         <div class="museum-chevron">${ICONS.chevron}</div>
       </div>
@@ -614,11 +615,16 @@ function renderMuseumsAlpha() {
 
 function renderMuseumsCity() {
   const cities = {};
+  const cityCountry = {};
+  const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
+    'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
+    'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
   scopedPaintings().forEach(p => {
-    const { city, museum } = p.location;
+    const { city, country, museum } = p.location;
     if (!cities[city]) cities[city] = {};
     if (!cities[city][museum]) cities[city][museum] = [];
     cities[city][museum].push(p);
+    cityCountry[city] = country;
   });
   const q = S.museumsSearch.toLowerCase();
   let cityKeys = Object.keys(cities).sort();
@@ -631,9 +637,10 @@ function renderMuseumsCity() {
     const allPs   = Object.values(cities[city]).flat();
     const checked = checkedCount(allPs.map(p => p.id));
     const total   = allPs.length;
+    const flag = flagFor[cityCountry[city]] || '';
     return `<div class="loc-section">
       <div class="loc-header">
-        <span class="loc-name">${esc(city)}</span>
+        <span class="loc-name">${flag ? `${flag} ` : ''}${esc(city)}</span>
         <span class="loc-stat">${checked}/${total} collected</span>
       </div>
       ${Object.keys(cities[city]).sort().map(m => renderMuseumBlock(m, cities[city][m])).join('')}
@@ -642,6 +649,9 @@ function renderMuseumsCity() {
 }
 
 function renderMuseumsCountry() {
+  const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
+    'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
+    'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
   const countries = {};
   scopedPaintings().forEach(p => {
     const { country, city, museum } = p.location;
@@ -679,7 +689,7 @@ function renderMuseumsCountry() {
     }).join('');
     return `<div class="loc-group">
       <div class="loc-group-header${isOpen ? ' open' : ''}" onclick="toggleContinent('${esc(country)}')">
-        <span class="loc-group-name">${esc(country)}</span>
+        <span class="loc-group-name">${flagFor[country] ? `${flagFor[country]} ` : ''}${esc(country)}</span>
         <span class="loc-group-stat">${checked}/${total} collected</span>
         <span class="loc-chevron">${ICONS.chevron}</span>
       </div>
@@ -751,11 +761,22 @@ function renderMuseumsContinent() {
 
 /* ── Stats View ─────────────────────────────────────────────────────────── */
 function renderStatsView() {
-  const all   = scopedPaintings();
-  const total = all.length;
-  const done  = globalChecked();
-  const pct   = total ? Math.round(done / total * 100) : 0;
+  const all      = scopedPaintings();
+  const total    = all.length;
   const hasScope = S.scope === 'plus10' || S.scope === 'plus30';
+
+  // Top 100 stats — always against the full 100, regardless of scope
+  const top100All  = allPaintings().filter(p => !p.museumOnly && !p.isUser);
+  const top100Done = checkedCount(top100All.map(p => p.id));
+  const top100Pct  = Math.round(top100Done / 100 * 100);
+
+  // Museum-only extras (only relevant when scope is extended)
+  const extraAll  = hasScope ? all.filter(p => p.museumOnly) : [];
+  const extraDone = hasScope ? checkedCount(extraAll.map(p => p.id)) : 0;
+  const extraPct  = (hasScope && extraAll.length) ? Math.round(extraDone / extraAll.length * 100) : 0;
+
+  const done = globalChecked();
+  const pct  = total ? Math.round(done / total * 100) : 0;
 
   // Continent progress
   const continents = [...new Set(all.map(p => p.location.continent))].sort();
@@ -836,12 +857,12 @@ function renderStatsView() {
     }).join('');
 
   return `
-    <div class="stats-back-row">
-      <button class="detail-back-btn" onclick="closeStats()">${ICONS.back} Back</button>
-    </div>
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-num">${done}</div><div class="stat-label">Collected</div></div>
-      <div class="stat-card"><div class="stat-num">${pct}%</div><div class="stat-label">Complete</div></div>
+      <div class="stat-card"><div class="stat-num">${top100Done}/100</div><div class="stat-label">Top 100 Collected</div></div>
+      <div class="stat-card"><div class="stat-num">${top100Pct}%</div><div class="stat-label">Top 100 Complete</div></div>
+      ${hasScope ? `
+      <div class="stat-card stat-card-extra"><div class="stat-num">${extraDone}/${extraAll.length}</div><div class="stat-label">Extras Collected</div></div>
+      <div class="stat-card stat-card-extra"><div class="stat-num">${extraPct}%</div><div class="stat-label">Extras Complete</div></div>` : ''}
       <div class="stat-card"><div class="stat-num">${visitedCount}/${totalMuseums}</div><div class="stat-label">Museums Visited</div></div>
       <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">In Scope</div></div>
     </div>
@@ -1557,7 +1578,7 @@ function openMuseumsDetailModeDropdown(e, btn) {
   closeDrop();
   if (wasOpen) return;
   const opts = [
-    { key: 'condensed', label: 'Condensed', icon: ICONS.frame },
+    { key: 'condensed', label: 'Condensed', icon: ICONS.grid3 },
     { key: 'grid',      label: 'Grid',      icon: ICONS.grid },
     { key: 'list',      label: 'List',      icon: ICONS.rows },
   ];

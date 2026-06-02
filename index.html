@@ -42,7 +42,7 @@
   <!-- Fixed Header -->
   <header id="app-header">
     <h1 class="brand-cursive">Beheld</h1>
-    <div id="global-counter" onclick="openStats()" title="View statistics">
+    <div id="global-counter" onclick="S.view === 'stats' ? closeStats() : openStats()" title="View statistics">
       <span id="counter-checked" class="count">0</span>
       <span id="counter-total" class="total">/ 100</span>
     </div>

@@ -643,6 +643,26 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Annotated `CLAUDE.md` with `> Updated:` notes on every section that describes the original build state — data.js contents, state model fields, four-tabs table, painting object shape, and service worker strategy — all now reflect current reality
 - Annotated `docs/progress.md` App Overview with similar `> Updated:` callouts on the app description, data layer, persistence, nav bar, museums tab, stats view, and settings descriptions
 
+### Stats page overhaul (Session 32)
+- First row always shows "Top 100 Collected" (X/100) and "Top 100 Complete" (X%) — always measured against the full 100 regardless of active scope
+- When scope is Up to 10 or Up to 30: a second row of dashed-border cards appears with "Extras Collected" (X/Y) and "Extras Complete" (X%) for museum-only extras
+- Removed the back button from the stats page; clicking the counter in the header now toggles stats open/closed
+
+### Museums tab: country flags in city/country views
+- "By City" grouping: flag emoji appears next to each city name (resolved from the city's country via a map built during iteration)
+- "By Country" grouping: flag emoji appears next to each country accordion header
+- Same `flagFor` table used by the alpha view
+
+### Museum tab: miscellaneous polish
+- Switched view and sort button order in the Museums toolbar (sort first, view second)
+- Unvisited museum circle buttons now use an empty circle matching `.row-check` style (no pin icon, `2px solid var(--border)`)
+- Sticky toolbar: `#toolbar` is now `position: sticky` on all three tabs so search/sort/view buttons stay pinned below the header while scrolling
+- Condensed view mode: replaced frame icon with a custom 3×3 grid icon (`ICONS.grid3`, `stroke-width="1.5"` rounded squares)
+
+### Paintings tab: clickable movement/artist chips in group views
+- Sort by artist: movement chips in the expanded artist section are now `<button>` elements that open the movement popup on click; gold hover state added via `.mv-chip-link`
+- Sort by movement: artist chips in the expanded movement section open the artist popup on click
+
 ### Museum tab: scope-aware detail view + painting view toggle
 - Museum detail page now uses `scopedPaintings()` — paintings and collected counter reflect the active scope from Settings (Top 100 / Up to 10 / Up to 30)
 - Added a **view toggle button** to the Museums tab toolbar (matches Paintings and Collection tabs); icon reflects the active mode and goes gold when non-default

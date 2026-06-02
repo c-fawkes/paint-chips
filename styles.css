@@ -264,6 +264,10 @@ body {
   align-items: center;
   gap: 8px;
   padding: 0 12px 10px;
+  position: sticky;
+  top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 3px);
+  background: var(--bg);
+  z-index: 50;
 }
 
 .search-wrap {
@@ -971,6 +975,8 @@ body {
   color: var(--text-faint);
   margin-top: 4px;
 }
+.stat-card-extra .stat-num { font-size: 1.5rem; color: var(--gold-dim); }
+.stat-card-extra { border-style: dashed; }
 
 .continent-progress {
   margin: 0 12px 8px;
@@ -1070,8 +1076,8 @@ body {
 /* ── Museum visited button (block view — city/country views) ─────────── */
 .museum-visited-btn {
   width: 26px; height: 26px;
-  background: rgba(255,255,255,.06);
-  border: 1.5px solid rgba(255,255,255,.15);
+  background: none;
+  border: 2px solid var(--border);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer;
@@ -1817,6 +1823,12 @@ body {
   border-radius: 12px;
   padding: 4px 10px;
 }
+.mv-chip-link {
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.mv-chip-link:hover { border-color: var(--gold-dim); color: var(--gold); }
 .mv-popup-paintings {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
