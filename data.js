@@ -497,7 +497,7 @@ const PAINTINGS = [
     movement: "Post-Impressionism",
     wikiUrl: "https://en.wikipedia.org/wiki/Cypresses_(Van_Gogh)",
     grokUrl: "https://grokipedia.com/page/Cypresses",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Wheat-Field-with-Cypresses-%281889%29-Vincent-van-Gogh-Met.jpg/500px-Wheat-Field-with-Cypresses-%281889%29-Vincent-van-Gogh-Met.jpg",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Cypresses_MET_DP130999.jpg/500px-Cypresses_MET_DP130999.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Metropolitan Museum of Art" }
   },
   {

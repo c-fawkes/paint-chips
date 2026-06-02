@@ -1076,3 +1076,6 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - `rowToggleCheck` and `detailToggleCheck` no longer call `render()`, eliminating the full `innerHTML` replacement that caused all images to flash on every check/uncheck
 - Added `data-pid` attribute to `painting-card`, `painting-row`, and `mv-popup-painting` wrappers
 - New `_patchCheckState()` helper surgically updates card classes, badge icon, and header counter in-place
+
+### Fix Cypresses Image (ID 35, rank #76)
+- Corrected `imageUrl` — was showing *Wheat Field with Cypresses* (National Gallery, London); now shows the correct *Cypresses* (Met, New York, `Cypresses_MET_DP130999.jpg`)
