@@ -4690,6 +4690,104 @@ const PAINTINGS = [
     grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sargent_-_Mrs._William_Playfair%2C_1887%2C_98.2.jpg/330px-Sargent_-_Mrs._William_Playfair%2C_1887%2C_98.2.jpg",
     location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
+  },
+
+  // ── Vatican Museums (Apostolic Palace) ────────────────────────────────────
+  {
+    id: 347, rank: null, museumOnly: true,
+    title: "The Liberation of Saint Peter",
+    artist: "Raphael",
+    year: "1514",
+    medium: "Fresco",
+    dimensions: "560 cm wide",
+    description: "Among the most technically ambitious frescoes Raphael ever painted, The Liberation of Saint Peter divides its narrative across three scenes — Peter sleeping in his cell, the angel waking him, and the two figures slipping past the sleeping guards into the night — united by an extraordinary study of competing light sources: angelic radiance, moonlight, torchlight, and the first grey of dawn. Painting on a lunette above a window that floods the room with natural light, Raphael staged what is often called the first masterpiece of nocturnal painting in Western art. It was read simultaneously as a miracle of divine intervention and as an allegory of Pope Julius II's own imprisonment and liberation during the French invasion of Bologna.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Liberation_of_Saint_Peter_(Raphael)",
+    grokUrl: "https://grokipedia.com/page/Liberation_of_Saint_Peter_(Raphael)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/13_Estancia_de_Heliodoro_%28Liberaci%C3%B3n_de_San_Pedro%29.jpg/330px-13_Estancia_de_Heliodoro_%28Liberaci%C3%B3n_de_San_Pedro%29.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
+  },
+  {
+    id: 348, rank: null, museumOnly: true,
+    title: "The Expulsion of Heliodorus from the Temple",
+    artist: "Raphael",
+    year: "1511–12",
+    medium: "Fresco",
+    dimensions: "750 cm wide",
+    description: "The founding fresco of the Room of Heliodorus shows a biblical scene from 2 Maccabees in which a supernatural horseman and two youths expel the Syrian treasurer Heliodorus from the Jerusalem Temple — while on the left, Pope Julius II watches from a portable throne, pointedly identifying the ancient miracle with his own defense of Church patrimony. The diagonal dynamism of the right half, with the horseman rearing over the prostrate Heliodorus, marked a decisive break from the classical balance of the School of Athens toward the explosive energy that would characterize the Baroque a century later. Julius himself is said to have chosen the subject to warn contemporary rulers against seizing Church lands.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Expulsion_of_Heliodorus_from_the_Temple",
+    grokUrl: "https://grokipedia.com/page/The_Expulsion_of_Heliodorus_from_the_Temple",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Raphael_-_The_Expulsion_of_Heliodorus_from_the_Temple.jpg/330px-Raphael_-_The_Expulsion_of_Heliodorus_from_the_Temple.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
+  },
+  {
+    id: 349, rank: null, museumOnly: true,
+    title: "The Mass at Bolsena",
+    artist: "Raphael",
+    year: "1512–14",
+    medium: "Fresco",
+    dimensions: "660 cm wide",
+    description: "Depicted is the Eucharistic miracle of 1263 at Bolsena, where a Bohemian priest doubting transubstantiation witnessed blood seeping from the host — the event that inspired the feast of Corpus Christi. Pope Julius II kneels at the right in direct portrait likeness, while art historians have identified Raphael himself as one of the Swiss Guards at lower right, looking directly out at the viewer with hair bound up. The fresco is notable for the extraordinary accuracy with which Raphael painted Pope Julius's thick silver beard, grown as a sign of mourning for the loss of Bologna — which dates the commission to a precise moment in the history of the papacy.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Mass_at_Bolsena",
+    grokUrl: "https://grokipedia.com/page/The_Mass_at_Bolsena",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Raphael_-_The_Mass_at_Bolsena.jpg/330px-Raphael_-_The_Mass_at_Bolsena.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
+  },
+  {
+    id: 350, rank: null, museumOnly: true,
+    title: "The Meeting of Leo the Great and Attila",
+    artist: "Raphael",
+    year: "1513–14",
+    medium: "Fresco",
+    dimensions: "500 × 750 cm",
+    description: "Raphael began this fresco depicting the legendary 452 encounter in which Pope Leo I turned Attila the Hun away from Rome with the apparitions of Saints Peter and Paul wielding swords in the sky — and had to repaint the pope's face midway through when Julius II died and Leo X was elected. The result shows Leo X's features appearing twice: once as cardinal on the left, once as pope at center right — a visual record of the papal transition embedded in the fresco's surface. The rearing white horse at center became an influential compositional device, quoted by later artists including Titian and Rubens.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Meeting_of_Leo_the_Great_and_Attila",
+    grokUrl: "https://grokipedia.com/page/The_Meeting_of_Leo_the_Great_and_Attila",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Raphael_-_The_Meeting_of_Leo_the_Great_and_Attila.jpg/330px-Raphael_-_The_Meeting_of_Leo_the_Great_and_Attila.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
+  },
+  {
+    id: 351, rank: null, museumOnly: true,
+    title: "The Fire in the Borgo",
+    artist: "Raphael",
+    year: "1514–17",
+    medium: "Fresco",
+    dimensions: "670 cm wide",
+    description: "Raphael designed this large fresco but delegated execution largely to his chief assistant Giulio Romano — a delegation that is itself historically significant, as the Fire in the Borgo marks the first moment Raphael ran what was effectively a manufacturing studio, producing monumental public art through a workshop structure. The scene depicts the 847 miracle in which Pope Leo IV extinguished a fire in the Borgo district with a gesture of benediction, but it is the foreground figures — the fleeing woman with a child, the youth scaling a wall, the old man carried on his son's back in a direct echo of Aeneas carrying Anchises — that dominate the composition and that exercised the greatest influence on Mannerist and Baroque painters. Pope Leo X is visible in a loggia at center, framed by a view of old St. Peter's Basilica.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Fire_in_the_Borgo",
+    grokUrl: "https://grokipedia.com/page/The_Fire_in_the_Borgo",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Raphael_-_Fire_in_the_Borgo.jpg/330px-Raphael_-_Fire_in_the_Borgo.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
+  },
+  {
+    id: 352, rank: null, museumOnly: true,
+    title: "The Hall of the Saints (Disputation of Saint Catherine)",
+    artist: "Pinturicchio",
+    year: "1492–94",
+    medium: "Fresco",
+    description: "The centerpiece of the Borgia Apartments' most celebrated room, Pinturicchio's Disputation of Saint Catherine shows the Alexandrian martyr debating fifty pagan philosophers before Emperor Maximinus — with Lucrezia Borgia, daughter of Pope Alexander VI, painted as the saint herself. Behind the disputants stretches a detailed view of ancient Roman monuments, including a triumphal arch and a Colosseum-like structure, that served as an implicit assertion of the Borgia papacy's claim to Roman imperial legitimacy. The gold-leaf speckled trees and elaborate gilding made this room the most opulent in the entire Apostolic Palace.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Hall_of_the_Saints_(Pinturicchio)",
+    grokUrl: "https://grokipedia.com/page/The_Hall_of_the_Saints_(Pinturicchio)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Pinturicchio_-_St_Catherine%27s_Disputation_-_WGA17820.jpg/330px-Pinturicchio_-_St_Catherine%27s_Disputation_-_WGA17820.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
+  },
+  {
+    id: 353, rank: null, museumOnly: true,
+    title: "Scenes from the Lives of Saints Stephen and Lawrence",
+    artist: "Fra Angelico",
+    year: "1447–51",
+    medium: "Fresco",
+    description: "Commissioned by Pope Nicholas V for his private chapel in the most ancient tower of the Apostolic Palace, Fra Angelico's fresco cycle covers the walls with episodes from the lives of early Christian deacons — Stephen above, Lawrence below — in a style that distills his lifelong project of making sacred narrative simultaneously legible and luminous. The chapel is known as the 'jewel box' of the Vatican, its blue starred vault, gilded pilasters, and figures rendered in Fra Angelico's signature transparent tempera-like fresco giving an impression of precious inlaid work rather than monumental painting. It is considered the summit of his 'Christian humanism' — the effort to make the theological clarity of Dominican devotion visually manifest in form and color.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Niccoline_Chapel",
+    grokUrl: "https://grokipedia.com/page/Niccoline_Chapel",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/St._Peter_Niccoline_Chapel.jpg/330px-St._Peter_Niccoline_Chapel.jpg",
+    location: { continent: "Europe", country: "Vatican City", city: "Vatican City", museum: "Vatican Museums (Apostolic Palace)" }
   }
 ];
 
@@ -5296,6 +5394,10 @@ const ARTISTS = {
     born: "1883", died: "1908", nationality: "Austrian",
     bio: "Austrian painter Richard Gerstl produced fewer than 70 paintings in only five years before taking his own life at 25, yet that small body of work placed him decades ahead of his contemporaries in psychological intensity and painterly freedom. Self-taught in his loosely Expressionist technique — with its thick, energetic surface and radical cropping — he worked in near-total obscurity, exhibiting nothing in his lifetime. His fatal affair with Mathilde Schönberg, wife of the composer Arnold Schönberg with whom Gerstl had become close, ended when she returned to her husband; Gerstl burned most of his correspondence and killed himself that night. His work was virtually unknown until a posthumous exhibition in Vienna in 1931."
   },
+  "Pinturicchio": {
+    born: "c. 1454", died: "1513", nationality: "Italian",
+    bio: "Born Bernardino di Betto in Perugia, Pinturicchio was one of the most sought-after fresco painters of late 15th-century Italy, celebrated for the brilliant color, intricate narrative detail, and lavish gold-leaf embellishment of his large-scale decorative cycles. He trained alongside Perugino in Verrocchio's workshop and accompanied him to Rome for the Sistine Chapel project in 1481-82. His greatest commissions came from Pope Alexander VI, who employed him to decorate the Borgia Apartments (1492-94) in an opulent program blending Christian saints, Egyptian mythology, and covert portraits of the Borgia family. His ornate style fell out of fashion during the High Renaissance when Raphael's arrival in Rome established a new standard, but he remains a vital figure in the transition from Quattrocento to High Renaissance decoration."
+  },
   "Joshua Reynolds": {
     born: "1723", died: "1792", nationality: "English",
     bio: "The dominant figure of 18th-century British painting, Joshua Reynolds was the founding President of the Royal Academy of Arts and the principal advocate for a 'Grand Manner' of painting that elevated portraiture to the level of history painting through classical allusion and literary reference. His Discourses, delivered annually to Royal Academy students, remain the most influential body of artistic theory produced in Britain. Reynolds painted almost every notable figure of his era — Samuel Johnson, Edmund Burke, Oliver Goldsmith, David Garrick — and his studio on Leicester Fields was the center of London's cultural life. He gradually lost his sight from 1789 and died in 1792, leaving a body of work that defined the British portrait tradition for the next century."
@@ -5416,7 +5518,8 @@ const ARTIST_PORTRAITS = {
   "Oskar Kokoschka": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Oskar_Kokoschka_%281963%29_by_Erling_Mandelmann.jpg/330px-Oskar_Kokoschka_%281963%29_by_Erling_Mandelmann.jpg",
   "Richard Gerstl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Richard_Gerstl_1902_%281903%29.jpg/330px-Richard_Gerstl_1902_%281903%29.jpg",
   "Wassily Kandinsky": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg/330px-Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg",
-  "Joshua Reynolds": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_%282315517%29.jpg/330px-Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_%282315517%29.jpg"
+  "Joshua Reynolds": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_%282315517%29.jpg/330px-Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_%282315517%29.jpg",
+  "Pinturicchio": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Pinturicchio_self_big.jpg/330px-Pinturicchio_self_big.jpg"
 };
 
 /* ── Museum info ─────────────────────────────────────────────────────────── */

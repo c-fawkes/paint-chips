@@ -895,3 +895,9 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added Sarah Siddons as the Tragic Muse (Reynolds, 1783–84, ID 340), View on the Stour near Dedham (Constable, 1822, ID 341), Breakfast in Bed (Cassatt, 1897, ID 342), The Long Leg (Hopper, 1935, ID 343), Virgin and Child (van der Weyden, c. 1460, ID 344), The Grand Canal Scene (Turner, c. 1837, ID 345), Mrs. William Playfair (Sargent, 1887, ID 346)
 - `imageUrl: null` on The Long Leg (Hopper copyright until 2037)
 - New artist: Joshua Reynolds
+
+### Museum build-up: Vatican Museums (Apostolic Palace) (3 → 10)
+- Added Liberation of Saint Peter (ID 347), Expulsion of Heliodorus (ID 348), Mass at Bolsena (ID 349), Meeting of Leo the Great and Attila (ID 350), Fire in the Borgo (ID 351) — all Raphael frescoes from the Room of Heliodorus and Room of the Fire in the Borgo
+- Added Hall of the Saints / Disputation of Saint Catherine (Pinturicchio, 1492–94, ID 352) from the Borgia Apartments
+- Added Scenes from the Lives of Saints Stephen and Lawrence (Fra Angelico, 1447–51, ID 353) from the Niccoline Chapel
+- New artist: Pinturicchio
