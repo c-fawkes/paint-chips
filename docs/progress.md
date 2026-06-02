@@ -160,12 +160,12 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Built from scratch
 - Designed full data model: 100 paintings across 35 museums with rank, artist, year, medium, dimensions, description, and location (continent/country/city/museum)
 - `MUSEUMS` lookup object keyed by museum name
-- Four-tab PWA shell: Top 100, Museums, Locations, Stats
-- Per-museum accordion with painting counts and progress bars
+- Four-tab PWA shell: Top 100, Museums, Locations, Stats *(Locations merged into Museums in Session 2; Stats moved to header counter in Session 7)*
+- Per-museum accordion with painting counts and progress bars *(accordion replaced with in-page detail view in Session 31)*
 - Continent → Country → City → Museum drill-down in Locations tab
 - Global progress bar and counter in the fixed header
-- Check-off ("seen") toggle on each painting row, persisted to localStorage
-- User photo capture — attach personal photos to any checked painting, stored as base64 data URLs
+- Check-off ("seen") toggle on each painting row, persisted to localStorage *(renamed "collected" across UI and codebase in Session 28)*
+- User photo capture — attach personal photos to any checked painting, stored as base64 data URLs *(moved to IndexedDB in Session 23)*
 - Add custom paintings to any museum via a form modal
 - Search by title, artist, museum, or country
 - Sort by rank, artist, year, title, or museum
@@ -194,8 +194,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Fixed three duplicate rank numbers — ranks 55, 99, and 100 were assigned twice
 
 ### Tab restructure
-- Merged old Map and Museums tabs into a single **Museums** tab with sub-modes: Alpha / City / Country / Continent
-- Added **Collection** tab with three display modes: grid, compact, and gallery (full-bleed framed artwork view)
+- Merged old Map and Museums tabs into a single **Museums** tab with sub-modes: Alpha / City / Country / Continent *(Continent sub-mode removed in Session 30)*
+- Added **Collection** tab with three display modes: grid, compact, and gallery (full-bleed framed artwork view) *(gallery made default in Session 20; "Framed" renamed to "Gallery" in Session 20)*
 - Added seen-check toggle button on the large thumbnail in the detail modal
 
 ---
@@ -235,7 +235,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added `const MOVEMENTS` to `data.js` with 18 entries, each containing era, essay-style summary, 5 key traits, and key artists
 - Detail sheet shows "Movement" row as a gold tappable pill — opens the movement popup
 - Movement popup is a bottom-sheet with the full movement essay, bullet traits, artist chips, and a 3-column grid of all paintings in that movement; tapping a painting jumps to its detail
-- Movements page lists all 18 movements with era, truncated summary, and 3 thumbnail previews
+- Movements page lists all 18 movements with era, truncated summary, and 3 thumbnail previews *(Movements page removed in Session 6; movement info now accessible inline via sort-by-Movement)*
 
 ### Art Movements accordion
 - Movements page rows are collapsed by default; clicking expands to reveal the full essay, key characteristics, and up to 6 painting thumbnails
@@ -243,7 +243,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Movement tag in the painting detail sheet opens the movement popup (whole spec box is the tap target)
 
 ### Detail sheet improvements
-- Added "Collection" button to the detail nav (between Back and Seen); hidden when unseen, fades in when "Mark Seen" is toggled on; clicking navigates directly to the Collection tab
+- Added "Collection" button to the detail nav (between Back and Seen); hidden when unseen, fades in when "Mark Seen" is toggled on; clicking navigates directly to the Collection tab *(replaced with heart Favorites button in Session 26)*
 - iOS input zoom fix: bumped font-size on search input and modal fields to `1rem` (16px) so Safari doesn't auto-zoom on focus
 
 ### Add Painting UX overhaul
@@ -285,7 +285,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Settings panel
 - Added gear icon button to the fixed header; tapping opens a Settings view replacing `#main`
 - **Units** toggle (Metric / Imperial) — dimensions in detail sheet convert `N cm` → `N.X in` via `formatDimensions()`; persisted to localStorage
-- **Painting List** scope toggle (Top 100 / All Famous) — controls which paintings appear everywhere; `scopedPaintings()` helper gates all view functions; persisted to localStorage
+- **Painting List** scope toggle (Top 100 / All Famous) — controls which paintings appear everywhere; `scopedPaintings()` helper gates all view functions; persisted to localStorage *("All Famous" replaced with three-way Up to 10 / Up to 30 in Session 30)*
 
 ### Nav restructure
 - "Top 100" tab renamed to "Paintings"
@@ -309,7 +309,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ### Onboarding screen
 - Added first-launch onboarding overlay (z-index 998); shows once, gated by `localStorage.getItem('pc_onboarded')`
-- Layout: Paint Chips brand → gold "100" hero number → "masterpieces. One lifetime." → 35 / 21 / 12 stat columns → body copy → 1425–1962 timeline bar → "Begin your journey" CTA
+- Layout: Paint Chips brand → gold "100" hero number → "masterpieces. One lifetime." → 35 / 21 / 12 stat columns → body copy → 1425–1962 timeline bar → "Begin your journey" CTA *(layout significantly redesigned in Sessions 20–21)*
 - Settings → About section added with a "View" button to re-show the intro
 
 ---
@@ -416,7 +416,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added: never commit/push unless explicitly told; ask to commit at ~85% context
 
 ### Collection visibility toggle
-- The collection button in the detail modal is now a toggle: "In Collection" (gold, active) vs "Add to Collection" (dimmed)
+- The collection button in the detail modal is now a toggle: "In Collection" (gold, active) vs "Add to Collection" (dimmed) *(replaced with heart Favorites button in Session 26)*
 - Paintings default to in-collection when first marked as seen; the toggle lets you hide specific paintings from the Collection tab while keeping them marked as seen
 - `S.hiddenFromCollection` persisted in localStorage; collection view filters out hidden paintings but the seen count in the header still reflects all seen paintings
 
@@ -449,7 +449,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Photo upload now shows two buttons side by side: "Camera" (capture=environment) and "Library" (file picker) — previously only camera was offered
 - Note textarea font-size bumped to 1rem (16px) and date input also uses 1rem to prevent iOS auto-zoom on focus
 - "Add a note" label removed; placeholder text changed to "Add a note about this painting"
-- Date seen field added below the note: defaults to today when a painting is first marked as seen, editable via a date picker, or togglable to "Unknown"; persisted in `S.dateSeen`
+- Date seen field added below the note: defaults to today when a painting is first marked as seen, editable via a date picker, or togglable to "Unknown"; persisted in `S.dateSeen` *(`dateSeen` renamed to `dateCollected` in Session 28)*
 
 ## Session 16 — 2026-05-28
 
@@ -467,7 +467,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Fixed `toggleDateUnknown` DOM manipulation to use `.closest()` to find the Unknown button (broke after wrapper was added)
 
 ### Art Quiz feature
-- Added a dice (⚄) button in the app header, left of the settings gear, that opens an Art Quiz modal
+- Added a dice (⚄) button in the app header, left of the settings gear, that opens an Art Quiz modal *(icon changed to question-mark-in-circle in Session 17)*
 - **Setup screen**: slider for 5–20 questions; pill toggles for question types (Artist, Year, Museum, Movement, Painting name); Multiple choice vs. Dropdown mode selector
 - **Question generation**: picks randomly from the Top 100 pool, distributes types evenly, avoids duplicate painting+type combos; MC mode generates 3 wrong distractors from the same category pool
 - **Question screen**: painting image, contextual hint, question text, answer options; after answering MC options highlight green/red; dropdown shows inline ✓/✗ result; progress pips in nav bar
@@ -482,9 +482,32 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Quiz painting images now use `object-fit: contain` at a fixed 240px height so images display at their natural proportions without cropping
 - Quiz header button icon changed from a dice to a question-mark-in-circle (Lucide help-circle)
 
+## Session 18 — 2026-05-28
+
+### Header counter centered
+- Wrapped the quiz and settings buttons in a `.header-actions` div with `flex: 1; justify-content: flex-end`
+- `h1` retains `flex: 1` on the left; counter now sits between two equal-flex flanks and is naturally centered
+
+## Session 19 — 2026-05-28
+
+### Sticky group subheaders
+- Group headers (artist / museum / movement sorts on both Paintings and Collection tabs) were already `position: sticky` but `top: 0` hid them under the fixed app header
+- Fixed by setting `top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 3px)` so they pin just below the header + progress bar
+
+### Artist popup layout
+- Portrait image no longer crammed at the very top — `mv-popup-body` top padding increased from 4px to 16px
+- Bio text now flows alongside the portrait: portrait is `float: left` with right/bottom margin inside `.artist-bio-wrap`; text starts inline and wraps under the image naturally
+- Name and nationality/years meta sit as full-width lines above the float section
+
+### Hide-on-scroll toolbar *(removed in Session 22)*
+- Toolbar (search bar + sort + view buttons) is now `position: sticky` at the header bottom edge
+- Scrolling down past 60px hides it by translating it above the fixed header (`.toolbar-up` class); scrolling up anywhere brings it back with a 0.22s ease transition
+- Scroll state (`_toolbarHidden`, `_lastScrollY`) resets on every `render()` so the toolbar is always visible after a tab or sort change
+- Single `window` scroll listener added in `init()`; no re-attachment needed after re-renders
+
 ## Session 20 — 2026-05-28
 
-### Toolbar gap fix (scroll-to-top)
+### Toolbar gap fix (scroll-to-top) *(references hide-on-scroll feature; both removed in Session 22)*
 - After scrolling down (toolbar hidden) and returning to the top, sparse scroll events left `toolbar-up` active at low scroll positions, showing a dark gap below the header
 - Fixed by adding a `scrollY <= 60` guard at the top of the scroll handler that force-shows the toolbar whenever scroll drops back within the hide threshold
 
@@ -515,29 +538,6 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Removed hide-on-scroll toolbar feature entirely — toolbar now scrolls naturally and is only visible at the top of the list; removed scroll listener, `_toolbarHidden`/`_lastScrollY` vars, sticky/transition CSS, and `.toolbar-up` class
 - List view icon on view buttons updated to proper Lucide spec with `stroke-linecap="round" stroke-linejoin="round"` so the dot indicators render as circles
 - Artist group expanded info block: padding changed from `0 16px 16px` to uniform `16px` so the portrait image has equal spacing on all sides instead of touching the subheader; removed redundant inline `margin-bottom:12px` on the portrait
-
-## Session 19 — 2026-05-28
-
-### Sticky group subheaders
-- Group headers (artist / museum / movement sorts on both Paintings and Collection tabs) were already `position: sticky` but `top: 0` hid them under the fixed app header
-- Fixed by setting `top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 3px)` so they pin just below the header + progress bar
-
-### Artist popup layout
-- Portrait image no longer crammed at the very top — `mv-popup-body` top padding increased from 4px to 16px
-- Bio text now flows alongside the portrait: portrait is `float: left` with right/bottom margin inside `.artist-bio-wrap`; text starts inline and wraps under the image naturally
-- Name and nationality/years meta sit as full-width lines above the float section
-
-### Hide-on-scroll toolbar
-- Toolbar (search bar + sort + view buttons) is now `position: sticky` at the header bottom edge
-- Scrolling down past 60px hides it by translating it above the fixed header (`.toolbar-up` class); scrolling up anywhere brings it back with a 0.22s ease transition
-- Scroll state (`_toolbarHidden`, `_lastScrollY`) resets on every `render()` so the toolbar is always visible after a tab or sort change
-- Single `window` scroll listener added in `init()`; no re-attachment needed after re-renders
-
-## Session 18 — 2026-05-28
-
-### Header counter centered
-- Wrapped the quiz and settings buttons in a `.header-actions` div with `flex: 1; justify-content: flex-end`
-- `h1` retains `flex: 1` on the left; counter now sits between two equal-flex flanks and is naturally centered
 
 ## Session 23 — 2026-05-28
 
@@ -589,6 +589,14 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - When the active sort has group sections (Artist, Museum, or Movement) and view is not Gallery, a divider and **Expand All** / **Collapse All** buttons appear at the bottom of the sort dropdown
 - `collExpandAll()` populates the relevant `expandedColl*` Set from the currently visible paintings; `collCollapseAll()` clears it
 
+## Session 27 — 2026-05-29
+
+### Paintings tab sort dropdown parity with collection tab
+- Added contextual icons to all six sort options: hash (Rank), brush (Artist), calendar (Year), type-T (Title), museum building (Museum), palette (Movement)
+- Active sort option shows a checkmark aligned to the right, matching collection tab style
+- Expand All / Collapse All section appears below a divider when sort is Artist, Museum, or Movement
+- `listExpandAll()` / `listCollapseAll()` operate on the paintings tab's own Sets (`expandedListArtists`, `expandedListMuseums`, `expandedMovements`) — no cross-tab bleed
+
 ## Session 28 — 2026-05-29
 
 ### "Seen" → "Collected" — wording and variable standardisation
@@ -624,13 +632,43 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Bartolomé Esteban Murillo — Spanish Baroque; self-portrait URL
 - José de Ribera ("Lo Spagnoletto") — Spanish Baroque / Tenebrist; self-portrait URL
 
-## Session 27 — 2026-05-29
+## Session 30 — 2026-05-31
 
-### Paintings tab sort dropdown parity with collection tab
-- Added contextual icons to all six sort options: hash (Rank), brush (Artist), calendar (Year), type-T (Title), museum building (Museum), palette (Movement)
-- Active sort option shows a checkmark aligned to the right, matching collection tab style
-- Expand All / Collapse All section appears below a divider when sort is Artist, Museum, or Movement
-- `listExpandAll()` / `listCollapseAll()` operate on the paintings tab's own Sets (`expandedListArtists`, `expandedListMuseums`, `expandedMovements`) — no cross-tab bleed
+### Museum-only painting expansion: Louvre + Musée d'Orsay
+- Added 28 museum-only paintings (IDs 235–262) for the Louvre Museum: Grande Odalisque, The Astronomer, Bathsheba at Her Bath, Death of the Virgin, Saint John the Baptist, The Embarkation for Cythera, The Turkish Bath, Intervention of the Sabine Women, Pierrot, La Belle Jardinière, Gabrielle d'Estrées, The Fortune Teller, Et in Arcadia Ego, Women of Algiers, Virgin of Chancellor Rolin, Portrait of Louis XIV, Man with a Glove, The Card Sharp with the Ace of Diamonds, Portrait of Anne of Cleves, Arrival of Marie de Medici at Marseille, Portrait of Madame Récamier, La Belle Ferronnière, The Ship of Fools, Supper at Emmaus (Rembrandt), Saint Sebastian Tended by Saint Irene, Portrait of Francis I (Clouet), Saint Sebastian (Mantegna), The Supper at Emmaus (Titian)
+- Added 29 museum-only paintings (IDs 263–291) for the Musée d'Orsay: The Balcony, The Fifer, Berthe Morisot with a Bouquet of Violets, On the Beach, Portrait of Émile Zola, The Poppy Field, Women in the Garden, The Magpie, Haystacks End of Summer, The Swing, Dance in the City, Dance in the Country, Young Girls at the Piano, The Floor Scrapers, The Circus, The Card Players, Still Life with Apples and Oranges, Tahitian Women on the Beach, The White Horse, The Cradle, The Birth of Venus (Bouguereau), The Ballet Class, The Tub, L'Étoile (The Star), A Burial at Ornans, The Painter's Studio, The Origin of the World, Bedroom in Arles, The Church at Auvers
+- Added 9 new artists to ARTISTS and ARTIST_PORTRAITS: School of Fontainebleau, Jean Clouet, Andrea Mantegna, Jean-Auguste-Dominique Ingres, Jean-Antoine Watteau, Hyacinthe Rigaud, Berthe Morisot, William-Adolphe Bouguereau, Gustave Courbet
+- Wikimedia thumbnail URLs computed via MD5 hash for all filenames; 1 null image (Virgin of Chancellor Rolin — webp source, no reliable jpg)
+
+### Scope toggle: + 10 / + 30 modes
+- Replaced the binary Top 100 / All Famous toggle with a three-way: **Top 100** / **+ 10** / **+ 30**
+- `+ 10` shows up to 10 museum-only paintings per museum; `+ 30` shows up to 30 — gives users a gradual expansion path
+- `scopedPaintings()` updated with new filtering logic; saved `'extended'` scope migrates to `'plus30'` on load
+
+### CLAUDE.md: /add-paintings command
+- Documented the `/add-paintings` slash command in CLAUDE.md, requiring it to be used for all future painting additions (enforces research workflow, avoids ad-hoc data.js edits)
+
+### Museums tab UI parity
+- Added search bar (matching style of Paintings and Collection tabs) that filters across all group-by modes by museum name, city, and country
+- Changed the group-by button from a text label + chevron to an icon-only button (matching the sort buttons on the other tabs); button activates gold when grouping is non-default
+- Dropdown options for group-by now have leading icons: landmark (By Museum), pin (By City), globe (By Country)
+- Removed "By Continent" as a grouping option — redundant given the country view; saved `'continent'` mode migrates to `'alpha'`
+- Dropdown now right-aligns to the button, consistent with other tab dropdowns
+
+### Museum visited tracking
+- Added `S.visitedMuseums` (persisted to localStorage) — a dictionary keyed by museum name
+- **Alpha view**: visited badge is a small circular button overlaid on the museum's flag icon (bottom-right); tapping toggles visited without expanding the accordion; gold check fills when visited; gold checkmark also appears inline next to the museum name *(badge removed from flag icon and inline check removed in Session 32; button moved to far right of row)*
+- **City/Country views**: visited button appears in the museum block header between the collected counter and the chevron, same gold-when-visited style
+- `toggleMuseumVisited()` stops event propagation so badge taps don't accidentally toggle the accordion
+
+### Stats page overhaul *(summary cards redesigned again in Session 32)*
+- Summary cards: Collected count, % Complete, **Museums Visited X/Y** (new), In Scope count
+- Progress by Continent section retained
+- "Top Museums" section replaced with a full expandable **Museums** list — all museums sorted by % collected descending, each with a progress bar
+- Expanding a museum reveals the painting list (same compact rows as the museums tab, fully interactive)
+- If scope is **+ 10** or **+ 30**: expanded view shows two sub-bars — "Top 100" and "Museum-only" — before the paintings list, so progress on rank vs. museum-only work is clearly separated
+- Museum rows in stats show the gold visited checkmark when visited
+- `S.expandedStatsMuseums` (non-persisted) tracks open sections; resets on reload
 
 ## Session 31 — 2026-05-31
 
@@ -671,48 +709,6 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Reina Sofía museum-only paintings
 - Added 25 museum-only paintings (IDs 292–316) for Museo Nacional Centro de Arte Reina Sofía: House with Palm Tree, Snail Woman Flower Star, Woman Bird Star (Homage to Picasso) by Miró; Violin and Guitar, The Anisette Bottle, Coffee Grinder Cup and Glass, Coffee Mill, Open Window, Carafe and Book by Juan Gris; Young Woman at a Window, The Invisible Man, The Enigma of Hitler by Dalí; Dead Birds and Head of a Young Woman by Picasso; Garrote vil and Interior at Outdoors by Ramon Casas; Portrait of Tristan Tzara by Delaunay; Totalizer by Picabia; Woman with a Fan and Woman with Guitar by María Blanchard; The Gathering at the Café de Pombo by Solana; Portrait of Sonia Klamery by Anglada Camarasa; A World by Ángeles Santos; Lying Figure by Francis Bacon; Garrote by Goya
 - Added 8 new artists to ARTISTS: Ramon Casas, Robert Delaunay, Francis Picabia, María Blanchard, José Gutiérrez Solana, Hermenegildo Anglada Camarasa, Ángeles Santos — all with full bios and nationality/dates
-
----
-
-## Session 30 — 2026-05-31
-
-### Museum-only painting expansion: Louvre + Musée d'Orsay
-- Added 28 museum-only paintings (IDs 235–262) for the Louvre Museum: Grande Odalisque, The Astronomer, Bathsheba at Her Bath, Death of the Virgin, Saint John the Baptist, The Embarkation for Cythera, The Turkish Bath, Intervention of the Sabine Women, Pierrot, La Belle Jardinière, Gabrielle d'Estrées, The Fortune Teller, Et in Arcadia Ego, Women of Algiers, Virgin of Chancellor Rolin, Portrait of Louis XIV, Man with a Glove, The Card Sharp with the Ace of Diamonds, Portrait of Anne of Cleves, Arrival of Marie de Medici at Marseille, Portrait of Madame Récamier, La Belle Ferronnière, The Ship of Fools, Supper at Emmaus (Rembrandt), Saint Sebastian Tended by Saint Irene, Portrait of Francis I (Clouet), Saint Sebastian (Mantegna), The Supper at Emmaus (Titian)
-- Added 29 museum-only paintings (IDs 263–291) for the Musée d'Orsay: The Balcony, The Fifer, Berthe Morisot with a Bouquet of Violets, On the Beach, Portrait of Émile Zola, The Poppy Field, Women in the Garden, The Magpie, Haystacks End of Summer, The Swing, Dance in the City, Dance in the Country, Young Girls at the Piano, The Floor Scrapers, The Circus, The Card Players, Still Life with Apples and Oranges, Tahitian Women on the Beach, The White Horse, The Cradle, The Birth of Venus (Bouguereau), The Ballet Class, The Tub, L'Étoile (The Star), A Burial at Ornans, The Painter's Studio, The Origin of the World, Bedroom in Arles, The Church at Auvers
-- Added 9 new artists to ARTISTS and ARTIST_PORTRAITS: School of Fontainebleau, Jean Clouet, Andrea Mantegna, Jean-Auguste-Dominique Ingres, Jean-Antoine Watteau, Hyacinthe Rigaud, Berthe Morisot, William-Adolphe Bouguereau, Gustave Courbet
-- Wikimedia thumbnail URLs computed via MD5 hash for all filenames; 1 null image (Virgin of Chancellor Rolin — webp source, no reliable jpg)
-
-### Scope toggle: + 10 / + 30 modes
-- Replaced the binary Top 100 / All Famous toggle with a three-way: **Top 100** / **+ 10** / **+ 30**
-- `+ 10` shows up to 10 museum-only paintings per museum; `+ 30` shows up to 30 — gives users a gradual expansion path
-- `scopedPaintings()` updated with new filtering logic; saved `'extended'` scope migrates to `'plus30'` on load
-
-### CLAUDE.md: /add-paintings command
-- Documented the `/add-paintings` slash command in CLAUDE.md, requiring it to be used for all future painting additions (enforces research workflow, avoids ad-hoc data.js edits)
-
-### Museums tab UI parity
-- Added search bar (matching style of Paintings and Collection tabs) that filters across all group-by modes by museum name, city, and country
-- Changed the group-by button from a text label + chevron to an icon-only button (matching the sort buttons on the other tabs); button activates gold when grouping is non-default
-- Dropdown options for group-by now have leading icons: landmark (By Museum), pin (By City), globe (By Country)
-- Removed "By Continent" as a grouping option — redundant given the country view; saved `'continent'` mode migrates to `'alpha'`
-- Dropdown now right-aligns to the button, consistent with other tab dropdowns
-
-### Museum visited tracking
-- Added `S.visitedMuseums` (persisted to localStorage) — a dictionary keyed by museum name
-- **Alpha view**: visited badge is a small circular button overlaid on the museum's flag icon (bottom-right); tapping toggles visited without expanding the accordion; gold check fills when visited; gold checkmark also appears inline next to the museum name
-- **City/Country views**: visited button appears in the museum block header between the collected counter and the chevron, same gold-when-visited style
-- `toggleMuseumVisited()` stops event propagation so badge taps don't accidentally toggle the accordion
-
-### Stats page overhaul
-- Summary cards: Collected count, % Complete, **Museums Visited X/Y** (new), In Scope count
-- Progress by Continent section retained
-- "Top Museums" section replaced with a full expandable **Museums** list — all museums sorted by % collected descending, each with a progress bar
-- Expanding a museum reveals the painting list (same compact rows as the museums tab, fully interactive)
-- If scope is **+ 10** or **+ 30**: expanded view shows two sub-bars — "Top 100" and "Museum-only" — before the paintings list, so progress on rank vs. museum-only work is clearly separated
-- Museum rows in stats show the gold visited checkmark when visited
-- `S.expandedStatsMuseums` (non-persisted) tracks open sections; resets on reload
-
----
 
 ## Session 32 — 2026-06-01
 
