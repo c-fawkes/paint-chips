@@ -4590,6 +4590,106 @@ const PAINTINGS = [
     grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Hans_Holbein_the_Younger_-_Portrait_of_a_Hanseatic_Merchant_-_1977.187_-_Yale_University_Art_Gallery.jpg/330px-Hans_Holbein_the_Younger_-_Portrait_of_a_Hanseatic_Merchant_-_1977.187_-_Yale_University_Art_Gallery.jpg",
     location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
+  },
+
+  // ── Huntington Library ────────────────────────────────────────────────────
+  {
+    id: 340, rank: null, museumOnly: true,
+    title: "Sarah Siddons as the Tragic Muse",
+    artist: "Joshua Reynolds",
+    year: "1783–84",
+    medium: "Oil on canvas",
+    dimensions: "239.4 × 147.6 cm",
+    description: "Reynolds painted the greatest actress of the age in full allegorical splendor, placing Sarah Siddons on a near-throne with the personifications of Pity and Terror — from Aristotle's theory of tragedy — lurking in the shadows behind her. The painting was so celebrated that Reynolds reportedly signed his name on the hem of Siddons's dress so that 'my name shall go down to posterity on the hem of your garment.' It remained in Siddons's family until 1862 and was acquired by the Huntington in 1921, where it hangs as the counterpart to The Blue Boy.",
+    movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Sarah_Siddons_as_the_Tragic_Muse",
+    grokUrl: "https://grokipedia.com/page/Sarah_Siddons_as_the_Tragic_Muse",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Reynolds%2C_Sir_Joshua_-_Mrs_Siddons_as_the_Tragic_Muse_-_Google_Art_Project.jpg/330px-Reynolds%2C_Sir_Joshua_-_Mrs_Siddons_as_the_Tragic_Muse_-_Google_Art_Project.jpg",
+    location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
+  },
+  {
+    id: 341, rank: null, museumOnly: true,
+    title: "View on the Stour near Dedham",
+    artist: "John Constable",
+    year: "1822",
+    medium: "Oil on canvas",
+    dimensions: "129.5 × 188 cm",
+    description: "This sweeping landscape of Constable's native Suffolk countryside — the same stretch of the River Stour he returned to obsessively throughout his life — was exhibited at the Royal Academy in 1822 and purchased by an American collector, beginning the chain of ownership that would eventually bring it to the Huntington. It is one of Constable's largest and most resolved Stour canvases, capturing the wide sky, working barges, and particular quality of Suffolk light that he called 'the most beautiful I know in this country.' Constable's declaration that 'there is nothing ugly; I never saw an ugly thing in my life' is embodied most fully in paintings like this.",
+    movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/View_on_the_Stour_near_Dedham",
+    grokUrl: "https://grokipedia.com/page/View_on_the_Stour_near_Dedham",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Constable%2C_View_on_the_Stour_near_Dedham.jpg/330px-Constable%2C_View_on_the_Stour_near_Dedham.jpg",
+    location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
+  },
+  {
+    id: 342, rank: null, museumOnly: true,
+    title: "Breakfast in Bed",
+    artist: "Mary Cassatt",
+    year: "1897",
+    medium: "Oil on canvas",
+    dimensions: "65 × 73.6 cm",
+    description: "A mother and child share the warm, private world of a bed, the child nestled against her mother's arm while gazing outward with the unfocused curiosity that Cassatt captured better than any other painter of her generation. Cassatt's angle — looking slightly down at the figures from close range — creates the intimacy of someone actually present in the room, not observing from a distance. It entered the Huntington through the Virginia Steele Scott Collection and became one of the most-visited works in the American art galleries.",
+    movement: "Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Breakfast_in_Bed_%281897%29_by_Mary_Cassatt%2C_Huntington_Library.jpg/330px-Breakfast_in_Bed_%281897%29_by_Mary_Cassatt%2C_Huntington_Library.jpg",
+    location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
+  },
+  {
+    id: 343, rank: null, museumOnly: true,
+    title: "The Long Leg",
+    artist: "Edward Hopper",
+    year: "1935",
+    medium: "Oil on canvas",
+    dimensions: "76.2 × 91.4 cm",
+    description: "A lone sailboat executes a long tack off the lighthouse point at Provincetown, Massachusetts, on a brilliant afternoon — the composition stripped to wind, light, and water with the austerity that is Hopper's hallmark. Hopper and his wife Jo spent their summers in Cape Cod and Truro, and sailing was among his repeated subjects: he saw in the sport the same solitude and purposeful movement that animated his interiors. The painting has been a centerpiece of the Huntington's American collection since its acquisition in 1984, routinely cited as one of Hopper's finest seascapes.",
+    movement: "Modernism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
+  },
+  {
+    id: 344, rank: null, museumOnly: true,
+    title: "Virgin and Child",
+    artist: "Rogier van der Weyden",
+    year: "c. 1460",
+    medium: "Oil on oak panel",
+    dimensions: "31.9 × 22.9 cm",
+    description: "The left wing of a diptych whose right half — a portrait of the Flemish nobleman Philippe de Croÿ — survives in Antwerp, this small panel is considered the most important painting in the Huntington's collection. The Virgin supports the Child as he steadies himself against her arm and reaches toward a richly illuminated book — a Book of Hours, perhaps — creating an intimate image of domestic devotion embedded in the grandest devotional tradition of 15th-century Flemish painting. The gold ground and exquisite rendering of fabric link van der Weyden's late style to the Flemish masters he helped define.",
+    movement: "Northern Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Diptych_of_Philip_de_Cro%C3%BF_with_The_Virgin_and_Child",
+    grokUrl: "https://grokipedia.com/page/Diptych_of_Philip_de_Croÿ_with_The_Virgin_and_Child",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Madonna_and_Child_Rogier_van_der_Weyden.jpg/330px-Madonna_and_Child_Rogier_van_der_Weyden.jpg",
+    location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
+  },
+  {
+    id: 345, rank: null, museumOnly: true,
+    title: "The Grand Canal: Scene—A Street in Venice",
+    artist: "J.M.W. Turner",
+    year: "c. 1837",
+    medium: "Oil on canvas",
+    dimensions: "150.5 × 112.4 cm",
+    description: "Turner painted Venice obsessively in the final decades of his career, dissolving its architecture into columns of light and atmosphere, and this large canvas shows the Grand Canal alive with gondolas and spectators during a festival. With characteristic bravado Turner embedded a literary joke: the figure of Shylock from The Merchant of Venice leans from a window at the right, brandishing scales and a knife, his presence an ironic gloss on the scene's festive splendor. The Huntington acquired it in 1927 as the companion to Canaletto's view of the same canal, placing two centuries of Venetian painting in permanent dialogue.",
+    movement: "Romanticism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Turner%2C_J._M._W._-_The_Grand_Canal_-_Scene_-_A_Street_In_Venice.jpg/330px-Turner%2C_J._M._W._-_The_Grand_Canal_-_Scene_-_A_Street_In_Venice.jpg",
+    location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
+  },
+  {
+    id: 346, rank: null, museumOnly: true,
+    title: "Mrs. William Playfair",
+    artist: "John Singer Sargent",
+    year: "1887",
+    medium: "Oil on canvas",
+    dimensions: "153.7 × 99.1 cm",
+    description: "Sargent exhibited this dazzling portrait at the Royal Academy in 1887 — where one critic called it 'the finest piece of painting in the Academy' — and at the Paris Salon the following year, cementing his international reputation as the greatest portraitist of his age. Emily Kitson, wife of the obstetrician Sir William Playfair, stands in a yellow satin gown and fur-trimmed green velvet opera cloak, every textile surface — feathered fan, jewelled brooch, dragonfly hair ornament — rendered with the virtuoso speed that made Sargent's work seem effortless and was anything but. The deep red background creates a near-abstract foil for the brilliant costume in the tradition of Velázquez, whom Sargent had studied closely in Madrid.",
+    movement: "Realism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sargent_-_Mrs._William_Playfair%2C_1887%2C_98.2.jpg/330px-Sargent_-_Mrs._William_Playfair%2C_1887%2C_98.2.jpg",
+    location: { continent: "North America", country: "USA", city: "San Marino", museum: "Huntington Library" }
   }
 ];
 
@@ -5196,6 +5296,10 @@ const ARTISTS = {
     born: "1883", died: "1908", nationality: "Austrian",
     bio: "Austrian painter Richard Gerstl produced fewer than 70 paintings in only five years before taking his own life at 25, yet that small body of work placed him decades ahead of his contemporaries in psychological intensity and painterly freedom. Self-taught in his loosely Expressionist technique — with its thick, energetic surface and radical cropping — he worked in near-total obscurity, exhibiting nothing in his lifetime. His fatal affair with Mathilde Schönberg, wife of the composer Arnold Schönberg with whom Gerstl had become close, ended when she returned to her husband; Gerstl burned most of his correspondence and killed himself that night. His work was virtually unknown until a posthumous exhibition in Vienna in 1931."
   },
+  "Joshua Reynolds": {
+    born: "1723", died: "1792", nationality: "English",
+    bio: "The dominant figure of 18th-century British painting, Joshua Reynolds was the founding President of the Royal Academy of Arts and the principal advocate for a 'Grand Manner' of painting that elevated portraiture to the level of history painting through classical allusion and literary reference. His Discourses, delivered annually to Royal Academy students, remain the most influential body of artistic theory produced in Britain. Reynolds painted almost every notable figure of his era — Samuel Johnson, Edmund Burke, Oliver Goldsmith, David Garrick — and his studio on Leicester Fields was the center of London's cultural life. He gradually lost his sight from 1789 and died in 1792, leaving a body of work that defined the British portrait tradition for the next century."
+  },
   "Wassily Kandinsky": {
     born: "1866", died: "1944", nationality: "Russian",
     bio: "Generally credited as the first painter to make a fully non-objective, purely abstract work, Wassily Kandinsky arrived at abstraction not through formal theory but through the conviction that color and form could carry spiritual meaning independent of subject matter. Born in Moscow, he studied law before moving to Munich in 1896 to pursue painting, and co-founded Der Blaue Reiter ('The Blue Rider') group in 1911 with Franz Marc, producing his landmark Composition VII in the same year. He taught at the Bauhaus from 1922 to 1933 before fleeing Nazi Germany for Paris, where he lived until his death. His theoretical writings, especially Concerning the Spiritual in Art (1911), remain foundational texts of modern aesthetics."
@@ -5311,7 +5415,8 @@ const ARTIST_PORTRAITS = {
   "Max Beckmann": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Max_Beckmann_1928%2C_by_Hugo_Erfurth.jpg/330px-Max_Beckmann_1928%2C_by_Hugo_Erfurth.jpg",
   "Oskar Kokoschka": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Oskar_Kokoschka_%281963%29_by_Erling_Mandelmann.jpg/330px-Oskar_Kokoschka_%281963%29_by_Erling_Mandelmann.jpg",
   "Richard Gerstl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Richard_Gerstl_1902_%281903%29.jpg/330px-Richard_Gerstl_1902_%281903%29.jpg",
-  "Wassily Kandinsky": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg/330px-Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg"
+  "Wassily Kandinsky": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg/330px-Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg",
+  "Joshua Reynolds": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_%282315517%29.jpg/330px-Sir_Joshua_Reynolds_-_Self-Portrait_-_Google_Art_Project_%282315517%29.jpg"
 };
 
 /* ── Museum info ─────────────────────────────────────────────────────────── */

@@ -890,3 +890,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added House of Dr. Gachet (Cézanne, c. 1872–73, ID 333), Ballet Rehearsal (Degas, ca. 1891, ID 334), Camille on the Beach at Trouville (Monet, 1870, ID 335), Parau Parau (Gauguin, 1892, ID 336), The Waterfall (Kandinsky, 1909, ID 337), Young Woman Reclining in Spanish Costume (Manet, 1862, ID 338), Portrait of a Hanseatic Merchant (Holbein, 1538, ID 339)
 - `imageUrl: null` on Ballet Rehearsal (no Commons image for Yale version)
 - New artist: Wassily Kandinsky
+
+### Museum build-up: Huntington Library (3 → 10)
+- Added Sarah Siddons as the Tragic Muse (Reynolds, 1783–84, ID 340), View on the Stour near Dedham (Constable, 1822, ID 341), Breakfast in Bed (Cassatt, 1897, ID 342), The Long Leg (Hopper, 1935, ID 343), Virgin and Child (van der Weyden, c. 1460, ID 344), The Grand Canal Scene (Turner, c. 1837, ID 345), Mrs. William Playfair (Sargent, 1887, ID 346)
+- `imageUrl: null` on The Long Leg (Hopper copyright until 2037)
+- New artist: Joshua Reynolds
