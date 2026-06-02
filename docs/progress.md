@@ -742,3 +742,28 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### progress.md formatting rules
 - Added detailed `## Before every commit` rules to `CLAUDE.md` covering: session placement and numbering, block format, `###` header style, deprecated feature annotation format (`*(changed/removed in Session N)*`), and pre-commit checklist
 - Corrected session ordering (18–22 and 27–31 were out of order), removed orphaned `---` separators, and added ~15 inline deprecation annotations to sessions 1–30
+
+## Session 34 — 2026-06-01
+
+### Grid 3×3 view on Paintings and Collection tabs
+- Added condensed (Grid 3×3) view to Paintings and Collection tabs — 3-per-row thumbnail grid with title and artist, matching the museum detail page style
+- Order on all three tabs: Gallery (Collection only), Grid 2×2, Grid 3×3, List
+- Renamed "Grid" → "Grid 2×2" and "Condensed" → "Grid 3×3" across all three tab dropdowns for clarity
+- Collected paintings in Grid 3×3 view show a gold-dim thumb border (`condensed-checked` class)
+- `renderCondensedCard(p)` helper added for reuse across all three tabs
+- Museum detail tab dropdown reordered to Grid 2×2, Grid 3×3, List (was Condensed, Grid, List)
+
+### Museum tab city sort: city + country label
+- City headers in "By City" grouping now read "🇫🇷 Paris, France" instead of "🇫🇷 Paris"
+
+### Museum tab: search bar stays visible in museum detail view
+- `_museumsToolbar()` helper extracts the toolbar HTML for reuse; both `renderMuseumsView()` and `renderMuseumDetailView()` now render it, keeping the search bar pinned when a museum card is open
+
+### Toolbar button highlight removed
+- Sort, view, and group-by toolbar buttons on all three tabs no longer highlight gold when a non-default option is active — removed all state-based `active` conditions from those buttons
+
+### Nav tab indicator thinned
+- Gold top-line indicator on Paintings and Museums tabs reduced from 1.5px to 1px
+
+### Toolbar content padding
+- `.toolbar-spacer` height increased by 8px (`calc(var(--toolbar-h) + 8px)`) to add breathing room between the toolbar and content on all three tabs

@@ -337,6 +337,25 @@ function parseYear(y) {
   return m ? parseInt(m[0], 10) : 9999;
 }
 
+/* ── Condensed card (3-per-row thumbnail grid) ──────────────────────────── */
+function renderCondensedCard(p) {
+  const key = String(p.id);
+  const isChecked = !!S.checked[key];
+  const img = p.imageUrl
+    ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
+           onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
+    : `<div class="row-thumb-placeholder">🎨</div>`;
+  const rankBadge = (p.rank != null && p.rank <= 100) ? `<div class="mv-rank-badge">#${p.rank}</div>` : '';
+  return `<div class="mv-popup-painting${isChecked ? ' condensed-checked' : ''}" onclick="openDetail('${key}')">
+    <div class="mv-popup-thumb-wrap">
+      ${rankBadge}
+      <div class="mv-popup-thumb">${img}</div>
+    </div>
+    <div class="mv-popup-title">${esc(p.title)}</div>
+    <div class="mv-popup-artist">${esc(p.artist)}</div>
+  </div>`;
+}
+
 /* ── Painting Card (grid, Top 100 view) ─────────────────────────────────── */
 function renderPaintingCard(p) {
   const key = String(p.id);
@@ -395,7 +414,7 @@ function renderPaintingRow(p) {
 function renderListView() {
   const paintings = filteredSorted();
   const filterChips = buildFilterChips();
-  const isGrid = S.listMode !== 'compact';
+  const mode = S.listMode;
 
   let paintingsHtml;
   if (paintings.length === 0) {
@@ -426,9 +445,11 @@ function renderListView() {
           <span class="list-movement-stat">${mc}/${mps.length} collected</span>
         </div>
         ${infoBody}
-        ${isGrid
-          ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
-          : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
+        ${mode === 'condensed'
+          ? `<div class="mv-popup-paintings" style="padding:4px 8px 8px">${mps.map(renderCondensedCard).join('')}</div>`
+          : mode !== 'compact'
+            ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
+            : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
       </div>`;
     }).join('')}</div>`;
   } else if (S.sort === 'artist') {
@@ -461,9 +482,11 @@ function renderListView() {
           <span class="list-movement-stat">${mc}/${mps.length} collected</span>
         </div>
         ${infoBody}
-        ${isGrid
-          ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
-          : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
+        ${mode === 'condensed'
+          ? `<div class="mv-popup-paintings" style="padding:4px 8px 8px">${mps.map(renderCondensedCard).join('')}</div>`
+          : mode !== 'compact'
+            ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
+            : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
       </div>`;
     }).join('')}</div>`;
   } else if (S.sort === 'movement') {
@@ -492,15 +515,19 @@ function renderListView() {
           <span class="list-movement-stat">${mc}/${mps.length} collected</span>
         </div>
         ${infoBody}
-        ${isGrid
-          ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
-          : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
+        ${mode === 'condensed'
+          ? `<div class="mv-popup-paintings" style="padding:4px 8px 8px">${mps.map(renderCondensedCard).join('')}</div>`
+          : mode !== 'compact'
+            ? `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`
+            : `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`}
       </div>`;
     }).join('')}</div>`;
   } else {
-    paintingsHtml = isGrid
-      ? `<div class="paintings-grid">${paintings.map(p => renderPaintingCard(p)).join('')}</div>`
-      : `<div class="paintings-compact">${paintings.map(p => renderPaintingRow(p)).join('')}</div>`;
+    paintingsHtml = mode === 'condensed'
+      ? `<div class="mv-popup-paintings" style="padding:0 8px">${paintings.map(renderCondensedCard).join('')}</div>`
+      : mode !== 'compact'
+        ? `<div class="paintings-grid">${paintings.map(p => renderPaintingCard(p)).join('')}</div>`
+        : `<div class="paintings-compact">${paintings.map(p => renderPaintingRow(p)).join('')}</div>`;
   }
 
   return `
@@ -510,11 +537,11 @@ function renderListView() {
                value="${esc(S.search)}" oninput="handleSearch(this.value)">
         <button class="search-clear" onclick="handleSearch('')" title="Clear search" ${S.search ? '' : 'hidden'}>✕</button>
       </div>
-      <button class="toolbar-btn icon-only${S.sort !== 'rank' ? ' active' : ''}" onclick="openSortDropdown(event,this)" title="Sort">
+      <button class="toolbar-btn icon-only" onclick="openSortDropdown(event,this)" title="Sort">
         ${ICONS.sort}
       </button>
       <button class="toolbar-btn icon-only" onclick="openViewDropdown(event,this)" title="View">
-        ${isGrid ? ICONS.grid : ICONS.rows}
+        ${mode === 'grid' ? ICONS.grid : mode === 'condensed' ? ICONS.grid3 : ICONS.rows}
       </button>
     </div>
     <div class="toolbar-spacer"></div>
@@ -534,26 +561,29 @@ function buildFilterChips() {
 }
 
 /* ── Museums View ───────────────────────────────────────────────────────── */
-function renderMuseumsView() {
-  const toolbar = `<div id="toolbar">
+function _museumsToolbar() {
+  return `<div id="toolbar">
     <div class="search-wrap">
       <input id="museums-search-input" type="search" placeholder="Search museums, cities…"
              value="${esc(S.museumsSearch)}" oninput="handleMuseumsSearch(this.value)">
       <button class="search-clear" onclick="handleMuseumsSearch('')" title="Clear search" ${S.museumsSearch ? '' : 'hidden'}>✕</button>
     </div>
-    <button class="toolbar-btn icon-only${S.museumsMode !== 'alpha' ? ' active' : ''}"
+    <button class="toolbar-btn icon-only"
             onclick="openMuseumsViewDropdown(event,this)" title="Group by">
       ${ICONS.sort}
     </button>
-    <button class="toolbar-btn icon-only${S.museumsDetailMode !== 'condensed' ? ' active' : ''}"
+    <button class="toolbar-btn icon-only"
             onclick="openMuseumsDetailModeDropdown(event,this)" title="Painting view">
       ${S.museumsDetailMode === 'grid' ? ICONS.grid : S.museumsDetailMode === 'list' ? ICONS.rows : ICONS.grid3}
     </button>
-  </div>`;
-  const spacer = '<div class="toolbar-spacer"></div>';
-  if (S.museumsMode === 'city')    return toolbar + spacer + renderMuseumsCity();
-  if (S.museumsMode === 'country') return toolbar + spacer + renderMuseumsCountry();
-  return toolbar + spacer + renderMuseumsAlpha();
+  </div><div class="toolbar-spacer"></div>`;
+}
+
+function renderMuseumsView() {
+  const toolbar = _museumsToolbar();
+  if (S.museumsMode === 'city')    return toolbar + renderMuseumsCity();
+  if (S.museumsMode === 'country') return toolbar + renderMuseumsCountry();
+  return toolbar + renderMuseumsAlpha();
 }
 
 function renderMuseumBlock(name, paintings) {
@@ -642,7 +672,7 @@ function renderMuseumsCity() {
     const flag = flagFor[cityCountry[city]] || '';
     return `<div class="loc-section">
       <div class="loc-header">
-        <span class="loc-name">${flag ? `${flag} ` : ''}${esc(city)}</span>
+        <span class="loc-name">${flag ? `${flag} ` : ''}${esc(city)}, ${esc(cityCountry[city])}</span>
         <span class="loc-stat">${checked}/${total} collected</span>
       </div>
       ${Object.keys(cities[city]).sort().map(m => renderMuseumBlock(m, cities[city][m])).join('')}
@@ -918,6 +948,7 @@ function renderCollectionPaintings(list, mode) {
       </div>`;
     }).join('')}</div>`;
   }
+  if (mode === 'condensed') return `<div class="mv-popup-paintings" style="padding:0 8px">${list.map(renderCondensedCard).join('')}</div>`;
   return mode === 'compact'
     ? `<div class="paintings-compact">${list.map(p => renderPaintingRow(p)).join('')}</div>`
     : `<div class="paintings-grid">${list.map(p => renderPaintingCard(p)).join('')}</div>`;
@@ -946,11 +977,11 @@ function renderCollectionView() {
              value="${esc(S.collectionSearch)}" oninput="handleCollectionSearch(this.value)">
       <button class="search-clear" onclick="handleCollectionSearch('')" title="Clear search" ${S.collectionSearch ? '' : 'hidden'}>✕</button>
     </div>
-    <button class="toolbar-btn icon-only${cs !== 'rank' ? ' active' : ''}" onclick="openCollectionSortDropdown(event,this)" title="Sort">
+    <button class="toolbar-btn icon-only" onclick="openCollectionSortDropdown(event,this)" title="Sort">
       ${ICONS.sort}
     </button>
     <button class="toolbar-btn icon-only" onclick="openCollectionViewDropdown(event,this)" title="View">
-      ${mode === 'gallery' ? ICONS.frame : mode === 'compact' ? ICONS.rows : ICONS.grid}
+      ${mode === 'gallery' ? ICONS.frame : mode === 'compact' ? ICONS.rows : mode === 'condensed' ? ICONS.grid3 : ICONS.grid}
     </button>
   </div>`;
   const spacer = '<div class="toolbar-spacer"></div>';
@@ -999,9 +1030,11 @@ function renderCollectionView() {
           <span class="list-movement-era">${flag} ${esc(loc.city)}, ${esc(loc.country)}</span>
           <span class="list-movement-stat">${mps.length} painting${mps.length !== 1 ? 's' : ''}</span>
         </div>
-        ${isOpen ? (mode === 'compact'
-          ? `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`
-          : `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`)
+        ${isOpen ? (mode === 'condensed'
+          ? `<div class="mv-popup-paintings" style="padding:4px 8px 8px">${mps.map(renderCondensedCard).join('')}</div>`
+          : mode === 'compact'
+            ? `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`
+            : `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`)
         : ''}
       </div>`;
     }).join('');
@@ -1024,9 +1057,11 @@ function renderCollectionView() {
           ${metaLine ? `<span class="list-movement-era">${metaLine}</span>` : ''}
           <span class="list-movement-stat">${mps.length} painting${mps.length !== 1 ? 's' : ''}</span>
         </div>
-        ${isOpen ? (mode === 'compact'
-          ? `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`
-          : `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`)
+        ${isOpen ? (mode === 'condensed'
+          ? `<div class="mv-popup-paintings" style="padding:4px 8px 8px">${mps.map(renderCondensedCard).join('')}</div>`
+          : mode === 'compact'
+            ? `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`
+            : `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`)
         : ''}
       </div>`;
     }).join('');
@@ -1050,9 +1085,11 @@ function renderCollectionView() {
           ${mv ? `<span class="list-movement-era">${esc(mv.era)}</span>` : ''}
           <span class="list-movement-stat">${mps.length} painting${mps.length !== 1 ? 's' : ''}</span>
         </div>
-        ${isOpen ? (mode === 'compact'
-          ? `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`
-          : `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`)
+        ${isOpen ? (mode === 'condensed'
+          ? `<div class="mv-popup-paintings" style="padding:4px 8px 8px">${mps.map(renderCondensedCard).join('')}</div>`
+          : mode === 'compact'
+            ? `<div class="paintings-compact" style="padding:0">${mps.map(p => renderPaintingRow(p)).join('')}</div>`
+            : `<div class="paintings-grid" style="padding:4px 0 8px">${mps.map(p => renderPaintingCard(p)).join('')}</div>`)
         : ''}
       </div>`;
     }).join('');
@@ -1532,8 +1569,9 @@ function openViewDropdown(e, btn) {
   closeDrop();
   if (wasOpen) return;
   const opts = [
-    { key: 'grid',    label: 'Grid',    icon: ICONS.grid },
-    { key: 'compact', label: 'List',    icon: ICONS.rows },
+    { key: 'grid',      label: 'Grid 2×2', icon: ICONS.grid },
+    { key: 'condensed', label: 'Grid 3×3', icon: ICONS.grid3 },
+    { key: 'compact',   label: 'List',      icon: ICONS.rows },
   ];
   const rect = btn.getBoundingClientRect();
   const drop = document.createElement('div');
@@ -1581,8 +1619,8 @@ function openMuseumsDetailModeDropdown(e, btn) {
   closeDrop();
   if (wasOpen) return;
   const opts = [
-    { key: 'condensed', label: 'Condensed', icon: ICONS.grid3 },
-    { key: 'grid',      label: 'Grid',      icon: ICONS.grid },
+    { key: 'grid',      label: 'Grid 2×2', icon: ICONS.grid },
+    { key: 'condensed', label: 'Grid 3×3', icon: ICONS.grid3 },
     { key: 'list',      label: 'List',      icon: ICONS.rows },
   ];
   const rect = btn.getBoundingClientRect();
@@ -1672,9 +1710,10 @@ function openCollectionViewDropdown(e, btn) {
   closeDrop();
   if (wasOpen) return;
   const viewOpts = [
-    { key: 'gallery', label: 'Gallery', icon: ICONS.frame },
-    { key: 'grid',    label: 'Grid',   icon: ICONS.grid },
-    { key: 'compact', label: 'List',   icon: ICONS.rows },
+    { key: 'gallery',   label: 'Gallery',   icon: ICONS.frame },
+    { key: 'grid',      label: 'Grid 2×2', icon: ICONS.grid },
+    { key: 'condensed', label: 'Grid 3×3', icon: ICONS.grid3 },
+    { key: 'compact',   label: 'List',      icon: ICONS.rows },
   ];
   const filterOpts = [
     { key: 'all',       label: 'All Collected', icon: ICONS.check },
@@ -2105,7 +2144,7 @@ function renderMuseumDetailView() {
     paintingsHtml = `<div class="mv-popup-paintings">${thumbs}</div>`;
   }
 
-  return `
+  return _museumsToolbar() + `
     <div class="museum-detail-nav">
       <button class="detail-back-btn" onclick="setView('museums')">${ICONS.back} Back</button>
       <button class="museum-detail-visited-btn${isVisited ? ' visited' : ''}"

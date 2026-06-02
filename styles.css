@@ -160,7 +160,7 @@ body {
   top: -1px;
   left: 0;
   right: 0;
-  height: 1.5px;
+  height: 1px;
   background: transparent;
   transition: background .2s;
 }
@@ -272,7 +272,7 @@ body {
   z-index: 50;
   border-bottom: 1px solid var(--bg4);
 }
-.toolbar-spacer { height: var(--toolbar-h); }
+.toolbar-spacer { height: calc(var(--toolbar-h) + 8px); }
 
 .search-wrap {
   flex: 1;
@@ -1843,6 +1843,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 .mv-popup-painting:hover .mv-popup-thumb { border-color: var(--gold-dim); }
+.condensed-checked .mv-popup-thumb { border-color: var(--gold-dim); }
 .mv-popup-thumb-wrap {
   position: relative;
   margin-bottom: 4px;
