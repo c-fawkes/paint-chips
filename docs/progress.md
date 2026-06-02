@@ -803,3 +803,38 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Museums tab country sort: Expand/Collapse All
 - When "By Country" is the active grouping, the sort dropdown shows a divider + Expand All / Collapse All buttons (matching paintings tab style)
 - `museumsExpandAll()` adds all country keys to `S.expandedContinents`; `museumsCollapseAll()` clears it
+
+## Session 36 — 2026-06-01
+
+### Stats page overhaul
+- "In Scope" card replaced with "% Visited" (percentage of museums visited)
+- Static "Progress by Continent" + expandable Museums sections replaced with a single "Progress by" section with a dropdown (Continent / Country / City / Museum)
+- All four groupings use the same `cp-bar` progress bar format, sorted by % collected descending
+- Country and City entries show flag emojis; Museum entries show visited checkmark
+- `S.statProgressBy` persisted, defaults to Continent
+- Extras (plus10/plus30) cards now visually tuck behind the Top 100 cards: 90% width, `top: -10px`, no top border, flat top corners, `z-index: 1` (main cards at `z-index: 2`)
+
+### Sticky group headers fixed
+- `.list-movement-header` `top` updated to include `var(--toolbar-h)` so headers pin below the fixed toolbar (not behind it)
+
+### Museum list top padding
+- Removed `margin-top: 6px` from `.loc-section:first-child` and `.loc-group:first-child` — natural header padding provides consistent spacing
+
+### Settings: painting list buttons right-justified
+- `.settings-row-stacked .settings-toggle-group { align-self: flex-end }` added
+
+### Hover effects disabled on mobile
+- All 23 `:hover` rules moved into a single `@media (hover: hover)` block — touch devices see no hover highlights
+
+### Swipe-back: animated slide
+- `_initSwipeBack()` rewritten with three phases: `pending` (waits for direction lock), `dragging` (follows finger with `translateX`, fades backdrop), commit/cancel (animates off-screen or springs back at 0.22s)
+
+### Museums tab: Expand/Collapse All in country sort dropdown
+- Divider + Expand All / Collapse All appear in the sort dropdown when By Country is active
+- `museumsExpandAll()` / `museumsCollapseAll()` added
+
+### Museums tab: painting spacing in detail view
+- `.mv-popup-body` horizontal padding reduced to 12px; `.paintings-grid`/`.paintings-compact` inside override to 0 padding — matches paintings tab 12px margins
+
+### Scrollbar hidden globally
+- `::-webkit-scrollbar { display: none }` and `* { scrollbar-width: none }` replace the previous styled scrollbar

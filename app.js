@@ -24,6 +24,7 @@ const S = {
   units: 'metric',
   scope: 'top100',
   statTracking: 'all',
+  statProgressBy: 'continent',
   expandedMuseums: new Set(),
   expandedContinents: new Set(),
   expandedCountries: new Set(),
@@ -189,7 +190,7 @@ function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
       checked: S.checked, notes: S.notes, dateCollected: S.dateCollected, hiddenFromCollection: S.hiddenFromCollection, favorites: S.favorites, visitedMuseums: S.visitedMuseums, userPaintings: S.userPaintings,
-      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionFilter: S.collectionFilter, museumsMode: S.museumsMode, museumsDetailMode: S.museumsDetailMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope, statTracking: S.statTracking,
+      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionFilter: S.collectionFilter, museumsMode: S.museumsMode, museumsDetailMode: S.museumsDetailMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope, statTracking: S.statTracking, statProgressBy: S.statProgressBy,
     }));
   } catch (_) {}
 }
@@ -829,83 +830,13 @@ function renderStatsView() {
   const done = globalChecked();
   const pct  = total ? Math.round(done / total * 100) : 0;
 
-  // Continent progress
-  const continents = [...new Set(all.map(p => p.location.continent))].sort();
-  const contHtml = continents.map(c => {
-    const cps = all.filter(p => p.location.continent === c);
-    const cc  = checkedCount(cps.map(p => p.id));
-    const cp  = cps.length ? Math.round(cc / cps.length * 100) : 0;
-    return `<div class="continent-progress">
-      <div class="cp-header"><span class="cp-name">${esc(c)}</span><span class="cp-stat">${cc}/${cps.length} (${cp}%)</span></div>
-      <div class="cp-bar"><div class="cp-fill" style="width:${cp}%"></div></div>
-    </div>`;
-  }).join('');
+  const museumKeys   = [...new Set(all.map(p => p.location.museum))];
+  const totalMuseums = museumKeys.length;
+  const visitedCount = museumKeys.filter(k => S.visitedMuseums[k]).length;
+  const visitedPct   = totalMuseums ? Math.round(visitedCount / totalMuseums * 100) : 0;
 
-  // Museums: build full data
-  const museumMap = {};
-  all.forEach(p => {
-    const k = p.location.museum;
-    if (!museumMap[k]) museumMap[k] = { paintings: [], rankPaintings: [], museumOnly: [] };
-    museumMap[k].paintings.push(p);
-    if (!p.museumOnly) museumMap[k].rankPaintings.push(p);
-    else museumMap[k].museumOnly.push(p);
-  });
-
-  const totalMuseums  = Object.keys(museumMap).length;
-  const visitedCount  = Object.keys(museumMap).filter(k => S.visitedMuseums[k]).length;
-
-  const museumHtml = Object.entries(museumMap)
-    .sort(([,a],[,b]) => {
-      const ap = a.paintings.length ? checkedCount(a.paintings.map(p=>p.id)) / a.paintings.length : 0;
-      const bp = b.paintings.length ? checkedCount(b.paintings.map(p=>p.id)) / b.paintings.length : 0;
-      return bp - ap || a.paintings.length - b.paintings.length;
-    })
-    .map(([name, m]) => {
-      const mc      = checkedCount(m.paintings.map(p => p.id));
-      const mt      = m.paintings.length;
-      const mp      = mt ? Math.round(mc / mt * 100) : 0;
-      const isOpen  = S.expandedStatsMuseums.has(name);
-      const isVisited = !!S.visitedMuseums[name];
-      const safeName  = esc(name).replace(/'/g, "\\'");
-
-      let scopeBreakdown = '';
-      if (hasScope && m.rankPaintings.length && m.museumOnly.length) {
-        const rc = checkedCount(m.rankPaintings.map(p => p.id));
-        const oc = checkedCount(m.museumOnly.map(p => p.id));
-        const rp = m.rankPaintings.length ? Math.round(rc / m.rankPaintings.length * 100) : 0;
-        const op = m.museumOnly.length   ? Math.round(oc / m.museumOnly.length * 100)    : 0;
-        scopeBreakdown = `<div class="stats-scope-breakdown">
-          <div class="stats-scope-row">
-            <span class="stats-scope-label">Top 100</span>
-            <div class="cp-bar stats-scope-bar"><div class="cp-fill" style="width:${rp}%"></div></div>
-            <span class="stats-scope-stat">${rc}/${m.rankPaintings.length}</span>
-          </div>
-          <div class="stats-scope-row">
-            <span class="stats-scope-label">Museum-only</span>
-            <div class="cp-bar stats-scope-bar"><div class="cp-fill" style="width:${op}%"></div></div>
-            <span class="stats-scope-stat">${oc}/${m.museumOnly.length}</span>
-          </div>
-        </div>`;
-      }
-
-      const body = isOpen ? `<div class="stats-museum-body">
-        ${scopeBreakdown}
-        ${m.paintings.sort((a,b)=>(a.rank||9999)-(b.rank||9999)).map(p => renderPaintingRow(p)).join('')}
-      </div>` : '';
-
-      return `<div class="stats-museum-item">
-        <div class="stats-museum-header" onclick="toggleStatsMuseum('${safeName}')">
-          <div class="stats-museum-name-wrap">
-            <span class="stats-museum-name">${esc(name)}</span>
-            ${isVisited ? `<span class="museum-visited-check" title="Visited">${ICONS.check}</span>` : ''}
-          </div>
-          <span class="stats-museum-stat">${mc}/${mt}</span>
-          <div class="stats-museum-chevron${isOpen ? ' open' : ''}">${ICONS.chevron}</div>
-        </div>
-        <div class="cp-bar stats-museum-bar"><div class="cp-fill" style="width:${mp}%"></div></div>
-        ${body}
-      </div>`;
-    }).join('');
+  const progressLabels = { continent: 'Continent', country: 'Country', city: 'City', museum: 'Museum' };
+  const by = S.statProgressBy || 'continent';
 
   return `
     <div class="stats-grid">
@@ -915,13 +846,85 @@ function renderStatsView() {
       <div class="stat-card stat-card-extra"><div class="stat-num">${extraDone}/${extraAll.length}</div><div class="stat-label">Extras Collected</div></div>
       <div class="stat-card stat-card-extra"><div class="stat-num">${extraPct}%</div><div class="stat-label">Extras Complete</div></div>` : ''}
       <div class="stat-card"><div class="stat-num">${visitedCount}/${totalMuseums}</div><div class="stat-label">Museums Visited</div></div>
-      <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">In Scope</div></div>
+      <div class="stat-card"><div class="stat-num">${visitedPct}%</div><div class="stat-label">% Visited</div></div>
     </div>
-    <div class="section-label">Progress by Continent</div>
-    ${contHtml}
-    <div class="section-label">Museums</div>
-    ${museumHtml}
+    <div class="stats-progress-header">
+      <span class="section-label" style="margin:0">Progress by</span>
+      <button class="stats-progress-btn" onclick="openStatsProgressDropdown(event,this)">
+        ${esc(progressLabels[by])} ${ICONS.chevron}
+      </button>
+    </div>
+    ${renderStatProgressSection()}
   `;
+}
+
+function renderStatProgressSection() {
+  const by = S.statProgressBy || 'continent';
+  const all = scopedPaintings();
+  const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
+    'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
+    'Vatican City':'🇻🇦', Mexico:'🇲🇽' };
+
+  const groups = {};
+  all.forEach(p => {
+    const key = p.location[by] || '(Unknown)';
+    if (!groups[key]) groups[key] = { paintings: [], country: p.location.country };
+    groups[key].paintings.push(p);
+  });
+
+  return Object.entries(groups)
+    .sort(([, a], [, b]) => {
+      const pa = a.paintings.length ? checkedCount(a.paintings.map(p => p.id)) / a.paintings.length : 0;
+      const pb = b.paintings.length ? checkedCount(b.paintings.map(p => p.id)) / b.paintings.length : 0;
+      return pb - pa;
+    })
+    .map(([name, data]) => {
+      const cc  = checkedCount(data.paintings.map(p => p.id));
+      const ct  = data.paintings.length;
+      const pct = ct ? Math.round(cc / ct * 100) : 0;
+
+      let label = esc(name);
+      if (by === 'country') { const f = flagFor[name]; if (f) label = `${f} ${label}`; }
+      if (by === 'city')    { const f = flagFor[data.country]; if (f) label = `${f} ${label}`; }
+      if (by === 'museum' && S.visitedMuseums[name]) label += ` <span class="museum-visited-check">${ICONS.check}</span>`;
+
+      return `<div class="continent-progress">
+        <div class="cp-header"><span class="cp-name">${label}</span><span class="cp-stat">${cc}/${ct} (${pct}%)</span></div>
+        <div class="cp-bar"><div class="cp-fill" style="width:${pct}%"></div></div>
+      </div>`;
+    }).join('');
+}
+
+function openStatsProgressDropdown(e, btn) {
+  e.stopPropagation();
+  const wasOpen = !!document.getElementById('toolbar-drop');
+  closeDrop();
+  if (wasOpen) return;
+  const opts = [
+    { key: 'continent', label: 'Continent', icon: ICONS.globe },
+    { key: 'country',   label: 'Country',   icon: ICONS.pin },
+    { key: 'city',      label: 'City',      icon: ICONS.landmark },
+    { key: 'museum',    label: 'Museum',    icon: ICONS.museum },
+  ];
+  const rect = btn.getBoundingClientRect();
+  const drop = document.createElement('div');
+  drop.className = 'toolbar-drop';
+  drop.id = 'toolbar-drop';
+  drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
+  drop.innerHTML = opts.map(o =>
+    `<button class="drop-item${S.statProgressBy === o.key ? ' active' : ''}"
+             onclick="setStatProgressBy('${o.key}');closeDrop()">
+       ${o.icon}<span>${o.label}</span>
+     </button>`
+  ).join('');
+  document.body.appendChild(drop);
+  document.addEventListener('click', closeDrop, { once: true });
+}
+
+function setStatProgressBy(key) {
+  S.statProgressBy = key;
+  save();
+  render();
 }
 
 /* ── Collection View ────────────────────────────────────────────────────── */
@@ -3034,27 +3037,77 @@ function _globalBack() {
   if (S.view === 'stats')         { closeStats();         return; }
 }
 
-/* ── Swipe-right from left edge = Back ──────────────────────────────────── */
+/* ── Swipe-right from left edge = Back (animated) ───────────────────────── */
 function _initSwipeBack() {
-  const EDGE   = 40;   // px from left to start a back swipe
-  const MIN_DX = 80;   // minimum rightward travel
-  const MAX_RATIO = 0.6; // max |dy/dx| — keeps it mostly horizontal
+  const EDGE      = 40;   // px from left edge to start tracking
+  const MIN_DX    = 80;   // px to commit the back action
+  const DIR_LOCK  = 10;   // px of movement before direction is decided
 
-  let startX = 0, startY = 0, tracking = false;
+  let startX = 0, startY = 0;
+  let phase  = 'idle';    // 'idle' | 'pending' | 'dragging' | 'rejected'
+  let target = null;      // element being dragged
+
+  function getTarget() {
+    for (const id of ['detail-overlay','museum-overlay','artist-overlay','movement-overlay']) {
+      const el = document.getElementById(id);
+      if (el) return el.querySelector('.detail-sheet') || null;
+    }
+    if (['museum-detail','settings','stats'].includes(S.view)) return document.getElementById('main');
+    return null;
+  }
 
   document.addEventListener('touchstart', e => {
     const t = e.touches[0];
-    tracking = t.clientX <= EDGE;
-    if (tracking) { startX = t.clientX; startY = t.clientY; }
+    if (t.clientX > EDGE) { phase = 'idle'; return; }
+    startX = t.clientX; startY = t.clientY;
+    target = getTarget();
+    phase = target ? 'pending' : 'idle';
+  }, { passive: true });
+
+  document.addEventListener('touchmove', e => {
+    if (phase === 'idle' || phase === 'rejected' || !target) return;
+    const t  = e.touches[0];
+    const dx = t.clientX - startX;
+    const dy = Math.abs(t.clientY - startY);
+
+    if (phase === 'pending') {
+      if (Math.max(dx, dy) < DIR_LOCK) return;
+      if (dy > dx || dx < 0) { phase = 'rejected'; return; }
+      phase = 'dragging';
+      target.style.transition = 'none';
+    }
+
+    if (phase === 'dragging') {
+      const x = Math.max(0, dx);
+      target.style.transform = `translateX(${x}px)`;
+      const overlay = target.closest && target.closest('.detail-overlay');
+      if (overlay) overlay.style.background = `rgba(0,0,0,${Math.max(0, 0.72 - x / window.innerWidth)})`;
+    }
   }, { passive: true });
 
   document.addEventListener('touchend', e => {
-    if (!tracking) return;
-    tracking = false;
-    const t = e.changedTouches[0];
-    const dx = t.clientX - startX;
-    const dy = Math.abs(t.clientY - startY);
-    if (dx >= MIN_DX && (dx === 0 || dy / dx < MAX_RATIO)) _globalBack();
+    if (phase !== 'dragging' || !target) { phase = 'idle'; return; }
+    const dx  = e.changedTouches[0].clientX - startX;
+    const el  = target;
+    const overlay = el.closest && el.closest('.detail-overlay');
+    phase = 'idle';
+
+    if (dx >= MIN_DX) {
+      el.style.transition = 'transform 0.22s ease';
+      el.style.transform  = `translateX(${window.innerWidth}px)`;
+      if (overlay) { overlay.style.transition = 'opacity 0.22s'; overlay.style.opacity = '0'; }
+      setTimeout(() => {
+        el.style.cssText = '';
+        if (overlay) overlay.style.cssText = '';
+        target = null;
+        _globalBack();
+      }, 220);
+    } else {
+      el.style.transition = 'transform 0.2s ease';
+      el.style.transform  = '';
+      if (overlay) overlay.style.background = '';
+      setTimeout(() => { el.style.transition = ''; target = null; }, 200);
+    }
   }, { passive: true });
 }
 
