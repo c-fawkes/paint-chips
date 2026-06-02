@@ -2840,6 +2840,76 @@ const PAINTINGS = [
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Girl_with_pigtails_-_Amedeo_Modigliani.jpg/330px-Girl_with_pigtails_-_Amedeo_Modigliani.jpg",
     location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
   },
+  {
+    id: 409, rank: null, museumOnly: true,
+    title: "Mussel-Fishers at Berneval",
+    artist: "Pierre-Auguste Renoir",
+    year: "1879",
+    medium: "Oil on canvas",
+    dimensions: "175.3 × 130.2 cm",
+    description: "Children gather mussels on the Normandy coast near Berneval, their rose-flushed cheeks and disheveled hair hinting at labor even as Renoir frames them with the warmth reserved for his most tender work. Barnes coveted this canvas for decades — it had hung in the private collection of dealer Paul Durand-Ruel, who refused to sell — and finally acquired it in 1942 as the last Renoir to enter the collection. At 175 cm tall it is among Renoir's most monumental outdoor figure paintings.",
+    movement: "Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Pierre-Auguste_Renoir_-_Mussel-Fishers_at_Berneval_%28P%C3%AAcheuses_de_moules_%C3%A0_Berneval%2C_c%C3%B4te_normand%29_-_BF989_-_Barnes_Foundation.jpg/330px-Pierre-Auguste_Renoir_-_Mussel-Fishers_at_Berneval_%28P%C3%AAcheuses_de_moules_%C3%A0_Berneval%2C_c%C3%B4te_normand%29_-_BF989_-_Barnes_Foundation.jpg",
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
+  },
+  {
+    id: 410, rank: null, museumOnly: true,
+    title: "The Artist's Family",
+    artist: "Pierre-Auguste Renoir",
+    year: "1896",
+    medium: "Oil on canvas",
+    dimensions: "173 × 137.2 cm",
+    description: "Renoir's wife Aline, her cousin Gabrielle Renard, and sons Pierre and Jean gather in the garden of their Montmartre house in this life-size group portrait. Barnes bought it directly from the Renoir sons in 1927 and hung it directly below Cézanne's Large Bathers on the east wall of the main gallery — a deliberate pairing of two artists Renoir called the greatest painters of the century. It is Renoir's largest portrait and among his finest depictions of his own family.",
+    movement: "Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Pierre-Auguste_Renoir_-_The_Artist%27s_Family_%28La_Famille_de_l%27artiste%29_-_BF819_-_Barnes_Foundation.jpg/330px-Pierre-Auguste_Renoir_-_The_Artist%27s_Family_%28La_Famille_de_l%27artiste%29_-_BF819_-_Barnes_Foundation.jpg",
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
+  },
+  {
+    id: 411, rank: null, museumOnly: true,
+    title: "The Music Lesson",
+    artist: "Henri Matisse",
+    year: "1917",
+    medium: "Oil on canvas",
+    dimensions: "245.1 × 210.8 cm",
+    description: "Matisse's family gathers around a Pleyel piano in the living room of their Issy-les-Moulineaux home: wife, daughter, and two sons absorbed in music while the artist's violin rests in the foreground implying his unseen presence. This warm domestic scene was Matisse's deliberate counter-statement to his own austere Piano Lesson (at MoMA) painted just a year earlier — same room, same family, radically different in mood and light. The green billiard table visible through the window has become one of Matisse's most recognizable recurring motifs.",
+    movement: "Fauvism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Music_Lesson_(Matisse)",
+    grokUrl: "https://grokipedia.com/page/The_Music_Lesson_(Matisse)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/La_Le%C3%A7on_de_musique%2C_par_Henri_Matisse.jpg/330px-La_Le%C3%A7on_de_musique%2C_par_Henri_Matisse.jpg",
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
+  },
+  {
+    id: 412, rank: null, museumOnly: true,
+    title: "Acrobat and Young Harlequin",
+    artist: "Pablo Picasso",
+    year: "1905",
+    medium: "Oil on canvas",
+    dimensions: "191.1 × 108.6 cm",
+    description: "A tall acrobat in a brilliant red costume rests his hand on the shoulder of a small harlequin in diamond-patterned costume — both figures still, post-performance, looking in different directions as if acknowledging invisible applause. Painted in Picasso's Rose Period before Cubism emerged, the canvas captures the melancholy dignity he found in the saltimbanques at the Cirque Medrano in Montmartre. Barnes acquired it in 1924 through Parisian dealer Paul Guillaume; it now hangs in Room 19 as one of the collection's defining early-Picasso works.",
+    movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Acrobat_and_Young_Harlequin",
+    grokUrl: "https://grokipedia.com/page/Acrobat_and_Young_Harlequin",
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
+  },
+  {
+    id: 413, rank: null, museumOnly: true,
+    title: "The Large Bathers",
+    artist: "Paul Cézanne",
+    year: "1895–1906",
+    medium: "Oil on canvas",
+    dimensions: "132.4 × 219.1 cm",
+    description: "Thirteen bathers arrange themselves in a cathedral-like space formed by arching trees, their forms simplified into geometric patches of blue, ochre, and green that dissolve figure into landscape. Cézanne worked on this canvas for over a decade and left it unfinished at his death in 1906 — Barnes acquired it in 1933 as the crown jewel of his collection, hanging it at the apex of the main gallery. It is the Barnes companion to the Philadelphia Museum's larger version, and the two hang just blocks apart in a remarkable accident of geography.",
+    movement: "Post-Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Bathers_(C%C3%A9zanne)",
+    grokUrl: "https://grokipedia.com/page/The_Bathers_(Cézanne)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Paul_C%C3%A9zanne_-_The_Large_Bathers_%28Les_Grandes_baigneuses%29_-_BF934_-_Barnes_Foundation.jpg/330px-Paul_C%C3%A9zanne_-_The_Large_Bathers_%28Les_Grandes_baigneuses%29_-_BF934_-_Barnes_Foundation.jpg",
+    location: { continent: "North America", country: "USA", city: "Philadelphia", museum: "Barnes Foundation" }
+  },
 
   // ── YALE UNIVERSITY ART GALLERY ───────────────────────────────────────────
   {
@@ -3132,6 +3202,76 @@ const PAINTINGS = [
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Metamorphosis_of_Narcissus.jpg/330px-Metamorphosis_of_Narcissus.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
+  {
+    id: 429, rank: null, museumOnly: true,
+    title: "Black on Maroon",
+    artist: "Mark Rothko",
+    year: "1958",
+    medium: "Oil paint, acrylic paint, glue tempera and pigment on canvas",
+    dimensions: "266.7 × 381.2 cm",
+    description: "One of the nine Seagram Murals commissioned for the Four Seasons Restaurant in New York — then dramatically withdrawn when Rothko learned he was decorating a room where wealthy diners would eat. Installed at Tate after Rothko donated them, they are experienced in near-darkness, the dark maroon and black rectangles hovering like doorways to unknown spaces. Rothko killed himself in 1970, months after sending these works to London.",
+    movement: "Abstract Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Black_on_Maroon",
+    grokUrl: "https://grokipedia.com/page/Black_on_Maroon",
+    imageUrl: null,
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
+  },
+  {
+    id: 430, rank: null, museumOnly: true,
+    title: "Marilyn Diptych",
+    artist: "Andy Warhol",
+    year: "1962",
+    medium: "Silkscreen ink and acrylic paint on canvas",
+    dimensions: "205.4 × 289.6 cm",
+    description: "Made within weeks of Marilyn Monroe's death, this diptych repeats her publicity still fifty times — fifty vivid, slightly misaligned faces on the left; fifty fading to grey on the right. The celebrity image that survives and the person who does not are held in one frame. It is simultaneously a monument and a critique of the machinery that produced her.",
+    movement: "Pop Art",
+    wikiUrl: "https://en.wikipedia.org/wiki/Marilyn_Diptych",
+    grokUrl: "https://grokipedia.com/page/Marilyn_Diptych",
+    imageUrl: null,
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
+  },
+  {
+    id: 431, rank: null, museumOnly: true,
+    title: "The Elephant Celebes",
+    artist: "Max Ernst",
+    year: "1921",
+    medium: "Oil on canvas",
+    dimensions: "125.4 × 107.9 cm",
+    description: "A vast mechanical elephant-form — derived from a photo of a Sudanese corn-bin — dominates a dreamlike landscape beside a headless female torso and a bull's head. Painted before Surrealism was formally named, it is the movement's earliest fully realized masterpiece. Ernst uses incongruous juxtaposition not as decoration but as a psychological method for unlocking the unconscious.",
+    movement: "Surrealism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Elephant_Celebes",
+    grokUrl: "https://grokipedia.com/page/The_Elephant_Celebes",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/The_Elephant_Celebes.jpg/330px-The_Elephant_Celebes.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
+  },
+  {
+    id: 432, rank: null, museumOnly: true,
+    title: "IKB 79",
+    artist: "Yves Klein",
+    year: "1959",
+    medium: "Dry pigment and synthetic resin on canvas on plywood",
+    dimensions: "139.7 × 119.7 cm",
+    description: "A seamlessly even field of International Klein Blue — the ultramarine pigment Klein patented and used to eliminate the boundary between surface and infinite space. One of approximately two hundred monochromes Klein made in IKB, this particular canvas was acquired by Tate in 1972. Klein called blue 'the invisible becoming visible': for him the painting was not an object but an experience of the void.",
+    movement: "Modernism",
+    wikiUrl: "https://en.wikipedia.org/wiki/IKB_79",
+    grokUrl: "https://grokipedia.com/page/IKB_79",
+    imageUrl: null,
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
+  },
+  {
+    id: 433, rank: null, museumOnly: true,
+    title: "Yellow Islands",
+    artist: "Jackson Pollock",
+    year: "1952",
+    medium: "Oil and enamel on canvas",
+    dimensions: "143.5 × 185.4 cm",
+    description: "Pollock began by pouring black enamel across the canvas, then added areas of yellow and crimson with a brush before lifting the canvas upright to let the paint run. This interplay between control and accident makes Yellow Islands one of the most nuanced of his so-called 'black paintings.' It entered the Tate collection in 1961 and remains one of the finest Pollocks in Europe.",
+    movement: "Abstract Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
+  },
 
   // ── WALLACE COLLECTION ────────────────────────────────────────────────────
   {
@@ -3188,6 +3328,76 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/The_Rainbow_Landscape",
     grokUrl: "https://grokipedia.com/page/The_Rainbow_Landscape",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Peter_Paul_Rubens_-_Landscape_with_a_Rainbow_-_WGA20411.jpg/330px-Peter_Paul_Rubens_-_Landscape_with_a_Rainbow_-_WGA20411.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
+  },
+  {
+    id: 424, rank: null, museumOnly: true,
+    title: "The Lady with a Fan",
+    artist: "Diego Velázquez",
+    year: "c. 1638–1639",
+    medium: "Oil on canvas",
+    dimensions: "92.8 × 68.5 cm",
+    description: "One of three portraits by Velázquez in the Wallace Collection, this painting depicts an unidentified Spanish woman with a veil and fan — objects that simultaneously conceal and signal. The subtle mastery of black fabric and the sitter's composed gaze are characteristic of Velázquez at his height. She has been called the most mysterious woman in Spanish art.",
+    movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Lady_with_a_Fan_(Vel%C3%A1zquez)",
+    grokUrl: "https://grokipedia.com/page/The_Lady_with_a_Fan_(Velázquez)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/La_dama_del_abanico%2C_por_Diego_Vel%C3%A1zquez.jpg/330px-La_dama_del_abanico%2C_por_Diego_Vel%C3%A1zquez.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
+  },
+  {
+    id: 425, rank: null, museumOnly: true,
+    title: "Titus, the Artist's Son",
+    artist: "Rembrandt van Rijn",
+    year: "c. 1657",
+    medium: "Oil on canvas",
+    dimensions: "68.5 × 57.3 cm",
+    description: "Painted when his son was about sixteen, this portrait shows Titus in a Venetian-style costume with a red beret, his face emerging from warm shadow with startling immediacy. Unlike many Rembrandt works, its authenticity has never been questioned. It was created in the year after Rembrandt's bankruptcy, while Titus and his stepmother Hendrickje had taken over administration of the studio.",
+    movement: "Dutch Golden Age",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Titus%2C_the_Artist%27s_Son%2C_Rembrandt_van_Rijn%2C_c._1657%2C_Wallace_Collection%2C_London.jpg/330px-Titus%2C_the_Artist%27s_Son%2C_Rembrandt_van_Rijn%2C_c._1657%2C_Wallace_Collection%2C_London.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
+  },
+  {
+    id: 426, rank: null, museumOnly: true,
+    title: "The Rising of the Sun",
+    artist: "François Boucher",
+    year: "1752",
+    medium: "Oil on canvas",
+    dimensions: "378 × 261 cm",
+    description: "Commissioned by Madame de Pompadour as a full-scale model for Gobelins tapestries, this monumental canvas shows Apollo ascending into the sky in a blaze of light and color. Together with its pendant The Setting of the Sun, it is considered Boucher's supreme achievement — and one of the defining images of the French Rococo at its grandest scale.",
+    movement: "Rococo",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Rising_of_the_Sun",
+    grokUrl: "https://grokipedia.com/page/The_Rising_of_the_Sun",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Fran%C3%A7ois_Boucher_-_The_Rising_of_the_Sun_-_WGA02916.jpg/330px-Fran%C3%A7ois_Boucher_-_The_Rising_of_the_Sun_-_WGA02916.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
+  },
+  {
+    id: 427, rank: null, museumOnly: true,
+    title: "Mrs. Mary Robinson ('Perdita')",
+    artist: "Thomas Gainsborough",
+    year: "1781",
+    medium: "Oil on canvas",
+    dimensions: "233.7 × 153 cm",
+    description: "Commissioned by the Prince of Wales after his affair with the celebrated actress Mary Robinson, this full-length portrait shows her holding a miniature of the prince — a gift turned into pictorial evidence. Gainsborough's fluid brushwork transforms what began as a politically fraught commission into one of the most elegant portraits of 18th-century England.",
+    movement: "Rococo",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Mary_Robinson",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_Mary_Robinson",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Thomas_Gainsborough_%281727-1788%29_-_Mrs_Mary_Robinson_%28Perdita%29_-_P42_-_The_Wallace_Collection.jpg/330px-Thomas_Gainsborough_%281727-1788%29_-_Mrs_Mary_Robinson_%28Perdita%29_-_P42_-_The_Wallace_Collection.jpg",
+    location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
+  },
+  {
+    id: 428, rank: null, museumOnly: true,
+    title: "Venice: The Bacino from the Giudecca",
+    artist: "Canaletto",
+    year: "c. 1735–1744",
+    medium: "Oil on canvas",
+    dimensions: "129.2 × 188.9 cm",
+    description: "One of eight Canalettos in the Wallace Collection, this large panorama looks across the Bacino di San Marco from the Giudecca canal toward the Riva degli Schiavoni and San Giorgio Maggiore. The crystalline light and precise architectural detail — gathered during Canaletto's years of study in Venice before his extended stay in England — make it a benchmark of veduta painting.",
+    movement: "Baroque",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Giovanni_Antonio_Canal%2C_il_Canaletto_-_Venice_-_The_Bacino_from_the_Giudecca_-_WGA03920.jpg/330px-Giovanni_Antonio_Canal%2C_il_Canaletto_-_Venice_-_The_Bacino_from_the_Giudecca_-_WGA03920.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Wallace Collection" }
   },
 
@@ -3248,6 +3458,76 @@ const PAINTINGS = [
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg/330px-David_-_Napoleon_crossing_the_Alps_-_Malmaison2.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
   },
+  {
+    id: 414, rank: null, museumOnly: true,
+    title: "Death and the Maiden",
+    artist: "Egon Schiele",
+    year: "1915",
+    medium: "Oil on canvas",
+    dimensions: "150 × 180 cm",
+    description: "A woman clings to a skeletal monk-robed figure of Death — Schiele's own face, gaunt and resolved — in an embrace that mingles erotic despair with resignation. Schiele named it 'Man and Girl' and 'Entwined People' before settling on the Baroque vanitas title. Painted the year he married Edith Harms, it is read as a farewell to his model and companion Wally Neuzil, with whom he had just separated.",
+    movement: "Expressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Death_and_the_Maiden_(Schiele)",
+    grokUrl: "https://grokipedia.com/page/Death_and_the_Maiden_(Schiele)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Schiele_-_Der_Tod_und_das_M%C3%A4dchen.jpg/330px-Egon_Schiele_-_Der_Tod_und_das_M%C3%A4dchen.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
+  },
+  {
+    id: 415, rank: null, museumOnly: true,
+    title: "The Embrace (Lovers II)",
+    artist: "Egon Schiele",
+    year: "1917",
+    medium: "Oil on canvas",
+    dimensions: "170 × 100 cm",
+    description: "Two nude figures are locked in a total embrace, their bodies pressed together across the full height of the vertical canvas, limbs entwined with an intensity that abolishes any sense of tenderness or sentiment — this is need made physical. Schiele painted it the year before his death, as his style was softening slightly from its earlier rawness, yet the psychological compression remains absolute. It is one of his last and most monumental figure compositions.",
+    movement: "Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Egon_Schiele_-_Die_Umarmung_-_4438_-_%C3%96sterreichische_Galerie_Belvedere.jpg/330px-Egon_Schiele_-_Die_Umarmung_-_4438_-_%C3%96sterreichische_Galerie_Belvedere.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
+  },
+  {
+    id: 416, rank: null, museumOnly: true,
+    title: "Early Spring in the Vienna Woods",
+    artist: "Ferdinand Georg Waldmüller",
+    year: "1861",
+    medium: "Oil on panel",
+    dimensions: "52 × 66 cm",
+    description: "Snow still lies in the shadows but violets and primroses bloom in the foreground with almost aggressive botanical precision, oversized by Waldmüller's characteristic close observation, while village children fill the middle distance with the first outdoor freedom of the year. Waldmüller spent decades fighting the Vienna Academy's preference for copying Old Masters, advocating instead for direct painting from nature — this canvas is his argument made visible. The Belvedere holds the world's largest collection of his work.",
+    movement: "Realism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Ferdinand_Georg_Waldm%C3%BCller_-_Vorfr%C3%BChling_im_Wienerwald_-_1501_-_%C3%96sterreichische_Galerie_Belvedere.jpg/330px-Ferdinand_Georg_Waldm%C3%BCller_-_Vorfr%C3%BChling_im_Wienerwald_-_1501_-_%C3%96sterreichische_Galerie_Belvedere.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
+  },
+  {
+    id: 417, rank: null, museumOnly: true,
+    title: "Tegetthoff in the Naval Battle of Lissa",
+    artist: "Anton Romako",
+    year: "1878–1880",
+    medium: "Oil on canvas",
+    dimensions: "86.5 × 47.5 cm",
+    description: "Admiral Tegetthoff stands at the bridge of his flagship as it rams an Italian warship at the 1866 Battle of Lissa — but Romako strips out all heroism, showing the admiral and his sailors as terrified mortals gripping the rails above a chaos of smoke and sea. Universally mocked when exhibited in Vienna in 1882, it is now recognized as a visionary work that anticipated Expressionism by twenty years in its psychological intensity and rejection of academic convention. Romako died impoverished and ignored; the painting is now considered the greatest Austrian history painting of the 19th century.",
+    movement: "Realism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Anton_Romako_-_Tegetthoff_in_der_Seeschlacht_bei_Lissa_I_-_5032_-_%C3%96sterreichische_Galerie_Belvedere.jpg/330px-Anton_Romako_-_Tegetthoff_in_der_Seeschlacht_bei_Lissa_I_-_5032_-_%C3%96sterreichische_Galerie_Belvedere.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
+  },
+  {
+    id: 418, rank: null, museumOnly: true,
+    title: "Rocky Landscape in the Elbe Sandstone Mountains",
+    artist: "Caspar David Friedrich",
+    year: "1822–1823",
+    medium: "Oil on canvas",
+    dimensions: "94 × 74 cm",
+    description: "Massive sandstone formations rise from river mist in the Elbsandsteingebirge region of Saxony, the rocks dwarfing two tiny figures who stand at the base as if at the threshold of the sublime. Friedrich returned repeatedly to this landscape — the gateway to the Neurathen — finding in its vertical drama a natural cathedral that suited his Romantic conviction that landscape was the highest vehicle for spiritual experience. The painting is an unexpected presence in a Viennese collection, a reminder that Austrian collecting at its peak was genuinely pan-European.",
+    movement: "Romanticism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Caspar_David_Friedrich_-_Felsenlandschaft_im_Elbsandsteingebirge_%281822-23%29.jpg/330px-Caspar_David_Friedrich_-_Felsenlandschaft_im_Elbsandsteingebirge_%281822-23%29.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Österreichische Galerie Belvedere" }
+  },
 
   // ── KUNSTHISTORISCHES MUSEUM ──────────────────────────────────────────────
   {
@@ -3304,6 +3584,76 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/Three_Philosophers_(Giorgione)",
     grokUrl: "https://grokipedia.com/page/The_Three_Philosophers",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Giorgione_-_Three_Philosophers_-_Google_Art_Project.jpg/330px-Giorgione_-_Three_Philosophers_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
+  },
+  {
+    id: 419, rank: null, museumOnly: true,
+    title: "The Art of Painting",
+    artist: "Johannes Vermeer",
+    year: "c. 1666–1668",
+    medium: "Oil on canvas",
+    dimensions: "120 × 100 cm",
+    description: "A painter works at his canvas in a richly furnished studio, his model dressed as Clio, the Muse of History, holding a trumpet and a heavy book — an allegory of painting's claim to historical dignity and intellectual status. Vermeer never sold it, kept it in his home until his death, and his widow declared it his personal property in her bankruptcy proceedings, suggesting it was the work he valued most. It is his largest and most ambitious composition, and one of the supreme self-declarations in the history of art.",
+    movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Art_of_Painting",
+    grokUrl: "https://grokipedia.com/page/The_Art_of_Painting",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Jan_Vermeer_-_The_Art_of_Painting_-_Google_Art_Project.jpg/330px-Jan_Vermeer_-_The_Art_of_Painting_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
+  },
+  {
+    id: 420, rank: null, museumOnly: true,
+    title: "Madonna of the Meadow",
+    artist: "Raphael",
+    year: "1505–1506",
+    medium: "Oil on panel",
+    dimensions: "113 × 88 cm",
+    description: "Painted by the twenty-three-year-old Raphael within months of his arrival in Florence, the Madonna of the Meadow is a triangular composition of three figures in a luminous Umbrian landscape — Mary, the infant Christ, and the young John the Baptist — that became the template for Renaissance Madonna paintings for a century. The tenderness of the interplay between mother and children, and the seamless integration of figures with landscape, distil everything Raphael had absorbed from Leonardo and Michelangelo into a single, perfect image.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Madonna_del_Prato_(Raphael)",
+    grokUrl: "https://grokipedia.com/page/Madonna_del_Prato_(Raphael)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Raphael_-_Madonna_in_the_Meadow_-_Google_Art_Project.jpg/330px-Raphael_-_Madonna_in_the_Meadow_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
+  },
+  {
+    id: 421, rank: null, museumOnly: true,
+    title: "Helena Fourment in a Fur Robe",
+    artist: "Peter Paul Rubens",
+    year: "c. 1636–1638",
+    medium: "Oil on oak panel",
+    dimensions: "176 × 83 cm",
+    description: "Rubens's young wife Hélène Fourment, sixteen years his junior, steps from the bath wrapped only in a short black fur — her body painted with a frank sensuality that even Rubens's admirers found startling. He kept this painting in his personal collection, never sold it, and left it to her by name in his will as a personal gift rather than an estate asset. It recalls both the Venus pudica of antiquity and Titian's Girl in a Fur, which Rubens had copied — making it simultaneously the most intimate Old Master nude and an act of art-historical homage.",
+    movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Het_Pelsken",
+    grokUrl: "https://grokipedia.com/page/Het_Pelsken",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Peter_Paul_Rubens_-_Het_pelsken_1636-1638.jpg/330px-Peter_Paul_Rubens_-_Het_pelsken_1636-1638.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
+  },
+  {
+    id: 422, rank: null, museumOnly: true,
+    title: "Infanta Margarita Teresa in a Blue Dress",
+    artist: "Diego Velázquez",
+    year: "1659",
+    medium: "Oil on canvas",
+    dimensions: "127 × 107 cm",
+    description: "Painted the year before Velázquez's death, this portrait of the eight-year-old Infanta was dispatched immediately to Vienna as a diplomatic gift to the Habsburg court she would one day join as Empress. She is the same girl who stands at the center of Las Meninas — recognizable but aged, now solemn in an enormous blue crinoline — and Velázquez renders her silk dress in loose brushstrokes that dissolve into coherence only at a distance, anticipating Impressionism by two centuries.",
+    movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Infanta_Margarita_Teresa_in_a_Blue_Dress",
+    grokUrl: "https://grokipedia.com/page/Infanta_Margarita_Teresa_in_a_Blue_Dress",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Diego_Rodriguez_de_Silva_y_Vel%C3%A1zquez_-_Infanta_Margarita_Teresa_in_a_Blue_Dress_-_Google_Art_Project.jpg/330px-Diego_Rodriguez_de_Silva_y_Vel%C3%A1zquez_-_Infanta_Margarita_Teresa_in_a_Blue_Dress_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
+  },
+  {
+    id: 423, rank: null, museumOnly: true,
+    title: "Madonna of the Rosary",
+    artist: "Caravaggio",
+    year: "c. 1601–1607",
+    medium: "Oil on canvas",
+    dimensions: "364.5 × 249.5 cm",
+    description: "Caravaggio's largest surviving canvas and the only painting by him that could be called a standard Baroque altarpiece — Saint Dominic distributes rosary beads to a kneeling crowd as Saint Peter Martyr gestures toward the enthroned Madonna. The enormous scale forces the viewer into the crowd at the bottom, among the dirty feet and rough hands of the suppliants. The Dutch painters Rubens and Louis Finson bought it in Naples and brought it north, where it was purchased by Antwerp artists as a study piece before eventually entering the imperial collection.",
+    movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Madonna_of_the_Rosary_(Caravaggio)",
+    grokUrl: "https://grokipedia.com/page/Madonna_of_the_Rosary_(Caravaggio)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Michelangelo_Merisi%2C_called_Caravaggio_-_Madonna_of_the_Rosary_-_Google_Art_Project.jpg/330px-Michelangelo_Merisi%2C_called_Caravaggio_-_Madonna_of_the_Rosary_-_Google_Art_Project.jpg",
     location: { continent: "Europe", country: "Austria", city: "Vienna", museum: "Kunsthistorisches Museum" }
   },
 
@@ -3648,6 +3998,76 @@ const PAINTINGS = [
     wikiUrl: "https://en.wikipedia.org/wiki/Madonna_dei_Palafrenieri",
     grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Caravaggio_-_La_Madonna_dei_Palafrenieri%2C_1605%2C_110.jpg/330px-Caravaggio_-_La_Madonna_dei_Palafrenieri%2C_1605%2C_110.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
+  },
+  {
+    id: 434, rank: null, museumOnly: true,
+    title: "The Deposition",
+    artist: "Raphael",
+    year: "1507",
+    medium: "Oil on wood",
+    dimensions: "184 × 176 cm",
+    description: "Raphael's first large-scale altarpiece, commissioned by Atalanta Baglioni in Perugia to commemorate her murdered son. The scene of Christ's body being carried to the tomb is organized with a sweeping dynamism unprecedented in Raphael's work — the result of intense study of classical sarcophagi and Michelangelo's figure styles. Cardinal Scipione Borghese had it seized and sent to Rome in 1608; its removal from Perugia caused a public scandal.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Deposition_(Raphael)",
+    grokUrl: "https://grokipedia.com/page/The_Deposition_(Raphael)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Raffaello%2C_pala_baglioni%2C_deposizione.jpg/330px-Raffaello%2C_pala_baglioni%2C_deposizione.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
+  },
+  {
+    id: 435, rank: null, museumOnly: true,
+    title: "Danaë",
+    artist: "Correggio",
+    year: "c. 1531",
+    medium: "Oil on canvas",
+    dimensions: "161 × 193 cm",
+    description: "Danaë lies on rumpled sheets while a shower of golden coins rains upon her as Zeus in disguise — Cupid beside her helps her receive the divine lover. Correggio renders the erotic mythological subject with extraordinary sensory immediacy: the figure is warm, languid, and wholly believable. This painting later inspired Titian's series of Danaë canvases; it spent years in the French royal collection before reaching the Borghese in 1827.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Dana%C3%AB_(Correggio)",
+    grokUrl: "https://grokipedia.com/page/Danaë_(Correggio)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Correggio_008.jpg/330px-Correggio_008.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
+  },
+  {
+    id: 436, rank: null, museumOnly: true,
+    title: "Boy with a Basket of Fruit",
+    artist: "Caravaggio",
+    year: "c. 1593",
+    medium: "Oil on canvas",
+    dimensions: "70 × 67 cm",
+    description: "One of Caravaggio's earliest surviving works, painted when he was around twenty years old and working in Rome for Cardinal Francesco Maria Del Monte. The boy — probably his companion Mario Minniti — offers the viewer a basket of meticulously observed fruit, including leaves already browning and grapes beginning to shrivel. The half-length figure pressed close to the picture plane and the naturalistic attention to decay signal everything that would define Caravaggio's revolution.",
+    movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Boy_with_a_Basket_of_Fruit",
+    grokUrl: "https://grokipedia.com/page/Boy_with_a_Basket_of_Fruit",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Boy_with_a_Basket_of_Fruit_by_Caravaggio.jpg/330px-Boy_with_a_Basket_of_Fruit_by_Caravaggio.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
+  },
+  {
+    id: 437, rank: null, museumOnly: true,
+    title: "Susanna and the Elders",
+    artist: "Peter Paul Rubens",
+    year: "c. 1607",
+    medium: "Oil on canvas",
+    dimensions: "94 × 65 cm",
+    description: "Painted during Rubens's Italian years, this small but charged canvas shows Susanna recoiling from two lecherous elders who have spied on her bathing. It is one of the earliest treatments by Rubens of this subject and shows the full influence of his Italian training — the anatomical force of Michelangelo and the warm flesh tones of Titian — compressed into an intimate format.",
+    movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Susanna_and_the_Elders_(Rubens)",
+    grokUrl: "https://grokipedia.com/page/Susanna_and_the_Elders_(Rubens)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Peter_Paul_Rubens_-_Susanna_and_the_Elders_%28Galleria_Borghese%29.jpg/330px-Peter_Paul_Rubens_-_Susanna_and_the_Elders_%28Galleria_Borghese%29.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
+  },
+  {
+    id: 438, rank: null, museumOnly: true,
+    title: "The Hunt of Diana",
+    artist: "Domenichino",
+    year: "1616",
+    medium: "Oil on canvas",
+    dimensions: "225 × 320 cm",
+    description: "Diana's nymphs compete in an archery contest in a vast Arcadian landscape, one nymph drawing back to shoot while others watch, wrestle, and bathe. Domenichino was inspired by ancient friezes and Raphael's compositions, but what makes this painting exceptional is its fluid sense of outdoor space and the variety of psychological responses it captures across the figures. Cardinal Borghese seized it from its patron Giovanni Battista Agucchi within a year of completion.",
+    movement: "Baroque",
+    wikiUrl: "https://en.wikipedia.org/wiki/Archery_Contest_of_Diana_and_her_Nymphs",
+    grokUrl: "https://grokipedia.com/page/Archery_Contest_of_Diana_and_her_Nymphs",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Domenichino_-_Diana_and_her_Nymphs_-_WGA06390.jpg/330px-Domenichino_-_Diana_and_her_Nymphs_-_WGA06390.jpg",
     location: { continent: "Europe", country: "Italy", city: "Rome", museum: "Galleria Borghese" }
   },
 
@@ -6265,6 +6685,30 @@ const ARTISTS = {
   "Mark Rothko": {
     born: "1903", died: "1970", nationality: "American",
     bio: "Rothko was one of the central figures of Abstract Expressionism and the defining practitioner of Color Field painting — large canvases of luminous, hovering rectangles of pure color intended to evoke primal human emotions without narrative or representation. Born in Daugavpils, Latvia, he emigrated to Oregon at ten and eventually settled in New York, where he abandoned figuration in the late 1940s and arrived at the format he would refine for the rest of his life. The Phillips Collection's Rothko Room (1960) was the world's first public space dedicated solely to a living artist's work, installed to Rothko's own specifications for low light and intimate viewing distance. He died by suicide in 1970, having produced some of the most emotionally intense paintings in American art history."
+  },
+  "Ferdinand Georg Waldmüller": {
+    born: "1793", died: "1865", nationality: "Austrian",
+    bio: "The foremost Austrian painter of the Biedermeier era, Ferdinand Georg Waldmüller trained at the Vienna Academy and became its professor of painting — only to be suspended in 1857 after decades of fighting the Academy's insistence on copying Old Masters rather than working directly from nature. His highly detailed, luminous portraits, genre scenes, and landscapes anticipated the Realist movement and influenced the Impressionists through his meticulous observation of light and botanical detail. The Belvedere in Vienna holds the world's largest collection of his work, including his iconic spring landscapes of the Vienna Woods. He was essentially vindicated posthumously: his advocacy for direct study of nature is now understood as a crucial bridge between Biedermeier Romanticism and the European Realist tradition."
+  },
+  "Anton Romako": {
+    born: "1832", died: "1889", nationality: "Austrian",
+    bio: "One of the most enigmatic and misunderstood painters of the 19th century, Anton Romako worked for many years in Rome before returning to Vienna, where his psychologically intense portraits and unconventional history paintings were met with incomprehension. His masterpiece, the Tegetthoff naval battle painting, was mocked and rejected when first exhibited in 1882 for abandoning every convention of heroic battle painting in favor of existential terror. He died in poverty in 1889, largely forgotten; his rehabilitation came slowly through the 20th century as his anticipation of Expressionist psychology became clear. He is now recognized as one of the most original Austrian painters of the 19th century and a visionary precursor to the Vienna Secession."
+  },
+  "Caspar David Friedrich": {
+    born: "1774", died: "1840", nationality: "German",
+    bio: "The supreme painter of German Romanticism, Caspar David Friedrich transformed landscape painting into a medium for spiritual and existential inquiry, filling his canvases with misty mountains, Gothic ruins, and solitary figures viewed from behind — the Rückenfigur — who draw the viewer into the vast indifference of nature. Born in Greifswald, he settled in Dresden and developed his visionary style in near-isolation from the mainstream of European painting; his contemporaries admired him but found his work austere and difficult. He was largely forgotten after his death and for most of the 19th century, only to be rediscovered in the early 20th century by Expressionists and Surrealists who recognized in him a modern sensibility trapped in Romantic form. He suffered a stroke in 1835 that curtailed his ability to paint; his work now commands some of the highest prices of any German artist at auction."
+  },
+  "François Boucher": {
+    born: "1703", died: "1770", nationality: "French",
+    bio: "The foremost painter of the French Rococo, François Boucher was First Painter to Louis XV and the defining visual voice of 18th-century aristocratic taste — his canvases filled with pastel clouds, flirtatious goddesses, and idyllic pastoral scenes that embodied an entire civilization's idea of pleasure. He won the Prix de Rome in 1723, spent four formative years in Italy, and returned to Paris to become the indispensable artist of the court, producing paintings, tapestry cartoons for the Gobelins manufactory, stage designs for the Opéra, and decorative programs for royal residences. His most powerful patron was Madame de Pompadour, whose taste he helped shape and who commissioned from him his greatest works. After her death his style fell out of fashion as Neoclassicism rose; the critic Diderot attacked him savagely, but Boucher's influence on decorative art, porcelain design, and the Sèvres manufactory has proved lasting."
+  },
+  "Max Ernst": {
+    born: "1891", died: "1976", nationality: "German",
+    bio: "A founding figure of Dada and Surrealism, Max Ernst was born near Cologne and trained in philosophy before abandoning academia for art after seeing an exhibition of art by psychiatric patients that changed his conception of what images could be. He invented frottage (rubbing) and grattage (scraping) as methods for generating images from chance, and pioneered collage-novels from Victorian engravings that opened entirely new pictorial territories. Forced to flee Germany in 1933, he was interned in France during both World Wars and finally reached New York in 1941 via Lisbon, where his presence transformed the direction of American abstract painting. He received the Grand Prize for painting at the Venice Biennale in 1954; his work ranges from tender landscapes to images of disturbing psychological power."
+  },
+  "Yves Klein": {
+    born: "1928", died: "1962", nationality: "French",
+    bio: "In fewer than a decade of active work before his death at thirty-four, Yves Klein transformed what a painting could be — and what an artist could do. Born in Nice to two painters, he taught himself judo in Japan, reached fourth dan, and on his return to France applied that discipline's philosophy of pure presence to monochrome painting. He developed International Klein Blue (IKB), a patented ultramarine formulation, and used it to make approximately two hundred monochromes that he presented as 'zones of immaterial pictorial sensibility.' He also organized 'Anthropometry' performances in which he directed nude models to press their IKB-painted bodies against canvases, and sold 'immaterial zones' — empty space — for gold leaf. His theatrical and conceptual ambitions pointed directly toward performance art, Minimalism, and Conceptualism."
   }
 };
 
@@ -6402,7 +6846,13 @@ const ARTIST_PORTRAITS = {
   "Orazio Gentileschi": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Lucas_Emil_Vorsterman_after_Sir_Anthony_van_Dyck%2C_Orazio_Gentileschi%2C_probably_1626-1641%2C_NGA_10780_%28cropped%29.jpg/330px-Lucas_Emil_Vorsterman_after_Sir_Anthony_van_Dyck%2C_Orazio_Gentileschi%2C_probably_1626-1641%2C_NGA_10780_%28cropped%29.jpg",
   "James Ensor": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Ensor_voor_zijn_schildersezel%2C_James_Ensor%2C_1890%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_2809.001.jpeg/330px-Ensor_voor_zijn_schildersezel%2C_James_Ensor%2C_1890%2C_Koninklijk_Museum_voor_Schone_Kunsten_Antwerpen%2C_2809.001.jpeg",
   "Paul Klee": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Paul_Klee_by_Hugo_Erfurth%2C_1922.jpg/330px-Paul_Klee_by_Hugo_Erfurth%2C_1922.jpg",
-  "Mark Rothko": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Consuelo_Kanaga%2C_Mark_Rothko%2C_Yorktown_Heights%2C_ca._1949.jpg/330px-Consuelo_Kanaga%2C_Mark_Rothko%2C_Yorktown_Heights%2C_ca._1949.jpg"
+  "Mark Rothko": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Consuelo_Kanaga%2C_Mark_Rothko%2C_Yorktown_Heights%2C_ca._1949.jpg/330px-Consuelo_Kanaga%2C_Mark_Rothko%2C_Yorktown_Heights%2C_ca._1949.jpg",
+  "Ferdinand Georg Waldmüller": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Ferdinand-Georg-Waldm%C3%BCller-1828.jpg/330px-Ferdinand-Georg-Waldm%C3%BCller-1828.jpg",
+  "Anton Romako": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Anton_Romako_-_Selbstportr%C3%A4t_%28Detail%29.jpg/330px-Anton_Romako_-_Selbstportr%C3%A4t_%28Detail%29.jpg",
+  "Caspar David Friedrich": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Anonymous_-_Portrait_of_Caspar_David_Friedrich_%281810s%29.jpg/330px-Anonymous_-_Portrait_of_Caspar_David_Friedrich_%281810s%29.jpg",
+  "François Boucher": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Boucher_par_Gustav_Lundberg_1741.jpg/330px-Boucher_par_Gustav_Lundberg_1741.jpg",
+  "Max Ernst": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Max_Ernst_1968.jpg/330px-Max_Ernst_1968.jpg",
+  "Yves Klein": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Yves_Klein_in_front_of_one_of_his_canvases_%281962%29_%28cropped%29.jpg/330px-Yves_Klein_in_front_of_one_of_his_canvases_%281962%29_%28cropped%29.jpg"
 };
 
 /* ── Museum info ─────────────────────────────────────────────────────────── */

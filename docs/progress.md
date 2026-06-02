@@ -1012,3 +1012,52 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added Caravan (Remedios Varo, 1955, ID 407) — cloaked figures whose robes sprout wheels, traveling through a desolate townscape; Varo's signature fusion of medieval imagery and Surrealist displacement; `imageUrl: null` (copyright until 2033)
 - Added Day of the Dead (Diego Rivera, c. 1944, ID 408) — folk festival scene with skeletal revelers and flowers; Rivera's celebration of pre-Hispanic death ritual as living popular culture; `imageUrl: null` (copyright until 2027)
 - New artists: Remedios Varo, Leonora Carrington, David Alfaro Siqueiros
+
+### Museum build-up: Barnes Foundation (5 → 10)
+- Added Mussel-Fishers at Berneval (Renoir, 1879, ID 409) — Barnes's last-ever Renoir purchase (1942), coveted for decades; 175 cm monumental outdoor figure painting of Norman coast children
+- Added The Artist's Family (Renoir, 1896, ID 410) — life-size group portrait of Renoir's wife, sons, and nursemaid; hangs directly below Cézanne's Large Bathers on the east wall of the main gallery
+- Added The Music Lesson (Matisse, 1917, ID 411) — family portrait around the Pleyel piano at Issy; warm domestic counter-statement to Matisse's own austere Piano Lesson (at MoMA) from the year before
+- Added Acrobat and Young Harlequin (Picasso, 1905, ID 412) — Rose Period canvas of two circus figures in post-performance stillness; acquired by Barnes in 1924 through Paul Guillaume; `imageUrl: null` (Picasso copyright until 2043)
+- Added The Large Bathers (Cézanne, 1895–1906, ID 413) — Barnes's crown-jewel Cézanne; 13 bathers in cathedral-like tree-arch space; left unfinished at Cézanne's death; hangs at apex of the main gallery
+- No new artists
+
+### Museum build-up: Österreichische Galerie Belvedere (5 → 10)
+- Added Death and the Maiden (Schiele, 1915, ID 414) — Schiele's own face as Death embracing a woman clinging to him; painted the year he married Edith Harms, read as a farewell to his companion Wally Neuzil
+- Added The Embrace (Lovers II) (Schiele, 1917, ID 415) — two nude figures locked in total embrace across the full vertical canvas; one of his last and most monumental figure compositions
+- Added Early Spring in the Vienna Woods (Waldmüller, 1861, ID 416) — violets and primroses in botanical close-up while snow still lies in the shadows; Waldmüller's argument for direct painting from nature made visible; Belvedere holds the world's largest Waldmüller collection
+- Added Tegetthoff in the Naval Battle of Lissa (Romako, 1878–80, ID 417) — admiral and terrified sailors at the moment of ramming; mocked in 1882, now considered the greatest Austrian 19th-century history painting and a visionary precursor to Expressionism
+- Added Rocky Landscape in the Elbe Sandstone Mountains (Caspar David Friedrich, 1822–23, ID 418) — massive sandstone formations dwarfing two tiny figures; Friedrich's conviction that landscape was the supreme vehicle for spiritual experience
+- New artists: Ferdinand Georg Waldmüller, Anton Romako, Caspar David Friedrich
+
+### Museum build-up: Kunsthistorisches Museum (5 → 10)
+- Added The Art of Painting (Vermeer, c. 1666–68, ID 419) — Vermeer's largest, most ambitious work; kept in his home unsold until death; model posed as Clio, Muse of History — his declaration of painting's intellectual dignity
+- Added Madonna of the Meadow (Raphael, 1505–06, ID 420) — triangular pyramid composition of Mary, Christ, and John the Baptist in Umbrian landscape; the template for Renaissance Madonnas for a century; also called Madonna del Belvedere
+- Added Helena Fourment in a Fur Robe (Rubens, c. 1636–38, ID 421) — Rubens's young wife stepping from the bath, wrapped only in black fur; kept privately and left to her by name in his will; the most intimate Old Master nude
+- Added Infanta Margarita Teresa in a Blue Dress (Velázquez, 1659, ID 422) — the same Infanta from Las Meninas, now eight, in enormous blue crinoline dispatched to Vienna as a diplomatic gift; loose brushstrokes anticipate Impressionism
+- Added Madonna of the Rosary (Caravaggio, c. 1601–07, ID 423) — Caravaggio's largest surviving canvas and his only conventional altarpiece; Saint Dominic distributes rosaries while dirty feet crowd the bottom edge; brought north by Rubens
+- No new artists
+
+
+### Museum build-up: Wallace Collection (5 → 10)
+- Added The Lady with a Fan (Velázquez, c. 1638–39, ID 424) — unidentified Spanish woman with veil and fan; one of three Velázquezs in the collection; she has been called the most mysterious woman in Spanish art
+- Added Titus, the Artist's Son (Rembrandt, c. 1657, ID 425) — Rembrandt's only surviving child at sixteen in Venetian costume; painted the year after Rembrandt's bankruptcy; authenticity never questioned
+- Added The Rising of the Sun (Boucher, 1752, ID 426) — Apollo ascending into the sky; monumental Gobelins tapestry commission for Madame de Pompadour at 378 × 261 cm; considered Boucher's supreme achievement
+- Added Mrs. Mary Robinson ('Perdita') (Gainsborough, 1781, ID 427) — commissioned by the Prince of Wales after his affair with the actress; she holds his miniature; one of the most elegant portraits of 18th-century England
+- Added Venice: The Bacino from the Giudecca (Canaletto, c. 1735–44, ID 428) — panorama from the Giudecca canal toward San Giorgio Maggiore; one of eight Canalettos in the collection; benchmark veduta painting
+- New artists: François Boucher
+
+### Museum build-up: Tate Modern (5 → 10)
+- Added Black on Maroon (Rothko, 1958, ID 429) — one of nine Seagram Murals donated to Tate after Rothko withdrew them from a New York restaurant; experienced in near-darkness as hovering doorways; `imageUrl: null` (copyright until 2040+)
+- Added Marilyn Diptych (Warhol, 1962, ID 430) — 50 Monroe faces, vivid left / fading grey right; made weeks after her death; `imageUrl: null` (copyright until 2057)
+- Added The Elephant Celebes (Ernst, 1921, ID 431) — mechanical elephant-form beside a headless torso; Dada/proto-Surrealist; the movement's earliest fully realized masterpiece; pre-1927 PD in US
+- Added IKB 79 (Yves Klein, 1959, ID 432) — seamless ultramarine monochrome in Klein's patented International Klein Blue; acquired by Tate 1972; `imageUrl: null` (copyright until 2032+)
+- Added Yellow Islands (Pollock, 1952, ID 433) — black poured enamel with yellow and crimson added by brush then tilted; finest Pollock in Europe; `imageUrl: null` (copyright until 2047)
+- New artists: Max Ernst, Yves Klein
+
+### Museum build-up: Galleria Borghese (5 → 10)
+- Added The Deposition (Raphael, 1507, ID 434) — Raphael's first large altarpiece; seized by Cardinal Borghese from Perugia in 1608 causing public scandal; sweeping dynamism from classical sarcophagi study
+- Added Danaë (Correggio, c. 1531, ID 435) — Zeus as golden shower; warm and languorously sensual; later inspired Titian's entire Danaë series; spent years in French royal collection before Borghese 1827
+- Added Boy with a Basket of Fruit (Caravaggio, c. 1593, ID 436) — Caravaggio at ~20 years old; meticulously observed decaying fruit signals his naturalist revolution; model was companion Mario Minniti
+- Added Susanna and the Elders (Rubens, c. 1607, ID 437) — painted in Rome during Rubens's Italian years; absorbs Michelangelo and Titian into an intimate vertical format; earliest Rubens treatment of this subject
+- Added The Hunt of Diana (Domenichino, 1616, ID 438) — 225 × 320 cm Arcadian archery scene; seized by Cardinal Borghese from its patron within a year of completion; Raphael-influenced outdoor space
+- No new artists
