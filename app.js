@@ -367,6 +367,10 @@ function renderCondensedCard(p) {
     <div class="mv-popup-thumb-wrap">
       ${rankBadge}
       <div class="mv-popup-thumb">${img}</div>
+      <div class="card-collected-badge${isChecked ? ' checked' : ''}"
+           onclick="rowToggleCheck(event,'${key}')" title="Collect">
+        ${isChecked ? ICONS.check : ''}
+      </div>
     </div>
     <div class="mv-popup-title">${esc(p.title)}</div>
     <div class="mv-popup-artist">${esc(p.artist)}</div>
@@ -435,7 +439,7 @@ function renderListView() {
 
   let paintingsHtml;
   if (paintings.length === 0) {
-    paintingsHtml = `<div class="empty-state"><div class="empty-icon">🖼</div><p>No paintings match your search.</p></div>`;
+    paintingsHtml = `<div class="empty-state"><div class="empty-icon">${ICONS.frame}</div><p>No paintings match your search.</p></div>`;
   } else if (S.sort === 'museum') {
     const museumOrder = [...new Set(paintings.map(p => p.location.museum))];
     const groups = {};
@@ -1011,22 +1015,35 @@ function renderCollectionView() {
   const spacer = '<div class="toolbar-spacer"></div>';
 
   if (visible.length === 0) {
-    let headline, subline;
+    let headline, subline, icon;
     if (seen.length === 0) {
-      headline = 'No paintings collected yet.';
-      subline  = 'Collect paintings from the Paintings tab.';
+      const quips = [
+        'the walls have been waiting patiently.',
+        'even the docents have gone home.',
+        'a minimalist would call this a statement.',
+        'the frame is ready — the masterpiece is not.',
+        'the lighting is perfect, though.',
+        'every legendary collection started somewhere.'
+      ];
+      const quip = quips[Math.floor(Math.random() * quips.length)];
+      headline = `Your gallery is empty — ${quip}`;
+      subline  = 'Tap a painting in the Paintings tab to add it to your collection.';
+      icon     = ICONS.frame;
     } else if (S.collectionFilter === 'favorites' && !S.collectionSearch) {
       headline = 'No favorites yet.';
       subline  = 'Open a painting and tap the heart to favorite it.';
+      icon     = ICONS.heart;
     } else if (S.collectionSearch) {
       headline = 'No results.';
       subline  = `No paintings match "${esc(S.collectionSearch)}".`;
+      icon     = ICONS.frame;
     } else {
       headline = 'Nothing here.';
       subline  = '';
+      icon     = ICONS.frame;
     }
     return toolbar + spacer + `<div class="empty-state">
-      <div class="empty-icon">🖼️</div>
+      <div class="empty-icon">${icon}</div>
       <p>${headline}</p>
       <p style="font-size:.8rem;color:var(--text-faint);margin-top:8px">${subline}</p>
     </div>`;
@@ -2193,7 +2210,7 @@ function renderMuseumDetailView() {
     ? allMuseumPaintings.filter(p => p.title.toLowerCase().includes(q) || p.artist.toLowerCase().includes(q))
     : allMuseumPaintings;
 
-  const loc  = paintings[0].location;
+  const loc  = allMuseumPaintings[0].location;
   const info = (typeof MUSEUMS_INFO !== 'undefined') ? MUSEUMS_INFO[museumName] : null;
   const flagFor = { France:'🇫🇷', Italy:'🇮🇹', USA:'🇺🇸', Netherlands:'🇳🇱', Spain:'🇪🇸',
     'United Kingdom':'🇬🇧', Russia:'🇷🇺', Norway:'🇳🇴', Austria:'🇦🇹', Germany:'🇩🇪',
@@ -2210,7 +2227,9 @@ function renderMuseumDetailView() {
 
   let paintingsHtml;
   const mode = S.museumsDetailMode || 'condensed';
-  if (mode === 'grid') {
+  if (!paintings.length) {
+    paintingsHtml = `<div class="empty-state" style="padding:32px 0"><p>No paintings match your search.</p></div>`;
+  } else if (mode === 'grid') {
     paintingsHtml = `<div class="paintings-grid">${paintings.map(p => renderPaintingCard(p)).join('')}</div>`;
   } else if (mode === 'list') {
     paintingsHtml = `<div class="paintings-compact">${paintings.map(p => renderPaintingRow(p)).join('')}</div>`;

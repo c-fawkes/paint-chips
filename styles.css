@@ -934,6 +934,7 @@ body {
   color: var(--text-faint);
 }
 .empty-state .empty-icon { font-size: 3rem; margin-bottom: 12px; }
+.empty-state .empty-icon svg { width: 3rem; height: 3rem; color: var(--gold); }
 .empty-state p { font-size: .88rem; }
 
 /* ── Section separator ───────────────────────────────────────────────────── */
@@ -1216,6 +1217,11 @@ body {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: background .15s, border-color .15s;
+}
+.card-collected-badge::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
 }
 .card-collected-badge.checked {
   background: var(--gold);

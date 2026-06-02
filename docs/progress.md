@@ -906,3 +906,16 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added Scenes from the Life of Saint Cecilia (Domenichino, 1612–15, ID 354), Saint Cecilia (Guido Reni, c. 1606, ID 355), Assumption of the Virgin (Bassano the Younger, 1589, ID 356), Saint Louis IX between History and Faith (Plautilla Bricci, c. 1676–80, ID 357), Apotheosis of Saint Louis (Natoire, 1754–56, ID 358)
 - Capped at 8 — church has no more culturally significant paintings beyond the 3 Caravaggios and these 5
 - New artists: Domenichino, Guido Reni, Francesco Bassano the Younger, Plautilla Bricci, Charles-Joseph Natoire
+
+### Museum search: no-results fix
+- `renderMuseumDetailView()` crashed on `paintings[0].location` when search yielded no results; changed to always read from `allMuseumPaintings[0]`
+- Shows "No paintings match your search." empty state inside the detail view instead of soft-locking
+
+### Collection empty state: whimsical messages + icon
+- Replaced `🖼️` emoji with `ICONS.frame` SVG (gold-tinted via `.empty-state .empty-icon svg` CSS rule)
+- "No paintings collected" case now picks randomly from 6 witty completions of "Your gallery is empty —"
+- Favorites empty state uses `ICONS.heart`; Paintings tab search no-results also updated to SVG icon
+
+### 3×3 grid: collect button
+- Added `.card-collected-badge` button to `renderCondensedCard()` — same circle, gold-fill, check icon as the 2×2 grid
+- `.card-collected-badge::before { inset: -8px }` extends the tap target 8 px beyond the visible button on all sides
