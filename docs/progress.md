@@ -643,6 +643,13 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Annotated `CLAUDE.md` with `> Updated:` notes on every section that describes the original build state — data.js contents, state model fields, four-tabs table, painting object shape, and service worker strategy — all now reflect current reality
 - Annotated `docs/progress.md` App Overview with similar `> Updated:` callouts on the app description, data layer, persistence, nav bar, museums tab, stats view, and settings descriptions
 
+### Museum tab: scope-aware detail view + painting view toggle
+- Museum detail page now uses `scopedPaintings()` — paintings and collected counter reflect the active scope from Settings (Top 100 / Up to 10 / Up to 30)
+- Added a **view toggle button** to the Museums tab toolbar (matches Paintings and Collection tabs); icon reflects the active mode and goes gold when non-default
+- Three view modes for paintings inside a museum detail page: **Condensed** (default, 3-per-row grid), **Grid** (full painting cards), **List** (compact rows)
+- In condensed mode, top-100 paintings show a gold `#N` rank badge overlay in the top-left of the thumbnail
+- `S.museumsDetailMode` persisted to localStorage; defaults to `'condensed'`
+
 ### Museum alpha view: visited button cleanup
 - Removed the circle badge overlay on the flag icon — visited state no longer shown there
 - Removed the inline checkmark next to the museum name — redundant with the button

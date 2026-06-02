@@ -1827,6 +1827,24 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 .mv-popup-painting:hover .mv-popup-thumb { border-color: var(--gold-dim); }
+.mv-popup-thumb-wrap {
+  position: relative;
+  margin-bottom: 4px;
+}
+.mv-popup-thumb-wrap .mv-popup-thumb { margin-bottom: 0; }
+.mv-rank-badge {
+  position: absolute;
+  top: 5px; left: 5px;
+  background: rgba(0,0,0,.7);
+  color: var(--gold);
+  font-size: .6rem;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 20px;
+  letter-spacing: .04em;
+  z-index: 1;
+  pointer-events: none;
+}
 .mv-popup-thumb {
   width: 100%; aspect-ratio: 3/4;
   border-radius: 6px; overflow: hidden;

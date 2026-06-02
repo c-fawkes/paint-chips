@@ -16,6 +16,7 @@ const S = {
   collectionFilter: 'all',
   museumsSearch: '',
   museumsMode: 'alpha',
+  museumsDetailMode: 'condensed',
   sort: 'rank',
   search: '',
   filter: { continent: null, country: null, city: null, museum: null },
@@ -182,7 +183,7 @@ function save() {
   try {
     localStorage.setItem('pc_state', JSON.stringify({
       checked: S.checked, notes: S.notes, dateCollected: S.dateCollected, hiddenFromCollection: S.hiddenFromCollection, favorites: S.favorites, visitedMuseums: S.visitedMuseums, userPaintings: S.userPaintings,
-      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionFilter: S.collectionFilter, museumsMode: S.museumsMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
+      view: S.view, listMode: S.listMode, collectionMode: S.collectionMode, collectionSort: S.collectionSort, collectionFilter: S.collectionFilter, museumsMode: S.museumsMode, museumsDetailMode: S.museumsDetailMode, sort: S.sort, filter: S.filter, units: S.units, scope: S.scope,
     }));
   } catch (_) {}
 }
@@ -538,6 +539,10 @@ function renderMuseumsView() {
              value="${esc(S.museumsSearch)}" oninput="handleMuseumsSearch(this.value)">
       <button class="search-clear" onclick="handleMuseumsSearch('')" title="Clear search" ${S.museumsSearch ? '' : 'hidden'}>✕</button>
     </div>
+    <button class="toolbar-btn icon-only${S.museumsDetailMode !== 'condensed' ? ' active' : ''}"
+            onclick="openMuseumsDetailModeDropdown(event,this)" title="Painting view">
+      ${S.museumsDetailMode === 'grid' ? ICONS.grid : S.museumsDetailMode === 'list' ? ICONS.rows : ICONS.frame}
+    </button>
     <button class="toolbar-btn icon-only${S.museumsMode !== 'alpha' ? ' active' : ''}"
             onclick="openMuseumsViewDropdown(event,this)" title="Group by">
       ${ICONS.sort}
@@ -1546,6 +1551,37 @@ function openMuseumsViewDropdown(e, btn) {
   document.addEventListener('click', closeDrop, { once: true });
 }
 
+function openMuseumsDetailModeDropdown(e, btn) {
+  e.stopPropagation();
+  const wasOpen = !!document.getElementById('toolbar-drop');
+  closeDrop();
+  if (wasOpen) return;
+  const opts = [
+    { key: 'condensed', label: 'Condensed', icon: ICONS.frame },
+    { key: 'grid',      label: 'Grid',      icon: ICONS.grid },
+    { key: 'list',      label: 'List',      icon: ICONS.rows },
+  ];
+  const rect = btn.getBoundingClientRect();
+  const drop = document.createElement('div');
+  drop.className = 'toolbar-drop';
+  drop.id = 'toolbar-drop';
+  drop.style.cssText = `top:${rect.bottom + 6}px;right:${window.innerWidth - rect.right}px`;
+  drop.innerHTML = opts.map(o =>
+    `<button class="drop-item${S.museumsDetailMode === o.key ? ' active' : ''}"
+             onclick="setMuseumsDetailMode('${o.key}');closeDrop()">
+       ${o.icon}<span>${o.label}</span>
+     </button>`
+  ).join('');
+  document.body.appendChild(drop);
+  document.addEventListener('click', closeDrop, { once: true });
+}
+
+function setMuseumsDetailMode(key) {
+  S.museumsDetailMode = key;
+  save();
+  render();
+}
+
 function closeDrop() {
   const d = document.getElementById('toolbar-drop');
   if (d) d.remove();
@@ -2001,8 +2037,7 @@ function openMuseumDetail(name) {
 
 function renderMuseumDetailView() {
   const museumName = S.activeMuseum;
-  const all = allPaintings();
-  const paintings = all.filter(p => p.location.museum === museumName).sort((a,b) => (a.rank||9999)-(b.rank||9999));
+  const paintings = scopedPaintings().filter(p => p.location.museum === museumName).sort((a,b) => (a.rank||9999)-(b.rank||9999));
   if (!paintings.length) return `<div class="empty-state"><div class="empty-icon">🏛️</div><p>Museum not found.</p></div>`;
 
   const loc  = paintings[0].location;
@@ -2020,17 +2055,31 @@ function renderMuseumDetailView() {
            onerror="this.style.display='none'">`
     : '';
 
-  const thumbs = paintings.map(p => {
-    const img = p.imageUrl
-      ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
-             onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
-      : `<div class="row-thumb-placeholder">🎨</div>`;
-    return `<div class="mv-popup-painting" onclick="openDetail('${String(p.id)}')">
-      <div class="mv-popup-thumb">${img}</div>
-      <div class="mv-popup-title">${esc(p.title)}</div>
-      <div class="mv-popup-artist">${esc(p.artist)}</div>
-    </div>`;
-  }).join('');
+  let paintingsHtml;
+  const mode = S.museumsDetailMode || 'condensed';
+  if (mode === 'grid') {
+    paintingsHtml = `<div class="paintings-grid">${paintings.map(p => renderPaintingCard(p)).join('')}</div>`;
+  } else if (mode === 'list') {
+    paintingsHtml = `<div class="paintings-compact">${paintings.map(p => renderPaintingRow(p)).join('')}</div>`;
+  } else {
+    const thumbs = paintings.map(p => {
+      const img = p.imageUrl
+        ? `<img src="${p.imageUrl}" alt="${esc(p.title)}" loading="lazy"
+               onerror="this.outerHTML='<div class=row-thumb-placeholder>🎨</div>'">`
+        : `<div class="row-thumb-placeholder">🎨</div>`;
+      const rankBadge = (p.rank != null && p.rank <= 100)
+        ? `<div class="mv-rank-badge">#${p.rank}</div>` : '';
+      return `<div class="mv-popup-painting" onclick="openDetail('${String(p.id)}')">
+        <div class="mv-popup-thumb-wrap">
+          ${rankBadge}
+          <div class="mv-popup-thumb">${img}</div>
+        </div>
+        <div class="mv-popup-title">${esc(p.title)}</div>
+        <div class="mv-popup-artist">${esc(p.artist)}</div>
+      </div>`;
+    }).join('');
+    paintingsHtml = `<div class="mv-popup-paintings">${thumbs}</div>`;
+  }
 
   return `
     <div class="museum-detail-nav">
@@ -2052,7 +2101,7 @@ function renderMuseumDetailView() {
       </div>
       ${info ? `<p class="mv-popup-summary" style="margin-top:14px;border-bottom:none;padding-bottom:0">${esc(info.blurb)}</p>` : ''}
       <div class="mv-section-label" style="margin-top:18px">Collection (${paintings.length})</div>
-      <div class="mv-popup-paintings">${thumbs}</div>
+      ${paintingsHtml}
     </div>
   `;
 }
