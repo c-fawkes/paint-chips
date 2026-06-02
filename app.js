@@ -2454,6 +2454,13 @@ function renderSettingsView() {
           </div>
           <button class="settings-action-btn" onclick="showOnboarding()">View</button>
         </div>
+        <div class="settings-row">
+          <div class="settings-row-label">
+            <div class="settings-row-name">Force app update</div>
+            <div class="settings-row-sub">Clear cached files and reload with the latest version</div>
+          </div>
+          <button class="settings-action-btn" onclick="forceAppUpdate()">Update</button>
+        </div>
       </div>
     </div>
   `;
@@ -2485,6 +2492,16 @@ function setScope(s) {
   S.scope = s;
   save();
   render();
+}
+
+async function forceAppUpdate() {
+  if ('serviceWorker' in navigator) {
+    const regs = await navigator.serviceWorker.getRegistrations();
+    await Promise.all(regs.map(r => r.unregister()));
+  }
+  const keys = await caches.keys();
+  await Promise.all(keys.map(k => caches.delete(k)));
+  location.reload(true);
 }
 
 /* ── Onboarding ──────────────────────────────────────────────────────────── */

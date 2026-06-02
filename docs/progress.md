@@ -1061,3 +1061,10 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added Susanna and the Elders (Rubens, c. 1607, ID 437) — painted in Rome during Rubens's Italian years; absorbs Michelangelo and Titian into an intimate vertical format; earliest Rubens treatment of this subject
 - Added The Hunt of Diana (Domenichino, 1616, ID 438) — 225 × 320 cm Arcadian archery scene; seized by Cardinal Borghese from its patron within a year of completion; Raphael-influenced outdoor space
 - No new artists
+
+
+## Session 40 — 2026-06-02
+
+### Force App Update Setting
+- Added **Force app update** button to Settings → About section — unregisters all service workers, clears all caches, and hard-reloads to fetch the latest version without reinstalling the PWA
+- User data (localStorage and IndexedDB) is unaffected; only the HTTP cache is cleared
