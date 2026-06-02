@@ -4490,6 +4490,106 @@ const PAINTINGS = [
     grokUrl: null,
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Maison_foresti%C3%A8re_%C3%A0_Weissenbach.jpg/330px-Maison_foresti%C3%A8re_%C3%A0_Weissenbach.jpg",
     location: { continent: "North America", country: "USA", city: "New York", museum: "Neue Galerie New York" }
+  },
+
+  // ── Yale University Art Gallery ───────────────────────────────────────────
+  {
+    id: 333, rank: null, museumOnly: true,
+    title: "The House of Dr. Gachet in Auvers-sur-Oise",
+    artist: "Paul Cézanne",
+    year: "c. 1872–73",
+    medium: "Oil on canvas",
+    dimensions: "61.6 × 51.1 cm",
+    description: "Painted during Cézanne's stay in Auvers-sur-Oise under the mentorship of Pissarro, this early canvas shows him absorbing the lessons of Impressionism before transforming them into something more structural and permanent. Dr. Gachet — the physician who would later tend to van Gogh in his final months — was one of the very first collectors to purchase Cézanne's work, and their friendship gave the artist both stability and space to experiment. The warm ochre road, tilting houses, and dabs of foliage read as proto-Cézannian building blocks for what would become the most influential visual grammar of the 20th century.",
+    movement: "Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Paul_C%C3%A9zanne_-_The_House_of_Dr._Gachet_in_Auvers-sur-Oise_-_1979.14.8_-_Yale_University_Art_Gallery.jpg/330px-Paul_C%C3%A9zanne_-_The_House_of_Dr._Gachet_in_Auvers-sur-Oise_-_1979.14.8_-_Yale_University_Art_Gallery.jpg",
+    location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
+  },
+  {
+    id: 334, rank: null, museumOnly: true,
+    title: "The Ballet Rehearsal",
+    artist: "Edgar Degas",
+    year: "ca. 1891",
+    medium: "Oil on canvas",
+    dimensions: "48 × 88 cm",
+    description: "One of Degas's late ballet canvases, painted when his eyesight was failing and his practice had shifted from the sharp contours of his earlier work toward softer, more atmospheric passages of color. The wide horizontal format stretches the rehearsal room across the canvas, ballerinas scattered in arrested poses — adjusting a shoulder strap, waiting in the wings, bending to warm up — caught in the unglamorous in-between moments that Degas preferred over the performance itself. Bequeathed to Yale through the Havemeyer collection, it is among the finest Degas oils in an American university museum.",
+    movement: "Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
+  },
+  {
+    id: 335, rank: null, museumOnly: true,
+    title: "Camille on the Beach at Trouville",
+    artist: "Claude Monet",
+    year: "1870",
+    medium: "Oil on canvas",
+    dimensions: "38.1 × 46.4 cm",
+    description: "Painted en plein air at the fashionable Normandy resort of Trouville during the summer before the Franco-Prussian War, this intimate canvas shows Monet's wife Camille seated in a beach chair with a fan, a companion beside her. Monet set his canvas directly before the scene, and art historians have even found grains of actual beach sand embedded in the paint surface. It is a masterpiece of pure Impressionist immediacy — light, wind, and social ease captured in a matter of hours.",
+    movement: "Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Claude_Monet_-_Camille_on_the_Beach_in_Trouville_-_1998.46.1_-_Yale_University_Art_Gallery.jpg/330px-Claude_Monet_-_Camille_on_the_Beach_in_Trouville_-_1998.46.1_-_Yale_University_Art_Gallery.jpg",
+    location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
+  },
+  {
+    id: 336, rank: null, museumOnly: true,
+    title: "Parau Parau (Whispered Words)",
+    artist: "Paul Gauguin",
+    year: "1892",
+    medium: "Oil on canvas",
+    dimensions: "77.1 × 96.5 cm",
+    description: "Painted during Gauguin's first stay in Tahiti, this canvas places two Tahitian women in a landscape of saturated color — deep blue-greens, acid yellows, lavender earth — that has nothing to do with observed nature and everything to do with Gauguin's construction of a personal mythology of the South Seas. The phrase 'parau parau' (whispered words) suggests a private exchange the viewer cannot share, reinforcing the sense of cultural distance Gauguin both cultivated and exoticized. It entered Yale through the John Hay Whitney bequest in 1982 and is one of the great Gauguin Tahitian canvases in a North American collection.",
+    movement: "Post-Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Parau_Parau_Whispered_Words_by_Paul_Gauguin_1892.jpeg/330px-Parau_Parau_Whispered_Words_by_Paul_Gauguin_1892.jpeg",
+    location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
+  },
+  {
+    id: 337, rank: null, museumOnly: true,
+    title: "The Waterfall",
+    artist: "Wassily Kandinsky",
+    year: "1909",
+    medium: "Oil on pasteboard",
+    dimensions: "70 × 97.8 cm",
+    description: "Painted in the German countryside of Murnau at the precise moment Kandinsky was pressing natural forms to the edge of legibility, The Waterfall still resolves as landscape — boulders, trees, cascading water — but only just. The acid palette and flattened planes pay explicit tribute to Fauvist Paris, while the underlying energy points directly toward the non-objective abstraction Kandinsky would achieve within the following two years. Donated to Yale as part of the Société Anonyme collection in 1941, it is a uniquely well-documented transitional work from the most important conceptual turning point in modern art.",
+    movement: "Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Kandinsky_-_The_Waterfall%2C_1909.tif/lossy-page1-330px-Kandinsky_-_The_Waterfall%2C_1909.tif.jpg",
+    location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
+  },
+  {
+    id: 338, rank: null, museumOnly: true,
+    title: "Young Woman Reclining in Spanish Costume",
+    artist: "Édouard Manet",
+    year: "1862",
+    medium: "Oil on canvas",
+    dimensions: "94.7 × 113.7 cm",
+    description: "Manet's homage to Goya's Clothed Maja places the reclining model in his own Paris studio — a tufted daybed, a mischievous cat at her feet — updating the Spanish pose with the frank gaze and contemporary setting that would become his signature. Dedicated to Félix Nadar in the lower corner, the same photographer who would host the landmark first Impressionist exhibition in 1874, it signals the overlapping social world of Manet's avant-garde Paris. It is one of the key works in Manet's Hispanophile period, preceding both Olympia and Le Déjeuner sur l'herbe.",
+    movement: "Realism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/%C3%89douard_Manet_-_Reclining_Young_Woman_in_Spanish_Costume_-_1961.18.33_-_Yale_University_Art_Gallery.jpg/330px-%C3%89douard_Manet_-_Reclining_Young_Woman_in_Spanish_Costume_-_1961.18.33_-_Yale_University_Art_Gallery.jpg",
+    location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
+  },
+  {
+    id: 339, rank: null, museumOnly: true,
+    title: "Portrait of a Hanseatic Merchant",
+    artist: "Hans Holbein the Younger",
+    year: "1538",
+    medium: "Oil on panel",
+    dimensions: "49.6 × 39 cm",
+    description: "Painted in London for the Hanseatic League's English headquarters at the Steelyard, this portrait belongs to Holbein's series of merchant likenesses — all frontal, all against plain grounds, all in sober black — that together constitute one of the great documentary projects in portrait history. An inscription records the sitter's age as thirty-three (the age of Christ at the crucifixion, a common occasion for commemorative portraits) but no name survives, making the man's precise identity unknown despite the painting's intimate specificity. Acquired by Yale in 1977, it stands as one of the finest Holbeins in an American collection.",
+    movement: "Northern Renaissance",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Hans_Holbein_the_Younger_-_Portrait_of_a_Hanseatic_Merchant_-_1977.187_-_Yale_University_Art_Gallery.jpg/330px-Hans_Holbein_the_Younger_-_Portrait_of_a_Hanseatic_Merchant_-_1977.187_-_Yale_University_Art_Gallery.jpg",
+    location: { continent: "North America", country: "USA", city: "New Haven", museum: "Yale University Art Gallery" }
   }
 ];
 
@@ -5095,6 +5195,10 @@ const ARTISTS = {
   "Richard Gerstl": {
     born: "1883", died: "1908", nationality: "Austrian",
     bio: "Austrian painter Richard Gerstl produced fewer than 70 paintings in only five years before taking his own life at 25, yet that small body of work placed him decades ahead of his contemporaries in psychological intensity and painterly freedom. Self-taught in his loosely Expressionist technique — with its thick, energetic surface and radical cropping — he worked in near-total obscurity, exhibiting nothing in his lifetime. His fatal affair with Mathilde Schönberg, wife of the composer Arnold Schönberg with whom Gerstl had become close, ended when she returned to her husband; Gerstl burned most of his correspondence and killed himself that night. His work was virtually unknown until a posthumous exhibition in Vienna in 1931."
+  },
+  "Wassily Kandinsky": {
+    born: "1866", died: "1944", nationality: "Russian",
+    bio: "Generally credited as the first painter to make a fully non-objective, purely abstract work, Wassily Kandinsky arrived at abstraction not through formal theory but through the conviction that color and form could carry spiritual meaning independent of subject matter. Born in Moscow, he studied law before moving to Munich in 1896 to pursue painting, and co-founded Der Blaue Reiter ('The Blue Rider') group in 1911 with Franz Marc, producing his landmark Composition VII in the same year. He taught at the Bauhaus from 1922 to 1933 before fleeing Nazi Germany for Paris, where he lived until his death. His theoretical writings, especially Concerning the Spiritual in Art (1911), remain foundational texts of modern aesthetics."
   }
 };
 
@@ -5206,7 +5310,8 @@ const ARTIST_PORTRAITS = {
   "Ernst Ludwig Kirchner": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ernst_Ludwig_Kirchner_-_Selbstportr%C3%A4t_in_der_Atelierwohnung_in_Berlin-Friedenau_%281913-15%29.jpg/330px-Ernst_Ludwig_Kirchner_-_Selbstportr%C3%A4t_in_der_Atelierwohnung_in_Berlin-Friedenau_%281913-15%29.jpg",
   "Max Beckmann": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Max_Beckmann_1928%2C_by_Hugo_Erfurth.jpg/330px-Max_Beckmann_1928%2C_by_Hugo_Erfurth.jpg",
   "Oskar Kokoschka": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Oskar_Kokoschka_%281963%29_by_Erling_Mandelmann.jpg/330px-Oskar_Kokoschka_%281963%29_by_Erling_Mandelmann.jpg",
-  "Richard Gerstl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Richard_Gerstl_1902_%281903%29.jpg/330px-Richard_Gerstl_1902_%281903%29.jpg"
+  "Richard Gerstl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Richard_Gerstl_1902_%281903%29.jpg/330px-Richard_Gerstl_1902_%281903%29.jpg",
+  "Wassily Kandinsky": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg/330px-Kandinsky_-_Vassily_Kandinsky_by_Adolf_Elnain_Photo_credits_-_Georges_Meguerditchian.jpg"
 };
 
 /* ── Museum info ─────────────────────────────────────────────────────────── */

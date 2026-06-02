@@ -885,3 +885,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added The Dancer (Klimt, c. 1916–17, ID 326), Berlin Street Scene (Kirchner, 1913, ID 327), Self-Portrait with Horn (Beckmann, 1938, ID 328), Martha Hirsch (Kokoschka, 1909, ID 329), Stein on the Danube Seen from the South (Schiele, 1913, ID 330), Self-Portrait in front of a Stove (Gerstl, c. 1906–07, ID 331), Forester's House in Weissenbach II (Klimt, 1914, ID 332)
 - `imageUrl: null` on Kokoschka (copyright until 2050), Schiele landscape (no Commons image), Gerstl (no Commons image)
 - New artists: Ernst Ludwig Kirchner, Max Beckmann, Oskar Kokoschka, Richard Gerstl
+
+### Museum build-up: Yale University Art Gallery (3 → 10)
+- Added House of Dr. Gachet (Cézanne, c. 1872–73, ID 333), Ballet Rehearsal (Degas, ca. 1891, ID 334), Camille on the Beach at Trouville (Monet, 1870, ID 335), Parau Parau (Gauguin, 1892, ID 336), The Waterfall (Kandinsky, 1909, ID 337), Young Woman Reclining in Spanish Costume (Manet, 1862, ID 338), Portrait of a Hanseatic Merchant (Holbein, 1538, ID 339)
+- `imageUrl: null` on Ballet Rehearsal (no Commons image for Yale version)
+- New artist: Wassily Kandinsky
