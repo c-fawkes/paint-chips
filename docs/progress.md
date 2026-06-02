@@ -838,3 +838,13 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ### Scrollbar hidden globally
 - `::-webkit-scrollbar { display: none }` and `* { scrollbar-width: none }` replace the previous styled scrollbar
+
+## Session 37 — 2026-06-01
+
+### More Info links on painting detail card
+- Added `wikiUrl` and `grokUrl` fields to the painting object shape
+- Detail card shows a **More Info** spec box (4th cell in the 2-column specs grid, to the right of Movement) when either URL is present
+- Two icon links: Wikipedia (circle with W polyline) and Grokipedia (rounded square with G arc), both open in a new tab
+- `ICONS.wikipedia` and `ICONS.grokipedia` added to the icon map
+- `.moreinfo-links` / `.moreinfo-link` CSS added; hover gated behind `@media (hover: hover)`
+- First 10 paintings (IDs 1–10, all Louvre) have `wikiUrl` and `grokUrl` populated — awaiting review before adding remaining paintings

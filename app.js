@@ -327,6 +327,8 @@ const ICONS = {
   hash:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>`,
   calendar:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
   type:    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>`,
+  wikipedia:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="7,8 9.5,16 12,10 14.5,16 17,8"/></svg>`,
+  grokipedia: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M15 10a4 4 0 1 0 0 4M15 12h-3"/></svg>`,
   expandAll:   `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>`,
   collapseAll: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="7 11 12 6 17 11"/><polyline points="7 18 12 13 17 18"/></svg>`,
 };
@@ -1261,10 +1263,17 @@ function openDetail(id, { refresh = false } = {}) {
           <div class="detail-loc-chevron">${ICONS.chevron}</div>
         </div>
 
-        ${(p.medium || p.dimensions || p.movement) ? `<div class="detail-specs">
+        ${(p.medium || p.dimensions || p.movement || p.wikiUrl || p.grokUrl) ? `<div class="detail-specs">
           ${p.medium     ? `<div class="detail-spec-item"><span>Medium</span><span>${esc(p.medium)}</span></div>` : ''}
           ${p.dimensions ? `<div class="detail-spec-item"><span>Size</span><span>${esc(formatDimensions(p.dimensions))}</span></div>` : ''}
           ${p.movement   ? `<div class="detail-spec-item detail-spec-movement" onclick="openMovementPopup('${p.movement}')"><span>Movement</span><span class="movement-tag">${esc(p.movement)} ${ICONS.info}</span></div>` : ''}
+          ${(p.wikiUrl || p.grokUrl) ? `<div class="detail-spec-item detail-spec-moreinfo">
+            <span>More Info</span>
+            <div class="moreinfo-links">
+              ${p.wikiUrl ? `<a href="${p.wikiUrl}" target="_blank" rel="noopener" class="moreinfo-link" title="Wikipedia">${ICONS.wikipedia}</a>` : ''}
+              ${p.grokUrl ? `<a href="${p.grokUrl}" target="_blank" rel="noopener" class="moreinfo-link" title="Grokipedia">${ICONS.grokipedia}</a>` : ''}
+            </div>
+          </div>` : ''}
         </div>` : ''}
 
         ${p.description ? `<p class="detail-description">${esc(p.description)}</p>` : ''}

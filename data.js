@@ -9,6 +9,8 @@ const PAINTINGS = [
     dimensions: "77 × 53 cm",
     description: "The world's most recognized painting. Lisa Gherardini's enigmatic smile and Leonardo's sfumato technique — soft, smokeless transitions — have captivated viewers for over 500 years. Stolen in 1911, recovered in 1913, it now draws millions to the Louvre annually.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Mona_Lisa",
+    grokUrl: "https://grokipedia.com/page/Mona_Lisa",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/330px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -21,6 +23,8 @@ const PAINTINGS = [
     dimensions: "260 × 325 cm",
     description: "A allegory of the July Revolution, depicting Liberty as a bare-breasted woman leading the French people forward over fallen bodies. The figure would inspire the Statue of Liberty. Delacroix was not present at the revolution but painted himself into the crowd.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Liberty_Leading_the_People",
+    grokUrl: "https://grokipedia.com/page/Liberty_Leading_the_People",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/La_Libert%C3%A9_guidant_le_peuple_-_Eug%C3%A8ne_Delacroix_-_Mus%C3%A9e_du_Louvre_Peintures_RF_129_-_apr%C3%A8s_restauration_2024.jpg/330px-La_Libert%C3%A9_guidant_le_peuple_-_Eug%C3%A8ne_Delacroix_-_Mus%C3%A9e_du_Louvre_Peintures_RF_129_-_apr%C3%A8s_restauration_2024.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -33,6 +37,8 @@ const PAINTINGS = [
     dimensions: "491 × 716 cm",
     description: "A monumental, controversial work depicting the aftermath of the wreck of the French naval frigate Méduse in 1816. 147 people were set adrift on a makeshift raft; only 15 survived. The painting exposed government corruption and launched Romanticism in France.",
     movement: "Romanticism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Raft_of_the_Medusa",
+    grokUrl: "https://grokipedia.com/page/The_Raft_of_the_Medusa",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/JEAN_LOUIS_TH%C3%89ODORE_G%C3%89RICAULT_-_La_Balsa_de_la_Medusa_%28Museo_del_Louvre%2C_1818-19%29.jpg/330px-JEAN_LOUIS_TH%C3%89ODORE_G%C3%89RICAULT_-_La_Balsa_de_la_Medusa_%28Museo_del_Louvre%2C_1818-19%29.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -45,6 +51,8 @@ const PAINTINGS = [
     dimensions: "677 × 994 cm",
     description: "The largest painting in the Louvre, depicting the biblical miracle of water turned to wine. Veronese set the scene in 16th-century Venice, filling it with 130 figures including portraits of contemporary figures like Titian, Tintoretto, and Bassano.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Wedding_at_Cana_(Veronese)",
+    grokUrl: "https://grokipedia.com/page/The_Wedding_at_Cana",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Paolo_Veronese_008.jpg/330px-Paolo_Veronese_008.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -57,6 +65,8 @@ const PAINTINGS = [
     dimensions: "621 × 979 cm",
     description: "David's massive masterpiece documents Napoleon's self-coronation at Notre-Dame in 1804. Shown here crowning Josephine rather than himself — as he actually did — to satisfy her wish to be depicted. Over 200 figures are identifiable. Pope Pius VII sits to the right, hands on knees.",
     movement: "Neoclassicism",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Coronation_of_Napoleon",
+    grokUrl: "https://grokipedia.com/page/The_Coronation_of_Napoleon",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Jacques-Louis_David_-_The_Coronation_of_Napoleon_%281805-1807%29.jpg/330px-Jacques-Louis_David_-_The_Coronation_of_Napoleon_%281805-1807%29.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -69,6 +79,8 @@ const PAINTINGS = [
     dimensions: "329.8 × 424.8 cm",
     description: "Three Roman brothers pledge their lives to their father before fighting to the death for Rome. The painting became a symbol of civic virtue and patriotic sacrifice, and is considered a foundational work of Neoclassicism. David painted it in Rome before the French Revolution.",
     movement: "Neoclassicism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Oath_of_the_Horatii",
+    grokUrl: "https://grokipedia.com/page/Oath_of_the_Horatii",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Le_Serment_des_Horaces_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3692_%3B_MR_1432.jpg/330px-Le_Serment_des_Horaces_-_Jacques-Louis_David_-_Mus%C3%A9e_du_Louvre_Peintures_INV_3692_%3B_MR_1432.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -81,6 +93,8 @@ const PAINTINGS = [
     dimensions: "24 × 21 cm",
     description: "Vermeer's smallest surviving painting shows a young woman absorbed in delicate lacework. The shallow depth of field — the threads blurring into dabs of paint at the edges — anticipates photographic techniques by two centuries. One of only 34–36 paintings attributed to Vermeer.",
     movement: "Dutch Golden Age",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Lacemaker_(Vermeer)",
+    grokUrl: "https://grokipedia.com/page/The_Lacemaker",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Johannes_Vermeer_-_The_lacemaker_%28c.1669-1671%29.jpg/330px-Johannes_Vermeer_-_The_lacemaker_%28c.1669-1671%29.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -93,6 +107,8 @@ const PAINTINGS = [
     dimensions: "199 × 122 cm",
     description: "The first version of Leonardo's mysterious altarpiece shows the Virgin Mary, infant Jesus, infant John the Baptist, and an angel in an otherworldly rocky grotto. The painting was never delivered to its patrons; a second version (National Gallery, London) was produced later.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Virgin_of_the_Rocks",
+    grokUrl: "https://grokipedia.com/page/Virgin_of_the_Rocks",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg/330px-Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -105,6 +121,8 @@ const PAINTINGS = [
     dimensions: "82 × 67 cm",
     description: "A portrait of the Italian diplomat and author whose book 'The Book of the Courtier' defined Renaissance ideals of the perfect gentleman. Rembrandt studied and copied this painting during an Amsterdam auction in 1639, influencing his approach to portraiture.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Portrait_of_Baldassare_Castiglione",
+    grokUrl: "https://grokipedia.com/page/Portrait_of_Baldassare_Castiglione",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Baldassare_Castiglione%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg/330px-Baldassare_Castiglione%2C_by_Raffaello_Sanzio%2C_from_C2RMF_retouched.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
@@ -117,6 +135,8 @@ const PAINTINGS = [
     dimensions: "168 × 112 cm",
     description: "One of Leonardo's last major works, depicting three generations — Anne, Mary, and the Christ child — in an Alpine landscape. The pyramidal composition, unfinished background, and subtle sfumato make it a masterclass in Renaissance technique. Freud wrote a famous analysis of this painting.",
     movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/The_Virgin_and_Child_with_Saint_Anne_(Leonardo)",
+    grokUrl: "https://grokipedia.com/page/The_Virgin_and_Child_with_Saint_Anne",
     imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Masolino_008.jpg/330px-Masolino_008.jpg",
     location: { continent: "Europe", country: "France", city: "Paris", museum: "Louvre Museum" }
   },
