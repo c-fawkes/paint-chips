@@ -865,3 +865,18 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Louvre had 38 (10 ranked + 28 extras) → removed 8 extras: Pierrot, Man with a Glove, Portrait of Anne of Cleves, Supper at Emmaus (Rembrandt 1648), Saint Sebastian Tended by Saint Irene, Portrait of Francis I, Saint Sebastian (Mantegna), The Supper at Emmaus (Titian)
 - Musée d'Orsay had 39 (10 ranked + 29 extras) → removed 9 extras: On the Beach, Women in the Garden, Haystacks End of Summer, Dance in the Country, Young Girls at the Piano, Still Life with Apples and Oranges, The White Horse, The Tub, The Painter's Studio — trimmed over-represented artists (4→3 Manets, 4→2 Monets, 3→1 Renoirs, etc.)
 - DB now 299 paintings; all museums ≤ 30; "Up to 30" scope shows all 299
+
+### Add-paintings command: wikiUrl + grokUrl workflow
+- Updated `.claude/commands/add-paintings.md` to include `wikiUrl` and `grokUrl` in the Step 3 research workflow and data shape reference
+- Both fields required on all new paintings going forward; `null` if no English Wikipedia article exists
+
+### Museum build-up: Santa Maria delle Grazie (1 → 3)
+- Added **Crucifixion** (1495) by Giovanni Donato da Montorfano (ID 317) — the fresco on the south wall of the refectory opposite The Last Supper; confirmed Wikimedia Commons image
+- Added **Scourging of Christ, Ecce Homo and Crucifixion** (1542) by Gaudenzio Ferrari (ID 318) — Chapel of the Holy Crown frescoes; `imageUrl: null` (no Commons image found)
+- New artists: Giovanni Donato da Montorfano, Gaudenzio Ferrari
+- Site capped at 3 total — a church/convent, not a museum; only 2 more notable works genuinely on-site
+
+### Museum build-up: Musée de l'Orangerie (3 → 10)
+- Added Young Girls at the Piano (Renoir, 1892, ID 319), Large Bather (Picasso, 1921, ID 320), The Little Pastry Chef (Soutine, c. 1922, ID 321), Father Junier's Cart (Rousseau, 1908, ID 322), Odalisque with Red Culottes (Matisse, 1921, ID 323), Portrait de Madame Cézanne (Cézanne, c. 1890, ID 324), Portrait de Mademoiselle Chanel (Laurencin, 1923, ID 325)
+- `imageUrl: null` on Large Bather (Picasso copyright until 2043) and Portrait de Mademoiselle Chanel (no Commons image)
+- New artists: Chaïm Soutine, Marie Laurencin

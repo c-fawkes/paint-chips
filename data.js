@@ -4263,6 +4263,134 @@ const PAINTINGS = [
     movement: "Romanticism",
     imageUrl: null,
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
+  },
+
+  // ── Santa Maria delle Grazie ──────────────────────────────────────────────
+  {
+    id: 317, rank: null, museumOnly: true,
+    title: "Crucifixion",
+    artist: "Giovanni Donato da Montorfano",
+    year: "1495",
+    medium: "Fresco",
+    description: "Painted on the south wall of the refectory at Santa Maria delle Grazie directly opposite Leonardo's Last Supper, Montorfano's Crucifixion fills the entire wall with a crowd scene set before a distant Jerusalem skyline. Where Leonardo chose the perilous innovation of tempera on dry plaster, Montorfano used traditional buon fresco — a choice that proved wise, as his work has survived in vibrant color for over five centuries while Leonardo's deteriorated. After the fresco dried, Leonardo added small portrait likenesses of Ludovico Sforza's family at the lower corners, quietly linking the two compositions across the refectory.",
+    movement: "Italian Renaissance",
+    wikiUrl: "https://en.wikipedia.org/wiki/Crucifixion_(Montorfano)",
+    grokUrl: "https://grokipedia.com/page/Crucifixion_(Montorfano)",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Donato_Montorfano_Crocifissione_di_Santa_Maria_delle_Grazie_Milano.jpg/330px-Donato_Montorfano_Crocifissione_di_Santa_Maria_delle_Grazie_Milano.jpg",
+    location: { continent: "Europe", country: "Italy", city: "Milan", museum: "Santa Maria delle Grazie" }
+  },
+  {
+    id: 318, rank: null, museumOnly: true,
+    title: "Scourging of Christ, Ecce Homo and Crucifixion",
+    artist: "Gaudenzio Ferrari",
+    year: "1542",
+    medium: "Fresco",
+    description: "This triptych cycle of Passion frescoes by Gaudenzio Ferrari fills the Chapel of the Holy Crown at Santa Maria delle Grazie, decorating the very space originally built to house Titian's Crowning with Thorns altarpiece before it was looted by Napoleonic troops in 1797. Painted during Ferrari's final Milan years, the scenes show his signature dramatic intensity — figures rendered with heightened gesture and emotional urgency that pushes well beyond Renaissance decorum. Ferrari had spent decades mastering the combination of painted illusion and physical presence at the Sacro Monte di Varallo, and these late chapel frescoes compress his full expressive vocabulary into an intimate devotional space.",
+    movement: "Mannerism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Gaudenzio_Ferrari",
+    grokUrl: "https://grokipedia.com/page/Gaudenzio_Ferrari",
+    imageUrl: null,
+    location: { continent: "Europe", country: "Italy", city: "Milan", museum: "Santa Maria delle Grazie" }
+  },
+
+  // ── Musée de l'Orangerie ──────────────────────────────────────────────────
+  {
+    id: 319, rank: null, museumOnly: true,
+    title: "Young Girls at the Piano",
+    artist: "Pierre-Auguste Renoir",
+    year: "1892",
+    medium: "Oil on canvas",
+    dimensions: "116 × 81 cm",
+    description: "Renoir painted at least five versions of this composition after receiving an unusual State commission — the first ever given to an Impressionist for a French national collection. The Orangerie holds the oil sketch, painted with a looser, more luminous touch than the finished Musée d'Orsay version. Two girls in a sun-filled parlor — one at the keyboard, one leaning in to watch — embody the warm domestic harmony Renoir pursued throughout the 1880s and 1890s.",
+    movement: "Impressionism",
+    wikiUrl: "https://en.wikipedia.org/wiki/Girls_at_the_Piano",
+    grokUrl: "https://grokipedia.com/page/Girls_at_the_Piano",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Auguste_Renoir_-_Young_Girls_at_the_Piano_-_Google_Art_Project.jpg/330px-Auguste_Renoir_-_Young_Girls_at_the_Piano_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
+  },
+  {
+    id: 320, rank: null, museumOnly: true,
+    title: "Large Bather",
+    artist: "Pablo Picasso",
+    year: "1921",
+    medium: "Oil on canvas",
+    dimensions: "182 × 101.5 cm",
+    description: "Painted at the height of Picasso's neoclassical turn, this monumental nude seats a massive female figure in a pose of antique stillness — her sculptural weight recalling Roman marble rather than anything Cubist. The work belongs to the post-WWI 'return to order' movement that swept Parisian avant-garde artists toward tradition, grandeur, and the body as architecture. Dealer Paul Guillaume acquired it after 1930, and it became the most imposing canvas in the Walter-Guillaume collection at the Orangerie.",
+    movement: "Modernism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
+  },
+  {
+    id: 321, rank: null, museumOnly: true,
+    title: "The Little Pastry Chef",
+    artist: "Chaïm Soutine",
+    year: "c. 1922",
+    medium: "Oil on canvas",
+    dimensions: "73 × 54 cm",
+    description: "One of Soutine's series of portraits of hotel and restaurant workers — cooks, bellhops, chambermaids — painted with the same visceral intensity he brought to his landscapes and hanging animal carcasses. When American collector Albert Barnes encountered this series in 1923, he bought 52 Soutines on the spot, immediately launching the artist's international reputation. Paul Guillaume's later acquisition of this version reveals its particular charge: the elongated neck, the off-white uniform against a dark ground, the look of nervous composure under prolonged scrutiny.",
+    movement: "Expressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Cha%C3%AFm_Soutine_-_Le_Petit_P%C3%A2tissier.jpg/330px-Cha%C3%AFm_Soutine_-_Le_Petit_P%C3%A2tissier.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
+  },
+  {
+    id: 322, rank: null, museumOnly: true,
+    title: "Father Junier's Cart",
+    artist: "Henri Rousseau",
+    year: "1908",
+    medium: "Oil on canvas",
+    dimensions: "97 × 129 cm",
+    description: "Rousseau painted this horse-drawn cart as payment of a debt to his vegetable-seller friend Père Junier, who had just bought a horse of which he was immensely proud — and included himself, wearing a straw hat, on the front seat beside the owner. Working from a photograph, Rousseau made deliberate departures: he enlarged the black dog to an impossible scale and arranged the passengers in Byzantine frontality, each face a mask of civic dignity. The painting's dreamlike precision — every leaf, every harness strap rendered with hallucinatory care — captivated Picasso and the Surrealists who saw in Rousseau an unconscious visionary.",
+    movement: "Post-Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Henri_Rousseau%2C_dit_le_Douanier_-_La_Carriole_du_p%C3%A8re_Junier_-_Google_Art_Project.jpg/330px-Henri_Rousseau%2C_dit_le_Douanier_-_La_Carriole_du_p%C3%A8re_Junier_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
+  },
+  {
+    id: 323, rank: null, museumOnly: true,
+    title: "Odalisque with Red Culottes",
+    artist: "Henri Matisse",
+    year: "1921",
+    medium: "Oil on canvas",
+    dimensions: "50 × 61 cm",
+    description: "Painted in Nice during Matisse's most productive decade, this small odalisque exemplifies his strategy of importing the Orient into the domestic interior through layered textiles, jewelry, and a reclining model in Eastern-style dress. The red culottes — drawn with the bold black contour that was Matisse's signature — anchor a composition of flattened decorative patterns that somehow radiates heat and languor. Acquired from the artist by Paul Guillaume, it became one of the most frequently reproduced Matisse works in the Walter-Guillaume collection.",
+    movement: "Fauvism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Odalisque_%C3%A0_la_culotte_rouge%2C_par_Henri_Matisse.jpg/330px-Odalisque_%C3%A0_la_culotte_rouge%2C_par_Henri_Matisse.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
+  },
+  {
+    id: 324, rank: null, museumOnly: true,
+    title: "Portrait de Madame Cézanne",
+    artist: "Paul Cézanne",
+    year: "c. 1890",
+    medium: "Oil on canvas",
+    dimensions: "81 × 65 cm",
+    description: "Cézanne painted his wife Hortense Fiquet more than forty times — she was a patient and reliable sitter — but this Orangerie portrait captures an almost uncomfortable stasis: hands folded in her lap, face expressionless, posed with the hieratic stillness Cézanne reserved for objects as much as people. The rapid, irregular brushstrokes that build her form reveal him treating the human face as a structural problem — a series of planes and angles to be organized rather than a character to be revealed. Paul Guillaume acquired it in the 1920s as one of Cézanne's most concentrated studies in constructed form.",
+    movement: "Post-Impressionism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Paul_C%C3%A9zanne_-_Portrait_of_Madame_C%C3%A9zanne_-_Google_Art_Project.jpg/330px-Paul_C%C3%A9zanne_-_Portrait_of_Madame_C%C3%A9zanne_-_Google_Art_Project.jpg",
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
+  },
+  {
+    id: 325, rank: null, museumOnly: true,
+    title: "Portrait de Mademoiselle Chanel",
+    artist: "Marie Laurencin",
+    year: "1923",
+    medium: "Oil on canvas",
+    dimensions: "92 × 73 cm",
+    description: "Commissioned by Coco Chanel at the height of her fame, Laurencin rendered her in hazy greens, pinks, and blues — languid and romantically unfocused, head resting on her arm, a small dog in her lap — in a style that shared nothing with Chanel's own crisp geometric aesthetic. Chanel rejected the portrait outright; Laurencin refused to paint a replacement and kept the canvas herself. It eventually entered the Orangerie's Walter-Guillaume collection, where it became an emblem of the 1920s Parisian world where fashion, art, and the Ballets Russes overlapped.",
+    movement: "Modernism",
+    wikiUrl: null,
+    grokUrl: null,
+    imageUrl: null,
+    location: { continent: "Europe", country: "France", city: "Paris", museum: "Musée de l'Orangerie" }
   }
 ];
 
@@ -4836,6 +4964,22 @@ const ARTISTS = {
   "Ángeles Santos": {
     born: "1911", died: "2013", nationality: "Spanish",
     bio: "Ángeles Santos painted her monumental vision 'A World' at age 17, without formal training, in a state she described as creative fever — and was immediately befriended by Federico García Lorca and examined by psychiatrists debating whether her art was genius or illness. She stopped painting for decades after marrying, only returning to her art in the 1970s. Her early masterpiece remains one of the most astonishing debuts in the history of Spanish art."
+  },
+  "Giovanni Donato da Montorfano": {
+    born: "c. 1460", died: "1502", nationality: "Italian",
+    bio: "A Lombard painter from a Milanese family of artists, Giovanni Donato da Montorfano was trained by his father Alberto, a member of the Milan painters' guild. He is remembered almost entirely for a single monumental work: the Crucifixion fresco of 1495 in the refectory of Santa Maria delle Grazie, painted directly opposite Leonardo da Vinci's Last Supper on the south wall. His choice of traditional buon fresco technique — at odds with Leonardo's experimental tempera — proved prescient, as his work has retained its vibrant colors while Leonardo's deteriorated over centuries. Little documentation of his other commissions survives."
+  },
+  "Gaudenzio Ferrari": {
+    born: "c. 1471", died: "1546", nationality: "Italian",
+    bio: "One of the most inventive painters of the Lombard Renaissance, Gaudenzio Ferrari synthesized influences from Leonardo da Vinci, Bramantino, and Northern European woodcuts into a powerfully expressive personal style. He is best known for his revolutionary Passion cycle at the Sacro Monte di Varallo, where he combined painted illusions with life-size polychrome terracotta sculptures in a proto-theatrical multi-sensory environment that prefigured the Baroque. After establishing himself in Piedmont, he moved to Milan in 1539, executing major commissions at Santa Maria delle Grazie and Santa Maria della Pace. His late works grew increasingly dramatic in gesture and emotion, anticipating the theatrical language of the Baroque."
+  },
+  "Chaïm Soutine": {
+    born: "1893", died: "1943", nationality: "French",
+    bio: "Born in a Jewish shtetl in what is now Belarus, Chaïm Soutine arrived in Paris around 1913 and gravitated toward the community of émigré artists in Montparnasse — Modigliani, Chagall, Kisling — who formed the École de Paris. His style combined the thick, turbulent paint handling of Van Gogh with a distortion of form that owed nothing to Cubism and everything to visceral emotion; his portraits of service workers and his canvases of hanging animal carcasses are among the most psychologically intense works of the 20th century. American collector Albert Barnes's discovery of his work in 1923 brought him immediate financial security. He died of a perforated stomach ulcer in Paris in 1943 while in hiding from the Nazi occupation."
+  },
+  "Marie Laurencin": {
+    born: "1883", died: "1956", nationality: "French",
+    bio: "A pivotal figure in the Parisian avant-garde, Marie Laurencin moved in the circles of Picasso, Braque, and her lover Guillaume Apollinaire in the early years of Cubism, exhibiting at the Section d'Or in 1912. She developed a highly personal style of pastel-toned, graceful figures of women and animals that stood apart from the geometric rigors of her male contemporaries — lyrical rather than analytical, atmospheric rather than structural. As a portraitist of fashionable Paris in the 1920s she was enormously successful, capturing aristocrats, actresses, and artists in her distinctive hazy register. Her portrait of Coco Chanel — rejected by its subject — became one of the most famous commissions in 20th-century French portraiture."
   }
 };
 
@@ -4939,7 +5083,11 @@ const ARTIST_PORTRAITS = {
   "Hyacinthe Rigaud": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Autoportrait_au_turban_(Perpignan).jpg/330px-Autoportrait_au_turban_(Perpignan).jpg",
   "Berthe Morisot": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Morisot_berthe_photo.jpg/330px-Morisot_berthe_photo.jpg",
   "William-Adolphe Bouguereau": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Self_portrait%2C_by_William_Bouguereau.jpg/330px-Self_portrait%2C_by_William_Bouguereau.jpg",
-  "Gustave Courbet": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gustave_Courbet%2C_photograph_Atelier_Nadar%2C_c._1860s.jpg/330px-Gustave_Courbet%2C_photograph_Atelier_Nadar%2C_c._1860s.jpg"
+  "Gustave Courbet": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gustave_Courbet%2C_photograph_Atelier_Nadar%2C_c._1860s.jpg/330px-Gustave_Courbet%2C_photograph_Atelier_Nadar%2C_c._1860s.jpg",
+  "Giovanni Donato da Montorfano": null,
+  "Gaudenzio Ferrari": null,
+  "Chaïm Soutine": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/%27Self_Portrait%27_by_Chaim_Soutine%2C_1916%2C_Hermitage.JPG/330px-%27Self_Portrait%27_by_Chaim_Soutine%2C_1916%2C_Hermitage.JPG",
+  "Marie Laurencin": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Marie_Laurencin%2C_c.1912%2C_Paris.jpg/330px-Marie_Laurencin%2C_c.1912%2C_Paris.jpg"
 };
 
 /* ── Museum info ─────────────────────────────────────────────────────────── */
