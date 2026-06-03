@@ -6975,11 +6975,13 @@ const MUSEUMS_INFO = {
   "San Luigi dei Francesi": {
     city: "Rome", country: "Italy",
     blurb: "San Luigi dei Francesi is the French national church in Rome, built in the 16th century, and is best known as the home of Caravaggio's Contarelli Chapel paintings — three monumental works depicting the life of St. Matthew that established him as the most radical painter in Rome. The church is an active place of worship, but the Contarelli Chapel draws art pilgrims from around the world.",
+    scopeNote: "Unlike a dedicated art museum, San Luigi dei Francesi is an active church — its paintings were commissioned for specific chapels and altars within a single building. The small number of works listed here reflects the actual extent of notable paintings on site, not a curation limit.",
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/%C3%89glise_San_Luigi_Francesi_-_Rome_%28IT62%29_-_2021-08-28_-_2.jpg/330px-%C3%89glise_San_Luigi_Francesi_-_Rome_%28IT62%29_-_2021-08-28_-_2.jpg"
   },
   "Santa Maria delle Grazie": {
     city: "Milan", country: "Italy",
     blurb: "Santa Maria delle Grazie is a 15th-century church and Dominican convent in Milan, a UNESCO World Heritage Site since 1980. Its refectory wall bears Leonardo da Vinci's Last Supper, painted between 1495 and 1498 directly onto the plaster — not as a fresco but with experimental tempera, which began deteriorating almost immediately. Viewing is strictly limited to groups of 25 for 15 minutes, making it among the most controlled museum visits in the world.",
+    scopeNote: "Unlike a dedicated art museum, Santa Maria delle Grazie is an active Dominican church and convent — its artworks were commissioned for specific spaces within a single building. The small number of works listed here reflects the actual extent of notable paintings on site, not a curation limit.",
     photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Santa_Maria_delle_Grazie_Milan_2013.jpg/330px-Santa_Maria_delle_Grazie_Milan_2013.jpg"
   },
   "Wallace Collection": {

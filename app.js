@@ -1,4 +1,4 @@
-const VERSION = '1.0.94';
+const VERSION = '1.0.95';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -2392,7 +2392,8 @@ function renderMuseumDetailView() {
         <span class="museum-popup-stat">${mc} of ${allMuseumPaintings.length} collected</span>
         <div class="museum-popup-bar"><div class="museum-popup-fill" style="width:${allMuseumPaintings.length ? Math.round(mc/allMuseumPaintings.length*100) : 0}%"></div></div>
       </div>
-      ${info ? `<p class="mv-popup-summary" style="margin-top:14px;border-bottom:none;padding-bottom:0">${esc(info.blurb)}</p>` : ''}
+      ${info ? `<p class="mv-popup-summary" style="margin-top:14px;${info.scopeNote && S.scope !== 'top100' ? '' : 'border-bottom:none;padding-bottom:0'}">${esc(info.blurb)}</p>` : ''}
+      ${info && info.scopeNote && S.scope !== 'top100' ? `<p class="mv-popup-summary mv-popup-scope-note">${esc(info.scopeNote)}</p>` : ''}
       <div class="mv-section-label" style="margin-top:18px">Collection (${q ? `${paintings.length} of ${allMuseumPaintings.length}` : allMuseumPaintings.length})</div>
       ${paintingsHtml}
     </div>
