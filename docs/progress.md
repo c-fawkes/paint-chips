@@ -1088,3 +1088,4 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - `min-height: 32px` on both buttons prevents 1 px height shift when label collapses
 - Pull-down-to-close now works anywhere on the card when scrolled to top (not just the nav handle); 8 px hysteresis avoids mis-firing on taps
 - Unfavorite/uncollect transitions smoothed — icon and content swap delayed until after the colour transition completes; favorite button innerHTML not rewritten while fading out on uncollect
+- Added **Version** row to Settings → About; `VERSION` constant in `app.js` auto-incremented by a pre-commit git hook on every commit (scheme: `1.0.<build>`)

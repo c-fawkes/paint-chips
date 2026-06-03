@@ -2213,6 +2213,13 @@ body {
 }
 
 /* ── Settings action button ──────────────────────────────────────────────── */
+.settings-version {
+  font-size: .8rem;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
 .settings-action-btn {
   background: var(--bg3);
   border: 1px solid var(--border);

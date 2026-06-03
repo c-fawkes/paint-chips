@@ -1,3 +1,5 @@
+const VERSION = '1.0.94';
+
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
   checked: {},
@@ -2529,6 +2531,12 @@ function renderSettingsView() {
             <div class="settings-row-sub">Clear cached files and reload with the latest version</div>
           </div>
           <button class="settings-action-btn" onclick="forceAppUpdate()">Update</button>
+        </div>
+        <div class="settings-row">
+          <div class="settings-row-label">
+            <div class="settings-row-name">Version</div>
+          </div>
+          <span class="settings-version">${VERSION}</span>
         </div>
       </div>
     </div>
