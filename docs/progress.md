@@ -1079,3 +1079,9 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ### Fix Cypresses Image (ID 35, rank #76)
 - Corrected `imageUrl` — was showing *Wheat Field with Cypresses* (National Gallery, London); now shows the correct *Cypresses* (Met, New York, `Cypresses_MET_DP130999.jpg`)
+
+### Detail Card Button Polish
+- Favorite button is now truly centered in the nav bar — switched `.detail-nav` from flex `space-between` to a 3-column grid (`1fr auto 1fr`)
+- Favorite button visibility changed from `display:none/flex` to `opacity`+`pointer-events` so the grid slot is always reserved
+- After marking a painting as **Collected** or **Favorited**, the button label text animates away after 2.5 s, leaving just the icon
+- `toggleFavorite` no longer calls `render()`, eliminating image flash on favorite toggle

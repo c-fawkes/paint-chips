@@ -1295,11 +1295,11 @@ function openDetail(id, { refresh = false } = {}) {
         <button class="detail-back-btn" onclick="navBack()">${ICONS.back} Back</button>
         <button class="detail-favorite-btn${isChecked ? ' visible' : ''}${isFav ? ' favorited' : ''}" id="detail-favorite-btn"
                 onclick="toggleFavorite('${key}')">
-          ${isFav ? ICONS.heartFill : ICONS.heart}<span>${isFav ? 'Favorited' : 'Favorite'}</span>
+          ${isFav ? ICONS.heartFill : ICONS.heart}<span class="detail-btn-label">${isFav ? 'Favorited' : 'Favorite'}</span>
         </button>
         <button class="detail-collected-btn${isChecked ? ' checked' : ''}" id="detail-collected-btn"
                 onclick="detailToggleCheck('${key}')">
-          ${isChecked ? ICONS.check + '<span>Collected</span>' : '<span>Collect</span>'}
+          ${isChecked ? ICONS.check + '<span class="detail-btn-label">Collected</span>' : '<span class="detail-btn-label">Collect</span>'}
         </button>
       </div>
 
@@ -1406,14 +1406,21 @@ function detailToggleCheck(id) {
   if (btn) {
     btn.className = 'detail-collected-btn' + (isChecked ? ' checked' : '');
     btn.innerHTML = isChecked
-      ? ICONS.check + '<span>Collected</span>'
-      : '<span>Collect</span>';
+      ? ICONS.check + '<span class="detail-btn-label">Collected</span>'
+      : '<span class="detail-btn-label">Collect</span>';
+    if (isChecked) {
+      setTimeout(() => {
+        if (!S.checked[key]) return;
+        const lbl = btn.querySelector('.detail-btn-label');
+        if (lbl) lbl.classList.add('hidden');
+      }, 2500);
+    }
   }
   const favBtn = document.getElementById('detail-favorite-btn');
   if (favBtn) {
     const isFav = !!S.favorites[key];
     favBtn.className = 'detail-favorite-btn' + (isChecked ? ' visible' : '') + (isFav ? ' favorited' : '');
-    favBtn.innerHTML = `${isFav ? ICONS.heartFill : ICONS.heart}<span>${isFav ? 'Favorited' : 'Favorite'}</span>`;
+    favBtn.innerHTML = `${isFav ? ICONS.heartFill : ICONS.heart}<span class="detail-btn-label">${isFav ? 'Favorited' : 'Favorite'}</span>`;
   }
   const dateSection = document.querySelector('.detail-date-section');
   if (dateSection) dateSection.classList.toggle('hidden', !isChecked);
@@ -1432,12 +1439,19 @@ function toggleFavorite(id) {
     S.favorites[key] = true;
   }
   save();
-  render();
+  _patchCheckState(key);
   const isFav = !!S.favorites[key];
   const favBtn = document.getElementById('detail-favorite-btn');
   if (favBtn) {
     favBtn.className = 'detail-favorite-btn visible' + (isFav ? ' favorited' : '');
-    favBtn.innerHTML = `${isFav ? ICONS.heartFill : ICONS.heart}<span>${isFav ? 'Favorited' : 'Favorite'}</span>`;
+    favBtn.innerHTML = `${isFav ? ICONS.heartFill : ICONS.heart}<span class="detail-btn-label">${isFav ? 'Favorited' : 'Favorite'}</span>`;
+    if (isFav) {
+      setTimeout(() => {
+        if (!S.favorites[key]) return;
+        const lbl = favBtn.querySelector('.detail-btn-label');
+        if (lbl) lbl.classList.add('hidden');
+      }, 2500);
+    }
   }
 }
 
