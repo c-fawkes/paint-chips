@@ -1830,7 +1830,7 @@ body {
 }
 .mv-row-full-summary {
   font-size: .82rem; color: var(--text-dim); line-height: 1.65;
-  margin: 12px 0 0;
+  margin: 0;
 }
 .mv-traits {
   margin: 8px 0 0; padding-left: 18px;

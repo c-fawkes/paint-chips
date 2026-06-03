@@ -1093,3 +1093,9 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ### Church-Museum Scope Notes
 - Added `scopeNote` field to `MUSEUMS_INFO` for **San Luigi dei Francesi** and **Santa Maria delle Grazie** — shown below the blurb in italic when +10 or +30 scope is active, explaining that the limited painting count reflects the actual extent of works in a single active church
+
+
+## Session 41 — 2026-06-03
+
+### Artist Sort Bio Alignment
+- Fixed `margin: 12px 0 0` on `.mv-row-full-summary` — the top margin was pushing bio text 12 px below the portrait's top edge; set to `margin: 0` so text aligns flush with the image
