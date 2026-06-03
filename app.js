@@ -3247,12 +3247,14 @@ function _initSwipeBack() {
       if (!fullPage) target.style.transition = 'none';
     }
 
-    if (phase === 'dragging' && !fullPage) {
-      const x = Math.max(0, dx);
-      target.style.transform = `translateX(${x}px)`;
-      // Keep backdrop opaque during drag — don't reveal #main underneath
+    if (phase === 'dragging') {
+      e.preventDefault(); // lock out vertical scroll while swiping back
+      if (!fullPage) {
+        const x = Math.max(0, dx);
+        target.style.transform = `translateX(${x}px)`;
+      }
     }
-  }, { passive: true });
+  }, { passive: false });
 
   document.addEventListener('touchend', e => {
     if (phase !== 'dragging' || !target) { phase = 'idle'; return; }
