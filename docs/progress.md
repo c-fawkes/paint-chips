@@ -1099,3 +1099,6 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ### Artist Sort Bio Alignment
 - Fixed `margin: 12px 0 0` on `.mv-row-full-summary` — the top margin was pushing bio text 12 px below the portrait's top edge; set to `margin: 0` so text aligns flush with the image
+
+### Artist Portrait Vertical Centering
+- Added `margin-top: 4px` to `.artist-portrait` — centres the 88 px image between the top of the bio text and the top of the first text line that resumes below the float
