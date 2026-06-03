@@ -142,21 +142,32 @@ function _navOpen() {
 function addSwipeDismiss(overlayEl) {
   const sheet = overlayEl.querySelector('.detail-sheet');
   if (!sheet) return;
-  const handle = sheet.querySelector('.detail-nav');
-  if (!handle) return;
 
-  let startY = 0, active = false;
+  let startY = 0, startScrollTop = 0, active = false, dragging = false;
 
-  handle.addEventListener('touchstart', e => {
+  sheet.addEventListener('touchstart', e => {
     startY = e.touches[0].clientY;
+    startScrollTop = sheet.scrollTop;
     active = true;
+    dragging = false;
     sheet.style.transition = 'none';
   }, { passive: true });
 
   function onMove(e) {
-    if (!active) return;
+    if (!active && !dragging) return;
     const dy = e.touches[0].clientY - startY;
-    if (dy > 0) {
+
+    // If content is scrolled down or the user is swiping up, let scroll work normally
+    if (startScrollTop > 0 || dy <= 0) {
+      active = false;
+      dragging = false;
+      sheet.style.transition = '';
+      return;
+    }
+
+    // Confirm drag direction before intercepting (avoids mis-firing on taps)
+    if (dy > 8) dragging = true;
+    if (dragging) {
       e.preventDefault();
       sheet.style.transform = `translateY(${dy}px)`;
       overlayEl.style.background = `rgba(0,0,0,${Math.max(0, 0.5 - dy / 500)})`;
@@ -164,13 +175,11 @@ function addSwipeDismiss(overlayEl) {
   }
 
   function onEnd(e) {
-    if (!active) return;
+    if (!active && !dragging) return;
     active = false;
-    window.removeEventListener('touchmove', onMove);
-    window.removeEventListener('touchend', onEnd);
     const dy = e.changedTouches[0].clientY - startY;
     sheet.style.transition = 'transform .25s ease';
-    if (dy > 120) {
+    if (dragging && dy > 120) {
       sheet.style.transform = 'translateY(110%)';
       overlayEl.style.transition = 'opacity .25s';
       overlayEl.style.opacity = '0';
@@ -179,6 +188,7 @@ function addSwipeDismiss(overlayEl) {
       sheet.style.transform = '';
       overlayEl.style.background = '';
     }
+    dragging = false;
   }
 
   window.addEventListener('touchmove', onMove, { passive: false });
@@ -1385,6 +1395,21 @@ function openDetail(id, { refresh = false } = {}) {
   overlay.addEventListener('click', e => { if (e.target === overlay) navDismissAll(); });
   document.body.appendChild(overlay);
   addSwipeDismiss(overlay);
+
+  if (isChecked) {
+    setTimeout(() => {
+      if (!S.checked[key]) return;
+      const lbl = overlay.querySelector('#detail-collected-btn .detail-btn-label');
+      if (lbl) lbl.classList.add('hidden');
+    }, 2500);
+  }
+  if (isFav) {
+    setTimeout(() => {
+      if (!S.favorites[key]) return;
+      const lbl = overlay.querySelector('#detail-favorite-btn .detail-btn-label');
+      if (lbl) lbl.classList.add('hidden');
+    }, 2500);
+  }
 }
 
 function closeDetail() { navDismissAll(); }
@@ -1405,22 +1430,29 @@ function detailToggleCheck(id) {
   const btn = document.getElementById('detail-collected-btn');
   if (btn) {
     btn.className = 'detail-collected-btn' + (isChecked ? ' checked' : '');
-    btn.innerHTML = isChecked
-      ? ICONS.check + '<span class="detail-btn-label">Collected</span>'
-      : '<span class="detail-btn-label">Collect</span>';
     if (isChecked) {
+      btn.innerHTML = ICONS.check + '<span class="detail-btn-label">Collected</span>';
       setTimeout(() => {
         if (!S.checked[key]) return;
         const lbl = btn.querySelector('.detail-btn-label');
         if (lbl) lbl.classList.add('hidden');
       }, 2500);
+    } else {
+      // Let the gold→grey transition play before swapping content
+      setTimeout(() => {
+        if (S.checked[key]) return;
+        btn.innerHTML = '<span class="detail-btn-label">Collect</span>';
+      }, 200);
     }
   }
   const favBtn = document.getElementById('detail-favorite-btn');
   if (favBtn) {
     const isFav = !!S.favorites[key];
     favBtn.className = 'detail-favorite-btn' + (isChecked ? ' visible' : '') + (isFav ? ' favorited' : '');
-    favBtn.innerHTML = `${isFav ? ICONS.heartFill : ICONS.heart}<span class="detail-btn-label">${isFav ? 'Favorited' : 'Favorite'}</span>`;
+    // Don't rewrite innerHTML while the button is fading out — avoids flash
+    if (isChecked) {
+      favBtn.innerHTML = `${isFav ? ICONS.heartFill : ICONS.heart}<span class="detail-btn-label">${isFav ? 'Favorited' : 'Favorite'}</span>`;
+    }
   }
   const dateSection = document.querySelector('.detail-date-section');
   if (dateSection) dateSection.classList.toggle('hidden', !isChecked);
@@ -1444,13 +1476,19 @@ function toggleFavorite(id) {
   const favBtn = document.getElementById('detail-favorite-btn');
   if (favBtn) {
     favBtn.className = 'detail-favorite-btn visible' + (isFav ? ' favorited' : '');
-    favBtn.innerHTML = `${isFav ? ICONS.heartFill : ICONS.heart}<span class="detail-btn-label">${isFav ? 'Favorited' : 'Favorite'}</span>`;
     if (isFav) {
+      favBtn.innerHTML = `${ICONS.heartFill}<span class="detail-btn-label">Favorited</span>`;
       setTimeout(() => {
         if (!S.favorites[key]) return;
         const lbl = favBtn.querySelector('.detail-btn-label');
         if (lbl) lbl.classList.add('hidden');
       }, 2500);
+    } else {
+      // Let the red→grey color transition play before swapping the icon
+      setTimeout(() => {
+        if (S.favorites[key]) return;
+        favBtn.innerHTML = `${ICONS.heart}<span class="detail-btn-label">Favorite</span>`;
+      }, 150);
     }
   }
 }

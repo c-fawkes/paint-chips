@@ -1083,5 +1083,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Detail Card Button Polish
 - Favorite button is now truly centered in the nav bar — switched `.detail-nav` from flex `space-between` to a 3-column grid (`1fr auto 1fr`)
 - Favorite button visibility changed from `display:none/flex` to `opacity`+`pointer-events` so the grid slot is always reserved
-- After marking a painting as **Collected** or **Favorited**, the button label text animates away after 2.5 s, leaving just the icon
+- After marking a painting as **Collected** or **Favorited**, the button label text animates away after 2.5 s, leaving just the icon; same timer fires on open if already in that state
 - `toggleFavorite` no longer calls `render()`, eliminating image flash on favorite toggle
+- `min-height: 32px` on both buttons prevents 1 px height shift when label collapses
+- Pull-down-to-close now works anywhere on the card when scrolled to top (not just the nav handle); 8 px hysteresis avoids mis-firing on taps
+- Unfavorite/uncollect transitions smoothed — icon and content swap delayed until after the colour transition completes; favorite button innerHTML not rewritten while fading out on uncollect
