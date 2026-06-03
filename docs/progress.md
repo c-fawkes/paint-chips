@@ -1089,3 +1089,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Pull-down-to-close now works anywhere on the card when scrolled to top (not just the nav handle); 8 px hysteresis avoids mis-firing on taps
 - Unfavorite/uncollect transitions smoothed — icon and content swap delayed until after the colour transition completes; favorite button innerHTML not rewritten while fading out on uncollect
 - Added **Version** row to Settings → About; `VERSION` constant in `app.js` auto-incremented by a pre-commit git hook on every commit (scheme: `1.0.<build>`)
+- Prevent vertical scroll during swipe-back gesture — `touchmove` listener switched to `passive:false` so `preventDefault()` can be called once direction is locked rightward
+
+### Church-Museum Scope Notes
+- Added `scopeNote` field to `MUSEUMS_INFO` for **San Luigi dei Francesi** and **Santa Maria delle Grazie** — shown below the blurb in italic when +10 or +30 scope is active, explaining that the limited painting count reflects the actual extent of works in a single active church
