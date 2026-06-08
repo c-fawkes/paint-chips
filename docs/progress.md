@@ -1126,3 +1126,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Swipe-Back Stale Search Hint Fix — 12:31am
 - On the commit path, `liftedToolbar` was nulled but never removed from `<body>` — the old toolbar (e.g. "Search Louvre…") stayed as a duplicate `#toolbar` floating over every subsequent render
 - Fix: call `.remove()` on `liftedToolbar` before nulling it
+
+### Swipe-Back From Painting Overlay Fix — 12:37am
+- Opening a painting detail from museum-detail then swiping back wrongly triggered the museum-detail swipe path — toolbar was detached and destroyed, leaving the museum page without a search bar
+- Root cause: the bg/toolbar logic only checked `S.view === 'museum-detail'`, not whether `#main` was the actual swipe target; painting overlays use a `.detail-sheet` target
+- Fix: add `&& target.id === 'main'` guard so toolbar detach and bg layer only fire when swiping `#main` itself

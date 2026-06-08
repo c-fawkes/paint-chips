@@ -1,4 +1,4 @@
-const VERSION = '1.0.105';
+const VERSION = '1.0.106';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -3271,7 +3271,7 @@ function _initSwipeBack() {
       if (!fullPage) {
         target.style.transition = 'none';
         // Render museum list into a background layer behind #main
-        if (S.view === 'museum-detail') {
+        if (S.view === 'museum-detail' && target.id === 'main') {
           // Detach #toolbar from #main before applying transform — fixed children of
           // transformed elements lose viewport-relative positioning (CSS spec).
           const tb = document.getElementById('toolbar');
