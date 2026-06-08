@@ -118,6 +118,17 @@ body {
   margin-bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px));
   padding: 0 0 12px;
   min-height: calc(100dvh - var(--header-h) - env(safe-area-inset-top, 0px) - 3px - var(--nav-h));
+  background: var(--bg);
+}
+
+#swipe-back-bg {
+  position: fixed;
+  top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 3px);
+  left: 0; right: 0;
+  bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px));
+  overflow-y: auto;
+  background: var(--bg);
+  pointer-events: none;
 }
 
 /* ── Bottom Nav ─────────────────────────────────────────────────────────── */

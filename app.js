@@ -1,4 +1,4 @@
-const VERSION = '1.0.101';
+const VERSION = '1.0.102';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -1808,7 +1808,7 @@ function openMuseumsViewDropdown(e, btn) {
     { key: 'alpha',   label: 'By Museum',  icon: ICONS.landmark },
     ...(hasVisited ? [{ key: 'visited', label: 'By Visited', icon: ICONS.check }] : []),
     { key: 'city',    label: 'By City',    icon: ICONS.pin },
-    { key: 'country', label: 'By Country', icon: ICONS.globe },
+    { key: 'country', label: 'By Country', icon: ICONS.flag },
   ];
   const rect = btn.getBoundingClientRect();
   const drop = document.createElement('div');
@@ -3225,7 +3225,8 @@ function _initSwipeBack() {
   let startX = 0, startY = 0;
   let phase    = 'idle';  // 'idle' | 'pending' | 'dragging' | 'rejected'
   let target   = null;    // element being dragged
-  let fullPage = false;   // true when target is #main (no slide animation)
+  let fullPage = false;   // true when target is #main with no slide animation
+  let bgEl     = null;    // background layer showing museum list during swipe
 
   function getTarget() {
     for (const id of ['detail-overlay','museum-overlay','artist-overlay','movement-overlay']) {
@@ -3236,12 +3237,17 @@ function _initSwipeBack() {
     return null;
   }
 
+  function removeBg() {
+    if (bgEl) { bgEl.remove(); bgEl = null; }
+  }
+
   document.addEventListener('touchstart', e => {
     const t = e.touches[0];
     if (t.clientX > EDGE) { phase = 'idle'; return; }
     startX = t.clientX; startY = t.clientY;
     target = getTarget();
-    fullPage = target?.id === 'main';
+    // museum-detail uses slide animation (not fullPage) so the list shows beneath
+    fullPage = target?.id === 'main' && S.view !== 'museum-detail';
     phase = target ? 'pending' : 'idle';
   }, { passive: true });
 
@@ -3255,7 +3261,20 @@ function _initSwipeBack() {
       if (Math.max(dx, dy) < DIR_LOCK) return;
       if (dy > dx || dx < 0) { phase = 'rejected'; return; }
       phase = 'dragging';
-      if (!fullPage) target.style.transition = 'none';
+      if (!fullPage) {
+        target.style.transition = 'none';
+        // Render museum list into a background layer behind #main
+        if (S.view === 'museum-detail') {
+          bgEl = document.createElement('div');
+          bgEl.id = 'swipe-back-bg';
+          const savedView = S.view;
+          S.view = 'museums';
+          bgEl.innerHTML = renderMuseumsView();
+          S.view = savedView;
+          target.insertAdjacentElement('beforebegin', bgEl);
+          bgEl.scrollTop = _tabScroll['museums'] || 0;
+        }
+      }
     }
 
     if (phase === 'dragging') {
@@ -3291,6 +3310,7 @@ function _initSwipeBack() {
           document.body.classList.remove('swipe-back-open');
           el.style.cssText = '';
           if (overlay) overlay.style.cssText = '';
+          removeBg();
           target = null;
           _globalBack();
         }, 220);
@@ -3299,7 +3319,7 @@ function _initSwipeBack() {
       if (!fullPage) {
         el.style.transition = 'transform 0.2s ease';
         el.style.transform  = '';
-        setTimeout(() => { el.style.transition = ''; target = null; }, 200);
+        setTimeout(() => { el.style.transition = ''; removeBg(); target = null; }, 200);
       } else {
         target = null;
       }

@@ -1095,26 +1095,23 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added `scopeNote` field to `MUSEUMS_INFO` for **San Luigi dei Francesi** and **Santa Maria delle Grazie** — shown below the blurb in italic when +10 or +30 scope is active, explaining that the limited painting count reflects the actual extent of works in a single active church
 
 
-## Session 41 — 2026-06-03
+## Session 41 — 2026-06-03 & 2026-06-08
 
-### Artist Sort Bio Alignment
+### Artist Sort Bio Alignment — 12:48am
 - Fixed `margin: 12px 0 0` on `.mv-row-full-summary` — the top margin was pushing bio text 12 px below the portrait's top edge; set to `margin: 0` so text aligns flush with the image
 
-### Artist Portrait Vertical Centering
+### Artist Portrait Vertical Centering — 12:53am
 - Added `margin-top: 4px` to `.artist-portrait` — centres the 88 px image between the top of the bio text and the top of the first text line that resumes below the float
 
+### Stats & Museums Tab Icons — 11:56pm
+- Aligned Stats "progress by" dropdown and Museums sort buttons to a consistent icon set: Continent = `ICONS.globe`, Country = `ICONS.flag` (Lucide flag), City = `ICONS.pin`
+- Added `ICONS.flag` and `ICONS.earth` (Lucide) to the `ICONS` object
 
-## Session 42 — 2026-06-07
+### Museums Tab Country Icon — 12:10am
+- Updated Museums "By Country" sort button to use `ICONS.flag`, matching the Stats dropdown
 
-### Stats Page Icon Consistency
-- Matched Stats "progress by" dropdown icons to Museums sort buttons — Country now uses `ICONS.globe`, City now uses `ICONS.pin`
-
-## Session 43 — 2026-06-08
-
-### Stats Continent Icon
-- Replaced `ICONS.globe` with a new `ICONS.earth` (Lucide earth icon — globe with continent outlines) for the "Progress by Continent" dropdown option on the Stats page
-
-## Session 44 — 2026-06-08
-
-### Stats Icon Refinement
-- Continent now uses `ICONS.globe` (the standard globe); Country now uses new `ICONS.flag` (Lucide flag icon)
+### Museum Detail Swipe-Back Animation — 12:19am
+- Swiping right from the left edge on the museum detail page now slides `#main` to the right and reveals the museum list beneath it, rather than jumping back instantly
+- On swipe start a `#swipe-back-bg` fixed layer is inserted before `#main` containing a rendered snapshot of the museum list, scrolled to the saved position from when the detail was opened
+- On commit (`dx ≥ 80px`): `#main` animates off-screen right, bg is removed, then `closeMuseumDetail()` fires; on cancel: `#main` snaps back and bg is removed
+- Added `background: var(--bg)` to `#main` so the detail page fully covers the bg layer at rest
