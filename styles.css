@@ -1358,6 +1358,9 @@ body {
 .swipe-back-open .detail-overlay,
 .swipe-back-open [class*="-overlay"] { animation: none !important; }
 .swipe-back-open .detail-sheet       { animation: none !important; }
+.swipe-back-reopen .detail-overlay,
+.swipe-back-reopen [class*="-overlay"] { animation: none !important; }
+.swipe-back-reopen .detail-sheet       { animation: none !important; }
 .nav-snapshot,
 .nav-snapshot .detail-sheet          { animation: none !important; pointer-events: none; }
 

@@ -1,4 +1,4 @@
-const VERSION = '1.0.108';
+const VERSION = '1.0.109';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -142,7 +142,13 @@ function _navOpen() {
     // Clone the current overlay so swipe-back can show it as background
     const cur = document.querySelector('#detail-overlay, #museum-overlay, #artist-overlay, #movement-overlay');
     const snap = cur ? cur.cloneNode(true) : null;
-    if (snap) { snap.removeAttribute('id'); snap.classList.add('nav-snapshot'); }
+    if (snap) {
+      snap.removeAttribute('id');
+      snap.classList.add('nav-snapshot');
+      // Save scroll position so we can restore it when swiping back to this overlay
+      const sheet = cur.querySelector('.detail-sheet');
+      snap._scrollTop = sheet ? sheet.scrollTop : 0;
+    }
     _navStack.push(reopen);
     _navSnapshots.push(snap);
   }
@@ -3343,9 +3349,15 @@ function _initSwipeBack() {
           if (bgEl) { bgEl.remove(); bgEl = null; }
           if (liftedToolbar) { liftedToolbar.remove(); liftedToolbar = null; }
           const snap = _navSnapshots[_navSnapshots.length - 1];
+          const savedScroll = snap?._scrollTop || 0;
           if (snap?.parentNode) snap.remove();
           target = null;
+          // Suppress reopen animation and restore scroll position
+          document.body.classList.add('swipe-back-reopen');
           _globalBack();
+          const newSheet = document.querySelector('#detail-overlay .detail-sheet, #museum-overlay .detail-sheet, #artist-overlay .detail-sheet, #movement-overlay .detail-sheet');
+          if (newSheet && savedScroll) newSheet.scrollTop = savedScroll;
+          requestAnimationFrame(() => document.body.classList.remove('swipe-back-reopen'));
         }, 220);
       }
     } else {

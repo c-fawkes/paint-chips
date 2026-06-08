@@ -1132,6 +1132,11 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Root cause: the bg/toolbar logic only checked `S.view === 'museum-detail'`, not whether `#main` was the actual swipe target; painting overlays use a `.detail-sheet` target
 - Fix: add `&& target.id === 'main'` guard so toolbar detach and bg layer only fire when swiping `#main` itself
 
+### Swipe-Back Reopen Flash + Scroll Reset Fix — 1:19am
+- After swiping back to a previous overlay it would flash/re-animate (slide up from bottom) and reset to the top of the page
+- Root cause: `navBack()` calls the full `open*` function which replays the open animation and starts `scrollTop` at 0
+- Fix: save `sheet.scrollTop` on the snapshot at clone time (`snap._scrollTop`); in the commit path add `swipe-back-reopen` body class before calling `_globalBack()` to suppress animations, restore `scrollTop` on the new sheet immediately after, then remove the class on the next `requestAnimationFrame`
+
 ### Swipe-Back Overlay Stack Soft Lock Fix — 1:02am
 - Committed swipe-back left the nav snapshot in the DOM — a ghost full-screen fixed element that blocked scroll and close interactions on the next overlay
 - Root cause: the commit path had its own inline cleanup but never removed the snapshot; only the cancel path's `cleanup()` did
