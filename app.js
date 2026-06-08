@@ -1,4 +1,4 @@
-const VERSION = '1.0.104';
+const VERSION = '1.0.105';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -3323,7 +3323,7 @@ function _initSwipeBack() {
           el.style.cssText = '';
           if (overlay) overlay.style.cssText = '';
           if (bgEl) { bgEl.remove(); bgEl = null; }
-          liftedToolbar = null; // render() recreates the toolbar
+          if (liftedToolbar) { liftedToolbar.remove(); liftedToolbar = null; }
           target = null;
           _globalBack();
         }, 220);

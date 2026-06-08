@@ -1122,3 +1122,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Swipe-Back Toolbar Fix — 12:26am
 - `#toolbar` is `position: fixed`; CSS spec causes fixed children of transformed ancestors to lose viewport-relative positioning — the toolbar shifted when scrolled
 - Fix: detach `#toolbar` from `#main` into `<body>` before applying `translateX`, restore it before `.toolbar-spacer` on cancel, and let `render()` recreate it on commit
+
+### Swipe-Back Stale Search Hint Fix — 12:31am
+- On the commit path, `liftedToolbar` was nulled but never removed from `<body>` — the old toolbar (e.g. "Search Louvre…") stayed as a duplicate `#toolbar` floating over every subsequent render
+- Fix: call `.remove()` on `liftedToolbar` before nulling it
