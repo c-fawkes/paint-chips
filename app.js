@@ -1,4 +1,4 @@
-const VERSION = '1.0.107';
+const VERSION = '1.0.108';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -3342,6 +3342,8 @@ function _initSwipeBack() {
           if (overlay) overlay.style.cssText = '';
           if (bgEl) { bgEl.remove(); bgEl = null; }
           if (liftedToolbar) { liftedToolbar.remove(); liftedToolbar = null; }
+          const snap = _navSnapshots[_navSnapshots.length - 1];
+          if (snap?.parentNode) snap.remove();
           target = null;
           _globalBack();
         }, 220);

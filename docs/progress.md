@@ -1132,6 +1132,11 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Root cause: the bg/toolbar logic only checked `S.view === 'museum-detail'`, not whether `#main` was the actual swipe target; painting overlays use a `.detail-sheet` target
 - Fix: add `&& target.id === 'main'` guard so toolbar detach and bg layer only fire when swiping `#main` itself
 
+### Swipe-Back Overlay Stack Soft Lock Fix — 1:02am
+- Committed swipe-back left the nav snapshot in the DOM — a ghost full-screen fixed element that blocked scroll and close interactions on the next overlay
+- Root cause: the commit path had its own inline cleanup but never removed the snapshot; only the cancel path's `cleanup()` did
+- Fix: remove the snapshot from DOM in the commit path's timeout, matching the cancel path behaviour
+
 ### Swipe-Back Overlay Stack Background — 12:47am
 - Swiping back through a chain of overlays (painting → museum → painting → artist) showed the main page behind the sliding overlay instead of the previous overlay in the chain
 - Root cause: only one overlay exists in the DOM at a time — the previous one is gone when replaced; `navBack()` only re-creates it after the animation ends
