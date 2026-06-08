@@ -1108,3 +1108,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ### Stats Page Icon Consistency
 - Matched Stats "progress by" dropdown icons to Museums sort buttons — Country now uses `ICONS.globe`, City now uses `ICONS.pin`
+
+## Session 43 — 2026-06-08
+
+### Stats Continent Icon
+- Replaced `ICONS.globe` with a new `ICONS.earth` (Lucide earth icon — globe with continent outlines) for the "Progress by Continent" dropdown option on the Stats page
