@@ -1102,3 +1102,9 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ### Artist Portrait Vertical Centering
 - Added `margin-top: 4px` to `.artist-portrait` — centres the 88 px image between the top of the bio text and the top of the first text line that resumes below the float
+
+
+## Session 42 — 2026-06-07
+
+### Stats Page Icon Consistency
+- Matched Stats "progress by" dropdown icons to Museums sort buttons — Country now uses `ICONS.globe`, City now uses `ICONS.pin`

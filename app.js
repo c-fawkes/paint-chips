@@ -1,4 +1,4 @@
-const VERSION = '1.0.98';
+const VERSION = '1.0.99';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -968,8 +968,8 @@ function openStatsProgressDropdown(e, btn) {
   if (wasOpen) return;
   const opts = [
     { key: 'continent', label: 'Continent', icon: ICONS.globe },
-    { key: 'country',   label: 'Country',   icon: ICONS.pin },
-    { key: 'city',      label: 'City',      icon: ICONS.landmark },
+    { key: 'country',   label: 'Country',   icon: ICONS.globe },
+    { key: 'city',      label: 'City',      icon: ICONS.pin },
     { key: 'museum',    label: 'Museum',    icon: ICONS.museum },
   ];
   const rect = btn.getBoundingClientRect();
