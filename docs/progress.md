@@ -1103,6 +1103,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 ### Artist Portrait Vertical Centering — 12:53am
 - Added `margin-top: 4px` to `.artist-portrait` — centres the 88 px image between the top of the bio text and the top of the first text line that resumes below the float
 
+
 ## Session 42 — 2026-06-07 & 2026-06-08
 
 ### Stats & Museums Tab Icons — 11:56pm
@@ -1117,3 +1118,7 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - On swipe start a `#swipe-back-bg` fixed layer is inserted before `#main` containing a rendered snapshot of the museum list, scrolled to the saved position from when the detail was opened
 - On commit (`dx ≥ 80px`): `#main` animates off-screen right, bg is removed, then `closeMuseumDetail()` fires; on cancel: `#main` snaps back and bg is removed
 - Added `background: var(--bg)` to `#main` so the detail page fully covers the bg layer at rest
+
+### Swipe-Back Toolbar Fix — 12:26am
+- `#toolbar` is `position: fixed`; CSS spec causes fixed children of transformed ancestors to lose viewport-relative positioning — the toolbar shifted when scrolled
+- Fix: detach `#toolbar` from `#main` into `<body>` before applying `translateX`, restore it before `.toolbar-spacer` on cancel, and let `render()` recreate it on commit

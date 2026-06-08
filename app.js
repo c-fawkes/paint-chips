@@ -1,4 +1,4 @@
-const VERSION = '1.0.103';
+const VERSION = '1.0.104';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -3227,6 +3227,7 @@ function _initSwipeBack() {
   let target   = null;    // element being dragged
   let fullPage = false;   // true when target is #main with no slide animation
   let bgEl     = null;    // background layer showing museum list during swipe
+  let liftedToolbar = null; // #toolbar detached from #main to avoid transform affecting fixed pos
 
   function getTarget() {
     for (const id of ['detail-overlay','museum-overlay','artist-overlay','movement-overlay']) {
@@ -3237,8 +3238,14 @@ function _initSwipeBack() {
     return null;
   }
 
-  function removeBg() {
+  function cleanup() {
     if (bgEl) { bgEl.remove(); bgEl = null; }
+    // Restore toolbar back into #main before the spacer (cancel path; commit path lets render() recreate it)
+    if (liftedToolbar) {
+      const spacer = document.querySelector('#main .toolbar-spacer');
+      if (spacer) spacer.insertAdjacentElement('beforebegin', liftedToolbar);
+      liftedToolbar = null;
+    }
   }
 
   document.addEventListener('touchstart', e => {
@@ -3265,6 +3272,11 @@ function _initSwipeBack() {
         target.style.transition = 'none';
         // Render museum list into a background layer behind #main
         if (S.view === 'museum-detail') {
+          // Detach #toolbar from #main before applying transform — fixed children of
+          // transformed elements lose viewport-relative positioning (CSS spec).
+          const tb = document.getElementById('toolbar');
+          if (tb) { document.body.appendChild(tb); liftedToolbar = tb; }
+
           bgEl = document.createElement('div');
           bgEl.id = 'swipe-back-bg';
           const savedView = S.view;
@@ -3310,7 +3322,8 @@ function _initSwipeBack() {
           document.body.classList.remove('swipe-back-open');
           el.style.cssText = '';
           if (overlay) overlay.style.cssText = '';
-          removeBg();
+          if (bgEl) { bgEl.remove(); bgEl = null; }
+          liftedToolbar = null; // render() recreates the toolbar
           target = null;
           _globalBack();
         }, 220);
@@ -3319,7 +3332,7 @@ function _initSwipeBack() {
       if (!fullPage) {
         el.style.transition = 'transform 0.2s ease';
         el.style.transform  = '';
-        setTimeout(() => { el.style.transition = ''; removeBg(); target = null; }, 200);
+        setTimeout(() => { el.style.transition = ''; cleanup(); target = null; }, 200);
       } else {
         target = null;
       }
