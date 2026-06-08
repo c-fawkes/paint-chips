@@ -1113,3 +1113,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ### Stats Continent Icon
 - Replaced `ICONS.globe` with a new `ICONS.earth` (Lucide earth icon — globe with continent outlines) for the "Progress by Continent" dropdown option on the Stats page
+
+## Session 44 — 2026-06-08
+
+### Stats Icon Refinement
+- Continent now uses `ICONS.globe` (the standard globe); Country now uses new `ICONS.flag` (Lucide flag icon)
