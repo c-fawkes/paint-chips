@@ -1095,13 +1095,15 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added `scopeNote` field to `MUSEUMS_INFO` for **San Luigi dei Francesi** and **Santa Maria delle Grazie** — shown below the blurb in italic when +10 or +30 scope is active, explaining that the limited painting count reflects the actual extent of works in a single active church
 
 
-## Session 41 — 2026-06-03 & 2026-06-08
+## Session 41 — 2026-06-03
 
 ### Artist Sort Bio Alignment — 12:48am
 - Fixed `margin: 12px 0 0` on `.mv-row-full-summary` — the top margin was pushing bio text 12 px below the portrait's top edge; set to `margin: 0` so text aligns flush with the image
 
 ### Artist Portrait Vertical Centering — 12:53am
 - Added `margin-top: 4px` to `.artist-portrait` — centres the 88 px image between the top of the bio text and the top of the first text line that resumes below the float
+
+## Session 42 — 2026-06-07 & 2026-06-08
 
 ### Stats & Museums Tab Icons — 11:56pm
 - Aligned Stats "progress by" dropdown and Museums sort buttons to a consistent icon set: Continent = `ICONS.globe`, Country = `ICONS.flag` (Lucide flag), City = `ICONS.pin`
