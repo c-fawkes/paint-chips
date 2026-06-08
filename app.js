@@ -1,4 +1,4 @@
-const VERSION = '1.0.106';
+const VERSION = '1.0.107';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -94,7 +94,8 @@ function _idbGetAll() {
 }
 
 /* ── Navigation stack ───────────────────────────────────────────────────── */
-const _navStack = []; // each entry is a fn() that reopens the previous screen
+const _navStack     = []; // each entry is a fn() that reopens the previous screen
+const _navSnapshots = []; // parallel array — DOM clone of overlay that was open when the entry was pushed
 
 function _currentReopenFn() {
   const a = document.getElementById('artist-overlay');
@@ -118,6 +119,7 @@ function _closeAllOverlays() {
 // Step back one screen; if stack is empty, close everything
 function navBack() {
   _closeAllOverlays();
+  _navSnapshots.pop(); // discard the snapshot for the level we just left
   if (_navStack.length > 0) {
     _navStack.pop()();
   } else {
@@ -128,6 +130,7 @@ function navBack() {
 // Swipe-down or explicit full-close — dismisses everything
 function navDismissAll() {
   _navStack.length = 0;
+  _navSnapshots.length = 0;
   _closeAllOverlays();
   document.body.style.overflow = '';
 }
@@ -135,7 +138,14 @@ function navDismissAll() {
 // Call at the start of every open* function to push the current screen and clear
 function _navOpen() {
   const reopen = _currentReopenFn();
-  if (reopen) _navStack.push(reopen);
+  if (reopen) {
+    // Clone the current overlay so swipe-back can show it as background
+    const cur = document.querySelector('#detail-overlay, #museum-overlay, #artist-overlay, #movement-overlay');
+    const snap = cur ? cur.cloneNode(true) : null;
+    if (snap) { snap.removeAttribute('id'); snap.classList.add('nav-snapshot'); }
+    _navStack.push(reopen);
+    _navSnapshots.push(snap);
+  }
   _closeAllOverlays();
   document.body.style.overflow = 'hidden';
 }
@@ -3240,6 +3250,9 @@ function _initSwipeBack() {
 
   function cleanup() {
     if (bgEl) { bgEl.remove(); bgEl = null; }
+    // Remove nav snapshot from DOM if it was inserted (keep in _navSnapshots for retry swipes)
+    const snap = _navSnapshots[_navSnapshots.length - 1];
+    if (snap?.parentNode) snap.remove();
     // Restore toolbar back into #main before the spacer (cancel path; commit path lets render() recreate it)
     if (liftedToolbar) {
       const spacer = document.querySelector('#main .toolbar-spacer');
@@ -3270,6 +3283,11 @@ function _initSwipeBack() {
       phase = 'dragging';
       if (!fullPage) {
         target.style.transition = 'none';
+        // For overlay swipes, insert the snapshot of the previous overlay behind the current one
+        const snap = _navSnapshots[_navSnapshots.length - 1];
+        if (snap && target.id !== 'main') {
+          target.parentElement?.insertAdjacentElement('beforebegin', snap);
+        }
         // Render museum list into a background layer behind #main
         if (S.view === 'museum-detail' && target.id === 'main') {
           // Detach #toolbar from #main before applying transform — fixed children of
