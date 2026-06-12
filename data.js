@@ -1243,11 +1243,11 @@ const PAINTINGS = [
     year: "1937",
     medium: "Oil on canvas",
     dimensions: "59.7 × 49.2 cm",
-    description: "Painted just weeks after Guernica, the same jagged style fractures a weeping woman's face into sharp angles of grief. The model was photographer Dora Maar, Picasso's lover. Picasso called her 'the weeping woman' throughout their relationship. Stolen from the National Gallery of Victoria in Melbourne in 1986, returned two weeks later. No image is shown — this work remains protected by copyright.",
+    description: "Painted just weeks after Guernica, the same jagged style fractures a weeping woman's face into sharp angles of grief. The model was photographer Dora Maar, Picasso's lover. Picasso called her 'the weeping woman' throughout their relationship. Stolen from the National Gallery of Victoria in Melbourne in 1986, returned two weeks later. Image reproduced under fair use for educational purposes; this work is protected by copyright.",
     movement: "Cubism",
     wikiUrl: "https://en.wikipedia.org/wiki/Weeping_Woman_(Picasso)",
     grokUrl: "https://grokipedia.com/page/Weeping_Woman",
-    imageUrl: null, // 1937 Picasso — under copyright
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Picasso_The_Weeping_Woman_Tate_identifier_T05010_10.jpg/330px-Picasso_The_Weeping_Woman_Tate_identifier_T05010_10.jpg"
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
 
@@ -3139,9 +3139,9 @@ const PAINTINGS = [
     year: "1924–1925",
     medium: "Oil on canvas",
     dimensions: "66 × 93 cm",
-    description: "An interior dense with floating biomorphic forms, figures, and signs — ladder, eye, moustache, dice, guitar — hovering in a shallow amber space. Miró developed this 'dream imagery' while suffering from hunger-induced hallucinations in Paris. It launched his mature Surrealist style and made his international reputation. The Reina Sofía holds a major Miró collection. No image is shown — this work remains protected by copyright.",
+    description: "An interior dense with floating biomorphic forms, figures, and signs — ladder, eye, moustache, dice, guitar — hovering in a shallow amber space. Miró developed this 'dream imagery' while suffering from hunger-induced hallucinations in Paris. It launched his mature Surrealist style and made his international reputation. The Reina Sofía holds a major Miró collection. Image reproduced under fair use for educational purposes; this work is protected by copyright.",
     movement: "Surrealism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/The_Harlequin%27s_Carnival.jpg/330px-The_Harlequin%27s_Carnival.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
 
@@ -5317,7 +5317,7 @@ const PAINTINGS = [
     dimensions: "100 × 72 cm",
     description: "The guitar was the emblematic Cubist instrument — analyzed, fractured, and reassembled by Braque and Picasso — and Blanchard takes up the motif in a canvas more decorative and emotionally warm than her male contemporaries' treatments. The figure and instrument are nearly fused, their geometry continuous, suggesting that for Blanchard the human body was as available to Cubist analysis as any object. Her work challenges the assumption that Cubism was exclusively a cold, masculine project.",
     movement: "Cubism",
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/1917_Blanchard_Frau_mit_Gitarre.JPG/330px-1917_Blanchard_Frau_mit_Gitarre.JPG",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
   {
@@ -5331,7 +5331,7 @@ const PAINTINGS = [
     movement: "Expressionism",
     wikiUrl: "https://en.wikipedia.org/wiki/La_tertulia_del_Café_de_Pombo",
     grokUrl: null,
-    imageUrl: null,
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Solana_%28La_tertulia_del_Caf%C3%A9_de_Pombo%29.jpg/330px-Solana_%28La_tertulia_del_Caf%C3%A9_de_Pombo%29.jpg",
     location: { continent: "Europe", country: "Spain", city: "Madrid", museum: "Museo Nacional Centro de Arte Reina Sofía" }
   },
   {

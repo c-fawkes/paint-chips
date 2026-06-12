@@ -1,4 +1,4 @@
-const VERSION = '1.0.111';
+const VERSION = '1.0.112';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -1375,7 +1375,22 @@ function openDetail(id, { refresh = false } = {}) {
           </div>` : ''}
         </div>` : ''}
 
-        ${p.description ? `<p class="detail-description">${esc(p.description)}</p>` : ''}
+        ${p.description ? (() => {
+          const COPYRIGHT_NOTICES = [
+            'Image reproduced under fair use for educational purposes; this work is protected by copyright.',
+            'No image is shown — this work remains protected by copyright.'
+          ];
+          let desc = p.description;
+          let notice = '';
+          for (const n of COPYRIGHT_NOTICES) {
+            if (desc.endsWith(n)) {
+              desc = desc.slice(0, -n.length).trimEnd();
+              notice = n;
+              break;
+            }
+          }
+          return `<p class="detail-description" style="${notice ? 'margin-bottom:6px' : ''}">${esc(desc)}</p>${notice ? `<p class="detail-copyright-note">${esc(notice)}</p>` : ''}`;
+        })() : ''}
 
         <div class="detail-user-section">
           <div class="detail-photos-section">

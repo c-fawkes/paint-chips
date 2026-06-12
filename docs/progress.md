@@ -1158,3 +1158,16 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added public-domain Wikimedia Commons images for 3 previously-missing works: **Virgin of Chancellor Rolin** (van Eyck), **The Ballet Rehearsal** (Degas), **Stein on the Danube** (Schiele)
 - Appended a copyright notice to the `description` of every copyrighted painting: "Image reproduced under fair use…" where an image was found, or "No image is shown — this work remains protected by copyright." where not
 - Added an **Image rights & fair use** row to the Settings → About section explaining the fair-use basis for copyrighted image thumbnails
+
+### More Image Finds — Second Pass
+- Searched for images for the remaining 32 null-`imageUrl` paintings; found 4 additional images and applied them
+- **Weeping Woman** (Picasso, 1937) — fair-use image from Tate via Wikipedia/en; description notice updated from "No image is shown" to "Image reproduced under fair use"
+- **The Harlequin's Carnival** (Miró, 1924–1925) — fair-use image via Wikipedia/en; description notice updated
+- **Woman with Guitar** (Blanchard, 1917) — public-domain Commons image (`1917_Blanchard_Frau_mit_Gitarre.JPG`)
+- **The Gathering at the Café de Pombo** (Solana, 1920) — public-domain Commons image (`Solana_(La_tertulia_del_Café_de_Pombo).jpg`)
+- Remaining 28 null-`imageUrl` paintings have no freely accessible images — mostly copyrighted works at Mexican museums (Varo, Rivera, Carrington, Siqueiros, Tamayo, Izquierdo) and copyrighted Tate/Reina Sofía works with no Wikipedia fair-use uploads
+
+### Copyright Blurb Styling
+- Painting detail overlay now renders the copyright notice as a separate `<p class="detail-copyright-note">` below the main description text, instead of inline at the end of the paragraph
+- Style matches the museum scope-note: `font-size: .8rem`, `color: var(--text-faint)`, italic — smaller and more muted than the description body text
+- Added `.detail-copyright-note` CSS class; description renderer splits the notice from the body at render time with no data-model changes
