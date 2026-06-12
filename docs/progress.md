@@ -1151,3 +1151,10 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 
 ### Swap Orsay Painting
 - Removed **The Origin of the World** (Courbet, 1866) from the Musée d'Orsay museum-only paintings and replaced it with **Woman with a Parasol** (Monet, 1875) at the same `id: 289` slot — more family-friendly and one of the Orsay's most visited works
+
+### Copyrighted Image Notices
+- Audited all 41 `imageUrl: null` paintings; categorized into copyrighted (artist died < 70 years ago) and public domain
+- Added low-resolution fair-use images (sourced from Wikipedia/en) for 6 copyrighted works: **Acrobat and Young Harlequin** (Picasso), **Soft Construction with Boiled Beans** (Dalí), **Black on Maroon** and **Marilyn Diptych** (Warhol), **The Snail** (Matisse), and **Migration Series Panel 1** (Lawrence)
+- Added public-domain Wikimedia Commons images for 3 previously-missing works: **Virgin of Chancellor Rolin** (van Eyck), **The Ballet Rehearsal** (Degas), **Stein on the Danube** (Schiele)
+- Appended a copyright notice to the `description` of every copyrighted painting: "Image reproduced under fair use…" where an image was found, or "No image is shown — this work remains protected by copyright." where not
+- Added an **Image rights & fair use** row to the Settings → About section explaining the fair-use basis for copyrighted image thumbnails

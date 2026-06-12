@@ -1,4 +1,4 @@
-const VERSION = '1.0.110';
+const VERSION = '1.0.111';
 
 /* ── State ──────────────────────────────────────────────────────────────── */
 const S = {
@@ -2543,6 +2543,12 @@ function renderSettingsView() {
             <div class="settings-row-sub">Review the app introduction</div>
           </div>
           <button class="settings-action-btn" onclick="showOnboarding()">View</button>
+        </div>
+        <div class="settings-row settings-row-stacked">
+          <div class="settings-row-label">
+            <div class="settings-row-name">Image rights &amp; fair use</div>
+            <div class="settings-row-sub">Most painting images in this app are in the public domain and sourced from Wikimedia Commons. A small number of works — by artists who died less than 70 years ago — are still protected by copyright. Where images of these works appear, they are low-resolution reproductions used solely for educational and informational purposes under fair use doctrine. No commercial use is intended or implied. Copyright in those works remains with the respective artists' estates.</div>
+          </div>
         </div>
         <div class="settings-row">
           <div class="settings-row-label">
