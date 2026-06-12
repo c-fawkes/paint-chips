@@ -1247,7 +1247,7 @@ const PAINTINGS = [
     movement: "Cubism",
     wikiUrl: "https://en.wikipedia.org/wiki/Weeping_Woman_(Picasso)",
     grokUrl: "https://grokipedia.com/page/Weeping_Woman",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Picasso_The_Weeping_Woman_Tate_identifier_T05010_10.jpg/330px-Picasso_The_Weeping_Woman_Tate_identifier_T05010_10.jpg"
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Picasso_The_Weeping_Woman_Tate_identifier_T05010_10.jpg/330px-Picasso_The_Weeping_Woman_Tate_identifier_T05010_10.jpg",
     location: { continent: "Europe", country: "United Kingdom", city: "London", museum: "Tate Modern" }
   },
 
