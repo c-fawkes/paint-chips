@@ -1146,3 +1146,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Swiping back through a chain of overlays (painting → museum → painting → artist) showed the main page behind the sliding overlay instead of the previous overlay in the chain
 - Root cause: only one overlay exists in the DOM at a time — the previous one is gone when replaced; `navBack()` only re-creates it after the animation ends
 - Fix: added a parallel `_navSnapshots` array alongside `_navStack`; `_navOpen()` deep-clones the current overlay before removing it and stores the clone with `.nav-snapshot` class; on swipe drag-start the snapshot is inserted before the current overlay in the DOM so it shows behind during the animation, then removed in `cleanup()`; `navBack()` and `navDismissAll()` keep the two arrays in sync
+
+## Session 43 — 2026-06-12
+
+### Swap Orsay Painting
+- Removed **The Origin of the World** (Courbet, 1866) from the Musée d'Orsay museum-only paintings and replaced it with **Woman with a Parasol** (Monet, 1875) at the same `id: 289` slot — more family-friendly and one of the Orsay's most visited works
