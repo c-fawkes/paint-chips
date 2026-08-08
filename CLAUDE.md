@@ -152,7 +152,9 @@ The Set fields (`expandedMuseums`, `expandedContinents`, `expandedCountries`) tr
 `sw.js` uses cache-first for local files and network-first for Wikimedia/Wikipedia image URLs. The cache name is `paint-chips-v1` — bump this string to force all clients to re-cache when static assets change significantly.
 
 > **Updated (Sessions 15 + 23):** Cache name bumped to `paint-chips-v2` in Session 15 (rebrand). Image strategy changed to **cache-first** in Session 23 — `_preCacheImages()` runs 2s after startup and fetches all painting/artist/museum images into the SW cache in batches of 5, so images load instantly offline after first visit.
+>
+> **Updated (Session 31):** Repo renamed from `paint-chips` to `beheld`, moving the GitHub Pages subdirectory from `/paint-chips/` to `/beheld/`. Cache name bumped to `beheld-v3` in both `sw.js` and `app.js`'s `_preCacheImages()` (the two must always match — they open the same cache).
 
 ### Deployment
 
-Deployed to GitHub Pages at the `/paint-chips/` subdirectory. The `manifest.json` `start_url` is `/paint-chips/` to match. The repo is `github.com/c-fawkes/paint-chips`.
+Deployed to GitHub Pages at the `/beheld/` subdirectory. The `manifest.json` `start_url` and `scope` are `/beheld/` to match. The repo is `github.com/c-fawkes/beheld`.

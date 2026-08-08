@@ -3169,7 +3169,7 @@ function quizPlayAgain() {
 async function _preCacheImages() {
   if (!('caches' in window)) return;
   try {
-    const cache = await caches.open('paint-chips-v2');
+    const cache = await caches.open('beheld-v3');
     const urls = new Set();
     PAINTINGS.forEach(p => { if (p.imageUrl) urls.add(p.imageUrl); });
     if (typeof ARTIST_PORTRAITS !== 'undefined')

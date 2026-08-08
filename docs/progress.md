@@ -8,11 +8,13 @@
 
 Paint Chips is a personal Progressive Web App (PWA) checklist for tracking which of the world's 100 most famous paintings you've seen in person. It's built for museum-goers who travel specifically to see art, or who want to cross off the canonical masterpieces as they encounter them.
 
-> **Updated (Session 15):** The app was rebranded from "Paint Chips" to **Beheld**. The name "Paint Chips" is retained only in the repo path and GitHub Pages URL (`/paint-chips/`). The app displays as "Beheld" everywhere in the UI, manifest, and title.
+> **Updated (Session 15):** The app was rebranded from "Paint Chips" to **Beheld**. The name "Paint Chips" is retained only in the repo path and GitHub Pages URL (`/paint-chips/`). The app displays as "Beheld" everywhere in the UI, manifest, and title. *(repo renamed to `beheld` in Session 44 — see below)*
 >
 > **Updated (Session 4+):** The dataset has grown beyond 100 paintings. As of Session 30 the app contains **291 paintings** — 100 ranked works plus 191 `museumOnly` extras spread across 35 museums. The scope toggle in Settings controls which paintings are active: Top 100 only, up to 10 per museum, or up to 30 per museum (total including ranked works).
+>
+> **Updated (Session 44):** The GitHub repo was renamed from `paint-chips` to `beheld`, moving the GitHub Pages subdirectory from `/paint-chips/` to `/beheld/`. `manifest.json`'s `start_url`/`scope` and the service-worker cache name were updated to match.
 
-The app lives at [github.com/c-fawkes/paint-chips](https://github.com/c-fawkes/paint-chips) and is deployed to GitHub Pages at `/paint-chips/`. It can be installed to the home screen on iOS and Android via the PWA manifest, where it runs in standalone (full-screen, no browser chrome) mode. All data is stored locally in the user's browser — no account, no backend.
+The app lives at [github.com/c-fawkes/beheld](https://github.com/c-fawkes/beheld) and is deployed to GitHub Pages at `/beheld/`. It can be installed to the home screen on iOS and Android via the PWA manifest, where it runs in standalone (full-screen, no browser chrome) mode. All data is stored locally in the user's browser — no account, no backend.
 
 ---
 
@@ -172,14 +174,14 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Filter chips: click a location in the Museums/Locations tabs to filter the Top 100
 - Offline support via service worker (cache-first for app files, network-first for Wikimedia images)
 - PWA manifest with icons — installable on iOS and Android
-- Deployed to GitHub Pages at `github.com/c-fawkes/paint-chips`
+- Deployed to GitHub Pages at `github.com/c-fawkes/paint-chips` *(renamed to `github.com/c-fawkes/beheld` in Session 44)*
 
 ---
 
 ## Session 2 — 2026-05-27
 
 ### PWA install fixes
-- Fixed `manifest.json` `start_url` to `/paint-chips/` to match GitHub Pages subdirectory path
+- Fixed `manifest.json` `start_url` to `/paint-chips/` to match GitHub Pages subdirectory path *(changed in Session 44)*
 - Fixed iOS safe area insets using `env(safe-area-inset-top)` for Dynamic Island / notch
 
 ### Images
@@ -379,8 +381,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Displayed as title-case "Beheld" rather than all-caps — cursive scripts lose their connecting strokes in uppercase
 - Removed the 🎨 paint emoji from the header, splash, and both onboarding pages (kept it only as the image-load fallback placeholder)
 - Swapped bottom-nav icons: Paintings tab now uses the Lucide **brush** icon, Museums tab the Lucide **landmark** icon (added `brush`/`landmark` to the `ICONS` map)
-- Bumped service-worker cache to `paint-chips-v2` so clients re-cache the changed static assets
-- Kept `start_url` `/paint-chips/` and the repo path unchanged (deployment URLs, not display names)
+- Bumped service-worker cache to `paint-chips-v2` so clients re-cache the changed static assets *(renamed to `beheld-v3` in Session 44)*
+- Kept `start_url` `/paint-chips/` and the repo path unchanged (deployment URLs, not display names) *(changed in Session 44 — repo renamed to `beheld`, `start_url` updated to `/beheld/`)*
 
 ### Repo cleanup: scripts/ folder + .gitignore
 - Added a `.gitignore` (ignores `.claude/`, `.DS_Store`, editor dirs, `node_modules/`, logs/temp)
@@ -1171,3 +1173,11 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Painting detail overlay now renders the copyright notice as a separate `<p class="detail-copyright-note">` below the main description text, instead of inline at the end of the paragraph
 - Style matches the museum scope-note: `font-size: .8rem`, `color: var(--text-faint)`, italic — smaller and more muted than the description body text
 - Added `.detail-copyright-note` CSS class; description renderer splits the notice from the body at render time with no data-model changes
+
+## Session 44 — 2026-08-08
+
+### Fix PWA install path after repo rename
+- Repo was renamed from `paint-chips` to `beheld`, moving the GitHub Pages subdirectory to `/beheld/` — but `manifest.json`'s `start_url` was still hardcoded to `/paint-chips/`, so "Add to Home Screen" kept autofilling the dead path with no way to edit it *(changed in Session 44)*
+- Updated `manifest.json` `start_url` to `/beheld/` and added a matching `scope` field
+- Bumped the service worker cache name `paint-chips-v2` → `beheld-v3` in `sw.js` so already-installed clients drop the stale cached manifest instead of continuing to serve it offline *(changed in Session 44)*
+- Updated `_preCacheImages()` in `app.js` to open the same `beheld-v3` cache, keeping it in sync with `sw.js`
