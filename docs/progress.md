@@ -1181,3 +1181,8 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Updated `manifest.json` `start_url` to `/beheld/` and added a matching `scope` field
 - Bumped the service worker cache name `paint-chips-v2` → `beheld-v3` in `sw.js` so already-installed clients drop the stale cached manifest instead of continuing to serve it offline *(changed in Session 44)*
 - Updated `_preCacheImages()` in `app.js` to open the same `beheld-v3` cache, keeping it in sync with `sw.js`
+
+### Add project README
+- Added top-level `README.md` — app description, feature list, tech overview, architecture notes, local-run instructions, and a "how this was built" section on the AI-agent development process
+- Added `screenshots/paintings.jpeg`, `screenshots/collection.jpeg`, and `screenshots/museum.jpeg`, referenced from the README's screenshots table
+- README's **Live app** link points to `https://c-fawkes.github.io/beheld/`, matching the Session 44 repo rename
