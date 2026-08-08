@@ -1,4 +1,4 @@
-const CACHE = 'paint-chips-v2';
+const CACHE = 'beheld-v3';
 const STATIC = [
   './',
   './index.html',
