@@ -10,9 +10,11 @@ Paint Chips is a personal Progressive Web App (PWA) checklist for tracking which
 
 > **Updated (Session 15):** The app was rebranded from "Paint Chips" to **Beheld**. The name "Paint Chips" is retained only in the repo path and GitHub Pages URL (`/paint-chips/`). The app displays as "Beheld" everywhere in the UI, manifest, and title. *(repo renamed to `beheld` in Session 44 — see below)*
 >
-> **Updated (Session 4+):** The dataset has grown beyond 100 paintings. As of Session 30 the app contains **291 paintings** — 100 ranked works plus 191 `museumOnly` extras spread across 35 museums. The scope toggle in Settings controls which paintings are active: Top 100 only, up to 10 per museum, or up to 30 per museum (total including ranked works).
+> **Updated (Session 4+):** The dataset has grown beyond 100 paintings. As of Session 30 the app contains **291 paintings** — 100 ranked works plus 191 `museumOnly` extras spread across 35 museums. The scope toggle in Settings controls which paintings are active: Top 100 only, up to 10 per museum, or up to 30 per museum (total including ranked works). *(count updated in Session 45)*
 >
 > **Updated (Session 44):** The GitHub repo was renamed from `paint-chips` to `beheld`, moving the GitHub Pages subdirectory from `/paint-chips/` to `/beheld/`. `manifest.json`'s `start_url`/`scope` and the service-worker cache name were updated to match.
+>
+> **Updated (Session 45):** As of Session 45 the app contains **421 paintings** — 100 ranked works plus 321 `museumOnly` extras spread across 35 museums.
 
 The app lives at [github.com/c-fawkes/beheld](https://github.com/c-fawkes/beheld) and is deployed to GitHub Pages at `/beheld/`. It can be installed to the home screen on iOS and Android via the PWA manifest, where it runs in standalone (full-screen, no browser chrome) mode. All data is stored locally in the user's browser — no account, no backend.
 
@@ -1186,3 +1188,10 @@ Add new sessions at the **bottom** of this section. Open a new `## Session N —
 - Added top-level `README.md` — app description, feature list, tech overview, architecture notes, local-run instructions, and a "how this was built" section on the AI-agent development process
 - Added `screenshots/paintings.jpeg`, `screenshots/collection.jpeg`, and `screenshots/museum.jpeg`, referenced from the README's screenshots table
 - README's **Live app** link points to `https://c-fawkes.github.io/beheld/`, matching the Session 44 repo rename
+
+## Session 45 — 2026-08-08
+
+### Sync painting-count docs with current dataset
+- README and `CLAUDE.md` still quoted the Session 30 painting count (291); the dataset has since grown to **421 paintings** (100 ranked + 321 `museumOnly` extras across 35 museums)
+- Updated `README.md`'s feature list and intro paragraph, and the `CLAUDE.md` `data.js` architecture note, to the current 421 total *(changed in Session 45)*
+- Left historical session bullets that reference paintings added at the time (e.g. Session 40's "IDs 263–291") unchanged — those are accurate records of that session, not current-state claims

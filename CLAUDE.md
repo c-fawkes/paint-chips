@@ -68,7 +68,7 @@ To force the service worker to pick up changes during development, go to DevTool
 This is a no-framework, no-build vanilla JS PWA. All logic lives in three files loaded via `<script>` tags at the end of `<body>`:
 
 - **`data.js`** — defines two globals: `PAINTINGS` (array of 100 painting objects) and `MUSEUMS` (object keyed by museum name). Loaded before `app.js`.
-  > **Updated (Session 4+):** `PAINTINGS` now contains 291 objects (100 ranked + 191 `museumOnly` extras added across sessions). `data.js` also exports `ARTISTS`, `ARTIST_PORTRAITS`, `MOVEMENTS`, and `MUSEUMS_INFO` — all referenced by `app.js` for popups and bios.
+  > **Updated (Session 4+):** `PAINTINGS` now contains 421 objects (100 ranked + 321 `museumOnly` extras added across sessions). `data.js` also exports `ARTISTS`, `ARTIST_PORTRAITS`, `MOVEMENTS`, and `MUSEUMS_INFO` — all referenced by `app.js` for popups and bios.
 - **`app.js`** — all application logic. Single global state object `S`, mutated directly and persisted to `localStorage` via `save()`/`load()`. Re-renders by calling `render()` which sets `innerHTML` on `#main`.
 - **`styles.css`** — all styling. Dark museum aesthetic: near-black `#0f0e0d` background, gold `#c9a84c` accent. Uses CSS custom properties defined on `:root`.
 

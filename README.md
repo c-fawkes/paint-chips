@@ -2,7 +2,7 @@
 
 A progressive web app for tracking which of the world's most famous paintings you've seen in person.
 
-Browse 100 ranked works plus ~190 additional pieces by museum, artist, or movement; check off what you've seen; attach your own photos and notes; and see your progress broken down by museum and region. Works fully offline once loaded, and installs to a phone home screen like a native app.
+Browse 100 ranked works plus ~320 additional pieces by museum, artist, or movement; check off what you've seen; attach your own photos and notes; and see your progress broken down by museum and region. Works fully offline once loaded, and installs to a phone home screen like a native app.
 
 **Live app:** https://c-fawkes.github.io/beheld/
 
@@ -19,7 +19,7 @@ Browse 100 ranked works plus ~190 additional pieces by museum, artist, or moveme
 
 ## Features
 
-- **291 paintings** across 100 ranked works and museum-specific extras, filterable by continent → country → city → museum
+- **421 paintings** across 100 ranked works and museum-specific extras, filterable by continent → country → city → museum
 - **Collection tracking** — mark paintings as seen, add photos and notes, record the date collected, and favorite pieces
 - **Museum pages** — written descriptions and photos for each institution, with visited tracking and per-museum progress; sortable alphabetically or by city or country
 - **Gallery presentation** — collected works are rendered as framed pieces rather than a plain grid
